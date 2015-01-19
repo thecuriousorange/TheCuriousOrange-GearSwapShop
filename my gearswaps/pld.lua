@@ -1,7 +1,8 @@
 function get_sets()
--- include
+-- includes
 	include('boxes.lua')
--- include
+	include('skillchain-elements.lua')
+-- includes
 -- keybinds, aliases and text boxes.
 	send_command('bind #4 idle')
 	send_command('bind #2 gs equip sets.aftercast.pdt')

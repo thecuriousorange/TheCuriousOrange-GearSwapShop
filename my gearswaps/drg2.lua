@@ -1,7 +1,8 @@
 function get_sets()
--- include
+-- includes
 	include('boxes.lua')
--- include
+	include('skillchain-elements.lua')
+-- includes
 -- Elements for skillchain names
 skillchain_elements = {}
 skillchain_elements.Light = S{'Light','Fire','Wind','Lightning'}

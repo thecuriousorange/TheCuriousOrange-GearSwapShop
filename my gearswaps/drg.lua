@@ -1,7 +1,8 @@
 function get_sets()
--- include
+-- includes
 	include('boxes.lua')
--- include
+	include('skillchain-elements.lua')
+-- includes
 --default text box setup
 	send_command('text tpvariable text "DD MODE"')
 	send_command('text idlevariable text "STYLE I"')

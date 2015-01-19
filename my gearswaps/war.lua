@@ -1,7 +1,8 @@
 function get_sets()
--- include
+-- includes
 	include('boxes.lua')
--- include
+	include('skillchain-elements.lua')
+-- includes
 --text box setup
 
 --text box setup
