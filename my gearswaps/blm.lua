@@ -1,18 +1,65 @@
 function get_sets()
+	include('organizer-lib.lua')
 --default macroset
 	send_command('input /macro book 3;input /macro set 1')
 --default macroset
 
+--aliases
+	send_command('alias VI input /ma "Blizzard VI" <t>')
+	send_command('alias V input /ma "Blizzard V" <t>')
+	send_command('alias IV input /ma "Blizzard IV" <t>')
+	send_command('alias III input /ma "Blizzard III" <t>')
+	send_command('alias II input /ma "Blizzard II" <t>')
+	send_command('alias I input /ma "Blizzard" <t>')
+	send_command('alias aja input /ma "Blizzaja" <t>')
+	send_command('alias agaIII input /ma "Blizzaga III" <t>')
+	send_command('alias agaII input /ma "Blizzaga II" <t>')
+	send_command('alias aga input /ma "Blizzaga" <t>')
+	send_command('alias AM input /ma "Freeze" <t>')
+	send_command('alias AM2 input /ma "Freeze II" <t>')
+	
+--aliases
+
+--boxes
+	send_command('text nuke_element create;text nuke_element bold true;text nuke_element text "ICE NUKES";text nuke_element color 0 255 255;')
+--boxes
+
+--keybinds
+	send_command('bind #2 gs equip sets.aftercast.pdt')
+	send_command('bind #4 gs equip sets.aftercast.idle')
+	send_command('bind #f1 gs c ice')
+	send_command('bind #f2 gs c water')
+	send_command('bind #f3 gs c earth')
+	send_command('bind #f4 gs c fire')
+	send_command('bind #f5 gs c wind')
+	send_command('bind #f6 gs c thunder')
+	send_command('bind !- input /ma "Aspir II" <t>')
+	send_command('bind != VI')
+	send_command('bind @f11 gs c mm')
+	send_command('bind @f12 gs c mpe')
+--keybinds
+--
+	send_command('input /macro book 3;input /macro set 8')
+--
+--spell elements
+	nuke_element="Ice"
+	mpe="off"
+	mm="off"
+	
+	sets.mm=T{}
+	sets.mpe=T{}
+	sets.nuke_element= T{}
+
 --spell lists
-	Nukes= S{"Fire", "Fire II", "Fire III", "Fire IV", "Fire V", "Firaga", "Firaga II", "Firaga III", 
+	Nukes= S{"Fire", "Fire II", "Fire III", "Fire IV", "Fire V", "Fire VI", "Firaga", "Firaga II", "Firaga III", 
 	"Firaja", "Flare", "Flare II", "Pyrohelix", "Fira", "Fira II", "Blizzard", "Blizzard II", "Blizzard III", 
-	"Blizzard IV", "Blizzard V", "Blizzaga", "Blizzaga II", "Blizzaga III", "Blizzaja", "Cryohelix", "Freeze", 
-	"Freeze II", "Blizzara", "Blizzara II", "Water", "Water II", "Water III", "Water IV", "Water V", "Waterga", 
+	"Blizzard IV", "Blizzard V", "Blizzard VI", "Blizzaga", "Blizzaga II", "Blizzaga III", "Blizzaja", "Cryohelix", "Freeze", 
+	"Freeze II", "Blizzara", "Blizzara II", "Water", "Water II", "Water III", "Water IV", "Water V", "Water VI", "Waterga", 
 	"Waterga II", "Waterga III", "Waterja", "Flood", "Flood II", "Hydrohelix", "Watera", "Watera II", "Thunder", 
-	"Thunder II", "Thunder III", "Thunder IV", "Thunder V", "Thundaga", "Thundaga II", "Thundaga III", "Thundaja", 
+	"Thunder II", "Thunder III", "Thunder IV", "Thunder V", "Thunder VI", "Thundaga", "Thundaga II", "Thundaga III", "Thundaja", 
 	"Burst", "Burst II", "Ionohelix", "Thundara", "Thundara II", "Stone", "Stone II", "Stone III", "Stone IV", 
-	"Stone V", "Stonega", "Stonega II", "Stonega III", "Stoneja", "Quake", "Quake II", "Geohelix", "Stonera", 
-	"Stonera II", "Aero", "Aero II", "Aero III", "Aero IV", "Aero V", "Aeroga", "Aeroga II", "Aeroga III", 
+	"Stone V", "Stone VI", "Stonega", "Stonega II", "Stonega III", "Stoneja", "Quake", "Quake II", "Geohelix", "Stonera", 
+	"Stonera II", "Aero", "Aero II", "Aero III", "Aero IV", "Aero V", "Aero VI", "Aeroga", "Aeroga II", "Aeroga III", 
 	"Aeroja", "Tornado", "Tornado II", "Anemohelix", "Aera", "Aera II", "Banish", "Banish II", 
 	"Banishga", "Banishga II", "Banish III", "Holy", "Holy II", "Luminohelix",}
 	
@@ -40,65 +87,94 @@ function get_sets()
 --basesetnames
 
 --precast sets
-	sets.precast.nuke={head="Goetia Petasos +2", body="Anhur Robe", hands="Magavan Mitts", legs="Orvail Pants +1", feet="Chelona Boots",
+	sets.precast.nuke={head="Wicce Petasos +1", body="Anhur Robe", hands="Helios Gloves", feet="Chelona Boots",
+	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	neck="Stoicheion Medal", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
 	left_ring="Prolix Ring", back="Swith Cape",}
 	
-	sets.precast.impact={body="Twilight Cloak", hands="Magavan Mitts", legs="Orvail Pants +1", feet="Chelona Boots",
+	sets.precast.impact={body="Twilight Cloak", hands="Helios Gloves", feet="Chelona Boots",
 	neck="Stoicheion Medal", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
+	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	left_ring="Prolix Ring", back="Swith Cape",}
 	
-	sets.precast.notnuke={head="Nahtirah Hat", body="Anhur Robe", hands="Magavan Mitts", legs="Orvail Pants +1",
+	sets.precast.notnuke={head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs="Orvail Pants +1",
 	feet="Chelona Boots", neck="Jeweled Collar", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
 	left_ring="Prolix Ring", back="Swith Cape",}
 	
 --precast sets
 
+--ws sets
+	sets.precast["Myrkr"]={main="Marin Staff", sub="Elementa Grip", ammo="Ghastly Tathlum", head="Helios Band", body="Wretched Coat",
+	hands="Wicce Gloves +1", legs="Wicce Chausses +1", feet="Helios Boots", neck="Eddy Necklace", waist="Sekhmet Corset", 
+	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
+    back="Toro Cape",}
+--ws sets
+
 --midcast sets
-	sets.midcast.eledot={main="Venabulum", sub="Elementa Grip", ammo="Witchstone", head="Goetia Petasos +2", 
-	body="Vanir Cotehardie", hands="Hagondes Cuffs", legs="Bokwus Slops", feet="Bokwus boots",
+	sets.mpeset={body="Spae. Coat +1",}
+	
+	sets.mindmelter={main="Mindmelter",}
+	
+	sets.midcast.eledot={main="Marin Staff", sub="Elementa Grip", ammo="Witchstone", head="Wicce Petasos +1", 
+	body="Vanir Cotehardie", hands="Hagondes Cuffs +1", legs="Bokwus Slops", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	neck="Eddy Necklace", waist="Aswang Sash", left_ear="Strophadic Earring", right_ear="Gwati Earring",
 	left_ring="Sangoma Ring", right_ring="Strendu Ring", back="Bane Cape",}
 	
-	sets.midcast.darkdot={main="Venabulum", sub="Caecus Grip", ammo="Witchstone", head="Nahtirah Hat", body="Vanir Cotehardie",
-	hands="Hagondes Cuffs", legs="Bokwus Slops", feet="Bokwus boots", neck="Eddy Necklace", waist="Aswang Sash",
+	sets.midcast.darkdot={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Nahtirah Hat", body="Vanir Cotehardie",
+	hands="Hagondes Cuffs +1", legs="Bokwus Slops", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Aswang Sash",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Archon Ring",
 	back="Bane Cape",}
 	
-	sets.midcast.skillenfeeb={main="Venabulum", sub="Mephitis Grip", head="Nahtirah Hat", body="Wizard's Coat",
-	hands="Ayao's Gages", legs="Portent Pants", feet="Bokwus boots", neck="Enfeebling Torque", waist="Aswang Sash",
-	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Diamond Ring", right_ring="Sangoma Ring",
-	back="Bane Cape",}
+	sets.midcast.skillenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", body="Spae. Coat +1",
+	head={ name="Artsieq Hat", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	hands="Lurid Mitts", legs="Portent Pants", neck="Enfeebling Torque", waist="Rumination Sash", right_ring="Sangoma Ring",
+	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Perception Ring", back="Bane Cape",}
 	
-	sets.midcast.mndenfeeb={main="Venabulum", sub="Mephitis Grip", ammo="Witchstone", head="Nahtirah Hat", body="Vanir Cotehardie",
-	hands="Hagondes Cuffs", legs="Bokwus Slops", feet="Bokwus boots", neck="Eddy Necklace", waist="Aswang Sash",
+	sets.midcast.mndenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", ammo="Witchstone", body="Vanir Cotehardie",
+	hands="Lurid Mitts", legs="Bokwus Slops", head={ name="Artsieq Hat", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Rumination Sash",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Levia. Ring",
 	back="Bane Cape",}
 	
-	sets.midcast.doa={main="Venabulum", sub="Caecus Grip", ammo="Witchstone", head="Appetence Crown", body="Vanir Cotehardie",
-	hands="Hagondes Cuffs", legs="Bokwus Slops", feet="Bokwus boots", neck="Eddy Necklace", waist="Fucho-no-Obi",
-	left_ear="Gwati Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring",
+	sets.midcast.doa={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Appetence Crown", body="Vanir Cotehardie",
+	hands="Hagondes Cuffs +1", legs="Bokwus Slops", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", 
+	left_ear="Gwati Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
 	back="Bane Cape",}
 	
-	sets.midcast.nuke.dmg={main="Venabulum", sub="Elementa Grip", ammo="Witchstone", head="Hagondes Hat +1", body="Artsieq Jubbah",
-	hands="Yaoyotl Gloves", legs="Hagondes Pants", feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", 
+	sets.midcast.nuke.dmg={main="Marin Staff", sub="Elementa Grip", ammo="Ghastly Tathlum", head="Helios Band", body="Wretched Coat",
+	hands="Wicce Gloves +1", legs="Wicce Chausses +1", feet="Helios Boots", neck="Eddy Necklace", waist="Sekhmet Corset", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
     back="Toro Cape",}
 	
+	sets.midcast.nuke.macc={}
+	
+	sets.midcast.nuke.dmg.lowtier={}
+	
+	sets.midcast.nuke.dmg.midtier={}
+	
+	sets.midcast.nuke.dmg.hightier={}
+	
+	sets.midcast.nuke.macc.lowtier={}
+	
+	sets.midcast.nuke.macc.midtier={}
+	
+	sets.midcast.nuke.macc.hightier={}
+	
 	sets.midcast.nuke.dark= set_combine(sets.midcast.nuke.dmg, {left_ring="Archon Ring",})
 	
-	sets.midcast.nuke.Impact={main="Venabulum", sub="Elementa Grip", ammo="Witchstone", body="Twilight Cloak",
-	hands="Yaoyotl Gloves", legs="Hagondes Pants", feet="Umbani Boots", neck="Eddy Necklace", waist="Othila Sash", 
+	sets.midcast.nuke.Impact={main="Marin Staff", sub="Elementa Grip", ammo="Witchstone", body="Twilight Cloak",
+	hands="Yaoyotl Gloves", legs="Hagondes Pants +1", feet="Umbani Boots", neck="Eddy Necklace", waist="Othila Sash", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Archon Ring", right_ring="Strendu Ring",
     back="Toro Cape",}
 	
-	sets.midcast.stun={main="Venabulum", sub="Caecus Grip", ammo="Witchstone", head="Nahtirah Hat", body="Vanir Cotehardie",
-	hands="Hagondes Cuffs", legs="Bokwus Slops", feet="Bokwus boots", neck="Eddy Necklace", waist="Ninurta's Sash",
+	sets.midcast.stun={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Nahtirah Hat", body="Vanir Cotehardie",
+	hands="Hagondes Cuffs +1", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Ninurta's Sash",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
 	back="Bane Cape",}
 	
-	sets.midcast.enh={main="Venabulum", sub="Fulcio Grip", ammo="Witchstone", head="Nahtirah Hat", body="Bokwus Robe",
-	hands="Ayao's Gages", legs="Portent Pants", feet="Chelona Boots", neck="Colossus's Torque", waist="Cascade Belt",
+	sets.midcast.enh={main="Marin Staff", sub="Fulcio Grip", ammo="Witchstone", head="Nahtirah Hat", body="Bokwus Robe",
+	hands="Lurid Mitts", legs="Portent Pants", feet="Chelona Boots", neck="Colossus's Torque", waist="Cascade Belt",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Levia. Ring", right_ring="Levia. Ring",
 	back="Swith Cape",}	
 	
@@ -108,9 +184,11 @@ function get_sets()
 --midcast sets
 
 --aftercast sets
-	sets.aftercast.idle={main="Bolelabunga", sub="Genbu's Shield", head="Wivre Hairpin", body="Hagondes Coat +1", hands="Serpentes Cuffs",
+	sets.aftercast.idle={main="Bolelabunga", sub="Genbu's Shield", body="Respite Cloak", hands="Serpentes Cuffs",
 	legs="Nares Trews", feet="Serpentes Sabots", neck="Twilight Torque", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
-	left_ring="Dark Ring", right_ring="Shadow Ring", back="Shadow Mantle",}	
+	left_ring="Defending Ring", right_ring="Shadow Ring", back="Shadow Mantle",}
+	
+	sets.aftercast.pdt= set_combine(sets.aftercast.idle, {hands="Hagondes Cuffs +1", legs="Hagondes Pants +1", feet="Hag. Sabots +1",})
 --aftercast sets
 end
 
@@ -139,8 +217,14 @@ end
 function midcast(spell)
 	if Dark_Nukes:contains(spell.english) then
 		equip(sets.midcast.nuke.dark)
+		if mpe=="on" then
+			equip(sets.mpeset)
+		end
 	elseif Nukes:contains(spell.english) then
 		equip(sets.midcast.nuke.dmg)
+		if mpe=="on" then
+			equip(sets.mpeset)
+		end
 	elseif Elemental_DoT:contains(spell.english) then
 		equip(sets.midcast.eledot)
 	elseif DarkMagic_DoT:contains(spell.english) then
@@ -158,11 +242,28 @@ function midcast(spell)
 	elseif spell.english=="Impact" then
 		equip(sets.midcast.nuke.impact)
 	end
+	if spell.skill== 'Elemental Magic' and buffactive["Poison"] then
+		equip(sets.mindmelter)
+	end
 end
 
 function aftercast(spell)
 	if player.status=="Idle" then
 		equip(sets.aftercast.idle)
+	end
+	if not spell.interrupted then
+        if spell.english == 'Sleep' or spell.english == 'Sleepga' then
+            send_command('@wait 55;input /echo ------- '..spell.english..' is wearing off in 5 seconds -------')
+        elseif spell.english == 'Sleep II' or spell.english == 'Sleepga II' then
+            send_command('@wait 85;input /echo ------- '..spell.english..' is wearing off in 5 seconds -------')
+        elseif spell.english == 'Break' or spell.english == 'Breakga' then
+            send_command('@wait 25;input /echo ------- '..spell.english..' is wearing off in 5 seconds -------')
+        end
+    end
+	if mm=="on" then
+		if not buffactive["Poison"] then
+			send_command('wait 0.5;input /item "El. Pachira Fruit" <me>')
+		end
 	end
 end
 
@@ -173,3 +274,126 @@ function status_change(new,old)
 		equip(sets.aftercast.idle)
 	end
 end
+
+function self_command(command)
+	if command=="ice" then
+		nuke_element="Ice"
+		send_command('alias VI input /ma "Blizzard VI" <t>')
+		send_command('alias V input /ma "Blizzard V" <t>')
+		send_command('alias IV input /ma "Blizzard IV" <t>')
+		send_command('alias III input /ma "Blizzard III" <t>')
+		send_command('alias II input /ma "Blizzard II" <t>')
+		send_command('alias I input /ma "Blizzard" <t>')
+		send_command('alias aja input /ma "Blizzaja" <t>')
+		send_command('alias agaIII input /ma "Blizzaga III" <t>')
+		send_command('alias agaII input /ma "Blizzaga II" <t>')
+		send_command('alias aga input /ma "Blizzaga" <t>')
+		send_command('alias AM input /ma "Freeze" <t>')
+		send_command('alias AM2 input /ma "Freeze II" <t>')
+		send_command('text nuke_element text "ICE NUKES";text nuke_element color 0 255 255')
+		add_to_chat(206, 'ICE NUKES')
+	end
+	if command=="fire" then
+		nuke_element="Fire"
+		send_command('alias VI input /ma "Fire VI" <t>')
+		send_command('alias V input /ma "Fire V" <t>')
+		send_command('alias IV input /ma "Fire IV" <t>')
+		send_command('alias III input /ma "Fire III" <t>')
+		send_command('alias II input /ma "Fire II" <t>')
+		send_command('alias I input /ma "Fire" <t>')
+		send_command('alias aja input /ma "Firaja" <t>')
+		send_command('alias agaIII input /ma "Firaga III" <t>')
+		send_command('alias agaII input /ma "Firaga II" <t>')
+		send_command('alias aga input /ma "Firaga" <t>')
+		send_command('alias AM input /ma "Flare" <t>')
+		send_command('alias AM2 input /ma "Flare II" <t>')
+		send_command('text nuke_element text "FIRE NUKES";text nuke_element color 255 0 0')
+		add_to_chat(206, 'FIRE NUKES')
+	end
+	if command=="earth" then
+		nuke_element="Earth"
+		send_command('alias VI input /ma "Stone VI" <t>')
+		send_command('alias V input /ma "Stone V" <t>')
+		send_command('alias IV input /ma "Stone IV" <t>')
+		send_command('alias III input /ma "Stone III" <t>')
+		send_command('alias II input /ma "Stone II" <t>')
+		send_command('alias I input /ma "Stone" <t>')
+		send_command('alias aja input /ma "Stoneja" <t>')
+		send_command('alias agaIII input /ma "Stonega III" <t>')
+		send_command('alias agaII input /ma "Stonega II" <t>')
+		send_command('alias aga input /ma "Stonega" <t>')
+		send_command('alias AM input /ma "Quake" <t>')
+		send_command('alias AM2 input /ma "Quake II" <t>')
+		send_command('text nuke_element text "EARTH NUKES";text nuke_element color 140 100 0')
+		add_to_chat(206, 'EARTH NUKES')
+	end
+	if command=="wind" then
+		nuke_element="Wind"
+		send_command('alias VI input /ma "Aero VI" <t>')
+		send_command('alias V input /ma "Aero V" <t>')
+		send_command('alias IV input /ma "Aero IV" <t>')
+		send_command('alias III input /ma "Aero III" <t>')
+		send_command('alias II input /ma "Aero II" <t>')
+		send_command('alias I input /ma "Aero" <t>')
+		send_command('alias aja input /ma "Aeroja" <t>')
+		send_command('alias agaIII input /ma "Aeroga III" <t>')
+		send_command('alias agaII input /ma "Aeroga II" <t>')
+		send_command('alias aga input /ma "Aeroga" <t>')
+		send_command('alias AM input /ma "Tornado" <t>')
+		send_command('alias AM2 input /ma "Tornado II" <t>')
+		send_command('text nuke_element text "WIND NUKES";text nuke_element color 0 255 0')
+		add_to_chat(206, 'WIND NUKES')
+	end
+	if command=="water" then
+		nuke_element="Water"
+		send_command('alias VI input /ma "Water VI" <t>')
+		send_command('alias V input /ma "Water V" <t>')
+		send_command('alias IV input /ma "Water IV" <t>')
+		send_command('alias III input /ma "Water III" <t>')
+		send_command('alias II input /ma "Water II" <t>')
+		send_command('alias I input /ma "Water" <t>')
+		send_command('alias aja input /ma "Waterja" <t>')
+		send_command('alias agaIII input /ma "Waterga III" <t>')
+		send_command('alias agaII input /ma "Waterga II" <t>')
+		send_command('alias aga input /ma "Waterga" <t>')
+		send_command('alias AM input /ma "Flood" <t>')
+		send_command('alias AM2 input /ma "Flood II" <t>')
+		send_command('text nuke_element text "WATER NUKES";text nuke_element color 0 0 200')
+		add_to_chat(206, 'WATER NUKES')
+	end
+	if command=="thunder" then
+		nuke_element="Thunder"
+		send_command('alias VI input /ma "Thunder VI" <t>')
+		send_command('alias V input /ma "Thunder V" <t>')
+		send_command('alias IV input /ma "Thunder IV" <t>')
+		send_command('alias III input /ma "Thunder III" <t>')
+		send_command('alias II input /ma "Thunder II" <t>')
+		send_command('alias I input /ma "Thunder" <t>')
+		send_command('alias aja input /ma "Thundaja" <t>')
+		send_command('alias agaIII input /ma "Thundaga III" <t>')
+		send_command('alias agaII input /ma "Thundaga II" <t>')
+		send_command('alias aga input /ma "Thundaga" <t>')
+		send_command('alias AM input /ma "Burst" <t>')
+		send_command('alias AM2 input /ma "Burst II" <t>')
+		send_command('text nuke_element text "THUNDER NUKES";text nuke_element color 255 255 0')
+		add_to_chat(206, 'THUNDER NUKES')
+	end
+	if command=="mpe" then
+		if mpe=="off" then
+			mpe="on"
+			add_to_chat(206, 'MP ECONOMY ON')
+		else
+			mpe="off"
+			add_to_chat(206, 'MP ECONOMY OFF')
+		end
+	end
+	if command=="mm" then
+		if mm=="off" then
+			mm="on"
+			add_to_chat(206, 'MINDMELTER MODE ON')
+		else
+			mm="off"
+			add_to_chat(206, 'MINDMELTER MODE OFF')
+		end
+	end
+end 

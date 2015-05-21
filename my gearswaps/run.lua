@@ -1,6 +1,7 @@
 function get_sets()
 -- include
 	include('boxes.lua')
+	include('organizer-lib.lua')
 -- include
 --aliases
 	send_command('alias ddset gs equip sets.aftercast.tp.lowacc')
@@ -42,7 +43,7 @@ function get_sets()
 --keybinds
 
 --macros setup
-
+	send_command('input /macro book 1;input /macro set 3')
 --macros setup
 
 --variables
@@ -70,70 +71,77 @@ function get_sets()
 --weaponry
 	sets.weaponry.greatsword={main="Aettir", sub="Pole Grip",}
 	
-	sets.weaponry.onesword={main="Anahera Sword",}
+	sets.weaponry.onesword={main="Usonmunku",}
 	
-	sets.weaponry.twoswords={main="Anahera Sword", sub="Halachuinic Sword",}
+	sets.weaponry.twoswords={main="Usonmunku", sub="Usonmunku",}
 
 --precast sets
 	--ja sets
-	sets.precast.ja["Valiance"]={body="Rune. Bandeau +1",}
+	sets.enmity={ammo="Vanir Battery", head="Highwing Helm", hands="Nilas Gloves", feet="Hermes' Sandals",
+	body={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}},
+	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
+	neck="Warder's Charm", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
+	left_ring="Provocare Ring", right_ring="Eihwaz Ring", back="Fravashi Mantle",}
 	
-	sets.precast.ja["Vallation"]={body="Rune. Bandeau +1",}
+	sets.precast.ja["Valiance"]=set_combine(sets.enmity, {body="Rune. Bandeau +1",})
 	
-	sets.precast.ja["Gambit"]={hands="Runeist Mitons +1",}
+	sets.precast.ja["Vallation"]=set_combine(sets.enmity, {body="Rune. Bandeau +1",})
 	
-	sets.precast.ja["Pflug"]={feet="Runeist Bottes +1",}
+	sets.precast.ja["Gambit"]=set_combine(sets.enmity, {hands="Runeist Mitons +1",})
 	
-	sets.precast.ja["Battuta"]={head="Fu. Bandeau +1"}
+	sets.precast.ja["Pflug"]=set_combine(sets.enmity, {feet="Runeist Bottes +1",})
 	
-	sets.precast.ja["Rayke"]={feet="Futhark Boots +1",}
+	sets.precast.ja["Battuta"]=set_combine(sets.enmity, {head="Fu. Bandeau +1"})
 	
-	sets.precast.ja["Elemental Sforzo"]={body="Futhark Coat +1",}
+	sets.precast.ja["Rayke"]=set_combine(sets.enmity, {feet="Futhark Boots +1",})
 	
-	sets.precast.ja["Swordplay"]={hands="Futhark Mitons +1",}
+	sets.precast.ja["Elemental Sforzo"]=set_combine(sets.enmity, {body="Futhark Coat +1",})
 	
-	sets.precast.ja["Lunge"]={ammo="Honed Tathlum", head="A'as Circlet", body="Vanir Cotehardie", hands="Nilas Gloves",
-	legs="Shned. Tights +1", feet="Qaaxo Leggings", neck="Eddy Necklace", waist="Windbuffet Belt +1", 
-	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Epona's Ring", right_ring="Rajas Ring",
+	sets.precast.ja["Swordplay"]=set_combine(sets.enmity, {hands="Futhark Mitons +1",})
+	
+	sets.precast.ja["Lunge"]={ammo="Ghastly Tathlum", head="Highwing Helm", body="Vanir Cotehardie", hands="Nilas Gloves",
+	legs="Limbo Trousers", feet="Qaaxo Leggings", neck="Eddy Necklace", waist="Yamabuki-No-Obi", 
+	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Acumen Ring",
     back="Evasionist's Cape",}
 	
-	sets.precast.ja["Swipe"]={ammo="Honed Tathlum", head="A'as Circlet", body="Vanir Cotehardie", hands="Nilas Gloves",
-	legs="Shned. Tights +1", feet="Qaaxo Leggings", neck="Eddy Necklace", waist="Windbuffet Belt +1", 
-	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Epona's Ring", right_ring="Rajas Ring",
+	sets.precast.ja["Swipe"]={ammo="Ghastly Tathlum", head="Highwing Helm", body="Vanir Cotehardie", hands="Nilas Gloves",
+	legs="Limbo Trousers", feet="Qaaxo Leggings", neck="Eddy Necklace", waist="Yamabuki-No-Obi", 
+	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Acumen Ring",
     back="Evasionist's Cape",}
 	
-	sets.precast.ja["Provoke"]={}
+	sets.precast.ja["Provoke"]=sets.enmity
 	
-	sets.precast.ja["Berserk"]={}
+	sets.precast.ja["Berserk"]=sets.enmity
 	
-	sets.precast.ja["Aggressor"]={}
+	sets.precast.ja["Aggressor"]=sets.enmity
 	
-	sets.precast.ja["Warcry"]={}
+	sets.precast.ja["Warcry"]=sets.enmity
 	
-	sets.precast.ja["Ignirs"]={}
+	sets.precast.ja["Ignirs"]=sets.enmity
 	
-	sets.precast.ja["Gelus"]={}
+	sets.precast.ja["Gelus"]=sets.enmity
 	
-	sets.precast.ja["Flabra"]={}
+	sets.precast.ja["Flabra"]=sets.enmity
 	
-	sets.precast.ja["Tellus"]={}
+	sets.precast.ja["Tellus"]=sets.enmity
 	
-	sets.precast.ja["Sulpor"]={}
+	sets.precast.ja["Sulpor"]=sets.enmity
 	
-	sets.precast.ja["Unda"]={}
+	sets.precast.ja["Unda"]=sets.enmity
 	
-	sets.precast.ja["Lux"]={}
+	sets.precast.ja["Lux"]=sets.enmity
 	
-	sets.precast.ja["Tenebrae"]={}
+	sets.precast.ja["Tenebrae"]=sets.enmity
 	--ja sets
 	
 	--ws sets
-	sets.precast.ws["Resolution"]={ammo="Potestas Bomblet", head="Whirlpool Mask", body="Manibozho Jerkin",
-	hands="Qaaxo Mitaines", legs="Manibozho Brais", feet="Qaaxo Leggings", neck="Light Gorget",
-	waist="Light Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
+	sets.precast.ws["Resolution"]={ammo="Potestas Bomblet", head="Whirlpool Mask",
+	body={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}},
+	hands="Qaaxo Mitaines", legs="Manibozho Brais", feet="Qaaxo Leggings", neck="Fotia Gorget",
+	waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
 	left_ring="Ifrit Ring", right_ring="Epona's Ring", back="Buquwik Cape",}
 	
-	sets.precast.ws["Requiescat"]= set_combine(sets.precast.ws["Resolution"], {neck="Shadow Gorget", waist="Shadow Belt", left_ring="Levia. Ring",})
+	sets.precast.ws["Requiescat"]= set_combine(sets.precast.ws["Resolution"], {neck="Fotia Gorget", waist="Fotia Belt", left_ring="Levia. Ring",})
 	--ws sets
 	
 	--magic sets
@@ -166,21 +174,24 @@ function get_sets()
 	
 	sets.midcast.ma["Aquaveil"]= set_combine(sets.enhancing, {})
 	
-	sets.midcast.ma["Flash"]= set_combine(sets.precast.fc, {neck="Invidia Torque", hands="Futhark Mitons +1", left_ring="Eihwaz Ring",})	
+	sets.midcast.ma["Flash"]= set_combine(sets.precast.fc, {neck="Warder's Charm", hands="Futhark Mitons +1", left_ring="Eihwaz Ring",})	
 --midcast sets
 
 --aftercast sets
 	--tp sets
-	sets.aftercast.tp.lowacc={ammo="Vanir Battery", head="Felistris Mask", 
-	body="Thaumas Coat", hands="Qaaxo Mitaines", legs="Quiahuiz Trousers", feet="Qaaxo Leggings", neck="Asperity Necklace", waist="Windbuffet Belt +1",
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Epona's Ring",
-	right_ring="Rajas Ring", back="Atheling Mantle",}
+	sets.aftercast.tp.lowacc={ammo="Vanir Battery", hands="Nilas Gloves", neck="Asperity Necklace",
+	head={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','STR+6 VIT+6',}},
+	body={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}},
+	waist="Windbuffet Belt +1", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",
+	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
+	feet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}},
+	left_ring="Epona's Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
-	sets.aftercast.tp.medacc= set_combine(sets.aftercast.tp.lowacc, {ammo="Honed Tathlum", legs="Manibozho Brais", feet="Manibozho Boots",})
+	sets.aftercast.tp.medacc= set_combine(sets.aftercast.tp.lowacc, {ammo="Honed Tathlum", back="Letalis Mantle",})
 	
-	sets.aftercast.tp.highacc= set_combine(sets.aftercast.tp.medacc, {head="Whirlpool Mask", neck="Iqabi Necklace", back="Letalis Mantle",})
+	sets.aftercast.tp.highacc= set_combine(sets.aftercast.tp.medacc, {neck="Iqabi Necklace", left_ring="Patricius Ring",})
 	
-	sets.aftercast.tp.vhighacc= set_combine(sets.aftercast.tp.highacc, {waist="Dynamic Belt +1", legs="Ighwa Trousers",})
+	sets.aftercast.tp.vhighacc= set_combine(sets.aftercast.tp.highacc, {left_ear="Zennaroi Earring", right_ear="Brutal Earring", hands="Buremte Gloves", waist="Olseni Belt",})
 	--tp sets
 	
 	--hybrid sets
@@ -193,7 +204,7 @@ function get_sets()
 	
 	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {head="Whirlpool Mask", neck="Iqabi Necklace",})
 	
-	sets.aftercast.hybrid.vhighacc= set_combine(sets.aftercast.hybrid.highacc, {waist="Dynamic Belt +1", legs="Ighwa Trousers",})
+	sets.aftercast.hybrid.vhighacc= set_combine(sets.aftercast.hybrid.highacc, {waist="Olseni Belt", legs="Ighwa Trousers",})
 	--hybrid sets
 	
 	--dt sets
@@ -377,6 +388,6 @@ function self_command(command)
 	--weapon set commands
 end
 
-function unload(new_job)
+function file_unload(new_job)
 	windower.send_command('boxesoff')
 end

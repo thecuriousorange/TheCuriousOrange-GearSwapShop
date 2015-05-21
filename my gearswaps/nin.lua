@@ -64,57 +64,57 @@ function get_sets()
 --ws sets
 	sets.precast.ws["Blade: Rin"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Felistris Mask",
 	neck="Rancor Collar", left_ear="Trux Earring", right_ear="Brutal Earring", body="Hachi. Chainmail", 
-	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Rajas Ring", back="Atheling Mantle", 
+	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Rajas Ring", back="Bleating Mantle", 
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
 	sets.precast.ws["Blade: Retsu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Felistris Mask",
 	neck="Rancor Collar", left_ear="Trux Earring", right_ear="Brutal Earring", body="Hachi. Chainmail", 
-	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Rajas Ring", back="Atheling Mantle", 
+	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Rajas Ring", back="Bleating Mantle", 
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Teki"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Bomb Core", head="Felistris Mask",
-	neck="Breeze Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
-	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Atheling Mantle",
+	sets.precast.ws["Blade: Teki"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
+	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: To"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Bomb Core", head="Felistris Mask",
-	neck="Breeze Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
-	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Atheling Mantle",
+	sets.precast.ws["Blade: To"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
+	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Chi"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Bomb Core", head="Felistris Mask",
-	neck="Breeze Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
-	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Atheling Mantle",
+	sets.precast.ws["Blade: Chi"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
+	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Ei"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Bomb Core", head="Felistris Mask",
-	neck="Breeze Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
-	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Atheling Mantle",
+	sets.precast.ws["Blade: Ei"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
+	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
 	sets.precast.ws["Blade: Jin"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Felistris Mask",
-	neck="Breeze Gorget", left_ear="Trux Earring", right_ear="Brutal Earring", body="Hachi. Chainmail", 
+	neck="Fotia Gorget", left_ear="Trux Earring", right_ear="Brutal Earring", body="Hachi. Chainmail", 
 	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Rajas Ring", back="Rancorous Mantle", 
-	waist="Breeze Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
+	waist="Fotia Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Ten"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Bomb Core", head="Felistris Mask",
-	neck="Breeze Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
-	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Atheling Mantle",
+	sets.precast.ws["Blade: Ten"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
+	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Ku"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Bomb Core", head="Felistris Mask",
-	neck="Breeze Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
-	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Atheling Mantle",
+	sets.precast.ws["Blade: Ku"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
+	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Yu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Bomb Core", head="Felistris Mask",
-	neck="Breeze Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
-	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Atheling Mantle",
+	sets.precast.ws["Blade: Yu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
+	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Kamu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Bomb Core", head="Felistris Mask",
-	neck="Breeze Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
-	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Atheling Mantle",
+	sets.precast.ws["Blade: Kamu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
+	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
 	sets.precast.ws["Blade: Hi"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Uk'uxkaj Cap", 
@@ -140,7 +140,7 @@ function get_sets()
 	sets.aftercast.tp.vhhaste={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Felistris Mask",
 	body="Thaumas Coat", hands="Otronif Gloves +1", legs="Hachiya Hakama", feet="Otronif Boots +1",
 	neck="Rancor Collar", waist="Windbuffet Belt +1", right_ear="Brutal Earring", left_ear="Trux Earring",
-	left_ring="Epona's Ring", right_ring="Rajas Ring", back="Atheling Mantle",}
+	left_ring="Epona's Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
 	sets.aftercast.tp.hhaste= set_combine(sets.aftercast.tp.vhhaste, {legs="Mochizuki Hakama",})
 	
@@ -184,19 +184,19 @@ function get_sets()
 --Evasion sets
 
 --dt sets
-	sets.aftercast.pdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Demonry Stone", head="Otronif Mask +1",
+	sets.aftercast.pdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head="Otronif Mask +1",
 	body="Arhat's Gi +1", hands="Otronif Gloves +1", legs="Otronif Brais +1", feet="Otronif Boots +1", 
 	neck="Twilight Torque", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Iga Mimikazari",
 	left_ring="Patricius Ring", right_ring="Dark Ring", back="Mollusca Mantle",}
 	
-	sets.aftercast.mdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Demonry Stone", head="Whirlpool Mask",
+	sets.aftercast.mdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head="Whirlpool Mask",
 	body="Manibozho Jerkin", hands="Otronif Gloves +1", legs="Nahtirah Trousers", feet="Otronif Boots +1",
 	neck="Twilight Torque", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring",
 	left_ring="Shadow Ring", right_ring="Dark Ring", back="Mollusca Mantle",}
 --dt sets
 
 --idle sets
-	sets.aftercast.idle.day={main="Raimitsukane", sub="Kaitsuburi", ammo="Demonry Stone", head="Oce. Headpiece +1", 
+	sets.aftercast.idle.day={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head="Oce. Headpiece +1", 
 	neck="Wiglen Gorget", left_ear="ethereal Earring", right_ear="Sanare Earring", body="Arhat's Gi +1", 
 	hands="Otronif Gloves +1", left_ring="Shadow Ring", right_ring="Sheltered Ring", back="Shadow Mantle", waist="Flume Belt", legs="Otronif Brais +1", feet="Danzo Sune-ate",}
 	
@@ -346,6 +346,6 @@ function self_command(command)
 --idle set commands
 end
 
-function unload(new_job)
+function file_unload(new_job)
 	windower.send_command('boxesoff')
 end

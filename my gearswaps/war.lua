@@ -1,7 +1,6 @@
 function get_sets()
 -- includes
-	include('boxes.lua')
-	include('skillchain-elements.lua')
+include('tco-include.lua')
 -- includes
 --text box setup
 
@@ -112,7 +111,7 @@ function get_sets()
 	
 	sets.ws.damage["Ukko's Fury"]={ammo="Yetshila", head="Felistris Mask", body="Mes. Haubergeon",
 	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}},
-	neck="Light Gorget", waist="Light Belt", right_ear="Brutal Earring",
+	neck="Fotia Gorget", waist="Fotia Belt", right_ear="Brutal Earring",
     legs={ name="Miki. Cuisses", augments={'Attack+15','Accuracy+10','STR+10',}},
     feet={ name="Hrafn Gambieras", augments={'Crit. hit damage +9%',}},
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
@@ -124,7 +123,7 @@ function get_sets()
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
 	legs={ name="Miki. Cuisses", augments={'Attack+15','Accuracy+10','STR+10',}},
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
-	feet="Whirlpool Greaves", neck="Light Gorget", waist="Light Belt", right_ear="Brutal Earring",
+	feet="Whirlpool Greaves", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Brutal Earring",
 	left_ring="Terrasoul Ring", right_ring="Terrasoul Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Upheaval"]={}
@@ -395,6 +394,3 @@ function self_command(command)
 	-- reraise lock toggle command rule end	
 end
 
-function unload(new_job)
-	windower.send_command('boxesoff')
-end

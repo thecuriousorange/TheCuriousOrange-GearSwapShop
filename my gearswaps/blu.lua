@@ -1,4 +1,5 @@
 function get_sets()
+	include('organizer-lib.lua')
 	windower.send_command('bind @F11 gs c weaponrytoggle')
 	windower.send_command('bind @F12 gs c wstoggle')
 	windower.send_command('bind @F1 gs c dd')
@@ -25,6 +26,24 @@ function get_sets()
 	sets.wsacc=T{}
 --variables
 
+--augmented gear
+	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','STR+6 VIT+6',}}
+	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}}
+	taeonhands={ name="Taeon Gloves", augments={'Attack+25','"Triple Atk."+2','Crit. hit damage +2%',}}
+	taeonlegs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}
+	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
+	
+	heliosband={name="Helios Band", augments={'Mag. Acc. +15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+1%'}}
+	heliosgloves={ name="Helios Gloves", augments={'"Fast Cast"+5','Mag. Evasion+10','INT+5 MND+5',}}
+	heliosboots={ name="Helios Boots", augments={'"Mag. Atk. Bns. +25"','Magic Crit. Hit Rate +3','MND+3',}}
+	
+	
+	claid1={ name="Claidheamh Soluis", augments={'Accuracy+9 Attack+9','Dbl. Atk.+3','STR+13 VIT+13',}}
+	claid2={ name="Claidheamh Soluis", augments={'Accuracy+10','Dbl. Atk.+2','STR+15 DEX+15',}}
+	gab1={ name="Gabaxorea", augments={'MP+30','"Mag. Atk. Bns."+10','INT+7',}}
+	gab2={ name="Gabaxorea", augments={'MP+30','"Mag. Atk. Bns."+10','INT+7',}}
+--augmented gear
+
 --indexes
 	sets.idle={}
 	sets.idle.index={'refresh','regen','dt'}
@@ -32,11 +51,11 @@ function get_sets()
 	
 	sets.tp={}
 	sets.tp.buffed={}
-	sets.tp.buffed.index={'accI','accII','accIII','accIV','accV','accVI','accVII','accVIII','accIX','accX','accXI'}
+	sets.tp.buffed.index={'accI','accII','accIII'}
 	buffed_ind=1
 	
 	sets.tp.unbuffed={}
-	sets.tp.unbuffed.index={'accI','accII','accIII','accIV','accV','accVI','accVII','accVIII','accIX','accX','accXI'}
+	sets.tp.unbuffed.index={'accI','accII','accIII'}
 	unbuffed_ind=1
 	
 	sets.hybrid={}
@@ -56,18 +75,20 @@ function get_sets()
 --basesets
 
 --weaponry
-	sets.weaponry.index={'buraana','buragenbu','bolebura','bolebura','boletax','bolegenbu'}
+	sets.weaponry.index={'claids','gabax','claidgab','claidgenbu','boletax','bolegenbu'}
 	weaponry_ind=1
-	sets.weaponry.buraana={main="Buramenk'ah", sub="Anahera Saber",}
-	sets.weaponry.buragenbu={main="Buramenk'ah", sub="Genbu's Shield",}
-	sets.weaponry.bolebura={main="Bolelabunga", sub="Buramenk'ah"}
+	
+	sets.weaponry.claids={main=claid1, sub=claid2,}
+	sets.weaponry.claidgenbu={main=claid1, sub="Genbu's Shield",}
 	sets.weaponry.boletax={main="Bolelabunga", sub="Tamaxchi"}
 	sets.weaponry.bolegenbu={main="Bolelabunga", sub="Genbu's Shield",}
+	sets.weaponry.gabax={main=gab1, sub=gab2,}
+	sets.weaponry.claidgab={main=claid1, sub=gab2,}
 --weaponry
 
 --precast sets
 	--magic sets
-	sets.precast.fc={head="Haruspex Hat", body="Vanir Cotehardie", hands="Thaumas Gloves", legs="Enif Cosciales", feet="Chelona Boots", 
+	sets.precast.fc={head="Haruspex Hat", body="Vanir Cotehardie", hands=heliosgloves, legs="Enif Cosciales", feet="Chelona Boots", 
 	neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}}, 
 	waist="Siegel Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring", left_ring="Prolix Ring",
 	right_ring="Veneficium Ring", back="Swith Cape",}
@@ -80,7 +101,7 @@ function get_sets()
 	--sword weaponskill sets
 	sets.ws.damage["Fast Blade"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Assim. Jubbah +1", hands="Assim. Bazu. +1",
-	ring1="Epona's ring", ring2="Rajas ring", back="Atheling mantle", waist="Windbuffet Belt +1",
+	ring1="Epona's ring", ring2="Rajas ring", back="Bleating Mantle", waist="Windbuffet Belt +1",
 	legs="Manibozho brais", feet="Qaaxo Leggings"}
 	
 	sets.ws.accuracy["Fast Blade"]={ammo="Honed Tathlum", head="Whirlpool Mask", neck="Asperity Necklace",
@@ -89,24 +110,24 @@ function get_sets()
 	legs="Manibozho brais", feet="Qaaxo Leggings"}
 	
 	sets.ws.damage["Burning Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes cuffs",
-	ring1="Archon ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
-	legs="Hagondes pants",feet="Hagondes sabots"}
+	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
+	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.accuracy["Burning Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes cuffs",
-	ring1="Archon ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
-	legs="Hagondes pants",feet="Hagondes sabots"}
+	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
+	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.damage["Red Lotus Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes cuffs",
-	ring1="Archon ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
-	legs="Hagondes pants",feet="Hagondes sabots"}
+	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
+	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.accuracy["Red Lotus Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes cuffs",
-	ring1="Archon ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
-	legs="Hagondes pants",feet="Hagondes sabots"}
+	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
+	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.damage["Flat Blade"]={ammo="Honed Tathlum", head="Whirlpool Mask", neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Assim. Jubbah +1", hands="Assim. Bazu. +1",
@@ -119,28 +140,28 @@ function get_sets()
 	legs="Manibozho brais", feet="Qaaxo Leggings"}
 	
 	sets.ws.damage["Shining Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes cuffs",
-	ring1="Archon ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
-	legs="Hagondes pants",feet="Hagondes sabots"}
+	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
+	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.accuracy["Shining Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes cuffs",
-	ring1="Archon ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
-	legs="Hagondes pants",feet="Hagondes sabots"}
+	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
+	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.damage["Seraph Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes cuffs",
-	ring1="Archon ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
-	legs="Hagondes pants",feet="Hagondes sabots"}
+	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
+	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.accuracy["Seraph Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes cuffs",
-	ring1="Archon ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
-	legs="Hagondes pants",feet="Hagondes sabots"}
+	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
+	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.damage["Circle Blade"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Assim. Jubbah +1", hands="Assim. Bazu. +1",
-	ring1="Epona's ring", ring2="Rajas ring", back="Atheling mantle", waist="Windbuffet Belt +1",
+	ring1="Epona's ring", ring2="Rajas ring", back="Bleating Mantle", waist="Windbuffet Belt +1",
 	legs="Manibozho brais", feet="Qaaxo Leggings"}
 	
 	sets.ws.accuracy["Circle Blade"]={ammo="Honed Tathlum", head="Whirlpool Mask", neck="Asperity Necklace",
@@ -162,47 +183,51 @@ function get_sets()
 	ring1="Epona's ring", ring2="Rajas ring", back="Letalis mantle", waist="Windbuffet Belt +1",
 	legs="Manibozho brais", feet="Qaaxo Leggings"}
 	
-	sets.ws.damage["Savage Blade"]={}
+	sets.ws.damage["Savage Blade"]={ammo="Cheruski Needle", head="Whirlpool mask", neck="Fotia Gorget", ear1="Brutal Earring",
+	ear2="Moonshade earring", body="Assim. Jubbah +1", hands="Assim. Bazu. +1", ring1="Epona's ring", ring2="Levia. Ring",
+	back="Bleating Mantle", waist="Fotia Belt",legs="Quiahuiz trousers", feet="Qaaxo Leggings"}
 	
-	sets.ws.accuracy["Savage Blade"]={}
+	sets.ws.accuracy["Savage Blade"]={ammo="Honed Tathlum", head="Whirlpool mask", neck="Fotia Gorget", ear1="Bladeborn Earring",
+	ear2="Steelflash earring", body="Assim. Jubbah +1", hands="Assim. Bazu. +1", ring1="Mars's ring", ring2="Levia. Ring",
+	back="Bleating Mantle", waist="Fotia Belt",legs="Quiahuiz trousers", feet="Qaaxo Leggings"}
 	
-	sets.ws.damage["Expiation"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Shadow Gorget",
+	sets.ws.damage["Expiation"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Assim. Jubbah +1", hands="Assim. Bazu. +1",
-	ring1="Epona's ring", ring2="Rajas ring", back="Atheling Mantle", waist="Shadow Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back="Bleating Mantle", waist="Fotia Belt",
 	legs="Manibozho brais", feet="Qaaxo Leggings"}
 	
-	sets.ws.accuracy["Expiation"]={ammo="Honed Tathlum", head="Uk'uxkaj cap", neck="Shadow Gorget",
+	sets.ws.accuracy["Expiation"]={ammo="Honed Tathlum", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Bladeborn Earring", ear2="Steelflash earring", body="Assim. Jubbah +1",hands="Assim. Bazu. +1",
-	ring1="Epona's ring", ring2="Mars's ring", back="Letalis Mantle", waist="Shadow Belt",
+	ring1="Epona's ring", ring2="Mars's ring", back="Letalis Mantle", waist="Fotia Belt",
 	legs="Manibozho brais", feet="Qaaxo Leggings"}
 	
 	sets.ws.damage["Sanguine Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes cuffs",
+	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
 	ring1="Archon ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata Belt", 
-	legs="Hagondes pants",feet="Hagondes sabots"}
+	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.accuracy["Sanguine Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes cuffs",
+	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
 	ring1="Archon ring", ring2="Acumen ring", back="Refraction Cape",waist="Caudata Belt", 
-	legs="Hagondes pants",feet="Hagondes sabots"}
+	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
-	sets.ws.damage["Chant du Cygne"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Light Gorget",
+	sets.ws.damage["Chant du Cygne"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Assim. Jubbah +1", hands="Assim. Bazu. +1",
 	ring1="Epona's ring", ring2="Ramuh Ring", back="Rancorous mantle", waist="Windbuffet Belt +1",
 	legs="Manibozho brais", feet="Qaaxo Leggings"}
 	
-	sets.ws.accuracy["Chant du Cygne"]={ammo="Honed Tathlum", head="Uk'uxkaj cap", neck="Light Gorget",
+	sets.ws.accuracy["Chant du Cygne"]={ammo="Honed Tathlum", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Bladeborn Earring", ear2="Steelflash earring", body="Assim. Jubbah +1",hands="Assim. Bazu. +1",
-	ring1="Rajas ring", ring2="Ramuh Ring", back="Rancorous mantle", waist="Light belt",
+	ring1="Rajas ring", ring2="Ramuh Ring", back="Rancorous mantle", waist="Fotia Belt",
 	legs="Manibozho brais", feet="Qaaxo Leggings"}
 	
-	sets.ws.damage["Requiescat"]={ammo="Cheruski Needle", head="Whirlpool mask", neck="Shadow Gorget", ear1="Brutal Earring",
+	sets.ws.damage["Requiescat"]={ammo="Cheruski Needle", head="Whirlpool mask", neck="Fotia Gorget", ear1="Brutal Earring",
 	ear2="Moonshade earring", body="Assim. Jubbah +1", hands="Assim. Bazu. +1", ring1="Epona's ring", ring2="Levia. Ring",
-	back="Atheling mantle", waist="Shadow belt",legs="Quiahuiz trousers", feet="Qaaxo Leggings"}
+	back="Bleating Mantle", waist="Fotia Belt",legs="Quiahuiz trousers", feet="Qaaxo Leggings"}
 	
-	sets.ws.accuracy["Requiescat"]={ammo="Honed Tathlum", head="Whirlpool mask", neck="Shadow Gorget", ear1="Bladeborn Earring",
+	sets.ws.accuracy["Requiescat"]={ammo="Honed Tathlum", head="Whirlpool mask", neck="Fotia Gorget", ear1="Bladeborn Earring",
 	ear2="Steelflash earring", body="Assim. Jubbah +1", hands="Assim. Bazu. +1", ring1="Mars's ring", ring2="Levia. Ring",
-	back="Atheling mantle", waist="Shadow belt",legs="Quiahuiz trousers", feet="Qaaxo Leggings"}
+	back="Bleating Mantle", waist="Fotia Belt",legs="Quiahuiz trousers", feet="Qaaxo Leggings"}
 	
 	--sword weaponskill sets
 	
@@ -254,7 +279,7 @@ function get_sets()
 	
 	sets.JA.ChainAffinity = {feet="Assim. Charuqs +1"}
 	
-	sets.JA.BurstAffinity = {feet="Mavi Basmak +2"}
+	sets.JA.BurstAffinity = {legs="Assim. Shalwar +1", feet="Mavi Basmak +2"}
 	
 	sets.JA.Efflux = {legs="Mavi Tayt +2"}
 	
@@ -272,32 +297,32 @@ function get_sets()
 	sets.BlueMagic.STR = {ammo="Mavi Tathlum",
 			      head="Luhlaza Keffiyeh",neck="Mavi Scarf",ear1="Psystorm earring",ear2="Lifestorm earring",
 			      body="Assim. Jubbah +1",hands="Assim. Bazu. +1",ring1="Ifrit Ring",ring2="Rajas ring",
-			      back="Cornflower cape",waist="Wanion belt",legs="Quiahuiz trousers",feet="Luhlaza Charuqs"}
+			      back="Cornflower cape",waist="Wanion belt",legs="Quiahuiz trousers", feet=heliosboots}
 						  
 	sets.BlueMagic.STRDEX = {ammo="Cheruski needle",
 				 head="Luhlaza Keffiyeh",neck="Mavi Scarf",ear1="Psystorm earring",ear2="Lifestorm earring",
 				 body="Assim. Jubbah +1",hands="Assim. Bazu. +1",ring1="Ifrit Ring",ring2="Rajas ring",
-				 back="Cornflower cape",waist="Wanion belt",legs="Manibozho brais",feet="Luhlaza Charuqs"}
+				 back="Cornflower cape",waist="Wanion belt",legs="Manibozho brais", feet=heliosboots,}
 							
 	sets.BlueMagic.STRVIT = {ammo="Mavi Tathlum",
 				 head="Luhlaza Keffiyeh",neck="Mavi Scarf",ear1="Psystorm earring",ear2="Lifestorm earring",
 				 body="Assim. Jubbah +1",hands="Assim. Bazu. +1",ring1="Ifrit Ring",ring2="Rajas ring",
-				 back="Cornflower cape",waist="Caudata belt",legs="Quiahuiz trousers",feet="Luhlaza Charuqs"}
+				 back="Cornflower cape",waist="Caudata belt",legs="Quiahuiz trousers",feet=heliosboots,}
 							 
 	sets.BlueMagic.STRMND = {ammo="Mavi Tathlum",
 				 head="Luhlaza Keffiyeh",neck="Mavi Scarf",ear1="Psystorm earring",ear2="Lifestorm earring",
 				 body="Assim. Jubbah +1",hands="Assim. Bazu. +1",ring1="Levia. Ring",ring2="Rajas Ring",
-				 back="Cornflower cape",waist="Aswang sash",legs="Quiahuiz trousers",feet="Luhlaza Charuqs"}
+				 back="Cornflower cape",waist="Aswang sash",legs="Quiahuiz trousers",feet=heliosboots,}
 								
 	sets.BlueMagic.AGI = {ammo="Mavi Tathlum",
 		              head="Luhlaza Keffiyeh",neck="Mavi Scarf",ear1="Psystorm earring",ear2="Lifestorm earring",
-			      body="Assim. Jubbah +1",hands="Iuitl wristbands",ring1="Ifrit Ring",ring2="Rajas ring",
-		              back="Cornflower cape",waist="Aswang Sash",legs="Quiahuiz trousers",feet="Luhlaza Charuqs"}
+			      body="Assim. Jubbah +1",hands="Iuitl Wristbands +1",ring1="Ifrit Ring",ring2="Rajas ring",
+		              back="Cornflower cape",waist="Aswang Sash",legs="Quiahuiz trousers",feet=heliosboots,}
 						  
 	sets.BlueMagic.INT = {ammo="Mavi Tathlum",
-			      head="Hagondes Hat +1",neck="Eddy necklace",ear1="Crematio earring",ear2="Friomisi earring",
-			      body="Hagondes Coat +1",hands="Mv. Bazubands +2",ring1="Acumen ring",ring2="Diamond ring",
-			      back="Cornflower cape",waist="Aswang Sash",legs="Hagondes pants",feet="Mavi Basmak +2"}
+			      head=heliosband,neck="Eddy necklace",ear1="Crematio earring",ear2="Friomisi earring",
+			      body="Vanir Cotehardie",hands="Hagondes Cuffs +1",ring1="Strendu Ring",ring2="Acumen ring",
+			      back="Cornflower cape",waist="Yamabuki-no-obi",legs="Hagondes Pants +1",feet=heliosboots,}
 						  
 	sets.BlueMagic.Cures = {ammo="Mavi Tathlum",
 			        head="Uk'uxkaj cap",neck="Mavi Scarf",ear1="Loquac. Earring",ear2="Novia earring",
@@ -307,17 +332,17 @@ function get_sets()
 	sets.BlueMagic.Stun = {ammo="Mavi Tathlum",
 			       head="Assim. Keffiyeh +1",neck="Eddy necklace",ear1="Loquac. Earring",
 			       body="Assim. Jubbah +1",hands="Mv. Bazubands +2",ring1="Prolix ring",ring2="Sangoma ring",
-			       back="Cornflower cape",waist="Hurch'lan Sash",legs="Mavi Tayt +2",feet="Luhlaza Charuqs"}
+			       back="Cornflower cape",waist="Hurch'lan Sash",legs="Mavi Tayt +2",feet=heliosboots,}
 						   
 	sets.BlueMagic.HeavyStrike = {ammo="Honed Tathlum",
 			              head="Whirlpool mask",neck="Mavi Scarf",ear1="Steelflash Earring",ear2="Heartseeker earring",
 			              body="Assim. Jubbah +1",hands="Buremte gloves",ring1="Ifrit Ring",ring2="Rajas ring",
-			              back="Cornflower cape",waist="Dynamic belt +1",legs="Manibozho brais",feet="Assim. Charuqs +1"}
+			              back="Cornflower cape",waist="Dynamic belt +1",legs="Manibozho brais",feet=heliosboots,}
 								  
 	sets.BlueMagic.ChargedWhisker = {ammo="Mavi Tathlum",
 			                 head="Uk'uxkaj cap",neck="Eddy necklace",ear1="Crematio earring",ear2="Friomisi earring",
-			                 body="Hagondes Coat +1",hands="Assim. Bazu. +1",ring1="Diamond ring",ring2="Rajas ring",
-				         back="Cornflower cape",waist="Aswang Sash",legs="Hagondes pants",feet="Mavi Basmak +2"} 
+			                 body="Vanir Cotehardie",hands="Assim. Bazu. +1",ring1="Diamond ring",ring2="Rajas ring",
+				         back="Cornflower cape",waist="Aswang Sash",legs="Hagondes Pants +1",feet="Mavi Basmak +2"} 
 	
 	sets.BlueMagic.WhiteWind = {ammo="Mavi Tathlum",
 				    head="Luhlaza Keffiyeh",neck="Jeweled collar",ear1="Ethereal earring",ear2="Loquac. Earring",
@@ -326,7 +351,7 @@ function get_sets()
 									 
 	sets.BlueMagic.MagicAccuracy = {ammo="Mavi Tathlum",
 				        head="Assim. Keffiyeh +1",neck="Eddy necklace",ear1="Psystorm earring",ear2="Lifestorm earring",
-				        body="Assim. Jubbah +1",hands="Hagondes cuffs",ring1="Strendu Ring",ring2="Sangoma ring",
+				        body="Assim. Jubbah +1",hands="Hagondes Cuffs +1",ring1="Strendu Ring",ring2="Sangoma ring",
 				        back="Cornflower cape",waist="Aswang Sash",legs="Mavi Tayt +2",feet="Luhlaza Charuqs"} 
 									 
 	sets.BlueMagic.Skill = {ammo="Mavi Tathlum",
@@ -344,53 +369,20 @@ function get_sets()
 	
 --aftercast sets
 	--tp sets	
-	sets.tp.buffed.accI={ammo="Vanir Battery", head="Iuitl Headgear +1",
-    body="Thaumas Coat", hands={ name="Qaaxo Mitaines", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
-	legs={ name="Qaaxo Tights", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}}, feet={ name="Manibozho boots", augments={'Attack+15','Accuracy+10','STR+10',}},
-	neck="Asperity Necklace", waist="Windbuffet Belt +1", left_ear="Suppanomimi", right_ear="Brutal Earring",
-	left_ring="Epona's Ring", right_ring="Rajas Ring", back="Atheling Mantle",}
+	sets.tp.buffed.accI={ammo="Vanir Battery", head="Iuitl Headgear +1", feet=taeonfeet,
+    body="Thaumas Coat", hands=taeonhands, legs=taeonlegs, neck="Asperity Necklace",
+	waist="Windbuffet Belt +1", left_ear="Suppanomimi", right_ear="Brutal Earring",
+	left_ring="Epona's Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
-	sets.tp.buffed.accII= set_combine(sets.tp.buffed.accI, {ammo="Honed Tathlum",})
+	sets.tp.buffed.accII= set_combine(sets.tp.buffed.accI, {ammo="Honed Tathlum", head=taeonhead, neck="Iqabi Necklace",})
 	
-	sets.tp.buffed.accIII= set_combine(sets.tp.buffed.accII, {back="Letalis Mantle",})
-	
-	sets.tp.buffed.accIV= set_combine(sets.tp.buffed.accIII, {waist="Hurch'lan Sash",})
-	
-	sets.tp.buffed.accV= set_combine(sets.tp.buffed.accIV, {right_ring="Mars's Ring",})
-	
-	sets.tp.buffed.accVI= set_combine(sets.tp.buffed.accV, {neck="Iqabi Necklace",})
-	
-	sets.tp.buffed.accVII= set_combine(sets.tp.buffed.accVI, {left_ear="Heartseeker Earring", right_ear="Dudgeon Earring",})
-	
-	sets.tp.buffed.accVIII= set_combine(sets.tp.buffed.accVII, {legs="Manibozho Brais"})
-	
-	sets.tp.buffed.accIX= set_combine(sets.tp.buffed.accVIII, {head="Whirlpool Mask",})
-	
-	sets.tp.buffed.accX= set_combine(sets.tp.buffed.accIX, {left_ring="Patricius Ring",})
-	
-	sets.tp.buffed.accXI= set_combine(sets.tp.buffed.accX, {body="Mekosu. Harness",})
+	sets.tp.buffed.accIII= set_combine(sets.tp.buffed.accII, {waist="Olseni Belt", right_ear="Zennaroi Earring", back="Letalis Mantle",})
 	
 	sets.tp.unbuffed.accI= set_combine(sets.tp.buffed.accI, {left_ear="Heartseeker Earring", right_ear="Dudgeon Earring",})
 	
-	sets.tp.unbuffed.accII= set_combine(sets.tp.unbuffed.accI, {ammo="Honed Tathlum",})
+	sets.tp.unbuffed.accII= set_combine(sets.tp.unbuffed.accI, {ammo="Honed Tathlum", head=taeonhead, neck="Iqabi Necklace",})
 	
-	sets.tp.unbuffed.accIII= set_combine(sets.tp.unbuffed.accII, {back="Letalis Mantle",})
-	
-	sets.tp.unbuffed.accIV= set_combine(sets.tp.unbuffed.accIII, {waist="Hurch'lan Sash",})
-	
-	sets.tp.unbuffed.accV= set_combine(sets.tp.buffed.accIV, {right_ring="Mars's Ring",})
-	
-	sets.tp.unbuffed.accVI= set_combine(sets.tp.unbuffed.accV, {neck="Iqabi Necklace",})
-	
-	sets.tp.unbuffed.accVII= set_combine(sets.tp.unbuffed.accVI, {legs="Manibozho Brais"})
-	
-	sets.tp.unbuffed.accVIII= set_combine(sets.tp.unbuffed.accVII, {head="Whirlpool Mask",})
-	
-	sets.tp.unbuffed.accIX= set_combine(sets.tp.unbuffed.accVIII, {left_ring="Patricius Ring",})
-	
-	sets.tp.unbuffed.accX= set_combine(sets.tp.unbuffed.accIX, {body="Manibozho Jerkin",})
-	
-	sets.tp.unbuffed.accXI= sets.tp.unbuffed.accX
+	sets.tp.unbuffed.accIII= set_combine(sets.tp.unbuffed.accII, {waist="Olseni Belt", left_ear="Suppanomimi", right_ear="Zennaroi Earring", back="Letalis Mantle",})
 	
 	sets.learning={main="Nmd. Moogle Rod", sub="Genbu's Shield", ammo="Mavi Tathlum",
 	head={ name="Luhlaza Keffiyeh", augments={'Enhances "Convergence" effect',}},
@@ -401,7 +393,7 @@ function get_sets()
 	--tp sets
 	
 	--idle sets
-	sets.idle.refresh={ammo="Demonry Stone", head="Wivre Hairpin", body="Mekosu. Harness", hands="Serpentes Cuffs",
+	sets.idle.refresh={ammo="Vanir Battery", body="Respite Cloak", hands="Serpentes Cuffs",
 	legs="Blood Cuisses", feet="Serpentes Sabots", neck="Twilight Torque", waist="Flume Belt", left_ear="Sanare Earring",
     right_ear="Ethereal Earring", left_ring="Shadow Ring", right_ring="Sheltered Ring", back="Shadow Mantle",}
 	
@@ -411,7 +403,7 @@ function get_sets()
 	--idle sets
 	
 	--dt sets
-	sets.pdt= set_combine(sets.idle.dt, {body="Iuitl Vest +1", back="Mollusca Mantle", legs="Osmium Cuisses",})
+	sets.pdt= set_combine(sets.idle.dt, {body="Iuitl Vest +1", back="Mollusca Mantle", legs="Hagondes Pants +1",})
 	sets.mdt= set_combine(sets.pdt, {head="Hagondes Hat +1", body="Vanir Cotehardie", hands="Qaaxo Mitaines", right_ring="Shadow Ring", feet="Qaaxo Leggings",})
 --aftercast sets
 end
@@ -449,7 +441,7 @@ function midcast(spell)
 		end
 	end
 		
-	if spell.english == 'Disseverment' or spell.english == 'Hysteric Barrage' or spell.english == 'Frenetic Rip' or spell.english == 'Seedspray' or spell.english == 'Vanity Dive' or spell.english == 'Goblin Rush' or spell.english == 'Paralyzing Triad' then
+	if spell.english == 'Disseverment' or spell.english == 'Hysteric Barrage' or spell.english == 'Frenetic Rip' or spell.english == 'Seedspray' or spell.english == 'Vanity Dive' or spell.english == 'Goblin Rush' or spell.english == 'Paralyzing Triad' or spell.english=='Sinker Drill' then
 		equip(sets.BlueMagic.STRDEX)
 		if buffactive['Chain Affinity'] then
 			equip(sets.JA.ChainAffinity)
@@ -489,7 +481,7 @@ function midcast(spell)
 		end
 	end
 	
-	if spell.english == 'Gates of Hades' or spell.english == 'Leafstorm' or spell.english == 'Firespit' or spell.english == 'Acrid Stream' or spell.english == 'Regurgitation' or spell.english == 'Corrosive Ooze' or spell.english == 'Thermal Pulse' or spell.english == 'Magic Hammer' or spell.english == 'Evryone. Grudge' or spell.english == 'Water Bomb' or spell.english == 'Dark Orb' or spell.english == 'Thunderbolt' or spell.english == 'Tem. Upheaval' or spell.english == 'Embalming Earth' or spell.english == 'Foul Waters' or spell.english == 'Rending Deluge' or spell.english == 'Droning Whirlwind' then
+	if spell.english == 'Gates of Hades' or spell.english == 'Leafstorm' or spell.english == 'Firespit' or spell.english == 'Acrid Stream' or spell.english == 'Regurgitation' or spell.english == 'Corrosive Ooze' or spell.english == 'Thermal Pulse' or spell.english == 'Magic Hammer' or spell.english == 'Evryone. Grudge' or spell.english == 'Water Bomb' or spell.english == 'Dark Orb' or spell.english == 'Thunderbolt' or spell.english == 'Tem. Upheaval' or spell.english == 'Embalming Earth' or spell.english == 'Foul Waters' or spell.english == 'Rending Deluge' or spell.english == 'Droning Whirlwind' or spell.english == 'Subduction' then
 		equip(sets.BlueMagic.INT)
 		if buffactive['Burst Affinity'] then
 			equip(sets.JA.BurstAffinity)
@@ -523,70 +515,46 @@ function midcast(spell)
 		equip(sets.BlueMagic.MagicAccuracy)
 	end
 	
-	if spell.english == 'MP Drainkiss' or spell.english == 'Digest' or spell.english == 'Blood Saber' or spell.english == 'Blood Drain' or spell.english == 'Osmosis' or spell.english == 'Occultation' or spell.english == 'Magic Barrier' or spell.english == 'Diamondhide' or spell.english == 'Metallic Body' or spell.english == 'Retinal Glare' then
+	if spell.english == 'MP Drainkiss' or spell.english == 'Digest' or spell.english == 'Blood Saber' or spell.english == 'Blood Drain' or spell.english == 'Osmosis' or spell.english == 'Occultation' or spell.english == 'Magic Barrier' or spell.english == 'Diamondhide' or spell.english == 'Metallic Body' or spell.english == 'Retinal Glare' or spell.english == 'Barrier Tusk' then
 		equip(sets.BlueMagic.SkillRecast)
 		if buffactive['Diffusion'] then
 			equip(sets.JA.Diffusion)
 		end
 	end
 	
-	if spell.english == 'Cocoon' or spell.english == 'Harden Shell' or spell.english == 'Animating Wail' or spell.english == 'Battery Charge' or spell.english == 'Nat. Meditation' or spell.english == 'Carcharian Verve' or spell.english == 'O. Counterstance' or spell.english == 'Barrier Tusk' or spell.english == 'Saline Coat' or spell.english == 'Regeneration' then
+	if spell.english == 'Cocoon' or spell.english == 'Harden Shell' or spell.english == 'Animating Wail' or spell.english == 'Battery Charge' or spell.english == 'Nat. Meditation' or spell.english == 'Carcharian Verve' or spell.english == 'O. Counterstance' or spell.english == 'Barrier Tusk' or spell.english == 'Saline Coat' or spell.english == 'Regeneration' or spell.english== 'Erratic Flutter'then
 		if buffactive['Diffusion'] then
 			equip(sets.JA.Diffusion)
 		end
 	end
+	if spell.skill == 'Elemental Magic' then
+		equip(sets.BlueMagic.INT)
+	end
 end
 
 function aftercast(spell)
-	if player.status=="Engaged" then
-		if TPType=="DD" then
-			if buffactive.march and (buffactive.march==2 or buffactive.embrava) then
-				equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
-				equip(sets.tp.buffed[sets.tp.buffed.index[buffed_ind]])			
-			else
-				equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
-				equip(sets.tp.unbuffed[sets.tp.unbuffed.index[unbuffed_ind]])
-			end
-		elseif TPType=="Hybrid" then
-			equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
-			equip(sets.hybrid[sets.hybrid.index[hybrid_ind]])
-		elseif TPType=="PDT" then
-			equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
-			equip(sets.pdt)
-		elseif TPType=="MDT" then
-			equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
-			equip(sets.mdt)
-		end
-	else
-		equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
-		equip(sets.idle[sets.idle.index[idle_ind]])
-	end
+	status_change(player.status)
 end
 
 function status_change(new,old)
 	if new=="Engaged" then
 		if TPType=="DD" then
-			if buffactive.march and (buffactive.march==2 or buffactive.embrava) then
-				equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
+			if buffactive.march and (buffactive.march==2 or buffactive.embrava) then				
 				equip(sets.tp.buffed[sets.tp.buffed.index[buffed_ind]])			
 			else
-				equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
 				equip(sets.tp.unbuffed[sets.tp.unbuffed.index[unbuffed_ind]])
 			end
 		elseif TPType=="Hybrid" then
-			equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
 			equip(sets.hybrid[sets.hybrid.index[hybrid_ind]])
 		elseif TPType=="PDT" then
-			equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
 			equip(sets.pdt)
 		elseif TPType=="MDT" then
-			equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
 			equip(sets.mdt)
 		end
 	else
-		equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
 		equip(sets.idle[sets.idle.index[idle_ind]])
 	end
+	equip(sets.weaponry[sets.weaponry.index[weaponry_ind]])
 end
 
 function self_command(command)

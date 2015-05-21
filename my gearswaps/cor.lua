@@ -14,9 +14,12 @@ function get_sets()
 --basesets
 	sets.precast={}
 	sets.ja={}
+	sets.tp={}
+	sets.hybrid={}
 	sets.wsdmg={}
 	sets.wsacc={}
 	sets.idle={}
+	sets.midshot={}
 --basesets
 
 --precast sets
@@ -28,83 +31,205 @@ function get_sets()
 --precast sets
 
 --ja sets
-	sets.ja[""]={}
+	sets.rolls={}
 	
-	sets.ja[""]={}
+	sets.shots={}
 	
-	sets.ja[""]={}
+	sets.ja["Corsair's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Ninja's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Hunter's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Chaos Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Magus's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Healer's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Drachen Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Choral Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Monk's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Beast Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Beast Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Samurai Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Evoker's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Rogue's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Warlock's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Fighter's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Puppet Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Gallant's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Wizard's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Dancer's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Scholar's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Bolter's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Caster's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Courser's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Blitzer's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Tactician's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Allies' Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Miser's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Companion's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Avenger's Roll"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Wild Card"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Double-Up"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Random Deal"]={}
 	
-	sets.ja[""]={}
+	sets.ja["Snake Eye"]={}
+	
+	sets.ja["Fold"]={}
+	
+	sets.ja["Triple Shot"]={}
+	
+	sets.ja["Cutting Cards"]={}
+	
+	sets.ja["Light Shot"]={}
+	
+	sets.ja["Dark Shot"]={}
+	
+	sets.ja["Fire Shot"]={}
+	
+	sets.ja["Water Shot"]={}
+	
+	sets.ja["Thunder Shot"]={}
+	
+	sets.ja["Earth Shot"]={}
+	
+	sets.ja["Wind Shot"]={}
+	
+	sets.ja["Ice Shot"]={}
 --ja sets
 
---ws sets
-	sets.wsdmg[""]={}
+--ra sets
+	sets.midshot.damage={}
 	
-	sets.wsacc[""]={}
+	sets.midshot.accuracy={}
+--ra sets
+
+--ws sets
+	--ranged ws
+	sets.wsdmg["Hot Shot"]={}
+	
+	sets.wsacc["Hot Shot"]={}
+	
+	sets.wsdmg["Split Shot"]={}
+	
+	sets.wsacc["Split Shot"]={}
+	
+	sets.wsdmg["Sniper Shot"]={}
+	
+	sets.wsacc["Sniper Shot"]={}
+	
+	sets.wsdmg["Slug Shot"]={}
+	
+	sets.wsacc["Slug Shot"]={}
+	
+	sets.wsdmg["Detonator"]={}
+	
+	sets.wsacc["Detonator"]={}
+	
+	sets.wsdmg["Leaden Salute"]={}
+	
+	sets.wsacc["Leaden Salute"]={}
+	
+	sets.wsdmg["Numbing Shot"]={}
+	
+	sets.wsacc["Numbing Shot"]={}
+	
+	sets.wsdmg["Wildfire"]={}
+	
+	sets.wsacc["Wildfire"]={}
+	
+	sets.wsdmg["Last Stand"]={}
+	
+	sets.wsacc["Last Stand"]={}
+	--ranged ws
+	
+	--sword ws
+	sets.wsdmg["Fast Blade"]={}
+	
+	sets.wsacc["Fast Blade"]={}
+	
+	sets.wsdmg["Burning Blade"]={}
+	
+	sets.wsacc["Burning Blade"]={}
+	
+	sets.wsdmg["Flat Blade"]={}
+	
+	sets.wsacc["Flat Blade"]={}
+	
+	sets.wsdmg["Shining Blade"]={}
+	
+	sets.wsacc["Shining Blade"]={}
+	
+	sets.wsdmg["Circle Blade"]={}
+	
+	sets.wsacc["Circle Blade"]={}
+	
+	sets.wsdmg["Savage Blade"]={}
+	
+	sets.wsacc["Savage Blade"]={}
+	
+	sets.wsdmg["Requiescat"]={}
+	
+	sets.wsacc["Requiescat"]={}
+	--sword ws
+	
+	--dagger ws
+	sets.wsdmg["Wasp Sting"]={}
+	
+	sets.wsacc["Wasp Sting"]={}
+	
+	sets.wsdmg["Gust Slash"]={}
+	
+	sets.wsacc["Gust Slash"]={}
+	
+	sets.wsdmg["Shadow Stitch"]={}
+	
+	sets.wsacc["Shadow Stitch"]={}
+	
+	sets.wsdmg["Energy Steal"]={}
+	
+	sets.wsacc["Energy Steal"]={}
+	
+	sets.wsdmg["Evisceration"]={}
+	
+	sets.wsacc["Evisceration"]={}
+	
+	sets.wsdmg["Aeolian Edge"]={}
+	
+	sets.wsacc["Aeolian Edge"]={}
+	
+	sets.wsdmg["Exenterator"]={}
+	
+	sets.wsacc["Exenterator"]={}
+	--dagger ws
 --ws sets
 
 --engaged sets

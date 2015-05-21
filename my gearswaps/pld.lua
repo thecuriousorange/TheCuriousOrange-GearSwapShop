@@ -1,7 +1,8 @@
 function get_sets()
 -- includes
-	include('boxes.lua')
-	include('skillchain-elements.lua')
+	include('tco-include.lua')
+	include('organizer-lib.lua')
+	macros_setup()
 -- includes
 -- keybinds, aliases and text boxes.
 	send_command('bind #4 idle')
@@ -10,7 +11,8 @@ function get_sets()
 	send_command('bind #g gs c ochain')
 	send_command('bind @p gs c aegis')
 	send_command('bind @] gs c priwen')
-	send_command('bind #a gs c bura')
+	send_command('bind @= gs c club')
+	send_command('bind @/ gs c gs')
 	send_command('bind @k gs c burtgang')
 	send_command('bind @f1 gs c dd')
 	send_command('bind @f2 gs c hybrid')
@@ -31,55 +33,84 @@ function get_sets()
 	send_command('bind @f9 gs c lowacc;alias hybrid gs equip sets.aftercast.hybrid.lowacc;alias tp gs equip sets.aftercast.tp.lowacc')
 	send_command('bind @f10 gs c medacc;alias hybrid gs equip sets.aftercast.hybrid.medacc;alias tp gs equip sets.aftercast.tp.medacc')
 	send_command('bind @f11 gs c highacc;alias hybrid gs equip sets.aftercast.hybrid.highacc;alias tp gs equip sets.aftercast.tp.highacc')
-	send_command('bind @f12 gs c repulse')
+	send_command('bind @f12 gs c wsacctoggle')
+	send_command('bind #a gs c repulse')
 	send_command('bind #s intervene')
 	send_command('bind #i invincible')
 	send_command('bind #6 phalanx')
-	send_command('bind #5 enlight')
+	send_command('bind #5 input /ma "Enlight II" <me>')
 	send_command('bind @3 input /item "Remedy" <me>')
-	send_command('bind #1 input /item "Echo drops" <me>')
-	send_command('bind @1 utsusemi:ichi')
-	send_command('bind @2 utsusemi:ni')
+	send_command('bind #1 input /item "Holy Water" <me>')
+	send_command('bind @1 cmd9')
+	send_command('bind @2 cmd10')
 	send_command('bind #c crusade')
+	send_command('bind @a gs c aftermath')
+	send_command('bind !- cmd1')
+	send_command('bind != cmd2')
+	send_command('bind ^- cmd3')
+	send_command('bind ^= cmd4')
+	send_command('bind @- cmd5')
+	send_command('bind @= cmd6')
+	send_command('bind #- cmd7')
+	send_command('bind #= cmd8')
 -- keybinds 
 
--- aliases
-	send_command('alias tp gs equip sets.aftercast.tp.lowacc')
-	send_command('alias hybrid gs equip sets.aftercast.hybrid.lowacc')
+-- aliases	
+	send_command('alias gsupdate gs c update')
+	send_command('alias tp gs equip sets.aftercast.sword.highacc')
+	send_command('alias hybrid gs equip sets.aftercast.absorb.highacc')
 	send_command('alias idle gs equip sets.aftercast.idle')
 -- aliases
 
 --text boxes
-	send_command('text pdtvariable text "OCHAIN MODE"')
+	send_command('text doavariable create;text doavariable bold true;text doavariable text "WSMODE:ACC";text doavariable pos 900 140')
+	send_command('text pdtvariable text "AEGIS MODE"')
 	send_command('text wsvariable text "STANDARD IDLE"')
-	send_command('text tpvariable text "DD MODE"')
-	send_command('text idlevariable text "LOW-ACC"')
+	send_command('text tpvariable text "Absorb MODE"')
+	send_command('text idlevariable text "HIGH-ACC"')
 --text boxes
 
--- default macros
-	send_command('input /macro book 1;input /macro set 2')
--- default macros
-
--- lists for ws and spells	
-	magic_ws= S{'Atonement','Burning Blade','Red Lotus Blade','Shining Blade','Seraph Blade','Spirits Within','Sanguine Blade'}
-	lg_ws= S{'Chant du Cygne','Savage Blade'}
-	sg_ws= S{'Requiescat','Swift Blade'}
-	phys_ws= S{'Vorpal Blade','Fast Blade','Flat Blade','Circle Blade'}
+-- lists
+	phys_ws= S{'Vorpal Blade','Fast Blade','Flat Blade','Circle Blade','Chant du Cygne','Savage Blade','Requiescat','Swift Blade','Hard Slash','Power Slash','Shockwave','Cresent Moon','Sickle Moon','Spinning Slash','Ground Strike','Torcleaver','Resolution','Brainshaker','Skullbreaker','True Strike','Judgement','Black Halo','Realmrazer'}
 	cure= S{'Cure','Cure II','Cure III','Cure IV','Curaga','Curaga II', 'Cura','Cura II'}
-	enhancing= S{'Phalanx','Aquaveil','Stoneskin','Barfire','Barfira','Barblizzard','Barblizzara','Baraero','Baraera','Barwater','Barwatera','Barstone','Barstonra','Barthunder','Barthundra','Reprisal'}
-	divine= S{'Flash','Holy','Holy II','Banish','Banish II','Banishga','Banishga II'}
-	enfeeb= S{'Dia','Dia II','Diaga','Diaga II'}
-	ninjutsu= S{'Utsusemi: Ichi', 'Utsusemi: Ni'}
+	utsu= S{'Utsusemi: Ichi', 'Utsusemi: Ni'}
+	PLD_JA= S{'Sentinel','Rampart','Holy Circle','Divine Emblem','Fealty','Chivalry','Intervene','Invincible','Shield Bash'}
 -- lists for ws and spells
+
+--
+	stphead={ name="Acro Helm", augments={'Accuracy+12 Attack+12','"Store TP"+5','Weapon skill damage +3%',}}
+	stpbody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','STR+10',}}
+	stphands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
+	stplegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','STR+10',}}
+	stpfeet={ name="Acro Leggings", augments={'Accuracy+17 Attack+17','"Store TP"+6','Weapon  skill damage +3%',}}
+	
+	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','STR+7 VIT+7',}}
+	dahands={ name="Acro Gauntlets", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+2','Crit. hit damage +1%',}}
+	dalegs={ name="Acro Breeches", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+2','STR+5 VIT+5',}}
+	dafeet={ name="Acro Leggings", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+2','STR+5 VIT+5',}}
+	
+	wsdmghead={ name="Yorium Barbuta", augments={'Accuracy+17 Attack+17','Enmity+7','Weapon skill damage +3%',}}
+	wsdmghands={ name="Yorium Gauntlets", augments={'Accuracy+17','Enmity+8','Weapon skill damage +3%',}}
+	wsdmglegs={ name="Yorium Cuisses", augments={'Accuracy+25','Enmity+10','Weapon skill damage +3%',}}
+	wsdmgfeet={ name="Yorium Sabatons", augments={'Accuracy+18 Attack+18','Enmity+8','Weapon skill damage +2%',}}
+	
+	dthead={}
+	dthands={ name="Yorium Gauntlets", augments={'Accuracy+22','Enmity+7','Damage taken-3%',}}
+	dtlegs={}
+	dtfeet={ name="Yorium Sabatons", augments={'DEF+12','"Cure" potency +4%','Damage taken-2%',}}
+--
 
 -- variables	
 	swordtype="burtgang"
-	shieldtype="Ochain"
-	Acc="lowacc"
+	shieldtype="Aegis"
+	last_shield_used="Ochain"
+	Acc="highacc"
 	IdleMode="idle"		
-	TPSet="tp"
+	TPSet="absorb"
 	rrlock="rroff"
 	repulsemode="normal"
+	WSMode="acc"
+	AM_ON_OR_OFF="on"
 		
 	sets.swordtype= T{}
 	sets.shieldtype= T{}
@@ -87,26 +118,39 @@ function get_sets()
 	sets.IdleMode= T{}
 	sets.TPSet= T{}
 	sets.repulsemode= T{}
+	sets.WSMode= T{}
+	sets.AM_ON_OR_OFF= T{}
 -- variables
 
 -- base sets
 	sets.precast={}
 	sets.precast.ws={}
+	sets.ws={}
+	sets.ws.dmg={}
+	sets.ws.acc={}
 	sets.midcast={}
 	sets.aftercast={}
+	sets.aftercast.sword={}
+	sets.aftercast.greatsword={}
+	sets.aftercast.club={}
+	sets.aftercast.aftermath={}
 	sets.repulsemantle={"Repulse Mantle",}
 -- base sets
 
 -- weaponry
-	sets.bura={main="Buramenk'ah",}
-	
 	sets.burtgang={main="Burtgang",}
-		
+	
+	sets.club={main="Eosuchus Club",}
+	
+	sets.gs={main="Macbain",}
+	
 	sets.Ochain={sub="Ochain",}
 	
 	sets.Priwen={sub="Priwen",}
 	
 	sets.Aegis={sub="Aegis",}
+	
+	sets.pg={sub="Pole Grip",}
 -- weaponry
 
 -- rr set
@@ -114,100 +158,321 @@ function get_sets()
 -- rr set	
 	
 -- precast sets
-	sets.precast.fc= {ammo="Incantor Stone", head="Cizin Helm +1", body="Nuevo Coselete", hands="Rev. Gauntlets +1", 
+	sets.precast.fc= {ammo="Incantor Stone", head="Chev. Armet +1", body="Nuevo Coselete", hands="Buremte Gloves", 
 	legs="Enif Cosciales", feet="Rev. Leggings +1", neck="Jeweled Collar", waist="Siegel Sash", 
-	right_ear="Ethereal Earring", left_ear="Loquac. Earring", left_ring="Prolix Ring", right_ring="Veneficium Ring",
-    back="Testudo Mantle",}
+	right_ear="Etiolation Earring", left_ear="Loquac. Earring", left_ring="Prolix Ring", right_ring="Veneficium Ring",
+    back="Boxer's Mantle",}
 	
-	sets.precast.ja= {ammo="Paeapua", head="Cab. Coronet +1", body="Creed Cuirass +2", hands="Cab. Gauntlets +1", 
-	legs="Cab. Breeches +1", feet="Creed Sabatons +2", neck="Invidia Torque", waist="Creed Baudrier",
-	left_ear="Friomisi Earring", right_ear="Trux Earring", left_ring="Provocare Ring", right_ring="Eihwaz Ring",
+	sets.precast.ja= {ammo="Paeapua", head="Cab. Coronet +1", body="Chev. Cuirass +1", hands="Cab. Gauntlets +1", 
+	legs="Cab. Breeches +1", feet="Chev. Sabatons +1", neck="Warder's Charm", waist="Creed Baudrier",
+	left_ear="Cryptic Earring", right_ear="Trux Earring", left_ring="Provocare Ring", right_ring="Eihwaz Ring",
     back="Fravashi Mantle",}
 		
-	sets.precast.ja.Sentinel= set_combine(sets.precast.ja, {feet="Cab. Leggings +1"})
-	sets.precast.ja.Rampart= set_combine(sets.precast.ja, {head="Cab. Coronet +1"})
-	sets.precast.ja.Fealty= set_combine(sets.precast.ja, {body="Cab. Surcoat +1"})
-	sets.precast.ja.Chivalry= set_combine(sets.precast.ja, {head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Cab. Gauntlets +1", left_ring="Levia. Ring", right_ring="Levia. Ring", feet="Whirlpool Greaves",})
-	sets.precast.ja.sb= set_combine(sets.precast.ja, {left_ear="Knightly Earring", hands="Cab. Gauntlets +1", left_ring="Fenian Ring",})
-	sets.precast.ja.Intervene= set_combine(sets.precast.ja, {hands="Cab. Gauntlets +1"})
-	sets.precast.ja.Invincible= set_combine(sets.precast.ja, {legs="Cab. Breeches +1"})
-	sets.precast.ja.hc= set_combine(sets.precast.ja, {feet="Rev. Leggings +1"})
-	sets.precast.ja.de= set_combine(sets.precast.ja, {feet="Creed Sabatons +2"})
-
-	sets.precast.ws.CdC= {ammo="Jukukik Feather", head="Yaoyotl Helm", body="Miki. Breastplate",
-    hands="Buremte Gloves", legs="Miki. Cuisses", feet="Whirlpool Greaves", neck="Light Gorget",
-    waist="Light Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
-	left_ring="Ramuh Ring", right_ring="Rajas Ring", back="Atheling Mantle",}
+	sets.precast.ja["Sentinel"]= set_combine(sets.precast.ja, {feet="Cab. Leggings +1"})
+	sets.precast.ja["Rampart"]= set_combine(sets.precast.ja, {head="Cab. Coronet +1"})
+	sets.precast.ja["Fealty"]= set_combine(sets.precast.ja, {body="Cab. Surcoat +1"})
+	sets.precast.ja["Chivalry"]= set_combine(sets.precast.ja, {head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Cab. Gauntlets +1", left_ring="Levia. Ring", right_ring="Levia. Ring", feet="Whirlpool Greaves",})
+	sets.precast.ja["Shield Bash"]= set_combine(sets.precast.ja, {left_ear="Knightly Earring", hands="Cab. Gauntlets +1", left_ring="Fenian Ring",})
+	sets.precast.ja["Intervene"]= set_combine(sets.precast.ja, {hands="Cab. Gauntlets +1"})
+	sets.precast.ja["Invincible"]= set_combine(sets.precast.ja, {legs="Cab. Breeches +1"})
+	sets.precast.ja["Holy Circle"]= set_combine(sets.precast.ja, {feet="Rev. Leggings +1"})
+	sets.precast.ja["Divine Emblem"]= set_combine(sets.precast.ja, {feet="Chev. Sabatons +1"})
 	
-	sets.precast.ws.Req= {ammo="Paeapua", head="Yaoyotl Helm", body="Miki. Breastplate",
-    hands="Buremte Gloves", legs="Miki. Cuisses", feet="Whirlpool Greaves", neck="Shadow Gorget",
-    waist="Shadow Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",
-    left_ring="Levia. Ring", right_ring="Rajas Ring", back="Atheling Mantle",}
+	sets.precast.ja.cwaltz={ammo="Paeapua", head={ name="Cab. Coronet +1", augments={'Enhances "Iron Will" effect',}},
+	body="Chev. Cuirass +1", hands="Chev. Gauntlets +1", legs={ name="Cab. Breeches +1", augments={'Enhances "Invincible" effect',}},
+	feet="Rev. Leggings +1", neck="Twilight Torque", waist="Chuq'aba Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
+	left_ring="Terrasoul Ring", right_ring="Terrasoul Ring", back={ name="Weard Mantle", augments={'VIT+1','DEX+1','Enmity+2','Phalanx +4',}},}
 	
-	sets.precast.ws.VB= {ammo="Paeapua", head="Yaoyotl Helm", body="Miki. Breastplate",
-    hands="Buremte Gloves", legs="Miki. Cuisses", feet="Whirlpool Greaves", neck="Asperity Necklace",
+	sets.precast.ws.CdC= {ammo="Jukukik Feather", head="Yaoyotl Helm", body="Mes. Haubergeon",
+    hands="Buremte Gloves", legs="Miki. Cuisses", feet="Whirlpool Greaves", neck="Fotia Gorget",
+    waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
+	left_ring="Ramuh Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
+	
+	sets.precast.ws.Req= {ammo="Paeapua", head="Yaoyotl Helm", body="Rav. Breastplate",
+    hands="Buremte Gloves", legs="Miki. Cuisses", feet="Whirlpool Greaves", neck="Fotia Gorget",
+    waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",
+    left_ring="Levia. Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
+	
+	sets.precast.ws.VB= {ammo="Paeapua", head="Yaoyotl Helm", body="Mes. Haubergeon",
+    hands="Miki. Gauntlets", legs="Scuff. Cosciales", feet="Whirlpool Greaves", neck="Asperity Necklace",
     waist="Windbuffet Belt +1", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",
-    left_ring="Ramuh Ring", right_ring="Rajas Ring", back="Atheling Mantle",}
+    left_ring="Ramuh Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
-	sets.precast.ws.Atonement= set_combine(sets.precast.ja, {body="Phorcys Korazin", legs="Ogier's Breeches", left_ear="Moonshade Earring", left_ring="Karieyh Ring",})
+	sets.precast.ws.Atonement= set_combine(sets.precast.ja, {head=wsdmghead, neck="Fotia Gorget", body="Phorcys Korazin", hands=wsdmghands, waist="Fotia Belt", legs=wsdmglegs, feet=wsdmgfeet, left_ear="Moonshade Earring", left_ring="Karieyh Ring",})
 	
 	sets.precast.ws.Resolution= set_combine(sets.precast.ws.CdC, {Left_Ring="Ifrit Ring"})
+	
+	sets.precast.ws.magicws={ammo="Paeapua", head="Ighwa Cap", body="Phorcys Korazin",
+    hands={ name="Cab. Gauntlets +1", augments={'Enhances "Chivalry" effect',}},
+	legs="Scuff. Cosciales", feet="Whirlpool Greaves", neck="Stoicheion Medal", waist="Fotia Belt",
+	left_ear="Friomisi Earring", right_ear="Crematio Earring", left_ring="Acumen Ring",
+	right_ring="Perception Ring", back="Toro Cape",}
+	
+	sets.wsdaybonus={head="Gavialis Helm",}
+	
+	sets.tpbonusphysicaldamage={left_ear="Moonshade Earring", right_ear="Brutal Earring"}
+	sets.tpbonusphysicalaccuracy={right_ear="Moonshade Earring", left_ear="Zennaroi Earring"}
+	sets.tpbonusmagical={left_ear="Moonshade Earring", right_ear="Crematio Earring"}
 -- precast sets
 
+-- ws sets
+	--Sword WS
+	sets.ws.dmg["Fast Blade"]=sets.precast.ws.VB
+	
+	sets.ws.acc["Fast Blade"]=set_combine(sets.ws.dmg["Fast Blade"], {neck="Iqabi Necklace", back="Letalis Mantle", left_ring="Mars's Ring", right_ring="Karieyh Ring",})
+	
+	sets.ws.dmg["Burning Blade"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Burning Blade"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Red Lotus Blade"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Red Lotus Blade"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Flat Blade"]=set_combine(sets.precast.ws.VB, {left_ring="Ifrit Ring", right_ring="Ifrit Ring",})
+	
+	sets.ws.acc["Flat Blade"]=set_combine(sets.ws.dmg["Flat Blade"], {neck="Iqabi Necklace", back="Letalis Mantle", left_ring="Mars's Ring", right_ring="Karieyh Ring",})
+	
+	sets.ws.dmg["Shining Blade"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Shining Blade"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Seraph Blade"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Seraph Blade"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Circle Blade"]=set_combine(sets.precast.ws.VB, {left_ring="Ifrit Ring", right_ring="Ifrit Ring",})
+	
+	sets.ws.acc["Circle Blade"]=set_combine(sets.ws.dmg["Circle Blade"], {neck="Iqabi Necklace", back="Letalis Mantle", left_ring="Mars's Ring", right_ring="Karieyh Ring",})
+	
+	sets.ws.dmg["Spirits Within"]=set_combine(sets.precast.ja, {body="Phorcys Korazin", waist="Fotia Belt", legs=stplegs, left_ring="Karieyh Ring",})
+	
+	sets.ws.acc["Spirits Within"]=set_combine(sets.precast.ja, {body="Phorcys Korazin", waist="Fotia Belt", legs=stplegs, left_ring="Karieyh Ring",})
+	
+	sets.ws.dmg["Vorpal Blade"]=set_combine(sets.precast.ws.VB, {waist="Fotia Belt", left_ring="Ifrit Ring",})
+	
+	sets.ws.acc["Vorpal Blade"]=set_combine(sets.ws.dmg["Vorpal Blade"], {neck="Iqabi Necklace", back="Letalis Mantle", left_ring="Mars's Ring", right_ring="Karieyh Ring",})
+	
+	sets.ws.dmg["Swift Blade"]=set_combine(sets.precast.ws.VB, {neck="Fotia Gorget", waist="Fotia Belt", left_ring="Ifrit Ring",})
+	
+	sets.ws.acc["Swift Blade"]=set_combine(sets.ws.acc["Swift Blade"], {legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Savage Blade"]=set_combine(sets.precast.ws.VB, {neck="Fotia Gorget", waist="Fotia Belt", left_ring="Ifrit Ring",})
+	
+	sets.ws.acc["Savage Blade"]=set_combine(sets.ws.dmg["Savage Blade"], {legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Sanguine Blade"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Sanguine Blade"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Chant du Cygne"]={ammo="Jukukik Feather", head="Gavialis Helm", body="Mes. Haubergeon",
+    hands="Buremte Gloves", legs="Scuff. Cosciales", feet="Whirlpool Greaves", neck="Fotia Gorget",
+    waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
+	left_ring="Ramuh Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
+	
+	sets.ws.acc["Chant du Cygne"]=set_combine(sets.ws.dmg["Chant du Cygne"], {legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", hands="Chev. Gauntlets +1", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Atonement"]=sets.precast.ws.Atonement
+	
+	sets.ws.acc["Atonement"]=sets.precast.ws.Atonement
+	
+	sets.ws.dmg["Requiescat"]={ammo="Paeapua", head="Otomi Helm", body="Rav. Breastplate",
+    hands="Buremte Gloves", legs="Scuff. Cosciales", feet="Whirlpool Greaves", neck="Fotia Gorget",
+    waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",
+    left_ring="Levia. Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
+	
+	sets.ws.acc["Requiescat"]=set_combine(sets.ws.dmg["Requiescat"], {head="Gavialis Helm", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	--Sword WS
+	
+	--Club WS
+	
+	sets.ws.dmg["Shining Strike"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Shining Strike"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Seraph Strike"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Seraph Strike"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Brainshaker"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Phorcys Korazin", neck="Asperity Necklace", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Brainshaker"]=set_combine(sets.ws.dmg["Brainshaker"], {head="Gavialis Helm", neck="Iqabi Necklace", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Starlight"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Starlight"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Moonlight"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Moonlight"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Skullbreaker"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Phorcys Korazin", neck="Fotia Gorget", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Skullbreaker"]=set_combine(sets.ws.dmg["Skullbreaker"], {head="Gavialis Helm", body="Mes. Haubergeon", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["True Strike"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Phorcys Korazin", neck="Fotia Gorget", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["True Strike"]=set_combine(sets.ws.dmg["True Strike"], {head="Gavialis Helm", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Judgement"]=sets.ws.dmg["True Strike"]
+	
+	sets.ws.acc["Judgement"]=sets.ws.acc["True Strike"]
+	
+	sets.ws.dmg["Black Halo"]=set_combine(sets.ws.dmg["Requiescat"], {neck="Fotia Gorget",})
+	
+	sets.ws.acc["Black Halo"]=set_combine(sets.ws.dmg["Black Halo"], {head="Gavialis Helm", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Flash Nova"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Flash Nova"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Realmrazer"]=set_combine(sets.ws.dmg["Requiescat"], {neck="Fotia Gorget",})
+	
+	sets.ws.acc["Realmrazer"]=set_combine(sets.ws.dmg["Realmrazer"], {head="Gavialis Helm", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	--Club WS
+	
+	--Great Sword WS
+	sets.ws.dmg["Hard Slash"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Asperity Necklace", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Hard Slash"]=set_combine(sets.ws.dmg["Hard Slash"], {head="Yaoyotl Helm", neck="Iqabi Necklace", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Power Slash"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Fotia Gorget", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Power Slash"]=set_combine(sets.ws.dmg["Power Slash"], {head="Yaoyotl Helm", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Frostbite"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Frostbite"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Freezebite"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Freezebite"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Shockwave"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Asperity Necklace", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Shockwave"]=set_combine(sets.ws.dmg["Shockwave"], {head="Yaoyotl Helm", neck="Iqabi Necklace", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Crescent Moon"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Asperity Necklace", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Crescent Moon"]=set_combine(sets.ws.dmg["Crescent Moon"], {head="Yaoyotl Helm", neck="Iqabi Necklace", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Sickle Moon"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Asperity Necklace", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Sickle Moon"]=set_combine(sets.ws.dmg["Sickle Moon"], {head="Yaoyotl Helm", neck="Iqabi Necklace", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Spinning Slash"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Fotia Gorget", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Spinning Slash"]=set_combine(sets.ws.dmg["Spinning Slash"], {head="Yaoyotl Helm", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Ground Strike"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Fotia Gorget", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Ground Strike"]=set_combine(sets.ws.dmg["Ground Strike"], {head="Yaoyotl Helm", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Herculean Slash"]=sets.precast.ws.magicws
+	
+	sets.ws.acc["Herculean Slash"]=sets.precast.ws.magicws
+	
+	sets.ws.dmg["Torcleaver"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Fotia Gorget", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Terrasoul Ring", right_ring="Terrasoul Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Torcleaver"]=set_combine(sets.ws.dmg["Torcleaver"], {head="Yaoyotl Helm", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	
+	sets.ws.dmg["Resolution"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Fotia Gorget", waist="Fotia Belt",
+	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}}, legs="Scuff. Cosciales", feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	
+	sets.ws.acc["Resolution"]=set_combine(sets.ws.dmg["Resolution"], {head="Yaoyotl Helm", legs="Miki. Cuisses", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	--Great Sword WS
+-- ws sets
+
 -- midcast sets	
-	sets.midcast.cure= {ammo="Paeapua", head="Adaman Barbuta", body="Creed Cuirass +2", hands="Macabre Gaunt. +1",
-    legs="Blitzer Poleyn", feet="Creed Sabatons +2", neck="Phalaina Locket", waist="Goading Belt",
+	sets.midcast.cure= {ammo="Paeapua", head="Adaman Barbuta", body="Chev. Cuirass +1", hands="Macabre Gaunt. +1",
+    legs="Blitzer Poleyn", feet=dtfeet, neck="Phalaina Locket", waist="Goading Belt",
     left_ear="Hospitaler Earring", right_ear="Trux Earring", left_ring="Provocare Ring", right_ring="Eihwaz Ring",
     back="Fierabras's Mantle",}
 	
 	sets.midcast.selfcure= set_combine(sets.midcast.cure, {ammo="Egoist's Tathlum", head="Shabti Armet", hands="Buremte Gloves",
-	waist="Chuq'aba Belt", feet="Rev. Leggings +1", left_ring="Kunaji Ring",})
+	waist="Chuq'aba Belt", left_ring="Kunaji Ring",})
 	
 	sets.midcast.flash= {ammo="Incantor Stone", head="Cizin Helm +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
-    legs="Rev. Breeches +1", feet="Creed Sabatons +2", neck="Invidia Torque", waist="Goading Belt",
-    left_ear="Loquac. Earring", right_ear="Trux Earring", left_ring="Patricius Ring", right_ring="Eihwaz Ring",
-    back="Testudo Mantle",}
+    legs="Rev. Breeches +1", feet="Chev. Sabatons +1", neck="Warder's Charm", waist="Goading Belt",
+    left_ear="Loquac. Earring", right_ear="Cryptic Earring", left_ring="Patricius Ring", right_ring="Eihwaz Ring",
+    back="Fravashi Mantle",}
 	
 	sets.midcast.utsu= set_combine(sets.midcast.flash, {back="Boxer's Mantle", feet="Rev. Leggings +1",})
 	
 	sets.midcast.enlight= {ammo="Incantor Stone", head="Cizin Helm +1", body="Rev. Surcoat +1", hands="Rev. Gauntlets +1",
-    legs="Rev. Breeches +1", feet="Creed Sabatons +2", neck="Divine Torque", waist="Siegel Sash", 
+    legs="Rev. Breeches +1", feet="Chev. Sabatons +1", neck="Divine Torque", waist="Siegel Sash", 
 	left_ear="Ethereal Earring", right_ear="Loquac. Earring", left_ring="Patricius Ring", 
-	right_ring="Defending Ring", back="Testudo Mantle",}
+	right_ring="Defending Ring", back="Boxer's Mantle",}
 	
-	sets.midcast.enhancing= {ammo="Incantor Stone", head="Cizin Helm +1", body="Shabti Cuirass", hands="Rev. Gauntlets +1",
-    legs="Rev. Breeches +1", feet="Creed Sabatons +2", neck="Shield Torque", waist="Siegel Sash", left_ear="Loquac. Earring",
-    right_ear="Trux Earring", left_ring="Portus Annulet", right_ring="Defending Ring", back="Testudo Mantle",}
+	sets.midcast.enhancing= {ammo="Incantor Stone", head="Cizin Helm +1", body="Shab. Cuirass +1", hands="Rev. Gauntlets +1",
+    legs="Rev. Breeches +1", feet="Chev. Sabatons +1", neck="Shield Torque", waist="Siegel Sash", left_ear="Loquac. Earring",
+    right_ear="Trux Earring", left_ring="Portus Annulet", right_ring="Defending Ring", back="Weard Mantle",}
 	
 	sets.midcast.proshell= set_combine(sets.midcast.enhancing, {right_ring="Sheltered Ring"})
 -- midcast sets
 	
 -- aftercast sets
-	sets.aftercast.tp= {ammo="Paeapua", head="Yaoyotl Helm", left_ear="Steelflash Earring", 
-	right_ear="Bladeborn Earring", left_ring="Patricius Ring", right_ring="Rajas Ring",
-    back="Atheling Mantle",}
+	sets.aftercast.aftermath.lowacc={ammo="Ginsen", neck="Asperity Necklace", waist="Windbuffet Belt +1", left_ear="Tripudio Earring",
+	head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, back="Bleating Mantle",
+	body=stpbody, right_ring="Rajas Ring", hands=stphands, right_ear="Brutal Earring",
+	legs=stplegs,
+	feet=stpfeet, left_ring="K'ayres Ring",}
 	
-	sets.aftercast.tp.lowacc= {ammo="Paeapua", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}},
-	body="Enif Corazza", hands="Ares' Gauntlets +1", legs="Ares' Flanchard +1", waist="Windbuffet Belt +1",
-	feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}}, neck="Asperity Necklace",
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Patricius Ring", right_ring="Rajas Ring",
-	back="Atheling Mantle",}
+	sets.aftercast.aftermath.medacc=set_combine(sets.aftercast.aftermath.lowacc, {waist="Anguinus Belt", back="Letalis Mantle"})
 	
-	sets.aftercast.tp.medacc= {ammo="Paeapua", head="Yaoyotl Helm", legs="Ares' Flanchard +1",
-    body={ name="Xaddi Mail", augments={'Attack+15','Accuracy+10','"Store TP"+3',}},
-    hands={ name="Xaddi Gauntlets", augments={'Accuracy+15','"Store TP"+3','"Dbl.Atk."+2',}},
-	feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}}, neck="Agitator's Collar",
-	waist="Windbuffet Belt +1", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Patricius Ring",
-	right_ring="Rajas Ring", back="Atheling Mantle",}
+	sets.aftercast.aftermath.highacc=set_combine(sets.aftercast.aftermath.medacc, {right_ear="Zennaroi Earring", neck="Iqabi Necklace", waist="Olseni Belt", back="Letalis Mantle"})
+	
+	sets.aftercast.sword.lowacc= {ammo="Paeapua", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}},
+	body=dabody, legs=dalegs, hands=dahands, waist="Windbuffet Belt +1", feet=dafeet, neck="Asperity Necklace", 
+	left_ring="Mars's Ring", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", right_ring="Rajas Ring", back="Bleating Mantle",}
+	
+	sets.aftercast.sword.medacc= {ammo="Paeapua", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, 
+	legs=dalegs, body="Rav. Breastplate", hands=dahands, feet=dafeet, neck="Agitator's Collar", waist="Windbuffet Belt +1", 
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Patricius Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 		
-	sets.aftercast.tp.highacc= {ammo="Ginsen", head="Gavialis Helm", body="Mes. Haubergeon",
-    hands={ name="Xaddi Gauntlets", augments={'Accuracy+15','"Store TP"+3','"Dbl.Atk."+2',}},
-	legs={ name="Xaddi Cuisses", augments={'Attack+15','Accuracy+10','"Store TP"+3',}},
-    feet="Whirlpool Greaves", neck="Iqabi Necklace", waist="Dynamic Belt +1", left_ear="Zennaroi Earring",
-	right_ear="Brutal Earring", left_ring="Patricius Ring", right_ring="Portus Annulet", back="Letalis Mantle",}
-		
+	sets.aftercast.sword.highacc= {ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, 
+	body="Mes. Haubergeon", hands=dahands, legs=dalegs, left_ear="Zennaroi Earring", feet=dafeet, neck="Iqabi Necklace",
+	waist="Anguinus Belt", right_ear="Brutal Earring", left_ring="Patricius Ring", right_ring="Mars's Ring", back="Letalis Mantle",}
+	
+	sets.aftercast.greatsword.lowacc={ammo="Ginsen", neck="Asperity Necklace", waist="Windbuffet Belt +1", left_ear="Tripudio Earring",
+	head={ name="Acro Helm", augments={'Accuracy+12 Attack+12','"Store TP"+5','Weapon skill damage +3%',}}, back="Bleating Mantle",
+	body=stpbody, right_ring="Rajas Ring", hands=stphands, right_ear="Brutal Earring", legs=stplegs, feet=stpfeet, left_ring="K'ayres Ring",}
+	
+	sets.aftercast.greatsword.medacc=set_combine(sets.aftercast.greatsword.lowacc, {waist="Anguinus Belt", back="Letalis Mantle"})
+	
+	sets.aftercast.greatsword.highacc=set_combine(sets.aftercast.greatsword.lowacc, {right_ear="Zennaroi Earring", neck="Iqabi Necklace", waist="Olseni Belt", back="Letalis Mantle"})
+	
+	sets.aftercast.club.lowacc=sets.aftercast.sword.lowacc
+	
+	sets.aftercast.club.medacc=sets.aftercast.sword.medacc
+	
+	sets.aftercast.club.highacc=sets.aftercast.sword.highacc
+	
 	sets.aftercast.hybrid= {ammo="Angha Gem", head="Rev. Coronet +1", body="Cab. Surcoat +1", 
-	hands="Rev. Gauntlets +1", legs="Cab. Breeches +1", feet="Rev. Leggings +1",}
+	hands="Chev. Gauntlets +1", legs="Chev. Cuisses +1", feet="Rev. Leggings +1",}
 	
 	sets.aftercast.hybrid.lowacc= set_combine(sets.aftercast.hybrid, {neck="Twilight Torque", waist="Flume Belt",
 	left_ear="Ethereal Earring", right_ear="Brutal Earring", left_ring="Patricius Ring", right_ring="Defending Ring",
@@ -217,24 +482,34 @@ function get_sets()
 	right_ring="Rajas Ring",})
 	
 	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {head="Ighwa Cap", neck="Agitator's Collar", 
-	waist="Dynamic Belt +1",back="Weard Mantle",})
-		
-	sets.aftercast.pdt= {ammo="Angha Gem", head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Cizin Mufflers +1",
-	legs="Cab. Breeches +1", feet="Cizin Greaves +1", neck="Twilight Torque", waist="Flume Belt", 
+	waist="Anguinus Belt",back="Weard Mantle",})
+	
+	sets.aftercast.absorbmode={head="Chev. Armet +1", body="Chev. Cuirass +1", hands="Chev. Gauntlets +1", legs="Chev. Cuisses +1", 
+	feet="Chev. Sabatons +1", left_ear="Ethereal Earring", right_ear="Brutal Earring", neck="Warder's Charm",}
+	
+	sets.aftercast.absorbmode.lowacc=set_combine(sets.aftercast.absorbmode, {ammo="Vanir Battery", left_ring="Patricius Ring",
+	right_ring="Defending Ring", waist="Windbuffet Belt +1", back="Bleating Mantle",})
+	
+	sets.aftercast.absorbmode.medacc=set_combine(sets.aftercast.absorbmode.lowacc, {neck="Agitator's Collar", Waist="Anguinus Belt", right_ring="Rajas Ring",})
+	
+	sets.aftercast.absorbmode.highacc=set_combine(sets.aftercast.absorbmode.medacc, {ammo="Ginsen", neck="Iqabi Necklace", waist="Olseni Belt", back="Letalis Mantle", right_ring="Mars's Ring",})
+	
+	sets.aftercast.pdt= {ammo="Angha Gem", head="Rev. Coronet +1", body="Cab. Surcoat +1", hands=dthands,
+	legs="Chev. Cuisses +1", feet=dtfeet, neck="Twilight Torque", waist="Flume Belt", 
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Patricius Ring", right_ring="Defending Ring",
 	back="Shadow Mantle",}
 	
-	sets.aftercast.mdt= {ammo="Angha Gem", head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
-	legs="Rev. Breeches +1", feet="Cab. Leggings +1", neck="Twilight Torque", waist="Creed Baudrier",
+	sets.aftercast.mdt= {ammo="Vanir Battery", head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
+	legs="Chev. Cuisses +1", feet="Cab. Leggings +1", neck="Twilight Torque", waist="Creed Baudrier",
 	left_ring="Shadow Ring", left_ear="Ethereal Earring", right_ear="Sanare Earring", right_ring="Defending Ring",
 	back="Weard Mantle",}
 	
-	sets.aftercast.dt={ammo="Angha Gem", head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
-	legs="Cab. Breeches +1", feet="Rev. Leggings +1", neck="Twilight Torque", waist="Nierenschutz", left_ear="Ethereal Earring",
+	sets.aftercast.dt={ammo="Angha Gem", head="Rev. Coronet +1", body="Cab. Surcoat +1", hands=dthands,
+	legs="Chev. Cuisses +1", feet=dtfeet, neck="Twilight Torque", waist="Nierenschutz", left_ear="Ethereal Earring",
 	right_ear="Sanare Earring", left_ring="Dark Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
 	
-	sets.aftercast.idle= {ammo="Angha Gem", head="Baghere Salade", body="Ares' Cuirass +1", hands="Cizin Mufflers +1",
-    legs="Blood Cuisses", feet="Cizin Greaves +1", neck="Creed Collar", waist="Flume Belt",
+	sets.aftercast.idle= {ammo="Angha Gem", head="Baghere Salade", body="Ares' Cuirass +1", hands=dthands,
+    legs="Blood Cuisses", feet=dtfeet, neck="Creed Collar", waist="Flume Belt",
     left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", right_ring="Sheltered Ring",
     back="Shadow Mantle",}
 	
@@ -246,88 +521,46 @@ function get_sets()
 	
 	sets.aftercast.dtkite= set_combine(sets.aftercast.dt, {back="Weard Mantle",  legs="Blood Cuisses",})
 -- aftercast sets
-
--- misc sets
-	sets.ballista={main="Burtgang", sub="Ochain", ammo="Paeapua", head="Yaoyotl Helm", 
-	body={ name="Xaddi Mail", augments={'Attack+15','Accuracy+10','"Store TP"+3',}}, 
-	hands={ name="Xaddi Gauntlets", augments={'Accuracy+15','"Store TP"+3','"Dbl.Atk."+2',}}, 
-	legs={ name="Xaddi Cuisses", augments={'Attack+15','Accuracy+10','"Store TP"+3',}}, 
-	feet="Ejekamal Boots", neck="Agitator's Collar", waist="Windbuffet Belt +1",
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Defending Ring", 
-	right_ring="Rajas Ring", back="Weard Mantle",}
--- misc sets
 end
 
 function precast(spell)	
-	if spell.type == 'WeaponSkill' then
-		if magic_ws:contains(spell.english) then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ws.Atonement)		
-		elseif lg_ws:contains(spell.english) then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ws.CdC)				
-		elseif sg_ws:contains(spell.english) then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ws.Req)				
-		elseif phys_ws:contains(spell.english) then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ws.VB)
-		end
-	elseif spell.prefix ==  '/jobability' then
-		if spell.english== 'Sentinel' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ja.Sentinel)
-		elseif spell.english== 'Rampart' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ja.Rampart)			
-		elseif spell.english== 'Fealty' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ja.Fealty)
-		elseif spell.english== 'Chivalry' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ja.Chivalry)
-		elseif spell.english== 'Invincible' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ja.Invincible)
-		elseif spell.english== 'Intervene' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ja.Intervene)
-		elseif spell.english== 'Shield Bash' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ja.sb)
-		elseif spell.english== 'Holy Circle' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ja.hc)
-		elseif spell.english== 'Divine Emblem' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ja.de)		
+	if spell.prefix ==  '/jobability' then
+		if PLD_JA:contains(spell.english) then
+			equip(sets.precast.ja[spell.english])
+		elseif spell.english:contains('Curing Waltz') then
+			equip(sets.precast.ja.cwaltz)
 		else
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.precast.ja)			
-		end		
-	elseif spell.prefix== '/magic' then
-		equip(sets[swordtype])
-		equip(sets[shieldtype])
-		equip(sets.precast.fc)		
-	elseif ninjutsu:contains(spell.english) then
-		equip(sets[swordtype])
-		equip(sets[shieldtype])
-		equip(sets.precast.fc)	
-	end	
+			equip(sets.precast.ja)
+		end
+	elseif spell.prefix== '/magic' or '/ninjutsu' then
+		equip(sets.precast.fc)
+	end
+	if spell.prefix == '/weaponskill' then
+		if WSMode=="dmg" then
+			equip(sets.ws.dmg[spell.english])			
+		else
+			equip(sets.ws.acc[spell.english])			
+		end
+		if is_sc_element_today(spell) then
+			equip(sets.wsdaybonus)
+		end
+		if player.tp>999 and player.tp<3000 then
+			if phys_ws:contains(spell.english) then
+				if WSMode=="dmg" then
+					equip(sets.moonshadephysicaldamage)
+				elseif WSMode=="acc" then
+					equip(sets.moonshadephysicalaccuracy)
+				end
+			else
+				equip(sets.moonshademagic)
+			end
+		end
+	end
+	if spell.prefix=="/range" then
+		equip(sets.pebble)
+	end
+	equip(sets[swordtype])
+	equip(sets[shieldtype])
 end
 
 function midcast(spell)
@@ -335,119 +568,98 @@ function midcast(spell)
 		send_command('pause 1.9;cancel Copy Image*')
 	end
 	if cure:contains(spell.english) then
-		if spell.target.type== 'SELF' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
+		if spell.target.type== 'SELF' then			
 			equip(sets.midcast.selfcure)				
 		else
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
 			equip(sets.midcast.cure)				
 		end
 	elseif spell.skill== 'Divine Magic' then
-		if spell.english== 'Enlight' then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
+		if spell.english== 'Enlight' or spell.english=='Enlight II' then		
 			equip(sets.midcast.enlight)			
 		else
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
 			equip(sets.midcast.flash)
 		end
 	elseif spell.skill== 'Enhancing Magic' then
 		if spell.english:find('Pro') or spell.english:find('Shel') then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
 			equip(sets.midcast.proshell)			
 		else
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
 			equip(sets.midcast.enhancing)			
 		end
-	elseif ninjutsu:contains(spell.english) then		
-		equip(sets[swordtype])
-		equip(sets[shieldtype])
-		equip(sets.midcast.utsu)
+	elseif spell.skill== 'Ninjutsu' then
+		if utsu:contains(spell.english) then
+			equip(sets.midcast.utsu)
+		else
+			equip(sets.midcast.flash)
+		end
 	elseif spell.skill=="Blue Magic" then
-		equip(sets[swordtype])
-		equip(sets[shieldtype])
+		equip(sets.midcast.flash)
+	elseif spell.skill=="Elemental Magic" then
+		equip(sets.midcast.flash)
+	elseif spell.skill=="Enfeebling Magic" then
+		equip(sets.midcast.flash)
+	elseif spell.english:contains('Raise') then
 		equip(sets.midcast.flash)
 	end
+	if spell.english=="Souleater" then
+		send_command('pause 1;cancel Souleater')
+	end
+	if spell.english=="Last Resort" then
+		send_command('pause 1;cancel Last Resort')
+	end
+	equip(sets[swordtype])
+	equip(sets[shieldtype])
 end
 
 function aftercast(spell)	
-	if player.status == 'Engaged' then
-		if TPSet== "tp" then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.aftercast.tp[Acc])
-		elseif TPSet=="hybrid" then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.aftercast.hybrid[Acc])
-		elseif TPSet=="pdt" then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.aftercast.pdt)
-		elseif TPSet=="mdt" then
-			equip(sets[swordtype])
-			equip(sets[shieldtype])
-			equip(sets.aftercast.mdt)
-		elseif TPSet=="dt" then
-				equip(sets[swordtype])
-				equip(sets[shieldtype])
-				equip(sets.aftercast.dt)
-			
+	if spell.english=="Atonement" then
+		if TPSet=="tp"then
+			windower.send_command('input /echo Atonement just used, checking for AM3;wait 1;gsupdate;input /echo tp set updated')
 		end
-	else
-		equip(sets[swordtype])
-		equip(sets[shieldtype])
-		equip(sets.aftercast[IdleMode])
 	end
+	status_change(player.status)
 end
 
 function status_change(new,old)
 	if new == 'Engaged' then
-		if player.status == 'Engaged' then			
-			if TPSet== "tp" then
-				equip(sets[swordtype])
-				equip(sets[shieldtype])
-				equip(sets.aftercast.tp[Acc])
-			elseif TPSet=="hybrid" then
-				equip(sets[swordtype])
-				equip(sets[shieldtype])
-				equip(sets.aftercast.hybrid[Acc])
-			elseif TPSet=="pdt" then
-				equip(sets[swordtype])
-				equip(sets[shieldtype])
-				equip(sets.aftercast.pdt)
-			elseif TPSet=="mdt" then
-				equip(sets[swordtype])
-				equip(sets[shieldtype])
-				equip(sets.aftercast.mdt)
-			elseif TPSet=="dt" then
-				equip(sets[swordtype])
-				equip(sets[shieldtype])
-				equip(sets.aftercast.dt)
+		if TPSet=="tp" then
+			if swordtype=="burtgang" then
+				if AM_ON_OR_OFF=="on" then 
+					if buffactive["Aftermath: Lv.3"] then
+						equip(sets.aftercast.aftermath[Acc])
+					else
+						equip(sets.aftercast.sword[Acc])
+					end
+				elseif AM_ON_OR_OFF~="on" then
+					equip(sets.aftercast.sword[Acc])
+				end
+			elseif swordtype=="gs" then
+				equip(sets.aftercast.greatsword[Acc])
+			elseif swordtype=="club" then
+				equip(sets.aftercast.club[Acc])
 			end
-		end
+		elseif TPSet=="absorb" then
+			equip(sets.aftercast.absorbmode[Acc])
+		elseif TPSet=="hybrid" then
+			equip(sets.aftercast.hybrid[Acc])
+		elseif TPSet=="pdt" then
+			equip(sets.aftercast.pdt)
+		elseif TPSet=="mdt" then
+			equip(sets.aftercast.mdt)
+		elseif TPSet=="dt" then
+			equip(sets.aftercast.dt)
+		end		
 	else
-		equip(sets[swordtype])
-		equip(sets[shieldtype])		
 		equip(sets.aftercast[IdleMode])
 	end	
+	equip(sets[swordtype])
+	equip(sets[shieldtype])	
 end		
 
 function self_command(command)
 	
 	-- weaponry variable commands rule start
 	if command == 'ochain' then
-		if shieldtype=="Aegis" then
-			shieldtype="Ochain"
-			equip(sets.Ochain)
-			add_to_chat(206, 'OCHAIN SELECTED')
-			send_command('text pdtvariable text "OCHAIN"')
-		elseif shieldtype=="Priwen" then
+		if shieldtype~="Ochain" then
 			shieldtype="Ochain"
 			equip(sets.Ochain)
 			add_to_chat(206, 'OCHAIN SELECTED')
@@ -456,28 +668,30 @@ function self_command(command)
 			status_change(player.status)
 			add_to_chat(206, 'OCHAIN ALREADY SET, REFRESHING EQUIPMENT.')
 		end
+		if swordtype=="gs" then
+			swordtype="Burtgang"
+			status_change(player.status)
+			add_to_chat(206, 'SWITCHING TO BURTGANG AND OCHAIN.')
+		end
+		last_shield_used="Ochain"
 	elseif command == 'aegis' then
-		if shieldtype=="Ochain" then
+		if shieldtype~="Aegis" then
 			shieldtype="Aegis"
 			equip(sets.Aegis)
 			add_to_chat(206, 'AEGIS SELECTED')
-			send_command('text pdtvariable text "AEGIS"')
-		elseif shieldtype=="Priwen" then
-			shieldtype="Aegis"
-			equip(sets.Aegis)
-			add_to_chat(206, 'AEGIS SELECTED')
-			send_command('text pdtvariable text "AEGIS"')
+			send_command('text pdtvariable text "AEGIS"')		
 		elseif shieldtype=="Aegis" then
 			status_change(player.status)
 			add_to_chat(206, 'AEGIS ALREADY SET, REFRESHING EQUIPMENT.')
 		end
+		if swordtype=="gs" then
+			swordtype="Burtgang"
+			status_change(player.status)
+			add_to_chat(206, 'SWITCHING TO BURTGANG AND AEGIS.')
+		end
+		last_shield_used="Aegis"
 	elseif command == 'priwen' then
-		if shieldtype=="Aegis" then
-			shieldtype="Priwen"
-			equip(sets.Priwen)
-			add_to_chat(206, 'PRIWEN SELECTED')
-			send_command('text pdtvariable text "PRIWEN"')
-		elseif shieldtype=="Ochain" then
+		if shieldtype~="Priwen" then
 			shieldtype="Priwen"
 			equip(sets.Priwen)
 			add_to_chat(206, 'PRIWEN SELECTED')
@@ -486,15 +700,37 @@ function self_command(command)
 			status_change(player.status)
 			add_to_chat(206, 'PRIWEN ALREADY SET, REFRESHING EQUIPMENT.')
 		end
+		if swordtype=="gs" then
+			swordtype="Burtgang"
+			status_change(player.status)
+			add_to_chat(206, 'SWITCHING TO BURTGANG AND PRIWEN.')
+		end
+		last_shield_used="Priwen"
 	end
 	if command == 'burtgang' then
 		swordtype="burtgang"
 		equip(sets.burtgang)
 		add_to_chat(206, 'BURTGANG SWORD SELECTED')
-	elseif command == 'bura' then
-		swordtype="bura"
-		equip(sets.bura)
-		add_to_chat(206, 'BURA~ SWORD SELECTED')
+		if shieldtype=="pg" then
+			shieldtype=last_shield_used
+			equip(sets[shieldtype])
+			add_to_chat(206, 'SWITCHING TO BURTGANG AND LAST USED SHIELD')
+		end
+	elseif command == 'club' then
+		swordtype="club"
+		equip(sets.club)
+		add_to_chat(206, 'CLUB SELECTED')
+		if shieldtype=="pg" then
+			shieldtype=last_shield_used
+			equip(sets[shieldtype])
+			add_to_chat(206, 'SWITCHING TO CLUB AND LAST USED SHIELD')
+		end
+	end
+	if command == 'gs' then
+		swordtype="gs"
+		shieldtype="pg"
+		equip(sets.gs)
+		equip(sets.pg)
 	end
 	-- weaponry variable commands rule end
 	
@@ -503,14 +739,50 @@ function self_command(command)
 		Acc="lowacc"
 		add_to_chat(206, 'Low Accuracy Mode')
 		send_command('text idlevariable text "LOW-ACC"')
+		if swordtype=="burtgang" then
+			send_command('alias tp gs equip sets.aftercast.sword.lowacc')
+		elseif swordtype=="gs" then
+			send_command('alias tp gs equip sets.aftercast.greatsword.lowacc')
+		elseif swordtype=="club" then
+			send_command('alias tp gs equip sets.aftercast.club.lowacc')
+		end
+		if TPSet=="hybrid" then
+			send_command('alias hybrid gs equip sets.aftercast.hybrid.lowacc')
+		elseif TPSet=="absorb" then
+			send_command('alias hybrid gs equip sets.aftercast.absorb.lowacc')
+		end
 	elseif command == 'medacc' then
 		Acc="medacc"
 		add_to_chat(206, 'Medium Accuracy Mode')
 		send_command('text idlevariable text "MEDIUM-ACC"')
+		if swordtype=="burtgang" then
+			send_command('alias tp gs equip sets.aftercast.sword.medacc')
+		elseif swordtype=="gs" then
+			send_command('alias tp gs equip sets.aftercast.greatsword.medacc')
+		elseif swordtype=="club" then
+			send_command('alias tp gs equip sets.aftercast.club.medacc')
+		end
+		if TPSet=="hybrid" then
+			send_command('alias hybrid gs equip sets.aftercast.hybrid.medacc')
+		elseif TPSet=="absorb" then
+			send_command('alias hybrid gs equip sets.aftercast.absorb.medacc')
+		end
 	elseif command == 'highacc' then
 		Acc="highacc"
 		add_to_chat(206, 'High Accuracy Mode')
 		send_command('text idlevariable text "HIGH-ACC"')
+		if swordtype=="burtgang" then
+			send_command('alias tp gs equip sets.aftercast.sword.highacc')
+		elseif swordtype=="gs" then
+			send_command('alias tp gs equip sets.aftercast.greatsword.highacc')
+		elseif swordtype=="club" then
+			send_command('alias tp gs equip sets.aftercast.club.highacc')
+		end
+		if TPSet=="hybrid" then
+			send_command('alias hybrid gs equip sets.aftercast.hybrid.highacc')
+		elseif TPSet=="absorb" then
+			send_command('alias hybrid gs equip sets.aftercast.absorb.highacc')
+		end
 	end
 	-- accuracy variable commands rule end
 	
@@ -521,9 +793,29 @@ function self_command(command)
 		send_command('text tpvariable text "DD MODE"')
 	end
 	if command == 'hybrid' then
-		TPSet="hybrid"
-		add_to_chat(206, 'HYBRID MODE')
-		send_command('text tpvariable text "Hybrid MODE"')
+		if TPSet~= "hybrid" then
+			TPSet="hybrid"
+			add_to_chat(206, 'HYBRID MODE')
+			send_command('text tpvariable text "Hybrid MODE"')
+			if Acc=="lowacc" then
+				send_command('alias hybrid gs equip sets.aftercast.hybrid.lowacc')
+			elseif Acc=="medacc" then
+				send_command('alias hybrid gs equip sets.aftercast.hybrid.medacc')
+			elseif Acc=="highacc" then
+				send_command('alias hybrid gs equip sets.aftercast.hybrid.highacc')
+			end
+		else
+			TPSet="absorb"
+			add_to_chat(206, 'ABSORB MODE')
+			send_command('text tpvariable text "Absorb MODE"')
+			if Acc=="lowacc" then
+				send_command('alias hybrid gs equip sets.aftercast.absorb.lowacc')
+			elseif Acc=="medacc" then
+				send_command('alias hybrid gs equip sets.aftercast.absorb.medacc')
+			elseif Acc=="highacc" then
+				send_command('alias hybrid gs equip sets.aftercast.absorb.highacc')
+			end
+		end
 	end
 	if command == 'pdt' then
 		TPSet="pdt"
@@ -541,6 +833,20 @@ function self_command(command)
 		send_command('text tpvariable text "DT MODE"')
 	end
 	-- engage variable commands rule end
+	
+	-- ws variable rule
+	if command=="wsacctoggle" then
+		if WSMode=="dmg" then
+			WSMode="acc"
+			add_to_chat(206, 'WSMODE: ACCURACY')
+			send_command('text doavariable text "WSMODE: ACC"')			
+		else
+			WSMode="dmg"
+			add_to_chat(206, 'WSMODE: DAMAGE')
+			send_command('text doavariable text "WSMODE: DMG"')			
+		end
+	end
+	-- ws variable rule
 	
 	-- idle variable commands rule start
 	if command == 'idle' then
@@ -623,14 +929,124 @@ function self_command(command)
 			repulsemode="normal"
 			send_command('gs enable back')
 			add_to_chat(206, 'REPULSE MODE OFF')
+			status_change(player.status)
 		else
 			repulsemode="repulse"
 			send_command('input /equip back "Repulse Mantle";gs disable back')
 			add_to_chat(206, 'REPULSE MODE ON')
 		end
 	end
+	if command == 'aftermath' then
+		if AM_ON_OR_OFF=="on" then
+			AM_ON_OR_OFF="off"
+			add_to_chat(206, 'AFTERMATH SET: OFF')
+		else 
+			AM_ON_OR_OFF="on"
+			add_to_chat(206, 'AFTERMATH SET: ON')
+		end
+	end
+	-- special case
+	if command == 'update' then
+		status_change(player.status)		
+	end
 end
 
-function unload(new_job)
-	windower.send_command('boxesoff')
+function sub_job_change(NewSubjob,OldSubjob)
+	macros_setup()
+end
+
+function macros_setup()
+	if player.sub_job=="WAR" then
+		send_command('input /macro book 1;input /macro set 2')
+		send_command('alias cmd1 input /ja "Provoke" <stnpc>')
+		send_command('alias cmd2 input /ma "Flash" <stnpc>')
+		send_command('alias cmd3 input /ja "Shield Bash" <stnpc>')
+		send_command('alias cmd4 input /ja "Cover" <stpt>')
+		send_command('alias cmd5 input /ja "Aggressor" <me>')
+		send_command('alias cmd6 input /ja "Berserk" <me>')
+		send_command('alias cmd7 input /ja "Warcry" <me>')
+		send_command('alias cmd8 input /ws "Flat Blade" <t>')
+		send_command('alias cmd9 input /ma "Holy II" <t>')
+		send_command('alias cmd10 input /ma "Holy" <t>')
+		add_to_chat(206, '/WAR Keybinds active')
+	elseif player.sub_job=="DRK" then
+		send_command('input /macro book 1;input /macro set 1')
+		send_command('alias cmd1 input /ma "Poisonga" <t>')
+		send_command('alias cmd2 input /ma "Absorb-CHR" <t>')
+		send_command('alias cmd3 input /ma "Absorb-STR" <t>')
+		send_command('alias cmd4 input /ma "Absorb-VIT" <t>')
+		send_command('alias cmd5 input /ma "Absorb-DEX" <t>')
+		send_command('alias cmd6 input /ma "Absorb-AGI" <t>')
+		send_command('alias cmd7 input /ma "Absorb-INT" <t>')
+		send_command('alias cmd8 input /ma "Absorb-MND" <t>')
+		send_command('alias cmd9 input /ma "Bind" <t>')
+		send_command('alias cmd10 input /ma "Sleep" <t>')
+		add_to_chat(206, '/DRK Keybinds active')
+	elseif player.sub_job=="RUN" then
+		send_command('input /macro book 1;input /macro set 10')
+		send_command('alias cmd1 input /ja "Tenebrae" <me>')
+		send_command('alias cmd2 input /ja "Lux" <me>')
+		send_command('alias cmd3 input /ja "Telus" <me>')
+		send_command('alias cmd4 input /ja "Flabra" <me>')
+		send_command('alias cmd5 input /ja "Ignis" <me>')
+		send_command('alias cmd6 input /ja "Gelus" <me>')
+		send_command('alias cmd7 input /ja "Sulpor" <me>')
+		send_command('alias cmd8 input /ja "Unda" <me>')
+		send_command('alias cmd9 input /ja "Lunge" <t>')
+		send_command('alias cmd10 input /ja "Swipe" <t>')
+		send_command('bind @9 input /ma "Aquaveil" <me>')
+		add_to_chat(206, '/RUN Keybinds active')
+	elseif player.sub_job=="NIN" then
+		send_command('input /macro book 1;input /macro set 9')
+		send_command('alias cmd1 input /ma "Holy II" <t>')
+		send_command('alias cmd2 input /ma "Holy" <t>')
+		send_commmand('alias cmd3 input /ma "Katon: Ichi" <t>')
+		send_command('alias cmd4 input /ma "Hyoton: Ichi" <t>')
+		send_command('alias cmd5 input /ma "Doton: Ichi" <t>')
+		send_command('alias cmd6 input /ma "Raiton: Ichi" <t>')
+		send_command('alias cmd7 input /ma "Huton: Ichi" <t>')
+		send_command('alias cmd8 input /ma "Suiton: Ichi" <t>')
+		send_command('alias cmd9 input /ma "Utsusemi: Ichi" <me>')
+		send_command('alias cmd10 input /ma "Utsusemi: Ni" <me>')
+		add_to_chat(206, '/NIN Keybinds active')
+	elseif player.sub_job=="RDM" then
+		send_command('input /macro book 1;input /macro set 8')
+		send_command('alias cmd1 input /ma "Diaga" <t>')
+		send_command('alias cmd2 input /ma "Dia II" <t>')
+		send_command('alias cmd3 input /ma "Dispel" <t>')
+		send_command('alias cmd4 input /ma "Bind" <t>')
+		send_command('alias cmd5 input /ma "Blink" <me>')
+		send_command('alias cmd6 input /ma "Ice Spikes" <me>')
+		send_command('alias cmd7 input /ma "Blaze Spikes" <me>')
+		send_command('alias cmd8 input /ma "Stone" <t>')
+		send_command('alias cmd9 input /ma "Sleep II" <t>')
+		send_command('alias cmd10 input /ma "Sleep" <t>')
+		send_command('bind @9 input /ma "Aquaveil" <me>')
+		add_to_chat(206, '/RDM Keybinds active')
+	elseif player.sub_job=="BLU" then
+		send_command('input /macro book 1;input /macro set 7')
+		send_command('alias cmd1 input /ma "Jettatura" <t>')
+		send_command('alias cmd2 input /ma "Cursed Sphere" <t>')
+		send_command('alias cmd3 input /ma "Sandspin" <t>')
+		send_command('alias cmd4 input /ma "Sound Blast" <t>')
+		send_command('alias cmd5 input /ma "Stinking Gas" <t>')
+		send_command('alias cmd6 input /ma "Grand Slam" <t>')
+		send_command('alias cmd7 input /ma "Battle Dance" <t>')
+		send_command('alias cmd8 input /ma "Geist Wall" <t>')
+		send_command('alias cmd9 input /ma "Pollen" <me>')
+		send_command('alias cmd10 input /ma "Healing Breeze" <me>')
+		add_to_chat(206, '/BLU Keybinds active')
+	elseif player.sub_job=="DNC" then
+		send_command('input /macro book 1;input /macro set 6')
+		send_command('alias cmd1 input /ja "Box Step" <t>')
+		send_command('alias cmd2 input /ja "Quick Step" <t>')
+		send_command('alias cmd3 input /ja "Desperate Flourish" <t>')
+		send_command('alias cmd4 input /ja "Curing Waltz II" <stal>')
+		send_command('alias cmd5 input /ja "Violent Flourish" <t>')
+		send_command('alias cmd6 input /ja "Drain Samba II" <me>')
+		send_command('alias cmd7 input /ja "Drain Samba" <me>')
+		send_command('alias cmd8 input /ja "Curing Waltz" <stal>')
+		send_command('alias cmd9 input /ja "Haste Samba" <me>')
+		send_command('alias cmd10 input /ja "Curing Waltz III" <stal>')
+	end
 end

@@ -1,6 +1,7 @@
 function get_sets()
 -- include
 	include('boxes.lua')
+	include('organizer-lib.lua')
 -- include
 --keybinds
 	send_command('bind #f1 gs c toggleoffensivemodes')
@@ -16,6 +17,12 @@ function get_sets()
 	send_command('bind #h gs equip ..sets.aftercast.hybrid[sets.aftercast.hybrid.index[hybrid_ind]]')
 	send_command('bind #x gs equip sets.aftercast.defense.xdt')
 --keybinds
+
+	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','STR+6 VIT+6',}}
+	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +2%',}}
+	taeonhands={ name="Taeon Gloves", augments={'Attack+25','"Triple Atk."+2','Crit. hit damage +2%',}}
+	taeonlegs={ name="Taeon Tights", augments={'Accuracy+23','"Triple Atk."+2',}}
+	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
 	
 --base sets and indecies
 	sets.precast={}	
@@ -41,19 +48,19 @@ function get_sets()
 	sets.precast.ws.damage["Shadowstitch"]= sets.dexws
 	sets.precast.ws.accuracy["Shadowstitch"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
 	
-	sets.precast.ws.damage["Dancing Edge"]= set_combine(sets.dexws, {neck="Breeze Gorget", waist="Breeze Belt",})
+	sets.precast.ws.damage["Dancing Edge"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	sets.precast.ws.accuracy["Dancing Edge"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
 	
-	sets.precast.ws.damage["Shark Bite"]= set_combine(sets.dexws, {neck="Light Gorget", waist="Light Belt",})
+	sets.precast.ws.damage["Shark Bite"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	sets.precast.ws.accuracy["Shark Bite"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
 	
-	sets.precast.ws.damage["Evisceration"]= set_combine(sets.dexws, {neck="Shadow Gorget", waist="Shadow Belt",})
+	sets.precast.ws.damage["Evisceration"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	sets.precast.ws.accuracy["Evisceration"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
 	
-	sets.precast.ws.damage["Mandalic Stab"]= set_combine(sets.dexws, {neck="Shadow Gorget", waist="Shadow Belt",})
+	sets.precast.ws.damage["Mandalic Stab"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	sets.precast.ws.accuracy["Mandalic Stab"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
 	
-	sets.precast.ws.damage["Rudra's Storm"]= set_combine(sets.dexws, {neck="Light Gorget", waist="Light Belt",})
+	sets.precast.ws.damage["Rudra's Storm"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	sets.precast.ws.accuracy["Rudra's Storm"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
 	
 	sets.midcast={}
@@ -67,15 +74,13 @@ function get_sets()
 	offense_ind=1
 	
 	sets.aftercast.offense.lowacc={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", body="Thaumas Coat", 
-	head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
-	hands={ name="Plun. Armlets", augments={'Enhances "Perfect Dodge" effect',}}, feet="Raid. Poulaines +2",
-    legs={ name="Qaaxo Tights", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}}, neck="Asperity Necklace",
-	waist="Chaac Belt", left_ear="Dudgeon Earring", right_ear="Heartseeker Earring", left_ring="Epona's Ring",
-	right_ring="Rajas Ring", back="Atheling Mantle",}
+	head=taeonhead, legs=taeonlegs, neck="Asperity Necklace", right_ear="Heartseeker Earring", left_ring="Epona's Ring",
+	hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}}, feet=taeonfeet,
+	waist="Chaac Belt", left_ear="Dudgeon Earring", right_ring="Rajas Ring", back="Canny Cape",}
 	
-	sets.aftercast.offense.medacc= set_combine(sets.aftercast.offense.lowacc, {neck="Iqabi Necklace", back="Letalis Mantle",})
+	sets.aftercast.offense.medacc= set_combine(sets.aftercast.offense.lowacc, {neck="Iqabi Necklace",})
 	
-	sets.aftercast.offense.highacc= set_combine(sets.aftercast.offense.medacc, {legs="Plun. Culottes",})
+	sets.aftercast.offense.highacc= set_combine(sets.aftercast.offense.medacc, {head=taeonhead, left_ear="suppanomimi", right_ear="Zennaroi Earring",})
 	
 	sets.aftercast.hybrid={}
 	sets.aftercast.hybrid.index={'lowacc','medacc','highacc'}
@@ -239,6 +244,6 @@ function self_command(command)
 	end
 end
 
-function unload(new_job)
+function file_unload(new_job)
 	windower.send_command('boxesoff')
 end

@@ -16,19 +16,28 @@ function get_sets()
 	--baseset names
 	
 	--precast sets
-	sets.precast.fc={
-	}
+	sets.precast.fc={main="Marin Staff", ammo="Incantor Stone", head="Nahtirah Hat", body="Anhur Robe",
+	hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -1%','Song recast delay -1',}},
+	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet="Chelona Boots",
+	neck="Orison Locket", waist="Fucho-no-Obi", left_ear="Ethereal Earring", right_ear="Loquac. Earring",
+	left_ring="Prolix Ring", right_ring="Veneficium Ring", back="Swith Cape",}
 	
-	sets.precast.cure={
-	}
+	sets.precast.cure={main={ name="Tamaxchi", augments={'Occ. atk. twice+8','Enmity-10',}}, sub="Sors Shield",
+	ammo="Incantor Stone", head="Nahtirah Hat", body="Heka's Kalasiris", legs="Orsn. Pantaln. +2",
+	hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -1%','Song recast delay -1',}},
+	feet="Hygieia Clogs", neck="Orison Locket", waist="Fucho-no-Obi", left_ear="Ethereal Earring",
+	right_ear="Loquac. Earring", left_ring="Prolix Ring", right_ring="Veneficium Ring", back="Pahtli Cape",}
 	--precast sets
 	
 	--midcast sets
-	sets.midcast.curesolace={
-	}
+	sets.midcast.curesolace={main={ name="Tamaxchi", augments={'Occ. atk. twice+8','Enmity-10',}}, sub="Sors Shield",
+	ammo="Incantor Stone", head={ name="Gende. Caubeen +1", augments={'Phys. dmg. taken -1%',}},
+	body="Orison Bliaud +2", hands="Bokwus Gloves", legs="Orsn. Pantaln. +2", feet="Hygieia Clogs",
+	neck="Colossus's Torque", waist="Cascade Belt", left_ear="Lifestorm Earring", right_ear="Loquac. Earring",
+	back={ name="Mending Cape", augments={'Healing magic skill +7','Enha.mag. skill +9','Mag. Acc.+9',}}, 
+	left_ring="Ephedra Ring", right_ring="Sirona's Ring",}
 	
-	sets.midcast.curemisery={
-	}
+	sets.midcast.curemisery=set_combine(sets.midcast.curesolace, {body="Vanir Cotehardie",})
 	
 	sets.midcast.bar={
 	}
@@ -56,8 +65,10 @@ function get_sets()
 	--midcast sets
 	
 	--aftercast sets
-	sets.idle={
-	}
+	sets.idle={main="Bolelabunga", sub="Genbu's Shield", ammo="Vanir Battery", body="Respite Cloak",
+	hands="Serpentes Cuffs", legs="Nares Trews", feet="Serpentes Sabots", neck="Twilight Torque",
+	waist="Fucho-no-Obi", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring",
+	right_ring="Sheltered Ring", back="Shadow Mantle",}
 	
 	sets.tp.club={
 	}
@@ -149,6 +160,6 @@ function self_command(command)
 	end
 end
 
-function unload(new_job)
+function file_unload(new_job)
 	windower.send_command('boxesoff')
 end

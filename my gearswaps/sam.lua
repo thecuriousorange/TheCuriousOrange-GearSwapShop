@@ -1,16 +1,17 @@
 function get_sets()
 -- includes
-	include('boxes.lua')
-	include('skillchain-elements.lua')
+	include('tco-include.lua')
+	include('organizer-lib.lua')
 -- includes
 
 --aliases
 	send_command('alias ddset gs equip sets.aftercast.tp.multi')
 	send_command('alias accset gs equip sets.aftercast.highacc.low')
+	send_command('alias idleset gs equip sets.idle.regen')
 --aliases
 
 --keybinds
-	send_command('bind #4 gs equip sets.aftercast.idle')
+	send_command('bind #4 idleset')
 	send_command('bind #2 gs equip sets.aftercast.pdt')
 	send_command('bind #8 gs equip sets.aftercast.mdt')
 	send_command('bind #h gs equip sets.aftercast.hybrid')
@@ -28,7 +29,10 @@ function get_sets()
 	send_command('bind #f4 gs c low;alias ddset gs equip sets.aftercast.tp.highacclow')
 	send_command('bind #f5 gs c med;alias ddset gs equip sets.aftercast.tp.highaccmed')
 	send_command('bind #f6 gs c high;alias ddset gs equip sets.aftercast.tp.highacchigh')
-	send_command('bind #f7 gs c IVhit;alias ddset gs equip sets.aftercast.tp.IVhit')
+	
+	send_command('bind @f9 gs c standardidle;alias idleset gs equip sets.idle.standard')
+	send_command('bind @f10 gs c regenidle;alias idleset gs equip sets.idle.regen')
+	send_command('bind @f11 gs c dtidle;alias idleset gs equip sets.idle.dt')
 --keybinds
 
 --default text box setup
@@ -47,11 +51,13 @@ function get_sets()
 	TPType="multi"	
 	WSMode="damage"
 	rrlock="rroff"
+	IdleMode="regen"
 		
 	sets.TPMode= T{}
 	sets.TPType= T{}
 	sets.WSMode= T{}
 	sets.rrlock= T{}
+	sets.IdleMode= T{}
 --variables
 
 --base names
@@ -78,7 +84,7 @@ function get_sets()
 	
 	sets.precast.ja["Hasso"]={}
 	
-	sets.precast.ja["Meditate"]={head="Wakido Kabuto +1", hands="Sakonji Kote +1",}
+	sets.precast.ja["Meditate"]={head="Wakido Kabuto +1", hands="Sakonji Kote +1", back={ name="Takaha Mantle", augments={'STR+4','"Zanshin"+3','"Store TP"+1','Meditate eff. dur. +4',}}}
 	
 	sets.precast.ja["Seigan"]={}
 	
@@ -104,16 +110,16 @@ function get_sets()
     back="Buquwik Cape",}
 	
 	sets.accws={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Otomi Helm", body="Mes. Haubergeon", hands="Miki. Gauntlets", 
-	legs="Miki. Cuisses", feet="Sak. Sune-Ate +1", neck="Justiciar's Torque", waist="Windbuffet Belt +1",
+	legs="Acro Breeches", feet="Sak. Sune-Ate +1", neck="Justiciar's Torque", waist="Windbuffet Belt +1",
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring",
     back="Buquwik Cape",}
 	
 	sets.raws={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Sakonji Kabuto +1",
 	body="Kyujutsugi", hands="Unkai Kote +2", legs="Miki. Cuisses", feet="Sak. Sune-Ate +1",
-	neck="Light Gorget", waist="Light Belt", left_ear="Moonshade Earring", right_ear="Drone Earring", 
+	neck="Fotia Gorget", waist="Fotia Belt", left_ear="Moonshade Earring", right_ear="Drone Earring", 
 	left_ring="Stormsoul Ring", right_ring="Bellona's Ring", back="Terebellum Mantle",}
 	
-	sets.precast.accws["Tachi: Enpi"]= set_combine(sets.accws, {neck="Snow Gorget", waist="Snow Belt",})
+	sets.precast.accws["Tachi: Enpi"]= set_combine(sets.accws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
 	sets.precast.accws["Tachi: Hobaku"]= sets.accws
 	
@@ -125,21 +131,21 @@ function get_sets()
 	
 	sets.precast.accws["Tachi: Koki"]= sets.accws
 	
-	sets.precast.accws["Tachi: Yukikaze"]= set_combine(sets.accws, {neck="Snow Gorget", waist="Snow Belt",})
+	sets.precast.accws["Tachi: Yukikaze"]= set_combine(sets.accws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.accws["Tachi: Gekko"]= set_combine(sets.accws, {neck="Snow Gorget", waist="Snow Belt",})
+	sets.precast.accws["Tachi: Gekko"]= set_combine(sets.accws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.accws["Tachi: Shoha"]= set_combine(sets.accws, {neck="Shadow Gorget", waist="Shadow Belt",})
+	sets.precast.accws["Tachi: Shoha"]= set_combine(sets.accws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.accws["Tachi: Kasha"]= set_combine(sets.accws, {neck="Shadow Gorget", waist="Shadow Belt",})
+	sets.precast.accws["Tachi: Kasha"]= set_combine(sets.accws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.accws["Tachi: Kaiten"]= set_combine(sets.accws, {neck="Light Gorget", waist="Light Belt",})
+	sets.precast.accws["Tachi: Kaiten"]= set_combine(sets.accws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.accws["Tachi: Rana"]= set_combine(sets.accws, {neck="Shadow Gorget", waist="Shadow Belt",})
+	sets.precast.accws["Tachi: Rana"]= set_combine(sets.accws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.accws["Tachi: Fudo"]= set_combine(sets.accws, {neck="Snow Gorget", waist="Snow Belt", feet="Ejekamal Boots",})
+	sets.precast.accws["Tachi: Fudo"]= set_combine(sets.accws, {neck="Fotia Gorget", waist="Fotia Belt", feet="Ejekamal Boots",})
 	
-	sets.precast.ws["Tachi: Enpi"]= set_combine(sets.strws, {neck="Snow Gorget", waist="Snow Belt",})
+	sets.precast.ws["Tachi: Enpi"]= set_combine(sets.strws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
 	sets.precast.ws["Tachi: Hobaku"]= sets.strws
 	
@@ -151,19 +157,19 @@ function get_sets()
 	
 	sets.precast.ws["Tachi: Koki"]= sets.strws
 	
-	sets.precast.ws["Tachi: Yukikaze"]= set_combine(sets.strws, {neck="Snow Gorget", waist="Snow Belt",})
+	sets.precast.ws["Tachi: Yukikaze"]= set_combine(sets.strws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.ws["Tachi: Gekko"]= set_combine(sets.strws, {neck="Snow Gorget", waist="Snow Belt",})
+	sets.precast.ws["Tachi: Gekko"]= set_combine(sets.strws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.ws["Tachi: Shoha"]= set_combine(sets.strws, {neck="Shadow Gorget", waist="Shadow Belt",})
+	sets.precast.ws["Tachi: Shoha"]= set_combine(sets.strws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.ws["Tachi: Kasha"]= set_combine(sets.strws, {neck="Shadow Gorget", waist="Shadow Belt",})
+	sets.precast.ws["Tachi: Kasha"]= set_combine(sets.strws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.ws["Tachi: Kaiten"]= set_combine(sets.strws, {neck="Light Gorget", waist="Light Belt",})
+	sets.precast.ws["Tachi: Kaiten"]= set_combine(sets.strws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.ws["Tachi: Rana"]= set_combine(sets.strws, {neck="Shadow Gorget", waist="Shadow Belt",})
+	sets.precast.ws["Tachi: Rana"]= set_combine(sets.strws, {neck="Fotia Gorget", waist="Fotia Belt",})
 	
-	sets.precast.ws["Tachi: Fudo"]= set_combine(sets.strws, {neck="Snow Gorget", waist="Metalsinger Belt",})
+	sets.precast.ws["Tachi: Fudo"]= set_combine(sets.strws, {neck="Fotia Gorget", waist="Metalsinger Belt",})
 	
 	sets.precast.ws["Flaming Arrow"]= sets.raws
 	
@@ -189,9 +195,9 @@ function get_sets()
 --sub nin stuff
 
 --tp sets
-	sets.aftercast.tp.multi={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Otomi Helm", body="Mes. Haubergeon", hands="Wakido Kote +1", 
-	legs="Otronif Brais +1", feet="Otronif Boots +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring", 
-	right_ear="Bladeborn Earring", left_ring="K'ayres Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+4','"Zanshin"+4','"Store TP"+1',}},}
+	sets.aftercast.tp.multi={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Otomi Helm", body="Acro Surcoat", hands="Wakido Kote +1", 
+	legs="Acro Breeches", feet="Acro Leggings", neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring", 
+	right_ear="Bladeborn Earring", left_ring="K'ayres Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+4','"Zanshin"+3','"Store TP"+1','Meditate eff. dur. +4',}},}
 	
 	sets.aftercast.tp.acc= set_combine(sets.aftercast.tp.multi, {head="Yaoyotl Helm",})
 	
@@ -203,7 +209,7 @@ function get_sets()
     legs={ name="Otronif Brais +1", augments={'Phys. dmg. taken -3%','Crit.hit rate+1',}},
     feet={ name="Sak. Sune-Ate +1", augments={'Enhances "Meikyo Shisui" effect',}},
     neck="Asperity Necklace", waist="Goading Belt", left_ear="Tripudio Earring", right_ear="Brutal Earring",
-    left_ring="K'ayres Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+4','"Zanshin"+4','"Store TP"+1',}},}
+    left_ring="K'ayres Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+4','"Zanshin"+3','"Store TP"+1','Meditate eff. dur. +4',}},}
 	
 	sets.aftercast.tp.xhit= set_combine(sets.aftercast.tp.acc, {head="Sakonji Kabuto +1", body="Sakonji Domaru +1", left_ear="Tripudio Earring", right_ear="Brutal Earring",})
 	
@@ -219,7 +225,7 @@ function get_sets()
     legs={ name="Otronif Brais +1", augments={'Phys. dmg. taken -3%','Crit.hit rate+1',}},
     feet={ name="Sak. Sune-Ate +1", augments={'Enhances "Meikyo Shisui" effect',}},
     neck="Asperity Necklace", waist="Goading Belt", left_ear="Tripudio Earring", right_ear="Brutal Earring",
-    left_ring="K'ayres Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+4','"Zanshin"+4','"Store TP"+1',}},}
+    left_ring="K'ayres Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+4','"Zanshin"+3','"Store TP"+1','Meditate eff. dur. +4',}},}
 	
 	sets.aftercast.o.xhit= set_combine(sets.aftercast.tp.xhit, {left_ring="Oneiros Ring",})
 	
@@ -229,7 +235,7 @@ function get_sets()
 --tp sets
 
 --high acc sets
-	sets.aftercast.tp.highacclow= set_combine(sets.aftercast.tp.acc, {neck="Iqabi Necklace", legs="Xaddi Cuisses",})
+	sets.aftercast.tp.highacclow= set_combine(sets.aftercast.tp.acc, {neck="Iqabi Necklace", body="Mes. Haubergeon", legs="Xaddi Cuisses",})
 	
 	sets.aftercast.tp.highaccmed= set_combine(sets.aftercast.tp.highacclow, {neck="Iqabi Necklace", waist="Anguinus Belt",})
 	
@@ -251,9 +257,13 @@ function get_sets()
 --dt sets
 --
 --idle sets
-	sets.aftercast.idle={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Twilight Helm", body="Twilight Mail", hands="Sakonji Kote +1", 
+	sets.idle.standard={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Twilight Helm", body="Twilight Mail", hands="Sakonji Kote +1", 
 	legs="Otronif Brais +1", feet="Danzo Sune-Ate", neck="Twilight Torque", waist="Flume Belt", left_ear="Ethereal Earring",
 	right_ear="Sanare Earring", right_ring="Sheltered Ring", left_ring="Shadow Ring", back="Shadow Mantle",}
+	
+	sets.idle.regen=set_combine(sets.idle.standard, {neck="Wiglen Gorget", body="Kumarbi's Akar", left_ring="Paguroidea Ring",})
+	
+	sets.idle.dt=sets.aftercast.pdt
 --idle sets
 
 --special case sets
@@ -324,7 +334,7 @@ function aftercast(spell)
 			equip(sets.aftercast.mdt)			
 		end
 	else
-		equip(sets.aftercast.idle)
+		equip(sets.idle[IdleMode])
 	end
 end
 
@@ -344,7 +354,7 @@ function status_change(new,old)
 			equip(sets.aftercast.mdt)		
 		end
 	else
-		equip(sets.aftercast.idle)
+		equip(sets.idle[IdleMode])
 	end
 end
 
@@ -357,6 +367,18 @@ function self_command(command)
 			add_to_chat(206, 'DD MODE')
 			send_command('text tpvariable text "DD MODE"')
 		end
+	end
+	if command=="standardidle" then
+		IdleMode="standard"
+		add_to_chat(206, 'STANDARD IDLE MODE')
+	end
+	if command=="regenidle" then
+		IdleMode="regen"
+		add_to_chat(206, 'REGEN IDLE MODE')
+	end
+	if command=="dtidle" then
+		IdleMode="dt"
+		add_to_chat(206, 'DT IDLE MODE')
 	end
 	if command=="ws_dmg_or_acc" then
 		if WSMode=="damage" then
@@ -474,8 +496,9 @@ function self_command(command)
 		end
 	end
 	-- reraise lock toggle command rule end
+	
 end
 
-function unload(new_job)
+function file_unload(new_job)
 	windower.send_command('boxesoff')
 end

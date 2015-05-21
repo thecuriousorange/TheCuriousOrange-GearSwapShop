@@ -1,6 +1,7 @@
 function get_sets()
 -- include
 	include('boxes.lua')
+	include('organizer-lib.lua')
 -- include
 -- aliases
 	send_command('alias tp gs equip sets.aftercast.tp.styleI')
@@ -45,6 +46,14 @@ function get_sets()
 	send_command('input /macro book 9;input /macro set 1')
 -- macro selection
 
+--
+	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','STR+6 VIT+6',}}
+	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}}
+	taeonhands={ name="Taeon Gloves", augments={'Attack+25','"Triple Atk."+2','Crit. hit damage +2%',}}
+	taeonlegs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}
+	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
+--
+
 -- variables
 	TPSet="DD"
 	TPType="styleI"
@@ -87,7 +96,7 @@ function get_sets()
 -- ws sets	
 	sets.dex={ammo="Honed Tathlum", left_ear="Bladeborn Earring", head="Whirlpool Mask", neck="Justiciar's Torque", 
 	left_ring="Ramuh Ring", left_ear="Steelflash Earring", hands="Anch. Gloves +1", right_ring="Rajas Ring", 
-	body="Manibozho Jerkin", back="Atheling Mantle", waist="Wanion Belt", legs="Manibozho Brais", 
+	body="Manibozho Jerkin", back="Bleating Mantle", waist="Wanion Belt", legs="Manibozho Brais", 
 	feet="Manibozho Boots",}
 	
 	sets.crit={right_ring="Ifrit Ring", ammo="Potestas Bomblet", head="Uk'uxkaj Cap", neck="Rancor Collar",
@@ -97,12 +106,12 @@ function get_sets()
 	
 	sets.multi={ammo="Honed Tathlum", neck="Asperity Necklace", head="Whirlpool Mask", body="Manibozho Jerkin",
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", hands="Manibozho Gloves", left_ring="Epona's Ring",
-	right_ring="Rajas Ring", back="Atheling Mantle", waist="Windbuffet Belt +1", legs="Ighwa Trousers",  
+	right_ring="Rajas Ring", back="Bleating Mantle", waist="Windbuffet Belt +1", legs="Ighwa Trousers",  
 	feet="Manibozho Boots",}
 	
-	sets.kicks={ammo="Honed Tathlum", head="Whirlpool Mask", neck="Breeze Gorget", left_ear="Steelflash Earring",
+	sets.kicks={ammo="Honed Tathlum", head="Whirlpool Mask", neck="Fotia Gorget", left_ear="Steelflash Earring",
 	right_ear="Bladeborn Earring", body="Tantra Cyclas +2", hands="Hes. Gloves +1", left_ring="Ifrit Ring",
-	right_ring="Rajas Ring", back="Atheling Mantle", waist="Breeze Belt", legs="Manibozho Brais", 
+	right_ring="Rajas Ring", back="Bleating Mantle", waist="Fotia Belt", legs="Manibozho Brais", 
 	feet="Manibozho Brais",}
 	
 	sets.precast.ws["Combo"]= sets.multi
@@ -137,10 +146,15 @@ function get_sets()
 -- impetus tp
 	
 -- sub nin stuff
-	sets.precast.nin={head="Haruspex Hat", neck="Magoraga Beads", left_ring="Prolix Ring", right_ring="Veneficium Ring", left_ear="Loquac. Earring", hands="Thaumas Gloves",}
+	sets.precast.nin={main={ name="Tinhaspa", augments={'Accuracy+15','DEX+12','DMG:+5',}}, ammo="Vanir Battery", hands="Thaumas Gloves",
+	head="Haruspex Hat", body=taeonbody,
+	legs={ name="Otronif Brais +1", augments={'Phys. dmg. taken -3%','Crit.hit rate+1',}}, neck="Magoraga Beads",
+	feet={ name="Otronif Boots +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','Crit.hit rate+1',}},
+	waist="Black Belt", left_ear="Loquac. Earring", right_ear="Ethereal Earring", left_ring="Prolix Ring", 
+	right_ring="Veneficium Ring", back="Mollusca Mantle",}
 	
 	sets.midcast.nin={head="Haruspex Hat",
-    body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
+    body=taeonbody,
     hands="Thaumas Gloves",
     legs={ name="Qaaxo Tights", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
     feet={ name="Qaaxo Leggings", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}},
@@ -154,10 +168,18 @@ function get_sets()
 -- sub nin stuff
 
 -- tp sets	
-	sets.aftercast.tp.styleI={ammo="Vanir Battery", head="Felistris Mask", neck="Asperity Necklace", left_ear="Bladeborn Earring", 
-	right_ear="Steelflash Earring", body="Thaumas Coat", hands="Qaaxo Mitaines", waist="Windbuffet Belt +1", 
-	legs="Qaaxo Tights", feet="Soku. Sune-Ate", back="Atheling Mantle", left_ring="Epona's Ring", 
-	right_ring="Rajas Ring",}
+	sets.aftercast.tp.styleI={main={ name="Tinhaspa", augments={'Accuracy+15','DEX+12','DMG:+5',}}, ammo="Vanir Battery",
+	head=taeonhead, body="Thaumas Coat",
+	hands=taeonhands,
+    legs=taeonlegs, waist="Windbuffet Belt +1",
+    feet=taeonfeet, neck="Asperity Necklace",
+	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Epona's Ring", right_ring="Rajas Ring",
+	back="Bleating Mantle",}
+	
+	--={ammo="Vanir Battery", head="Felistris Mask", neck="Asperity Necklace", left_ear="Bladeborn Earring", 
+	--right_ear="Steelflash Earring", body="Thaumas Coat", hands="Qaaxo Mitaines", waist="Windbuffet Belt +1", 
+	--legs="Qaaxo Tights", feet="Soku. Sune-Ate", back="Bleating Mantle", left_ring="Epona's Ring", 
+	--right_ring="Rajas Ring",}
 	
 	sets.aftercast.tp.styleII= set_combine(sets.aftercast.tp.styleI, {ammo="Honed Tathlum", neck="Iqabi Necklace",})
 	
@@ -191,7 +213,7 @@ function get_sets()
 
 	sets.aftercast.hybridA={head="Otronif Mask +1", body="Otro. Harness +1", hands="Otronif Gloves +1", 
 	waist="Windbuffet Belt +1", legs="Otronif Brais +1", feet="Otronif Boots +1", left_ear="Bladeborn Earring", 
-	right_ear="Steelflash Earring", neck="Asperity Necklace", back="Atheling Mantle", left_ring="Epona's Ring", 
+	right_ear="Steelflash Earring", neck="Asperity Necklace", back="Bleating Mantle", left_ring="Epona's Ring", 
 	right_ring="Rajas Ring",}
 	
 	sets.aftercast.hybridB= set_combine(sets.aftercast.hybridA, {body="Arhat's Gi +1", 
@@ -210,7 +232,7 @@ function get_sets()
 -- DT sets
 
 -- idle sets	
-	sets.aftercast.idle.pdt={ammo="Demonry Stone", head="Otronif Mask +1", neck="Twilight Torque", 
+	sets.aftercast.idle.pdt={ammo="Vanir Battery", head="Otronif Mask +1", neck="Twilight Torque", 
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", body="Arhat's Gi +1", hands="Otronif Gloves +1", 
 	lring="Sheltered Ring", rring="Shadow Ring", back="Shadow Mantle", waist="Black Belt", 
 	legs="Otronif Brais +1", feet="Hermes' Sandals",}
@@ -397,6 +419,6 @@ function self_command(command)
 	-- idle variable commands rule end	
 end
 
-function unload(new_job)
+function file_unload(new_job)
 	windower.send_command('boxesoff')
 end
