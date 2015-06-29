@@ -187,12 +187,12 @@ function get_sets()
 	sets.aftercast.pdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head="Otronif Mask +1",
 	body="Arhat's Gi +1", hands="Otronif Gloves +1", legs="Otronif Brais +1", feet="Otronif Boots +1", 
 	neck="Twilight Torque", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Iga Mimikazari",
-	left_ring="Patricius Ring", right_ring="Dark Ring", back="Mollusca Mantle",}
+	left_ring="Patricius Ring", right_ring="Vocane Ring", back="Mollusca Mantle",}
 	
 	sets.aftercast.mdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head="Whirlpool Mask",
 	body="Manibozho Jerkin", hands="Otronif Gloves +1", legs="Nahtirah Trousers", feet="Otronif Boots +1",
 	neck="Twilight Torque", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring",
-	left_ring="Shadow Ring", right_ring="Dark Ring", back="Mollusca Mantle",}
+	left_ring="Shadow Ring", right_ring="Vocane Ring", back="Mollusca Mantle",}
 --dt sets
 
 --idle sets

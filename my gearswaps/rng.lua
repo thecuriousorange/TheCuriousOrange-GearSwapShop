@@ -71,7 +71,7 @@ function get_sets()
 	back="Shadow Mantle",}
 	
 	sets.idle.pdt={body="Iuitl Vest +1", hands="Umuthi Gloves", neck="Twilight Torque", waist="Flume Belt", left_ear="Ethereal Earring",
-	left_ring={ name="Dark Ring", augments={'Magic dmg. taken -4%','Breath dmg. taken -4%','Phys. dmg. taken -5%',}}, feet="Fajin Boots",
+	left_ring={ name="Vocane Ring", augments={'Magic dmg. taken -4%','Breath dmg. taken -4%','Phys. dmg. taken -5%',}}, feet="Fajin Boots",
 	right_ear="Sanare Earring", right_ring="Defending Ring", back="Mollusca Mantle", head="Iuitl Headgear +1", legs="Iuitl Tights +1",}
 	
 	sets.engaged.pdt=set_combine(sets.idle.pdt, {feet="Iuitl Gaiters +1",})

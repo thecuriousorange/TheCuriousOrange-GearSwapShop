@@ -12,7 +12,7 @@ function get_sets()
 	send_command('text tpvariable text "DD MODE"')
 	send_command('text idlevariable text "LOW-ACC"')
 	send_command('text pdtvariable text "GS MODE"')
-	send_command('text wsvariable text "{>RUNEFENCER<}"')
+	send_command('text wsvariable text "REFRESH IDLE"')
 --text boxes
 
 --keybinds
@@ -50,7 +50,9 @@ function get_sets()
 	WeaponType="greatsword"
 	TPSet="dd"
 	TPType="lowacc"
+	IdleType="refresh"
 	
+	sets.IdleType= T{}
 	sets.WeaponType= T{}
 	sets.TPSet= T{}
 	sets.TPType= T{}
@@ -66,6 +68,7 @@ function get_sets()
 	sets.aftercast.tp={}
 	sets.aftercast.hybrid={}
 	sets.weaponry={}
+	sets.idle={}
 --base sets
 
 --weaponry
@@ -81,7 +84,7 @@ function get_sets()
 	body={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}},
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
 	neck="Warder's Charm", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
-	left_ring="Provocare Ring", right_ring="Eihwaz Ring", back="Fravashi Mantle",}
+	left_ring="Supershear Earring", right_ring="Eihwaz Ring", back="Fravashi Mantle",}
 	
 	sets.precast.ja["Valiance"]=set_combine(sets.enmity, {body="Rune. Bandeau +1",})
 	
@@ -99,12 +102,12 @@ function get_sets()
 	
 	sets.precast.ja["Swordplay"]=set_combine(sets.enmity, {hands="Futhark Mitons +1",})
 	
-	sets.precast.ja["Lunge"]={ammo="Ghastly Tathlum", head="Highwing Helm", body="Vanir Cotehardie", hands="Nilas Gloves",
+	sets.precast.ja["Lunge"]={ammo="Ghastly Tathlum", head="Highwing Helm", body="Count's Garb", hands="Nilas Gloves",
 	legs="Limbo Trousers", feet="Qaaxo Leggings", neck="Eddy Necklace", waist="Yamabuki-No-Obi", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Acumen Ring",
     back="Evasionist's Cape",}
 	
-	sets.precast.ja["Swipe"]={ammo="Ghastly Tathlum", head="Highwing Helm", body="Vanir Cotehardie", hands="Nilas Gloves",
+	sets.precast.ja["Swipe"]={ammo="Ghastly Tathlum", head="Highwing Helm", body="Count's Garb", hands="Nilas Gloves",
 	legs="Limbo Trousers", feet="Qaaxo Leggings", neck="Eddy Necklace", waist="Yamabuki-No-Obi", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Acumen Ring",
     back="Evasionist's Cape",}
@@ -136,6 +139,12 @@ function get_sets()
 	
 	--ws sets
 	sets.precast.ws["Resolution"]={ammo="Potestas Bomblet", head="Whirlpool Mask",
+	body={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}},
+	hands="Qaaxo Mitaines", legs="Manibozho Brais", feet="Qaaxo Leggings", neck="Fotia Gorget",
+	waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
+	left_ring="Ifrit Ring", right_ring="Epona's Ring", back="Buquwik Cape",}
+	
+	sets.precast.ws["Dimidation"]={ammo="Potestas Bomblet", head="Whirlpool Mask",
 	body={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}},
 	hands="Qaaxo Mitaines", legs="Manibozho Brais", feet="Qaaxo Leggings", neck="Fotia Gorget",
 	waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
@@ -197,7 +206,7 @@ function get_sets()
 	--hybrid sets
 	sets.aftercast.hybrid.lowacc={ammo="Vanir Battery", head="Fu. Bandeau +1", body="Futhark Coat +1",
 	hands="Umuthi Gloves", legs="Rune. Trousers +1", feet="Futhark Boots +1", neck="Twilight Torque",
-	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Brutal Earring", left_ring="Dark Ring",
+	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Brutal Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring", back="Mollusca Mantle",}
 	
 	sets.aftercast.hybrid.medacc= set_combine(sets.aftercast.hybrid.lowacc, {ammo="Honed Tathlum", back="Letalis Mantle",})
@@ -210,7 +219,7 @@ function get_sets()
 	--dt sets
 	sets.aftercast.pdt={ammo="Vanir Battery", head="Fu. Bandeau +1", body="Futhark Coat +1", 
 	hands="Umuthi Gloves", legs="Rune. Trousers +1", feet="Iuitl Gaiters +1", neck="Twilight Torque", waist="Flume Belt",
-	left_ear="Ethereal Earring", right_ear="Sanare Earring", right_ring="Defending Ring", left_ring="Dark Ring",
+	left_ear="Ethereal Earring", right_ear="Sanare Earring", right_ring="Defending Ring", left_ring="Vocane Ring",
 	back="Mollusca Mantle",}
 	
 	sets.aftercast.mdt= set_combine(sets.aftercast.pdt, {left_ring="Shadow Ring",})
@@ -223,10 +232,14 @@ function get_sets()
 	--tank set
 	
 	--idle sets
-	sets.aftercast.idle={ammo="Vanir Battery", head="Wivre Hairpin", body="Runeist Coat +1", hands="Umuthi Gloves",
+	sets.idle.refresh={ammo="Vanir Battery", head="Wivre Hairpin", body="Runeist Coat +1", hands="Umuthi Gloves",
 	legs="Rune. Trousers +1", feet="Hermes' Sandals", neck="Twilight Torque", waist="Flume Belt",
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", right_ring="Shadow Ring",
 	left_ring="Sheltered Ring", back="Shadow Mantle",}
+	
+	sets.idle.pdt=sets.aftercast.pdt
+	
+	sets.idle.mdt=sets.aftercast.mdt
 	--idle sets
 --aftercast sets
 end
@@ -283,7 +296,7 @@ function aftercast(spell)
 		end
 	else
 		equip(sets.weaponry[WeaponType])
-		equip(sets.aftercast.idle)
+		equip(sets.idle[IdleType])
 	end
 end
 
@@ -304,7 +317,7 @@ function status_change(new,old)
 		end
 	else
 		equip(sets.weaponry[WeaponType])
-		equip(sets.aftercast.idle)
+		equip(sets.idle[IdleType])
 	end
 end
 
@@ -386,6 +399,22 @@ function self_command(command)
 		status_change(player.status)
 	end		
 	--weapon set commands
+	
+	--idle set commands
+	if command=='pdtidle' then
+		IdleType='pdt'
+		add_to_chat(206,'PDT IDLE')
+		send_command('text wsvariable text "PDT IDLE"')
+	elseif command=='mdtidle' then
+		IdleType='mdt'
+		add_to_chat(206,'MDT IDLE')
+		send_command('text wsvariable text "MDT IDLE"')
+	elseif command=='standardidle' then
+		IdleType='refresh'
+		add_to_chat(206,'REFRESH IDLE')
+		send_command('text wsvariable text "REFRESH IDLE"')
+	end
+	--idle set commands
 end
 
 function file_unload(new_job)

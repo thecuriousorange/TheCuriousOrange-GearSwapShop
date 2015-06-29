@@ -1,5 +1,6 @@
 function get_sets()
 	include('organizer-lib.lua')
+	include('tco-include.lua')
 --default macroset
 	send_command('input /macro book 3;input /macro set 1')
 --default macroset
@@ -21,7 +22,10 @@ function get_sets()
 --aliases
 
 --boxes
-	send_command('text nuke_element create;text nuke_element bold true;text nuke_element text "ICE NUKES";text nuke_element color 0 255 255;')
+	send_command('text tpvariable text "ICE NUKES";text tpvariable color 0 255 255;')
+	send_command('text idlevariable text "MPE-OFF"')
+	send_command('text wsvariable text "MM-OFF"')
+	send_command('text pdtvariable text "MAGIC-POTENCY"')
 --boxes
 
 --keybinds
@@ -35,6 +39,7 @@ function get_sets()
 	send_command('bind #f6 gs c thunder')
 	send_command('bind !- input /ma "Aspir II" <t>')
 	send_command('bind != VI')
+	send_command('bind @f10 gs c magic_mode')
 	send_command('bind @f11 gs c mm')
 	send_command('bind @f12 gs c mpe')
 --keybinds
@@ -45,10 +50,12 @@ function get_sets()
 	nuke_element="Ice"
 	mpe="off"
 	mm="off"
+	magic_mode="dmg"
 	
 	sets.mm=T{}
 	sets.mpe=T{}
 	sets.nuke_element= T{}
+	sets.magic_mode= T{}
 
 --spell lists
 	Nukes= S{"Fire", "Fire II", "Fire III", "Fire IV", "Fire V", "Fire VI", "Firaga", "Firaga II", "Firaga III", 
@@ -62,6 +69,20 @@ function get_sets()
 	"Stonera II", "Aero", "Aero II", "Aero III", "Aero IV", "Aero V", "Aero VI", "Aeroga", "Aeroga II", "Aeroga III", 
 	"Aeroja", "Tornado", "Tornado II", "Anemohelix", "Aera", "Aera II", "Banish", "Banish II", 
 	"Banishga", "Banishga II", "Banish III", "Holy", "Holy II", "Luminohelix",}
+	
+	LowTierNukes= S{"Fire", "Fire II", "Firaga", "Firaga II", "Blizzard", "Flare", "Blizzard II", "Blizzaga", "Blizzaga II",
+	"Freeze", "Water", "Water II", "Waterga", "Waterga II", "Flood", "Thunder", "Thunder II", "Thundaga", "Thundaga II",
+	"Burst", "Stone", "Stone II", "Stonega", "Stonega II", "Quake", "Aero", "Aero II", "Aeroga", "Aeroga II", "Tornado",}
+	
+	MidTierNukes= S{"Fire III", "Fire IV", "Firaga III", "Blizzard III", "Blizzard IV", "Blizzaga III", "Water III", "Water IV",
+	"Waterga III", "Thunder III", "Thunder IV", "Thundaga III", "Stone III", "Stone IV", "Stonega III", "Aero III", "Aero IV",
+	"Aeroga III",}
+	
+	HighTierNukes= S{"Flare II", "Fire V", "Fire VI", "Pyrohelix", "Freeze II", "Blizzard V", "Blizzard VI", "Cryohelix", 
+	"Flood II", "Water V", "Water VI", "Hydrohelix", "Burst II", "Thunder V", "Thunder VI", "Ionohelix", "Quake II", "Stone V", 
+	"Stone VI", "Geohelix", "Tornado II", "Aero V", "Aero VI", "Amenohelix", "Luminohelix",}
+	
+	JaNukes= S{"Firaja", "Blizzaja", "Waterja", "Thundaja", "Aeroja", "Stoneja",}
 	
 	Dark_Nukes= S{"Comet", "Noctohelix",}
 	
@@ -79,6 +100,11 @@ function get_sets()
 	
 	Buffs= S{"Blink", "Stoneskin", "Phalanx", "Aquaveil",}
 --spell lists
+
+--augmented gear
+	nukestaff={ name="Keraunos", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic burst mdg.+6%','Magic Damage +10',}}
+--augmented gear
+
 --basesetnames	
 	sets.precast={}
 	sets.midcast={}
@@ -128,7 +154,7 @@ function get_sets()
 	sets.midcast.skillenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", body="Spae. Coat +1",
 	head={ name="Artsieq Hat", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	hands="Lurid Mitts", legs="Portent Pants", neck="Enfeebling Torque", waist="Rumination Sash", right_ring="Sangoma Ring",
-	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Perception Ring", back="Bane Cape",}
+	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Globidonta Ring", back="Bane Cape",}
 	
 	sets.midcast.mndenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", ammo="Witchstone", body="Vanir Cotehardie",
 	hands="Lurid Mitts", legs="Bokwus Slops", head={ name="Artsieq Hat", augments={'MP+30','Mag. Acc.+20','MND+7',}},
@@ -141,28 +167,42 @@ function get_sets()
 	left_ear="Gwati Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
 	back="Bane Cape",}
 	
-	sets.midcast.nuke.dmg={main="Marin Staff", sub="Elementa Grip", ammo="Ghastly Tathlum", head="Helios Band", body="Wretched Coat",
-	hands="Wicce Gloves +1", legs="Wicce Chausses +1", feet="Helios Boots", neck="Eddy Necklace", waist="Sekhmet Corset", 
+	sets.midcast.nuke.dmg={}
+	
+	sets.midcast.nuke.acc={}
+	
+	sets.midcast.nuke.dmg.lowtier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum", body="Count's Garb",
+	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+1%',}},
+	legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
+	feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", left_ear="Crematio Earring", right_ear="Friomisi Earring",
+	right_ring="Strendu Ring", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},
+	left_ring="Sangoma Ring", hands="Otomi Gloves",}
+	
+	sets.midcast.nuke.dmg.midtier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum", body="Count's Garb",
+	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+1%',}},
+	legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
+	feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", left_ear="Crematio Earring", right_ear="Friomisi Earring",
+	right_ring="Strendu Ring", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},
+	left_ring="Sangoma Ring", hands="Otomi Gloves",}
+	
+	sets.midcast.nuke.dmg.hightier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum", head="Helios Band", body="Count's Garb",
+	hands="Wicce Gloves +1", legs="Hagondes Pants +1", feet="Helios Boots", neck="Eddy Necklace", waist="Othila Sash", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
     back="Toro Cape",}
 	
-	sets.midcast.nuke.macc={}
+	sets.midcast.nuke.dmg.jaspell=set_combine(sets.midcast.nuke.dmg.hightier, {legs="Wicce Chausses +1"})
 	
-	sets.midcast.nuke.dmg.lowtier={}
+	sets.midcast.nuke.acc.lowtier= set_combine(sets.midcast.nuke.dmg.lowtier,{body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Aswang Sash", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
 	
-	sets.midcast.nuke.dmg.midtier={}
+	sets.midcast.nuke.acc.midtier= set_combine(sets.midcast.nuke.dmg.midtier,{body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Aswang Sash", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
 	
-	sets.midcast.nuke.dmg.hightier={}
+	sets.midcast.nuke.acc.hightier=set_combine(sets.midcast.nuke.dmg.hightier,{body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Aswang Sash", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
 	
-	sets.midcast.nuke.macc.lowtier={}
-	
-	sets.midcast.nuke.macc.midtier={}
-	
-	sets.midcast.nuke.macc.hightier={}
+	sets.midcast.nuke.acc.jaspell=set_combine(sets.midcast.nuke.dmg.ja, {body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Aswang Sash", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
 	
 	sets.midcast.nuke.dark= set_combine(sets.midcast.nuke.dmg, {left_ring="Archon Ring",})
 	
-	sets.midcast.nuke.Impact={main="Marin Staff", sub="Elementa Grip", ammo="Witchstone", body="Twilight Cloak",
+	sets.midcast.nuke.Impact={main=nukestaff, sub="Elementa Grip", ammo="Witchstone", body="Twilight Cloak",
 	hands="Yaoyotl Gloves", legs="Hagondes Pants +1", feet="Umbani Boots", neck="Eddy Necklace", waist="Othila Sash", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Archon Ring", right_ring="Strendu Ring",
     back="Toro Cape",}
@@ -173,19 +213,19 @@ function get_sets()
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
 	back="Bane Cape",}
 	
-	sets.midcast.enh={main="Marin Staff", sub="Fulcio Grip", ammo="Witchstone", head="Nahtirah Hat", body="Bokwus Robe",
+	sets.midcast.enh={main="Marin Staff", sub="Fulcio Grip", ammo="Witchstone", head="Nahtirah Hat", body="Anhur Robe",
 	hands="Lurid Mitts", legs="Portent Pants", feet="Chelona Boots", neck="Colossus's Torque", waist="Cascade Belt",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Levia. Ring", right_ring="Levia. Ring",
 	back="Swith Cape",}	
 	
 	sets.midcast.cure={main="Tamaxchi", sub="Sors Shield", head="Nahtirah Hat", body="Heka's Kalasiris", hands="Serpentes Cuffs",
 	legs="Nares Trews", feet="Serpentes Sabots", neck="Twilight Torque", waist="Cascade Belt", left_ear="Sanare Earring",
-	right_ear="Ethereal Earring", left_ring="Dark Ring", right_ring="Shadow Ring", back="Swith Cape",}
+	right_ear="Ethereal Earring", left_ring="Vocane Ring", right_ring="Shadow Ring", back="Swith Cape",}
 --midcast sets
 
 --aftercast sets
 	sets.aftercast.idle={main="Bolelabunga", sub="Genbu's Shield", body="Respite Cloak", hands="Serpentes Cuffs",
-	legs="Nares Trews", feet="Serpentes Sabots", neck="Twilight Torque", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
+	legs="Assid. Pants +1", feet="Serpentes Sabots", neck="Twilight Torque", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
 	left_ring="Defending Ring", right_ring="Shadow Ring", back="Shadow Mantle",}
 	
 	sets.aftercast.pdt= set_combine(sets.aftercast.idle, {hands="Hagondes Cuffs +1", legs="Hagondes Pants +1", feet="Hag. Sabots +1",})
@@ -215,32 +255,78 @@ function precast(spell)
 end
 
 function midcast(spell)
-	if Dark_Nukes:contains(spell.english) then
-		equip(sets.midcast.nuke.dark)
-		if mpe=="on" then
-			equip(sets.mpeset)
+	if magic_mode=="dmg" then
+		if Dark_Nukes:contains(spell.english) then
+			equip(sets.midcast.nuke.dark)
+			if mpe=="on" then
+				equip(sets.mpeset)
+			end
+		elseif Nukes:contains(spell.english) then
+			if LowTierNukes:contains(spell.english) then
+				equip(sets.midcast.nuke.dmg.lowtier)
+			elseif MidTierNukes:contains(spell.english) then
+				equip(sets.midcast.nuke.dmg.midtier)
+			elseif HighTierNukes:contains(spell.english) then
+				equip(sets.midcast.nuke.dmg.hightier)
+			elseif JaNukes:contains(spell.english) then
+				equip(sets.midcast.nuke.dmg.jaspell)
+			end
+			if mpe=="on" then
+				equip(sets.mpeset)
+			end
+		elseif Elemental_DoT:contains(spell.english) then
+			equip(sets.midcast.eledot)
+		elseif DarkMagic_DoT:contains(spell.english) then
+			equip(sets.midcast.darkdot)
+		elseif EnfeeblingMagic_skillmod:contains(spell.english) then
+			equip(sets.midcast.skillenfeeb)
+		elseif EnfeeblingMagic_mndmod:contains(spell.english) then
+			equip(sets.midcast.mndenfeeb)
+		elseif DarkMagic_Drain_Aspir:contains(spell.english) then
+			equip(sets.midcast.doa)
+		elseif Buffs:contains(spell.english) then
+			equip(sets.midcast.enh)
+		elseif spell.english=="Meteor" then
+			equip(sets.midcast.nuke.dmg.hightier)
+		elseif spell.english=="Impact" then
+			equip(sets.midcast.nuke.impact)
 		end
-	elseif Nukes:contains(spell.english) then
-		equip(sets.midcast.nuke.dmg)
-		if mpe=="on" then
-			equip(sets.mpeset)
+	elseif magic_mode=="acc" then
+		if Dark_Nukes:contains(spell.english) then
+			equip(sets.midcast.nuke.dark)
+			if mpe=="on" then
+				equip(sets.mpeset)
+			end
+		elseif Nukes:contains(spell.english) then
+			if LowTierNukes:contains(spell.english) then
+				equip(sets.midcast.nuke.acc.lowtier)
+			elseif MidTierNukes:contains(spell.english) then
+				equip(sets.midcast.nuke.acc.midtier)
+			elseif HighTierNukes:contains(spell.english) then
+				equip(sets.midcast.nuke.acc.hightier)
+			elseif JaNukes:contains(spell.english) then
+				equip(sets.midcast.nuke.acc.jaspell)
+			end
+			if mpe=="on" then
+				equip(sets.mpeset)
+			end
+		elseif Elemental_DoT:contains(spell.english) then
+			equip(sets.midcast.eledot)
+		elseif DarkMagic_DoT:contains(spell.english) then
+			equip(sets.midcast.darkdot)
+		elseif EnfeeblingMagic_skillmod:contains(spell.english) then
+			equip(sets.midcast.skillenfeeb)
+		elseif EnfeeblingMagic_mndmod:contains(spell.english) then
+			equip(sets.midcast.mndenfeeb)
+		elseif DarkMagic_Drain_Aspir:contains(spell.english) then
+			equip(sets.midcast.doa)
+		elseif Buffs:contains(spell.english) then
+			equip(sets.midcast.enh)
+		elseif spell.english=="Meteor" then
+			equip(sets.midcast.nuke.acc.hightier)
+		elseif spell.english=="Impact" then
+			equip(sets.midcast.nuke.impact)
 		end
-	elseif Elemental_DoT:contains(spell.english) then
-		equip(sets.midcast.eledot)
-	elseif DarkMagic_DoT:contains(spell.english) then
-		equip(sets.midcast.darkdot)
-	elseif EnfeeblingMagic_skillmod:contains(spell.english) then
-		equip(sets.midcast.skillenfeeb)
-	elseif EnfeeblingMagic_mndmod:contains(spell.english) then
-		equip(sets.midcast.mndenfeeb)
-	elseif DarkMagic_Drain_Aspir:contains(spell.english) then
-		equip(sets.midcast.doa)
-	elseif Buffs:contains(spell.english) then
-		equip(sets.midcast.enh)
-	elseif spell.english=="Meteor" then
-		equip(sets.midcast.nuke.dmg)
-	elseif spell.english=="Impact" then
-		equip(sets.midcast.nuke.impact)
 	end
 	if spell.skill== 'Elemental Magic' and buffactive["Poison"] then
 		equip(sets.mindmelter)
@@ -290,7 +376,7 @@ function self_command(command)
 		send_command('alias aga input /ma "Blizzaga" <t>')
 		send_command('alias AM input /ma "Freeze" <t>')
 		send_command('alias AM2 input /ma "Freeze II" <t>')
-		send_command('text nuke_element text "ICE NUKES";text nuke_element color 0 255 255')
+		send_command('text tpvariable text "ICE NUKES";text tpvariable color 0 255 255')
 		add_to_chat(206, 'ICE NUKES')
 	end
 	if command=="fire" then
@@ -307,7 +393,7 @@ function self_command(command)
 		send_command('alias aga input /ma "Firaga" <t>')
 		send_command('alias AM input /ma "Flare" <t>')
 		send_command('alias AM2 input /ma "Flare II" <t>')
-		send_command('text nuke_element text "FIRE NUKES";text nuke_element color 255 0 0')
+		send_command('text tpvariable text "FIRE NUKES";text tpvariable color 255 0 0')
 		add_to_chat(206, 'FIRE NUKES')
 	end
 	if command=="earth" then
@@ -324,7 +410,7 @@ function self_command(command)
 		send_command('alias aga input /ma "Stonega" <t>')
 		send_command('alias AM input /ma "Quake" <t>')
 		send_command('alias AM2 input /ma "Quake II" <t>')
-		send_command('text nuke_element text "EARTH NUKES";text nuke_element color 140 100 0')
+		send_command('text tpvariable text "EARTH NUKES";text tpvariable color 140 100 0')
 		add_to_chat(206, 'EARTH NUKES')
 	end
 	if command=="wind" then
@@ -341,7 +427,7 @@ function self_command(command)
 		send_command('alias aga input /ma "Aeroga" <t>')
 		send_command('alias AM input /ma "Tornado" <t>')
 		send_command('alias AM2 input /ma "Tornado II" <t>')
-		send_command('text nuke_element text "WIND NUKES";text nuke_element color 0 255 0')
+		send_command('text tpvariable text "WIND NUKES";text tpvariable color 0 255 0')
 		add_to_chat(206, 'WIND NUKES')
 	end
 	if command=="water" then
@@ -358,7 +444,7 @@ function self_command(command)
 		send_command('alias aga input /ma "Waterga" <t>')
 		send_command('alias AM input /ma "Flood" <t>')
 		send_command('alias AM2 input /ma "Flood II" <t>')
-		send_command('text nuke_element text "WATER NUKES";text nuke_element color 0 0 200')
+		send_command('text tpvariable text "WATER NUKES";text tpvariable color 0 0 200')
 		add_to_chat(206, 'WATER NUKES')
 	end
 	if command=="thunder" then
@@ -375,25 +461,40 @@ function self_command(command)
 		send_command('alias aga input /ma "Thundaga" <t>')
 		send_command('alias AM input /ma "Burst" <t>')
 		send_command('alias AM2 input /ma "Burst II" <t>')
-		send_command('text nuke_element text "THUNDER NUKES";text nuke_element color 255 255 0')
+		send_command('text tpvariable text "THUNDER NUKES";text tpvariable color 255 255 0')
 		add_to_chat(206, 'THUNDER NUKES')
 	end
 	if command=="mpe" then
 		if mpe=="off" then
 			mpe="on"
 			add_to_chat(206, 'MP ECONOMY ON')
+			send_command('text idlevariable text "MPE-ON"')
 		else
 			mpe="off"
 			add_to_chat(206, 'MP ECONOMY OFF')
+			send_command('text idlevariable text "MPE-OFF"')
 		end
 	end
 	if command=="mm" then
 		if mm=="off" then
 			mm="on"
 			add_to_chat(206, 'MINDMELTER MODE ON')
+			send_command('text wsvariable text "MM-ON"')
 		else
 			mm="off"
 			add_to_chat(206, 'MINDMELTER MODE OFF')
+			send_command('text wsvariable text "MM-OFF"')
+		end
+	end
+	if command=="magic_mode" then
+		if magic_mode=="dmg" then
+			magic_mode="acc"
+			add_to_chat(206, 'MAGIC MODE: ACC')
+			send_command('text pdtvariable text "MAGIC-ACC"')
+		else
+			magic_mode="dmg"
+			add_to_chat(206, 'MAGIC MODE: POTENCY')
+			send_command('text pdtvariable text "MAGIC-POTENCY"')
 		end
 	end
 end 

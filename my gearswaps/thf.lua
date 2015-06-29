@@ -91,7 +91,7 @@ function get_sets()
 	body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
 	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Twilight Torque",
-	waist="Flume Belt", left_ear="Dudgeon Earring", right_ear="Heartseeker Earring", left_ring="Dark Ring",
+	waist="Flume Belt", left_ear="Dudgeon Earring", right_ear="Heartseeker Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring",back="Mollusca Mantle",}
 	
 	sets.aftercast.hybrid.medacc= set_combine(sets.aftercast.hybrid.lowacc, {back="Letalis Mantle",left_ring="Patricius Ring",})
@@ -107,7 +107,7 @@ function get_sets()
 	body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
 	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Twilight Torque",
-	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Dark Ring",
+	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring",back="Mollusca Mantle",}
 	
 	sets.aftercast.defense.mdt={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", hands="Umuthi Gloves",
@@ -115,7 +115,7 @@ function get_sets()
 	body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
 	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Twilight Torque",
-	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Dark Ring",
+	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring",back="Mollusca Mantle",}
 	
 	sets.aftercast.defense.xdt={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", hands="Umuthi Gloves",
@@ -123,7 +123,7 @@ function get_sets()
 	body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
 	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Twilight Torque",
-	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Dark Ring",
+	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring",back="Mollusca Mantle",}
 	
 	sets.aftercast.idle={}

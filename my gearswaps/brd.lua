@@ -30,7 +30,7 @@ function get_sets()
 	body="Sha'ir Manteel", hands={ name="Gendewitha Gages", augments={'Phys. dmg. taken -1%','Song recast delay -3',}},
 	legs="Orvail Pants +1", feet="Chelona Boots", neck="Aoidos' Matinee", waist="Siegel Sash", left_ear="Loquac. Earring",
 	right_ear="Aoidos' Earring", left_ring="Prolix Ring", 
-	right_ring={ name="Dark Ring", augments={'Magic dmg. taken -3%','Phys. dmg. taken -4%',}},
+	right_ring={ name="Vocane Ring", augments={'Magic dmg. taken -3%','Phys. dmg. taken -4%',}},
     back="Swith Cape",}
 	
 	sets.precast.bardsong= set_combine(sets.precast.fc, {head="Aoidos' Calot +2", legs="Gendewitha Spats", feet="Bihu Slippers",})
@@ -182,7 +182,7 @@ function get_sets()
     body={ name="Gendewitha Bliaut", augments={'Phys. dmg. taken -4%','"Cure" potency +5%',}},
 	hands="Serpentes Cuffs", legs="Nares Trews", feet="Aoidos' Cothrn. +2", neck="Twilight Torque",
 	waist="Cascade Belt", left_ear="Ethereal Earring", right_ear="Aoidos' Earring", 
-	left_ring={ name="Dark Ring", augments={'Phys. dmg. taken -3%','Magic dmg. taken -5%',}},
+	left_ring={ name="Vocane Ring", augments={'Phys. dmg. taken -3%','Magic dmg. taken -5%',}},
     right_ring="Shadow Ring", back="Shadow Mantle",}
 	
 	sets.idle.refresh={main="Legato Dagger", sub="Genbu's Shield", 
@@ -190,7 +190,7 @@ function get_sets()
     body={ name="Gendewitha Bliaut", augments={'Phys. dmg. taken -4%','"Cure" potency +5%',}},
 	hands="Serpentes Cuffs", legs="Nares Trews", feet="Serpentes Sabots", neck="Twilight Torque",
 	waist="Cascade Belt", left_ear="Ethereal Earring", right_ear="Aoidos' Earring", 
-	left_ring={ name="Dark Ring", augments={'Phys. dmg. taken -3%','Magic dmg. taken -5%',}},
+	left_ring={ name="Vocane Ring", augments={'Phys. dmg. taken -3%','Magic dmg. taken -5%',}},
     right_ring="Shadow Ring", back="Shadow Mantle",}
 	
 	sets.idle.pdt={head={ name="Gende. Caubeen", augments={'Phys. dmg. taken -4%','"Cure" potency +5%',}},
@@ -199,8 +199,8 @@ function get_sets()
 	legs={ name="Gendewitha Spats", augments={'Phys. dmg. taken -3%','Song recast delay -2',}},
 	feet={ name="Gende. Galoshes", augments={'Phys. dmg. taken -2%','"Cure" potency +1%',}},
 	main="Earth Staff", neck="Twilight Torque", waist="Cascade Belt", left_ear="Ethereal Earring", right_ear="Aoidos' Earring",
-	left_ring={ name="Dark Ring", augments={'Phys. dmg. taken -3%','Magic dmg. taken -5%',}},
-    right_ring="Dark Ring", back="Repulse Mantle",}
+	left_ring={ name="Vocane Ring", augments={'Phys. dmg. taken -3%','Magic dmg. taken -5%',}},
+    right_ring="Vocane Ring", back="Repulse Mantle",}
 	
 	sets.idle.mdt= set_combine(sets.idle.pdt, {main="Legato Dagger", sub="Genbu's Shield",})
 	

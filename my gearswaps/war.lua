@@ -215,7 +215,7 @@ include('tco-include.lua')
 	hands={ name="Cizin Mufflers +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -3%','Crit.hit rate+1',}},
 	legs={ name="Cizin Breeches +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+8',}},
 	feet={ name="Cizin Greaves +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -3%','Crit.hit rate+1',}},
-	left_ring={ name="Dark Ring", augments={'Magic dmg. taken -4%','Breath dmg. taken -4%','Phys. dmg. taken -5%',}},}
+	left_ring={ name="Vocane Ring", augments={'Magic dmg. taken -4%','Breath dmg. taken -4%','Phys. dmg. taken -5%',}},}
 	
 	sets.mdt=set_combine(sets.pdt, {ammo="Vanir Battery", head="Felistris Mask", left_ring="Shadow Ring", waist="Nierenschutz",})
 	--dt sets

@@ -226,7 +226,7 @@ function get_sets()
 -- tp sets	
 	
 -- DT sets	
-	sets.aftercast.pdt= set_combine(sets.aftercast.hybridD, {left_ring="Dark Ring", right_ring="Defending Ring",})
+	sets.aftercast.pdt= set_combine(sets.aftercast.hybridD, {left_ring="Vocane Ring", right_ring="Defending Ring",})
 	
 	sets.aftercast.mdt= set_combine(sets.aftercast.pdt, {left_ring="Shadow Ring",})
 -- DT sets
