@@ -81,32 +81,65 @@ function get_sets()
 --base sets
 	
 --premagic sets
-	sets.precast.fc={}
-	sets.precast["Ninjutsu"]={}
-	sets.precast["Healing Magic"]={}
-	sets.precast["Enhancing Magic"]={}
-	sets.precast["Enfeebling Magic"]={}
-	sets.precast["Dark Magic"]={}
-	sets.precast["Divine Magic"]={}
-	sets.precast["Elemental Magic"]={}
+	sets.precast.fc={main="Marin Staff", head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs="Orvail Pants +1",
+	feet="Chelona Boots", neck="Jeweled Collar", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
+	left_ring="Prolix Ring", back="Swith Cape",} --needs adjustments.
+	
+	sets.precast.impact={body="Twilight Cloak", hands="Helios Gloves", feet="Chelona Boots",
+	neck="Stoicheion Medal", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
+	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	left_ring="Prolix Ring", back="Swith Cape",} --needs adjustments.
+	
+	sets.precast["Ninjutsu"]=set_combine(sets.precast.fc, {neck="Magoraga Beads",})
+	sets.precast["Healing Magic"]=set_combine(sets.precast.fc, {})
+	sets.precast["Enhancing Magic"]=set_combine(sets.precast.fc, {waist="Siegel Sash",})
+	sets.precast["Enfeebling Magic"]=set_combine(sets.precast.fc, {})
+	sets.precast["Dark Magic"]=set_combine(sets.precast.fc, {})
+	sets.precast["Divine Magic"]=set_combine(sets.precast.fc, {})
+	sets.precast["Elemental Magic"]=set_combine(sets.precast.fc, {neck="Stoicheion Medal",})
 --premagic sets
 	
 --midmagic sets
-	sets.aspirdrain.potency={}
+	sets.aspirdrain.potency={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Appetence Crown", body="Vanir Cotehardie",
+	hands="Hagondes Cuffs +1", legs="Bokwus Slops", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", 
+	left_ear="Gwati Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
+	back="Bane Cape",} --needs adjustments
 	
-	sets.aspirdrain.accuracy={}
+	sets.aspirdrain.accuracy={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Appetence Crown", body="Vanir Cotehardie",
+	hands="Hagondes Cuffs +1", legs="Bokwus Slops", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", 
+	left_ear="Gwati Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
+	back="Bane Cape",} --needs adjustments
 	
-	sets.stun.recast={}
+	sets.stun.recast={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Nahtirah Hat", body="Vanir Cotehardie",
+	hands="Hagondes Cuffs +1", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Ninurta's Sash",
+	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
+	back="Bane Cape",} --needs adjustments
 	
-	sets.stun.accuracy={}
+	sets.stun.accuracy={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Nahtirah Hat", body="Vanir Cotehardie",
+	hands="Hagondes Cuffs +1", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Ninurta's Sash",
+	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
+	back="Bane Cape",} --needs adjustments
 	
-	sets.midcast["Dark Magic"]={}
+	sets.midcast["Dark Magic"]={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Nahtirah Hat", body="Vanir Cotehardie",
+	hands="Hagondes Cuffs +1", legs="Bokwus Slops", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Aswang Sash",
+	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Archon Ring",
+	back="Bane Cape",}
 	
-	sets.enfeeble["White Magic"]={}
+	sets.enfeeble["White Magic"]={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", ammo="Witchstone", body="Vanir Cotehardie",
+	hands="Lurid Mitts", legs="Bokwus Slops", head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace",
+	waist="Rumination Sash", left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Levia. Ring",
+	back="Bane Cape",} --needs rdm jse inserting
 	
-	sets.enfeeble["Black Magic"]={}
+	sets.enfeeble["Black Magic"]={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", --rdm only body here,
+	head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	hands="Lurid Mitts", legs="Portent Pants", neck="Enfeebling Torque", waist="Rumination Sash", right_ring="Sangoma Ring",
+	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Globidonta Ring", back="Bane Cape",} --needs rdm jse inserting
 	
-	sets.healing.cure={}
+	sets.healing.cure={main="Tamaxchi", sub="Sors Shield", head="Nahtirah Hat", body="Heka's Kalasiris", hands="Serpentes Cuffs",
+	legs="Nares Trews", feet="Serpentes Sabots", neck="Twilight Torque", waist="Cascade Belt", left_ear="Sanare Earring",
+	right_ear="Ethereal Earring", left_ring="Vocane Ring", right_ring="Shadow Ring", back="Swith Cape",} --needs adjustment
 	
 	sets.healing.regen={}
 	
@@ -116,9 +149,15 @@ function get_sets()
 	
 	sets.elemental.nuke.accuracy={}
 	
-	sets.elemental.dot={}
+	sets.elemental.dot={main="Marin Staff", sub="Elementa Grip", ammo="Witchstone", head="Wicce Petasos +1", 
+	body="Vanir Cotehardie", hands="Hagondes Cuffs +1", legs="Bokwus Slops", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	neck="Eddy Necklace", waist="Aswang Sash", left_ear="Strophadic Earring", right_ear="Gwati Earring",
+	left_ring="Sangoma Ring", right_ring="Strendu Ring", back="Bane Cape",}
 	
-	sets.elemental.impact={}
+	sets.elemental.impact={main=nukestaff, sub="Elementa Grip", ammo="Witchstone", body="Twilight Cloak",
+	hands="Yaoyotl Gloves", legs="Hagondes Pants +1", feet="Umbani Boots", neck="Eddy Necklace", waist="Othila Sash", 
+	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Archon Ring", right_ring="Strendu Ring",
+    back="Toro Cape",} --needs adjustments
 	
 	sets.divine.enfeeble={}
 	
@@ -132,7 +171,10 @@ function get_sets()
 	
 	sets.enhancing["Phalanx II"]={}
 	
-	sets.enhancing.buff={}
+	sets.enhancing.buff={main="Marin Staff", sub="Fulcio Grip", ammo="Witchstone", head="Nahtirah Hat", body="Anhur Robe",
+	hands="Lurid Mitts", legs="Portent Pants", feet="Chelona Boots", neck="Colossus's Torque", waist="Cascade Belt",
+	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Levia. Ring", right_ring="Levia. Ring",
+	back="Swith Cape",} --needs adjustments
 	
 	sets.ninjutsu.accuracy={}
 	
@@ -255,7 +297,9 @@ function get_sets()
 --TP Sets
 	
 --Idle Sets
-	sets.idle.refresh={}
+	sets.idle.refresh={main="Bolelabunga", sub="Genbu's Shield", head="Befouled Crown", body="Hagondes Coat +1", hands="Serpentes Cuffs",
+	legs="Assid. Pants +1", feet="Serpentes Sabots", neck="Twilight Torque", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
+	left_ring="Defending Ring", right_ring="Shadow Ring", back="Shadow Mantle",} -- needs rdm jse and minor adjustments.
 	
 	sets.idle.pdt={}
 	
@@ -287,9 +331,9 @@ function midcast(spell)
 	if spell.prefix=="/magic" then
 		if spell.skill=="Enfeebling Magic" then
 			if spell.type=="WhiteMagic" then
-				equip(sets.enfeeble.whitemagic)
+				equip(sets.enfeeble["White Magic"])
 			else
-				equip(sets.enfeeble.blackmagic)
+				equip(sets.enfeeble["Black Magic"])
 			end
 		end
 		if spell.skill=="Healing Magic" then
@@ -337,19 +381,7 @@ function midcast(spell)
 end
 
 function aftercast(spell)
-	if player.status=="engaged" then
-		if TPMode=="dd" then
-			equip(sets.tp[TPType])
-		elseif TPMode=="hybrid" then
-			equip(sets.hybrid[TPType])
-		elseif TPMode=="pdt" then
-			equip(sets.idle.pdt)
-		elseif TPMode=="mdt" then
-			equip(sets.idle.mdt)
-		end
-	else
-		equip(sets.idle[IdleType])
-	end
+	status_change(player.status)
 end
 
 function status_change(new,old)
