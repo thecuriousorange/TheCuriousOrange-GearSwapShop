@@ -522,7 +522,7 @@ function precast(spell)
 		else
 			equip(sets.ws.acc[spell.english])			
 		end
-		if is_sc_element_today(spell) then
+		if is_sc_element_today(spell) and spell.english~="Atonement" then
 			equip(sets.wsdaybonus)
 		end
 		if player.tp>999 and player.tp<3000 then

@@ -26,6 +26,65 @@ function get_sets()
 	sets.wsacc=T{}
 --variables
 
+--spell lists
+	BluNukesINT=S{'Sandspin','Cursed Sphere','Blastbomb','Bomb Toss','Death Ray','Blitzstrahl','Ice Break','Maelstrom','Corrosive',
+		'Firespit','Regurgitation','Leafstorm','Blazing Bound','Thermal Pulse','Charged Whisker',"Everyone's Grudge",'Water Bomb',
+		'Dark Orb','Thunderbolt','Gates of Hades','Tempestuous Upheaval','Rending Deluge','Embalming Breath','Foul Waters',
+		'Retinal Glare','Subduction','Rail Cannon','Diffusion Ray','Blinding Fulgor','Spectral Floe','Entomb','Silent Storm',
+		'Searing Tempest','Anvil Lightning','Tenebral Crush','Scouring Spate','Palling Salvo'}
+	
+	BluNukesMND=S{}
+	
+	BluBA_INT=S{}
+	
+	BluBA_MND=S{}
+	
+	BluBA_VIT=S{}
+	
+	BluBA_CHR=S{}
+	
+	BluBA_STR=S{}
+	
+	BluBA_DEX=S{}
+	
+	Blu_INT=S{}
+	
+	Blu_MND=S{}
+	
+	Blu_VIT=S{}
+	
+	Blu_CHR=S{}
+	
+	Blu_STR=S{}
+	
+	Blu_DEX=S{}
+	
+	BluPhysical_STR=S{}
+	
+	BluPhysical_DEX=S{}
+	
+	BluPhysical_VIT=S{}
+	
+	BluPhysical_INT=S{}
+	
+	BluPhysical_MND=S{}
+	
+	BluPhysical_CHR=S{}
+	
+	BluCA_STR=S{}
+	
+	BluCA_DEX=S{}
+	
+	BluCA_VIT=S{}
+	
+	BluCA_INT=S{}
+	
+	BluCA_MND=S{}
+	
+	BluCA_CHR=S{}
+	
+--spell lists
+
 --augmented gear
 	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','STR+6 VIT+6',}}
 	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}}
@@ -93,7 +152,7 @@ function get_sets()
 	waist="Siegel Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring", left_ring="Prolix Ring",
 	right_ring="Veneficium Ring", back="Swith Cape",}
 	
-	sets.precast.blu= set_combine(sets.precast.fc, {body="Hashishin Mintan",})
+	sets.precast.blu= set_combine(sets.precast.fc, {body="Hashishin Mintan +1",})
 	
 	sets.precast.nin= set_combine(sets.precast.fc, {neck="Magoraga Beads"})
 	--magic sets
@@ -279,9 +338,9 @@ function get_sets()
 	
 	sets.JA.ChainAffinity = {feet="Assim. Charuqs +1"}
 	
-	sets.JA.BurstAffinity = {legs="Assim. Shalwar +1", feet="Hashishin Basmak"}
+	sets.JA.BurstAffinity = {legs="Assim. Shalwar +1", feet="Hashi. Basmak +1"}
 	
-	sets.JA.Efflux = {legs="Hashishin Tayt"}
+	sets.JA.Efflux = {legs="Hashishin Tayt +1"}
 	
 	sets.JA.AzureLore = {hands="Luhlaza Bazubands"}
 	
@@ -331,8 +390,8 @@ function get_sets()
 							
 	sets.BlueMagic.Stun = {ammo="Mavi Tathlum",
 			       head="Assim. Keffiyeh +1",neck="Eddy necklace",ear1="Loquac. Earring",
-			       body="Assim. Jubbah +1",hands="Hashi. Bazubands",ring1="Prolix ring",ring2="Sangoma ring",
-			       back="Cornflower cape",waist="Hurch'lan Sash",legs="Hashishin Tayt",feet=heliosboots,}
+			       body="Assim. Jubbah +1",hands="Hashi. Bazu. +1",ring1="Prolix ring",ring2="Sangoma ring",
+			       back="Cornflower cape",waist="Hurch'lan Sash",legs="Hashishin Tayt +1",feet=heliosboots,}
 						   
 	sets.BlueMagic.HeavyStrike = {ammo="Honed Tathlum",
 			              head="Whirlpool mask",neck="Mavi Scarf",ear1="Steelflash Earring",ear2="Heartseeker earring",
@@ -342,7 +401,7 @@ function get_sets()
 	sets.BlueMagic.ChargedWhisker = {ammo="Mavi Tathlum",
 			                 head="Uk'uxkaj cap",neck="Eddy necklace",ear1="Crematio earring",ear2="Friomisi earring",
 			                 body="Vanir Cotehardie",hands="Assim. Bazu. +1",ring1="Diamond ring",ring2="Rajas ring",
-				         back="Cornflower cape",waist="Aswang Sash",legs="Hagondes Pants +1",feet="Hashishin Basmak"} 
+				         back="Cornflower cape",waist="Aswang Sash",legs="Hagondes Pants +1",feet="Hashi. Basmak +1"} 
 	
 	sets.BlueMagic.WhiteWind = {ammo="Mavi Tathlum",
 				    head="Luhlaza Keffiyeh",neck="Jeweled collar",ear1="Ethereal earring",ear2="Loquac. Earring",
@@ -352,17 +411,17 @@ function get_sets()
 	sets.BlueMagic.MagicAccuracy = {ammo="Mavi Tathlum",
 				        head="Assim. Keffiyeh +1",neck="Eddy necklace",ear1="Psystorm earring",ear2="Lifestorm earring",
 				        body="Assim. Jubbah +1",hands="Hagondes Cuffs +1",ring1="Strendu Ring",ring2="Sangoma ring",
-				        back="Cornflower cape",waist="Aswang Sash",legs="Hashishin Tayt",feet="Luhlaza Charuqs"} 
+				        back="Cornflower cape",waist="Aswang Sash",legs="Hashishin Tayt +1",feet="Luhlaza Charuqs"} 
 									 
 	sets.BlueMagic.Skill = {ammo="Mavi Tathlum",
 				head="Luhlaza Keffiyeh",neck="Jeweled collar",ear1="Loquac. Earring",
-				body="Assim. Jubbah +1",hands="Hashi. Bazubands",ring1="Prolix ring",
-				back="Cornflower cape",waist="Hurch'lan Sash",legs="Hashishin Tayt",feet="Luhlaza Charuqs"}
+				body="Assim. Jubbah +1",hands="Hashi. Bazu. +1",ring1="Prolix ring",
+				back="Cornflower cape",waist="Hurch'lan Sash",legs="Hashishin Tayt +1",feet="Luhlaza Charuqs"}
 							
 	sets.BlueMagic.SkillRecast = {ammo="Mavi Tathlum",
 				      head="Luhlaza Keffiyeh",neck="Jeweled collar",ear1="Loquac. Earring",
-				      body="Assim. Jubbah +1",hands="Hashi. Bazubands",ring1="Prolix ring",
-				      back="Swith cape",waist="Hurch'lan Sash",legs="Hashishin Tayt",feet="Luhlaza Charuqs"}
+				      body="Assim. Jubbah +1",hands="Hashi. Bazu. +1",ring1="Prolix ring",
+				      back="Swith cape",waist="Hurch'lan Sash",legs="Hashishin Tayt +1",feet="Luhlaza Charuqs"}
 	--Blue Magic Sets
 --midcast sets
 	
@@ -386,7 +445,7 @@ function get_sets()
 	
 	sets.learning={main="Nmd. Moogle Rod", sub="Genbu's Shield", ammo="Mavi Tathlum",
 	head={ name="Luhlaza Keffiyeh", augments={'Enhances "Convergence" effect',}},
-	body="Assim. Jubbah +1", hands="Assim. Bazu. +1", legs="Hashishin Tayt", feet="Assim. Charuqs +1",
+	body="Assim. Jubbah +1", hands="Assim. Bazu. +1", legs="Hashishin Tayt +1", feet="Assim. Charuqs +1",
 	neck="Mavi Scarf", waist="Windbuffet Belt +1", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",
 	left_ring="Epona's Ring", right_ring="Rajas Ring",
 	back={ name="Cornflower Cape", augments={'MP+19','DEX+1','Accuracy+1','Blue Magic skill +7',}},}
@@ -481,7 +540,7 @@ function midcast(spell)
 		end
 	end
 	
-	if spell.english == 'Gates of Hades' or spell.english == 'Leafstorm' or spell.english == 'Firespit' or spell.english == 'Acrid Stream' or spell.english == 'Regurgitation' or spell.english == 'Corrosive Ooze' or spell.english == 'Thermal Pulse' or spell.english == 'Magic Hammer' or spell.english == 'Evryone. Grudge' or spell.english == 'Water Bomb' or spell.english == 'Dark Orb' or spell.english == 'Thunderbolt' or spell.english == 'Tem. Upheaval' or spell.english == 'Embalming Earth' or spell.english == 'Foul Waters' or spell.english == 'Rending Deluge' or spell.english == 'Droning Whirlwind' or spell.english == 'Subduction' then
+	if BluNukesINT:contains(spell.english) then
 		equip(sets.BlueMagic.INT)
 		if buffactive['Burst Affinity'] then
 			equip(sets.JA.BurstAffinity)

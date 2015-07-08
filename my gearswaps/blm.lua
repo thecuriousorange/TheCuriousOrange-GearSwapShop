@@ -152,14 +152,13 @@ function get_sets()
 	back="Bane Cape",}
 	
 	sets.midcast.skillenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", body="Spae. Coat +1",
-	head={ name="Artsieq Hat", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	hands="Lurid Mitts", legs="Portent Pants", neck="Enfeebling Torque", waist="Rumination Sash", right_ring="Sangoma Ring",
 	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Globidonta Ring", back="Bane Cape",}
 	
 	sets.midcast.mndenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", ammo="Witchstone", body="Vanir Cotehardie",
-	hands="Lurid Mitts", legs="Bokwus Slops", head={ name="Artsieq Hat", augments={'MP+30','Mag. Acc.+20','MND+7',}},
-	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Rumination Sash",
-	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Levia. Ring",
+	hands="Lurid Mitts", legs="Bokwus Slops", head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace",
+	waist="Rumination Sash", left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Levia. Ring",
 	back="Bane Cape",}
 	
 	sets.midcast.doa={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Appetence Crown", body="Vanir Cotehardie",
@@ -224,7 +223,7 @@ function get_sets()
 --midcast sets
 
 --aftercast sets
-	sets.aftercast.idle={main="Bolelabunga", sub="Genbu's Shield", body="Respite Cloak", hands="Serpentes Cuffs",
+	sets.aftercast.idle={main="Bolelabunga", sub="Genbu's Shield", head="Befouled Crown", body="Hagondes Coat +1", hands="Serpentes Cuffs",
 	legs="Assid. Pants +1", feet="Serpentes Sabots", neck="Twilight Torque", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
 	left_ring="Defending Ring", right_ring="Shadow Ring", back="Shadow Mantle",}
 	
