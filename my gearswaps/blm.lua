@@ -123,7 +123,7 @@ function get_sets()
 	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	left_ring="Prolix Ring", back="Swith Cape",}
 	
-	sets.precast.notnuke={head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs="Orvail Pants +1",
+	sets.precast.notnuke={main="Marin Staff", head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs="Orvail Pants +1",
 	feet="Chelona Boots", neck="Jeweled Collar", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
 	left_ring="Prolix Ring", back="Swith Cape",}
 	

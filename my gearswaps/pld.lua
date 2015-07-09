@@ -177,7 +177,7 @@ function get_sets()
 	sets.precast.ja.cwaltz={ammo="Iron Gobbet", head={ name="Cab. Coronet +1", augments={'Enhances "Iron Will" effect',}},
 	body="Chev. Cuirass +1", hands="Chev. Gauntlets +1", legs={ name="Cab. Breeches +1", augments={'Enhances "Invincible" effect',}},
 	feet="Rev. Leggings +1", neck="Twilight Torque", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
-	left_ring="Terrasoul Ring", right_ring="Terrasoul Ring", back={ name="Weard Mantle", augments={'VIT+1','DEX+1','Enmity+2','Phalanx +4',}},}
+	left_ring="Terrasoul Ring", right_ring="Terrasoul Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
 	
 	sets.precast.ws.CdC= {ammo="Jukukik Feather", head="Yaoyotl Helm", body="Mes. Haubergeon",
     hands="Chev. Gauntlets +1", legs=dalegs, feet=dafeet, neck="Fotia Gorget",
@@ -474,7 +474,7 @@ function get_sets()
 	sets.aftercast.pdt= {ammo="Hasty Pinion +1", head="Ighwa Cap", body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}},
 	hands="Umuthi Gloves", legs=dtlegs, feet={ name="Xaddi Boots", augments={'HP+45','Accuracy+15','Phys. dmg. taken -3',}},
 	neck="Twilight Torque", waist="Nierenschutz", left_ear="Ethereal Earring", right_ear="Zennaroi Earring", left_ring="Vocane Ring",
-	right_ring="Defending Ring", back={ name="Weard Mantle", augments={'VIT+1','DEX+1','Enmity+2','Phalanx +4',}},}
+	right_ring="Defending Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
 	
 	sets.aftercast.mdt= {ammo="Vanir Battery", head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
 	legs="Chev. Cuisses +1", feet="Cab. Leggings +1", neck="Twilight Torque", waist="Creed Baudrier",

@@ -33,6 +33,8 @@ function get_sets()
 		'Retinal Glare','Subduction','Rail Cannon','Diffusion Ray','Blinding Fulgor','Spectral Floe','Entomb','Silent Storm',
 		'Searing Tempest','Anvil Lightning','Tenebral Crush','Scouring Spate','Palling Salvo'}
 	
+	BluCures=S{'Pollen','Wild Carrot','Magic Fruit','Plenilune Embrace','Restoral','Cure IV','Cure III','Cure2','Cure','Curaga','Curaga II'}
+	
 	BluNukesMND=S{}
 	
 	BluBA_INT=S{}
@@ -94,7 +96,7 @@ function get_sets()
 	
 	heliosband={name="Helios Band", augments={'Mag. Acc. +15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+1%'}}
 	heliosgloves={ name="Helios Gloves", augments={'"Fast Cast"+5','Mag. Evasion+10','INT+5 MND+5',}}
-	heliosboots={ name="Helios Boots", augments={'"Mag. Atk. Bns. +25"','Magic Crit. Hit Rate +3','MND+3',}}
+	heliosboots={ name="Helios Boots", augments={'"Mag. Atk. Bns. +25"','Magic Crit. Hit Rate +3','Mag. Crit. Hit Dmg. +10%',}}
 	
 	
 	claid1={ name="Claidheamh Soluis", augments={'Accuracy+9 Attack+9','Dbl. Atk.+3','STR+13 VIT+13',}}
@@ -134,13 +136,10 @@ function get_sets()
 --basesets
 
 --weaponry
-	sets.weaponry.index={'claids','gabax','claidgab','claidgenbu','boletax','bolegenbu'}
+	sets.weaponry.index={'claids','gabax','claidgab'}
 	weaponry_ind=1
 	
 	sets.weaponry.claids={main=claid1, sub=claid2,}
-	sets.weaponry.claidgenbu={main=claid1, sub="Genbu's Shield",}
-	sets.weaponry.boletax={main="Bolelabunga", sub="Tamaxchi"}
-	sets.weaponry.bolegenbu={main="Bolelabunga", sub="Genbu's Shield",}
 	sets.weaponry.gabax={main=gab1, sub=gab2,}
 	sets.weaponry.claidgab={main=claid1, sub=gab2,}
 --weaponry
@@ -547,7 +546,7 @@ function midcast(spell)
 		end
 	end
 	
-	if spell.english == 'Magic Fruit' or spell.english == 'Plenilune Embrace' or spell.english == 'Wild Carrot' or spell.english == 'Pollen' or spell.english == 'Cure IV' then
+	if BluCures:contains(spell.english)then
 		equip(sets.BlueMagic.Cures)
 	end
 	
