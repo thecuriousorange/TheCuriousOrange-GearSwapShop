@@ -39,6 +39,8 @@ function get_sets()
 	send_command('bind #f6 gs c thunder')
 	send_command('bind !- input /ma "Aspir II" <t>')
 	send_command('bind != VI')
+	send_command('bind @- input /ma "Aspir III" <t>')
+	send_command('bind @= I')
 	send_command('bind @f10 gs c magic_mode')
 	send_command('bind @f11 gs c mm')
 	send_command('bind @f12 gs c mpe')
@@ -90,7 +92,7 @@ function get_sets()
 	
 	DarkMagic_DoT= S{"Bio", "Bio II", "Bio III",}
 	
-	DarkMagic_Drain_Aspir= S{"Drain", "Drain II", "Aspir", "Aspir II",}
+	DarkMagic_Drain_Aspir= S{"Drain", "Drain II", "Aspir", "Aspir II", "Aspir III"}
 	
 	EnfeeblingMagic_skillmod= S{"Sleep", "Sleep II", "Sleepga", "Sleepga II", "Poison", "Poison II", "Poisonga", 
 	"Poisonga II", "Dispel", "Gravity", "Bind", "Break", "Breakga", "Blind", "Blind II", "Gravity", "Gravity II",}
@@ -123,14 +125,14 @@ function get_sets()
 	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	left_ring="Prolix Ring", back="Swith Cape",}
 	
-	sets.precast.notnuke={main="Marin Staff", head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs="Orvail Pants +1",
+	sets.precast.notnuke={main="Marin Staff", head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	feet="Chelona Boots", neck="Jeweled Collar", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
 	left_ring="Prolix Ring", back="Swith Cape",}
 	
 --precast sets
 
 --ws sets
-	sets.precast["Myrkr"]={main="Marin Staff", sub="Elementa Grip", ammo="Ghastly Tathlum", head="Helios Band", body="Wretched Coat",
+	sets.precast["Myrkr"]={main="Marin Staff", sub="Elementa Grip", ammo="Ghastly Tathlum +1", head="Helios Band", body="Wretched Coat",
 	hands="Wicce Gloves +1", legs="Wicce Chausses +1", feet="Helios Boots", neck="Eddy Necklace", waist="Sekhmet Corset", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
     back="Toro Cape",}
@@ -170,21 +172,21 @@ function get_sets()
 	
 	sets.midcast.nuke.acc={}
 	
-	sets.midcast.nuke.dmg.lowtier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum", body="Count's Garb",
+	sets.midcast.nuke.dmg.lowtier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum +1", body="Count's Garb",
 	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+1%',}},
 	legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
 	feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", left_ear="Crematio Earring", right_ear="Friomisi Earring",
 	right_ring="Strendu Ring", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},
 	left_ring="Sangoma Ring", hands="Otomi Gloves",}
 	
-	sets.midcast.nuke.dmg.midtier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum", body="Count's Garb",
+	sets.midcast.nuke.dmg.midtier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum +1", body="Count's Garb",
 	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+1%',}},
 	legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
 	feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", left_ear="Crematio Earring", right_ear="Friomisi Earring",
 	right_ring="Strendu Ring", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},
 	left_ring="Sangoma Ring", hands="Otomi Gloves",}
 	
-	sets.midcast.nuke.dmg.hightier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum", head="Helios Band", body="Count's Garb",
+	sets.midcast.nuke.dmg.hightier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum +1", head="Helios Band", body="Count's Garb",
 	hands="Wicce Gloves +1", legs="Hagondes Pants +1", feet="Helios Boots", neck="Eddy Necklace", waist="Othila Sash", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
     back="Toro Cape",}

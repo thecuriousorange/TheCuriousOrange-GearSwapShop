@@ -49,7 +49,7 @@ function get_sets()
 --augmented items
 	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','STR+6 VIT+6',}}
 	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}}
-	taeonhands={ name="Taeon Gloves", augments={'Attack+25','"Triple Atk."+2','Crit. hit damage +2%',}}
+	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
 	
@@ -362,7 +362,7 @@ function get_sets()
 	
 	sets.tp.highacc= set_combine(sets.tp.medacc, {waist="Olseni Belt", back=updrafttp,
 	hands={ name="Xaddi Gauntlets", augments={'Accuracy+15','"Store TP"+3','"Dbl.Atk."+2',}}, left_ring="Patricius Ring", 
-	right_ring="Mars's Ring", left_ear="Steelflash Earring", right_ear="Zennaroi Earring", neck="Iqabi Necklace",})
+	right_ring="Mars's Ring", left_ear="Steelflash Earring", right_ear="Zennaroi Earring", neck="Subtlety Spec.",})
 	
 	sets.xhit.lowacc={ammo="Ginsen", head=acrohead, body="Pelt. Plackart +1", back="Bleating Mantle", hands=acrohands, waist="Windbuffet Belt +1",
 	legs=acrolegs, feet=acrofeet, neck="Ganesha's Mala", left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="K'ayres Ring",

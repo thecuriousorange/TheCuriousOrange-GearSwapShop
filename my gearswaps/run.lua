@@ -6,6 +6,7 @@ function get_sets()
 --aliases
 	send_command('alias ddset gs equip sets.aftercast.tp.lowacc')
 	send_command('alias tankset gs equip sets.aftercast.hybrid.lowacc')
+	send_command('alias idle gs equip sets.idle.refresh')
 --aliases
 
 --text boxes
@@ -16,7 +17,7 @@ function get_sets()
 --text boxes
 
 --keybinds
-	send_command('bind #4 gs equip sets.aftercast.idle')
+	send_command('bind #4 idle')
 	send_command('bind #2 gs equip sets.aftercast.pdt')
 	send_command('bind #5 aquaveil')
 	send_command('bind #6 phalanx')
@@ -29,10 +30,8 @@ function get_sets()
 	send_command('bind @F3 gs c PDT')
 	send_command('bind @F4 gs c MDT')
 	send_command('bind @F5 gs c TANK')
-	send_command('bind #F1 gs c lowacc')
-	send_command('bind #F2 gs c medacc')
-	send_command('bind #F3 gs c highacc')
-	send_command('bind #F4 gs c vhighacc')
+	send_command('bind #F1 gs c toggleaccuracy')
+	send_command('bind #F4 gs c toggleidle')
 	send_command('bind @F9 gs c greatsword')
 	send_command('bind @f10 gs c onesword')
 	send_command('bind @f11 gs c twoswords')
@@ -40,11 +39,29 @@ function get_sets()
 	send_command('bind #1 input /item "Echo Drops" <me>')
 	send_command('bind @p input /item "Holy Water" <me>')
 	send_command('bind #c crusade')
+	send_command('bind !- input /ja "Gambit" <t>')
+	send_command('bind != input /ja "Rayke" <t>')
+	send_command('bind @- input /ja "Embolden" <me>')
+	send_command('bind @= input /ja "Liement" <me>')
+	send_command('bind ^- input /ja "Odyllic Subterfuge" <t>')
+	send_command('bind ^= input /ja "Elemental Sforzo" <me>')
+	send_command('bind @1 input /ja "Ignis" <me>')
+	send_command('bind @2 input /ja "Tellus" <me>')
+	send_command('bind @3 input /ja "Tenabrae" <me>')
+	send_command('bind @4 input /ja "Lux" <me>')
+	send_command('bind @5 input /ja "Unda" <me>')
+	send_command('bind @6 input /ja "Flabra" <me>')
+	send_command('bind @7 input /ja "Sulpor" <me>')
+	send_command('bind @8 input /ja "Gelus" <me>')
 --keybinds
 
 --macros setup
 	send_command('input /macro book 1;input /macro set 3')
 --macros setup
+
+--augmented armor
+	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}
+--augmented armor
 
 --variables
 	WeaponType="greatsword"
@@ -102,12 +119,12 @@ function get_sets()
 	
 	sets.precast.ja["Swordplay"]=set_combine(sets.enmity, {hands="Futhark Mitons +1",})
 	
-	sets.precast.ja["Lunge"]={ammo="Ghastly Tathlum", head="Highwing Helm", body="Count's Garb", hands="Nilas Gloves",
+	sets.precast.ja["Lunge"]={ammo="Ghastly Tathlum +1", head="Highwing Helm", body="Count's Garb", hands="Nilas Gloves",
 	legs="Limbo Trousers", feet="Qaaxo Leggings", neck="Eddy Necklace", waist="Yamabuki-No-Obi", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Acumen Ring",
     back="Evasionist's Cape",}
 	
-	sets.precast.ja["Swipe"]={ammo="Ghastly Tathlum", head="Highwing Helm", body="Count's Garb", hands="Nilas Gloves",
+	sets.precast.ja["Swipe"]={ammo="Ghastly Tathlum +1", head="Highwing Helm", body="Count's Garb", hands="Nilas Gloves",
 	legs="Limbo Trousers", feet="Qaaxo Leggings", neck="Eddy Necklace", waist="Yamabuki-No-Obi", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Acumen Ring",
     back="Evasionist's Cape",}
@@ -149,6 +166,26 @@ function get_sets()
 	hands="Qaaxo Mitaines", legs="Manibozho Brais", feet="Qaaxo Leggings", neck="Fotia Gorget",
 	waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
 	left_ring="Ifrit Ring", right_ring="Epona's Ring", back="Buquwik Cape",}
+	
+	sets.precast.ws["Hard Slash"]=sets.precast.ws["Resolution"]
+	
+	sets.precast.ws["Power Slash"]=sets.precast.ws["Resolution"]
+	
+	sets.precast.ws["Frostbite"]=set_combine(sets.precast.ja["Lunge"], {neck="Fotia Gorget", waist="Fotia Belt"})
+	
+	sets.precast.ws["Freezebite"]=set_combine(sets.precast.ja["Lunge"], {neck="Fotia Gorget", waist="Fotia Belt"})
+	
+	sets.precast.ws["Shockwave"]=sets.precast.ws["Resolution"]
+	
+	sets.precast.ws["Crescent Moon"]=sets.precast.ws["Resolution"]
+	
+	sets.precast.ws["Sickle Moon"]=sets.precast.ws["Resolution"]
+	
+	sets.precast.ws["Spinning Slash"]=sets.precast.ws["Resolution"]
+	
+	sets.precast.ws["Ground Strike"]=sets.precast.ws["Resolution"]
+	
+	sets.precast.ws["Herculean Slash"]=set_combine(sets.precast.ja["Lunge"], {neck="Fotia Gorget", waist="Fotia Belt"})
 	
 	sets.precast.ws["Requiescat"]= set_combine(sets.precast.ws["Resolution"], {neck="Fotia Gorget", waist="Fotia Belt", left_ring="Levia. Ring",})
 	--ws sets
@@ -198,7 +235,7 @@ function get_sets()
 	
 	sets.aftercast.tp.medacc= set_combine(sets.aftercast.tp.lowacc, {ammo="Honed Tathlum", back="Letalis Mantle",})
 	
-	sets.aftercast.tp.highacc= set_combine(sets.aftercast.tp.medacc, {neck="Iqabi Necklace", left_ring="Patricius Ring",})
+	sets.aftercast.tp.highacc= set_combine(sets.aftercast.tp.medacc, {neck="Subtlety Spec.", left_ring="Patricius Ring", hands=taeonhands,})
 	
 	sets.aftercast.tp.vhighacc= set_combine(sets.aftercast.tp.highacc, {left_ear="Zennaroi Earring", right_ear="Brutal Earring", hands="Buremte Gloves", waist="Olseni Belt",})
 	--tp sets
@@ -211,7 +248,7 @@ function get_sets()
 	
 	sets.aftercast.hybrid.medacc= set_combine(sets.aftercast.hybrid.lowacc, {ammo="Honed Tathlum", back="Letalis Mantle",})
 	
-	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {head="Whirlpool Mask", neck="Iqabi Necklace",})
+	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {head="Whirlpool Mask", neck="Subtlety Spec.",})
 	
 	sets.aftercast.hybrid.vhighacc= set_combine(sets.aftercast.hybrid.highacc, {waist="Olseni Belt", legs="Ighwa Trousers",})
 	--hybrid sets
@@ -352,6 +389,37 @@ function self_command(command)
 	--tpset commands
 	
 	--accuracy commands
+	if command== 'toggleaccuracy' then
+		if TPType=="lowacc" then
+			TPType="medacc"
+			add_to_chat(206, 'Medium Accuracy Mode')
+			send_command('text idlevariable text "MEDIUM-ACC"')
+			send_command('alias ddset gs equip sets.aftercast.tp.medacc')
+			send_command('alias tankset gs equip sets.aftercast.hybrid.medacc')
+			status_change(player.status)
+		elseif TPType=="medacc" then
+			TPType="highacc"
+			add_to_chat(206, 'High Accuracy Mode')
+			send_command('text idlevariable text "HIGH-ACC"')
+			send_command('alias ddset gs equip sets.aftercast.tp.highacc')
+			send_command('alias tankset gs equip sets.aftercast.hybrid.highacc')
+			status_change(player.status)
+		elseif TPType=="highacc" then
+			TPType="vhighacc"
+			add_to_chat(206, 'Very High Accuracy Mode')
+			send_command('text idlevariable text "V.HIGH-ACC"')
+			send_command('alias ddset gs equip sets.aftercast.tp.vhighacc')
+			send_command('alias tankset gs equip sets.aftercast.hybrid.vhighacc')
+			status_change(player.status)
+		elseif TPType=="vhighacc" then
+			TPType="lowacc"
+			add_to_chat(206, 'Low Accuracy Mode')
+			send_command('text idlevariable text "LOW-ACC"')
+			send_command('alias ddset gs equip sets.aftercast.tp.lowacc')
+			send_command('alias tankset gs equip sets.aftercast.hybrid.lowacc')
+			status_change(player.status)
+		end
+	end
 	if command == 'lowacc' then
 		TPType="lowacc"
 		add_to_chat(206, 'Low Accuracy Mode')
@@ -374,7 +442,7 @@ function self_command(command)
 		send_command('alias tankset gs equip sets.aftercast.hybrid.highacc')
 		status_change(player.status)
 	elseif command == 'vhighacc' then
-		TPType="highacc"
+		TPType="vhighacc"
 		add_to_chat(206, 'Very High Accuracy Mode')
 		send_command('text idlevariable text "V.HIGH-ACC"')
 		send_command('alias ddset gs equip sets.aftercast.tp.vhighacc')
@@ -401,19 +469,27 @@ function self_command(command)
 	--weapon set commands
 	
 	--idle set commands
-	if command=='pdtidle' then
-		IdleType='pdt'
-		add_to_chat(206,'PDT IDLE')
-		send_command('text wsvariable text "PDT IDLE"')
-	elseif command=='mdtidle' then
-		IdleType='mdt'
-		add_to_chat(206,'MDT IDLE')
-		send_command('text wsvariable text "MDT IDLE"')
-	elseif command=='standardidle' then
-		IdleType='refresh'
-		add_to_chat(206,'REFRESH IDLE')
-		send_command('text wsvariable text "REFRESH IDLE"')
-	end
+	if command=='toggleidle' then
+		if IdleType=="refresh" then
+			IdleType='pdt'
+			add_to_chat(206,'PDT IDLE')
+			send_command('text wsvariable text "PDT IDLE"')
+			send_command('alias idle gs equip sets.idle.pdt')
+			status_change(player.status)
+		elseif IdleType=="pdt" then
+			IdleType='mdt'
+			add_to_chat(206,'MDT IDLE')
+			send_command('text wsvariable text "MDT IDLE"')
+			send_command('alias idle gs equip sets.idle.mdt')
+			status_change(player.status)
+		elseif IdleType=="mdt" then
+			IdleType='refresh'
+			add_to_chat(206,'REFRESH IDLE')
+			send_command('text wsvariable text "REFRESH IDLE"')
+			send_command('alias idle gs equip sets.idle.refresh')
+			status_change(player.status)
+		end
+	end	
 	--idle set commands
 end
 

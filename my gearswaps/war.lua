@@ -188,7 +188,7 @@ include('tco-include.lua')
 	
 	sets.tp.medacc=set_combine(sets.tp.lowacc, {head="Yaoyotl Helm", waist="Anguinus Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",})
 	
-	sets.tp.highacc=set_combine(sets.tp.medacc, {head="Gavialis Helm", neck="Iqabi Necklace", left_ear="Tripudio Earring", right_ear="Zennaroi Earring", waist="Olseni Belt", legs={ name="Xaddi Cuisses", augments={'Attack +15','Accuracy +10','"Store TP"+3',}}, left_ring="Patricius Ring", right_ring="Mars's Ring", feet={name="Xaddi Boots", augments={'Attack +15','Accuracy +10','"Store TP"+3',}},})
+	sets.tp.highacc=set_combine(sets.tp.medacc, {head="Gavialis Helm", neck="Subtlety Spec.", left_ear="Tripudio Earring", right_ear="Zennaroi Earring", waist="Olseni Belt", legs={ name="Xaddi Cuisses", augments={'Attack +15','Accuracy +10','"Store TP"+3',}}, left_ring="Patricius Ring", right_ring="Mars's Ring", feet={name="Xaddi Boots", augments={'Attack +15','Accuracy +10','"Store TP"+3',}},})
 	
 	sets.otp.lowacc= set_combine(sets.tp.lowacc, {left_ring="Oneiros Ring",})
 	

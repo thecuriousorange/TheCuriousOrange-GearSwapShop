@@ -49,7 +49,7 @@ function get_sets()
 --
 	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','STR+6 VIT+6',}}
 	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}}
-	taeonhands={ name="Taeon Gloves", augments={'Attack+25','"Triple Atk."+2','Crit. hit damage +2%',}}
+	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
 --
@@ -181,7 +181,7 @@ function get_sets()
 	--legs="Qaaxo Tights", feet="Soku. Sune-Ate", back="Bleating Mantle", left_ring="Epona's Ring", 
 	--right_ring="Rajas Ring",}
 	
-	sets.aftercast.tp.styleII= set_combine(sets.aftercast.tp.styleI, {ammo="Honed Tathlum", neck="Iqabi Necklace",})
+	sets.aftercast.tp.styleII= set_combine(sets.aftercast.tp.styleI, {ammo="Honed Tathlum", neck="Subtlety Spec.",})
 	
 	sets.aftercast.tp.styleIII= set_combine(sets.aftercast.tp.styleII, {body="Qaaxo Harness", legs="Ighwa Trousers",})
 	

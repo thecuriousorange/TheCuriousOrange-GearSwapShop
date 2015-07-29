@@ -235,9 +235,9 @@ function get_sets()
 --tp sets
 
 --high acc sets
-	sets.aftercast.tp.highacclow= set_combine(sets.aftercast.tp.acc, {neck="Iqabi Necklace", body="Mes. Haubergeon", legs="Xaddi Cuisses",})
+	sets.aftercast.tp.highacclow= set_combine(sets.aftercast.tp.acc, {neck="Subtlety Spec.", body="Mes. Haubergeon", legs="Xaddi Cuisses",})
 	
-	sets.aftercast.tp.highaccmed= set_combine(sets.aftercast.tp.highacclow, {neck="Iqabi Necklace", waist="Anguinus Belt",})
+	sets.aftercast.tp.highaccmed= set_combine(sets.aftercast.tp.highacclow, {neck="Subtlety Spec.", waist="Anguinus Belt",})
 	
 	sets.aftercast.tp.highacchigh= set_combine(sets.aftercast.tp.highaccmed, {left_ear="Zennaroi Earring", right_ear="Tripudio Earring",})
 	

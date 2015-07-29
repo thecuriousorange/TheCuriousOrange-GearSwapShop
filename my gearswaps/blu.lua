@@ -90,7 +90,7 @@ function get_sets()
 --augmented gear
 	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','STR+6 VIT+6',}}
 	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}}
-	taeonhands={ name="Taeon Gloves", augments={'Attack+25','"Triple Atk."+2','Crit. hit damage +2%',}}
+	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
 	
@@ -133,6 +133,7 @@ function get_sets()
 	sets.ws={}
 	sets.ws.damage={}
 	sets.ws.accuracy={}
+	sets.tprefresh={}
 --basesets
 
 --weaponry
@@ -146,7 +147,7 @@ function get_sets()
 
 --precast sets
 	--magic sets
-	sets.precast.fc={head="Haruspex Hat", body="Vanir Cotehardie", hands=heliosgloves, legs="Enif Cosciales", feet="Chelona Boots", 
+	sets.precast.fc={head="Haruspex Hat", body="Luhlaza Jubbah +1", hands=heliosgloves, legs="Enif Cosciales", feet="Chelona Boots", 
 	neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}}, 
 	waist="Siegel Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring", left_ring="Prolix Ring",
 	right_ring="Veneficium Ring", back="Swith Cape",}
@@ -399,7 +400,7 @@ function get_sets()
 								  
 	sets.BlueMagic.ChargedWhisker = {ammo="Mavi Tathlum",
 			                 head="Uk'uxkaj cap",neck="Eddy necklace",ear1="Crematio earring",ear2="Friomisi earring",
-			                 body="Vanir Cotehardie",hands="Assim. Bazu. +1",ring1="Diamond ring",ring2="Rajas ring",
+			                 body="Count's Garb",hands="Assim. Bazu. +1",ring1="Diamond ring",ring2="Rajas ring",
 				         back="Cornflower cape",waist="Aswang Sash",legs="Hagondes Pants +1",feet="Hashi. Basmak +1"} 
 	
 	sets.BlueMagic.WhiteWind = {ammo="Mavi Tathlum",
@@ -432,13 +433,13 @@ function get_sets()
 	waist="Windbuffet Belt +1", left_ear="Suppanomimi", right_ear="Brutal Earring",
 	left_ring="Epona's Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
-	sets.tp.buffed.accII= set_combine(sets.tp.buffed.accI, {ammo="Honed Tathlum", head=taeonhead, neck="Iqabi Necklace",})
+	sets.tp.buffed.accII= set_combine(sets.tp.buffed.accI, {ammo="Honed Tathlum", head=taeonhead, neck="Subtlety Spec.",})
 	
 	sets.tp.buffed.accIII= set_combine(sets.tp.buffed.accII, {waist="Olseni Belt", right_ear="Zennaroi Earring", back="Letalis Mantle",})
 	
 	sets.tp.unbuffed.accI= set_combine(sets.tp.buffed.accI, {left_ear="Heartseeker Earring", right_ear="Dudgeon Earring",})
 	
-	sets.tp.unbuffed.accII= set_combine(sets.tp.unbuffed.accI, {ammo="Honed Tathlum", head=taeonhead, neck="Iqabi Necklace",})
+	sets.tp.unbuffed.accII= set_combine(sets.tp.unbuffed.accI, {ammo="Honed Tathlum", head=taeonhead, neck="Subtlety Spec.",})
 	
 	sets.tp.unbuffed.accIII= set_combine(sets.tp.unbuffed.accII, {waist="Olseni Belt", left_ear="Suppanomimi", right_ear="Zennaroi Earring", back="Letalis Mantle",})
 	
@@ -451,18 +452,26 @@ function get_sets()
 	--tp sets
 	
 	--idle sets
-	sets.idle.refresh={ammo="Vanir Battery", body="Respite Cloak", hands="Serpentes Cuffs",
+	sets.idle.refresh={ammo="Vanir Battery", head="Rawhide Mask", body="Hagondes Coat +1", hands="Serpentes Cuffs",
 	legs="Blood Cuisses", feet="Serpentes Sabots", neck="Twilight Torque", waist="Flume Belt", left_ear="Sanare Earring",
     right_ear="Ethereal Earring", left_ring="Shadow Ring", right_ring="Sheltered Ring", back="Shadow Mantle",}
 	
 	sets.idle.regen= set_combine(sets.idle.refresh, {head="Oce. Headpiece +1", left_ring="Paguroidea Ring",})
 	
-	sets.idle.dt= set_combine(sets.idle.refresh, {head="Iuitl Headgear +1", hands="Umuthi Gloves", left_ring="Defending Ring", right_ring="Vocane Ring",})
+	sets.idle.dt= set_combine(sets.idle.refresh, {head="Iuitl Headgear +1", hands="Umuthi Gloves", right_ring="Defending Ring", left_ring="Vocane Ring",})
 	--idle sets
 	
 	--dt sets
 	sets.pdt= set_combine(sets.idle.dt, {body="Iuitl Vest +1", back="Mollusca Mantle", legs="Hagondes Pants +1",})
-	sets.mdt= set_combine(sets.pdt, {head="Hagondes Hat +1", body="Vanir Cotehardie", hands="Qaaxo Mitaines", right_ring="Shadow Ring", feet="Qaaxo Leggings",})
+	sets.mdt= set_combine(sets.pdt, {head="Hagondes Hat +1", body="Hagondes Coat +1", hands="Qaaxo Mitaines", right_ring="Shadow Ring", feet="Qaaxo Leggings",})
+	
+	sets.hybrid.accI=set_combine(sets.tp.buffed.accI,{neck="Twilight Torque", hands="Umuthi Gloves", back="Mollusca Mantle", left_ring="Vocane Ring", right_ring="Defending Ring"})
+	sets.hybrid.accII=set_combine(sets.tp.buffed.accII,{neck="Twilight Torque", hands="Umuthi Gloves", back="Mollusca Mantle", left_ring="Vocane Ring", right_ring="Defending Ring"})
+	sets.hybrid.accIII=set_combine(sets.tp.buffed.accIII,{neck="Twilight Torque", hands="Umuthi Gloves", back="Mollusca Mantle", left_ring="Vocane Ring", right_ring="Defending Ring"})
+	
+	sets.tprefresh.accI=set_combine(sets.tp.buffed.accI, {head="Rawhide Mask", body="Luhlaza Jubbah +1"})
+	sets.tprefresh.accII=set_combine(sets.tp.buffed.accII, {head="Rawhide Mask", body="Luhlaza Jubbah +1"})
+	sets.tprefresh.accIII=set_combine(sets.tp.buffed.accIII, {head="Rawhide Mask", body="Luhlaza Jubbah +1"})
 --aftercast sets
 end
 

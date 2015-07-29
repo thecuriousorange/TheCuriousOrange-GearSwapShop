@@ -3,7 +3,11 @@ function get_sets()
 		include('boxes.lua')
 		include('organizer-lib.lua')
 	-- include
-
+	
+	-- macro selection
+	send_command('input /macro book 12;input /macro set 1')
+	-- macro selection
+	
 	--variables
 	Weaponry="club"
 	

@@ -91,15 +91,15 @@ function get_sets()
 	
 	wsdmghead={ name="Yorium Barbuta", augments={'Accuracy+17 Attack+17','Enmity+7','Weapon skill damage +3%',}}
 	wsdmghands={ name="Yorium Gauntlets", augments={'Accuracy+17','Enmity+8','Weapon skill damage +3%',}}
-	wsdmglegs={ name="Yorium Cuisses", augments={'Accuracy+25','Enmity+10','Weapon skill damage +3%',}}
+	wsdmglegs={ name="Yorium Cuisses", augments={'Mag. Acc.+8','Enmity+10','Weapon skill damage +3%',}}
 	wsdmgfeet={ name="Yorium Sabatons", augments={'Accuracy+18 Attack+18','Enmity+8','Weapon skill damage +2%',}}
 	
-	dthead={ name="Yorium Barbuta", augments={'Accuracy+15 Attack+15','"Dbl. Atk."+2%','Damage taken-2%',}}
+	dthead={ name="Yorium Barbuta", augments={'Accuracy+15 Attack+15','"Dbl. Atk."+2%','Damage taken-3%',}}
 	dthands={ name="Yorium Gauntlets", augments={'Accuracy+22','Enmity+10','Damage taken-3%',}}
 	dtlegs={ name="Yorium Cuisses", augments={'Accuracy+15 Attack+15','"Dbl. Atk."+3%','Damage taken-3%',}}
-	dtfeet={ name="Yorium Sabatons", augments={'Accuracy+23','"Cure" potency +4%','Damage taken-2%',}}
+	dtfeet={ name="Yorium Sabatons", augments={'Accuracy+25','"Dbl. Atk."+3%','Damage taken-3%',}}
 	
-	curebody={ name="Yorium Cuirass", augments={'Attack+19','"Cure" potency +3%','Sklchn.dmg.+1%',}}
+	curebody={ name="Yorium Cuirass", augments={'Attack+19','"Cure" potency +4%','Sklchn.dmg.+1%',}}
 --
 
 -- variables	
@@ -211,7 +211,7 @@ function get_sets()
 	--Sword WS
 	sets.ws.dmg["Fast Blade"]=sets.precast.ws.VB
 	
-	sets.ws.acc["Fast Blade"]=set_combine(sets.ws.dmg["Fast Blade"], {neck="Iqabi Necklace", back="Letalis Mantle", left_ring="Mars's Ring", })
+	sets.ws.acc["Fast Blade"]=set_combine(sets.ws.dmg["Fast Blade"], {neck="Subtlety Spec.", back="Letalis Mantle", left_ring="Mars's Ring", })
 	
 	sets.ws.dmg["Burning Blade"]=sets.precast.ws.magicws
 	
@@ -223,7 +223,7 @@ function get_sets()
 	
 	sets.ws.dmg["Flat Blade"]=set_combine(sets.precast.ws.VB, {left_ring="Ifrit Ring", right_ring="Ifrit Ring",})
 	
-	sets.ws.acc["Flat Blade"]=set_combine(sets.ws.dmg["Flat Blade"], {neck="Iqabi Necklace", back="Letalis Mantle", left_ring="Mars's Ring", })
+	sets.ws.acc["Flat Blade"]=set_combine(sets.ws.dmg["Flat Blade"], {neck="Subtlety Spec.", back="Letalis Mantle", left_ring="Mars's Ring", })
 	
 	sets.ws.dmg["Shining Blade"]=sets.precast.ws.magicws
 	
@@ -235,7 +235,7 @@ function get_sets()
 	
 	sets.ws.dmg["Circle Blade"]=set_combine(sets.precast.ws.VB, {left_ring="Ifrit Ring", right_ring="Ifrit Ring",})
 	
-	sets.ws.acc["Circle Blade"]=set_combine(sets.ws.dmg["Circle Blade"], {neck="Iqabi Necklace", back="Letalis Mantle", left_ring="Mars's Ring", })
+	sets.ws.acc["Circle Blade"]=set_combine(sets.ws.dmg["Circle Blade"], {neck="Subtlety Spec.", back="Letalis Mantle", left_ring="Mars's Ring", })
 	
 	sets.ws.dmg["Spirits Within"]=set_combine(sets.precast.ja, {body="Phorcys Korazin", waist="Fotia Belt", legs=stplegs,})
 	
@@ -243,7 +243,7 @@ function get_sets()
 	
 	sets.ws.dmg["Vorpal Blade"]=set_combine(sets.precast.ws.VB, {waist="Fotia Belt", left_ring="Ifrit Ring",})
 	
-	sets.ws.acc["Vorpal Blade"]=set_combine(sets.ws.dmg["Vorpal Blade"], {neck="Iqabi Necklace", back="Letalis Mantle", left_ring="Mars's Ring", })
+	sets.ws.acc["Vorpal Blade"]=set_combine(sets.ws.dmg["Vorpal Blade"], {neck="Subtlety Spec.", back="Letalis Mantle", left_ring="Mars's Ring", })
 	
 	sets.ws.dmg["Swift Blade"]=set_combine(sets.precast.ws.VB, {neck="Fotia Gorget", waist="Fotia Belt", left_ring="Ifrit Ring",})
 	
@@ -290,7 +290,7 @@ function get_sets()
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
-	sets.ws.acc["Brainshaker"]=set_combine(sets.ws.dmg["Brainshaker"], {head="Gavialis Helm", neck="Iqabi Necklace", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	sets.ws.acc["Brainshaker"]=set_combine(sets.ws.dmg["Brainshaker"], {head="Gavialis Helm", neck="Subtlety Spec.", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Starlight"]=sets.precast.ws.magicws
 	
@@ -334,7 +334,7 @@ function get_sets()
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
-	sets.ws.acc["Hard Slash"]=set_combine(sets.ws.dmg["Hard Slash"], {head="Yaoyotl Helm", neck="Iqabi Necklace", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	sets.ws.acc["Hard Slash"]=set_combine(sets.ws.dmg["Hard Slash"], {head="Yaoyotl Helm", neck="Subtlety Spec.", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Power Slash"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Fotia Gorget", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
@@ -354,19 +354,19 @@ function get_sets()
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
-	sets.ws.acc["Shockwave"]=set_combine(sets.ws.dmg["Shockwave"], {head="Yaoyotl Helm", neck="Iqabi Necklace", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	sets.ws.acc["Shockwave"]=set_combine(sets.ws.dmg["Shockwave"], {head="Yaoyotl Helm", neck="Subtlety Spec.", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Crescent Moon"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Asperity Necklace", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
-	sets.ws.acc["Crescent Moon"]=set_combine(sets.ws.dmg["Crescent Moon"], {head="Yaoyotl Helm", neck="Iqabi Necklace", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	sets.ws.acc["Crescent Moon"]=set_combine(sets.ws.dmg["Crescent Moon"], {head="Yaoyotl Helm", neck="Subtlety Spec.", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Sickle Moon"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Asperity Necklace", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
-	sets.ws.acc["Sickle Moon"]=set_combine(sets.ws.dmg["Sickle Moon"], {head="Yaoyotl Helm", neck="Iqabi Necklace", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	sets.ws.acc["Sickle Moon"]=set_combine(sets.ws.dmg["Sickle Moon"], {head="Yaoyotl Helm", neck="Subtlety Spec.", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Spinning Slash"]={ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Mes. Haubergeon", neck="Fotia Gorget", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
@@ -414,14 +414,14 @@ function get_sets()
 	
 	sets.midcast.utsu= set_combine(sets.midcast.flash, {back="Boxer's Mantle", feet="Rev. Leggings +1",})
 	
-	sets.midcast.enlight= {ammo="Incantor Stone", head="Cizin Helm +1", body="Rev. Surcoat +1", hands="Rev. Gauntlets +1",
-    legs="Rev. Breeches +1", feet="Chev. Sabatons +1", neck="Divine Torque", waist="Siegel Sash", 
-	left_ear="Ethereal Earring", right_ear="Loquac. Earring", left_ring="Supershear Earring", 
+	sets.midcast.enlight= {ammo="Incantor Stone", head="Kahin Turban", body="Rev. Surcoat +1", hands="Eschite Gauntlets",
+    legs=wsdmglegs, feet="Chev. Sabatons +1", neck="Divine Torque", waist="Bishop's Sash", 
+	left_ear="Beatific Earring", right_ear="Loquac. Earring", left_ring="Globidonta Ring", 
 	right_ring="Defending Ring", back="Boxer's Mantle",}
 	
 	sets.midcast.enhancing= {ammo="Incantor Stone", head="Cizin Helm +1", body="Shab. Cuirass +1", hands="Rev. Gauntlets +1",
-    legs="Rev. Breeches +1", feet="Chev. Sabatons +1", neck="Shield Torque", waist="Siegel Sash", left_ear="Loquac. Earring",
-    right_ear="Trux Earring", left_ring="Portus Annulet", right_ring="Defending Ring", back="Weard Mantle",}
+    legs="Rev. Breeches +1", feet="Chev. Sabatons +1", neck="Colossus's Torque", waist="Olympus Sash", right_ear="Augment. Earring",
+    left_ear="Andoaa Earring", left_ring="Portus Annulet", right_ring="Defending Ring", back="Weard Mantle",}
 	
 	sets.midcast.proshell= set_combine(sets.midcast.enhancing, {right_ring="Sheltered Ring"})
 -- midcast sets
@@ -434,18 +434,18 @@ function get_sets()
 	
 	sets.aftercast.aftermath.medacc=set_combine(sets.aftercast.aftermath.lowacc, {waist="Anguinus Belt", back="Letalis Mantle"})
 	
-	sets.aftercast.aftermath.highacc=set_combine(sets.aftercast.aftermath.medacc, {right_ear="Zennaroi Earring", neck="Iqabi Necklace", waist="Olseni Belt", back="Letalis Mantle"})
+	sets.aftercast.aftermath.highacc=set_combine(sets.aftercast.aftermath.medacc, {right_ear="Zennaroi Earring", neck="Subtlety Spec.", waist="Olseni Belt", back="Letalis Mantle"})
 	
 	sets.aftercast.sword.lowacc= {ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}},
-	body=dabody, legs=dalegs, hands=dahands, waist="Windbuffet Belt +1", feet=dafeet, neck="Asperity Necklace", 
+	body=dabody, legs=dalegs, hands="Eschite Gauntlets", waist="Windbuffet Belt +1", feet=dafeet, neck="Asperity Necklace", 
 	left_ring="K'ayres Ring", left_ear="Trux Earring", right_ear="Brutal Earring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
 	sets.aftercast.sword.medacc= {ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, 
-	legs=dalegs, body="Rav. Breastplate", hands=dahands, feet=dafeet, neck="Agitator's Collar", waist="Windbuffet Belt +1", 
+	legs=dalegs, body="Rav. Breastplate", hands="Eschite Gauntlets", feet=dafeet, neck="Subtlety Spec.", waist="Windbuffet Belt +1", 
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Patricius Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 		
 	sets.aftercast.sword.highacc= {ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, 
-	body="Mes. Haubergeon", hands=dahands, legs=dalegs, left_ear="Zennaroi Earring", feet=dafeet, neck="Iqabi Necklace",
+	body="Mes. Haubergeon", hands="Eschite Gauntlets", legs=dalegs, left_ear="Zennaroi Earring", feet=dafeet, neck="Subtlety Spec.",
 	waist="Anguinus Belt", right_ear="Brutal Earring", left_ring="Patricius Ring", right_ring="Mars's Ring", back="Letalis Mantle",}
 
 	sets.aftercast.hybrid= {ammo="Hasty Pinion +1", head="Rev. Coronet +1", body="Cab. Surcoat +1", 
@@ -458,7 +458,7 @@ function get_sets()
 	sets.aftercast.hybrid.medacc= set_combine(sets.aftercast.hybrid.lowacc, {left_ring="Patricius Ring", 
 	right_ring="Rajas Ring",})
 	
-	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {head="Ighwa Cap", neck="Agitator's Collar", 
+	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {head="Ighwa Cap", neck="Subtlety Spec.", 
 	waist="Anguinus Belt",back="Weard Mantle",})
 	
 	sets.aftercast.absorbmode={head="Chev. Armet +1", body="Chev. Cuirass +1", hands="Chev. Gauntlets +1", legs="Chev. Cuisses +1", 
@@ -467,9 +467,9 @@ function get_sets()
 	sets.aftercast.absorbmode.lowacc=set_combine(sets.aftercast.absorbmode, {ammo="Vanir Battery", left_ring="Patricius Ring",
 	right_ring="Defending Ring", waist="Windbuffet Belt +1", back="Bleating Mantle",})
 	
-	sets.aftercast.absorbmode.medacc=set_combine(sets.aftercast.absorbmode.lowacc, {neck="Agitator's Collar", Waist="Anguinus Belt", right_ring="Rajas Ring",})
+	sets.aftercast.absorbmode.medacc=set_combine(sets.aftercast.absorbmode.lowacc, {neck="Subtlety Spec.", Waist="Anguinus Belt", right_ring="Rajas Ring",})
 	
-	sets.aftercast.absorbmode.highacc=set_combine(sets.aftercast.absorbmode.medacc, {ammo="Ginsen", neck="Iqabi Necklace", waist="Olseni Belt", back="Letalis Mantle", right_ring="Mars's Ring",})
+	sets.aftercast.absorbmode.highacc=set_combine(sets.aftercast.absorbmode.medacc, {ammo="Ginsen", neck="Subtlety Spec.", waist="Olseni Belt", back="Letalis Mantle", right_ring="Mars's Ring",})
 	
 	sets.aftercast.pdt= {ammo="Hasty Pinion +1", head="Ighwa Cap", body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}},
 	hands="Umuthi Gloves", legs=dtlegs, feet={ name="Xaddi Boots", augments={'HP+45','Accuracy+15','Phys. dmg. taken -3',}},

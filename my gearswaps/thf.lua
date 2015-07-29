@@ -20,7 +20,7 @@ function get_sets()
 
 	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','STR+6 VIT+6',}}
 	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +2%',}}
-	taeonhands={ name="Taeon Gloves", augments={'Attack+25','"Triple Atk."+2','Crit. hit damage +2%',}}
+	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+23','"Triple Atk."+2',}}
 	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
 	
@@ -40,28 +40,28 @@ function get_sets()
 	right_ear="Bladeborn Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring", back="Rancorous Mantle",}
 	
 	sets.precast.ws.damage["Wasp Sting"]= sets.dexws
-	sets.precast.ws.accuracy["Wasp Sting"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Wasp Sting"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
 	
 	sets.precast.ws.damage["Viper Bite"]= sets.dexws
-	sets.precast.ws.accuracy["Viper Bite"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Viper Bite"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
 	
 	sets.precast.ws.damage["Shadowstitch"]= sets.dexws
-	sets.precast.ws.accuracy["Shadowstitch"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Shadowstitch"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
 	
 	sets.precast.ws.damage["Dancing Edge"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
-	sets.precast.ws.accuracy["Dancing Edge"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Dancing Edge"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
 	
 	sets.precast.ws.damage["Shark Bite"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
-	sets.precast.ws.accuracy["Shark Bite"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Shark Bite"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
 	
 	sets.precast.ws.damage["Evisceration"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
-	sets.precast.ws.accuracy["Evisceration"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Evisceration"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
 	
 	sets.precast.ws.damage["Mandalic Stab"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
-	sets.precast.ws.accuracy["Mandalic Stab"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Mandalic Stab"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
 	
 	sets.precast.ws.damage["Rudra's Storm"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
-	sets.precast.ws.accuracy["Rudra's Storm"]= set_combine(sets.dexws, {neck="Iqabi Necklace", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Rudra's Storm"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
 	
 	sets.midcast={}
 	sets.midcast.ma={}
@@ -78,7 +78,7 @@ function get_sets()
 	hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}}, feet=taeonfeet,
 	waist="Chaac Belt", left_ear="Dudgeon Earring", right_ring="Rajas Ring", back="Canny Cape",}
 	
-	sets.aftercast.offense.medacc= set_combine(sets.aftercast.offense.lowacc, {neck="Iqabi Necklace",})
+	sets.aftercast.offense.medacc= set_combine(sets.aftercast.offense.lowacc, {neck="Subtlety Spec.",})
 	
 	sets.aftercast.offense.highacc= set_combine(sets.aftercast.offense.medacc, {head=taeonhead, left_ear="suppanomimi", right_ear="Zennaroi Earring",})
 	
@@ -96,7 +96,7 @@ function get_sets()
 	
 	sets.aftercast.hybrid.medacc= set_combine(sets.aftercast.hybrid.lowacc, {back="Letalis Mantle",left_ring="Patricius Ring",})
 	
-	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {neck="Iqabi Necklace", waist="Hurch'lan Sash",})
+	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {neck="Subtlety Spec.", waist="Hurch'lan Sash",})
 	
 	sets.aftercast.defense={}
 	sets.aftercast.defense.index={'pdt','mdt','xdt'}
