@@ -82,7 +82,7 @@ function get_sets()
 	stpbody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','STR+10',}}
 	stphands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
 	stplegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','STR+10',}}
-	stpfeet={ name="Acro Leggings", augments={'Accuracy+17 Attack+17','"Store TP"+6','Weapon  skill damage +3%',}}
+	stpfeet={ name="Acro Leggings", augments={'Accuracy+17 Attack+17','"Store TP"+6','STR+6 VIT+6',}}
 	
 	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','STR+7 VIT+7',}}
 	dahands={ name="Acro Gauntlets", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+2','Crit. hit damage +1%',}}
@@ -92,14 +92,21 @@ function get_sets()
 	wsdmghead={ name="Yorium Barbuta", augments={'Accuracy+17 Attack+17','Enmity+7','Weapon skill damage +3%',}}
 	wsdmghands={ name="Yorium Gauntlets", augments={'Accuracy+17','Enmity+8','Weapon skill damage +3%',}}
 	wsdmglegs={ name="Yorium Cuisses", augments={'Mag. Acc.+8','Enmity+10','Weapon skill damage +3%',}}
-	wsdmgfeet={ name="Yorium Sabatons", augments={'Accuracy+18 Attack+18','Enmity+8','Weapon skill damage +2%',}}
+	wsdmgfeet={ name="Yorium Sabatons", augments={'Accuracy+18 Attack+18','Enmity+8','Weapon skill damage +3%',}}
 	
 	dthead={ name="Yorium Barbuta", augments={'Accuracy+15 Attack+15','"Dbl. Atk."+2%','Damage taken-3%',}}
 	dthands={ name="Yorium Gauntlets", augments={'Accuracy+22','Enmity+10','Damage taken-3%',}}
 	dtlegs={ name="Yorium Cuisses", augments={'Accuracy+15 Attack+15','"Dbl. Atk."+3%','Damage taken-3%',}}
 	dtfeet={ name="Yorium Sabatons", augments={'Accuracy+25','"Dbl. Atk."+3%','Damage taken-3%',}}
 	
-	curebody={ name="Yorium Cuirass", augments={'Attack+19','"Cure" potency +4%','Sklchn.dmg.+1%',}}
+	curehead={ name="Yorium Barbuta", augments={'"Cure" potency +4%','Phalanx +3',}}
+	curebody={ name="Yorium Cuirass", augments={'Attack+19','"Cure" potency +4%','Sklchn.dmg.+1%',}}	
+	curelegs={ name="Yorium Cuisses", augments={'"Cure" potency +3%','Phalanx +3',}}
+	curefeet={ name="Yorium Sabatons", augments={'"Cure" potency +3%','Phalanx +2',}}
+	
+	
+    
+	
 --
 
 -- variables	
@@ -152,12 +159,13 @@ function get_sets()
 -- rr set	
 	
 -- precast sets
-	sets.precast.fc= {ammo="Incantor Stone", head="Chev. Armet +1", body="Nuevo Coselete", hands="Chev. Gauntlets +1", 
+	sets.precast.fc= {ammo="Incantor Stone", head="Chev. Armet +1", body="Nuevo Coselete", 
+	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
 	legs="Enif Cosciales", feet="Ejekamal Boots", neck="Jeweled Collar", waist="Siegel Sash", 
 	right_ear="Etiolation Earring", left_ear="Loquac. Earring", left_ring="Prolix Ring", right_ring="Veneficium Ring",
     back="Boxer's Mantle",}
 	
-	sets.precast.cure= set_combine(sets.precast.fc, {left_ear="Nourish. Earring +1", right_ear="Nourish. Earring",})
+	sets.precast.cure= set_combine(sets.precast.fc, {left_ear="Nourish. Earring +1", right_ear="Nourish. Earring", body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}},})
 	
 	sets.precast.ja= {ammo="Iron Gobbet", head="Cab. Coronet +1", body="Chev. Cuirass +1", hands=wsdmghands, 
 	legs=wsdmglegs, feet=wsdmgfeet, neck="Warder's Charm", waist="Creed Baudrier",
@@ -175,7 +183,7 @@ function get_sets()
 	sets.precast.ja["Divine Emblem"]= set_combine(sets.precast.ja, {feet="Chev. Sabatons +1"})
 	
 	sets.precast.ja.cwaltz={ammo="Iron Gobbet", head={ name="Cab. Coronet +1", augments={'Enhances "Iron Will" effect',}},
-	body="Chev. Cuirass +1", hands="Chev. Gauntlets +1", legs={ name="Cab. Breeches +1", augments={'Enhances "Invincible" effect',}},
+	body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}}, hands="Chev. Gauntlets +1", legs={ name="Cab. Breeches +1", augments={'Enhances "Invincible" effect',}},
 	feet="Rev. Leggings +1", neck="Twilight Torque", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
 	left_ring="Terrasoul Ring", right_ring="Terrasoul Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
 	
@@ -399,8 +407,8 @@ function get_sets()
 -- ws sets
 
 -- midcast sets	
-	sets.midcast.cure= {ammo="Iron Gobbet", head="Adaman Barbuta", body=curebody, hands="Macabre Gaunt. +1",
-    legs="Blitzer Poleyn", feet=dtfeet, neck="Phalaina Locket", waist="Goading Belt",
+	sets.midcast.cure= {ammo="Iron Gobbet", head=curehead, body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}}, 
+	hands="Macabre Gaunt. +1", legs=curelegs, feet=curefeet, neck="Phalaina Locket", waist="Goading Belt",
     left_ear="Nourish. Earring +1", right_ear="Nourish. Earring", left_ring="Supershear Earring", right_ring="Eihwaz Ring",
     back="Fierabras's Mantle",}
 	
@@ -414,13 +422,12 @@ function get_sets()
 	
 	sets.midcast.utsu= set_combine(sets.midcast.flash, {back="Boxer's Mantle", feet="Rev. Leggings +1",})
 	
-	sets.midcast.enlight= {ammo="Incantor Stone", head="Kahin Turban", body="Rev. Surcoat +1", hands="Eschite Gauntlets",
-    legs=wsdmglegs, feet="Chev. Sabatons +1", neck="Divine Torque", waist="Bishop's Sash", 
-	left_ear="Beatific Earring", right_ear="Loquac. Earring", left_ring="Globidonta Ring", 
-	right_ring="Defending Ring", back="Boxer's Mantle",}
+	sets.midcast.enlight= {ammo="Incantor Stone", head={ name="Jumalik Helm", augments={'MND+9','"Mag.Atk.Bns."+13','Magic burst mdg.+9%',}}, 
+	body="Rev. Surcoat +1", hands="Eschite Gauntlets", legs=wsdmglegs, feet="Chev. Sabatons +1", neck="Warder's Charm", waist="Bishop's Sash", 
+	left_ear="Beatific Earring", right_ear="Loquac. Earring", left_ring="Globidonta Ring", right_ring="Defending Ring", back="Boxer's Mantle",}
 	
-	sets.midcast.enhancing= {ammo="Incantor Stone", head="Cizin Helm +1", body="Shab. Cuirass +1", hands="Rev. Gauntlets +1",
-    legs="Rev. Breeches +1", feet="Chev. Sabatons +1", neck="Colossus's Torque", waist="Olympus Sash", right_ear="Augment. Earring",
+	sets.midcast.enhancing= {ammo="Incantor Stone", head=curehead, body="Shab. Cuirass +1", hands="Souv. Handschuhs",
+    legs=curelegs, feet=curefeet, neck="Colossus's Torque", waist="Olympus Sash", right_ear="Augment. Earring",
     left_ear="Andoaa Earring", left_ring="Portus Annulet", right_ring="Defending Ring", back="Weard Mantle",}
 	
 	sets.midcast.proshell= set_combine(sets.midcast.enhancing, {right_ring="Sheltered Ring"})
