@@ -856,7 +856,7 @@ function self_command(command)
 	end
 	if command=='mdtset' then
 		if buffactive["Shell V"] then
-			if player.status=="Idle"
+			if player.status=="Idle" then
 				equip(sets.aftercast.mdtshellv)
 			elseif player.status=="Engaged" then
 				equip(sets.aftercast.mdtshellvengaged)
