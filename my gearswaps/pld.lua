@@ -6,7 +6,7 @@ function get_sets()
 -- includes
 -- keybinds, aliases and text boxes.
 	send_command('bind #4 idle')
-	send_command('bind #2 gs equip sets.aftercast.pdt')
+	send_command('bind #2 gs c pdtset')
 	send_command('bind #8 gs equip sets.aftercast.mdt')
 	send_command('bind #g gs c ochain')
 	send_command('bind @p gs c aegis')
@@ -165,7 +165,7 @@ function get_sets()
 	right_ear="Etiolation Earring", left_ear="Loquac. Earring", left_ring="Prolix Ring", right_ring="Veneficium Ring",
     back="Boxer's Mantle",}
 	
-	sets.precast.cure= set_combine(sets.precast.fc, {left_ear="Nourish. Earring +1", right_ear="Nourish. Earring", body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}},})
+	sets.precast.cure= set_combine(sets.precast.fc, {left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}},})
 	
 	sets.precast.ja= {ammo="Iron Gobbet", head="Cab. Coronet +1", body="Chev. Cuirass +1", hands=wsdmghands, 
 	legs=wsdmglegs, feet=wsdmgfeet, neck="Warder's Charm", waist="Creed Baudrier",
@@ -206,7 +206,7 @@ function get_sets()
 	
 	sets.precast.ws.Resolution= set_combine(sets.precast.ws.CdC, {Left_Ring="Ifrit Ring"})
 	
-	sets.precast.ws.magicws=sets.precast.ws.Atonement
+	sets.precast.ws.magicws=set_combine(sets.precast.ws.Atonement, {head="Jumalik Helm", hands="Leyline Gloves", right_ear="Friomisi Earring",})
 	
 	sets.wsdaybonus={head="Gavialis Helm",}
 	
@@ -261,9 +261,9 @@ function get_sets()
 	
 	sets.ws.acc["Savage Blade"]=set_combine(sets.ws.dmg["Savage Blade"], {legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
-	sets.ws.dmg["Sanguine Blade"]=sets.precast.ws.magicws
+	sets.ws.dmg["Sanguine Blade"]=set_combine(sets.precast.ws.magicws, {left_ring="Archon Ring",})
 	
-	sets.ws.acc["Sanguine Blade"]=sets.precast.ws.magicws
+	sets.ws.acc["Sanguine Blade"]=set_combine(sets.precast.ws.magicws, {left_ring="Archon Ring",})
 	
 	sets.ws.dmg["Chant du Cygne"]={ammo="Jukukik Feather", head="Gavialis Helm", body="Mes. Haubergeon",
     hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet, neck="Fotia Gorget",
@@ -409,10 +409,10 @@ function get_sets()
 -- midcast sets	
 	sets.midcast.cure= {ammo="Iron Gobbet", head=curehead, body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}}, 
 	hands="Macabre Gaunt. +1", legs=curelegs, feet=curefeet, neck="Phalaina Locket", waist="Goading Belt",
-    left_ear="Nourish. Earring +1", right_ear="Nourish. Earring", left_ring="Supershear Earring", right_ring="Eihwaz Ring",
+    left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", left_ring="Supershear Earring", right_ring="Eihwaz Ring",
     back="Fierabras's Mantle",}
 	
-	sets.midcast.selfcure= set_combine(sets.midcast.cure, {ammo="Iron Gobbet", head="Shabti Armet", body="Chev. Cuirass +1",
+	sets.midcast.selfcure= set_combine(sets.midcast.cure, {ammo="Iron Gobbet", head="Shabti Armet", --body="Chev. Cuirass +1",
 	left_ring="Vocane Ring", right_ring="Kunaji Ring",})
 	
 	sets.midcast.flash= {ammo="Incantor Stone", head="Cizin Helm +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
@@ -423,8 +423,8 @@ function get_sets()
 	sets.midcast.utsu= set_combine(sets.midcast.flash, {back="Boxer's Mantle", feet="Rev. Leggings +1",})
 	
 	sets.midcast.enlight= {ammo="Incantor Stone", head={ name="Jumalik Helm", augments={'MND+9','"Mag.Atk.Bns."+13','Magic burst mdg.+9%',}}, 
-	body="Rev. Surcoat +1", hands="Eschite Gauntlets", legs=wsdmglegs, feet="Chev. Sabatons +1", neck="Warder's Charm", waist="Bishop's Sash", 
-	left_ear="Beatific Earring", right_ear="Loquac. Earring", left_ring="Globidonta Ring", right_ring="Defending Ring", back="Boxer's Mantle",}
+	body="Rev. Surcoat +1", hands="Eschite Gauntlets", legs=wsdmglegs, feet="Chev. Sabatons +1", neck="Warder's Charm", waist="Goading Belt", 
+	left_ear="Etiolation Earring", right_ear="Loquac. Earring", left_ring="Globidonta Ring", right_ring="Defending Ring", back="Boxer's Mantle",}
 	
 	sets.midcast.enhancing= {ammo="Incantor Stone", head=curehead, body="Shab. Cuirass +1", hands="Souv. Handschuhs",
     legs=curelegs, feet=curefeet, neck="Colossus's Torque", waist="Olympus Sash", right_ear="Augment. Earring",
@@ -478,15 +478,33 @@ function get_sets()
 	
 	sets.aftercast.absorbmode.highacc=set_combine(sets.aftercast.absorbmode.medacc, {ammo="Ginsen", neck="Subtlety Spec.", waist="Olseni Belt", back="Letalis Mantle", right_ring="Mars's Ring",})
 	
-	sets.aftercast.pdt= {ammo="Hasty Pinion +1", head="Ighwa Cap", body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}},
+	sets.aftercast.pdtengaged= {ammo="Hasty Pinion +1", head="Ighwa Cap", body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}},
 	hands="Umuthi Gloves", legs=dtlegs, feet={ name="Xaddi Boots", augments={'HP+45','Accuracy+15','Phys. dmg. taken -3',}},
-	neck="Twilight Torque", waist="Nierenschutz", left_ear="Ethereal Earring", right_ear="Zennaroi Earring", left_ring="Vocane Ring",
+	neck="Twilight Torque", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Zennaroi Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
+	
+	sets.aftercast.pdt={ammo="Iron Gobbet", head={ name="Souveran Schaller", augments={'HP+80','VIT+10','Phys. dmg. taken -3',}},
+	body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}}, legs="Chev. Cuisses +1", feet="Rev. Leggings +1",
+	hands={ name="Souv. Handschuhs", augments={'HP+50','Shield skill +10','Phys. dmg. taken -3',}}, neck="Twilight Torque",
+	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring", right_ring="Defending Ring",
+	back="Mollusca Mantle",}
 	
 	sets.aftercast.mdt= {ammo="Vanir Battery", head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
 	legs="Chev. Cuisses +1", feet="Cab. Leggings +1", neck="Twilight Torque", waist="Creed Baudrier",
 	left_ring="Shadow Ring", left_ear="Ethereal Earring", right_ear="Sanare Earring", right_ring="Defending Ring",
 	back="Weard Mantle",}
+	
+	sets.aftercast.mdtengaged=sets.aftercast.mdt
+	
+	sets.aftercast.mdtshellvengaged={ammo="Vanir Battery", head={ name="Souveran Schaller", augments={'HP+80','VIT+10','Phys. dmg. taken -3',}}, body="Chev. Cuirass +1",
+	hands="Rev. Gauntlets +1", legs="Chev. Cuisses +1", feet={ name="Cab. Leggings +1", augments={'Enhances "Guardian" effect',}},
+	neck="Twilight Torque", waist="Creed Baudrier", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring",
+	right_ring="Defending Ring", back="Engulfer Cape +1",}
+	
+	sets.aftercast.mdtshellv={ammo="Vanir Battery", head={ name="Souveran Schaller", augments={'HP+80','VIT+10','Phys. dmg. taken -3',}}, body="Chev. Cuirass +1",
+	hands="Rev. Gauntlets +1", legs="Chev. Cuisses +1", feet={ name="Cab. Leggings +1", augments={'Enhances "Guardian" effect',}},
+	neck="Twilight Torque", waist="Creed Baudrier", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring",
+	right_ring="Defending Ring", back="Engulfer Cape +1",}
 	
 	sets.aftercast.dt={ammo="Hasty Pinion +1", head=dthead, body="Cab. Surcoat +1", hands=dthands,
 	legs=dtlegs, feet=dtfeet, neck="Twilight Torque", waist="Nierenschutz", left_ear="Ethereal Earring",
@@ -543,9 +561,6 @@ function precast(spell)
 				equip(sets.moonshademagic)
 			end
 		end
-	end
-	if spell.prefix=="/range" then
-		equip(sets.pebble)
 	end
 	equip(sets[swordtype])
 	equip(sets[shieldtype])
@@ -624,14 +639,26 @@ function status_change(new,old)
 		elseif TPSet=="hybrid" then
 			equip(sets.aftercast.hybrid[Acc])
 		elseif TPSet=="pdt" then
-			equip(sets.aftercast.pdt)
+			equip(sets.aftercast.pdtengaged)
 		elseif TPSet=="mdt" then
-			equip(sets.aftercast.mdt)
+			if buffactive["Shell V"] then
+				equip(sets.aftercast.mdtshellvengaged)
+			elseif not buffactive["Shell V"] then
+				equip(sets.aftercast.mdtengaged)
+			end
 		elseif TPSet=="dt" then
 			equip(sets.aftercast.dt)
 		end		
-	else
-		equip(sets.aftercast[IdleMode])
+	elseif new~="engaged" then
+		if IdleMode=="mdt" then
+			if buffactive["Shell V"] then
+				equip(sets.aftercast.mdtshellv)
+			elseif not buffactive["Shell V"] then
+				equip(sets.aftercast.mdt)
+			end
+		else
+			equip(sets.aftercast[IdleMode])
+		end
 	end	
 	equip(sets[swordtype])
 	equip(sets[shieldtype])	
@@ -818,6 +845,31 @@ function self_command(command)
 		status_change(player.status)
 	end
 	-- idle variable commands rule end
+	
+	-- gear set commands
+	if command=='pdtset' then
+		if player.status=="Engaged" then
+			equip(sets.aftercast.pdtengaged)
+		else
+			equip(sets.aftercast.pdt)
+		end
+	end
+	if command=='mdtset' then
+		if buffactive["Shell V"] then
+			if player.status=="Idle"
+				equip(sets.aftercast.mdtshellv)
+			elseif player.status=="Engaged" then
+				equip(sets.aftercast.mdtshellvengaged)
+			end
+		elseif not buffactive["Shell V"] then
+			if player.status=="Engaged" then
+				equip(sets.aftercast.mdtengaged)
+			elseif player.status=="idle" then
+				equip(sets.aftercast.mdt)
+			end
+		end
+	end
+	-- gear set commands
 	
 	-- reraise lock toggle command rule start
 	if command == 'rr' then
