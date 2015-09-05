@@ -162,15 +162,15 @@ function get_sets()
 	sets.precast.fc= {ammo="Incantor Stone", head="Chev. Armet +1", body="Nuevo Coselete", 
 	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
 	legs="Enif Cosciales", feet="Ejekamal Boots", neck="Jeweled Collar", waist="Siegel Sash", 
-	right_ear="Etiolation Earring", left_ear="Loquac. Earring", left_ring="Prolix Ring", right_ring="Veneficium Ring",
+	right_ear="Etiolation Earring", left_ear="Loquac. Earring", left_ring="Prolix Ring", right_ring="Defending Ring",
     back="Boxer's Mantle",}
 	
 	sets.precast.cure= set_combine(sets.precast.fc, {left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}},})
 	
 	sets.precast.ja= {ammo="Iron Gobbet", head="Cab. Coronet +1", body="Chev. Cuirass +1", hands=wsdmghands, 
 	legs=wsdmglegs, feet=wsdmgfeet, neck="Warder's Charm", waist="Creed Baudrier",
-	left_ear="Cryptic Earring", right_ear="Trux Earring", left_ring="Supershear Earring", right_ring="Eihwaz Ring",
-    back="Fravashi Mantle",}
+	left_ear="Cryptic Earring", right_ear="Trux Earring", left_ring="Apeile Ring +1", right_ring="Eihwaz Ring",
+    back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
 		
 	sets.precast.ja["Sentinel"]= set_combine(sets.precast.ja, {feet="Cab. Leggings +1"})
 	sets.precast.ja["Rampart"]= set_combine(sets.precast.ja, {head="Cab. Coronet +1"})
@@ -409,7 +409,7 @@ function get_sets()
 -- midcast sets	
 	sets.midcast.cure= {ammo="Iron Gobbet", head=curehead, body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}}, 
 	hands="Macabre Gaunt. +1", legs=curelegs, feet=curefeet, neck="Phalaina Locket", waist="Goading Belt",
-    left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", left_ring="Supershear Earring", right_ring="Eihwaz Ring",
+    left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", left_ring="Apeile Ring +1", right_ring="Eihwaz Ring",
     back="Fierabras's Mantle",}
 	
 	sets.midcast.selfcure= set_combine(sets.midcast.cure, {ammo="Iron Gobbet", head="Shabti Armet", --body="Chev. Cuirass +1",
@@ -417,8 +417,8 @@ function get_sets()
 	
 	sets.midcast.flash= {ammo="Incantor Stone", head="Cizin Helm +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
     legs="Rev. Breeches +1", feet="Chev. Sabatons +1", neck="Warder's Charm", waist="Goading Belt",
-    left_ear="Loquac. Earring", right_ear="Cryptic Earring", left_ring="Supershear Earring", right_ring="Eihwaz Ring",
-    back="Fravashi Mantle",}
+    left_ear="Loquac. Earring", right_ear="Cryptic Earring", left_ring="Apeile Ring +1", right_ring="Eihwaz Ring",
+    back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
 	
 	sets.midcast.utsu= set_combine(sets.midcast.flash, {back="Boxer's Mantle", feet="Rev. Leggings +1",})
 	
@@ -428,7 +428,7 @@ function get_sets()
 	
 	sets.midcast.enhancing= {ammo="Incantor Stone", head=curehead, body="Shab. Cuirass +1", hands="Souv. Handschuhs",
     legs=curelegs, feet=curefeet, neck="Colossus's Torque", waist="Olympus Sash", right_ear="Augment. Earring",
-    left_ear="Andoaa Earring", left_ring="Portus Annulet", right_ring="Defending Ring", back="Weard Mantle",}
+    left_ear="Andoaa Earring", left_ring="Portus Annulet", right_ring="Defending Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
 	
 	sets.midcast.proshell= set_combine(sets.midcast.enhancing, {right_ring="Sheltered Ring"})
 -- midcast sets
@@ -460,13 +460,13 @@ function get_sets()
 	
 	sets.aftercast.hybrid.lowacc= set_combine(sets.aftercast.hybrid, {neck="Twilight Torque", waist="Nierenschutz",
 	left_ear="Ethereal Earring", right_ear="Brutal Earring", left_ring="Vocane Ring", right_ring="Defending Ring",
-	back="Weard Mantle",})
+	back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},})
 	
 	sets.aftercast.hybrid.medacc= set_combine(sets.aftercast.hybrid.lowacc, {left_ring="Patricius Ring", 
 	right_ring="Rajas Ring",})
 	
 	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {head="Ighwa Cap", neck="Subtlety Spec.", 
-	waist="Anguinus Belt",back="Weard Mantle",})
+	waist="Anguinus Belt",back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},})
 	
 	sets.aftercast.absorbmode={head="Chev. Armet +1", body="Chev. Cuirass +1", hands="Chev. Gauntlets +1", legs="Chev. Cuisses +1", 
 	feet="Chev. Sabatons +1", left_ear="Ethereal Earring", right_ear="Brutal Earring", neck="Warder's Charm",}
@@ -492,7 +492,7 @@ function get_sets()
 	sets.aftercast.mdt= {ammo="Vanir Battery", head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
 	legs="Chev. Cuisses +1", feet="Cab. Leggings +1", neck="Twilight Torque", waist="Creed Baudrier",
 	left_ring="Shadow Ring", left_ear="Ethereal Earring", right_ear="Sanare Earring", right_ring="Defending Ring",
-	back="Weard Mantle",}
+	back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
 	
 	sets.aftercast.mdtengaged=sets.aftercast.mdt
 	
@@ -517,11 +517,11 @@ function get_sets()
 	
 	sets.aftercast.refresh= set_combine(sets.aftercast.idle, {head="Wivre Hairpin", waist="Fucho-No-Obi",})
 	
-	sets.aftercast.pdtkite= set_combine(sets.aftercast.pdt, {back="Weard Mantle",  legs="Blood Cuisses",})
+	sets.aftercast.pdtkite= set_combine(sets.aftercast.pdt, {back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},  legs="Blood Cuisses",})
 	
-	sets.aftercast.mdtkite= set_combine(sets.aftercast.mdt, {back="Weard Mantle",  legs="Blood Cuisses",})
+	sets.aftercast.mdtkite= set_combine(sets.aftercast.mdt, {back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},  legs="Blood Cuisses",})
 	
-	sets.aftercast.dtkite= set_combine(sets.aftercast.dt, {back="Weard Mantle",  legs="Blood Cuisses",})
+	sets.aftercast.dtkite= set_combine(sets.aftercast.dt, {back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},  legs="Blood Cuisses",})
 -- aftercast sets
 end
 
