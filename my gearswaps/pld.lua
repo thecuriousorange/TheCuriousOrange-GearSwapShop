@@ -7,7 +7,7 @@ function get_sets()
 -- keybinds, aliases and text boxes.
 	send_command('bind #4 idle')
 	send_command('bind #2 gs c pdtset')
-	send_command('bind #8 gs equip sets.aftercast.mdt')
+	send_command('bind #8 gs c mdtset')
 	send_command('bind #g gs c ochain')
 	send_command('bind @p gs c aegis')
 	send_command('bind @] gs c priwen')
@@ -81,13 +81,13 @@ function get_sets()
 	stphead={ name="Acro Helm", augments={'Accuracy+12 Attack+12','"Store TP"+5','Weapon skill damage +3%',}}
 	stpbody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','STR+10',}}
 	stphands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
-	stplegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','STR+10',}}
-	stpfeet={ name="Acro Leggings", augments={'Accuracy+17 Attack+17','"Store TP"+6','STR+6 VIT+6',}}
+	stplegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
+	stpfeet={ name="Acro Leggings", augments={'Accuracy+17 Attack+17','"Store TP"+6','Crit. Hit Damage +3%',}}
 	
 	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','STR+7 VIT+7',}}
-	dahands={ name="Acro Gauntlets", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+2','Crit. hit damage +1%',}}
+	dahands={ name="Acro Gauntlets", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+2','STR+10',}}
 	dalegs={ name="Acro Breeches", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+2','STR+5 VIT+5',}}
-	dafeet={ name="Acro Leggings", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+2','STR+5 VIT+5',}}
+	dafeet={ name="Acro Leggings", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+2','STR+10',}}
 	
 	wsdmghead={ name="Yorium Barbuta", augments={'Accuracy+17 Attack+17','Enmity+7','Weapon skill damage +3%',}}
 	wsdmghands={ name="Yorium Gauntlets", augments={'Accuracy+17','Enmity+8','Weapon skill damage +3%',}}
@@ -277,11 +277,11 @@ function get_sets()
 	sets.ws.acc["Atonement"]=sets.precast.ws.Atonement
 	
 	sets.ws.dmg["Requiescat"]={ammo="Ginsen", head="Otomi Helm", body="Rav. Breastplate",
-    hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet, neck="Fotia Gorget",
-    waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",
-    left_ring="Levia. Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
+    hands="Chev. Gauntlets +1", legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},
+	feet=dafeet, neck="Fotia Gorget", waist="Fotia Belt", left_ear="Steelflash Earring", 
+	right_ear="Bladeborn Earring", left_ring="Levia. Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
-	sets.ws.acc["Requiescat"]=set_combine(sets.ws.dmg["Requiescat"], {head="Gavialis Helm", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	sets.ws.acc["Requiescat"]=set_combine(sets.ws.dmg["Requiescat"], {head="Gavialis Helm", back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	--Sword WS
 	
 	--Club WS
@@ -511,17 +511,17 @@ function get_sets()
 	right_ear="Zennaroi Earring", left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
 	
 	sets.aftercast.idle= {ammo="Vanir Battery", head="Baghere Salade", body="Ares' Cuirass +1", hands=dthands,
-    legs="Blood Cuisses", feet=dtfeet, neck="Creed Collar", waist="Nierenschutz",
+    legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet=dtfeet, neck="Creed Collar", waist="Nierenschutz",
     left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", right_ring="Sheltered Ring",
     back="Shadow Mantle",}
 	
 	sets.aftercast.refresh= set_combine(sets.aftercast.idle, {head="Wivre Hairpin", waist="Fucho-No-Obi",})
 	
-	sets.aftercast.pdtkite= set_combine(sets.aftercast.pdt, {back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},  legs="Blood Cuisses",})
+	sets.aftercast.pdtkite= set_combine(sets.aftercast.pdt, {back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},  legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},})
 	
-	sets.aftercast.mdtkite= set_combine(sets.aftercast.mdt, {back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},  legs="Blood Cuisses",})
+	sets.aftercast.mdtkite= set_combine(sets.aftercast.mdt, {back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},  legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},})
 	
-	sets.aftercast.dtkite= set_combine(sets.aftercast.dt, {back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},  legs="Blood Cuisses",})
+	sets.aftercast.dtkite= set_combine(sets.aftercast.dt, {back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},  legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},})
 -- aftercast sets
 end
 

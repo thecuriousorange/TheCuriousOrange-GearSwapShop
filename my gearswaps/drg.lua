@@ -53,11 +53,11 @@ function get_sets()
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
 	
-	acrohead={ name="Acro Helm", augments={'Accuracy+12 Attack+12','Haste+3%','Weapon skill damage +3%',}}
+	acrohead={ name="Acro Helm", augments={'Accuracy+12 Attack+12','Haste+3%','STR+7 AGI+7',}}
 	acrobody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','STR+10',}}
 	acrohands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
-	acrolegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','STR+10',}}
-	acrofeet={ name="Acro Leggings", augments={'Accuracy+17 Attack+17','"Store TP"+6','Weapon  skill damage +3%',}}
+	acrolegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
+	acrofeet={ name="Acro Leggings", augments={'Accuracy+17 Attack+17','"Store TP"+6','Crit. Hit Damage +3%',}}
 	
 	updrafttp={ name="Updraft Mantle", augments={'STR+3','Pet: Breath+10',}}
 	updraftws={ name="Updraft Mantle", augments={'STR+1','Pet: Breath+3','Pet: Damage taken -1%','Weapon skill damage +2%',}}
@@ -113,7 +113,7 @@ function get_sets()
 	sets.weaponry.Olyndicus={main="Olyndicus", sub="Pole Grip",}
 --weaponry
 	sets.idle={ammo="Vanir Battery", head="Twilight Helm", body="Twilight Mail", hands="Cizin Mufflers +1", 
-	legs="Blood Cuisses", feet="Cizin Greaves +1", neck="Twilight Torque", waist="Nierenschutz",
+	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Cizin Greaves +1", neck="Twilight Torque", waist="Nierenschutz",
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", 
 	right_ring="Sheltered Ring", back="Shadow Mantle",}
 --JA sets
