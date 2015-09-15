@@ -293,7 +293,7 @@ function get_sets()
 	
 	--idle sets
 	sets.aftercast.gs.idle={main="Tunglmyrkvi", sub="Pole Grip", ammo="Vanir Battery", head="Twilight Helm", body="Twilight Mail", hands="Cizin Mufflers +1", 
-	legs="Blood Cuisses", feet="Cizin Greaves +1", neck="Twilight Torque", waist="Nierenschutz",
+	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Cizin Greaves +1", neck="Twilight Torque", waist="Nierenschutz",
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", 
 	right_ring="Sheltered Ring", back="Shadow Mantle",}
 	

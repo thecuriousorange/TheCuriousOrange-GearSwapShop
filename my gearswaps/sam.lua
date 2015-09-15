@@ -262,7 +262,7 @@ function get_sets()
 	sets.aftercast.o.xhit= set_combine(sets.aftercast.tp.xhit, {left_ring="Oneiros Ring",})
 	
 	sets.aftercast.hybrid={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Gavialis Helm", body="Mekira Meikogai", hands="Sakonji Kote +1", 
-	legs="Otronif Brais +1", feet="Otronif Boots +1", neck="Twilight Torque", waist="Dynamic Belt +1", left_ear="Steelflash Earring",
+	legs="Otronif Brais +1", feet="Amm Greaves", neck="Twilight Torque", waist="Dynamic Belt +1", left_ear="Steelflash Earring",
 	right_ear="Bladeborn Earring", left_ring="Patricius Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
 --tp sets
 
@@ -287,10 +287,10 @@ function get_sets()
 
 --dt sets
 	sets.aftercast.pdt={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Otronif Mask +1", body="Mekira Meikogai", hands="Sakonji Kote +1", 
-	legs="Otronif Brais +1", feet="Otronif Boots +1", neck="Twilight Torque", waist="Flume Belt", right_ear="Sanare Earring",
-	left_ring="Patricius Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
+	legs="Otronif Brais +1", feet="Amm Greaves", neck="Twilight Torque", waist="Flume Belt", right_ear="Sanare Earring",
+	left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
 	
-	sets.aftercast.mdt= set_combine(sets.aftercast.pdt, {left_ring="Shadow Ring",})
+	sets.aftercast.mdt= set_combine(sets.aftercast.pdt, {left_ear="Etiolation Earring", left_ring="Shadow Ring",})
 --dt sets
 --
 --idle sets
