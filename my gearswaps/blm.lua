@@ -1,6 +1,6 @@
 function get_sets()
 	include('organizer-lib.lua')
-	include('tco-include.lua')
+	--include('tco-include.lua')
 --default macroset
 	send_command('input /macro book 3;input /macro set 1')
 --default macroset
@@ -22,10 +22,30 @@ function get_sets()
 --aliases
 
 --boxes
-	send_command('text tpvariable text "ICE NUKES";text tpvariable color 0 255 255;')
-	send_command('text idlevariable text "MPE-OFF"')
-	send_command('text wsvariable text "MM-OFF"')
-	send_command('text pdtvariable text "MAGIC-POTENCY"')
+	windower.prim.create('NUKE_ELEMENT')
+	windower.prim.set_size('NUKE_ELEMENT',200,30)
+	windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/icenukes.png')
+	windower.prim.set_position('NUKE_ELEMENT',750,50)
+	windower.prim.set_color('NUKE_ELEMENT', 150, 255, 255, 255)
+	windower.prim.set_visibility('NUKE_ELEMENT',true)
+	--send_command('text tpvariable text "ICE NUKES";text tpvariable color 0 255 255;')
+	
+	windower.prim.create('MP_EFFICIENCY')
+	windower.prim.set_size('MP_EFFICIENCY',200,30)
+	windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/mpeoff.png')
+	windower.prim.set_position('MP_EFFICIENCY',750,90)
+	windower.prim.set_color('MP_EFFICIENCY', 150, 255, 255, 255)
+	windower.prim.set_visibility('MP_EFFICIENCY',true)
+	--send_command('text idlevariable text "MPE-OFF"')
+	
+	--send_command('text wsvariable text "MM-OFF"')
+	windower.prim.create('MAGIC_MODE')
+	windower.prim.set_size('MAGIC_MODE',200,30)
+	windower.prim.set_texture('MAGIC_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/magicpotency.png')
+	windower.prim.set_position('MAGIC_MODE',750,130)
+	windower.prim.set_color('MAGIC_MODE', 150, 255, 255, 255)
+	windower.prim.set_visibility('MAGIC_MODE',true)
+	--send_command('text pdtvariable text "MAGIC-POTENCY"')
 --boxes
 
 --keybinds
@@ -234,7 +254,7 @@ function get_sets()
 end
 
 function precast(spell)
-	if spell.prefix=="/magic" then
+	if spell.prefix=="/magic" or "Ninjutsu" then
 		if Nukes:contains(spell.english) then
 			equip(sets.precast.nuke)
 		elseif Dark_Nukes:contains(spell.english) then
@@ -329,15 +349,12 @@ function midcast(spell)
 			equip(sets.midcast.nuke.impact)
 		end
 	end
-	if spell.skill== 'Elemental Magic' and buffactive["Poison"] then
+	--[[if spell.skill== 'Elemental Magic' and buffactive["Poison"] then
 		equip(sets.mindmelter)
-	end
+	end]]--
 end
 
 function aftercast(spell)
-	if player.status=="Idle" then
-		equip(sets.aftercast.idle)
-	end
 	if not spell.interrupted then
         if spell.english == 'Sleep' or spell.english == 'Sleepga' then
             send_command('@wait 55;input /echo ------- '..spell.english..' is wearing off in 5 seconds -------')
@@ -347,11 +364,12 @@ function aftercast(spell)
             send_command('@wait 25;input /echo ------- '..spell.english..' is wearing off in 5 seconds -------')
         end
     end
-	if mm=="on" then
+	--[[if mm=="on" then
 		if not buffactive["Poison"] then
 			send_command('wait 0.5;input /item "El. Pachira Fruit" <me>')
 		end
-	end
+	end]]--
+	status_change(player.status)
 end
 
 function status_change(new,old)
@@ -377,7 +395,8 @@ function self_command(command)
 		send_command('alias aga input /ma "Blizzaga" <t>')
 		send_command('alias AM input /ma "Freeze" <t>')
 		send_command('alias AM2 input /ma "Freeze II" <t>')
-		send_command('text tpvariable text "ICE NUKES";text tpvariable color 0 255 255')
+		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/icenukes.png')
+		--send_command('text tpvariable text "ICE NUKES";text tpvariable color 0 255 255')
 		add_to_chat(206, 'ICE NUKES')
 	end
 	if command=="fire" then
@@ -394,7 +413,8 @@ function self_command(command)
 		send_command('alias aga input /ma "Firaga" <t>')
 		send_command('alias AM input /ma "Flare" <t>')
 		send_command('alias AM2 input /ma "Flare II" <t>')
-		send_command('text tpvariable text "FIRE NUKES";text tpvariable color 255 0 0')
+		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/firenukes.png')
+		--send_command('text tpvariable text "FIRE NUKES";text tpvariable color 255 0 0')
 		add_to_chat(206, 'FIRE NUKES')
 	end
 	if command=="earth" then
@@ -411,7 +431,8 @@ function self_command(command)
 		send_command('alias aga input /ma "Stonega" <t>')
 		send_command('alias AM input /ma "Quake" <t>')
 		send_command('alias AM2 input /ma "Quake II" <t>')
-		send_command('text tpvariable text "EARTH NUKES";text tpvariable color 140 100 0')
+		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/earthnukes.png')
+		--send_command('text tpvariable text "EARTH NUKES";text tpvariable color 140 100 0')
 		add_to_chat(206, 'EARTH NUKES')
 	end
 	if command=="wind" then
@@ -428,7 +449,8 @@ function self_command(command)
 		send_command('alias aga input /ma "Aeroga" <t>')
 		send_command('alias AM input /ma "Tornado" <t>')
 		send_command('alias AM2 input /ma "Tornado II" <t>')
-		send_command('text tpvariable text "WIND NUKES";text tpvariable color 0 255 0')
+		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/windnukes.png')
+		--send_command('text tpvariable text "WIND NUKES";text tpvariable color 0 255 0')
 		add_to_chat(206, 'WIND NUKES')
 	end
 	if command=="water" then
@@ -445,7 +467,8 @@ function self_command(command)
 		send_command('alias aga input /ma "Waterga" <t>')
 		send_command('alias AM input /ma "Flood" <t>')
 		send_command('alias AM2 input /ma "Flood II" <t>')
-		send_command('text tpvariable text "WATER NUKES";text tpvariable color 0 0 200')
+		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/waternukes.png')
+		--send_command('text tpvariable text "WATER NUKES";text tpvariable color 0 0 200')
 		add_to_chat(206, 'WATER NUKES')
 	end
 	if command=="thunder" then
@@ -462,21 +485,24 @@ function self_command(command)
 		send_command('alias aga input /ma "Thundaga" <t>')
 		send_command('alias AM input /ma "Burst" <t>')
 		send_command('alias AM2 input /ma "Burst II" <t>')
-		send_command('text tpvariable text "THUNDER NUKES";text tpvariable color 255 255 0')
+		--send_command('text tpvariable text "THUNDER NUKES";text tpvariable color 255 255 0')
+		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/thundernukes.png')
 		add_to_chat(206, 'THUNDER NUKES')
 	end
 	if command=="mpe" then
 		if mpe=="off" then
 			mpe="on"
 			add_to_chat(206, 'MP ECONOMY ON')
-			send_command('text idlevariable text "MPE-ON"')
+			--send_command('text idlevariable text "MPE-ON"')
+			windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/mpeon.png')
 		else
 			mpe="off"
 			add_to_chat(206, 'MP ECONOMY OFF')
-			send_command('text idlevariable text "MPE-OFF"')
+			--send_command('text idlevariable text "MPE-OFF"')
+			windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/mpeoff.png')
 		end
 	end
-	if command=="mm" then
+	--[[if command=="mm" then
 		if mm=="off" then
 			mm="on"
 			add_to_chat(206, 'MINDMELTER MODE ON')
@@ -486,16 +512,18 @@ function self_command(command)
 			add_to_chat(206, 'MINDMELTER MODE OFF')
 			send_command('text wsvariable text "MM-OFF"')
 		end
-	end
+	end]]--
 	if command=="magic_mode" then
 		if magic_mode=="dmg" then
 			magic_mode="acc"
 			add_to_chat(206, 'MAGIC MODE: ACC')
 			send_command('text pdtvariable text "MAGIC-ACC"')
+			windower.prim.set_texture('MAGIC_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/magicaccuracy.png')
 		else
 			magic_mode="dmg"
 			add_to_chat(206, 'MAGIC MODE: POTENCY')
-			send_command('text pdtvariable text "MAGIC-POTENCY"')
+			windower.prim.set_texture('MAGIC_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/magicpotency.png')
+			--send_command('text pdtvariable text "MAGIC-POTENCY"')
 		end
 	end
 end 

@@ -196,132 +196,132 @@ function get_sets()
 --PETCMD sets
 
 --WS sets	
-	sets.ws.damage["Double Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Double Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Double Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Double Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Thunder Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Thunder Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Thunder Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Thunder Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Raiden Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Raiden Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Raiden Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Raiden Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
 	sets.ws.damage["Leg Sweep"]={ammo="Vanir Battery", head="Otomi Helm", body="Xaddi Mail", hands="Xaddi Gauntlets", 
-	legs=taeonlegs, feet="Ejekamal Boots", neck="Ganesha's Mala", waist="Windbuffet Belt +1",
+	legs=taeonlegs, feet=taeonfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1",
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Oneiros Ring", right_ring="Sljor Ring",
     back="Bleating Mantle",}
 	
 	sets.ws.accuracy["Leg Sweep"]={ammo="Vanir Battery", head="Otomi Helm", body="Xaddi Mail", hands="Xaddi Gauntlets", 
-	legs=taeonlegs, feet="Ejekamal Boots", neck="Ganesha's Mala", waist="Windbuffet Belt +1",
+	legs=taeonlegs, feet=taeonfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1",
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Oneiros Ring", right_ring="Sljor Ring",
     back=updraftws,}
 	
 	sets.ws.damage["Penta Thrust"]={ammo="Vanir Battery", head="Otomi Helm", body="Xaddi Mail", hands="Xaddi Gauntlets", 
-	legs=taeonlegs, feet="Ejekamal Boots", neck="Ganesha's Mala", waist="Windbuffet Belt +1",
+	legs=taeonlegs, feet=taeonfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1",
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Oneiros Ring", right_ring="Sljor Ring",
     back="Bleating Mantle",}
 	
 	sets.ws.accuracy["Penta Thrust"]={ammo="Vanir Battery", head="Otomi Helm", body="Xaddi Mail", hands="Xaddi Gauntlets", 
-	legs=taeonlegs, feet="Ejekamal Boots", neck="Ganesha's Mala", waist="Windbuffet Belt +1",
+	legs=taeonlegs, feet=taeonfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1",
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Oneiros Ring", right_ring="Sljor Ring",
     back=updraftws,}
 	
-	sets.ws.damage["Vorpal Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Vorpal Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Vorpal Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Vorpal Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Skewer"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Skewer"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Skewer"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Skewer"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Wheeling Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Wheeling Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Wheeling Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Wheeling Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Impulse Drive"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Impulse Drive"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Impulse Drive"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Impulse Drive"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Drakesbane"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Drakesbane"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Drakesbane"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Drakesbane"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Sonic Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Sonic Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Sonic Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Sonic Thrust"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Camlann's Torment"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Camlann's Torment"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Ptero. Brais +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.accuracy["Camlann's Torment"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Camlann's Torment"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Stardiver"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands="Miki. Gauntlets",
+	sets.ws.damage["Stardiver"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Stardiver"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands="Miki. Gauntlets",
+	sets.ws.accuracy["Stardiver"]={ammo="Thew Bomblet", head="Yaoyotl Helm", body="Miki. Breastplate", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
 	legs="Miki. Cuisses", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", 
 	right_ring="Rajas Ring", back="Vespid Mantle",}

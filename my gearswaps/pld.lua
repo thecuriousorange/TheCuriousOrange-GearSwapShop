@@ -1,6 +1,7 @@
 function get_sets()
 -- includes
-	include('tco-include.lua')
+	--include('tco-include.lua')
+	include('skillchain-elements.lua')
 	include('organizer-lib.lua')
 	macros_setup()
 -- includes
@@ -63,11 +64,11 @@ function get_sets()
 -- aliases
 
 --text boxes
-	send_command('text doavariable create;text doavariable bold true;text doavariable text "WSMODE:ACC";text doavariable pos 900 140')
-	send_command('text pdtvariable text "AEGIS MODE"')
-	send_command('text wsvariable text "STANDARD IDLE"')
-	send_command('text tpvariable text "Absorb MODE"')
-	send_command('text idlevariable text "HIGH-ACC"')
+	--send_command('text doavariable create;text doavariable bold true;text doavariable text "WSMODE:ACC";text doavariable pos 900 140')
+	--send_command('text pdtvariable text "AEGIS MODE"')
+	--send_command('text wsvariable text "STANDARD IDLE"')
+	--send_command('text tpvariable text "Absorb MODE"')
+	--send_command('text idlevariable text "HIGH-ACC"')
 --text boxes
 
 -- lists
@@ -130,6 +131,41 @@ function get_sets()
 	sets.WSMode= T{}
 	sets.AM_ON_OR_OFF= T{}
 -- variables
+
+windower.prim.create('TP_SET')
+windower.prim.set_size('TP_SET',200,30)
+windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/absorbmode.png')
+windower.prim.set_position('TP_SET',750,50)
+windower.prim.set_color('TP_SET', 100, 255, 255, 255)
+windower.prim.set_visibility('TP_SET',true)
+
+windower.prim.create('ACC_SET')
+windower.prim.set_size('ACC_SET',200,30)
+windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/highacc.png')
+windower.prim.set_position('ACC_SET',750,90)
+windower.prim.set_color('ACC_SET', 100, 255, 255, 255)
+windower.prim.set_visibility('ACC_SET',true)
+
+windower.prim.create('IDLE_SET')
+windower.prim.set_size('IDLE_SET',200,30)
+windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/standardidle.png')
+windower.prim.set_position('IDLE_SET',750,130)
+windower.prim.set_color('IDLE_SET', 100, 255, 255, 255)
+windower.prim.set_visibility('IDLE_SET',true)
+
+windower.prim.create('WS_SET')
+windower.prim.set_size('WS_SET',200,30)
+windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/acc.png')
+windower.prim.set_position('WS_SET',750,170)
+windower.prim.set_color('WS_SET', 100, 255, 255, 255)
+windower.prim.set_visibility('WS_SET',true)
+
+windower.prim.create('SHIELD_SET')
+windower.prim.set_size('SHIELD_SET',200,55)
+windower.prim.set_texture('SHIELD_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/Aegis.png')
+windower.prim.set_position('SHIELD_SET',750,210)
+windower.prim.set_color('SHIELD_SET', 130, 255, 255, 255)
+windower.prim.set_visibility('WS_SET',true)
 
 -- base sets
 	sets.precast={}
@@ -615,7 +651,7 @@ end
 
 function aftercast(spell)	
 	if spell.english=="Atonement" then
-		if TPSet=="tp"then
+		if TPSet=="dd"then
 			windower.send_command('input /echo Atonement just used, checking for AM3;wait 1;gsupdate;input /echo tp set updated')
 		end
 	end
@@ -624,7 +660,7 @@ end
 
 function status_change(new,old)
 	if new == 'Engaged' then
-		if TPSet=="tp" then
+		if TPSet=="dd" then
 			if AM_ON_OR_OFF=="on" then 
 				if buffactive["Aftermath: Lv.3"] then
 					equip(sets.aftercast.aftermath[Acc])
@@ -672,7 +708,8 @@ function self_command(command)
 			shieldtype="Ochain"
 			equip(sets.Ochain)
 			add_to_chat(206, 'OCHAIN SELECTED')
-			send_command('text pdtvariable text "OCHAIN"')
+			--send_command('text pdtvariable text "OCHAIN"')
+			windower.prim.set_texture('SHIELD_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/Ochain.png')
 		elseif shieldtype=="Ochain" then
 			status_change(player.status)
 			add_to_chat(206, 'OCHAIN ALREADY SET, REFRESHING EQUIPMENT.')
@@ -682,7 +719,8 @@ function self_command(command)
 			shieldtype="Aegis"
 			equip(sets.Aegis)
 			add_to_chat(206, 'AEGIS SELECTED')
-			send_command('text pdtvariable text "AEGIS"')		
+			--send_command('text pdtvariable text "AEGIS"')
+			windower.prim.set_texture('SHIELD_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/Aegis.png')
 		elseif shieldtype=="Aegis" then
 			status_change(player.status)
 			add_to_chat(206, 'AEGIS ALREADY SET, REFRESHING EQUIPMENT.')
@@ -694,8 +732,9 @@ function self_command(command)
 	if command == 'lowacc' then
 		Acc="lowacc"
 		add_to_chat(206, 'Low Accuracy Mode')
-		send_command('text idlevariable text "LOW-ACC"')
+		--send_command('text idlevariable text "LOW-ACC"')
 		send_command('alias tp gs equip sets.aftercast.sword.lowacc')
+		windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/lowacc.png')
 		if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.aftercast.hybrid.lowacc')
 		elseif TPSet=="absorb" then
@@ -704,8 +743,9 @@ function self_command(command)
 	elseif command == 'medacc' then
 		Acc="medacc"
 		add_to_chat(206, 'Medium Accuracy Mode')
-		send_command('text idlevariable text "MEDIUM-ACC"')
+		--send_command('text idlevariable text "MEDIUM-ACC"')
 		send_command('alias tp gs equip sets.aftercast.sword.medacc')
+		windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/medacc.png')
 		if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.aftercast.hybrid.medacc')
 		elseif TPSet=="absorb" then
@@ -714,8 +754,9 @@ function self_command(command)
 	elseif command == 'highacc' then
 		Acc="highacc"
 		add_to_chat(206, 'High Accuracy Mode')
-		send_command('text idlevariable text "HIGH-ACC"')
+		--send_command('text idlevariable text "HIGH-ACC"')
 		send_command('alias tp gs equip sets.aftercast.sword.highacc')
+		windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/highacc.png')
 		if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.aftercast.hybrid.highacc')
 		elseif TPSet=="absorb" then
@@ -726,15 +767,17 @@ function self_command(command)
 	
 	-- engage variable commands rule start
 	if command == 'dd' then
-		TPSet="tp"
+		TPSet="dd"
 		add_to_chat(206, 'DD Mode')
-		send_command('text tpvariable text "DD MODE"')
+		--send_command('text tpvariable text "DD MODE"')
+		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/ddmode.png')
+		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/ddmode.wav')
 	end
 	if command == 'hybrid' then
 		if TPSet~= "hybrid" then
 			TPSet="hybrid"
 			add_to_chat(206, 'HYBRID MODE')
-			send_command('text tpvariable text "Hybrid MODE"')
+			--send_command('text tpvariable text "Hybrid MODE"')
 			if Acc=="lowacc" then
 				send_command('alias hybrid gs equip sets.aftercast.hybrid.lowacc')
 			elseif Acc=="medacc" then
@@ -742,10 +785,11 @@ function self_command(command)
 			elseif Acc=="highacc" then
 				send_command('alias hybrid gs equip sets.aftercast.hybrid.highacc')
 			end
+			windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/hybridmode.png')
 		else
 			TPSet="absorb"
 			add_to_chat(206, 'ABSORB MODE')
-			send_command('text tpvariable text "Absorb MODE"')
+			--send_command('text tpvariable text "Absorb MODE"')
 			if Acc=="lowacc" then
 				send_command('alias hybrid gs equip sets.aftercast.absorbmode.lowacc')
 			elseif Acc=="medacc" then
@@ -753,22 +797,29 @@ function self_command(command)
 			elseif Acc=="highacc" then
 				send_command('alias hybrid gs equip sets.aftercast.absorbmode.highacc')
 			end
+			windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/absorbmode.png')
 		end
 	end
 	if command == 'pdt' then
 		TPSet="pdt"
 		add_to_chat(206, 'PDT MODE')
-		send_command('text tpvariable text "PDT MODE"')
+		--send_command('text tpvariable text "PDT MODE"')
+		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/pdtmode.png')
+		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 	end
 	if command == 'mdt' then
 		TPSet="mdt"
 		add_to_chat(206, 'MDT MODE')
-		send_command('text tpvariable text "MDT MODE"')
+		--send_command('text tpvariable text "MDT MODE"')
+		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/mdtmode.png')
+		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 	end
 	if command == 'dt' then
 		TPSet="dt"
 		add_to_chat(206, 'DT MODE')
-		send_command('text tpvariable text "DT MODE"')
+		--send_command('text tpvariable text "DT MODE"')
+		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dtmode.png')
+		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 	end
 	-- engage variable commands rule end
 	
@@ -777,11 +828,15 @@ function self_command(command)
 		if WSMode=="dmg" then
 			WSMode="acc"
 			add_to_chat(206, 'WSMODE: ACCURACY')
-			send_command('text doavariable text "WSMODE: ACC"')			
+			--send_command('text doavariable text "WSMODE: ACC"')
+			windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/acc.png')
+			windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/acc.wav')
 		else
 			WSMode="dmg"
 			add_to_chat(206, 'WSMODE: DAMAGE')
-			send_command('text doavariable text "WSMODE: DMG"')			
+			--send_command('text doavariable text "WSMODE: DMG"')
+			windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dmg.png')
+			windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dmg.wav')
 		end
 	end
 	-- ws variable rule
@@ -791,57 +846,68 @@ function self_command(command)
 		if IdleMode=="idle" then
 			IdleMode="refresh"
 			add_to_chat(206, 'REFRESH IDLE MODE')
-			send_command('text wsvariable text "REFRESH IDLE"')
+			--send_command('text wsvariable text "REFRESH IDLE"')
 			send_command('alias idle gs equip sets.aftercast.refresh')
+			windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/refreshidle.png')
 			status_change(player.status)
 		else
 			IdleMode="idle"
 			add_to_chat(206, 'STANDARD IDLE MODE')
-			send_command('text wsvariable text "STANDARD IDLE"')
+			--send_command('text wsvariable text "STANDARD IDLE"')
 			send_command('alias idle gs equip sets.aftercast.idle')
+			windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/standardidle.png')
 			status_change(player.status)
 		end
 	end
 	if command == 'kitepdt' then
 		IdleMode="pdtkite"
 		add_to_chat(206, 'PDT KITING MODE')
-		send_command('text wsvariable text "PDT KITE"')
+		--send_command('text wsvariable text "PDT KITE"')
 		send_command('alias idle gs equip sets.aftercast.pdtkite')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/pdtkite.png')
 		status_change(player.status)
 	end
 	if command == 'kitemdt' then
 		IdleMode="mdtkite"
 		add_to_chat(206, 'MDT KITING MODE')
-		send_command('text wsvariable text "MDT KITE"')
+		--send_command('text wsvariable text "MDT KITE"')
 		send_command('alias idle gs equip sets.aftercast.mdtkite')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/mdtkite.png')
 		status_change(player.status)
 	end
 	if command == 'pdtidle' then
 		IdleMode="pdt"
 		add_to_chat(206, 'PDT IDLE MODE')
-		send_command('text wsvariable text "PDT IDLE"')
+		--send_command('text wsvariable text "PDT IDLE"')
 		send_command('alias idle gs equip sets.aftercast.pdt')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/pdtidle.png')
 		status_change(player.status)
+		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 	end
 	if command == 'mdtidle' then
 		IdleMode="mdt"
 		add_to_chat(206, 'MDT IDLE MODE')
-		send_command('text wsvariable text "MDT IDLE"')
+		--send_command('text wsvariable text "MDT IDLE"')
 		send_command('alias idle gs equip sets.aftercast.mdt')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/mdtidle.png')
 		status_change(player.status)
+		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 	end
 	if command == 'dtidle' then
 		IdleMode="dt"
 		add_to_chat(206, 'DT IDLE MODE')
-		send_command('text wsvariable text "DT IDLE"')
-		send_command('alias idle gs equip sets.aftercast.dt')		
+		--send_command('text wsvariable text "DT IDLE"')
+		send_command('alias idle gs equip sets.aftercast.dt')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dtidle.png')
 		status_change(player.status)
+		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 	end
 	if command == 'dtkite' then
 		IdleMode="dtidle"
 		add_to_chat(206, 'DT KITING MODE')
-		send_command('text wsvariable text "DT KITE"')
+		--send_command('text wsvariable text "DT KITE"')
 		send_command('alias idle gs equip sets.aftercast.dtkite')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dtkite.png')
 		status_change(player.status)
 	end
 	-- idle variable commands rule end
@@ -850,22 +916,28 @@ function self_command(command)
 	if command=='pdtset' then
 		if player.status=="Engaged" then
 			equip(sets.aftercast.pdtengaged)
+			windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 		else
 			equip(sets.aftercast.pdt)
+			windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 		end
 	end
 	if command=='mdtset' then
 		if buffactive["Shell V"] then
 			if player.status=="Idle" then
 				equip(sets.aftercast.mdtshellv)
+				windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 			elseif player.status=="Engaged" then
 				equip(sets.aftercast.mdtshellvengaged)
+				windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 			end
 		elseif not buffactive["Shell V"] then
 			if player.status=="Engaged" then
 				equip(sets.aftercast.mdtengaged)
+				windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 			elseif player.status=="idle" then
 				equip(sets.aftercast.mdt)
+				windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 			end
 		end
 	end
@@ -911,6 +983,9 @@ function self_command(command)
 	-- special case
 	if command == 'update' then
 		status_change(player.status)		
+	end
+	if command == 'testing' then
+		
 	end
 end
 
