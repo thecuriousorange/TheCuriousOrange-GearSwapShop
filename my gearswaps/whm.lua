@@ -137,7 +137,7 @@ end
 
 function midcast(spell)
 	if spell.prefix=="/magic" then
-		if spell.type=="EnhancingMagic" then
+		if spell.skill=="Enhancing Magic" then
 			if spell.english:contains("Bar") then
 				equip(sets.midcast.bar)
 			elseif spell.english=="Stoneskin" then
@@ -158,21 +158,21 @@ function midcast(spell)
 				equip(sets.midcast.curemisery)
 			end
 		end
-		if spell.type=="EnfeeblingMagic" then
+		if spell.skill=="EnfeeblingMagic" then
 			if spell.type=="BlackMagic" then
 				equip(sets.midcast.intenfeeb)
 			else
 				equip(sets.midcast.mndenfeeb)
 			end
 		end
-		if spell.type=="DivineMagic" then
+		if spell.skill=="Divine Magic" then
 			if spell.english=="Repose" then
 				equip(sets.midcast.repose)
 			else
 				equip(sets.midcast.divine)
 			end
 		end
-		if spell.type=="ElementalMagic" then
+		if spell.type=="Elemental Magic" then
 			equip(sets.midcast.nuke)
 		end		
 	end
