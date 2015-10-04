@@ -131,41 +131,41 @@ function get_sets()
 	sets.WSMode= T{}
 	sets.AM_ON_OR_OFF= T{}
 -- variables
-
 windower.prim.create('TP_SET')
-windower.prim.set_size('TP_SET',200,30)
-windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/absorbmode.png')
-windower.prim.set_position('TP_SET',750,50)
-windower.prim.set_color('TP_SET', 100, 255, 255, 255)
-windower.prim.set_visibility('TP_SET',true)
-
 windower.prim.create('ACC_SET')
-windower.prim.set_size('ACC_SET',200,30)
-windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/highacc.png')
-windower.prim.set_position('ACC_SET',750,90)
-windower.prim.set_color('ACC_SET', 100, 255, 255, 255)
-windower.prim.set_visibility('ACC_SET',true)
-
 windower.prim.create('IDLE_SET')
-windower.prim.set_size('IDLE_SET',200,30)
-windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/standardidle.png')
-windower.prim.set_position('IDLE_SET',750,130)
-windower.prim.set_color('IDLE_SET', 100, 255, 255, 255)
-windower.prim.set_visibility('IDLE_SET',true)
-
 windower.prim.create('WS_SET')
-windower.prim.set_size('WS_SET',200,30)
-windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/acc.png')
-windower.prim.set_position('WS_SET',750,170)
-windower.prim.set_color('WS_SET', 100, 255, 255, 255)
-windower.prim.set_visibility('WS_SET',true)
-
 windower.prim.create('SHIELD_SET')
+
+windower.prim.set_size('TP_SET',200,30)
+windower.prim.set_size('ACC_SET',200,30)
+windower.prim.set_size('IDLE_SET',200,30)
+windower.prim.set_size('WS_SET',200,30)
 windower.prim.set_size('SHIELD_SET',200,55)
-windower.prim.set_texture('SHIELD_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/Aegis.png')
+
+windower.prim.set_position('TP_SET',750,50)
+windower.prim.set_position('ACC_SET',750,90)
+windower.prim.set_position('IDLE_SET',750,130)
+windower.prim.set_position('WS_SET',750,170)
 windower.prim.set_position('SHIELD_SET',750,210)
+
+windower.prim.set_color('TP_SET', 100, 255, 255, 255)
+windower.prim.set_color('ACC_SET', 100, 255, 255, 255)
+windower.prim.set_color('IDLE_SET', 100, 255, 255, 255)
+windower.prim.set_color('WS_SET', 100, 255, 255, 255)
 windower.prim.set_color('SHIELD_SET', 130, 255, 255, 255)
+
+windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/absorbmode.png')
+windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/highacc.png')
+windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/standardidle.png')
+windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/acc.png')
+windower.prim.set_texture('SHIELD_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/Aegis.png')
+
+windower.prim.set_visibility('TP_SET',true)
+windower.prim.set_visibility('ACC_SET',true)
+windower.prim.set_visibility('IDLE_SET',true)
 windower.prim.set_visibility('WS_SET',true)
+windower.prim.set_visibility('SHIELD_SET',true)
 
 -- base sets
 	sets.precast={}
@@ -201,7 +201,7 @@ windower.prim.set_visibility('WS_SET',true)
 	right_ear="Etiolation Earring", left_ear="Loquac. Earring", left_ring="Prolix Ring", right_ring="Defending Ring",
     back="Boxer's Mantle",}
 	
-	sets.precast.cure= set_combine(sets.precast.fc, {left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}},})
+	sets.precast.cure= set_combine(sets.precast.fc, {left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},})
 	
 	sets.precast.ja= {ammo="Iron Gobbet", head="Cab. Coronet +1", body="Chev. Cuirass +1", hands=wsdmghands, 
 	legs=wsdmglegs, feet=wsdmgfeet, neck="Warder's Charm", waist="Creed Baudrier",
@@ -219,7 +219,7 @@ windower.prim.set_visibility('WS_SET',true)
 	sets.precast.ja["Divine Emblem"]= set_combine(sets.precast.ja, {feet="Chev. Sabatons +1"})
 	
 	sets.precast.ja.cwaltz={ammo="Iron Gobbet", head={ name="Cab. Coronet +1", augments={'Enhances "Iron Will" effect',}},
-	body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}}, hands="Chev. Gauntlets +1", legs={ name="Cab. Breeches +1", augments={'Enhances "Invincible" effect',}},
+	body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}}, hands="Chev. Gauntlets +1", legs={ name="Cab. Breeches +1", augments={'Enhances "Invincible" effect',}},
 	feet="Rev. Leggings +1", neck="Twilight Torque", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
 	left_ring="Terrasoul Ring", right_ring="Terrasoul Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
 	
@@ -443,7 +443,7 @@ windower.prim.set_visibility('WS_SET',true)
 -- ws sets
 
 -- midcast sets	
-	sets.midcast.cure= {ammo="Iron Gobbet", head=curehead, body={ name="Jumalik Mail", augments={'HP+30','Attack+12','Enmity+4',}}, 
+	sets.midcast.cure= {ammo="Iron Gobbet", head=curehead, body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}}, 
 	hands="Macabre Gaunt. +1", legs=curelegs, feet=curefeet, neck="Phalaina Locket", waist="Goading Belt",
     left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", left_ring="Apeile Ring +1", right_ring="Eihwaz Ring",
     back="Fierabras's Mantle",}
@@ -473,7 +473,7 @@ windower.prim.set_visibility('WS_SET',true)
 	sets.aftercast.aftermath.lowacc={ammo="Ginsen", neck="Asperity Necklace", waist="Windbuffet Belt +1", left_ear="Tripudio Earring",
 	head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, back="Bleating Mantle",
 	body=stpbody, right_ring="Rajas Ring", hands=stphands, right_ear="Brutal Earring",
-	legs=stplegs, feet=stpfeet, left_ring="K'ayres Ring",}
+	legs=stplegs, feet=stpfeet, left_ring="Petrov Ring",}
 	
 	sets.aftercast.aftermath.medacc=set_combine(sets.aftercast.aftermath.lowacc, {waist="Anguinus Belt", back="Letalis Mantle"})
 	
@@ -481,7 +481,7 @@ windower.prim.set_visibility('WS_SET',true)
 	
 	sets.aftercast.sword.lowacc= {ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}},
 	body=dabody, legs=dalegs, hands="Eschite Gauntlets", waist="Windbuffet Belt +1", feet=dafeet, neck="Asperity Necklace", 
-	left_ring="K'ayres Ring", left_ear="Trux Earring", right_ear="Brutal Earring", right_ring="Rajas Ring", back="Bleating Mantle",}
+	left_ring="Petrov Ring", left_ear="Trux Earring", right_ear="Brutal Earring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
 	sets.aftercast.sword.medacc= {ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, 
 	legs=dalegs, body="Rav. Breastplate", hands="Eschite Gauntlets", feet=dafeet, neck="Subtlety Spec.", waist="Windbuffet Belt +1", 
@@ -542,9 +542,11 @@ windower.prim.set_visibility('WS_SET',true)
 	neck="Twilight Torque", waist="Creed Baudrier", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring",
 	right_ring="Defending Ring", back="Engulfer Cape +1",}
 	
-	sets.aftercast.dt={ammo="Hasty Pinion +1", head=dthead, body="Cab. Surcoat +1", hands=dthands,
+	sets.aftercast.dt={ammo="Hasty Pinion +1", head="Loess Barbuta +1", body="Chev. Cuirass +1", hands=dthands,
 	legs=dtlegs, feet=dtfeet, neck="Twilight Torque", waist="Nierenschutz", left_ear="Ethereal Earring",
 	right_ear="Zennaroi Earring", left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
+	
+	sets.aftercast.dtengaged=set_combine(sets.aftercast.dt,{head=dthead, body="Cab. Surcoat +1",})
 	
 	sets.aftercast.idle= {ammo="Vanir Battery", head="Baghere Salade", body="Ares' Cuirass +1", hands=dthands,
     legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet=dtfeet, neck="Creed Collar", waist="Nierenschutz",
@@ -683,7 +685,7 @@ function status_change(new,old)
 				equip(sets.aftercast.mdtengaged)
 			end
 		elseif TPSet=="dt" then
-			equip(sets.aftercast.dt)
+			equip(sets.aftercast.dtengaged)
 		end		
 	elseif new~="engaged" then
 		if IdleMode=="mdt" then
@@ -697,7 +699,8 @@ function status_change(new,old)
 		end
 	end	
 	equip(sets[swordtype])
-	equip(sets[shieldtype])	
+	equip(sets[shieldtype])
+	send_command('pf')
 end		
 
 function self_command(command)
@@ -984,8 +987,12 @@ function self_command(command)
 	if command == 'update' then
 		status_change(player.status)		
 	end
-	if command == 'testing' then
-		
+	if command=='primfix' then
+		windower.prim.set_size('TP_SET',200,30)
+		windower.prim.set_size('ACC_SET',200,30)
+		windower.prim.set_size('IDLE_SET',200,30)
+		windower.prim.set_size('WS_SET',200,30)
+		windower.prim.set_size('SHIELD_SET',200,55)
 	end
 end
 
