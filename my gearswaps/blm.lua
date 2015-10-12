@@ -23,16 +23,16 @@ function get_sets()
 
 --boxes
 	windower.prim.create('NUKE_ELEMENT')
-	windower.prim.set_size('NUKE_ELEMENT',200,30)
 	windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/icenukes.png')
+	windower.prim.set_size('NUKE_ELEMENT',200,30)
 	windower.prim.set_position('NUKE_ELEMENT',750,50)
 	windower.prim.set_color('NUKE_ELEMENT', 150, 255, 255, 255)
 	windower.prim.set_visibility('NUKE_ELEMENT',true)
 	--send_command('text tpvariable text "ICE NUKES";text tpvariable color 0 255 255;')
 	
 	windower.prim.create('MP_EFFICIENCY')
-	windower.prim.set_size('MP_EFFICIENCY',200,30)
 	windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/mpeoff.png')
+	windower.prim.set_size('MP_EFFICIENCY',200,30)	
 	windower.prim.set_position('MP_EFFICIENCY',750,90)
 	windower.prim.set_color('MP_EFFICIENCY', 150, 255, 255, 255)
 	windower.prim.set_visibility('MP_EFFICIENCY',true)
@@ -40,8 +40,8 @@ function get_sets()
 	
 	--send_command('text wsvariable text "MM-OFF"')
 	windower.prim.create('MAGIC_MODE')
-	windower.prim.set_size('MAGIC_MODE',200,30)
 	windower.prim.set_texture('MAGIC_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/magicpotency.png')
+	windower.prim.set_size('MAGIC_MODE',200,30)
 	windower.prim.set_position('MAGIC_MODE',750,130)
 	windower.prim.set_color('MAGIC_MODE', 150, 255, 255, 255)
 	windower.prim.set_visibility('MAGIC_MODE',true)
@@ -173,7 +173,7 @@ function get_sets()
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Archon Ring",
 	back="Bane Cape",}
 	
-	sets.midcast.skillenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", body="Spae. Coat +1",
+	sets.midcast.skillenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", body="Vanya Robe",
 	head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	hands="Lurid Mitts", legs="Portent Pants", neck="Enfeebling Torque", waist="Rumination Sash", right_ring="Sangoma Ring",
 	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Globidonta Ring", back="Bane Cape",}
@@ -501,6 +501,11 @@ function self_command(command)
 			--send_command('text idlevariable text "MPE-OFF"')
 			windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/mpeoff.png')
 		end
+	end
+	if command=='primfix' then
+		windower.prim.set_size('NUKE_ELEMENT',200,30)
+		windower.prim.set_size('MP_EFFICIENCY',200,30)
+		windower.prim.set_size('MAGIC_MODE',200,30)
 	end
 	--[[if command=="mm" then
 		if mm=="off" then

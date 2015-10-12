@@ -6,15 +6,12 @@ function get_sets()
 	macros_setup()
 -- includes
 -- keybinds, aliases and text boxes.
+	send_command('alias pf gs c primfix')
 	send_command('bind #4 idle')
 	send_command('bind #2 gs c pdtset')
 	send_command('bind #8 gs c mdtset')
 	send_command('bind #g gs c ochain')
 	send_command('bind @p gs c aegis')
-	send_command('bind @] gs c priwen')
-	send_command('bind @= gs c club')
-	send_command('bind @/ gs c gs')
-	send_command('bind @k gs c burtgang')
 	send_command('bind @f1 gs c dd')
 	send_command('bind @f2 gs c hybrid')
 	send_command('bind @f3 gs c pdt')
@@ -54,6 +51,7 @@ function get_sets()
 	send_command('bind @= cmd6')
 	send_command('bind #- cmd7')
 	send_command('bind #= cmd8')
+	send_command('bind @h gs c help')
 -- keybinds 
 
 -- aliases	
@@ -80,15 +78,15 @@ function get_sets()
 
 --
 	stphead={ name="Acro Helm", augments={'Accuracy+12 Attack+12','"Store TP"+5','Weapon skill damage +3%',}}
-	stpbody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','STR+10',}}
+	stpbody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','Crit. hit damage +3% ',}}
 	stphands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
 	stplegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
 	stpfeet={ name="Acro Leggings", augments={'Accuracy+17 Attack+17','"Store TP"+6','Crit. Hit Damage +3%',}}
 	
-	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','STR+7 VIT+7',}}
-	dahands={ name="Acro Gauntlets", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+2','STR+10',}}
-	dalegs={ name="Acro Breeches", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+2','STR+5 VIT+5',}}
-	dafeet={ name="Acro Leggings", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+2','STR+10',}}
+	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','STR+10',}}
+	dahands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
+	dalegs={ name="Acro Breeches", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+3','STR+7',}}
+	dafeet={ name="Acro Leggings", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
 	
 	wsdmghead={ name="Yorium Barbuta", augments={'Accuracy+17 Attack+17','Enmity+7','Weapon skill damage +3%',}}
 	wsdmghands={ name="Yorium Gauntlets", augments={'Accuracy+17','Enmity+8','Weapon skill damage +3%',}}
@@ -98,7 +96,7 @@ function get_sets()
 	dthead={ name="Yorium Barbuta", augments={'Accuracy+15 Attack+15','"Dbl. Atk."+2%','Damage taken-3%',}}
 	dthands={ name="Yorium Gauntlets", augments={'Accuracy+22','Enmity+10','Damage taken-3%',}}
 	dtlegs={ name="Yorium Cuisses", augments={'Accuracy+15 Attack+15','"Dbl. Atk."+3%','Damage taken-3%',}}
-	dtfeet={ name="Yorium Sabatons", augments={'Accuracy+25','"Dbl. Atk."+3%','Damage taken-3%',}}
+	dtfeet={ name="Yorium Sabatons", augments={'Accuracy+16 Attack+16','"Dbl. Atk."+3%','Damage taken-3%',}}
 	
 	curehead={ name="Yorium Barbuta", augments={'"Cure" potency +4%','Phalanx +3',}}
 	curebody={ name="Yorium Cuirass", augments={'Attack+19','"Cure" potency +4%','Sklchn.dmg.+1%',}}	
@@ -121,6 +119,7 @@ function get_sets()
 	repulsemode="normal"
 	WSMode="acc"
 	AM_ON_OR_OFF="on"
+	display_help="false"
 		
 	sets.swordtype= T{}
 	sets.shieldtype= T{}
@@ -130,12 +129,19 @@ function get_sets()
 	sets.repulsemode= T{}
 	sets.WSMode= T{}
 	sets.AM_ON_OR_OFF= T{}
+	sets.display_help= T{}
 -- variables
 windower.prim.create('TP_SET')
 windower.prim.create('ACC_SET')
 windower.prim.create('IDLE_SET')
 windower.prim.create('WS_SET')
 windower.prim.create('SHIELD_SET')
+
+windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/absorbmode.png')
+windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/highacc.png')
+windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/standardidle.png')
+windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/acc.png')
+windower.prim.set_texture('SHIELD_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Aegis.png')
 
 windower.prim.set_size('TP_SET',200,30)
 windower.prim.set_size('ACC_SET',200,30)
@@ -155,17 +161,17 @@ windower.prim.set_color('IDLE_SET', 100, 255, 255, 255)
 windower.prim.set_color('WS_SET', 100, 255, 255, 255)
 windower.prim.set_color('SHIELD_SET', 130, 255, 255, 255)
 
-windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/absorbmode.png')
-windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/highacc.png')
-windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/standardidle.png')
-windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/acc.png')
-windower.prim.set_texture('SHIELD_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/Aegis.png')
-
 windower.prim.set_visibility('TP_SET',true)
 windower.prim.set_visibility('ACC_SET',true)
 windower.prim.set_visibility('IDLE_SET',true)
 windower.prim.set_visibility('WS_SET',true)
 windower.prim.set_visibility('SHIELD_SET',true)
+
+windower.prim.create('TCOhelp')
+windower.prim.set_texture('TCOhelp',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/help.png')
+windower.prim.set_size('TCOhelp',640,480)
+windower.prim.set_color('TCOhelp',150,255,255,255)
+windower.prim.set_visibility('TCOhelp',false)
 
 -- base sets
 	sets.precast={}
@@ -195,11 +201,10 @@ windower.prim.set_visibility('SHIELD_SET',true)
 -- rr set	
 	
 -- precast sets
-	sets.precast.fc= {ammo="Incantor Stone", head="Chev. Armet +1", body="Nuevo Coselete", 
-	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
-	legs="Enif Cosciales", feet="Ejekamal Boots", neck="Jeweled Collar", waist="Siegel Sash", 
-	right_ear="Etiolation Earring", left_ear="Loquac. Earring", left_ring="Prolix Ring", right_ring="Defending Ring",
-    back="Boxer's Mantle",}
+	sets.precast.fc= {ammo="Incantor Stone", head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','System: 2 ID: 180 Val: 2',}},  
+	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}}, body="Nuevo Coselete",
+	legs="Enif Cosciales", feet="Carmine Greaves", neck="Jeweled Collar", waist="Siegel Sash", right_ring="Defending Ring",
+	right_ear="Etiolation Earring", left_ear="Loquac. Earring", left_ring="Prolix Ring", back="Boxer's Mantle",}
 	
 	sets.precast.cure= set_combine(sets.precast.fc, {left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},})
 	
@@ -548,7 +553,7 @@ windower.prim.set_visibility('SHIELD_SET',true)
 	
 	sets.aftercast.dtengaged=set_combine(sets.aftercast.dt,{head=dthead, body="Cab. Surcoat +1",})
 	
-	sets.aftercast.idle= {ammo="Vanir Battery", head="Baghere Salade", body="Ares' Cuirass +1", hands=dthands,
+	sets.aftercast.idle= {ammo="Vanir Battery", head="Baghere Salade", body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}}, hands=dthands,
     legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet=dtfeet, neck="Creed Collar", waist="Nierenschutz",
     left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", right_ring="Sheltered Ring",
     back="Shadow Mantle",}
@@ -712,7 +717,8 @@ function self_command(command)
 			equip(sets.Ochain)
 			add_to_chat(206, 'OCHAIN SELECTED')
 			--send_command('text pdtvariable text "OCHAIN"')
-			windower.prim.set_texture('SHIELD_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/Ochain.png')
+			windower.prim.set_texture('SHIELD_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Ochain.png')
+			windower.prim.set_size('SHIELD_SET',200,55)
 		elseif shieldtype=="Ochain" then
 			status_change(player.status)
 			add_to_chat(206, 'OCHAIN ALREADY SET, REFRESHING EQUIPMENT.')
@@ -723,7 +729,8 @@ function self_command(command)
 			equip(sets.Aegis)
 			add_to_chat(206, 'AEGIS SELECTED')
 			--send_command('text pdtvariable text "AEGIS"')
-			windower.prim.set_texture('SHIELD_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/Aegis.png')
+			windower.prim.set_texture('SHIELD_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Aegis.png')
+			windower.prim.set_size('SHIELD_SET',200,55)
 		elseif shieldtype=="Aegis" then
 			status_change(player.status)
 			add_to_chat(206, 'AEGIS ALREADY SET, REFRESHING EQUIPMENT.')
@@ -737,7 +744,8 @@ function self_command(command)
 		add_to_chat(206, 'Low Accuracy Mode')
 		--send_command('text idlevariable text "LOW-ACC"')
 		send_command('alias tp gs equip sets.aftercast.sword.lowacc')
-		windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/lowacc.png')
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/lowacc.png')
+		windower.prim.set_size('ACC_SET',200,30)
 		if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.aftercast.hybrid.lowacc')
 		elseif TPSet=="absorb" then
@@ -748,7 +756,8 @@ function self_command(command)
 		add_to_chat(206, 'Medium Accuracy Mode')
 		--send_command('text idlevariable text "MEDIUM-ACC"')
 		send_command('alias tp gs equip sets.aftercast.sword.medacc')
-		windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/medacc.png')
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/medacc.png')
+		windower.prim.set_size('ACC_SET',200,30)
 		if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.aftercast.hybrid.medacc')
 		elseif TPSet=="absorb" then
@@ -759,7 +768,8 @@ function self_command(command)
 		add_to_chat(206, 'High Accuracy Mode')
 		--send_command('text idlevariable text "HIGH-ACC"')
 		send_command('alias tp gs equip sets.aftercast.sword.highacc')
-		windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/highacc.png')
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/highacc.png')
+		windower.prim.set_size('ACC_SET',200,30)
 		if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.aftercast.hybrid.highacc')
 		elseif TPSet=="absorb" then
@@ -773,8 +783,9 @@ function self_command(command)
 		TPSet="dd"
 		add_to_chat(206, 'DD Mode')
 		--send_command('text tpvariable text "DD MODE"')
-		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/ddmode.png')
-		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/ddmode.wav')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/ddmode.png')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/ddmode.wav')
+		windower.prim.set_size('TP_SET',200,30)
 	end
 	if command == 'hybrid' then
 		if TPSet~= "hybrid" then
@@ -788,7 +799,8 @@ function self_command(command)
 			elseif Acc=="highacc" then
 				send_command('alias hybrid gs equip sets.aftercast.hybrid.highacc')
 			end
-			windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/hybridmode.png')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/hybridmode.png')
+			windower.prim.set_size('TP_SET',200,30)
 		else
 			TPSet="absorb"
 			add_to_chat(206, 'ABSORB MODE')
@@ -800,29 +812,33 @@ function self_command(command)
 			elseif Acc=="highacc" then
 				send_command('alias hybrid gs equip sets.aftercast.absorbmode.highacc')
 			end
-			windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/absorbmode.png')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/absorbmode.png')
+			windower.prim.set_size('TP_SET',200,30)
 		end
 	end
 	if command == 'pdt' then
 		TPSet="pdt"
 		add_to_chat(206, 'PDT MODE')
 		--send_command('text tpvariable text "PDT MODE"')
-		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/pdtmode.png')
-		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/pdtmode.png')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.prim.set_size('TP_SET',200,30)
 	end
 	if command == 'mdt' then
 		TPSet="mdt"
 		add_to_chat(206, 'MDT MODE')
 		--send_command('text tpvariable text "MDT MODE"')
-		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/mdtmode.png')
-		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mdtmode.png')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.prim.set_size('TP_SET',200,30)
 	end
 	if command == 'dt' then
 		TPSet="dt"
 		add_to_chat(206, 'DT MODE')
 		--send_command('text tpvariable text "DT MODE"')
-		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dtmode.png')
-		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dtmode.png')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.prim.set_size('TP_SET',200,30)
 	end
 	-- engage variable commands rule end
 	
@@ -832,14 +848,16 @@ function self_command(command)
 			WSMode="acc"
 			add_to_chat(206, 'WSMODE: ACCURACY')
 			--send_command('text doavariable text "WSMODE: ACC"')
-			windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/acc.png')
-			windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/acc.wav')
+			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/acc.png')
+			windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/acc.wav')
+			windower.prim.set_size('WS_SET',200,30)
 		else
 			WSMode="dmg"
 			add_to_chat(206, 'WSMODE: DAMAGE')
 			--send_command('text doavariable text "WSMODE: DMG"')
-			windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dmg.png')
-			windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dmg.wav')
+			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmg.png')
+			windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dmg.wav')
+			windower.prim.set_size('WS_SET',200,30)
 		end
 	end
 	-- ws variable rule
@@ -851,14 +869,16 @@ function self_command(command)
 			add_to_chat(206, 'REFRESH IDLE MODE')
 			--send_command('text wsvariable text "REFRESH IDLE"')
 			send_command('alias idle gs equip sets.aftercast.refresh')
-			windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/refreshidle.png')
+			windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/refreshidle.png')
+			windower.prim.set_size('IDLE_SET',200,30)
 			status_change(player.status)
 		else
 			IdleMode="idle"
 			add_to_chat(206, 'STANDARD IDLE MODE')
 			--send_command('text wsvariable text "STANDARD IDLE"')
 			send_command('alias idle gs equip sets.aftercast.idle')
-			windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/standardidle.png')
+			windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/standardidle.png')
+			windower.prim.set_size('IDLE_SET',200,30)
 			status_change(player.status)
 		end
 	end
@@ -867,7 +887,8 @@ function self_command(command)
 		add_to_chat(206, 'PDT KITING MODE')
 		--send_command('text wsvariable text "PDT KITE"')
 		send_command('alias idle gs equip sets.aftercast.pdtkite')
-		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/pdtkite.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/pdtkite.png')
+		windower.prim.set_size('IDLE_SET',200,30)
 		status_change(player.status)
 	end
 	if command == 'kitemdt' then
@@ -875,7 +896,8 @@ function self_command(command)
 		add_to_chat(206, 'MDT KITING MODE')
 		--send_command('text wsvariable text "MDT KITE"')
 		send_command('alias idle gs equip sets.aftercast.mdtkite')
-		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/mdtkite.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mdtkite.png')
+		windower.prim.set_size('IDLE_SET',200,30)
 		status_change(player.status)
 	end
 	if command == 'pdtidle' then
@@ -883,34 +905,36 @@ function self_command(command)
 		add_to_chat(206, 'PDT IDLE MODE')
 		--send_command('text wsvariable text "PDT IDLE"')
 		send_command('alias idle gs equip sets.aftercast.pdt')
-		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/pdtidle.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/pdtidle.png')
+		windower.prim.set_size('IDLE_SET',200,30)
 		status_change(player.status)
-		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 	end
 	if command == 'mdtidle' then
 		IdleMode="mdt"
 		add_to_chat(206, 'MDT IDLE MODE')
 		--send_command('text wsvariable text "MDT IDLE"')
 		send_command('alias idle gs equip sets.aftercast.mdt')
-		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/mdtidle.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mdtidle.png')
+		windower.prim.set_size('IDLE_SET',200,30)
 		status_change(player.status)
-		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 	end
 	if command == 'dtidle' then
 		IdleMode="dt"
 		add_to_chat(206, 'DT IDLE MODE')
 		--send_command('text wsvariable text "DT IDLE"')
 		send_command('alias idle gs equip sets.aftercast.dt')
-		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dtidle.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dtidle.png')
 		status_change(player.status)
-		windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 	end
 	if command == 'dtkite' then
 		IdleMode="dtidle"
 		add_to_chat(206, 'DT KITING MODE')
 		--send_command('text wsvariable text "DT KITE"')
 		send_command('alias idle gs equip sets.aftercast.dtkite')
-		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dtkite.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dtkite.png')
 		status_change(player.status)
 	end
 	-- idle variable commands rule end
@@ -919,28 +943,28 @@ function self_command(command)
 	if command=='pdtset' then
 		if player.status=="Engaged" then
 			equip(sets.aftercast.pdtengaged)
-			windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+			windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 		else
 			equip(sets.aftercast.pdt)
-			windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+			windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 		end
 	end
 	if command=='mdtset' then
 		if buffactive["Shell V"] then
 			if player.status=="Idle" then
 				equip(sets.aftercast.mdtshellv)
-				windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+				windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 			elseif player.status=="Engaged" then
 				equip(sets.aftercast.mdtshellvengaged)
-				windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+				windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 			end
 		elseif not buffactive["Shell V"] then
 			if player.status=="Engaged" then
 				equip(sets.aftercast.mdtengaged)
-				windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+				windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 			elseif player.status=="idle" then
 				equip(sets.aftercast.mdt)
-				windower.play_sound('/windower 4/addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+				windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 			end
 		end
 	end
@@ -986,6 +1010,15 @@ function self_command(command)
 	-- special case
 	if command == 'update' then
 		status_change(player.status)		
+	end
+	if command=='help' then
+		if display_help=="false" then
+			display_help="true"
+			windower.prim.set_visibility('TCOhelp',true)
+		else
+			display_help="false"
+			windower.prim.set_visibility('TCOhelp',false)
+		end
 	end
 	if command=='primfix' then
 		windower.prim.set_size('TP_SET',200,30)

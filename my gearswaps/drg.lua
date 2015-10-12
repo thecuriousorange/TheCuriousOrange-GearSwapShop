@@ -30,6 +30,8 @@ function get_sets()
 	send_command('bind #f1 gs c lowacc')
 	send_command('bind #f2 gs c medacc')
 	send_command('bind #f3 gs c highacc')
+	send_command('bind @f6 gs c Quint')
+	send_command('bind @f7 gs c Annealed')
 	send_command('bind @f8 gs c Olyndicus')
 	send_command('bind @f9 gs c Gungnir')
 	send_command('bind @f10 gs c Upukirex')
@@ -54,7 +56,7 @@ function get_sets()
 	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
 	
 	acrohead={ name="Acro Helm", augments={'Accuracy+12 Attack+12','Haste+3%','STR+7 AGI+7',}}
-	acrobody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','STR+10',}}
+	acrobody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','Crit. hit damage +3% ',}}
 	acrohands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
 	acrolegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
 	acrofeet={ name="Acro Leggings", augments={'Accuracy+17 Attack+17','"Store TP"+6','Crit. Hit Damage +3%',}}
@@ -111,6 +113,8 @@ function get_sets()
 	sets.weaponry.Upukirex={main="Upukirex", sub="Pole Grip",}
 	sets.weaponry.Gungnir={main="Gungnir", sub="Pole Grip",}
 	sets.weaponry.Olyndicus={main="Olyndicus", sub="Pole Grip",}
+	sets.weaponry.Annealed={main="Annealed Lance", sub="Pole Grip",}
+	sets.weaponry.Quint={main="Quint Spear", sub="Pole Grip",}
 --weaponry
 	sets.idle={ammo="Vanir Battery", head="Twilight Helm", body="Twilight Mail", hands="Cizin Mufflers +1", 
 	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Cizin Greaves +1", neck="Twilight Torque", waist="Nierenschutz",
@@ -119,19 +123,19 @@ function get_sets()
 --JA sets
 	sets.tpgain["Jump"]={ammo="Ginsen", head=acrohead, legs=acrolegs, body="Vishap Mail +1", hands="Vishap F. G. +1", 
 	feet="Ostro Greaves", neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Tripudio Earring", 
-	right_ear="Brutal Earring", left_ring="K'ayres Ring", right_ring="Rajas Ring", back="Letalis Mantle",}
+	right_ear="Brutal Earring", left_ring="Petrov Ring", right_ring="Rajas Ring", back="Letalis Mantle",}
 	
 	sets.tpgain["High Jump"]={ammo="Ginsen", head=acrohead, body="Vishap Mail +1", hands="Vishap F. G. +1", feet="Ostro Greaves", 
 	neck="Ganesha's Mala", legs="Vishap Brais +1", waist="Windbuffet Belt +1", left_ear="Tripudio Earring", right_ear="Brutal Earring", 
-	left_ring="K'ayres Ring", right_ring="Rajas Ring", back="Letalis Mantle",}
+	left_ring="Petrov Ring", right_ring="Rajas Ring", back="Letalis Mantle",}
 	
 	sets.tpgain["Spirit Jump"]={ammo="Ginsen", head=acrohead, body=acrobody, hands=acrohands, left_ear="Tripudio Earring",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1",
-	left_ring="K'ayres Ring", right_ring="Rajas Ring", back="Letalis Mantle",}
+	left_ring="Petrov Ring", right_ring="Rajas Ring", back="Letalis Mantle",}
 	
 	sets.tpgain["Soul Jump"]={ammo="Ginsen", head=acrohead, body=acrobody, right_ring="Rajas Ring",
 	hands=acrohands, legs="Pelt. Cuissots +1", feet=acrofeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="K'ayres Ring", back="Letalis Mantle",}
+	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Petrov Ring", back="Letalis Mantle",}
 	
 	sets.damage["Jump"]={ammo="Thew Bomblet", body="Vishap Mail +1", hands="Vishap F. G. +1", feet="Vishap Greaves +1",
     head=taeonhead, legs=taeonlegs, neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring",
@@ -161,14 +165,14 @@ function get_sets()
 	
 	sets.ja["Deep Breathing"]={head="Ptero. Armet +1",}
 	
-	sets.ja["Steady Wing"]={neck="Chanoix's Gorget", right_ear="Lancer's Earring", body="Wyvern Mail", hands="Ostreger Mitts", 
+	sets.ja["Steady Wing"]={neck="Chanoix's Gorget", right_ear="Lancer's Earring", body="Wyvern Mail", hands="Despair Fin. Gaunt.", 
 	legs="Vishap Brais +1", feet="Ptero. Greaves +1",}
 	
 	sets.ja["Spirit Link"]={head="Vishap Armet +1", left_ear="Pratik Earring", hands="Pel. Vambraces +1", feet="Ptero. Greaves +1",}
 --JA sets
 
 --PETCMD sets
-	sets.pet["Steady Wing"]={neck="Chanoix's Gorget", right_ear="Lancer's Earring", body="Wyvern Mail", hands="Ostreger Mitts", 
+	sets.pet["Steady Wing"]={neck="Chanoix's Gorget", right_ear="Lancer's Earring", body="Wyvern Mail", hands="Despair Fin. Gaunt.", 
 	legs="Vishap Brais +1", feet="Ptero. Greaves +1",}
 	
 	sets.pet["Spirit Link"]={head="Vishap Armet +1", hands="Pel. Vambraces +1", back="Updraft Mantle",}
@@ -189,7 +193,7 @@ function get_sets()
     neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Ethereal Earring", right_ear="Lancer's Earring",
     left_ring="Meridian Ring", right_ring="Eihwaz Ring", back=updrafttp,}
 	
-	sets.breath.precast={head="Vishap Armet +1", body="Wyvern Mail", hands="Ostreger Mitts", legs="Vishap Brais +1",
+	sets.breath.precast={head="Vishap Armet +1", body="Wyvern Mail", hands="Despair Fin. Gaunt.", legs="Vishap Brais +1",
 	feet={ name="Ptero. Greaves +1", augments={'Enhances "Empathy" effect',}}, neck="Chanoix's Gorget",
 	waist="Glassblower's Belt", left_ear="Ethereal Earring", right_ear="Lancer's Earring", left_ring="Meridian Ring",
 	right_ring="Eihwaz Ring", back="Strendu Mantle",}
@@ -355,7 +359,7 @@ function get_sets()
 	--offensive sets
 	sets.tp.lowacc={ammo="Ginsen", neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring",
 	head=taeonhead, right_ear="Bladeborn Earring",
-	body=taeonbody, hands=taeonhands, back="Bleating Mantle", legs=taeonlegs, left_ring="K'ayres Ring",
+	body=taeonbody, hands=taeonhands, back="Bleating Mantle", legs=taeonlegs, left_ring="Petrov Ring",
 	feet=taeonfeet, right_ring="Rajas Ring",}
 	
 	sets.tp.medacc= set_combine(sets.tp.lowacc, {waist="Anguinus Belt", back="Letalis Mantle",})
@@ -365,12 +369,12 @@ function get_sets()
 	right_ring="Mars's Ring", left_ear="Steelflash Earring", right_ear="Zennaroi Earring", neck="Subtlety Spec.",})
 	
 	sets.xhit.lowacc={ammo="Ginsen", head=acrohead, body="Pelt. Plackart +1", back="Bleating Mantle", hands=acrohands, waist="Windbuffet Belt +1",
-	legs=acrolegs, feet=acrofeet, neck="Ganesha's Mala", left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="K'ayres Ring",
+	legs=acrolegs, feet=acrofeet, neck="Ganesha's Mala", left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Petrov Ring",
 	right_ring="Rajas Ring",}
 		
 	sets.xhit.medacc=set_combine(sets.xhit.lowacc, {waist="Anguinus Belt", back="Letalis Mantle"})
 	
-	sets.xhit.highacc=set_combine(sets.xhit.medacc, {waist="Olseni Belt", left_ring="Patricius Ring", right_ring="Mars's Ring", back=updrafttp, right_ear="Zennaroi Earring",})
+	sets.xhit.highacc=set_combine(sets.xhit.medacc, {neck="Subtlety Spec.", waist="Olseni Belt", left_ring="Patricius Ring", right_ring="Mars's Ring", back=updrafttp, right_ear="Zennaroi Earring",})
 	
 	sets.xhit2.lowacc=set_combine(sets.xhit.lowacc, {legs=taeonlegs,})
 	
@@ -414,9 +418,20 @@ function get_sets()
 	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Patricius Ring", right_ring="Defending Ring",
     back="Mollusca Mantle",}
 	
-	sets.pdt= set_combine(sets.hybrid,{waist="Nierenschutz", left_ear="Ethereal Earring", right_ear="Sanare Earring",})
+	sets.pdt={ammo="Vanir Battery", head="Loess Barbuta +1", body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
+	hands="Cizin Mufflers +1", right_ear="Sanare Earring", left_ring="Vocane Ring", right_ring="Defending Ring",
+	legs={ name="Cizin Breeches +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+8',}},
+	feet={ name="Amm Greaves", augments={'HP+40','Accuracy+11',}}, neck="Twilight Torque", waist="Nierenschutz",
+	left_ear="Ethereal Earring", back="Mollusca Mantle",}
 	
-	sets.mdt= set_combine(sets.pdt, {head="Vishap Armet +1", body="Mekira Meikogai", left_ring="Shadow Ring",})
+	sets.mdt= set_combine(sets.pdt, {back="Engulfer Cape +1", left_ring="Shadow Ring",})
+	
+	sets.xdt={ammo="Vanir Battery", head="Loess Barbuta +1", body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
+	hands={ name="Founder's Gauntlets", augments={'STR+8','Attack+15','"Mag.Atk.Bns."+13','Phys. dmg. taken -3%',}},
+	legs={ name="Cizin Breeches +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+8',}},
+	feet={ name="Amm Greaves", augments={'HP+40','Accuracy+11',}}, neck="Twilight Torque", waist="Nierenschutz",
+	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring", right_ring="Defending Ring",
+    back="Mollusca Mantle",}
 	--defensive sets
 --aftercast sets
 end
@@ -590,6 +605,20 @@ function self_command(command)
 				send_command('alias ddset gs equip sets.xhit.highacc')
 				send_command('alias oset gs equip sets.xhito.highacc')
 			end
+		else
+			TPMode="multi"
+			add_to_chat(206, 'MULTIHIT MODE')
+			send_command('text tpvariable text "MULTIHIT MODE"')
+			if TPType=="lowacc" then
+				send_command('alias ddset gs equip sets.tp.lowacc')
+				send_command('alias oset gs equip sets.tp.o.lowacc')
+			elseif TPType=="medacc" then
+				send_command('alias ddset gs equip sets.tp.medacc')
+				send_command('alias oset gs equip sets.tp.o.medacc')
+			elseif TPType=="highacc" then
+				send_command('alias ddset gs equip sets.tp.highacc')
+				send_command('alias oset gs equip sets.tp.o.highacc')
+			end
 		end
 	end
 	if command=="Hybrid" then
@@ -692,6 +721,28 @@ function self_command(command)
 			add_to_chat(206, 'Olyndicus Mode')
 			status_change(player.status)
 			send_command('text pdtvariable text "Olyndicus"')
+		end
+	end
+	if command=="Annealed" then
+		if weapon=="Annealed" then
+			add_to_chat(206, 'Annealed Lance already equiped, updating')
+			status_change(player.status)
+		else
+			weapon="Annealed"
+			add_to_chat(206, 'Annealed Lance Mode')
+			status_change(player.status)
+			send_command('text pdtvariable text "Annealed Lance"')
+		end
+	end
+	if command=="Quint" then
+		if weapon=="Quint" then
+			add_to_chat(206, 'Quint Spear already equiped, updating')
+			status_change(player.status)
+		else
+			weapon="Quint"
+			add_to_chat(206, 'Quint Spear Mode')
+			status_change(player.status)
+			send_command('text pdtvariable text "Quint Spear"')
 		end
 	end
 --weaponry commands	
