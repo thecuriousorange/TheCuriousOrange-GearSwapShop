@@ -1,14 +1,68 @@
 function get_sets()
 --include file
-	include('tco-include.lua')
+	--include('tco-include.lua')
 --include file
 
 --alias and text box set up
-	send_command('text doavariable create;text doavariable bold true;text doavariable text "WS MODE:DMG";text doavariable pos 900 140')
-	send_command('text pdtvariable text "Magic:DMG"')
-	send_command('text wsvariable text "STANDARD IDLE"')
-	send_command('text tpvariable text "DD MODE"')
-	send_command('text idlevariable text "LOW-ACC"')
+windower.prim.create('TP_SET')
+windower.prim.set_size('TP_SET',200,30)
+windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/ddmode.png')
+windower.prim.set_position('TP_SET',0.65*windower.get_windower_settings().x_res,50)
+windower.prim.set_color('TP_SET', 100, 255, 255, 255)
+windower.prim.set_visibility('TP_SET',true)
+
+windower.prim.create('ACC_SET')
+windower.prim.set_size('ACC_SET',200,30)
+windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/lowacc.png')
+windower.prim.set_position('ACC_SET',0.65*windower.get_windower_settings().x_res,90)
+windower.prim.set_color('ACC_SET', 100, 255, 255, 255)
+windower.prim.set_visibility('ACC_SET',true)
+
+windower.prim.create('IDLE_SET')
+windower.prim.set_size('IDLE_SET',200,30)
+windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/standardidle.png')
+windower.prim.set_position('IDLE_SET',0.65*windower.get_windower_settings().x_res,130)
+windower.prim.set_color('IDLE_SET', 100, 255, 255, 255)
+windower.prim.set_visibility('IDLE_SET',true)
+
+windower.prim.create('WS_SET')
+windower.prim.set_size('WS_SET',200,30)
+windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dmg.png')
+windower.prim.set_position('WS_SET',0.65*windower.get_windower_settings().x_res,170)
+windower.prim.set_color('WS_SET', 100, 255, 255, 255)
+windower.prim.set_visibility('WS_SET',true)
+
+windower.prim.create('MAGIC_MODE')
+windower.prim.set_texture('MAGIC_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/magicpotency.png')
+windower.prim.set_size('MAGIC_MODE',200,30)
+windower.prim.set_position('MAGIC_MODE',0.65*windower.get_windower_settings().x_res,210)
+windower.prim.set_color('MAGIC_MODE', 150, 255, 255, 255)
+windower.prim.set_visibility('MAGIC_MODE',true)
+	--windower.send_command('pause 1;text tpvariable text "DD MODE"')
+	--windower.send_command('pause 1;text idlevariable text "LOW-ACC"')
+	--windower.send_command('pause 1;text pdtvariable text "Magic:DMG"')
+	--windower.send_command('pause 1;text wsvariable text "STANDARD IDLE"')
+	--windower.send_command('pause 1;text doavariable create;text doavariable bold true;text doavariable text "WS MODE:DMG";text doavariable pos 900 140')
+	send_command('alias tp gs equip sets.tp.lowacc')
+	send_command('alias hybrid gs equip sets.hybrid.lowacc')
+	send_command('alias idle gs equip sets.idle.refresh')
+	send_command('bind @f1 gs c dd')
+	send_command('bind @f2 gs c hybrid')
+	send_command('bind @f3 gs c pdt')
+	send_command('bind @f4 gs c mdt')
+	send_command('bind @f5 gs c dt')
+	send_command('bind @f9 gs c lowacc;alias hybrid gs equip sets.hybrid.lowacc;alias tp gs equip sets.tp.lowacc')
+	send_command('bind @f10 gs c medacc;alias hybrid gs equip sets.hybrid.medacc;alias tp gs equip sets.tp.medacc')
+	send_command('bind @f11 gs c highacc;alias hybrid gs equip sets.hybrid.highacc;alias tp gs equip sets.tp.highacc')
+	send_command('bind @f12 gs c wsacctoggle')
+	send_command('bind #f1 gs c idle')
+	send_command('bind #f2 gs c kitemdt')
+	send_command('bind #f3 gs c kitepdt') 
+	send_command('bind #f4 gs c pdtidle')
+	send_command('bind #f5 gs c mdtidle')
+	send_command('bind #f6 gs c dtidle')
+	send_command('bind #f7 gs c dtkite')
+	send_command('bind #a gs c magictoggle')
 --alias and text box set up
 
 --spell lists
@@ -33,10 +87,10 @@ function get_sets()
 	DarkMagic_Drain_Aspir= S{"Drain", "Drain II", "Aspir", "Aspir II",}
 	
 	EnfeeblingMagic_skillmod= S{"Sleep", "Sleep II", "Sleepga", "Sleepga II", "Poison", "Poison II", "Poisonga", 
-	"Poisonga II", "Dispel", "Gravity", "Bind", "Break", "Breakga", "Blind", "Blind II", "Gravity", "Gravity II",}
+	"Poisonga II", "Dispel", "Gravity", "Bind", "Break", "Breakga", "Blind", "Blind II", "Gravity", "Gravity II", "Distract", "Distract II","Distract III","Frazzle", "Frazzle II", "Frazzle III"}
 	
 	EnfeeblingMagic_mndmod= S{"Paralyze", "Paralyze II", "Dia", "Dia II", "Dia III", "Diaga", "Diaga II", 
-	"Slow", "Slow II", "Addle",}
+	"Slow", "Slow II", "Addle", "Addle II"}
 	
 	Buffs= S{"Stoneskin", "Phalanx", "Phalanx II", "Aquaveil",}
 --spell lists
@@ -46,16 +100,14 @@ function get_sets()
 	TPType="lowacc"
 	IdleType="refresh"
 	StunType="recast"
-	AspirDrainType="potency"
-	NukeType="potency"
+	MagicType="potency"	
 	WSType="damage"
 	
 	sets.TPMode= T{}
 	sets.TPType= T{}
 	sets.IdleType= T{}
 	sets.StunType= T{}
-	sets.AspirDrainType= T{}
-	sets.NukeType= T{}
+	sets.MagicType= T{}
 	sets.WSType= T{}
 --variables
 	
@@ -307,7 +359,11 @@ function get_sets()
 	
 	sets.idle.dt={}
 	
-	sets.idle.kite={}
+	sets.idle.pdtkite={}
+	
+	sets.idle.mdtkite={}
+	
+	sets.idle.dtkite={}
 --Idle Sets
 end
 
@@ -381,6 +437,15 @@ function midcast(spell)
 end
 
 function aftercast(spell)
+	if not spell.interrupted then
+        if spell.english == 'Sleep' or spell.english == 'Sleepga' then
+            send_command('@wait 55;input /echo ------- '..spell.english..' is wearing off in 5 seconds -------')
+        elseif spell.english == 'Sleep II' then
+            send_command('@wait 85;input /echo ------- '..spell.english..' is wearing off in 5 seconds -------')
+        elseif spell.english == 'Break' then
+            send_command('@wait 25;input /echo ------- '..spell.english..' is wearing off in 5 seconds -------')
+        end
+    end
 	status_change(player.status)
 end
 
@@ -407,60 +472,135 @@ function self_command(command)
 	if command == 'dd' then
 		TPSet="tp"
 		add_to_chat(206, 'DD Mode')
-		send_command('text tpvariable text "DD MODE"')
+		--send_command('text tpvariable text "DD MODE"')
+		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/ddmode.png')
 	end
 	if command == 'hybrid' then
 		TPSet="hybrid"
 		add_to_chat(206, 'HYBRID MODE')
-		send_command('text tpvariable text "Hybrid MODE"')
+		--send_command('text tpvariable text "Hybrid MODE"')
+		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/hybridmode.png')
 	end
 	if command == 'pdt' then
 		TPSet="pdt"
 		add_to_chat(206, 'PDT MODE')
-		send_command('text tpvariable text "PDT MODE"')
+		--send_command('text tpvariable text "PDT MODE"')
+		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/pdtmode.png')
 	end
 	if command == 'mdt' then
 		TPSet="mdt"
 		add_to_chat(206, 'MDT MODE')
-		send_command('text tpvariable text "MDT MODE"')
+		--send_command('text tpvariable text "MDT MODE"')
+		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/mdtmode.png')
+	end
+	if command == 'dt' then
+		TPSet="dt"
+		add_to_chat(206, 'MDT MODE')
+		--send_command('text tpvariable text "MDT MODE"')
+		windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dtmode.png')
 	end
 	if command == 'lowacc' then
 		Acc="lowacc"
 		add_to_chat(206, 'Low Accuracy Mode')
-		send_command('text idlevariable text "LOW-ACC"')
+		--send_command('text idlevariable text "LOW-ACC"')
+		windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/lowacc.png')
 	elseif command == 'medacc' then
 		Acc="medacc"
 		add_to_chat(206, 'Medium Accuracy Mode')
-		send_command('text idlevariable text "MEDIUM-ACC"')
+		--send_command('text idlevariable text "MEDIUM-ACC"')
+		windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/medacc.png')
 	elseif command == 'highacc' then
 		Acc="highacc"
 		add_to_chat(206, 'High Accuracy Mode')
-		send_command('text idlevariable text "HIGH-ACC"')
+		--send_command('text idlevariable text "HIGH-ACC"')
+		windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/highacc.png')
 	end
 	-- engage variable commands rule end
-	
+	-- idle variable commands rule start
+	if command == 'idle' then
+		IdleMode="idle"
+		add_to_chat(206, 'STANDARD IDLE MODE')
+		--send_command('text wsvariable text "STANDARD IDLE"')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/standardidle.png')
+		send_command('alias idle gs equip sets.idle.refresh')
+		status_change(player.status)
+	end
+	if command == 'kitepdt' then
+		IdleMode="pdtkite"
+		add_to_chat(206, 'PDT KITING MODE')
+		--send_command('text wsvariable text "PDT KITE"')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/pdtkite.png')
+		send_command('alias idle gs equip sets.idle.pdtkite')
+		status_change(player.status)
+	end
+	if command == 'kitemdt' then
+		IdleMode="mdtkite"
+		add_to_chat(206, 'MDT KITING MODE')
+		--send_command('text wsvariable text "MDT KITE"')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/mdtkite.png')
+		send_command('alias idle gs equip sets.idle.mdtkite')
+		status_change(player.status)
+	end
+	if command == 'pdtidle' then
+		IdleMode="pdt"
+		add_to_chat(206, 'PDT IDLE MODE')
+		--send_command('text wsvariable text "PDT IDLE"')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/pdtidle.png')
+		send_command('alias idle gs equip sets.idle.pdt')
+		status_change(player.status)
+	end
+	if command == 'mdtidle' then
+		IdleMode="mdt"
+		add_to_chat(206, 'MDT IDLE MODE')
+		--send_command('text wsvariable text "MDT IDLE"')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/mdtidle.png')
+		send_command('alias idle gs equip sets.idle.mdt')
+		status_change(player.status)		
+	end
+	if command == 'dtidle' then
+		IdleMode="dt"
+		add_to_chat(206, 'DT IDLE MODE')
+		--send_command('text wsvariable text "DT IDLE"')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dtidle.png')
+		send_command('alias idle gs equip sets.idle.dt')
+		status_change(player.status)
+	end
+	if command == 'dtkite' then
+		IdleMode="dtidle"
+		add_to_chat(206, 'DT KITING MODE')
+		--send_command('text wsvariable text "DT KITE"')
+		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dtkite.png')
+		send_command('alias idle gs equip sets.idle.dtkite')
+	end
+	-- idle variable commands rule end
 	-- magic toggles
 	if command=="magictoggle" then
 		if MagicType=="potency" then
 			MagicType="Accuracy"
 			add_to_chat(206, "MAGIC MODE: ACCURACY")
-			send_command('text pdtvariable text "Magic:ACC"')
+			--send_command('text pdtvariable text "Magic:ACC"')
+			windower.prim.set_texture('MAGIC_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/magicaccuracy.png')
 		else
 			MagicType="potency"
 			add_to_chat(206, "MAGIC MODE: POTENCY")
-			send_command('text pdtvariable text "Magic:DMG"')
+			--send_command('text pdtvariable text "Magic:DMG"')
+			windower.prim.set_texture('MAGIC_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/magicpotency.png')
 		end
 	end
 	-- magic toggles
 	
 	-- ws toggle
-	if command=="wstoggle" then
+	if command=="wsacctoggle" then
 		if WSType=="damage" then
 			WSType="accuracy"
 			add_to_chat(206, "WS MODE: ACCURACY")
+			--send_command('text doavariable text "WS MODE:ACC"')
+			windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/acc.png')
 		else
 			WSType="damage"
 			add_to_chat(206, "WS MODE: DAMAGE")
+			--send_command('text doavariable text "WS MODE:DMG"')
+			windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dmg.png')
 		end
 	end
 	-- ws toggle

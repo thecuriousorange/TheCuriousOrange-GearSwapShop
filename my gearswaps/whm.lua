@@ -124,9 +124,9 @@ function precast(spell)
 	if spell.prefix=="/magic" then
 		if spell.english:contains("Cure") or spell.english:contains("Cura") then
 			equip(sets.precast.cure)
-		elseif spell.type=="Enhancing Magic" and spell.english~="Stoneskin" then
+		elseif spell.type=="EnhancingMagic" and spell.english~="Stoneskin" then
 			equip(sets.precast.enhancing)
-		elseif spell.type=="Enhancing Magic" and spell.english=="Stoneskin" then
+		elseif spell.type=="EnhancingMagic" and spell.english=="Stoneskin" then
 			equip(sets.precast.stoneskin)
 		else
 			equip(sets.precast.fc)
@@ -159,7 +159,7 @@ function midcast(spell)
 			end
 		end
 		if spell.skill=="Enfeebling Magic" then
-			if spell.type=="Black Magic" then
+			if spell.type=="BlackMagic" then
 				equip(sets.midcast.intenfeeb)
 			else
 				equip(sets.midcast.mndenfeeb)

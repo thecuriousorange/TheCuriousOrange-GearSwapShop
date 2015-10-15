@@ -34,7 +34,6 @@ function get_sets()
 	send_command('bind @f7 gs c Annealed')
 	send_command('bind @f8 gs c Olyndicus')
 	send_command('bind @f9 gs c Gungnir')
-	send_command('bind @f10 gs c Upukirex')
 	send_command('bind @f12 gs c ws_dmg_or_acc')
 	send_command('bind #g gs c jumptoggle')
 --binds	
@@ -49,7 +48,7 @@ function get_sets()
 
 
 --augmented items
-	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','STR+6 VIT+6',}}
+	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+12 Attack+12','"Triple Atk."+2','Crit. hit damage +1%',}}
 	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}}
 	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}
@@ -109,8 +108,7 @@ function get_sets()
 	sets.rr={head="Twilight Helm", body="Twilight Mail",}
 --rr lock set
 
---weaponry	
-	sets.weaponry.Upukirex={main="Upukirex", sub="Pole Grip",}
+--weaponry
 	sets.weaponry.Gungnir={main="Gungnir", sub="Pole Grip",}
 	sets.weaponry.Olyndicus={main="Olyndicus", sub="Pole Grip",}
 	sets.weaponry.Annealed={main="Annealed Lance", sub="Pole Grip",}
@@ -695,23 +693,11 @@ function self_command(command)
 			add_to_chat(206, 'Gungnir already equiped, updating')
 			status_change(player.status)
 		else
-			weapon="Gungnir"
-			--send_command('input /get "Gungnir" sack;pause 1.5;input /equip main "Gungnir";pause 0.5;input /put "Upukirex" sack;')
+			weapon="Gungnir"			
 			add_to_chat(206, 'Gungnir Mode')
 			send_command('text pdtvariable text "Gungnir"')
 		end
-	end
-	if command== "Upukirex" then
-		if weapon=="Upukirex" then
-			add_to_chat(206, 'Upukirex already equiped, updating')
-			status_change(player.status)
-		else
-			weapon="Upukirex"
-			--send_command('input /get "Upukirex" sack;pause 1.5;input /equip main "Upukirex";pause 0.5;input /put "Gungnir" sack;')
-			add_to_chat(206, 'Upukirex Mode')
-			send_command('text pdtvariable text "Upukirex"')
-		end
-	end
+	end	
 	if command== "Olyndicus" then
 		if weapon=="Olyndicus" then
 			add_to_chat(206, 'Olyndicus already equiped, updating')

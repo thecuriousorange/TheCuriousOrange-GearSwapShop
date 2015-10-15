@@ -61,14 +61,14 @@ function get_sets()
 --variables
 
 --augmented gear
-	stpbody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','STR+10',}}
+	stpbody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','Crit. hit damage +3% ',}}
 	stphands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
 	stplegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
 	stpfeet={ name="Acro Leggings", augments={'Accuracy+17 Attack+17','"Store TP"+6','Crit. Hit Damage +3%',}}
 	
-	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','STR+7 VIT+7',}}
+	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','STR+10',}}
 	dahands={ name="Acro Gauntlets", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+2','STR+10',}}
-	dalegs={ name="Acro Breeches", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+2','STR+5 VIT+5',}}
+	dalegs={ name="Acro Breeches", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+3','STR+7',}}
 	dafeet={ name="Acro Leggings", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+2','STR+10',}}
 	
 	takaha={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}}
@@ -229,7 +229,7 @@ function get_sets()
 --tp sets
 	sets.aftercast.tp.multi={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Otomi Helm", body="Kasuga Domaru +1", hands=stphands, 
 	legs="Kasuga Haidate +1", feet=stpfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring", 
-	right_ear="Bladeborn Earring", left_ring="K'ayres Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}},}
+	right_ear="Bladeborn Earring", left_ring="Petrov Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}},}
 	
 	sets.aftercast.tp.acc= set_combine(sets.aftercast.tp.multi, {head="Yaoyotl Helm",})
 	
@@ -241,7 +241,7 @@ function get_sets()
     legs={ name="Otronif Brais +1", augments={'Phys. dmg. taken -3%','Crit.hit rate+1',}},
     feet={ name="Sak. Sune-Ate +1", augments={'Enhances "Meikyo Shisui" effect',}},
     neck="Asperity Necklace", waist="Goading Belt", left_ear="Tripudio Earring", right_ear="Brutal Earring",
-    left_ring="K'ayres Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}},}
+    left_ring="Petrov Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}},}
 	
 	sets.aftercast.tp.xhit= set_combine(sets.aftercast.tp.acc, {head="Sakonji Kabuto +1", body="Sakonji Domaru +1", left_ear="Tripudio Earring", right_ear="Brutal Earring",})
 	
@@ -257,7 +257,7 @@ function get_sets()
     legs={ name="Otronif Brais +1", augments={'Phys. dmg. taken -3%','Crit.hit rate+1',}},
     feet=stpfeet,
     neck="Asperity Necklace", waist="Goading Belt", left_ear="Tripudio Earring", right_ear="Brutal Earring",
-    left_ring="K'ayres Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}},}
+    left_ring="Petrov Ring", right_ring="Rajas Ring", back={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}},}
 	
 	sets.aftercast.o.xhit= set_combine(sets.aftercast.tp.xhit, {left_ring="Oneiros Ring",})
 	
@@ -286,11 +286,11 @@ function get_sets()
 --seigan/thirdeye sets
 
 --dt sets
-	sets.aftercast.pdt={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Otronif Mask +1", body="Mekira Meikogai", hands="Sakonji Kote +1", 
+	sets.aftercast.pdt={main="Tsurumaru", sub="Pole Grip", range="Cibitshavore", ammo="Tulfaire Arrow", head="Loess Barbuta +1", body="Mekira Meikogai", hands="Sakonji Kote +1", 
 	legs="Otronif Brais +1", feet="Amm Greaves", neck="Twilight Torque", waist="Flume Belt", right_ear="Sanare Earring",
 	left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
 	
-	sets.aftercast.mdt= set_combine(sets.aftercast.pdt, {left_ear="Etiolation Earring", left_ring="Shadow Ring",})
+	sets.aftercast.mdt= set_combine(sets.aftercast.pdt, {left_ear="Etiolation Earring", left_ring="Shadow Ring", back="Engulfer Cape +1",})
 --dt sets
 --
 --idle sets

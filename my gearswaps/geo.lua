@@ -20,7 +20,7 @@ function get_sets()
 	send_command('alias AM2 input /ma "Freeze II" <t>')
 	send_command('alias ra1 input /ma "Blizzara" <t>')
 	send_command('alias ra2 input /ma "Blizzara II" <t>')
-	send_command('alias idle gs equip sets.aftercast.idle.refresh')
+	send_command('alias idle gs equip sets.aftercast.idle.refreshkite')
 --aliases
 
 --boxes
@@ -149,7 +149,7 @@ function get_sets()
 	
 	sets.mindmelter={main="Mindmelter",}
 	
-	sets.midcast.indi=set_combine(sets.precast.geo, {main="Venabulum", head="Helios Band", body="Bagua Tunic", hands="Geo. Mitaines +1", legs="Bagua Pants", feet="Umbani Boots",
+	sets.midcast.indi=set_combine(sets.precast.geo, {main="Venabulum", head="Hike Khat", body="Bagua Tunic", hands="Geo. Mitaines +1", legs="Bagua Pants", feet="Umbani Boots",
 	left_ear="Gifted Earring", right_ear="Gwati Earring", waist="Austerity Belt",})
 	
 	sets.midcast.geo=set_combine(sets.precast.geo, {main="Venabulum", head="Helios Band", body="Bagua Tunic", hands="Geo. Mitaines +1", legs="Bagua Pants", feet="Umbani Boots",

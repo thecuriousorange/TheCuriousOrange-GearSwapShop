@@ -183,7 +183,7 @@ include('tco-include.lua')
 	hands={ name="Xaddi Gauntlets", augments={'Accuracy+15','"Store TP"+3','"Dbl.Atk."+2',}},
 	legs="Ares' Flanchard +1", neck="Asperity Necklace", waist="Windbuffet Belt +1",
 	feet={ name="Ejekamal Boots", augments={'Haste+2','"Snapshot"+2','STR+8',}},
-	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="K'ayres Ring", right_ring="Rajas Ring",
+	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Petrov Ring", right_ring="Rajas Ring",
     back={ name="Mauler's Mantle", augments={'DEX+3','STR+1','Accuracy+6','Crit. hit damage +1%',}},}
 	
 	sets.tp.medacc=set_combine(sets.tp.lowacc, {head="Yaoyotl Helm", waist="Anguinus Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",})

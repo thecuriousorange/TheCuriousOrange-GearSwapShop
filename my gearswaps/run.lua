@@ -103,7 +103,7 @@ function get_sets()
 	sets.enmity={ammo="Vanir Battery", head="Rabid Visor", hands="Nilas Gloves", feet="Erilaz Greaves +1", legs="Eri. Leg Guards +1",
 	body={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}},
 	neck="Warder's Charm", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
-	left_ring="Supershear Earring", right_ring="Eihwaz Ring", back="Fravashi Mantle",}
+	left_ring="Supershear Ring", right_ring="Eihwaz Ring", back="Fravashi Mantle",}
 	
 	sets.precast.ja["Vivacious Pulse"]=set_combine(sets.enmity, {head="Erilaz Galea",})
 	
@@ -270,7 +270,7 @@ function get_sets()
 	--tp sets
 	sets.aftercast.tp.lowacc={ammo="Vanir Battery", head="Skormoth Mask", body={ name="Rawhide Vest", augments={'HP+50','System: 2 ID: 182 Val: 6','System: 2 ID: 179 Val: 1',}},
     hands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}, neck="Defiant Collar",
-	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}, right_ring="Rajas Ring",
+	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}, right_ring="Petrov Ring",
     feet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}, back="Bleating Mantle",
 	waist="Windbuffet Belt +1", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Epona's Ring",}
 	
@@ -318,6 +318,7 @@ function get_sets()
 	sets.idle.pdt=sets.aftercast.pdt
 	
 	sets.idle.mdt=sets.aftercast.mdt
+	
 	--idle sets
 --aftercast sets
 end
@@ -518,7 +519,7 @@ function self_command(command)
 			add_to_chat(206,'REFRESH IDLE')
 			send_command('text wsvariable text "REFRESH IDLE"')
 			send_command('alias idle gs equip sets.idle.refresh')
-			status_change(player.status)
+			status_change(player.status)		
 		end
 	end	
 	--idle set commands

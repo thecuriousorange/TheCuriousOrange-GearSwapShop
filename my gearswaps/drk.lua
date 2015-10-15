@@ -260,7 +260,7 @@ function get_sets()
 	--tp sets
 	sets.aftercast.gs.multi={main="Tunglmyrkvi", sub="Pole Grip", ammo="Ginsen", head="Otomi Helm", body="Enif Corazza", hands="Ares' Gauntlets +1",
 	legs="Ares' Flanchard +1", feet="Ejekamal Boots", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="K'ayres Ring", 
+	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Petrov Ring", 
 	right_ring="Rajas Ring", back="Bleating Mantle",}
 	
 	sets.aftercast.gs.acc= set_combine(sets.aftercast.gs.multi, {head="Yaoyotl Helm",})
