@@ -45,7 +45,7 @@ function get_sets()
 --spell lists
 
 --augmented gear
-	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+12 Attack+12','"Triple Atk."+2','Crit. hit damage +1%',}}
+	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +3%',}}
 	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}}
 	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}
@@ -54,10 +54,7 @@ function get_sets()
 	heliosband={name="Helios Band", augments={'Mag. Acc. +15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+1%'}}
 	heliosgloves={ name="Helios Gloves", augments={'"Fast Cast"+5','Mag. Acc. +24','INT+5 MND+5',}}
 	heliosboots={ name="Helios Boots", augments={'"Mag. Atk. Bns. +25"','Magic Crit. Hit Rate +3','Mag. Crit. Hit Dmg. +10%',}}
-	
-	
-	claid1={ name="Claidheamh Soluis", augments={'Accuracy+9 Attack+9','"Dbl.Atk."+3','System: 1 ID: 354 Val: 1',}}
-	claid2={ name="Claidheamh Soluis", augments={'Accuracy+10','Dbl. Atk.+2','STR+15 DEX+15',}}
+			
 	gab1={ name="Gabaxorea", augments={'MP+30','"Mag. Atk. Bns."+10','INT+7',}}
 	gab2={ name="Gabaxorea", augments={'MP+30','"Mag. Atk. Bns."+10','INT+7',}}
 --augmented gear
@@ -96,12 +93,16 @@ function get_sets()
 --basesets
 
 --weaponry
-	sets.weaponry.index={'claids','gabax','claidgab'}
+	sets.weaponry.index={'ddacc','gabax','blueskillnuke','vampirism'}
 	weaponry_ind=1
 	
-	sets.weaponry.claids={main=claid1, sub=claid2,}
-	sets.weaponry.gabax={main=gab1, sub=gab2,}
-	sets.weaponry.claidgab={main=claid1, sub=gab2,}
+	sets.weaponry.ddacc={main={ name="Claidheamh Soluis", augments={'Accuracy+9 Attack+9','"Dbl.Atk."+3','DMG:+15',}},
+    sub={ name="Nibiru Blade", augments={'DEX+10','Accuracy+20','Mag. Acc.+15',}},}
+	
+	sets.weaponry.purenuke={main=gab1, sub=gab2,}
+	sets.weaponry.blueskillnuke={main="Iris", sub="Iris"}
+	sets.weaponry.vampirism={main={ name="Vampirism", augments={'STR+7','INT+9','DMG:+12',}},
+    sub={ name="Vampirism", augments={'STR+2','INT+2','DMG:+5',}},}
 --weaponry
 
 --precast sets
@@ -130,22 +131,22 @@ function get_sets()
 	
 	sets.ws.damage["Burning Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
 	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
-	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	ring1="Sangoma ring", ring2="Strendu Ring", back="Refraction Cape",waist="Caudata belt", 
 	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.accuracy["Burning Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
 	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
-	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	ring1="Sangoma ring", ring2="Strendu Ring", back="Refraction Cape",waist="Caudata belt", 
 	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.damage["Red Lotus Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
 	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
-	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	ring1="Sangoma ring", ring2="Strendu Ring", back="Refraction Cape",waist="Caudata belt", 
 	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.accuracy["Red Lotus Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
 	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
-	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	ring1="Sangoma ring", ring2="Strendu Ring", back="Refraction Cape",waist="Caudata belt", 
 	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.damage["Flat Blade"]={ammo="Mantoptera Eye", head="Despair Helm", neck="Asperity Necklace",
@@ -160,22 +161,22 @@ function get_sets()
 	
 	sets.ws.damage["Shining Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
 	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
-	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	ring1="Sangoma ring", ring2="Strendu Ring", back="Refraction Cape",waist="Caudata belt", 
 	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.accuracy["Shining Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
 	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
-	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	ring1="Sangoma ring", ring2="Strendu Ring", back="Refraction Cape",waist="Caudata belt", 
 	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.damage["Seraph Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
 	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
-	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	ring1="Sangoma ring", ring2="Strendu Ring", back="Refraction Cape",waist="Caudata belt", 
 	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.accuracy["Seraph Blade"]={ammo="Mavi Tathlum", head="Hagondes Hat +1", neck="Eddy necklace", 
 	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
-	ring1="Sangoma ring", ring2="Diamond ring", back="Refraction Cape",waist="Caudata belt", 
+	ring1="Sangoma ring", ring2="Strendu Ring", back="Refraction Cape",waist="Caudata belt", 
 	legs="Hagondes Pants +1",feet="Hagondes sabots +1"}
 	
 	sets.ws.damage["Circle Blade"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Asperity Necklace",
@@ -222,23 +223,23 @@ function get_sets()
 	
 	sets.ws.damage["Sanguine Blade"]={ammo="Mavi Tathlum", head="Helios Band", neck="Fotia Gorget", 
 	ear1="Hecate's earring", ear2="Friomisi earring", body="Count's Garb", hands="Hagondes Cuffs +1",
-	ring1="Archon ring", ring2="Diamond ring", back="Cornflower Cape",waist="Fotia Belt", 
+	ring1="Archon ring", ring2="Strendu Ring", back="Cornflower Cape",waist="Fotia Belt", 
 	legs="Hagondes Pants +1",feet="Hashi. Basmak +1"}
 	
 	sets.ws.accuracy["Sanguine Blade"]={ammo="Mavi Tathlum", head="Helios Band", neck="Fotia Gorget", 
 	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
-	ring1="Archon ring", ring2="Diamond ring", back="Cornflower Cape",waist="Fotia Belt", 
+	ring1="Archon ring", ring2="Strendu Ring", back="Cornflower Cape",waist="Fotia Belt", 
 	legs="Hagondes Pants +1",feet="Hashi. Basmak +1"}
 	
 	sets.ws.damage["Chant du Cygne"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Rawhide Vest", hands="Despair Fin. Gaunt.",
 	ring1="Epona's ring", ring2="Ramuh Ring", back="Rancorous mantle", waist="Fotia Belt",
-	legs="Samnuha Tights", feet="Despair Greaves"}
+	legs="Samnuha Tights", feet="Thereoid Greaves"}
 	
 	sets.ws.accuracy["Chant du Cygne"]={ammo="Mantoptera Eye", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Bladeborn Earring", ear2="Steelflash earring", body="Rawhide Vest",hands="Despair Fin. Gaunt.",
 	ring1="Rajas ring", ring2="Ramuh Ring", back="Rancorous mantle", waist="Fotia Belt",
-	legs="Samnuha Tights", feet="Despair Greaves"}
+	legs="Samnuha Tights", feet="Thereoid Greaves"}
 	
 	sets.ws.damage["Requiescat"]={ammo="Cheruski Needle", head="Despair Helm", neck="Fotia Gorget", ear1="Brutal Earring",
 	ear2="Moonshade earring", body="Rawhide Vest", hands="Despair Fin. Gaunt.", ring1="Epona's ring", ring2="Levia. Ring",
@@ -361,7 +362,7 @@ function get_sets()
 								  
 	sets.BlueMagic.ChargedWhisker = {ammo="Mavi Tathlum",
 			                 head="Uk'uxkaj cap",neck="Eddy necklace",ear1="Crematio earring",ear2="Friomisi earring",
-			                 body="Count's Garb",hands="Assim. Bazu. +1",ring1="Diamond ring",ring2="Rajas ring",
+			                 body="Count's Garb",hands="Assim. Bazu. +1",ring1="Ramuh ring",ring2="Rajas ring",
 				         back="Cornflower cape",waist="Aswang Sash",legs="Hagondes Pants +1",feet="Hashi. Basmak +1"} 
 	
 	sets.BlueMagic.WhiteWind = {ammo="Mavi Tathlum",

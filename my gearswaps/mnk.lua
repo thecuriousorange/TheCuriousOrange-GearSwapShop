@@ -47,7 +47,7 @@ function get_sets()
 -- macro selection
 
 --
-	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+12 Attack+12','"Triple Atk."+2','Crit. hit damage +1%',}}
+	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +3%',}}
 	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +3%',}}
 	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}
@@ -89,7 +89,7 @@ function get_sets()
 	sets.precast.ja['Hundred Fists']={legs="Hes. Hose +1",}
 	sets.precast.ja['Counterstance']={feet="Hes. Gaiters",}
 	sets.precast.ja['Formless Strikes']={body="Hes. Cyclas",}
-	sets.precast.ja['Impetus']={Body="Tantra Cyclas +2",}
+	sets.precast.ja['Impetus']={Body="Bhikku Cyclas",}
 	sets.precast.ja['Inner Strength']={}
 -- ja sets
 
@@ -110,7 +110,7 @@ function get_sets()
 	feet="Manibozho Boots",}
 	
 	sets.kicks={ammo="Honed Tathlum", head="Whirlpool Mask", neck="Fotia Gorget", left_ear="Steelflash Earring",
-	right_ear="Bladeborn Earring", body="Tantra Cyclas +2", hands="Hes. Gloves +1", left_ring="Ifrit Ring",
+	right_ear="Bladeborn Earring", body="Bhikku Cyclas", hands="Hes. Gloves +1", left_ring="Ifrit Ring",
 	right_ring="Rajas Ring", back="Bleating Mantle", waist="Fotia Belt", legs="Manibozho Brais", 
 	feet="Manibozho Brais",}
 	
@@ -142,11 +142,11 @@ function get_sets()
 -- ws sets
 
 -- impetus tp
-	sets.impetustp={head="Uk'uxkaj Cap", body="Tantra Cyclas +2",}
+	sets.impetustp={head="Uk'uxkaj Cap", body="Bhikku Cyclas",}
 -- impetus tp
 	
 -- sub nin stuff
-	sets.precast.nin={main={ name="Tinhaspa", augments={'Accuracy+15','DEX+12','DMG:+5',}}, ammo="Vanir Battery", hands="Thaumas Gloves",
+	sets.precast.nin={main="Denouements", ammo="Vanir Battery", hands="Thaumas Gloves",
 	head="Haruspex Hat", body=taeonbody,
 	legs={ name="Otronif Brais +1", augments={'Phys. dmg. taken -3%','Crit.hit rate+1',}}, neck="Magoraga Beads",
 	feet={ name="Otronif Boots +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','Crit.hit rate+1',}},
@@ -168,12 +168,12 @@ function get_sets()
 -- sub nin stuff
 
 -- tp sets	
-	sets.aftercast.tp.styleI={main={ name="Tinhaspa", augments={'Accuracy+15','DEX+12','DMG:+5',}}, ammo="Vanir Battery",
-	head=taeonhead, body="Thaumas Coat",
+	sets.aftercast.tp.styleI={main="Denouements", ammo="Focal Orb",
+	head="Skormoth Mask", body="Thaumas Coat",
 	hands=taeonhands,
-    legs=taeonlegs, waist="Windbuffet Belt +1",
+    legs="Samnuha Tights", waist="Windbuffet Belt +1",
     feet=taeonfeet, neck="Asperity Necklace",
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Epona's Ring", right_ring="Rajas Ring",
+	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Epona's Ring", right_ring="Petrov Ring",
 	back="Bleating Mantle",}
 	
 	--={ammo="Vanir Battery", head="Felistris Mask", neck="Asperity Necklace", left_ear="Bladeborn Earring", 
@@ -181,11 +181,11 @@ function get_sets()
 	--legs="Qaaxo Tights", feet="Soku. Sune-Ate", back="Bleating Mantle", left_ring="Epona's Ring", 
 	--right_ring="Rajas Ring",}
 	
-	sets.aftercast.tp.styleII= set_combine(sets.aftercast.tp.styleI, {ammo="Honed Tathlum", neck="Subtlety Spec.",})
+	sets.aftercast.tp.styleII= set_combine(sets.aftercast.tp.styleI, {body="Rawhide Vest",})
 	
-	sets.aftercast.tp.styleIII= set_combine(sets.aftercast.tp.styleII, {body="Qaaxo Harness", legs="Ighwa Trousers",})
+	sets.aftercast.tp.styleIII= set_combine(sets.aftercast.tp.styleII, {head=taeonhead, ammo="Honed Tathlum", neck="Subtlety Spec.", waist="Olseni Belt", back="Anchoret's Mantle", left_ear="Zennaroi Earring", right_ear="Cessance Earring",})
 	
-	sets.aftercast.tp.styleIV= set_combine(sets.aftercast.tp.styleIII, {head="Whirlpool Mask", legs="Manibozho Brais",})
+	sets.aftercast.tp.styleIV= set_combine(sets.aftercast.tp.styleIII, {left_ring="Mars's Ring", right_ring="Patricius Ring",})
 	
 	sets.aftercast.tp.styleV= set_combine(sets.aftercast.tp.styleIV, {body="Otro. Harness +1",})
 	

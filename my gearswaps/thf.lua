@@ -18,7 +18,7 @@ function get_sets()
 	send_command('bind #x gs equip sets.aftercast.defense.xdt')
 --keybinds
 
-	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+12 Attack+12','"Triple Atk."+2','Crit. hit damage +1%',}}
+	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +3%',}}
 	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +2%',}}
 	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+23','"Triple Atk."+2',}}

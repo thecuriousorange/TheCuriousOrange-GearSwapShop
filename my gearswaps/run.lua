@@ -105,7 +105,7 @@ function get_sets()
 	neck="Warder's Charm", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
 	left_ring="Supershear Ring", right_ring="Eihwaz Ring", back="Fravashi Mantle",}
 	
-	sets.precast.ja["Vivacious Pulse"]=set_combine(sets.enmity, {head="Erilaz Galea",})
+	sets.precast.ja["Vivacious Pulse"]=set_combine(sets.enmity, {head="Erilaz Galea +1",})
 	
 	sets.precast.ja["Valiance"]=set_combine(sets.enmity, {body="Rune. Bandeau +1",})
 	
@@ -257,7 +257,7 @@ function get_sets()
 	
 	sets.midcast.ma["Stoneskin"]= set_combine(sets.enhancing, {})
 	
-	sets.midcast.ma["Refresh"]= set_combine(sets.enhancing, {head="Erilaz Galea",})
+	sets.midcast.ma["Refresh"]= set_combine(sets.enhancing, {head="Erilaz Galea +1",})
 	
 	sets.midcast.ma["Foil"]= set_combine(sets.enhancing, {})
 	

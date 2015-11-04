@@ -28,7 +28,7 @@ function get_sets()
 	send_command('bind #h hybrid')
 	send_command('bind #t tp')
 	send_command('bind @r gs c rr')
-	send_command('bind @f9 gs c lowacc;alias hybrid gs equip sets.aftercast.hybrid.lowacc;alias tp gs equip sets.aftercast.tp.lowacc')
+	send_command('bind @f9 gs c lowacc')
 	send_command('bind @f10 gs c medacc;alias hybrid gs equip sets.aftercast.hybrid.medacc;alias tp gs equip sets.aftercast.tp.medacc')
 	send_command('bind @f11 gs c highacc;alias hybrid gs equip sets.aftercast.hybrid.highacc;alias tp gs equip sets.aftercast.tp.highacc')
 	send_command('bind @f12 gs c wsacctoggle')
@@ -209,7 +209,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.precast.cure= set_combine(sets.precast.fc, {left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},})
 	
-	sets.precast.ja= {ammo="Iron Gobbet", head="Cab. Coronet +1", body="Chev. Cuirass +1", hands=wsdmghands, 
+	sets.precast.ja= {ammo="Iron Gobbet", head=wsdmghead, body="Chev. Cuirass +1", hands=wsdmghands, 
 	legs=wsdmglegs, feet=wsdmgfeet, neck="Warder's Charm", waist="Creed Baudrier",
 	left_ear="Cryptic Earring", right_ear="Trux Earring", left_ring="Apeile Ring +1", right_ring="Eihwaz Ring",
     back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
@@ -217,7 +217,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	sets.precast.ja["Sentinel"]= set_combine(sets.precast.ja, {feet="Cab. Leggings +1"})
 	sets.precast.ja["Rampart"]= set_combine(sets.precast.ja, {head="Cab. Coronet +1"})
 	sets.precast.ja["Fealty"]= set_combine(sets.precast.ja, {body="Cab. Surcoat +1"})
-	sets.precast.ja["Chivalry"]= set_combine(sets.precast.ja, {head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Cab. Gauntlets +1", left_ring="Levia. Ring", right_ring="Levia. Ring", feet=dafeet,})
+	sets.precast.ja["Chivalry"]= set_combine(sets.precast.ja, {head=wsdmghead, body="Cab. Surcoat +1", hands="Cab. Gauntlets +1", left_ring="Levia. Ring", right_ring="Levia. Ring", feet=dafeet,})
 	sets.precast.ja["Shield Bash"]= set_combine(sets.precast.ja, {left_ear="Knightly Earring", hands="Cab. Gauntlets +1", left_ring="Fenian Ring",})
 	sets.precast.ja["Intervene"]= set_combine(sets.precast.ja, {hands="Cab. Gauntlets +1"})
 	sets.precast.ja["Invincible"]= set_combine(sets.precast.ja, {legs="Cab. Breeches +1"})
@@ -227,14 +227,14 @@ windower.prim.set_visibility('TCOhelp',false)
 	sets.precast.ja.cwaltz={ammo="Iron Gobbet", head={ name="Cab. Coronet +1", augments={'Enhances "Iron Will" effect',}},
 	body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}}, hands="Chev. Gauntlets +1", legs={ name="Cab. Breeches +1", augments={'Enhances "Invincible" effect',}},
 	feet="Rev. Leggings +1", neck="Twilight Torque", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
-	left_ring="Terrasoul Ring", right_ring="Terrasoul Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
+	left_ring="Vocane Ring", right_ring="Kunaji Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
 	
 	sets.precast.ws.CdC= {ammo="Jukukik Feather", head="Yaoyotl Helm", body="Mes. Haubergeon",
     hands="Chev. Gauntlets +1", legs=dalegs, feet=dafeet, neck="Fotia Gorget",
     waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
 	left_ring="Ramuh Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
-	sets.precast.ws.Req= {ammo="Ginsen", head="Yaoyotl Helm", body="Rav. Breastplate",
+	sets.precast.ws.Req= {ammo="Ginsen", head="Yaoyotl Helm", body=dabody,
     hands="Chev. Gauntlets +1", legs=dalegs, feet=dafeet, neck="Fotia Gorget",
     waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",
     left_ring="Levia. Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
@@ -299,9 +299,12 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.ws.acc["Swift Blade"]=set_combine(sets.ws.dmg["Swift Blade"], {legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
-	sets.ws.dmg["Savage Blade"]=set_combine(sets.precast.ws.VB, {neck="Fotia Gorget", waist="Fotia Belt", left_ring="Ifrit Ring",})
+	sets.ws.dmg["Savage Blade"]={ammo="Ginsen", head={ name="Despair Helm", augments={'STR+15','System: 2 ID: 120 Val: 6','"Store TP"+3',}}, neck="Fotia Gorget", waist="Fotia Belt",
+	body={ name="Despair Mail", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}}, hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
+    legs={ name="Despair Cuisses", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}}, feet={ name="Despair Greaves", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
+	left_ear="Zwazo Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
-	sets.ws.acc["Savage Blade"]=set_combine(sets.ws.dmg["Savage Blade"], {legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
+	sets.ws.acc["Savage Blade"]=set_combine(sets.ws.dmg["Savage Blade"], {legs=dalegs, back="Letalis Mantle", right_ear="Cessance Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Sanguine Blade"]=set_combine(sets.precast.ws.magicws, {left_ring="Archon Ring",})
 	
@@ -318,7 +321,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.ws.acc["Atonement"]=sets.precast.ws.Atonement
 	
-	sets.ws.dmg["Requiescat"]={ammo="Ginsen", head="Otomi Helm", body="Rav. Breastplate",
+	sets.ws.dmg["Requiescat"]={ammo="Ginsen", head="Otomi Helm", body=dabody,
     hands="Chev. Gauntlets +1", legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},
 	feet=dafeet, neck="Fotia Gorget", waist="Fotia Belt", left_ear="Steelflash Earring", 
 	right_ear="Bladeborn Earring", left_ring="Levia. Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
@@ -328,7 +331,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	--Club WS
 	
-	sets.ws.dmg["Shining Strike"]=sets.precast.ws.magicws
+	--[[sets.ws.dmg["Shining Strike"]=sets.precast.ws.magicws
 	
 	sets.ws.acc["Shining Strike"]=sets.precast.ws.magicws
 	
@@ -445,22 +448,24 @@ windower.prim.set_visibility('TCOhelp',false)
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.acc["Resolution"]=set_combine(sets.ws.dmg["Resolution"], {head="Yaoyotl Helm", legs=dalegs, back="Letalis Mantle", left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
-	--Great Sword WS
+	--Great Sword WS]]--
 -- ws sets
 
 -- midcast sets	
 	sets.midcast.cure= {ammo="Iron Gobbet", head=curehead, body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}}, 
-	hands="Macabre Gaunt. +1", legs=curelegs, feet=curefeet, neck="Phalaina Locket", waist="Goading Belt",
+	hands="Macabre Gaunt. +1", legs=curelegs, feet="Souveran Schuhs", neck="Phalaina Locket", waist="Goading Belt",
     left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", left_ring="Apeile Ring +1", right_ring="Eihwaz Ring",
     back="Fierabras's Mantle",}
 	
-	sets.midcast.selfcure= set_combine(sets.midcast.cure, {ammo="Iron Gobbet", head="Shabti Armet", --body="Chev. Cuirass +1",
-	left_ring="Vocane Ring", right_ring="Kunaji Ring",})
+	sets.midcast.selfcure= set_combine(sets.midcast.cure, {ammo="Iron Gobbet", head={ name="Souveran Schaller", augments={'HP+80','VIT+10','Phys. dmg. taken -3',}},
+	left_ring="Kunaji Ring", legs="Souveran Diechlings",})
 	
-	sets.midcast.flash= {ammo="Incantor Stone", head="Cizin Helm +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
-    legs="Rev. Breeches +1", feet="Chev. Sabatons +1", neck="Warder's Charm", waist="Goading Belt",
+	sets.midcast.flash= {ammo="Incantor Stone", head="Cizin Helm +1", body="Cab. Surcoat +1", hands=wsdmghands,
+    legs=wsdmglegs, feet=wsdmgfeet, neck="Warder's Charm", waist="Goading Belt",
     left_ear="Loquac. Earring", right_ear="Cryptic Earring", left_ring="Apeile Ring +1", right_ring="Eihwaz Ring",
     back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
+	
+	sets.midcast.DEflash=set_combine(sets.midcast.flash, {feet="Chev. Sabatons +1",})
 	
 	sets.midcast.utsu= set_combine(sets.midcast.flash, {back="Boxer's Mantle", feet="Rev. Leggings +1",})
 	
@@ -468,9 +473,17 @@ windower.prim.set_visibility('TCOhelp',false)
 	body="Rev. Surcoat +1", hands="Eschite Gauntlets", legs=wsdmglegs, feet="Chev. Sabatons +1", neck="Warder's Charm", waist="Goading Belt", 
 	left_ear="Etiolation Earring", right_ear="Loquac. Earring", left_ring="Globidonta Ring", right_ring="Defending Ring", back="Boxer's Mantle",}
 	
-	sets.midcast.enhancing= {ammo="Incantor Stone", head=curehead, body="Shab. Cuirass +1", hands="Souv. Handschuhs",
-    legs=curelegs, feet=curefeet, neck="Colossus's Torque", waist="Olympus Sash", right_ear="Augment. Earring",
+	sets.midcast.enhancing= {ammo="Incantor Stone", head=curehead, body="Shab. Cuirass +1", hands={ name="Souv. Handschuhs", augments={'HP+50','Shield skill +10','Phys. dmg. taken -3',}},
+    legs=curelegs, feet="Souveran Schuhs", neck="Colossus's Torque", waist="Olympus Sash", right_ear="Augment. Earring",
     left_ear="Andoaa Earring", left_ring="Portus Annulet", right_ring="Defending Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
+	
+	sets.midcast["Phalanx"]={ammo="Incantor Stone", head=curehead, body="Shab. Cuirass +1", hands={ name="Souv. Handschuhs", augments={'HP+50','Shield skill +10','Phys. dmg. taken -3',}},
+    legs=curelegs, feet="Souveran Schuhs", neck="Colossus's Torque", waist="Olympus Sash", right_ear="Augment. Earring",
+    left_ear="Andoaa Earring", left_ring="Portus Annulet", right_ring="Defending Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
+	
+	sets.midcast["Reprisal"]={ammo="Iron Gobbet", head="Chev. Armet +1", body="Shab. Cuirass +1", legs="Souveran Diechlings", neck="Warder's Charm",
+	hands={ name="Souv. Handschuhs", augments={'HP+50','Shield skill +10','Phys. dmg. taken -3',}}, waist="Creed Baudrier", left_ear="Cryptic Earring",
+	feet="Souveran Schuhs", right_ear="Etiolation Earring", left_ring="Kunaji Ring", right_ring="Eihwaz Ring", back="Fierabras's Mantle",}
 	
 	sets.midcast.proshell= set_combine(sets.midcast.enhancing, {right_ring="Sheltered Ring"})
 -- midcast sets
@@ -481,23 +494,23 @@ windower.prim.set_visibility('TCOhelp',false)
 	body=stpbody, right_ring="Rajas Ring", hands=stphands, right_ear="Brutal Earring",
 	legs=stplegs, feet=stpfeet, left_ring="Petrov Ring",}
 	
-	sets.aftercast.aftermath.medacc=set_combine(sets.aftercast.aftermath.lowacc, {waist="Anguinus Belt", back="Letalis Mantle"})
+	sets.aftercast.aftermath.medacc=set_combine(sets.aftercast.aftermath.lowacc, {neck="Subtlety Spec.", back="Letalis Mantle"})
 	
-	sets.aftercast.aftermath.highacc=set_combine(sets.aftercast.aftermath.medacc, {right_ear="Zennaroi Earring", neck="Subtlety Spec.", waist="Olseni Belt", back="Letalis Mantle"})
+	sets.aftercast.aftermath.highacc=set_combine(sets.aftercast.aftermath.medacc, {right_ear="Zennaroi Earring", waist="Olseni Belt", back="Letalis Mantle"})
 	
 	sets.aftercast.sword.lowacc= {ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}},
-	body=dabody, legs=dalegs, hands="Eschite Gauntlets", waist="Windbuffet Belt +1", feet=dafeet, neck="Asperity Necklace", 
-	left_ring="Petrov Ring", left_ear="Trux Earring", right_ear="Brutal Earring", right_ring="Rajas Ring", back="Bleating Mantle",}
+	body=dabody, legs=dalegs, hands=dahands, waist="Windbuffet Belt +1", feet=dafeet, neck="Asperity Necklace", 
+	left_ring="Petrov Ring", left_ear="Cessance Earring", right_ear="Brutal Earring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
 	sets.aftercast.sword.medacc= {ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, 
-	legs=dalegs, body="Rav. Breastplate", hands="Eschite Gauntlets", feet=dafeet, neck="Subtlety Spec.", waist="Windbuffet Belt +1", 
+	legs=dalegs, body=dabody, hands=dahands, feet=dafeet, neck="Subtlety Spec.", waist="Windbuffet Belt +1", 
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Patricius Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 		
 	sets.aftercast.sword.highacc= {ammo="Ginsen", head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, 
-	body="Mes. Haubergeon", hands="Eschite Gauntlets", legs=dalegs, left_ear="Zennaroi Earring", feet=dafeet, neck="Subtlety Spec.",
-	waist="Anguinus Belt", right_ear="Brutal Earring", left_ring="Patricius Ring", right_ring="Mars's Ring", back="Letalis Mantle",}
+	body="Mes. Haubergeon", hands=dahands, legs=dalegs, left_ear="Zennaroi Earring", feet=dafeet, neck="Subtlety Spec.",
+	waist="Olseni Belt", right_ear="Brutal Earring", left_ring="Patricius Ring", right_ring="Mars's Ring", back="Letalis Mantle",}
 
-	sets.aftercast.hybrid= {ammo="Hasty Pinion +1", head="Rev. Coronet +1", body="Cab. Surcoat +1", 
+	--[[sets.aftercast.hybrid= {ammo="Hasty Pinion +1", head="Rev. Coronet +1", body="Cab. Surcoat +1", 
 	hands="Chev. Gauntlets +1", legs="Chev. Cuisses +1", feet="Rev. Leggings +1",}
 	
 	sets.aftercast.hybrid.lowacc= set_combine(sets.aftercast.hybrid, {neck="Twilight Torque", waist="Nierenschutz",
@@ -507,8 +520,8 @@ windower.prim.set_visibility('TCOhelp',false)
 	sets.aftercast.hybrid.medacc= set_combine(sets.aftercast.hybrid.lowacc, {left_ring="Patricius Ring", 
 	right_ring="Rajas Ring",})
 	
-	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {head="Ighwa Cap", neck="Subtlety Spec.", 
-	waist="Anguinus Belt",back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},})
+	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {head=dthead, neck="Subtlety Spec.", 
+	waist="Anguinus Belt",back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},})]]--
 	
 	sets.aftercast.absorbmode={head="Chev. Armet +1", body="Chev. Cuirass +1", hands="Chev. Gauntlets +1", legs="Chev. Cuisses +1", 
 	feet="Chev. Sabatons +1", left_ear="Ethereal Earring", right_ear="Brutal Earring", neck="Warder's Charm",}
@@ -520,7 +533,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.aftercast.absorbmode.highacc=set_combine(sets.aftercast.absorbmode.medacc, {ammo="Ginsen", neck="Subtlety Spec.", waist="Olseni Belt", back="Letalis Mantle", right_ring="Mars's Ring",})
 	
-	sets.aftercast.pdtengaged= {ammo="Hasty Pinion +1", head="Ighwa Cap", body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}},
+	sets.aftercast.pdtengaged= {ammo="Hasty Pinion +1", head=dthead, body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}},
 	hands="Umuthi Gloves", legs=dtlegs, feet={ name="Xaddi Boots", augments={'HP+45','Accuracy+15','Phys. dmg. taken -3',}},
 	neck="Twilight Torque", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Zennaroi Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
@@ -531,32 +544,33 @@ windower.prim.set_visibility('TCOhelp',false)
 	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring", right_ring="Defending Ring",
 	back="Mollusca Mantle",}
 	
-	sets.aftercast.mdt= {ammo="Vanir Battery", head="Rev. Coronet +1", body="Cab. Surcoat +1", hands="Rev. Gauntlets +1",
-	legs="Chev. Cuisses +1", feet="Cab. Leggings +1", neck="Twilight Torque", waist="Creed Baudrier",
-	left_ring="Shadow Ring", left_ear="Ethereal Earring", right_ear="Sanare Earring", right_ring="Defending Ring",
-	back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
+	sets.aftercast.mdt= {ammo="Vanir Battery", head={ name="Yorium Barbuta", augments={'Accuracy+15 Attack+15','"Dbl.Atk."+2','Damage taken-3%',}},
+    body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}}, feet={ name="Cab. Leggings +1", augments={'Enhances "Guardian" effect',}},
+	hands={ name="Souv. Handschuhs", augments={'HP+50','Shield skill +10','Phys. dmg. taken -3',}}, waist="Nierenschutz", left_ear="Etiolation Earring",
+	legs={ name="Souveran Diechlings", augments={'HP+80','System: 2 ID: 120 Val: 6','System: 2 ID: 127 Val: 9',}}, neck="Twilight Torque",
+	right_ear="Sanare Earring", left_ring="Shadow Ring", right_ring="Defending Ring", back="Engulfer Cape +1",}
 	
 	sets.aftercast.mdtengaged=sets.aftercast.mdt
 	
 	sets.aftercast.mdtshellvengaged={ammo="Vanir Battery", head={ name="Souveran Schaller", augments={'HP+80','VIT+10','Phys. dmg. taken -3',}}, body="Chev. Cuirass +1",
-	hands="Rev. Gauntlets +1", legs="Chev. Cuisses +1", feet={ name="Cab. Leggings +1", augments={'Enhances "Guardian" effect',}},
+	hands={ name="Souv. Handschuhs", augments={'HP+50','Shield skill +10','Phys. dmg. taken -3',}}, legs="Chev. Cuisses +1", feet={ name="Cab. Leggings +1", augments={'Enhances "Guardian" effect',}},
 	neck="Twilight Torque", waist="Creed Baudrier", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring",
 	right_ring="Defending Ring", back="Engulfer Cape +1",}
 	
 	sets.aftercast.mdtshellv={ammo="Vanir Battery", head={ name="Souveran Schaller", augments={'HP+80','VIT+10','Phys. dmg. taken -3',}}, body="Chev. Cuirass +1",
-	hands="Rev. Gauntlets +1", legs="Chev. Cuisses +1", feet={ name="Cab. Leggings +1", augments={'Enhances "Guardian" effect',}},
+	hands={ name="Souv. Handschuhs", augments={'HP+50','Shield skill +10','Phys. dmg. taken -3',}}, legs="Chev. Cuisses +1", feet={ name="Cab. Leggings +1", augments={'Enhances "Guardian" effect',}},
 	neck="Twilight Torque", waist="Creed Baudrier", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring",
 	right_ring="Defending Ring", back="Engulfer Cape +1",}
 	
-	sets.aftercast.dt={ammo="Hasty Pinion +1", head="Loess Barbuta +1", body="Chev. Cuirass +1", hands=dthands,
-	legs=dtlegs, feet=dtfeet, neck="Twilight Torque", waist="Nierenschutz", left_ear="Ethereal Earring",
+	sets.aftercast.dt={ammo="Vanir Battery", head=dthead, body="Cab. Surcoat +1", hands=dthands,
+	legs=dtlegs, feet="Amm Greaves", neck="Twilight Torque", waist="Nierenschutz", left_ear="Ethereal Earring",
 	right_ear="Zennaroi Earring", left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
 	
-	sets.aftercast.dtengaged=set_combine(sets.aftercast.dt,{head=dthead, body="Cab. Surcoat +1",})
+	sets.aftercast.dtengaged=set_combine(sets.aftercast.dt,{ammo="Hasty Pinion +1",})
 	
-	sets.aftercast.idle= {ammo="Vanir Battery", head="Baghere Salade", body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}}, hands=dthands,
-    legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet=dtfeet, neck="Creed Collar", waist="Nierenschutz",
-    left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", right_ring="Sheltered Ring",
+	sets.aftercast.idle= {ammo="Homiliary", head="Baghere Salade", body="Ares' Cuirass +1", hands=dthands,
+    legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Amm Greaves", neck="Coatl Gorget +1", waist="Nierenschutz",
+    left_ear="Ethereal Earring", right_ear="Infused Earring", left_ring="Paguroidea Ring", right_ring="Sheltered Ring",
     back="Shadow Mantle",}
 	
 	sets.aftercast.refresh= set_combine(sets.aftercast.idle, {head="Wivre Hairpin", waist="Fucho-No-Obi",})
@@ -623,12 +637,18 @@ function midcast(spell)
 	elseif spell.skill== 'Divine Magic' then
 		if spell.english== 'Enlight' or spell.english=='Enlight II' then		
 			equip(sets.midcast.enlight)			
-		else
-			equip(sets.midcast.flash)
+		elseif not spell.english== 'Enlight' and not spell.english=='Enlight II' then
+			if buffactive["Divine Emblem"] then
+				equip(sets.midcast.DEflash)
+			else
+				equip(sets.midcast.flash)
+			end
 		end
 	elseif spell.skill== 'Enhancing Magic' then
 		if spell.english:find('Pro') or spell.english:find('Shel') then
-			equip(sets.midcast.proshell)			
+			equip(sets.midcast.proshell)
+		elseif spell.english=="Phalanx" or spell.english=="Reprisal" then
+			equip(sets.midcast[spell.english])
 		else
 			equip(sets.midcast.enhancing)			
 		end
@@ -685,9 +705,9 @@ function status_change(new,old)
 		elseif TPSet=="pdt" then
 			equip(sets.aftercast.pdtengaged)
 		elseif TPSet=="mdt" then
-			if buffactive["Shell V"] then
+			if buffactive["Shell"] then
 				equip(sets.aftercast.mdtshellvengaged)
-			elseif not buffactive["Shell V"] then
+			elseif not buffactive["Shell"] then
 				equip(sets.aftercast.mdtengaged)
 			end
 		elseif TPSet=="dt" then
@@ -695,9 +715,9 @@ function status_change(new,old)
 		end		
 	elseif new~="engaged" then
 		if IdleMode=="mdt" then
-			if buffactive["Shell V"] then
+			if buffactive["Shell"] then
 				equip(sets.aftercast.mdtshellv)
-			elseif not buffactive["Shell V"] then
+			elseif not buffactive["Shell"] then
 				equip(sets.aftercast.mdt)
 			end
 		else
@@ -747,11 +767,11 @@ function self_command(command)
 		send_command('alias tp gs equip sets.aftercast.sword.lowacc')
 		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/lowacc.png')
 		windower.prim.set_size('ACC_SET',200,30)
-		if TPSet=="hybrid" then
+		--[[if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.aftercast.hybrid.lowacc')
-		elseif TPSet=="absorb" then
+		elseif TPSet=="absorb" then ]]--
 			send_command('alias hybrid gs equip sets.aftercast.absorbmode.lowacc')
-		end
+		--end
 	elseif command == 'medacc' then
 		Acc="medacc"
 		add_to_chat(206, 'Medium Accuracy Mode')
@@ -759,11 +779,11 @@ function self_command(command)
 		send_command('alias tp gs equip sets.aftercast.sword.medacc')
 		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/medacc.png')
 		windower.prim.set_size('ACC_SET',200,30)
-		if TPSet=="hybrid" then
+		--[[if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.aftercast.hybrid.medacc')
-		elseif TPSet=="absorb" then
+		elseif TPSet=="absorb" then]]--
 			send_command('alias hybrid gs equip sets.aftercast.absorbmode.medacc')
-		end
+		--end
 	elseif command == 'highacc' then
 		Acc="highacc"
 		add_to_chat(206, 'High Accuracy Mode')
@@ -771,11 +791,11 @@ function self_command(command)
 		send_command('alias tp gs equip sets.aftercast.sword.highacc')
 		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/highacc.png')
 		windower.prim.set_size('ACC_SET',200,30)
-		if TPSet=="hybrid" then
+		--[[if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.aftercast.hybrid.highacc')
-		elseif TPSet=="absorb" then
+		elseif TPSet=="absorb" then]]--
 			send_command('alias hybrid gs equip sets.aftercast.absorbmode.highacc')
-		end
+		--end
 	end
 	-- accuracy variable commands rule end
 	
@@ -787,9 +807,16 @@ function self_command(command)
 		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/ddmode.png')
 		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/ddmode.wav')
 		windower.prim.set_size('TP_SET',200,30)
+		if Acc=="lowacc" then
+			send_command('alias tp gs equip sets.aftercast.tp.lowacc')
+		elseif Acc=="medacc" then
+			send_command('alias tp gs equip sets.aftercast.tp.medacc')
+		elseif Acc=="highacc" then
+			send_command('alias tp gs equip sets.aftercast.tp.medacc')
+		end
 	end
 	if command == 'hybrid' then
-		if TPSet~= "hybrid" then
+		--[[if TPSet~= "hybrid" then
 			TPSet="hybrid"
 			add_to_chat(206, 'HYBRID MODE')
 			--send_command('text tpvariable text "Hybrid MODE"')
@@ -802,7 +829,7 @@ function self_command(command)
 			end
 			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/hybridmode.png')
 			windower.prim.set_size('TP_SET',200,30)
-		else
+		else]]--
 			TPSet="absorb"
 			add_to_chat(206, 'ABSORB MODE')
 			--send_command('text tpvariable text "Absorb MODE"')
@@ -815,7 +842,7 @@ function self_command(command)
 			end
 			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/absorbmode.png')
 			windower.prim.set_size('TP_SET',200,30)
-		end
+		--end
 	end
 	if command == 'pdt' then
 		TPSet="pdt"
@@ -951,19 +978,19 @@ function self_command(command)
 		end
 	end
 	if command=='mdtset' then
-		if buffactive["Shell V"] then
-			if player.status=="Idle" then
-				equip(sets.aftercast.mdtshellv)
-				windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
-			elseif player.status=="Engaged" then
+		if buffactive["Shell"] then
+			if player.status=="Engaged" then
 				equip(sets.aftercast.mdtshellvengaged)
 				windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+			else
+				equip(sets.aftercast.mdtshellv)
+				windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 			end
-		elseif not buffactive["Shell V"] then
+		elseif not buffactive["Shell"] then
 			if player.status=="Engaged" then
 				equip(sets.aftercast.mdtengaged)
 				windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
-			elseif player.status=="idle" then
+			else
 				equip(sets.aftercast.mdt)
 				windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
 			end

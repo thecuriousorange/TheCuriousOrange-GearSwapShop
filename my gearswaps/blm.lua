@@ -57,6 +57,8 @@ function get_sets()
 	send_command('bind #f4 gs c fire')
 	send_command('bind #f5 gs c wind')
 	send_command('bind #f6 gs c thunder')
+	send_command('bind #a input /ma "Breakga" <t>')
+	send_command('bind @p input /ma "Break" <t>')
 	send_command('bind !- input /ma "Aspir II" <t>')
 	send_command('bind != VI')
 	send_command('bind @- input /ma "Aspir III" <t>')
@@ -90,7 +92,7 @@ function get_sets()
 	"Stone V", "Stone VI", "Stonega", "Stonega II", "Stonega III", "Stoneja", "Quake", "Quake II", "Geohelix", "Stonera", 
 	"Stonera II", "Aero", "Aero II", "Aero III", "Aero IV", "Aero V", "Aero VI", "Aeroga", "Aeroga II", "Aeroga III", 
 	"Aeroja", "Tornado", "Tornado II", "Anemohelix", "Aera", "Aera II", "Banish", "Banish II", 
-	"Banishga", "Banishga II", "Banish III", "Holy", "Holy II", "Luminohelix",}
+	"Banishga", "Banishga II", "Banish III", "Holy", "Holy II", "Luminohelix","Death",}
 	
 	LowTierNukes= S{"Fire", "Fire II", "Firaga", "Firaga II", "Blizzard", "Flare", "Blizzard II", "Blizzaga", "Blizzaga II",
 	"Freeze", "Water", "Water II", "Waterga", "Waterga II", "Flood", "Thunder", "Thunder II", "Thundaga", "Thundaga II",
@@ -102,7 +104,7 @@ function get_sets()
 	
 	HighTierNukes= S{"Flare II", "Fire V", "Fire VI", "Pyrohelix", "Freeze II", "Blizzard V", "Blizzard VI", "Cryohelix", 
 	"Flood II", "Water V", "Water VI", "Hydrohelix", "Burst II", "Thunder V", "Thunder VI", "Ionohelix", "Quake II", "Stone V", 
-	"Stone VI", "Geohelix", "Tornado II", "Aero V", "Aero VI", "Amenohelix", "Luminohelix",}
+	"Stone VI", "Geohelix", "Tornado II", "Aero V", "Aero VI", "Amenohelix", "Luminohelix","Death",}
 	
 	JaNukes= S{"Firaja", "Blizzaja", "Waterja", "Thundaja", "Aeroja", "Stoneja",}
 	
@@ -137,7 +139,7 @@ function get_sets()
 --precast sets
 	sets.precast.nuke={head="Wicce Petasos +1", body="Anhur Robe", hands="Helios Gloves", feet="Chelona Boots",
 	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
-	neck="Stoicheion Medal", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
+	neck="Stoicheion Medal", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Barkaro. Earring",
 	left_ring="Prolix Ring", back="Swith Cape",}
 	
 	sets.precast.impact={body="Twilight Cloak", hands="Helios Gloves", feet="Chelona Boots",
@@ -208,7 +210,7 @@ function get_sets()
 	
 	sets.midcast.nuke.dmg.hightier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum +1", head="Helios Band", body="Count's Garb",
 	hands="Wicce Gloves +1", legs="Hagondes Pants +1", feet="Helios Boots", neck="Eddy Necklace", waist="Othila Sash", 
-	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
+	left_ear="Barkaro. Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
     back="Toro Cape",}
 	
 	sets.midcast.nuke.dmg.jaspell=set_combine(sets.midcast.nuke.dmg.hightier, {legs="Wicce Chausses +1"})
@@ -344,7 +346,7 @@ function midcast(spell)
 		elseif Buffs:contains(spell.english) then
 			equip(sets.midcast.enh)
 		elseif spell.english=="Meteor" then
-			equip(sets.midcast.nuke.acc.hightier)
+			equip(sets.midcast.nuke.dmg.hightier)
 		elseif spell.english=="Impact" then
 			equip(sets.midcast.nuke.impact)
 		end
@@ -352,6 +354,9 @@ function midcast(spell)
 	--[[if spell.skill== 'Elemental Magic' and buffactive["Poison"] then
 		equip(sets.mindmelter)
 	end]]--
+	if spell.english=="Death" then
+		equip(sets.midcast.nuke.dmg.hightier)
+	end
 end
 
 function aftercast(spell)
