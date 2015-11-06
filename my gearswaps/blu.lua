@@ -93,7 +93,7 @@ function get_sets()
 --basesets
 
 --weaponry
-	sets.weaponry.index={'ddacc','gabax','blueskillnuke','vampirism'}
+	sets.weaponry.index={'ddacc','purenuke','blueskillnuke','vampirism'}
 	weaponry_ind=1
 	
 	sets.weaponry.ddacc={main={ name="Claidheamh Soluis", augments={'Accuracy+9 Attack+9','"Dbl.Atk."+3','DMG:+15',}},
