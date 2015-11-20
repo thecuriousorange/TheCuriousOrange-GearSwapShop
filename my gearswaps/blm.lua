@@ -63,6 +63,7 @@ function get_sets()
 	send_command('bind != VI')
 	send_command('bind @- input /ma "Aspir III" <t>')
 	send_command('bind @= I')
+	send_command('bind @f1 gs c MB_MODE')
 	send_command('bind @f10 gs c magic_mode')
 	send_command('bind @f11 gs c mm')
 	send_command('bind @f12 gs c mpe')
@@ -75,7 +76,9 @@ function get_sets()
 	mpe="off"
 	mm="off"
 	magic_mode="dmg"
+	MB="off"
 	
+	sets.MB=T{}
 	sets.mm=T{}
 	sets.mpe=T{}
 	sets.nuke_element= T{}
@@ -163,15 +166,15 @@ function get_sets()
 --midcast sets
 	sets.mpeset={body="Spae. Coat +1",}
 	
-	sets.mindmelter={main="Mindmelter",}
+	sets.magicburst={head="helios band", hands="helios gloves", feet="Helios Boots",}
 	
 	sets.midcast.eledot={main="Marin Staff", sub="Elementa Grip", ammo="Witchstone", head="Wicce Petasos +1", 
-	body="Vanir Cotehardie", hands="Hagondes Cuffs +1", legs="Bokwus Slops", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	body="Vanir Cotehardie", hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	neck="Eddy Necklace", waist="Aswang Sash", left_ear="Strophadic Earring", right_ear="Gwati Earring",
 	left_ring="Sangoma Ring", right_ring="Strendu Ring", back="Bane Cape",}
 	
 	sets.midcast.darkdot={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Nahtirah Hat", body="Vanir Cotehardie",
-	hands="Hagondes Cuffs +1", legs="Bokwus Slops", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Aswang Sash",
+	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Aswang Sash",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Archon Ring",
 	back="Bane Cape",}
 	
@@ -181,12 +184,12 @@ function get_sets()
 	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Globidonta Ring", back="Bane Cape",}
 	
 	sets.midcast.mndenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", ammo="Witchstone", body="Vanir Cotehardie",
-	hands="Lurid Mitts", legs="Bokwus Slops", head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace",
+	hands="Lurid Mitts", legs="Artsieq Hose", head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace",
 	waist="Rumination Sash", left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Levia. Ring",
 	back="Bane Cape",}
 	
 	sets.midcast.doa={main="Marin Staff", sub="Caecus Grip", ammo="Witchstone", head="Appetence Crown", body="Vanir Cotehardie",
-	hands="Hagondes Cuffs +1", legs="Bokwus Slops", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", 
+	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", 
 	left_ear="Gwati Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
 	back="Bane Cape",}
 	
@@ -195,14 +198,14 @@ function get_sets()
 	sets.midcast.nuke.acc={}
 	
 	sets.midcast.nuke.dmg.lowtier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum +1", body="Count's Garb",
-	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+1%',}},
+	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+6%',}},
 	legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
 	feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", left_ear="Crematio Earring", right_ear="Friomisi Earring",
 	right_ring="Strendu Ring", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},
 	left_ring="Sangoma Ring", hands="Otomi Gloves",}
 	
 	sets.midcast.nuke.dmg.midtier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum +1", body="Count's Garb",
-	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+1%',}},
+	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+6%',}},
 	legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
 	feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", left_ear="Crematio Earring", right_ear="Friomisi Earring",
 	right_ring="Strendu Ring", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},
@@ -256,7 +259,7 @@ function get_sets()
 end
 
 function precast(spell)
-	if spell.prefix=="/magic" or "Ninjutsu" then
+	if spell.prefix=="/magic" or spell.prefix=="Ninjutsu" then
 		if Nukes:contains(spell.english) then
 			equip(sets.precast.nuke)
 		elseif Dark_Nukes:contains(spell.english) then
@@ -296,6 +299,9 @@ function midcast(spell)
 			end
 			if mpe=="on" then
 				equip(sets.mpeset)
+			end
+			if MB=="on" then
+				equip(sets.magicburst)
 			end
 		elseif Elemental_DoT:contains(spell.english) then
 			equip(sets.midcast.eledot)
@@ -505,6 +511,15 @@ function self_command(command)
 			add_to_chat(206, 'MP ECONOMY OFF')
 			--send_command('text idlevariable text "MPE-OFF"')
 			windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/mpeoff.png')
+		end
+	end
+	if command=="MB_MODE" then
+		if MB=="on" then
+			MB="off"
+			add_to_chat(206,'MAGIC BURST MODE OFF')
+		else
+			MB="on"
+			add_to_chat(206,'MAGIC BURST MODE ON')
 		end
 	end
 	if command=='primfix' then

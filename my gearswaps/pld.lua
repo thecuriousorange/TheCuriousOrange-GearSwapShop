@@ -37,8 +37,8 @@ function get_sets()
 	send_command('bind #i invincible')
 	send_command('bind #6 phalanx')
 	send_command('bind #5 input /ma "Enlight II" <me>')
-	send_command('bind @3 input /item "Remedy" <me>')
-	send_command('bind #1 input /item "Holy Water" <me>')
+	send_command('bind @3 input /raw /item "Remedy" <me>')
+	send_command('bind #1 input /raw /item "Holy Water" <me>')
 	send_command('bind @1 cmd9')
 	send_command('bind @2 cmd10')
 	send_command('bind #c crusade')
@@ -311,7 +311,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	sets.ws.acc["Sanguine Blade"]=set_combine(sets.precast.ws.magicws, {left_ring="Archon Ring",})
 	
 	sets.ws.dmg["Chant du Cygne"]={ammo="Jukukik Feather", head="Gavialis Helm", body="Mes. Haubergeon",
-    hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet, neck="Fotia Gorget",
+    hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet="Thereoid Greaves", neck="Fotia Gorget",
     waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
 	left_ring="Ramuh Ring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
@@ -539,7 +539,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	right_ring="Defending Ring", back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},}
 	
 	sets.aftercast.pdt={ammo="Iron Gobbet", head={ name="Souveran Schaller", augments={'HP+80','VIT+10','Phys. dmg. taken -3',}},
-	body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}}, legs="Chev. Cuisses +1", feet="Rev. Leggings +1",
+	body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}}, legs="Chev. Cuisses +1", feet="Souveran Schuhs",
 	hands={ name="Souv. Handschuhs", augments={'HP+50','Shield skill +10','Phys. dmg. taken -3',}}, neck="Twilight Torque",
 	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring", right_ring="Defending Ring",
 	back="Mollusca Mantle",}
@@ -583,7 +583,7 @@ windower.prim.set_visibility('TCOhelp',false)
 -- aftercast sets
 end
 
-function precast(spell)	
+function precast(spell)
 	if spell.prefix ==  '/jobability' then
 		if PLD_JA:contains(spell.english) then
 			equip(sets.precast.ja[spell.english])
@@ -592,10 +592,10 @@ function precast(spell)
 		else
 			equip(sets.precast.ja)
 		end
-	elseif spell.prefix== '/magic' or '/ninjutsu' then
+	elseif spell.prefix== '/magic' or spell.prefix=='/ninjutsu' then
 		if spell.english:contains('Cure','Cura') then
 			equip(sets.precast.cure)
-		else
+		else 
 			equip(sets.precast.fc)
 		end
 	end
@@ -727,7 +727,7 @@ function status_change(new,old)
 	equip(sets[swordtype])
 	equip(sets[shieldtype])
 	send_command('pf')
-end		
+end
 
 function self_command(command)
 	

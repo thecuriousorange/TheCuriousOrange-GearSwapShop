@@ -438,7 +438,7 @@ function get_sets()
 end
 
 function precast(spell)
-	if spell.prefix=="/magic" then	
+	if spell.prefix=="/magic" or spell.prefix=="/ninjutsu" then	
 		if spell.skill=="Blue Magic" then
 			equip(sets.precast.blu)
 		elseif spell.skill=="Ninjutsu" then
