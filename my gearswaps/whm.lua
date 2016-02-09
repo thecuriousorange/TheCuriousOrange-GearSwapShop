@@ -73,26 +73,26 @@ function get_sets()
 	}
 	
 	sets.midcast.intenfeeb={main={ name="Twebuliij", augments={'MP+60','Mag. Acc.+15','MND+12',}}, sub="Mephitis Grip",
-	ammo="Incantor Stone", head={ name="Artsieq Hat", augments={'MP+30','Mag. Acc.+20','MND+7',}}, body="Hlr. Briault +1",
+	ammo="Incantor Stone", head="Befouled Crown", body="Hlr. Briault +1",
 	hands="Lurid Mitts", legs="Portent Pants", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
     neck="Enfeebling Torque", waist="Rumination Sash", left_ear="Lifestorm Earring", right_ear="Psystorm Earring", 
 	left_ring="Globidonta Ring", right_ring="Sangoma Ring", back="Altruistic Cape",}
 	
 	sets.midcast.mndenfeeb={main={ name="Twebuliij", augments={'MP+60','Mag. Acc.+15','MND+12',}}, sub="Mephitis Grip",
-	ammo="Incantor Stone", head={ name="Artsieq Hat", augments={'MP+30','Mag. Acc.+20','MND+7',}}, body="Vanir Cotehardie",
+	ammo="Incantor Stone", head="Befouled Crown", body="Vanir Cotehardie",
 	hands="Lurid Mitts", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, waist="Rumination Sash", 
 	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Enfeebling Torque",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Globidonta Ring", right_ring="Sangoma Ring",
     back={ name="Mending Cape", augments={'Healing magic skill +7','Enha.mag. skill +9','Mag. Acc.+9',}},}
 	
 	sets.midcast.repose={main={ name="Twebuliij", augments={'MP+60','Mag. Acc.+15','MND+12',}}, sub="Mephitis Grip", 
-	ammo="Incantor Stone", head={ name="Artsieq Hat", augments={'MP+30','Mag. Acc.+20','MND+7',}}, body="Vanir Cotehardie",
+	ammo="Incantor Stone", head="Befouled Crown", body="Vanir Cotehardie",
 	hands="Lurid Mitts", legs="Hlr. Pantaln. +1", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	neck="Divine Torque", waist="Bishop's Sash", left_ear="Beatific Earring", right_ear="Divine Earring",
 	left_ring="Globidonta Ring", right_ring="Sangoma Ring", back="Altruistic Cape",}
 	
 	sets.midcast.divine={main={ name="Twebuliij", augments={'MP+60','Mag. Acc.+15','MND+12',}}, sub="Mephitis Grip", 
-	ammo="Incantor Stone", head={ name="Artsieq Hat", augments={'MP+30','Mag. Acc.+20','MND+7',}}, body="Vanir Cotehardie",
+	ammo="Incantor Stone", head="Befouled Crown", body="Vanir Cotehardie",
 	hands="Lurid Mitts", legs="Hlr. Pantaln. +1", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	neck="Divine Torque", waist="Bishop's Sash", left_ear="Beatific Earring", right_ear="Divine Earring",
 	left_ring="Globidonta Ring", right_ring="Sangoma Ring", back="Altruistic Cape",}
@@ -100,7 +100,7 @@ function get_sets()
 	
 	--aftercast sets
 	sets.idle={main="Bolelabunga", sub="Genbu's Shield", ammo="Vanir Battery", body="Respite Cloak",
-	hands="Serpentes Cuffs", legs="Assid. Pants +1", feet="Serpentes Sabots", neck="Twilight Torque",
+	hands="Serpentes Cuffs", legs="Assid. Pants +1", feet="Serpentes Sabots", neck="Loricate Torque +1",
 	waist="Fucho-no-Obi", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring",
 	right_ring="Sheltered Ring", back="Shadow Mantle",}
 	

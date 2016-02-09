@@ -70,7 +70,7 @@ function get_sets()
 	right_ear="Ethereal Earring", left_ring="Shadow Ring", right_ring="Sheltered Ring", 
 	back="Shadow Mantle",}
 	
-	sets.idle.pdt={body="Iuitl Vest +1", hands="Umuthi Gloves", neck="Twilight Torque", waist="Flume Belt", left_ear="Ethereal Earring",
+	sets.idle.pdt={body="Iuitl Vest +1", hands="Umuthi Gloves", neck="Loricate Torque +1", waist="Flume Belt", left_ear="Ethereal Earring",
 	left_ring={ name="Vocane Ring", augments={'Magic dmg. taken -4%','Breath dmg. taken -4%','Phys. dmg. taken -5%',}}, feet="Fajin Boots",
 	right_ear="Sanare Earring", right_ring="Defending Ring", back="Mollusca Mantle", head="Iuitl Headgear +1", legs="Iuitl Tights +1",}
 	
@@ -89,7 +89,7 @@ function get_sets()
 	right_ring="Hajduk Ring", back="Lutian Cape",}
 	
 	sets.midshot.acc={head="Umbani Cap", body="Kyujutsugi", feet="Orion Socks +1",
-	hands={ name="Qaaxo Mitaines", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
+	hands="Adhemar Wristbands",
 	legs={ name="Arcadian Braccae", augments={'Enhances "Eagle Eye Shot" effect',}},
 	neck="Gaudryi Necklace", waist="Elanid Belt", left_ear="Clearview Earring",
 	right_ear="Volley Earring", left_ring="Arewe Ring +1", right_ring="Hajduk Ring",
@@ -145,14 +145,14 @@ function get_sets()
 	right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.strws={head="Orion Beret +1", body="Kyujutsugi", legs="Nahtirah Trousers",
-	hands={ name="Qaaxo Mitaines", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
+	hands="Adhemar Wristbands",
 	feet="Orion Socks +1", neck="Fotia Gorget", waist="Fotia Belt", left_ear="Neritic Earring",
 	right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, 
 	left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.dexws={head={ name="Uk'uxkaj Cap", augments={'Haste+2','"Snapshot"+2','DEX+8',}},
 	body="Kyujutsugi", legs="Nahtirah Trousers", feet="Orion Socks +1", back="Kayapa Cape",
-	hands={ name="Qaaxo Mitaines", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
+	hands="Adhemar Wristbands",
 	neck="Fotia Gorget", waist="Fotia Belt", left_ear="Neritic Earring", left_ring="Ramuh Ring",
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
 	right_ring="Rajas Ring",}

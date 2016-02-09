@@ -20,7 +20,7 @@ function get_sets()
 
 	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +3%',}}
 	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +2%',}}
-	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +2%',}}
+	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +3%',}}
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+23','"Triple Atk."+2',}}
 	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
 	
@@ -34,7 +34,7 @@ function get_sets()
 	sets.precast.pet={}
 	
 	sets.dexws={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", head="Uk'uxkaj Cap",
-	body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}}, hands="Umuthi Gloves",
+	body="Rawhide Vest", hands="Umuthi Gloves",
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
     feet="Plun. Poulaines", neck="Asperity Necklace", waist="Windbuffet Belt +1", left_ear="Steelflash Earring", 
 	right_ear="Bladeborn Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring", back="Rancorous Mantle",}
@@ -88,9 +88,9 @@ function get_sets()
 	
 	sets.aftercast.hybrid.lowacc={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", hands="Umuthi Gloves",
 	head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
-	body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
+	body="Rawhide Vest",
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
-	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Twilight Torque",
+	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Loricate Torque +1",
 	waist="Flume Belt", left_ear="Dudgeon Earring", right_ear="Heartseeker Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring",back="Mollusca Mantle",}
 	
@@ -104,25 +104,25 @@ function get_sets()
 	
 	sets.aftercast.defense.pdt={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", hands="Umuthi Gloves",
 	head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
-	body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
+	body="Rawhide Vest",
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
-	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Twilight Torque",
+	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Loricate Torque +1",
 	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring",back="Mollusca Mantle",}
 	
 	sets.aftercast.defense.mdt={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", hands="Umuthi Gloves",
 	head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
-	body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
+	body="Rawhide Vest",
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
-	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Twilight Torque",
+	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Loricate Torque +1",
 	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring",back="Mollusca Mantle",}
 	
 	sets.aftercast.defense.xdt={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", hands="Umuthi Gloves",
 	head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
-	body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}},
+	body="Rawhide Vest",
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
-	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Twilight Torque",
+	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Loricate Torque +1",
 	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring",back="Mollusca Mantle",}
 	
@@ -133,7 +133,7 @@ function get_sets()
 	sets.aftercast.idle.standard= set_combine(sets.aftercast.defense.xdt, {back="Shadow Mantle", left_ring="Shadow Ring", feet="Fajin Boots",})
 	
 	sets.aftercast.idle.regen={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", head="Oce. Headpiece +1",
-	body={ name="Qaaxo Harness", augments={'Attack+15','Evasion+15','"Dbl.Atk."+2',}}, hands="Umuthi Gloves",
+	body="Rawhide Vest", hands="Umuthi Gloves",
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
 	feet="Fajin Boots", neck="Wiglen Gorget", waist="Flume Belt", left_ear="Ethereal Earring", 
 	right_ear="Sanare Earring", left_ring="Sheltered Ring", right_ring="Paguroidea Ring",

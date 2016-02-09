@@ -180,7 +180,7 @@ function get_sets()
 	sets.idle.standard={main="Legato Dagger", sub="Genbu's Shield", 
 	head={ name="Wivre Hairpin", augments={'"Refresh"+1','Water resistance+6','Dark resistance+5',}},
     body={ name="Gendewitha Bliaut", augments={'Phys. dmg. taken -4%','"Cure" potency +5%',}},
-	hands="Serpentes Cuffs", legs="Nares Trews", feet="Aoidos' Cothrn. +2", neck="Twilight Torque",
+	hands="Serpentes Cuffs", legs="Nares Trews", feet="Aoidos' Cothrn. +2", neck="Loricate Torque +1",
 	waist="Cascade Belt", left_ear="Ethereal Earring", right_ear="Aoidos' Earring", 
 	left_ring={ name="Vocane Ring", augments={'Phys. dmg. taken -3%','Magic dmg. taken -5%',}},
     right_ring="Shadow Ring", back="Shadow Mantle",}
@@ -188,7 +188,7 @@ function get_sets()
 	sets.idle.refresh={main="Legato Dagger", sub="Genbu's Shield", 
 	head={ name="Wivre Hairpin", augments={'"Refresh"+1','Water resistance+6','Dark resistance+5',}},
     body={ name="Gendewitha Bliaut", augments={'Phys. dmg. taken -4%','"Cure" potency +5%',}},
-	hands="Serpentes Cuffs", legs="Nares Trews", feet="Serpentes Sabots", neck="Twilight Torque",
+	hands="Serpentes Cuffs", legs="Nares Trews", feet="Serpentes Sabots", neck="Loricate Torque +1",
 	waist="Cascade Belt", left_ear="Ethereal Earring", right_ear="Aoidos' Earring", 
 	left_ring={ name="Vocane Ring", augments={'Phys. dmg. taken -3%','Magic dmg. taken -5%',}},
     right_ring="Shadow Ring", back="Shadow Mantle",}
@@ -198,7 +198,7 @@ function get_sets()
 	hands={ name="Gendewitha Gages", augments={'Phys. dmg. taken -1%','Song recast delay -3',}},
 	legs={ name="Gendewitha Spats", augments={'Phys. dmg. taken -3%','Song recast delay -2',}},
 	feet={ name="Gende. Galoshes", augments={'Phys. dmg. taken -2%','"Cure" potency +1%',}},
-	main="Earth Staff", neck="Twilight Torque", waist="Cascade Belt", left_ear="Ethereal Earring", right_ear="Aoidos' Earring",
+	main="Earth Staff", neck="Loricate Torque +1", waist="Cascade Belt", left_ear="Ethereal Earring", right_ear="Aoidos' Earring",
 	left_ring={ name="Vocane Ring", augments={'Phys. dmg. taken -3%','Magic dmg. taken -5%',}},
     right_ring="Vocane Ring", back="Repulse Mantle",}
 	
