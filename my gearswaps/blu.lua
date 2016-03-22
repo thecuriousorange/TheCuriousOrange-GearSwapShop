@@ -107,7 +107,7 @@ function get_sets()
 --precast sets
 	--magic sets
 	sets.precast.fc={head="Carmine Mask", body="Luhlaza Jubbah +1", hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}}, 
-	legs="Enif Cosciales", feet="Carmine Greaves", 
+	legs="Psycloth Lappas", feet="Carmine Greaves", 
 	neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}}, 
 	waist="Siegel Sash", left_ear="Loquac. Earring", right_ear="Etiolation Earring", left_ring="Prolix Ring",
 	right_ring="Veneficium Ring", back="Swith Cape",}
@@ -367,7 +367,7 @@ function get_sets()
 	sets.BlueMagic.WhiteWind = {ammo="Mavi Tathlum",
 				    head="Luh. Keffiyeh +1",neck="Jeweled collar",ear1="Ethereal earring",ear2="Loquac. Earring",
 				    body="Assim. Jubbah +1",hands="Weath. Cuffs +1",
-				    back="Oretania's cape",legs="Enif Cosciales",feet="Assim. Charuqs +1"}
+				    back="Oretania's cape",legs="Psycloth Lappas",feet="Assim. Charuqs +1"}
 									 
 	sets.BlueMagic.MagicAccuracy = {ammo="Mavi Tathlum",
 				        head="Assim. Keffiyeh +1",neck="Eddy necklace",ear1="Psystorm earring",ear2="Lifestorm earring",

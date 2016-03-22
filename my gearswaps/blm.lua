@@ -18,7 +18,7 @@ function get_sets()
 	send_command('alias aga input /ma "Blizzaga" <t>')
 	send_command('alias AM input /ma "Freeze" <t>')
 	send_command('alias AM2 input /ma "Freeze II" <t>')
-	
+	send_command('bind #1 myrkr')
 --aliases
 
 --boxes
@@ -111,7 +111,7 @@ function get_sets()
 	
 	JaNukes= S{"Firaja", "Blizzaja", "Waterja", "Thundaja", "Aeroja", "Stoneja",}
 	
-	Dark_Nukes= S{"Comet", "Noctohelix",}
+	Dark_Nukes= S{"Death","Comet", "Noctohelix",}
 	
 	Elemental_DoT= S{"Shock", "Choke", "Burn", "Rasp", "Frost", "Drown",}
 	
@@ -129,7 +129,7 @@ function get_sets()
 --spell lists
 
 --augmented gear
-	nukestaff={ name="Keraunos", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic burst mdg.+6%','Magic Damage +10',}}
+	--nukestaff--={ name="Keraunos", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic burst mdg.+6%','Magic Damage +10',}}
 --augmented gear
 
 --basesetnames	
@@ -140,25 +140,25 @@ function get_sets()
 --basesetnames
 
 --precast sets
-	sets.precast.nuke={head="Wicce Petasos +1", body="Anhur Robe", hands="Helios Gloves", feet="Chelona Boots",
-	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	sets.precast.nuke={head="Wicce Petasos +1", body="Anhur Robe", hands="Helios Gloves", feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+6',}},
+	legs="Psycloth Lappas",
 	neck="Stoicheion Medal", waist="Channeler's Stone", left_ear="Loquac. Earring", right_ear="Barkaro. Earring",
 	left_ring="Prolix Ring", back="Swith Cape",}
 	
 	sets.precast.impact={body="Twilight Cloak", hands="Helios Gloves", feet="Chelona Boots",
 	neck="Stoicheion Medal", waist="Eschan Stone", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
-	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	legs="Psycloth Lappas",
 	left_ring="Prolix Ring", back="Swith Cape",}
 	
-	sets.precast.notnuke={main="Marin Staff", head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	sets.precast.notnuke={main="Lathi", head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs="Psycloth Lappas",
 	feet="Chelona Boots", neck="Jeweled Collar", waist="Eschan Stone", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
 	left_ring="Prolix Ring", back="Swith Cape",}
 	
 --precast sets
 
 --ws sets
-	sets.precast["Myrkr"]={main="Marin Staff", sub="Elementa Grip", ammo="Ghastly Tathlum +1", head="Helios Band", body="Wretched Coat",
-	hands="Wicce Gloves +1", legs="Wicce Chausses +1", feet="Helios Boots", neck="Eddy Necklace", waist="Sekhmet Corset", 
+	sets.precast["Myrkr"]={main="Lathi", sub="Niobid Strap", ammo="Ghastly Tathlum +1", head="Helios Band", body="Wretched Coat",
+	hands="Wicce Gloves +1", legs="Wicce Chausses +1", feet="Amalric Nails", neck="Eddy Necklace", waist="Sekhmet Corset", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
     back="Toro Cape",}
 --ws sets
@@ -166,30 +166,33 @@ function get_sets()
 --midcast sets
 	sets.mpeset={body="Spae. Coat +1",}
 	
-	sets.magicburst={head="helios band", hands="helios gloves", feet="Helios Boots",}
+	sets.magicburst={head={ name="Merlinic Hood", augments={'Attack+21','Magic burst mdg.+9%','Mag. Acc.+8','"Mag.Atk.Bns."+13',}},
+	legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst mdg.+11%','"Mag.Atk.Bns."+7',}}, left_ring="Locus Ring",
+	feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+30','Magic burst mdg.+8%','Mag. Acc.+6',}}, neck="Mizu. Kubikazari",
+    right_ring="Mujin Band",}
 	
-	sets.midcast.eledot={main="Marin Staff", sub="Elementa Grip", ammo="Pemphredo Tathlum", head="Wicce Petasos +1", 
-	body="Vanir Cotehardie", hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	sets.midcast.eledot={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Wicce Petasos +1", 
+	body="Shango Robe", hands="Hagondes Cuffs +1", legs="Psycloth Lappas", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	neck="Eddy Necklace", waist="Eschan Stone", left_ear="Strophadic Earring", right_ear="Gwati Earring",
 	left_ring="Sangoma Ring", right_ring="Strendu Ring", back="Bane Cape",}
 	
-	sets.midcast.darkdot={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Vanir Cotehardie",
-	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Eschan Stone",
+	sets.midcast.darkdot={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Shango Robe",
+	hands="Hagondes Cuffs +1", legs="Psycloth Lappas", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Eschan Stone",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Archon Ring",
 	back="Bane Cape",}
 	
-	sets.midcast.skillenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", body="Vanya Robe",
+	sets.midcast.skillenfeeb={main="Lathi", sub="Mephitis Grip", body="Vanya Robe",
 	head="Befouled Crown", feet={ name="Medium's Sabots", augments={'MP+15','MND+2','"Cure" potency +2%',}},
-	hands="Lurid Mitts", legs="Portent Pants", neck="Enfeebling Torque", waist="Rumination Sash", right_ring="Irrwisch Ring",
+	hands="Lurid Mitts", legs="Psycloth Lappas", neck="Enfeebling Torque", waist="Rumination Sash", right_ring="Irrwisch Ring",
 	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Globidonta Ring", back="Bane Cape",}
 	
-	sets.midcast.mndenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", ammo="Pemphredo Tathlum", body="Vanir Cotehardie",
-	hands="Lurid Mitts", legs="Artsieq Hose", head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace",
+	sets.midcast.mndenfeeb={main="Lathi", sub="Mephitis Grip", ammo="Pemphredo Tathlum", body="Shango Robe",
+	hands="Lurid Mitts", legs="Psycloth Lappas", head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace",
 	waist="Rumination Sash", left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Levia. Ring",
 	back="Bane Cape",}
 	
-	sets.midcast.doa={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Appetence Crown", body="Vanir Cotehardie",
-	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", 
+	sets.midcast.doa={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Appetence Crown", body="Shango Robe",
+	hands="Hagondes Cuffs +1", legs="Psycloth Lappas", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", 
 	left_ear="Gwati Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
 	back="Bane Cape",}
 	
@@ -197,49 +200,51 @@ function get_sets()
 	
 	sets.midcast.nuke.acc={}
 	
-	sets.midcast.nuke.dmg.lowtier={main=nukestaff, sub="Elementa Grip", ammo="Ghastly Tathlum +1", body="Count's Garb",
+	sets.midcast.nuke.dmg.lowtier={main="Lathi", sub="Niobid Strap", ammo="Ghastly Tathlum +1", body="Merlinic Jubbah",
 	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+6%',}},
 	legs="Merlinic Shalwar",
 	feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", left_ear="Crematio Earring", right_ear="Friomisi Earring",
 	right_ring="Strendu Ring", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},
 	left_ring="Sangoma Ring", hands="Otomi Gloves",}
 	
-	sets.midcast.nuke.dmg.midtier={main=nukestaff, sub="Elementa Grip", ammo="Pemphredo Tathlum", body="Count's Garb",
+	sets.midcast.nuke.dmg.midtier={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", body="Merlinic Jubbah",
 	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+6%',}},
 	legs="Merlinic Shalwar",
 	feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", left_ear="Crematio Earring", right_ear="Friomisi Earring",
 	right_ring="Strendu Ring", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},
 	left_ring="Sangoma Ring", hands="Otomi Gloves",}
 	
-	sets.midcast.nuke.dmg.hightier={main=nukestaff, sub="Elementa Grip", ammo="Pemphredo Tathlum", head="Helios Band", body="Count's Garb",
-	hands="Amalric Gages", legs="Merlinic Shalwar", feet="Merlinic Crackows", neck="Eddy Necklace", waist="Eschan Stone", 
+	sets.midcast.nuke.dmg.hightier={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Helios Band", body="Merlinic Jubbah",
+	hands="Amalric Gages", legs="Merlinic Shalwar", feet="Amalric Nails", neck="Eddy Necklace", waist="Eschan Stone", 
 	left_ear="Barkaro. Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
     back="Toro Cape",}
 	
 	sets.midcast.nuke.dmg.jaspell=set_combine(sets.midcast.nuke.dmg.hightier, {legs="Wicce Chausses +1"})
 	
-	sets.midcast.nuke.acc.lowtier= set_combine(sets.midcast.nuke.dmg.lowtier,{body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
+	sets.midcast.nuke.acc.lowtier= set_combine(sets.midcast.nuke.dmg.lowtier,{right_ear="Hermetic Earring", body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", right_ear="Hermetic Earring", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
 	
-	sets.midcast.nuke.acc.midtier= set_combine(sets.midcast.nuke.dmg.midtier,{body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
+	sets.midcast.nuke.acc.midtier= set_combine(sets.midcast.nuke.dmg.midtier,{right_ear="Hermetic Earring", body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
 	
-	sets.midcast.nuke.acc.hightier=set_combine(sets.midcast.nuke.dmg.hightier,{body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
+	sets.midcast.nuke.acc.hightier=set_combine(sets.midcast.nuke.dmg.hightier,{right_ear="Hermetic Earring", body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
 	
-	sets.midcast.nuke.acc.jaspell=set_combine(sets.midcast.nuke.dmg.ja, {body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
+	sets.midcast.nuke.acc.jaspell=set_combine(sets.midcast.nuke.dmg.ja, {right_ear="Hermetic Earring", body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}}})
+	
+	sets.midcast.nuke.burst={}
 	
 	sets.midcast.nuke.dark= set_combine(sets.midcast.nuke.dmg, {left_ring="Archon Ring",})
 	
-	sets.midcast.nuke.Impact={main=nukestaff, sub="Elementa Grip", ammo="Pemphredo Tathlum", body="Twilight Cloak",
+	sets.midcast.nuke.Impact={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", body="Twilight Cloak",
 	hands="Yaoyotl Gloves", legs="Hagondes Pants +1", feet="Umbani Boots", neck="Eddy Necklace", waist="Eschan Stone", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Archon Ring", right_ring="Strendu Ring",
     back="Toro Cape",}
 	
-	sets.midcast.stun={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Vanir Cotehardie",
-	hands="Hagondes Cuffs +1", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
+	sets.midcast.stun={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Shango Robe",
+	hands="Hagondes Cuffs +1", legs="Psycloth Lappas",
 	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Ninurta's Sash",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
 	back="Bane Cape",}
 	
-	sets.midcast.enh={main="Marin Staff", sub="Fulcio Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Anhur Robe",
+	sets.midcast.enh={main="Lathi", sub="Fulcio Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Anhur Robe",
 	hands="Lurid Mitts", legs="Portent Pants", feet="Chelona Boots", neck="Colossus's Torque", waist="Cascade Belt",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Levia. Ring", right_ring="Levia. Ring",
 	back="Swith Cape",}	
@@ -389,6 +394,7 @@ function status_change(new,old)
 	else
 		equip(sets.aftercast.idle)
 	end
+	send_command('pf')
 end
 
 function self_command(command)
@@ -409,6 +415,7 @@ function self_command(command)
 		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/icenukes.png')
 		--send_command('text tpvariable text "ICE NUKES";text tpvariable color 0 255 255')
 		add_to_chat(206, 'ICE NUKES')
+		send_command('pf')
 	end
 	if command=="fire" then
 		nuke_element="Fire"
@@ -427,6 +434,7 @@ function self_command(command)
 		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/firenukes.png')
 		--send_command('text tpvariable text "FIRE NUKES";text tpvariable color 255 0 0')
 		add_to_chat(206, 'FIRE NUKES')
+		send_command('pf')
 	end
 	if command=="earth" then
 		nuke_element="Earth"
@@ -445,6 +453,7 @@ function self_command(command)
 		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/earthnukes.png')
 		--send_command('text tpvariable text "EARTH NUKES";text tpvariable color 140 100 0')
 		add_to_chat(206, 'EARTH NUKES')
+		send_command('pf')
 	end
 	if command=="wind" then
 		nuke_element="Wind"
@@ -463,6 +472,7 @@ function self_command(command)
 		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/windnukes.png')
 		--send_command('text tpvariable text "WIND NUKES";text tpvariable color 0 255 0')
 		add_to_chat(206, 'WIND NUKES')
+		send_command('pf')
 	end
 	if command=="water" then
 		nuke_element="Water"
@@ -481,6 +491,7 @@ function self_command(command)
 		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/waternukes.png')
 		--send_command('text tpvariable text "WATER NUKES";text tpvariable color 0 0 200')
 		add_to_chat(206, 'WATER NUKES')
+		send_command('pf')
 	end
 	if command=="thunder" then
 		nuke_element="Thunder"
@@ -499,6 +510,17 @@ function self_command(command)
 		--send_command('text tpvariable text "THUNDER NUKES";text tpvariable color 255 255 0')
 		windower.prim.set_texture('NUKE_ELEMENT','/windower 4/addons/gearswap/data/'..player.name..'/images/thundernukes.png')
 		add_to_chat(206, 'THUNDER NUKES')
+		send_command('pf')
+	end	
+	if command=="MB_MODE" then
+		if MB=="on" then
+			MB="off"
+			add_to_chat(206,'MAGIC BURST MODE OFF')
+		else
+			MB="on"
+			add_to_chat(206,'MAGIC BURST MODE ON')
+		end
+		send_command('pf')
 	end
 	if command=="mpe" then
 		if mpe=="off" then
@@ -512,15 +534,7 @@ function self_command(command)
 			--send_command('text idlevariable text "MPE-OFF"')
 			windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/mpeoff.png')
 		end
-	end
-	if command=="MB_MODE" then
-		if MB=="on" then
-			MB="off"
-			add_to_chat(206,'MAGIC BURST MODE OFF')
-		else
-			MB="on"
-			add_to_chat(206,'MAGIC BURST MODE ON')
-		end
+		send_command('pf')
 	end
 	if command=='primfix' then
 		windower.prim.set_size('NUKE_ELEMENT',200,30)
@@ -550,5 +564,6 @@ function self_command(command)
 			windower.prim.set_texture('MAGIC_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/magicpotency.png')
 			--send_command('text pdtvariable text "MAGIC-POTENCY"')
 		end
+		send_command('pf')
 	end
 end 

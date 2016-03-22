@@ -110,7 +110,7 @@ function get_sets()
 	feet="Taeon Boots",}
 	
 	sets.kicks={ammo="Honed Tathlum", head="Whirlpool Mask", neck="Fotia Gorget", left_ear="Steelflash Earring",
-	right_ear="Bladeborn Earring", body="Bhikku Cyclas", hands="Hes. Gloves +1", left_ring="Ifrit Ring",
+	right_ear="Bladeborn Earring", body="Bhikku Cyclas", hands="Hes. Gloves +1", left_ring="Ifrit Ring +1",
 	right_ring="Rajas Ring", back="Bleating Mantle", waist="Fotia Belt", legs="Samnuha Tights", 
 	feet="Samnuha Tights",}
 	
@@ -223,7 +223,9 @@ function get_sets()
 -- tp sets	
 	
 -- DT sets	
-	sets.aftercast.pdt= set_combine(sets.aftercast.hybridD, {left_ring="Vocane Ring", right_ring="Defending Ring",})
+	sets.aftercast.pdt={head="Genmei Kabuto", body="Onca Suit", neck="Loricate Torque +1", waist="Black Belt",
+	left_ear="Genmei Earring", right_ear="Ethereal Earring", left_ring="Vocane Ring", right_ring="Defending Ring",
+	back="Mollusca Mantle",}
 	
 	sets.aftercast.mdt= set_combine(sets.aftercast.pdt, {left_ring="Shadow Ring",})
 -- DT sets

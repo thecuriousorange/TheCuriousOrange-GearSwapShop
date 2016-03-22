@@ -141,14 +141,14 @@ function get_sets()
 	--ws base sets
 	sets.agiws={head="Orion Beret +1", body="Kyujutsugi", hands="Orion Bracers +1", legs="Nahtirah Trousers",
 	feet="Orion Socks +1", neck="Fotia Gorget", waist="Fotia Belt", left_ear="Neritic Earring",
-	right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring",
+	right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1",
 	right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.strws={head="Orion Beret +1", body="Kyujutsugi", legs="Nahtirah Trousers",
 	hands="Adhemar Wristbands",
 	feet="Orion Socks +1", neck="Fotia Gorget", waist="Fotia Belt", left_ear="Neritic Earring",
 	right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, 
-	left_ring="Ifrit Ring", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.dexws={head={ name="Uk'uxkaj Cap", augments={'Haste+2','"Snapshot"+2','DEX+8',}},
 	body="Kyujutsugi", legs="Nahtirah Trousers", feet="Orion Socks +1", back="Kayapa Cape",

@@ -1,6 +1,7 @@
 function get_sets()
 -- includes
 include('tco-include.lua')
+include('organizer-lib.lua')
 -- includes
 --text box setup
 

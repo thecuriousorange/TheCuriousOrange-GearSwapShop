@@ -90,13 +90,13 @@ function get_sets()
 --base sets
 
 --weaponry
-	sets.weaponry.greatsword={main="Aettir", sub="Pole Grip",}
+	sets.weaponry.greatsword={main="Aettir", sub="Alber Strap",}
 	
 	sets.weaponry.onesword={main="Deacon Sword",}
 	
-	sets.weaponry.twoswords={main="Deacon Sword", sub="Usonmunku",}
+	sets.weaponry.twoswords={main="Reikiko", sub="Deacon Sword",}
 	
-	sets.weaponry.greataxe={main="Beheader", sub="Pole Grip"}
+	sets.weaponry.greataxe={main="Beheader", sub="Alber Strap"}
 
 --precast sets
 	--ja sets
@@ -164,7 +164,7 @@ function get_sets()
 	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},  right_ear="Bladeborn Earring",
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
 	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Steelflash Earring",
-	left_ring="Ifrit Ring", right_ring="Epona's Ring", back="Buquwik Cape",}
+	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back="Buquwik Cape",}
 	
 	sets.precast.ws["Dimidiation"]={ammo="Potestas Bomblet", head="Lustratio Cap",
 	body="Abnoba Kaftan",
