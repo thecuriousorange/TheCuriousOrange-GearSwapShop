@@ -81,7 +81,7 @@ function get_sets()
 	
 -- ja sets
 	sets.precast.ja['Boost']={hands="Anch. Gloves +1",}
-	sets.precast.ja['Chakra']={head="Felistris Mask", body="Anch. Cyclas +1", hands="Hes. Gloves +1", legs="Nahtirah Trousers", feet="Otronif Boots +1", }
+	sets.precast.ja['Chakra']={head="Genmei Kabuto", body="Anch. Cyclas +1", hands="Hes. Gloves +1", legs="Nahtirah Trousers", feet="Otronif Boots +1", }
 	sets.precast.ja['Chi Blast']={}
 	sets.precast.ja['Focus']={head="Anchor. Crown +1",}
 	sets.precast.ja['Dodge']={feet="Anch. Gaiters +1",}
@@ -95,7 +95,7 @@ function get_sets()
 
 -- ws sets	
 	sets.dex={ammo="Honed Tathlum", left_ear="Bladeborn Earring", head="Whirlpool Mask", neck="Justiciar's Torque", 
-	left_ring="Ramuh Ring", left_ear="Steelflash Earring", hands="Anch. Gloves +1", right_ring="Rajas Ring", 
+	left_ring="Ramuh Ring +1", left_ear="Steelflash Earring", hands="Anch. Gloves +1", right_ring="Rajas Ring", 
 	body="Abnoba Kaftan", back="Bleating Mantle", waist="Wanion Belt", legs="Samnuha Tights", 
 	feet="Taeon Boots",}
 	
@@ -146,12 +146,17 @@ function get_sets()
 -- impetus tp
 	
 -- sub nin stuff
-	sets.precast.nin={main="Denouements", ammo="Vanir Battery", hands="Thaumas Gloves",
-	head="Haruspex Hat", body=taeonbody,
-	legs={ name="Otronif Brais +1", augments={'Phys. dmg. taken -3%','Crit.hit rate+1',}}, neck="Magoraga Beads",
-	feet={ name="Otronif Boots +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','Crit.hit rate+1',}},
-	waist="Black Belt", left_ear="Loquac. Earring", right_ear="Ethereal Earring", left_ring="Prolix Ring", 
-	right_ring="Veneficium Ring", back="Mollusca Mantle",}
+	sets.precast.nin={main="Denouements", ammo="Vanir Battery", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}},
+    body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}},
+    hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
+    legs={ name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1',}},
+    neck="Magoraga Beads",
+    waist="Windbuffet Belt +1",
+    left_ear="Loquac. Earring",
+    right_ear="Etiolation Earring",
+    left_ring="Prolix Ring",
+    right_ring="Veneficium Ring",
+    back="Mollusca Mantle",}
 	
 	sets.midcast.nin={head="Haruspex Hat",
     body="Samnuha Coat",
@@ -180,7 +185,7 @@ function get_sets()
 	
 	sets.aftercast.tp.styleII= set_combine(sets.aftercast.tp.styleI, {body="Rawhide Vest",})
 	
-	sets.aftercast.tp.styleIII= set_combine(sets.aftercast.tp.styleII, {head=taeonhead, ammo="Honed Tathlum", neck="Subtlety Spec.", waist="Olseni Belt", back="Anchoret's Mantle", left_ear="Zennaroi Earring", right_ear="Cessance Earring",})
+	sets.aftercast.tp.styleIII= set_combine(sets.aftercast.tp.styleII, {head=taeonhead, ammo="Honed Tathlum", neck="Combatant's Torque", waist="Olseni Belt", back="Anchoret's Mantle", left_ear="Zennaroi Earring", right_ear="Cessance Earring",})
 	
 	sets.aftercast.tp.styleIV= set_combine(sets.aftercast.tp.styleIII, {left_ring="Mars's Ring", right_ring="Patricius Ring",})
 	
@@ -190,7 +195,7 @@ function get_sets()
 	
 	sets.aftercast.tp.styleVII= set_combine(sets.aftercast.tp.styleVI, {hands="Hes. Gloves +1",})
 	
-	sets.aftercast.tp.styleVIII= set_combine(sets.aftercast.tp.styleVII, {body="Mekosu. Harness", back="Anchoret's Mantle", waist="Anguinus Belt",})
+	sets.aftercast.tp.styleVIII= set_combine(sets.aftercast.tp.styleVII, {body="Mekosu. Harness", back="Anchoret's Mantle", waist="Grunfeld Rope",})
 	
 	sets.aftercast.tp.o.styleI= set_combine(sets.aftercast.tp.styleI, {right_ring="Oneiros Ring",})
 	

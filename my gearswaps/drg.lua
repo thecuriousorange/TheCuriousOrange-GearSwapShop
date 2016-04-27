@@ -13,7 +13,7 @@ function get_sets()
 	send_command('text idlevariable text "LOW-ACC"')
 	send_command('text tpvariable text "MULTIHIT MODE"')
 	send_command('text wsvariable text "WSType: DMG"')
-	send_command('text pdtvariable text "Olyndicus"')
+	send_command('text pdtvariable text "Habile Mazrak"')
 --text boxes
 
 --binds
@@ -22,6 +22,7 @@ function get_sets()
 	send_command('bind #8 gs equip sets.mdt')
 	send_command('bind #h gs equip sets.hybrid')
 	send_command('bind #t ddset')
+	send_command('bind #x gs equip sets.xdt')
 	send_command('bind @r gs c rr')
 	send_command('bind @f1 gs c DD;')
 	send_command('bind @f2 gs c Hybrid')
@@ -36,6 +37,7 @@ function get_sets()
 	send_command('bind @f9 gs c Gungnir')
 	send_command('bind @f12 gs c ws_dmg_or_acc')
 	send_command('bind #g gs c jumptoggle')
+	send_command('bind @p gs c oring')
 --binds	
 
 --default macro set
@@ -60,23 +62,25 @@ function get_sets()
 	acrolegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
 	acrofeet={ name="Acro Leggings", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
 	
-	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','STR+10',}}
+	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','Crit. Hit Damage +1%',}}
 	dahands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
 	dalegs={ name="Acro Breeches", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
 	dafeet={ name="Acro Leggings", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
 	
-	updrafttp={ name="Updraft Mantle", augments={'STR+3','Pet: Breath+10',}}
-	updraftws={ name="Updraft Mantle", augments={'STR+1','Pet: Breath+3','Pet: Damage taken -1%','Weapon skill damage +2%',}}
+	updrafttp={ name="Updraft Mantle", augments={'STR+2','Pet: Breath+3','Pet: Damage taken -1%','Weapon skill damage +1%',}}
+	updraftws={ name="Updraft Mantle", augments={'STR+1','Pet: Damage taken -1%','Weapon skill damage +4%',}}
 --augmented items
 	
 --variables
-	weapon="Olyndicus"
+	weapon="Habile Mazrak"
 	JumpType="damage"
 	TPMode="multi"
 	TPType="lowacc"
 	WSType="damage"
 	rrlock="rroff"
+	oring="off"
 	
+	sets.oring= T{}
 	sets.weapon= T{}
 	sets.TPMode= T{}
 	sets.TPType= T{}
@@ -115,11 +119,11 @@ function get_sets()
 
 --weaponry
 	sets.weaponry.Gungnir={main="Gungnir", sub="Alber Strap",}
-	sets.weaponry.Olyndicus={main="Olyndicus", sub="Alber Strap",}
+	sets.weaponry["Habile Mazrak"]={main="Habile Mazrak", sub="Alber Strap",}
 	sets.weaponry.Annealed={main="Annealed Lance", sub="Alber Strap",}
 	sets.weaponry.Quint={main="Quint Spear", sub="Alber Strap",}
 --weaponry
-	sets.idle={ammo="Vanir Battery", head="Twilight Helm", body="Twilight Mail", hands="Cizin Mufflers +1", 
+	sets.idle={ammo="Vanir Battery", head="Twilight Helm", body="Twilight Mail", hands="Sulev. Gauntlets +1", 
 	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Amm Greaves", neck="Loricate Torque +1", waist="Nierenschutz",
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", 
 	right_ring="Sheltered Ring", back="Shadow Mantle",}
@@ -140,20 +144,20 @@ function get_sets()
 	hands=acrohands, legs="Pelt. Cuissots +1", feet=acrofeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Petrov Ring", back="Letalis Mantle",}
 	
-	sets.damage["Jump"]={ammo="Thew Bomblet", body="Vishap Mail +1", hands="Vishap F. G. +1", feet="Vishap Greaves +1",
+	sets.damage["Jump"]={ammo="Potestas Bomblet", body="Vishap Mail +1", hands="Vishap F. G. +1", feet="Vishap Greaves +1",
     head=taeonhead, legs=taeonlegs, neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring",
 	right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring", back="Letalis Mantle",}
 	
-	sets.damage["High Jump"]={ammo="Thew Bomblet", head=taeonhead, body=taeonbody, hands=taeonhands, legs="Vishap Brais +1", neck="Ganesha's Mala", 
+	sets.damage["High Jump"]={ammo="Potestas Bomblet", head=taeonhead, body=taeonbody, hands=taeonhands, legs="Vishap Brais +1", neck="Ganesha's Mala", 
 	waist="Windbuffet Belt +1", back="Letalis Mantle", feet=taeonfeet, right_ring="Oneiros Ring", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
 	left_ring="Petrov Ring",}
 	
-	sets.damage["Spirit Jump"]={ammo="Thew Bomblet", head=taeonhead, body=taeonbody, hands=taeonhands,
+	sets.damage["Spirit Jump"]={ammo="Potestas Bomblet", head=taeonhead, body=taeonbody, hands=taeonhands,
     legs="Pelt. Cuissots +1", feet={ name="Hrafn Gambieras", augments={'Crit. hit damage +9%',}},
 	neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring", 
 	right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring", back="Letalis Mantle",}
 	
-	sets.damage["Soul Jump"]={ammo="Thew Bomblet", head=taeonhead, body=taeonbody, hands=taeonhands,
+	sets.damage["Soul Jump"]={ammo="Potestas Bomblet", head=taeonhead, body=taeonbody, hands=taeonhands,
     legs="Pelt. Cuissots +1", feet={ name="Hrafn Gambieras", augments={'Crit. hit damage +9%',}},
 	neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring", 
 	right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring", back="Letalis Mantle",}
@@ -178,7 +182,7 @@ function get_sets()
 	sets.pet["Steady Wing"]={neck="Chanoix's Gorget", right_ear="Lancer's Earring", body="Wyvern Mail", hands="Despair Fin. Gaunt.", 
 	legs="Vishap Brais +1", feet="Ptero. Greaves +1",}
 	
-	sets.pet["Spirit Link"]={head="Vishap Armet +1", hands="Pel. Vambraces +1", back="Updraft Mantle",}
+	sets.pet["Spirit Link"]={head="Vishap Armet +1", hands="Pel. Vambraces +1", back=updrafttp,}
 	
 	sets.pet["Restoring Breath"]={head={ name="Ptero. Armet +1", augments={'Enhances "Deep Breathing" effect',}},
     body={ name="Acro Surcoat", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: Breath+6','Pet: Damage taken -3%',}},
@@ -186,7 +190,7 @@ function get_sets()
     legs={ name="Acro Breeches", augments={'Pet: Mag. Acc.+22','Pet: Breath+6','MND+8',}},
     feet={ name="Acro Leggings", augments={'Pet: Mag. Acc.+12','Pet: Breath+6','Pet: Damage taken -4%',}},
     neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Ethereal Earring", right_ear="Lancer's Earring",
-    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back=updrafttp,}
+    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back="Brigantia's Mantle",}
 	
 	sets.pet["Smiting Breath"]={head={ name="Ptero. Armet +1", augments={'Enhances "Deep Breathing" effect',}},
     body={ name="Acro Surcoat", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: Breath+6','Pet: Damage taken -3%',}},
@@ -194,7 +198,7 @@ function get_sets()
     legs={ name="Acro Breeches", augments={'Pet: Mag. Acc.+22','Pet: Breath+6','MND+8',}},
     feet={ name="Acro Leggings", augments={'Pet: Mag. Acc.+12','Pet: Breath+6','Pet: Damage taken -4%',}},
     neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Ethereal Earring", right_ear="Lancer's Earring",
-    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back=updrafttp,}
+    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back="Brigantia's Mantle",}
 	
 	sets.breath.precast={head="Vishap Armet +1", body="Wyvern Mail", hands="Despair Fin. Gaunt.", legs="Vishap Brais +1",
 	feet={ name="Ptero. Greaves +1", augments={'Enhances "Empathy" effect',}}, neck="Chanoix's Gorget",
@@ -203,33 +207,33 @@ function get_sets()
 --PETCMD sets
 
 --WS sets	
-	sets.ws.damage["Double Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Valorous Hose", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
+	sets.ws.damage["Double Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Double Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Valorous Hose", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
+	sets.ws.accuracy["Double Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Thunder Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Valorous Hose", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
+	sets.ws.damage["Thunder Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Thunder Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Valorous Hose", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
+	sets.ws.accuracy["Thunder Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Raiden Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Valorous Hose", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
+	sets.ws.damage["Raiden Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Raiden Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Valorous Hose", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
+	sets.ws.accuracy["Raiden Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
@@ -253,49 +257,49 @@ function get_sets()
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
     back=updraftws,}
 	
-	sets.ws.damage["Vorpal Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
+	sets.ws.damage["Vorpal Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Vorpal Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
+	sets.ws.accuracy["Vorpal Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Skewer"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
+	sets.ws.damage["Skewer"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Skewer"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
+	sets.ws.accuracy["Skewer"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Wheeling Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
+	sets.ws.damage["Wheeling Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Wheeling Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Valorous Hose", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
+	sets.ws.accuracy["Wheeling Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Impulse Drive"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
+	sets.ws.damage["Impulse Drive"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Impulse Drive"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Valorous Hose", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
+	sets.ws.accuracy["Impulse Drive"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Drakesbane"]={ammo="Thew Bomblet",
+	sets.ws.damage["Drakesbane"]={ammo="Potestas Bomblet",
     head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}},
-    body="Pelt. Plackart +1",
+    body="Sulevia's Plate. +1",
     hands={ name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
     legs="Pelt. Cuissots +1",
     feet="Thereoid Greaves",--{ name="Valorous Greaves", augments={'Accuracy+22 Attack+22','Crit.hit rate+3','Accuracy+1','Attack+15',}},
@@ -307,9 +311,9 @@ function get_sets()
     right_ring="Rajas Ring",
     back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Drakesbane"]={ammo="Thew Bomblet",
+	sets.ws.accuracy["Drakesbane"]={ammo="Potestas Bomblet",
     head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}},
-    body="Pelt. Plackart +1",
+    body="Sulevia's Plate. +1",
     hands={ name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
     legs="Pelt. Cuissots +1",
     feet={ name="Valorous Greaves", augments={'Accuracy+22 Attack+22','Crit.hit rate+3','Accuracy+1','Attack+15',}},
@@ -321,37 +325,37 @@ function get_sets()
     right_ring="Rajas Ring",
     back=updraftws,}
 	
-	sets.ws.damage["Sonic Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
+	sets.ws.damage["Sonic Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Sonic Thrust"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Valorous Hose", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
+	sets.ws.accuracy["Sonic Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Camlann's Torment"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
+	sets.ws.damage["Camlann's Torment"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Ptero. Brais +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.accuracy["Camlann's Torment"]={ammo="Thew Bomblet", head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}}, body="Pelt. Plackart +1", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Valorous Hose", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
+	sets.ws.accuracy["Camlann's Torment"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Stardiver"]={ammo="Thew Bomblet", head="Lustratio Cap", body="Lustratio Harness", hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},
-	legs="Despair Cuisses", feet="Despair Greaves", neck="Fotia Gorget", waist="Fotia Belt", 
+	sets.ws.damage["Stardiver"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Lustratio Harness", hands="Sulev. Gauntlets +1",
+	legs="Despair Cuisses", feet="Lustratio Leggings", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Stardiver"]={ammo="Thew Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Lustratio Harness", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, hands={ name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
-	legs={ name="Valor. Hose", augments={'Accuracy+23 Attack+23','Enmity+2','Accuracy+5','Attack+15',}}, feet={ name="Valorous Greaves", augments={'Accuracy+22 Attack+22','Crit.hit rate+3','Accuracy+1','Attack+15',}},
+	sets.ws.accuracy["Stardiver"]={ammo="Potestas Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
+	body={ name="Lustratio Harness", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1",
 	neck="Fotia Gorget", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Brutal Earring", left_ring="Ifrit Ring +1", right_ring="Rajas Ring", back=updraftws,}
 	
-	sets.ws.damage["Geirskogul"]={ammo="Thew Bomblet",
+	sets.ws.damage["Geirskogul"]={ammo="Potestas Bomblet",
     head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
     body="Pelt. Plackart +1",
     hands={ name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
@@ -361,11 +365,11 @@ function get_sets()
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
     right_ear="Brutal Earring",
-    left_ring="Ramuh Ring",
+    left_ring="Ramuh Ring +1",
     right_ring="Rajas Ring",
     back="Buquwik Cape",}
 	
-	sets.ws.accuracy["Geirskogul"]={ammo="Thew Bomblet",
+	sets.ws.accuracy["Geirskogul"]={ammo="Potestas Bomblet",
     head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
     body="Pelt. Plackart +1",
     hands={ name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
@@ -375,7 +379,7 @@ function get_sets()
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
     right_ear="Brutal Earring",
-    left_ring="Ramuh Ring",
+    left_ring="Ramuh Ring +1",
     right_ring="Rajas Ring", back=updraftws,}
 --WS sets
 
@@ -400,25 +404,32 @@ function get_sets()
 	body=taeonbody, hands=taeonhands, back="Bleating Mantle", legs=taeonlegs, left_ring="Petrov Ring",
 	feet=taeonfeet, right_ring="Rajas Ring",}
 	
-	sets.tp.medacc= set_combine(sets.tp.lowacc, {waist="Anguinus Belt", back="Letalis Mantle",})
+	sets.tp.medacc= set_combine(sets.tp.lowacc, {waist="Grunfeld Rope", back="Letalis Mantle",})
 	
-	sets.tp.highacc= set_combine(sets.tp.medacc, {waist="Olseni Belt", back=updrafttp,
-	hands={ name=dahands, augments={'Accuracy+15','"Store TP"+3','"Dbl.Atk."+2',}}, left_ring="Patricius Ring", 
-	right_ring="Mars's Ring", left_ear="Steelflash Earring", right_ear="Zennaroi Earring", neck="Subtlety Spec.",})
+	sets.tp.highacc= {ammo="Amar Cluster", neck="Combatant's Torque", waist="Olseni Belt", right_ring="Ramuh Ring +1",
+	head={ name="Taeon Chapeau", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +3%',}},
+	body={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Crit. hit damage +3%',}},
+	hands="Sulev. Gauntlets +1", left_ear="Cessance Earring", right_ear="Zennaroi Earring", left_ring="Cacoethic Ring +1",
+	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
+	feet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}},
+	back="Ground. Mantle +1",}
 	
 	sets.xhit.lowacc={ammo="Ginsen", head=acrohead, body="Pelt. Plackart +1", back="Bleating Mantle", hands=acrohands, waist="Windbuffet Belt +1",
 	legs=acrolegs, feet=acrofeet, neck="Ganesha's Mala", left_ear="Tripudio Earring", right_ear="Cessance Earring", left_ring="Petrov Ring",
 	right_ring="Rajas Ring",}
 		
-	sets.xhit.medacc=set_combine(sets.xhit.lowacc, {waist="Anguinus Belt", back="Letalis Mantle"})
+	sets.xhit.medacc=set_combine(sets.xhit.lowacc, {waist="Grunfeld Rope", back="Letalis Mantle"})
 	
-	sets.xhit.highacc=set_combine(sets.xhit.medacc, {neck="Subtlety Spec.", waist="Olseni Belt", left_ring="Patricius Ring", right_ring="Mars's Ring", back=updrafttp, right_ear="Zennaroi Earring",})
+	sets.xhit.highacc=set_combine(sets.xhit.medacc, {neck="Combatant's Torque", waist="Olseni Belt", left_ring="Patricius Ring", right_ring="Mars's Ring", back=updrafttp, right_ear="Zennaroi Earring",})
 	
 	sets.xhit2.lowacc=set_combine(sets.xhit.lowacc, {legs=taeonlegs,})
 	
 	sets.xhit2.medacc=set_combine(sets.xhit.medacc, {legs=taeonlegs,})
 	
-	sets.xhit2.highacc=set_combine(sets.xhit.highacc, {legs=taeonlegs,})
+	sets.xhit2.highacc={ammo="Ginsen", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Combatant's Torque", waist="Tempus Fugit", 
+	left_ear="Tripudio Earring", right_ear="Zennaroi Earring", left_ring="Cacoethic Ring +1", right_ring="Mars's Ring",
+    back="Grounded Mantle +1",} --set_combine(sets.xhit.highacc, {legs=taeonlegs,})
 	
 	sets.o.lowacc= set_combine(sets.tp.lowacc, {right_ring="Oneiros Ring",})
 	
@@ -451,25 +462,17 @@ function get_sets()
 	sets.ss.o.highacc= set_combine(sets.ss.highacc, {right_ring="Oneiros Ring",})
 	--offensive sets
 	--defensive sets
-	sets.hybrid={ammo="Ginsen", head="Ighwa Cap", body="Cizin Mail +1", hands="Cizin Mufflers +1", 
-	legs="Cizin Breeches +1", feet="Amm Greaves", neck="Loricate Torque +1", waist="Dynamic Belt +1",
-	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Patricius Ring", right_ring="Defending Ring",
-    back="Mollusca Mantle",}
+	sets.hybrid={ammo="Amar Cluster", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	feet="Sulev. Leggings +1", neck="Combatant's Torque", waist="Tempus Fugit", left_ear="Zwazo Earring", right_ear="Zennaroi Earring",
+	left_ring="Cacoethic Ring +1", right_ring="Defending Ring", back="Ground. Mantle +1",}
 	
-	sets.pdt={ammo="Vanir Battery", head="Loess Barbuta +1", body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
-	hands="Cizin Mufflers +1", right_ear="Sanare Earring", left_ring="Vocane Ring", right_ring="Defending Ring",
-	legs={ name="Cizin Breeches +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+8',}},
-	feet="Amm Greaves", neck="Loricate Torque +1", waist="Nierenschutz",
-	left_ear="Ethereal Earring", back="Mollusca Mantle",}
+	sets.pdt={ammo="Hasty Pinion +1", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Loricate Torque +1", waist="Tempus Fugit", left_ear="Zwazo Earring",
+	right_ear="Zennaroi Earring", left_ring="Vocane Ring", right_ring="Defending Ring", back="Agema Cape",}
 	
 	sets.mdt= set_combine(sets.pdt, {back="Engulfer Cape +1", left_ring="Shadow Ring",})
 	
-	sets.xdt={ammo="Vanir Battery", head="Loess Barbuta +1", body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
-	hands={ name="Founder's Gauntlets", augments={'STR+8','Attack+15','"Mag.Atk.Bns."+13','Phys. dmg. taken -3%',}},
-	legs={ name="Cizin Breeches +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+8',}},
-	feet="Amm Greaves", neck="Loricate Torque +1", waist="Nierenschutz",
-	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring", right_ring="Defending Ring",
-    back="Mollusca Mantle",}
+	sets.xdt=sets.pdt
 	--defensive sets
 --aftercast sets
 end
@@ -522,45 +525,69 @@ end
 function status_change(new,old)
 	if new=='Engaged' then
 		if TPMode=="xhit" then
-			if buffactive['Spirit Surge'] then
-				if player.mp<99 then
+			if oring=="on" then
+				if buffactive['Spirit Surge'] then
+					if player.mp<99 then
+						equip(sets.ss[TPType])
+					else
+						equip(sets.ss.o[TPType])
+					end
+				else
+					if player.mp<99 then
+						equip(sets.xhit[TPType])
+					else
+						equip(sets.xhito[TPType])
+					end
+				end
+			elseif oring=="off" then
+				if buffactive['Spirit Surge'] then
 					equip(sets.ss[TPType])
 				else
-					equip(sets.ss.o[TPType])
-				end
-			else
-				if player.mp<99 then
 					equip(sets.xhit[TPType])
-				else
-					equip(sets.xhito[TPType])
 				end
 			end
 		elseif TPMode=="multi" then
-			if buffactive['Spirit Surge'] then
-				if player.mp<99 then
+			if oring=="on" then
+				if buffactive['Spirit Surge'] then
+					if player.mp<99 then
+						equip(sets.ss[TPType])
+					else
+						equip(sets.ss.o[TPType])
+					end
+				else
+					if player.mp<99 then
+						equip(sets.tp[TPType])
+					else
+						equip(sets.o[TPType])
+					end
+				end
+			elseif oring=="off" then
+				if buffactive['Spirit Surge'] then
 					equip(sets.ss[TPType])
 				else
-					equip(sets.ss.o[TPType])
-				end
-			else
-				if player.mp<99 then
 					equip(sets.tp[TPType])
-				else
-					equip(sets.o[TPType])
 				end
 			end
 		elseif TPMode=="xhit2" then
-			if buffactive['Spirit Surge'] then
-				if player.mp<99 then
+			if oring=="on" then
+				if buffactive['Spirit Surge'] then
+					if player.mp<99 then
+						equip(sets.ss[TPType])
+					else
+						equip(sets.ss.o[TPType])
+					end
+				else
+					if player.mp<99 then
+						equip(sets.xhit2[TPType])
+					else
+						equip(sets.xhit2o[TPType])
+					end
+				end
+			elseif oring=="off" then
+				if buffactive['Spirit Surge'] then
 					equip(sets.ss[TPType])
 				else
-					equip(sets.ss.o[TPType])
-				end
-			else
-				if player.mp<99 then
 					equip(sets.xhit2[TPType])
-				else
-					equip(sets.xhit2o[TPType])
 				end
 			end
 		elseif TPMode=="Hybrid" then
@@ -734,15 +761,15 @@ function self_command(command)
 			send_command('text pdtvariable text "Gungnir"')
 		end
 	end	
-	if command== "Olyndicus" then
-		if weapon=="Olyndicus" then
+	if command== "Habile Mazrak" then
+		if weapon=="Habile Mazrak" then
 			add_to_chat(206, 'Olyndicus already equiped, updating')
 			status_change(player.status)
 		else
-			weapon="Olyndicus"
+			weapon="Habile Mazrak"
 			add_to_chat(206, 'Olyndicus Mode')
 			status_change(player.status)
-			send_command('text pdtvariable text "Olyndicus"')
+			send_command('text pdtvariable text "Habile Mazrak"')
 		end
 	end
 	if command=="Annealed" then
@@ -810,4 +837,15 @@ function self_command(command)
 		end
 	end
 -- reraise lock toggle command rule end
+	if command == 'oring' then
+		if oring=="off" then
+			oring="on"
+			add_to_chat(206, 'Oring: ON')
+			status_change(player.status)
+		else
+			oring="off"
+			add_to_chat(206, 'Oring: OFF')
+			status_change(player.status)
+		end
+	end
 end

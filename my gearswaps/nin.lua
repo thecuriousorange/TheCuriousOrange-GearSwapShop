@@ -62,57 +62,57 @@ function get_sets()
 --ninjutsu precast sets
 
 --ws sets
-	sets.precast.ws["Blade: Rin"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Felistris Mask",
+	sets.precast.ws["Blade: Rin"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Skormoth Mask",
 	neck="Rancor Collar", left_ear="Trux Earring", right_ear="Brutal Earring", body="Hachi. Chainmail", 
 	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Rajas Ring", back="Bleating Mantle", 
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Retsu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Felistris Mask",
+	sets.precast.ws["Blade: Retsu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Skormoth Mask",
 	neck="Rancor Collar", left_ear="Trux Earring", right_ear="Brutal Earring", body="Hachi. Chainmail", 
 	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Rajas Ring", back="Bleating Mantle", 
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Teki"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	sets.precast.ws["Blade: Teki"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: To"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	sets.precast.ws["Blade: To"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Chi"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	sets.precast.ws["Blade: Chi"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Ei"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	sets.precast.ws["Blade: Ei"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Jin"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Felistris Mask",
+	sets.precast.ws["Blade: Jin"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Skormoth Mask",
 	neck="Fotia Gorget", left_ear="Trux Earring", right_ear="Brutal Earring", body="Hachi. Chainmail", 
 	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Rajas Ring", back="Rancorous Mantle", 
 	waist="Fotia Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Ten"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	sets.precast.ws["Blade: Ten"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Ku"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	sets.precast.ws["Blade: Ku"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Yu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	sets.precast.ws["Blade: Yu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Kamu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Felistris Mask",
+	sets.precast.ws["Blade: Kamu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
@@ -124,7 +124,7 @@ function get_sets()
 --ws sets
 
 --ninjutsu midcast sets
-	sets.midcast.nin.utsu={main="Raimitsukane", sub="kaitsuburi", ammo="Qirmiz Tathlum", head="Felistris Mask",
+	sets.midcast.nin.utsu={main="Raimitsukane", sub="kaitsuburi", ammo="Qirmiz Tathlum", head="Skormoth Mask",
 	neck="Torero Torque", left_ear="Loquac. Earring", right_ear="Iga Mimikazari", body="Hachi. Chainmail", 
 	hands="Thaumas Gloves", left_ring="Portus Annulet", right_ring="Prolix Ring", back="Fravashi Mantle", 
 	waist="Pya'ekue Belt", legs="Hachiya Hakama", feet="Iga Kyahan +2",}
@@ -137,7 +137,7 @@ function get_sets()
 --ninjutsu midcast sets
 
 --tp sets
-	sets.aftercast.tp.vhhaste={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Felistris Mask",
+	sets.aftercast.tp.vhhaste={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Skormoth Mask",
 	body="Thaumas Coat", hands="Otronif Gloves +1", legs="Hachiya Hakama", feet="Otronif Boots +1",
 	neck="Rancor Collar", waist="Windbuffet Belt +1", right_ear="Brutal Earring", left_ear="Trux Earring",
 	left_ring="Epona's Ring", right_ring="Rajas Ring", back="Bleating Mantle",}

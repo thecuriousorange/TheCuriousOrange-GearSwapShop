@@ -110,7 +110,7 @@ include('organizer-lib.lua')
 	
 	sets.ws.accuracy["Fell Cleave"]={}
 	
-	sets.ws.damage["Ukko's Fury"]={ammo="Yetshila", head="Felistris Mask", body="Mes. Haubergeon",
+	sets.ws.damage["Ukko's Fury"]={ammo="Yetshila", head="Skormoth Mask", body="Mes. Haubergeon",
 	hands={ name="Miki. Gauntlets", augments={'Attack+15','Accuracy+10','STR+10',}},
 	neck="Fotia Gorget", waist="Fotia Belt", right_ear="Brutal Earring",
     legs={ name="Miki. Cuisses", augments={'Attack+15','Accuracy+10','STR+10',}},
@@ -120,7 +120,7 @@ include('organizer-lib.lua')
 	
 	sets.ws.accuracy["Ukko's Fury"]={}
 	
-	sets.ws.damage["Upheaval"]={head="Felistris Mask", body="Mes. Haubergeon", hands="Macabre Gaunt. +1",
+	sets.ws.damage["Upheaval"]={head="Skormoth Mask", body="Mes. Haubergeon", hands="Macabre Gaunt. +1",
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
 	legs={ name="Miki. Cuisses", augments={'Attack+15','Accuracy+10','STR+10',}},
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
@@ -179,7 +179,7 @@ include('organizer-lib.lua')
 --aftercast sets
 	--tp sets
 	sets.tp.lowacc={ammo="Paeapua",
-    head="Felistris Mask",
+    head="Skormoth Mask",
     body={ name="Xaddi Mail", augments={'Attack+15','Accuracy+10','"Store TP"+3',}},
 	hands={ name="Xaddi Gauntlets", augments={'Accuracy+15','"Store TP"+3','"Dbl.Atk."+2',}},
 	legs="Ares' Flanchard +1", neck="Asperity Necklace", waist="Windbuffet Belt +1",
@@ -187,9 +187,9 @@ include('organizer-lib.lua')
 	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Petrov Ring", right_ring="Rajas Ring",
     back={ name="Mauler's Mantle", augments={'DEX+3','STR+1','Accuracy+6','Crit. hit damage +1%',}},}
 	
-	sets.tp.medacc=set_combine(sets.tp.lowacc, {head="Yaoyotl Helm", waist="Anguinus Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",})
+	sets.tp.medacc=set_combine(sets.tp.lowacc, {head="Yaoyotl Helm", waist="Grunfeld Rope", left_ear="Steelflash Earring", right_ear="Bladeborn Earring",})
 	
-	sets.tp.highacc=set_combine(sets.tp.medacc, {head="Gavialis Helm", neck="Subtlety Spec.", left_ear="Tripudio Earring", right_ear="Zennaroi Earring", waist="Olseni Belt", legs={ name="Xaddi Cuisses", augments={'Attack +15','Accuracy +10','"Store TP"+3',}}, left_ring="Patricius Ring", right_ring="Mars's Ring", feet={name="Xaddi Boots", augments={'Attack +15','Accuracy +10','"Store TP"+3',}},})
+	sets.tp.highacc=set_combine(sets.tp.medacc, {head="Gavialis Helm", neck="Combatant's Torque", left_ear="Tripudio Earring", right_ear="Zennaroi Earring", waist="Olseni Belt", legs={ name="Xaddi Cuisses", augments={'Attack +15','Accuracy +10','"Store TP"+3',}}, left_ring="Patricius Ring", right_ring="Mars's Ring", feet={name="Xaddi Boots", augments={'Attack +15','Accuracy +10','"Store TP"+3',}},})
 	
 	sets.otp.lowacc= set_combine(sets.tp.lowacc, {left_ring="Oneiros Ring",})
 	
@@ -218,7 +218,7 @@ include('organizer-lib.lua')
 	feet={ name="Cizin Greaves +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -3%','Crit.hit rate+1',}},
 	left_ring={ name="Vocane Ring", augments={'Magic dmg. taken -4%','Breath dmg. taken -4%','Phys. dmg. taken -5%',}},}
 	
-	sets.mdt=set_combine(sets.pdt, {ammo="Vanir Battery", head="Felistris Mask", left_ring="Shadow Ring", waist="Nierenschutz",})
+	sets.mdt=set_combine(sets.pdt, {ammo="Vanir Battery", head="Skormoth Mask", left_ring="Shadow Ring", waist="Nierenschutz",})
 	--dt sets
 	
 	--idle sets

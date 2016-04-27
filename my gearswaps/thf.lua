@@ -37,31 +37,31 @@ function get_sets()
 	body="Rawhide Vest", hands="Umuthi Gloves",
 	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
     feet="Plun. Poulaines", neck="Asperity Necklace", waist="Windbuffet Belt +1", left_ear="Steelflash Earring", 
-	right_ear="Bladeborn Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring", back="Rancorous Mantle",}
+	right_ear="Bladeborn Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring +1", back="Rancorous Mantle",}
 	
 	sets.precast.ws.damage["Wasp Sting"]= sets.dexws
-	sets.precast.ws.accuracy["Wasp Sting"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Wasp Sting"]= set_combine(sets.dexws, {neck="Combatant's Torque", back="Letalis Mantle", waist="Grunfeld Rope",})
 	
 	sets.precast.ws.damage["Viper Bite"]= sets.dexws
-	sets.precast.ws.accuracy["Viper Bite"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Viper Bite"]= set_combine(sets.dexws, {neck="Combatant's Torque", back="Letalis Mantle", waist="Grunfeld Rope",})
 	
 	sets.precast.ws.damage["Shadowstitch"]= sets.dexws
-	sets.precast.ws.accuracy["Shadowstitch"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Shadowstitch"]= set_combine(sets.dexws, {neck="Combatant's Torque", back="Letalis Mantle", waist="Grunfeld Rope",})
 	
 	sets.precast.ws.damage["Dancing Edge"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
-	sets.precast.ws.accuracy["Dancing Edge"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Dancing Edge"]= set_combine(sets.dexws, {neck="Combatant's Torque", back="Letalis Mantle", waist="Grunfeld Rope",})
 	
 	sets.precast.ws.damage["Shark Bite"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
-	sets.precast.ws.accuracy["Shark Bite"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Shark Bite"]= set_combine(sets.dexws, {neck="Combatant's Torque", back="Letalis Mantle", waist="Grunfeld Rope",})
 	
 	sets.precast.ws.damage["Evisceration"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
-	sets.precast.ws.accuracy["Evisceration"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Evisceration"]= set_combine(sets.dexws, {neck="Combatant's Torque", back="Letalis Mantle", waist="Grunfeld Rope",})
 	
 	sets.precast.ws.damage["Mandalic Stab"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
-	sets.precast.ws.accuracy["Mandalic Stab"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Mandalic Stab"]= set_combine(sets.dexws, {neck="Combatant's Torque", back="Letalis Mantle", waist="Grunfeld Rope",})
 	
 	sets.precast.ws.damage["Rudra's Storm"]= set_combine(sets.dexws, {neck="Fotia Gorget", waist="Fotia Belt",})
-	sets.precast.ws.accuracy["Rudra's Storm"]= set_combine(sets.dexws, {neck="Subtlety Spec.", back="Letalis Mantle", waist="Anguinus Belt",})
+	sets.precast.ws.accuracy["Rudra's Storm"]= set_combine(sets.dexws, {neck="Combatant's Torque", back="Letalis Mantle", waist="Grunfeld Rope",})
 	
 	sets.midcast={}
 	sets.midcast.ma={}
@@ -78,7 +78,7 @@ function get_sets()
 	hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}}, feet=taeonfeet,
 	waist="Chaac Belt", left_ear="Dudgeon Earring", right_ring="Rajas Ring", back="Canny Cape",}
 	
-	sets.aftercast.offense.medacc= set_combine(sets.aftercast.offense.lowacc, {neck="Subtlety Spec.",})
+	sets.aftercast.offense.medacc= set_combine(sets.aftercast.offense.lowacc, {neck="Combatant's Torque",})
 	
 	sets.aftercast.offense.highacc= set_combine(sets.aftercast.offense.medacc, {head=taeonhead, left_ear="suppanomimi", right_ear="Zennaroi Earring",})
 	
@@ -96,27 +96,17 @@ function get_sets()
 	
 	sets.aftercast.hybrid.medacc= set_combine(sets.aftercast.hybrid.lowacc, {back="Letalis Mantle",left_ring="Patricius Ring",})
 	
-	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {neck="Subtlety Spec.", waist="Hurch'lan Sash",})
+	sets.aftercast.hybrid.highacc= set_combine(sets.aftercast.hybrid.medacc, {neck="Combatant's Torque", waist="Hurch'lan Sash",})
 	
 	sets.aftercast.defense={}
 	sets.aftercast.defense.index={'pdt','mdt','xdt'}
 	defense_ind=1
 	
-	sets.aftercast.defense.pdt={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", hands="Umuthi Gloves",
-	head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
-	body="Rawhide Vest",
-	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
-	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Loricate Torque +1",
-	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring",
-	right_ring="Defending Ring",back="Mollusca Mantle",}
+	sets.aftercast.defense.pdt={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
+	body="Onca Suit", neck="Loricate Torque +1", waist="Flume Belt", left_ear="Genmei Earring", right_ear="Ethereal Earring",
+	left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
 	
-	sets.aftercast.defense.mdt={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", hands="Umuthi Gloves",
-	head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
-	body="Rawhide Vest",
-	legs={ name="Iuitl Tights +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Accuracy+7',}},
-	feet={ name="Iuitl Gaiters +1", augments={'Phys. dmg. taken -3%','Rng.Atk.+7',}}, neck="Loricate Torque +1",
-	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Vocane Ring",
-	right_ring="Defending Ring",back="Mollusca Mantle",}
+	sets.aftercast.defense.mdt=set_combine(sets.aftercast.defense.pdt, {left_ring="Shadow Ring",})
 	
 	sets.aftercast.defense.xdt={main="Izhiikoh", sub="Sandung", range="Raider's Bmrng.", hands="Umuthi Gloves",
 	head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},

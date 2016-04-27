@@ -70,7 +70,7 @@ function get_sets()
 	stplegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
 	stpfeet={ name="Acro Leggings", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
 	
-	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','STR+10',}}
+	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','Crit. Hit Damage +1%',}}
 	dahands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
 	dalegs={ name="Acro Breeches", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
 	dafeet={ name="Acro Leggings", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
@@ -264,7 +264,7 @@ function get_sets()
 
 	sets.aftercast.tp.medacc=set_combine(sets.aftercast.tp.lowacc,{head=stphead, left_ring="Apate Ring",})
 
-	sets.aftercast.tp.highacc=set_combine(sets.aftercast.tp.medacc,{neck="Subtlety Spec.", waist="Olseni Belt", left_ear="Zennaroi Earring",})
+	sets.aftercast.tp.highacc=set_combine(sets.aftercast.tp.medacc,{neck="Combatant's Torque", waist="Olseni Belt", left_ear="Zennaroi Earring",})
 
 	sets.aftercast.o.lowacc=set_combine(sets.aftercast.tp.lowacc,{left_ring="Oneiros Ring",})
 
@@ -276,10 +276,10 @@ function get_sets()
 -- defensive sets
 	sets.hybrid.lowacc=set_combine(sets.aftercast.tp.lowacc, {neck="Loricate Torque +1", back="Mollusca Mantle", left_ring="Vocane Ring", right_ring="Defending Ring",})
 	
-	sets.hybrid.medacc=set_combine(sets.hybrid.lowacc, {neck="Subtlety Spec.", back=Takaha, waist="Olseni Belt"})
+	sets.hybrid.medacc=set_combine(sets.hybrid.lowacc, {neck="Combatant's Torque", back=Takaha, waist="Olseni Belt"})
 	
 	sets.hybrid.highacc={main="Tsurumaru", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
-	head={ name="Founder's Corona", augments={'DEX+6','Accuracy+10','Magic dmg. taken -3%',}}, neck="Subtlety Spec.", waist="Dynamic Belt +1",
+	head={ name="Founder's Corona", augments={'DEX+6','Accuracy+10','Magic dmg. taken -3%',}}, neck="Combatant's Torque", waist="Dynamic Belt +1",
     body={ name="Found. Breastplate", augments={'Accuracy+7','Mag. Acc.+5','Attack+7',}}, left_ear="Zennaroi Earring", right_ear="Cessance Earring",
     hands={ name="Founder's Gauntlets", augments={'STR+8','Attack+15','"Mag.Atk.Bns."+13','Phys. dmg. taken -3%',}}, left_ring="Vocane Ring",
     legs={ name="Founder's Hose", augments={'MND+5','Mag. Acc.+13',}}, right_ring="Defending Ring", back=Takaha,

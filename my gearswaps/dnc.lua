@@ -45,17 +45,17 @@ function get_sets()
 	
 	--ws sets
 	sets.ws["Dancing Edge"]={ammo="Ginsen", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
-	right_ear="Brutal Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring", neck="Fotia Gorget", head=taeonhead, body=taeonbody,
+	right_ear="Brutal Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring +1", neck="Fotia Gorget", head=taeonhead, body=taeonbody,
     back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+2','"Rev. Flourish"+24','Weapon skill damage +4%',}},
 	hands=taeonhands, legs=taeonlegs, feet=taeonfeet,}
 	
 	sets.ws["Evisceration"]={ammo="Ginsen", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
-	right_ear="Brutal Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring", neck="Fotia Gorget", head=taeonhead, body=taeonbody,
+	right_ear="Brutal Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring +1", neck="Fotia Gorget", head=taeonhead, body=taeonbody,
     back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+2','"Rev. Flourish"+24','Weapon skill damage +4%',}},
 	hands=taeonhands, legs=taeonlegs, feet=taeonfeet,}
 	
 	sets.ws["Rudras Storm"]={ammo="Ginsen", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
-	right_ear="Brutal Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring", neck="Fotia Gorget", head=taeonhead, body=taeonbody,
+	right_ear="Brutal Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring +1", neck="Fotia Gorget", head=taeonhead, body=taeonbody,
     back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+2','"Rev. Flourish"+24','Weapon skill damage +4%',}},
 	hands=taeonhands, legs=taeonlegs, feet=taeonfeet,}
 	
