@@ -121,17 +121,17 @@ function get_sets()
 --basesetnames
 
 --precast sets
-	sets.precast.nuke={head="Nahtirah Hat", body="Anhur Robe", hands="Bagua Mitaines", feet="Chelona Boots",
-	legs="Geo. Pants +1", neck="Stoicheion Medal", waist="Othila Sash", left_ear="Loquac. Earring",
-	right_ear="Etiolation Earring", left_ring="Prolix Ring", back="Lifestream Cape",}
+	sets.precast.nuke={head={ammo="Impatiens", name="Merlinic Hood", augments={'Mag. Acc.+7','"Fast Cast"+6','"Mag.Atk.Bns."+3',}},
+	body="Anhur Robe", hands="Helios Gloves", feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+6',}},
+	legs="Psycloth Lappas", neck="Stoicheion Medal", waist="Channeler's Stone", right_ear="Loquac. Earring", right_ring="Rahab Ring",
+	left_ear="Barkaro. Earring", left_ring="Veneficium Ring", back="Perimede Cape",}
 	
-	sets.precast.impact={body="Twilight Cloak", hands="Helios Gloves", feet="Chelona Boots",
-	neck="Stoicheion Medal", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Etiolation Earring",
-	legs="Geo. Pants +1", left_ring="Prolix Ring", back="Lifestream Cape",}
+	sets.precast.impact=set_combine(sets.precast.nuke,{head="none", body="Twilight Cloak",})
 	
-	sets.precast.notnuke={main="Marin Staff", head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs="Geo. Pants +1",
-	feet="Chelona Boots", neck="Jeweled Collar", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Etiolation Earring",
-	left_ring="Prolix Ring", back="Lifestream Cape",}
+	sets.precast.notnuke={head={ammo="Impatiens", name="Merlinic Hood", augments={'Mag. Acc.+7','"Fast Cast"+6','"Mag.Atk.Bns."+3',}},
+	body="Anhur Robe", hands="Helios Gloves", feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+6',}},
+	legs="Psycloth Lappas", neck="Stoicheion Medal", waist="Channeler's Stone", right_ear="Loquac. Earring", right_ring="Rahab Ring",
+	left_ear="Barkaro. Earring", left_ring="Veneficium Ring", back="Perimede Cape",}
 	
 	sets.precast.geo=set_combine(sets.precast.notnuke,{range="Dunna"})
 	
@@ -157,11 +157,11 @@ function get_sets()
 	
 	sets.midcast.eledot={main="Marin Staff", sub="Elementa Grip", ammo="Pemphredo Tathlum", head="Geo. Galero +1", 
 	body="Shango Robe", hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
-	neck="Eddy Necklace", waist="Eschan Stone", left_ear="Strophadic Earring", right_ear="Gwati Earring",
+	neck="Sanctity Necklace", waist="Eschan Stone", left_ear="Strophadic Earring", right_ear="Gwati Earring",
 	left_ring="Sangoma Ring", right_ring="Strendu Ring", back="Toro Cape",}
 	
 	sets.midcast.darkdot={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Shango Robe",
-	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Eschan Stone",
+	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", waist="Eschan Stone",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Archon Ring",
 	back="Toro Cape",}
 	
@@ -171,12 +171,12 @@ function get_sets()
 	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Globidonta Ring", back="Toro Cape",}
 	
 	sets.midcast.mndenfeeb={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", ammo="Pemphredo Tathlum", body="Shango Robe",
-	hands="Lurid Mitts", legs="Artsieq Hose", head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace",
+	hands="Lurid Mitts", legs="Artsieq Hose", head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace",
 	waist="Rumination Sash", left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Levia. Ring",
 	back="Toro Cape",}
 	
 	sets.midcast.doa={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Bagua Galero", body="Shango Robe",
-	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", 
+	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", 
 	left_ear="Gwati Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
 	back="Toro Cape",}
 	
@@ -184,41 +184,59 @@ function get_sets()
 	
 	sets.midcast.nuke.acc={}
 	
-	sets.midcast.nuke.dmg.lowtier={main="Marin Staff", sub="Elementa Grip", ammo="Ghastly Tathlum +1", body="Count's Garb",
-	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+6%',}},
-	legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
-	feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", left_ear="Crematio Earring", right_ear="Friomisi Earring",
-	right_ring="Strendu Ring", back="Toro Cape",
-	left_ring="Sangoma Ring", hands="Otomi Gloves",}
+	sets.midcast.nuke.dmg.lowtier={main={ name="Grioavolr", augments={'Magic burst mdg.+1%','Mag. Acc.+29','"Mag.Atk.Bns."+27',}}, waist="Eschan Stone",
+	sub="Niobid Strap", ammo="Pemphredo Tathlum", head={ name="Merlinic Hood", augments={'Magic burst mdg.+11%','INT+10','Mag. Acc.+3','"Mag.Atk.Bns."+14',}},
+	body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +8','"Mag.Atk.Bns."+15',}}, neck="Sanctity Necklace",
+	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ear="Barkaro. Earring", right_ear="Friomisi Earring",
+	legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst mdg.+11%','"Mag.Atk.Bns."+7',}}, left_ring="Acumen Ring",
+	feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ring="Strendu Ring", back="Toro Cape",}
 	
-	sets.midcast.nuke.dmg.midtier={main="Marin Staff", sub="Elementa Grip", ammo="Ghastly Tathlum +1", body="Count's Garb",
-	head={ name="Helios Band", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic crit. hit rate +5','Magic burst mdg.+6%',}},
-	legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
-	feet="Umbani Boots", neck="Eddy Necklace", waist="Sekhmet Corset", left_ear="Crematio Earring", right_ear="Friomisi Earring",
-	right_ring="Strendu Ring", back="Toro Cape",
-	left_ring="Sangoma Ring", hands="Otomi Gloves",}
+	sets.midcast.nuke.dmg.midtier={main={ name="Grioavolr", augments={'Magic burst mdg.+1%','Mag. Acc.+29','"Mag.Atk.Bns."+27',}}, waist="Eschan Stone",
+	sub="Niobid Strap", ammo="Pemphredo Tathlum", head={ name="Merlinic Hood", augments={'Magic burst mdg.+11%','INT+10','Mag. Acc.+3','"Mag.Atk.Bns."+14',}},
+	body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +8','"Mag.Atk.Bns."+15',}}, neck="Sanctity Necklace",
+	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ear="Barkaro. Earring", right_ear="Friomisi Earring",
+	legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst mdg.+11%','"Mag.Atk.Bns."+7',}}, left_ring="Acumen Ring",
+	feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ring="Strendu Ring", back="Toro Cape",}
 	
-	sets.midcast.nuke.dmg.hightier={main="Marin Staff", sub="Elementa Grip", ammo="Ghastly Tathlum +1", head="Helios Band", body="Count's Garb",
-	hands="Hagondes Cuffs +1", legs="Hagondes Pants +1", feet="Helios Boots", neck="Eddy Necklace", waist="Othila Sash", 
-	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
-    back="Toro Cape",}
+	sets.midcast.nuke.dmg.hightier={main={ name="Grioavolr", augments={'Magic burst mdg.+1%','Mag. Acc.+29','"Mag.Atk.Bns."+27',}}, waist="Eschan Stone",
+	sub="Niobid Strap", ammo="Pemphredo Tathlum", head={ name="Merlinic Hood", augments={'Magic burst mdg.+11%','INT+10','Mag. Acc.+3','"Mag.Atk.Bns."+14',}},
+	body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +8','"Mag.Atk.Bns."+15',}}, neck="Sanctity Necklace",
+	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ear="Barkaro. Earring", right_ear="Friomisi Earring",
+	legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst mdg.+11%','"Mag.Atk.Bns."+7',}}, left_ring="Acumen Ring",
+	feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ring="Strendu Ring", back="Toro Cape",}
 		
-	sets.midcast.nuke.acc.lowtier= set_combine(sets.midcast.nuke.dmg.lowtier,{body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", back="Toro Cape"})
+	sets.midcast.nuke.acc.lowtier={main={ name="Grioavolr", augments={'Magic burst mdg.+1%','Mag. Acc.+29','"Mag.Atk.Bns."+27',}}, waist="Eschan Stone",
+	sub="Niobid Strap", ammo="Pemphredo Tathlum", head={ name="Merlinic Hood", augments={'Magic burst mdg.+11%','INT+10','Mag. Acc.+3','"Mag.Atk.Bns."+14',}},
+	body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +8','"Mag.Atk.Bns."+15',}}, neck="Sanctity Necklace",
+	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ear="Barkaro. Earring", right_ear="Friomisi Earring",
+	legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst mdg.+11%','"Mag.Atk.Bns."+7',}}, left_ring="Acumen Ring",
+	feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ring="Strendu Ring", back="Toro Cape",}
 	
-	sets.midcast.nuke.acc.midtier= set_combine(sets.midcast.nuke.dmg.midtier,{body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", back="Toro Cape"})
+	sets.midcast.nuke.acc.midtier={main={ name="Grioavolr", augments={'Magic burst mdg.+1%','Mag. Acc.+29','"Mag.Atk.Bns."+27',}}, waist="Eschan Stone",
+	sub="Niobid Strap", ammo="Pemphredo Tathlum", head={ name="Merlinic Hood", augments={'Magic burst mdg.+11%','INT+10','Mag. Acc.+3','"Mag.Atk.Bns."+14',}},
+	body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +8','"Mag.Atk.Bns."+15',}}, neck="Sanctity Necklace",
+	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ear="Barkaro. Earring", right_ear="Friomisi Earring",
+	legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst mdg.+11%','"Mag.Atk.Bns."+7',}}, left_ring="Acumen Ring",
+	feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ring="Strendu Ring", back="Toro Cape",}
 	
-	sets.midcast.nuke.acc.hightier=set_combine(sets.midcast.nuke.dmg.hightier,{body="Wretched Coat", hands="Hagondes Cuffs +1", waist="Eschan Stone", back="Toro Cape"})
+	sets.midcast.nuke.acc.hightier={main={ name="Grioavolr", augments={'Magic burst mdg.+1%','Mag. Acc.+29','"Mag.Atk.Bns."+27',}}, waist="Eschan Stone",
+	sub="Niobid Strap", ammo="Pemphredo Tathlum", head={ name="Merlinic Hood", augments={'Magic burst mdg.+11%','INT+10','Mag. Acc.+3','"Mag.Atk.Bns."+14',}},
+	body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +8','"Mag.Atk.Bns."+15',}}, neck="Sanctity Necklace",
+	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ear="Barkaro. Earring", right_ear="Friomisi Earring",
+	legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst mdg.+11%','"Mag.Atk.Bns."+7',}}, left_ring="Acumen Ring",
+	feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ring="Strendu Ring", back="Toro Cape",}
 	
-	sets.midcast.nuke.dark= set_combine(sets.midcast.nuke.dmg, {left_ring="Archon Ring",})
+	sets.midcast.nuke.dark= set_combine(sets.midcast.nuke.dmg.hightier, {head="Pixie Hairpin +1", left_ring="Archon Ring",})
 	
-	sets.midcast.nuke.Impact={main="Marin Staff", sub="Elementa Grip", ammo="Pemphredo Tathlum", body="Twilight Cloak",
-	hands="Yaoyotl Gloves", legs="Hagondes Pants +1", feet="Umbani Boots", neck="Eddy Necklace", waist="Othila Sash", 
-	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Archon Ring", right_ring="Strendu Ring",
-    back="Toro Cape",}
+	sets.midcast.nuke.Impact={main={ name="Grioavolr", augments={'Magic burst mdg.+1%','Mag. Acc.+29','"Mag.Atk.Bns."+27',}}, waist="Eschan Stone",
+	sub="Niobid Strap", ammo="Pemphredo Tathlum", head="none", body="Twilight Cloak", neck="Sanctity Necklace",
+	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ear="Barkaro. Earring", right_ear="Friomisi Earring",
+	legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst mdg.+11%','"Mag.Atk.Bns."+7',}}, left_ring="Acumen Ring",
+	feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ring="Strendu Ring", back="Toro Cape",}
 	
 	sets.midcast.stun={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Shango Robe",
 	hands="Hagondes Cuffs +1", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
-	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Eddy Necklace", waist="Ninurta's Sash",
+	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", waist="Ninurta's Sash",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
 	back="Lifestream Cape",}
 	

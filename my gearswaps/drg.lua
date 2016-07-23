@@ -68,7 +68,7 @@ function get_sets()
 	dafeet={ name="Acro Leggings", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
 	
 	updrafttp={ name="Updraft Mantle", augments={'STR+2','Pet: Breath+3','Pet: Damage taken -1%','Weapon skill damage +1%',}}
-	updraftws={ name="Updraft Mantle", augments={'STR+1','Pet: Damage taken -1%','Weapon skill damage +4%',}}
+	updraftws={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 --augmented items
 	
 --variables
@@ -123,7 +123,7 @@ function get_sets()
 	sets.weaponry.Annealed={main="Annealed Lance", sub="Alber Strap",}
 	sets.weaponry.Quint={main="Quint Spear", sub="Alber Strap",}
 --weaponry
-	sets.idle={ammo="Vanir Battery", head="Twilight Helm", body="Twilight Mail", hands="Sulev. Gauntlets +1", 
+	sets.idle={ammo="Vanir Battery", head="Valorous Mask", body="Jumalik Mail", hands="Sulev. Gauntlets +1", 
 	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Amm Greaves", neck="Loricate Torque +1", waist="Nierenschutz",
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", 
 	right_ring="Sheltered Ring", back="Shadow Mantle",}
@@ -152,15 +152,17 @@ function get_sets()
 	waist="Windbuffet Belt +1", back="Letalis Mantle", feet=taeonfeet, right_ring="Oneiros Ring", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
 	left_ring="Petrov Ring",}
 	
-	sets.damage["Spirit Jump"]={ammo="Potestas Bomblet", head=taeonhead, body=taeonbody, hands=taeonhands,
-    legs="Pelt. Cuissots +1", feet={ name="Hrafn Gambieras", augments={'Crit. hit damage +9%',}},
-	neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring", 
-	right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring", back="Letalis Mantle",}
+	sets.damage["Spirit Jump"]={ammo="Ginsen", head="Sulevia's Mask +1", hands="Sulev. Gauntlets +1", legs="Pelt. Cuissots +1",
+	body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
+	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, neck="Combatant's Torque", waist="Grunfeld Rope",
+	left_ear="Cessance Earring", right_ear="Telos Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1",
+	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},}
 	
-	sets.damage["Soul Jump"]={ammo="Potestas Bomblet", head=taeonhead, body=taeonbody, hands=taeonhands,
-    legs="Pelt. Cuissots +1", feet={ name="Hrafn Gambieras", augments={'Crit. hit damage +9%',}},
-	neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring", 
-	right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring", back="Letalis Mantle",}
+	sets.damage["Soul Jump"]={ammo="Ginsen", head="Sulevia's Mask +1", hands="Sulev. Gauntlets +1", legs="Pelt. Cuissots +1",
+	body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
+	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, neck="Combatant's Torque", waist="Grunfeld Rope",
+	left_ear="Cessance Earring", right_ear="Telos Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1",
+	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},}
 	
 	sets.ja["Ancient Circle"]={legs="Vishap Brais +1",}
 	
@@ -210,7 +212,7 @@ function get_sets()
 	sets.ws.damage["Double Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Double Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
@@ -220,7 +222,7 @@ function get_sets()
 	sets.ws.damage["Thunder Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Thunder Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
@@ -230,7 +232,7 @@ function get_sets()
 	sets.ws.damage["Raiden Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Raiden Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
@@ -260,7 +262,7 @@ function get_sets()
 	sets.ws.damage["Vorpal Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Vorpal Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
@@ -270,7 +272,7 @@ function get_sets()
 	sets.ws.damage["Skewer"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Skewer"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
@@ -280,7 +282,7 @@ function get_sets()
 	sets.ws.damage["Wheeling Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Wheeling Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
@@ -290,7 +292,7 @@ function get_sets()
 	sets.ws.damage["Impulse Drive"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Impulse Drive"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
@@ -309,14 +311,14 @@ function get_sets()
     right_ear="Brutal Earring",
     left_ring="Ifrit Ring +1",
     right_ring="Rajas Ring",
-    back="Buquwik Cape",}
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Drakesbane"]={ammo="Potestas Bomblet",
     head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}},
     body="Sulevia's Plate. +1",
     hands={ name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
     legs="Pelt. Cuissots +1",
-    feet={ name="Valorous Greaves", augments={'Accuracy+22 Attack+22','Crit.hit rate+3','Accuracy+1','Attack+15',}},
+    feet={ name="Valorous Greaves", augments={'Accuracy+27','"Dbl.Atk."+3','DEX+5','Attack+6',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
@@ -328,7 +330,7 @@ function get_sets()
 	sets.ws.damage["Sonic Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Sonic Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
@@ -348,7 +350,7 @@ function get_sets()
 	sets.ws.damage["Stardiver"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Lustratio Harness", hands="Sulev. Gauntlets +1",
 	legs="Despair Cuisses", feet="Lustratio Leggings", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	right_ring="Shukuyu Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Stardiver"]={ammo="Potestas Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
 	body={ name="Lustratio Harness", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, hands="Sulev. Gauntlets +1",
@@ -360,21 +362,21 @@ function get_sets()
     body="Pelt. Plackart +1",
     hands={ name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
     legs={ name="Lustratio Subligar", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
-    feet={ name="Valorous Greaves", augments={'Accuracy+22 Attack+22','Crit.hit rate+3','Accuracy+1','Attack+15',}},
+    feet={ name="Valorous Greaves", augments={'Accuracy+27','"Dbl.Atk."+3','DEX+5','Attack+6',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
     right_ear="Brutal Earring",
     left_ring="Ramuh Ring +1",
     right_ring="Rajas Ring",
-    back="Buquwik Cape",}
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.ws.accuracy["Geirskogul"]={ammo="Potestas Bomblet",
     head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
     body="Pelt. Plackart +1",
     hands={ name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
     legs={ name="Lustratio Subligar", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
-    feet={ name="Valorous Greaves", augments={'Accuracy+22 Attack+22','Crit.hit rate+3','Accuracy+1','Attack+15',}},
+    feet={ name="Valorous Greaves", augments={'Accuracy+27','"Dbl.Atk."+3','DEX+5','Attack+6',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
@@ -409,27 +411,33 @@ function get_sets()
 	sets.tp.highacc= {ammo="Amar Cluster", neck="Combatant's Torque", waist="Olseni Belt", right_ring="Ramuh Ring +1",
 	head={ name="Taeon Chapeau", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +3%',}},
 	body={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Crit. hit damage +3%',}},
-	hands="Sulev. Gauntlets +1", left_ear="Cessance Earring", right_ear="Zennaroi Earring", left_ring="Cacoethic Ring +1",
+	hands="Sulev. Gauntlets +1", left_ear="Telos Earring", right_ear="Zennaroi Earring", left_ring="Cacoethic Ring +1",
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
 	feet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}},
-	back="Ground. Mantle +1",}
+	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},}
 	
-	sets.xhit.lowacc={ammo="Ginsen", head=acrohead, body="Pelt. Plackart +1", back="Bleating Mantle", hands=acrohands, waist="Windbuffet Belt +1",
-	legs=acrolegs, feet=acrofeet, neck="Ganesha's Mala", left_ear="Tripudio Earring", right_ear="Cessance Earring", left_ring="Petrov Ring",
+	sets.xhit.lowacc={ammo="Ginsen", head=acrohead, body="Pelt. Plackart +1", back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},
+	hands=acrohands, waist="Windbuffet Belt +1", legs=acrolegs, feet=acrofeet, neck="Ganesha's Mala", left_ear="Tripudio Earring", right_ear="Cessance Earring", left_ring="Petrov Ring",
 	right_ring="Rajas Ring",}
 		
 	sets.xhit.medacc=set_combine(sets.xhit.lowacc, {waist="Grunfeld Rope", back="Letalis Mantle"})
 	
-	sets.xhit.highacc=set_combine(sets.xhit.medacc, {neck="Combatant's Torque", waist="Olseni Belt", left_ring="Patricius Ring", right_ring="Mars's Ring", back=updrafttp, right_ear="Zennaroi Earring",})
+	sets.xhit.highacc={ammo="Ginsen", head={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3','STR+10',}},
+	body="Pelt. Plackart +1", hands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. hit damage +3%',}},
+	legs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. hit damage +3%',}}, neck="Combatant's Torque",
+	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, waist="Olseni Belt", left_ear="Telos Earring",
+	right_ear="Cessance Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1", 
+	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},}
 	
 	sets.xhit2.lowacc=set_combine(sets.xhit.lowacc, {legs=taeonlegs,})
 	
 	sets.xhit2.medacc=set_combine(sets.xhit.medacc, {legs=taeonlegs,})
 	
-	sets.xhit2.highacc={ammo="Ginsen", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Combatant's Torque", waist="Tempus Fugit", 
-	left_ear="Tripudio Earring", right_ear="Zennaroi Earring", left_ring="Cacoethic Ring +1", right_ring="Mars's Ring",
-    back="Grounded Mantle +1",} --set_combine(sets.xhit.highacc, {legs=taeonlegs,})
+	sets.xhit2.highacc={ammo="Amar Cluster", head="Sulevia's Mask +1", hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
+	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, neck="Combatant's Torque", waist="Tempus Fugit",
+	left_ear="Mache Earring", right_ear="Mache Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},} --set_combine(sets.xhit.highacc, {legs=taeonlegs,})
 	
 	sets.o.lowacc= set_combine(sets.tp.lowacc, {right_ring="Oneiros Ring",})
 	

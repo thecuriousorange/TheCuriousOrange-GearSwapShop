@@ -164,7 +164,7 @@ function get_sets()
     feet={ name="Gende. Galoshes", augments={'Phys. dmg. taken -2%','"Cure" potency +1%',}},
 	main="Legato Dagger", sub="Genbu's Shield", hands="Bokwus Gloves", legs="Nares Trews", neck="Aoidos' Matinee",
 	waist="Cascade Belt", left_ear="Lifestorm Earring", right_ear="Loquac. Earring", left_ring="Aquasoul Ring", 
-	right_ring="Aquasoul Ring", back="Oretania's Cape",}
+	right_ring="Aquasoul Ring", back="Solemnity Cape",}
 	
 	sets.midcast.enhancing={}
 	

@@ -133,14 +133,14 @@ function get_sets()
 --precast sets
 	--ja sets
 	sets.enmity={ammo="Iron Gobbet", head="Rabid Visor", hands="Kurys Gloves", feet="Erilaz Greaves +1", legs="Eri. Leg Guards +1",
-	body="Futhark Coat +1",	neck="Warder's Charm", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
+	body="Emet Harness +1",	neck="Warder's Charm +1", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
 	left_ring="Supershear Ring", right_ring="Eihwaz Ring", back="Fravashi Mantle",}
 	
 	sets.ja["Vivacious Pulse"]=set_combine(sets.enmity, {head="Erilaz Galea +1",})
 	
-	sets.ja["Valiance"]=set_combine(sets.enmity, {body="Rune. Bandeau +1",})
+	sets.ja["Valiance"]=set_combine(sets.enmity, {body="Rune. Bandeau +1", back="Ogma's Cape",})
 	
-	sets.ja["Vallation"]=set_combine(sets.enmity, {body="Rune. Bandeau +1",})
+	sets.ja["Vallation"]=set_combine(sets.enmity, {body="Rune. Bandeau +1", back="Ogma's Cape",})
 	
 	sets.ja["Gambit"]=set_combine(sets.enmity, {hands="Runeist Mitons +1",})
 	
@@ -154,14 +154,14 @@ function get_sets()
 	
 	sets.ja["Swordplay"]=set_combine(sets.enmity, {hands="Futhark Mitons +1",})
 	
-	sets.ja["Lunge"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Magic burst mdg.+1%','MND+6','"Mag.Atk.Bns."+14',}}, 
+	sets.ja["Lunge"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}}, 
 	body="Samnuha Coat", hands="Leyline Gloves", legs={ name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+3','STR+9','Mag. Acc.+9',}}, 
-	feet={ name="Herculean Boots", augments={'Mag. Acc.+7 "Mag.Atk.Bns."+7','INT+2','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}, neck="Eddy Necklace", waist="Eschan Stone", 
+	feet={ name="Herculean Boots", augments={'Mag. Acc.+7 "Mag.Atk.Bns."+7','INT+2','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}, neck="Sanctity Necklace", waist="Eschan Stone", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Acumen Ring", back="Evasionist's Cape",}
 	
-	sets.ja["Swipe"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Magic burst mdg.+1%','MND+6','"Mag.Atk.Bns."+14',}}, 
+	sets.ja["Swipe"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}}, 
 	body="Samnuha Coat", hands="Leyline Gloves", legs={ name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+3','STR+9','Mag. Acc.+9',}}, 
-	feet={ name="Herculean Boots", augments={'Mag. Acc.+7 "Mag.Atk.Bns."+7','INT+2','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}, neck="Eddy Necklace", waist="Eschan Stone", 
+	feet={ name="Herculean Boots", augments={'Mag. Acc.+7 "Mag.Atk.Bns."+7','INT+2','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}, neck="Sanctity Necklace", waist="Eschan Stone", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Acumen Ring", back="Evasionist's Cape",}
 	
 	sets.ja["Provoke"]=sets.enmity
@@ -190,14 +190,14 @@ function get_sets()
 	--ja sets
 	
 	--ws sets
-	sets.ws.dmg["Resolution"]={ammo="Potestas Bomblet", head="Lustratio Cap", neck="Fotia Gorget", waist="Fotia Belt",
-	body={ name="Rawhide Vest", augments={'HP+50','System: 2 ID: 182 Val: 6','System: 2 ID: 179 Val: 1',}},
+	sets.ws.dmg["Resolution"]={ammo="Seething Bomblet", head="Lustratio Cap", neck="Fotia Gorget", waist="Fotia Belt",
+	body="Adhemar Jacket",
 	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},  right_ear="Bladeborn Earring",
-	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
+	legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
 	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Steelflash Earring",
 	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back="Buquwik Cape",}
 	
-	sets.ws.dmg["Dimidiation"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Abnoba Kaftan",
+	sets.ws.dmg["Dimidiation"]={ammo="Seething Bomblet", head="Lustratio Cap", body="Abnoba Kaftan",
 	hands="Adhemar Wristbands", legs="Lustratio Subligar", feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}}, neck="Fotia Gorget",
 	waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
 	left_ring="Ramuh Ring +1", right_ring="Epona's Ring", back="Buquwik Cape",}
@@ -250,7 +250,13 @@ function get_sets()
 	
 	sets.ws.dmg["Flat Blade"]=sets.ws.dmg["Resolution"]
 	
-	sets.ws.dmg["Fell Cleave"]=sets.ws.dmg["Resolution"]
+	sets.ws.dmg["Fell Cleave"]={ammo="Seething Bomblet", neck="Fotia Gorget",
+    head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, left_ear="Telos Earring",
+    body={ name="Lustratio Harness", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, right_ring="Ifrit Ring",
+    hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','Haste+2%',}}, left_ring="Ifrit Ring +1",
+    legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
+    feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, waist="Fotia Belt",
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, back="Buquwik Cape",}
 	
 	sets.ws.dmg["Steel Cyclone"]=sets.ws.dmg["Resolution"]
 	
@@ -266,14 +272,13 @@ function get_sets()
 	
 	sets.ws.dmg["Shield Break"]=sets.ws.dmg["Resolution"]
 	
-	sets.ws.acc["Resolution"]={ammo="Potestas Bomblet", head="Lustratio Cap", neck="Fotia Gorget", waist="Fotia Belt",
-	body={ name="Rawhide Vest", augments={'HP+50','System: 2 ID: 182 Val: 6','System: 2 ID: 179 Val: 1',}},
+	sets.ws.acc["Resolution"]={ammo="Seething Bomblet", head="Adhemar Bonnet", neck="Fotia Gorget", waist="Fotia Belt", body="Adhemar Jacket",
 	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}}, right_ear="Bladeborn Earring",
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
 	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Steelflash Earring",
 	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back="Buquwik Cape",}
 	
-	sets.ws.acc["Dimidiation"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Abnoba Kaftan",
+	sets.ws.acc["Dimidiation"]={ammo="Seething Bomblet", head="Adhemar Bonnet", body="Adhemar Jacket",
 	hands="Adhemar Wristbands", legs="Lustratio Subligar", feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}}, neck="Fotia Gorget",
 	waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
 	left_ring="Ramuh Ring +1", right_ring="Epona's Ring", back="Buquwik Cape",}
@@ -373,23 +378,64 @@ function get_sets()
 	
 	sets.midcast.ma["Aquaveil"]= set_combine(sets.enhancing, {})
 	
-	sets.midcast.ma["Flash"]= set_combine(sets.precast.fc, {neck="Warder's Charm", hands="Futhark Mitons +1", left_ring="Eihwaz Ring",})
+	sets.midcast.ma["Cure"]={ammo="Impatiens", head="Erilaz Galea +1", body="Emet Harness +1", feet="Erilaz Greaves +1",
+	hands={ name="Buremte Gloves", augments={'Haste+2','"Snapshot"+2','"Fast Cast"+3',}}, legs="Eri. Leg Guards +1",
+	neck="Phalaina Locket", waist="Gishdubar Sash", left_ear="Roundel Earring", right_ear="Mendi. Earring", 
+	left_ring="Vocane Ring", right_ring="Eihwaz Ring", back="Solemnity Cape",}
+	
+	sets.midcast.ma["Cure II"]={ammo="Impatiens", head="Erilaz Galea +1", body="Emet Harness +1", feet="Erilaz Greaves +1",
+	hands={ name="Buremte Gloves", augments={'Haste+2','"Snapshot"+2','"Fast Cast"+3',}}, legs="Eri. Leg Guards +1",
+	neck="Phalaina Locket", waist="Gishdubar Sash", left_ear="Roundel Earring", right_ear="Mendi. Earring", 
+	left_ring="Vocane Ring", right_ring="Eihwaz Ring", back="Solemnity Cape",}
+	
+	sets.midcast.ma["Cure III"]={ammo="Impatiens", head="Erilaz Galea +1", body="Emet Harness +1", feet="Erilaz Greaves +1",
+	hands={ name="Buremte Gloves", augments={'Haste+2','"Snapshot"+2','"Fast Cast"+3',}}, legs="Eri. Leg Guards +1",
+	neck="Phalaina Locket", waist="Gishdubar Sash", left_ear="Roundel Earring", right_ear="Mendi. Earring", 
+	left_ring="Vocane Ring", right_ring="Eihwaz Ring", back="Solemnity Cape",}
+	
+	sets.midcast.ma["Cure IV"]={ammo="Impatiens", head="Erilaz Galea +1", body="Emet Harness +1", feet="Erilaz Greaves +1",
+	hands={ name="Buremte Gloves", augments={'Haste+2','"Snapshot"+2','"Fast Cast"+3',}}, legs="Eri. Leg Guards +1",
+	neck="Phalaina Locket", waist="Gishdubar Sash", left_ear="Roundel Earring", right_ear="Mendi. Earring", 
+	left_ring="Vocane Ring", right_ring="Eihwaz Ring", back="Solemnity Cape",}
+	
+	sets.midcast.ma["Curaga"]={ammo="Impatiens", head="Erilaz Galea +1", body="Emet Harness +1", feet="Erilaz Greaves +1",
+	hands={ name="Buremte Gloves", augments={'Haste+2','"Snapshot"+2','"Fast Cast"+3',}}, legs="Eri. Leg Guards +1",
+	neck="Phalaina Locket", waist="Gishdubar Sash", left_ear="Roundel Earring", right_ear="Mendi. Earring", 
+	left_ring="Vocane Ring", right_ring="Eihwaz Ring", back="Solemnity Cape",}
+	
+	sets.midcast.ma["Curaga II"]={ammo="Impatiens", head="Erilaz Galea +1", body="Emet Harness +1", feet="Erilaz Greaves +1",
+	hands={ name="Buremte Gloves", augments={'Haste+2','"Snapshot"+2','"Fast Cast"+3',}}, legs="Eri. Leg Guards +1",
+	neck="Phalaina Locket", waist="Gishdubar Sash", left_ear="Roundel Earring", right_ear="Mendi. Earring", 
+	left_ring="Vocane Ring", right_ring="Eihwaz Ring", back="Solemnity Cape",}
+	
+	sets.midcast.ma["Cura"]={ammo="Impatiens", head="Erilaz Galea +1", body="Emet Harness +1", feet="Erilaz Greaves +1",
+	hands={ name="Buremte Gloves", augments={'Haste+2','"Snapshot"+2','"Fast Cast"+3',}}, legs="Eri. Leg Guards +1",
+	neck="Phalaina Locket", waist="Gishdubar Sash", left_ear="Roundel Earring", right_ear="Mendi. Earring", 
+	left_ring="Vocane Ring", right_ring="Eihwaz Ring", back="Solemnity Cape",}
+	
+	sets.midcast.ma["Cura II"]={ammo="Impatiens", head="Erilaz Galea +1", body="Emet Harness +1", feet="Erilaz Greaves +1",
+	hands={ name="Buremte Gloves", augments={'Haste+2','"Snapshot"+2','"Fast Cast"+3',}}, legs="Eri. Leg Guards +1",
+	neck="Phalaina Locket", waist="Gishdubar Sash", left_ear="Roundel Earring", right_ear="Mendi. Earring", 
+	left_ring="Vocane Ring", right_ring="Eihwaz Ring", back="Solemnity Cape",}
+	
+	sets.midcast.ma["Flash"]= set_combine(sets.precast.fc, {neck="Warder's Charm +1", hands="Futhark Mitons +1", left_ring="Eihwaz Ring",})
 --midcast sets
 
 --aftercast sets
 	--tp sets
 	sets.tp.lowacc={ammo="Focal Orb", head="Skormoth Mask", neck="Defiant Collar", waist="Chiner's Belt +1",
 	body={ name="Herculean Vest", augments={'Accuracy+13 Attack+13','"Triple Atk."+4','MND+3','Attack+13',}},
-	hands={ name="Herculean Gloves", augments={'Accuracy+14','"Triple Atk."+3','Attack+7',}}, left_ear="Cessance Earring",
+	hands={ name="Herculean Gloves", augments={'Attack+27','"Triple Atk."+3','STR+8','Accuracy+11',}}, left_ear="Cessance Earring",
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
 	feet={ name="Herculean Boots", augments={'Accuracy+24','"Triple Atk."+3',}}, right_ear="Brutal Earring",
 	left_ring="Hetairoi Ring", right_ring="Epona's Ring", back="Bleating Mantle",}
 	
 	sets.tp.medacc= set_combine(sets.tp.lowacc, {ammo="Falcon Eye", back="Letalis Mantle",})
 	
-	sets.tp.highacc= set_combine(sets.tp.medacc, {neck="Combatant's Torque", right_ring="Mars's Ring",})
+	sets.tp.highacc= set_combine(sets.tp.medacc, {neck="Combatant's Torque", right_ring="Ramuh Ring +1",})
 	
-	sets.tp.vhighacc= set_combine(sets.tp.highacc, {head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, right_ear="Zennaroi Earring", hands="Adhemar Wristbands", back="Ground. Mantle +1",})
+	sets.tp.vhighacc= set_combine(sets.tp.highacc, {head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, 
+	right_ear="Zennaroi Earring", hands="Adhemar Wristbands", back="Ground. Mantle +1", waist="Olseni Belt", left_ring="Mars's Ring",})
 	
 	sets.dw.lowacc={ammo="Vanir Battery",
     head="Skormoth Mask",
@@ -399,8 +445,8 @@ function get_sets()
     feet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}},
     neck="Defiant Collar",
     waist="Windbuffet Belt +1",
-    left_ear="Steelflash Earring",
-    right_ear="Bladeborn Earring",
+    right_ear="Suppanomimi",
+    left_ear="Telos Earring",
     left_ring="Hetairoi Ring",
     right_ring="Epona's Ring",
     back="Bleating Mantle",}
@@ -409,7 +455,12 @@ function get_sets()
 	
 	sets.dw.highacc=set_combine(sets.tp.medacc, {neck="Combatant's Torque", left_ring="Patricius Ring",})
 	
-	sets.dw.vhighacc=set_combine(sets.tp.highacc, {left_ear="Cessance Earring", right_ear="Zennaroi Earring", waist="Olseni Belt",})
+	sets.dw.vhighacc={ammo="Falcon Eye", waist="Olseni Belt", left_ear="Telos Earring", right_ear="Zennaroi Earring",
+	head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}},
+	body="Adhemar Jacket", right_ring="Ramuh Ring +1",
+	hands={ name="Herculean Gloves", augments={'Attack+27','"Triple Atk."+3','STR+8','Accuracy+11',}}, left_ring="Mars's Ring",
+	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
+	feet={ name="Herculean Boots", augments={'Accuracy+24','"Triple Atk."+3',}}, neck="Combatant's Torque", back="Ground. Mantle +1",}
 	--tp sets
 	
 	--hybrid sets
@@ -420,9 +471,9 @@ function get_sets()
 	
 	sets.hybrid.medacc= set_combine(sets.hybrid.lowacc, {ammo="Falcon Eye", back="Letalis Mantle",})
 	
-	sets.hybrid.highacc= set_combine(sets.hybrid.medacc, {head="Whirlpool Mask", neck="Combatant's Torque",})
+	sets.hybrid.highacc= set_combine(sets.hybrid.medacc, {head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Combatant's Torque",})
 	
-	sets.hybrid.vhighacc= set_combine(sets.hybrid.highacc, {waist="Olseni Belt", legs="Ighwa Trousers",})
+	sets.hybrid.vhighacc= set_combine(sets.hybrid.highacc, {waist="Olseni Belt", legs="Samnuha Tights",})
 	--hybrid sets
 	
 	--dt sets
@@ -505,6 +556,11 @@ function midcast(spell)
 end
 
 function aftercast(spell)
+	if spell.english == "Gambit" then -- Gambit Countdown --
+            send_command ('input /p [Gambit ON] ;wait 42;input /p Gambit [WEARING OFF IN 30 SEC];wait 20;input /p Gambit [WEARING OFF IN 10 SEC];wait 10;input /p Gambit [OFF]')
+    elseif spell.english == "Rayke" then -- Rayke Countdown --
+            send_command ('input /p [Rayke ON] ;wait 25;input /p Rayke [WEARING OFF IN 25 SEC];wait 15;input /p Rayke [WEARING OFF IN 10 SEC];wait 10;input /p Rayke [OFF]')       
+    end
 	status_change(player.status)
 end
 

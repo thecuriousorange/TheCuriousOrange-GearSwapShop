@@ -285,15 +285,17 @@ function get_sets()
     legs={ name="Founder's Hose", augments={'MND+5','Mag. Acc.+13',}}, right_ring="Defending Ring", back=Takaha,
 	feet={ name="Founder's Greaves", augments={'VIT+9','Accuracy+14','"Mag.Atk.Bns."+13','Mag. Evasion+15',}},}
 	
-	sets.pdt={main="Tsurumaru", sub="Alber Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head="Loess Barbuta +1",
-	body="Mekira Meikogai", hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, left_ear="Tripudio Earring", right_ring="Defending Ring",
-	legs={ name="Otronif Brais +1", augments={'Phys. dmg. taken -3%','Crit.hit rate+1',}}, waist="Flume Belt", right_ear="Sanare Earring", back="Mollusca Mantle",
-	feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", left_ring="Vocane Ring",}
+	sets.pdt={main="Tsurumaru", sub="Alber Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, left_ear="Genmei Earring", left_ring="Vocane Ring",
+	head="Genmei Kabuto", body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}}, right_ear="Telos Earring",
+	hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs={ name="Valor. Hose", augments={'Accuracy+20 Attack+20','Crit.hit rate+4','DEX+6','Accuracy+11',}},
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt", right_ring="Defending Ring",
+	back="Agema Cape",}
 	
-	sets.mdt={main="Tsurumaru", sub="Alber Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, body="Kyujutsugi",
-    head={ name="Founder's Corona", augments={'DEX+6','Accuracy+10','Magic dmg. taken -3%',}}, legs="Osmium Cuisses", neck="Loricate Torque +1", back="Engulfer Cape +1",
-	hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, waist="Flume Belt", left_ear="Etiolation Earring", right_ring="Defending Ring",
-	feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, right_ear="Sanare Earring", left_ring="Shadow Ring",}
+	sets.mdt={main="Tsurumaru",
+    sub="Alber Strap",
+    range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head={ name="Founder's Corona", augments={'DEX+7','Accuracy+11','Magic dmg. taken -3%',}},
+	body="Kyujutsugi", hands="Kurys Gloves", legs="Osmium Cuisses", feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, waist="Flume Belt",
+	neck="Loricate Torque +1", left_ear="Etiolation Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", right_ring="Defending Ring", back="Engulfer Cape +1",}
 	
 	sets.dt={main="Tsurumaru", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head="Loess Barbuta +1",
 	body="Mekira Meikogai", hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs="Osmium Cuisses", right_ear="Sanare Earring",

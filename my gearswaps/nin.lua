@@ -119,7 +119,7 @@ function get_sets()
 	
 	sets.precast.ws["Blade: Hi"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", head="Uk'uxkaj Cap", 
 	neck="Hope Torque", left_ear="Moonshade Earring", right_ear="Brutal Earring", body="Hachi. Chainmail", 
-	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Dumakulem's Ring", back="Rancorous Mantle", 
+	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Apate Ring", back="Rancorous Mantle", 
 	waist="Caudata Belt", legs="Nahtirah Trousers", feet="Otronif Boots +1",}
 --ws sets
 
@@ -158,7 +158,7 @@ function get_sets()
 	sets.aftercast.tp.vlhaste= set_combine(sets.aftercast.tp.lhaste, {left_ear="Dudgeon Earring", 
 	right_ear="Heartseeker Earring",})
 	
-	sets.aftercast.acc={ammo="Jukukik Feather", head="Whirlpool Mask", left_ring="Beeline Ring", 
+	sets.aftercast.acc={ammo="Jukukik Feather", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, left_ring="Beeline Ring", 
 	right_ring="Portus Annulet", waist="Hurch'lan Sash", body="Abnoba Kaftan", back="Yokaze Mantle",}
 	
 	sets.aftercast.acc.vhhaste= set_combine(sets.aftercast.tp.vhhaste, sets.aftercast.acc)
@@ -178,7 +178,7 @@ function get_sets()
 
 --Evasion sets
 	sets.aftercast.evasion={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", 
-	head="Whirlpool Mask", neck="Torero Torque", left_ear="Ethereal Earring", right_ear="Iga Mimikazari",
+	head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Torero Torque", left_ear="Ethereal Earring", right_ear="Iga Mimikazari",
 	body="Otro. Harness +1", hands="Hachiya Tekko", left_ring="Portus Annulet", right_ring="Beeline Ring",
 	back="Fravashi Mantle", waist="Sveltesse Gouriz", legs="Otronif Brais +1", feet="Otronif Boots +1",}
 --Evasion sets
@@ -189,7 +189,7 @@ function get_sets()
 	neck="Loricate Torque +1", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Iga Mimikazari",
 	left_ring="Patricius Ring", right_ring="Vocane Ring", back="Mollusca Mantle",}
 	
-	sets.aftercast.mdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head="Whirlpool Mask",
+	sets.aftercast.mdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}},
 	body="Abnoba Kaftan", hands="Otronif Gloves +1", legs="Nahtirah Trousers", feet="Otronif Boots +1",
 	neck="Loricate Torque +1", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring",
 	left_ring="Shadow Ring", right_ring="Vocane Ring", back="Mollusca Mantle",}
