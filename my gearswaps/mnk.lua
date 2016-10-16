@@ -238,11 +238,11 @@ function get_sets()
 -- idle sets	
 	sets.aftercast.idle.pdt={ammo="Vanir Battery", head="Otronif Mask +1", neck="Loricate Torque +1", 
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", body="Arhat's Gi +1", hands="Otronif Gloves +1", 
-	lring="Sheltered Ring", rring="Shadow Ring", back="Shadow Mantle", waist="Black Belt", 
+	lring="Sheltered Ring", ring="Shadow Ring", back="Shadow Mantle", waist="Black Belt", 
 	legs="Otronif Brais +1", feet="Hermes' Sandals",}
 	
-	sets.aftercast.idle.regen= set_combine(sets.aftercast.idle.pdt, {head="Oce. Headpiece +1", 
-	neck="Wiglen Gorget", body="Hes. Cyclas", right_ring="Paguroidea Ring",})
+	sets.aftercast.idle.regen= set_combine(sets.aftercast.idle.pdt, {head="Rao Kabuto", right_ear="Infused Earring",
+	neck="Sanctity Necklace", body="Rao Togi", hands="Rao Kote", right_ring="Paguroidea Ring",})
 -- idle sets
 end
 

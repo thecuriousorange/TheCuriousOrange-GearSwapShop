@@ -245,8 +245,8 @@ function get_sets()
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Levia. Ring", right_ring="Levia. Ring",
 	back="Lifestream Cape",}	
 	
-	sets.midcast.cure={main="Tamaxchi", sub="Sors Shield", head="Nahtirah Hat", body="Heka's Kalasiris", hands="Serpentes Cuffs",
-	legs="Nares Trews", feet="Serpentes Sabots", neck="Loricate Torque +1", waist="Cascade Belt", left_ear="Sanare Earring",
+	sets.midcast.cure={main="Tamaxchi", sub="Sors Shield", head="Nahtirah Hat", body="Heka's Kalasiris", hands={ name="Merlinic Dastanas", augments={'Accuracy+4','Pet: "Store TP"+2','"Refresh"+2','Accuracy+5 Attack+5','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},
+	legs="Nares Trews", feet={ name="Merlinic Crackows", augments={'Enmity-5','Attack+1','"Refresh"+1','Accuracy+14 Attack+14',}}, neck="Loricate Torque +1", waist="Cascade Belt", left_ear="Sanare Earring",
 	right_ear="Ethereal Earring", left_ring="Vocane Ring", right_ring="Shadow Ring", back="Lifestream Cape",}
 --midcast sets
 
@@ -254,7 +254,7 @@ function get_sets()
 	sets.aftercast.idle={}
 	
 	sets.aftercast.idle.refresh={main="Bolelabunga", sub="Genbu's Shield", head="Befouled Crown", body="Hagondes Coat +1", hands="Bagua Mitaines",
-	legs="Assid. Pants +1", feet="Serpentes Sabots", neck="Loricate Torque +1", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
+	legs="Assid. Pants +1", feet={ name="Merlinic Crackows", augments={'Enmity-5','Attack+1','"Refresh"+1','Accuracy+14 Attack+14',}}, neck="Loricate Torque +1", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
 	left_ring="Defending Ring", right_ring="Shadow Ring", back="Shadow Mantle",}
 	
 	sets.aftercast.idle.refreshkite=set_combine(sets.aftercast.idle.refresh, {feet="Geo. Sandals +1",})

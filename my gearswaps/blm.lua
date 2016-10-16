@@ -46,6 +46,13 @@ function get_sets()
 	windower.prim.set_color('MAGIC_MODE', 150, 255, 255, 255)
 	windower.prim.set_visibility('MAGIC_MODE',true)
 	--send_command('text pdtvariable text "MAGIC-POTENCY"')
+	
+	windower.prim.create('BURST_MODE')
+	windower.prim.set_texture('BURST_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/burstmodeoff.png')
+	windower.prim.set_size('BURST_MODE',200,30)
+	windower.prim.set_position('BURST_MODE',750,170)
+	windower.prim.set_color('BURST_MODE', 150, 255, 255, 255)
+	windower.prim.set_visibility('BURST_MODE',true)
 --boxes
 
 --keybinds
@@ -128,7 +135,7 @@ function get_sets()
 	EnfeeblingMagic_mndmod= S{"Paralyze", "Paralyze II", "Dia", "Dia II", "Dia III", "Diaga", "Diaga II", 
 	"Slow", "Slow II", "Addle",}
 	
-	Buffs= S{"Blink", "Stoneskin", "Phalanx", "Aquaveil", "Firestorm", "Hailstorm", "Windstorm", "Sandstorm", "Thunderstorm", "Voidstorm", "Aurorastorm", "Rainstorm",}
+	Buffs= S{"Blink", "Stoneskin", "Phalanx", "Aquaveil", "Firestorm", "Hailstorm", "Windstorm", "Sandstorm", "Thunderstorm", "Voidstorm", "Aurorastorm", "Rainstorm", "Regen", "Regen II"}
 --spell lists
 
 --augmented gear
@@ -155,7 +162,12 @@ function get_sets()
     neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}}, left_ring="Mephitas's Ring",
 	back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},}
 	
-	sets.deathprecast.impact=set_combine(sets.deathprecast.nuke, {head="none", body="Twilight Cloak",})
+	sets.deathprecast.impact={main={ name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}}, sub="Niobid Strap",
+    ammo="Ghastly Tathlum +1",  body="Twilight Cloak",hands={ name="Otomi Gloves", augments={'Haste+2','"Snapshot"+2','Magic Damage +4',}},
+    legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}, right_ear="Etiolation Earring",
+    feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+6',}}, waist="Channeler's Stone", left_ear="Loquac. Earring",
+    neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}}, left_ring="Mephitas's Ring",
+	back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},}
 	
 	sets.deathprecast.notnuke={main={ name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}}, sub="Niobid Strap",
     ammo="Ghastly Tathlum +1", head={ name="Amalric Coif", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ring="Mephitas's Ring +1",
@@ -167,7 +179,7 @@ function get_sets()
 	
 	sets.deathprecast["Myrkr"]={main={ name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}}, sub="Niobid Strap", right_ring="Mephitas's Ring +1",
 	ammo="Ghastly Tathlum +1", head={ name="Amalric Coif", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ring="Mephitas's Ring",
-	body={ name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, legs="Wicce Chausses +1", neck="Sanctity Necklace",
+	body={ name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, legs={ name="Amalric Slops", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, neck="Sanctity Necklace",
 	hands={ name="Amalric Gages", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, waist="Fucho-no-Obi", right_ear="Halasz Earring",
 	feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ear="Etiolation Earring",
 	back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},}
@@ -208,14 +220,14 @@ function get_sets()
 	head="Pixie Hairpin +1", body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +8','"Mag.Atk.Bns."+15',}},
 	hands={ name="Amalric Gages", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, neck="Sanctity Necklace", left_ear="Barkaro. Earring",
     legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}, waist="Fucho-no-Obi", right_ear="Gwati Earring",
-    feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+30','Magic burst mdg.+8%','Mag. Acc.+6',}}, left_ring="Vertigo Ring", right_ring="Sangoma Ring",
+    feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+25','Magic burst mdg.+11%','Mag. Acc.+14',}}, left_ring="Vertigo Ring", right_ring="Sangoma Ring",
     back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},}
 	
 	sets.deathmidcast.doa={main={ name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}}, sub="Niobid Strap", ammo="Ghastly Tathlum +1",
 	head="Pixie Hairpin +1", body={ name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
 	hands={ name="Amalric Gages", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, neck="Sanctity Necklace", left_ear="Barkaro. Earring",
 	legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}, waist="Fucho-no-Obi", right_ear="Hirudinea Earring",
-	feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+30','Magic burst mdg.+8%','Mag. Acc.+6',}}, left_ring="Vertigo Ring",
+	feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+25','Magic burst mdg.+11%','Mag. Acc.+14',}}, left_ring="Vertigo Ring",
 	right_ring="Sangoma Ring", back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},}
 	
 	sets.deathmidcast.enh={main={ name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}}, legs="Wicce Chausses +1", left_ring="Mephitas's Ring",
@@ -243,7 +255,7 @@ function get_sets()
 	legs="Psycloth Lappas", neck="Stoicheion Medal", waist="Channeler's Stone", right_ear="Loquac. Earring", right_ring="Rahab Ring",
 	left_ear="Barkaro. Earring", left_ring="Veneficium Ring", back="Perimede Cape",}
 	
-	sets.precast.impact={ammo="Impatiens", head="none", body="Twilight Cloak", hands="Helios Gloves", feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+6',}},
+	sets.precast.impact={ammo="Impatiens", body="Twilight Cloak", hands="Helios Gloves", feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+6',}},
 	neck="Stoicheion Medal", waist="Eschan Stone", right_ear="Loquac. Earring", left_ear="Etiolation Earring", legs="Psycloth Lappas", right_ring="Rahab Ring",
 	left_ring="Veneficium Ring", back="Perimede Cape",}
 	
@@ -258,7 +270,7 @@ function get_sets()
 --ws sets
 	sets.precast["Myrkr"]={main={ name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}}, sub="Niobid Strap", right_ring="Mephitas's Ring +1",
 	ammo="Ghastly Tathlum +1", head={ name="Amalric Coif", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ring="Mephitas's Ring",
-	body={ name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, legs="Wicce Chausses +1", neck="Sanctity Necklace",
+	body={ name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, legs={ name="Amalric Slops", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, neck="Sanctity Necklace",
 	hands={ name="Amalric Gages", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, waist="Fucho-no-Obi", right_ear="Halasz Earring",
 	feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, left_ear="Etiolation Earring",
 	back={ name="Bane Cape", augments={'Elem. magic skill +6','Dark magic skill +10','"Mag.Atk.Bns."+2',}},}
@@ -267,10 +279,19 @@ function get_sets()
 --midcast sets
 	sets.mpeset={body="Spae. Coat +1",}
 	
-	sets.magicburst={head={ name="Merlinic Hood", augments={'Magic burst mdg.+11%','INT+10','Mag. Acc.+3','"Mag.Atk.Bns."+14',}},
-	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ring="Mujin Band",
-	legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst mdg.+11%','"Mag.Atk.Bns."+7',}}, left_ring="Locus Ring",
-	feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+30','Magic burst mdg.+8%','Mag. Acc.+6',}}, neck="Mizu. Kubikazari",}
+	sets.magicburst={ammo="Pemphredo Tathlum",
+    head={ name="Merlinic Hood", augments={'Magic burst mdg.+11%','INT+10','Mag. Acc.+3','"Mag.Atk.Bns."+14',}},
+    body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +8','"Mag.Atk.Bns."+15',}},
+    hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+    legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst mdg.+11%','"Mag.Atk.Bns."+7',}},
+    feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+25','Magic burst mdg.+11%','Mag. Acc.+14',}},
+    neck="Sanctity Necklace",
+    waist="Eschan Stone",
+    left_ear="Barkaro. Earring",
+    right_ear="Friomisi Earring",
+    left_ring="Locus Ring",
+    right_ring="Mujin Band",
+    back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}},}
 	
 	sets.midcast.eledot={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Wicce Petasos +1", 
 	body="Shango Robe", hands="Hagondes Cuffs +1", legs="Psycloth Lappas", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
@@ -315,7 +336,7 @@ function get_sets()
 	right_ring="Strendu Ring", back="Taranus's Cape",
 	left_ring="Sangoma Ring", hands={ name="Amalric Gages", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},}
 	
-	sets.midcast.nuke.dmg.hightier={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Helios Band", body="Merlinic Jubbah",
+	sets.midcast.nuke.dmg.hightier={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Jhakri Coronal +1", body="Merlinic Jubbah",
 	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, legs="Merlinic Shalwar", feet="Amalric Nails", neck="Sanctity Necklace", waist="Eschan Stone", 
 	left_ear="Barkaro. Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
     back="Taranus's Cape",}
@@ -362,8 +383,8 @@ function get_sets()
 --midcast sets
 
 --aftercast sets
-	sets.aftercast.idle={main="Bolelabunga", sub="Genbu's Shield", head="Befouled Crown", body="Hagondes Coat +1", hands="Serpentes Cuffs",
-	legs="Assid. Pants +1", feet="Serpentes Sabots", neck="Loricate Torque +1", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
+	sets.aftercast.idle={main="Lathi", sub="Niobid Strap", head="Befouled Crown", body="Jhakri Robe +1", hands={ name="Merlinic Dastanas", augments={'Accuracy+4','Pet: "Store TP"+2','"Refresh"+2','Accuracy+5 Attack+5','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},
+	legs="Assid. Pants +1", feet={ name="Merlinic Crackows", augments={'Enmity-5','Attack+1','"Refresh"+1','Accuracy+14 Attack+14',}}, neck="Loricate Torque +1", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
 	left_ring="Defending Ring", right_ring="Shadow Ring", back="Shadow Mantle",}
 	
 	sets.aftercast.pdt= set_combine(sets.aftercast.idle, {hands="Hagondes Cuffs +1", legs="Hagondes Pants +1", feet="Hag. Sabots +1",})
@@ -465,11 +486,11 @@ function midcast(spell)
 				elseif JaNukes:contains(spell.english) then
 					equip(sets.midcast.nuke.dmg.jaspell)
 				end
-				if mpe=="on" then
-					equip(sets.mpeset)
-				end
 				if MB=="on" then
 					equip(sets.magicburst)
+				end
+				if mpe=="on" then
+					equip(sets.mpeset)
 				end
 			elseif Elemental_DoT:contains(spell.english) then
 				equip(sets.midcast.eledot)
@@ -688,9 +709,13 @@ function self_command(command)
 		if MB=="on" then
 			MB="off"
 			add_to_chat(206,'MAGIC BURST MODE OFF')
+			windower.prim.set_texture('BURST_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/burstmodeoff.png')
+			send_command('pf')
 		else
 			MB="on"
 			add_to_chat(206,'MAGIC BURST MODE ON')
+			windower.prim.set_texture('BURST_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/burstmodeon.png')
+			send_command('pf')
 		end
 		send_command('pf')
 	end
@@ -700,11 +725,13 @@ function self_command(command)
 			add_to_chat(206, 'MP ECONOMY ON')
 			--send_command('text idlevariable text "MPE-ON"')
 			windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/mpeon.png')
+			send_command('pf')
 		else
 			mpe="off"
 			add_to_chat(206, 'MP ECONOMY OFF')
 			--send_command('text idlevariable text "MPE-OFF"')
 			windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/mpeoff.png')
+			send_command('pf')
 		end
 		send_command('pf')
 	end
@@ -712,15 +739,21 @@ function self_command(command)
 		windower.prim.set_size('NUKE_ELEMENT',200,30)
 		windower.prim.set_size('MP_EFFICIENCY',200,30)
 		windower.prim.set_size('MAGIC_MODE',200,30)
+		windower.prim.set_size('BURST_MODE',200,30)
 	end
 	if command=="death_mode" then
 		if death_mode=="on" then
 			death_mode="off"
 			add_to_chat(206,"DEATH MODE: OFF")
+			windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/mpe'..mpe..'.png')
+			send_command('pf')
 		else
 			death_mode="on"
 			add_to_chat(206,"DEATH MODE: ON")
+			windower.prim.set_texture('MP_EFFICIENCY','/windower 4/addons/gearswap/data/'..player.name..'/images/deathmode.png')
+			send_command('pf')
 		end
+		send_command('pf')
 	end
 	--[[if command=="mm" then
 		if mm=="off" then

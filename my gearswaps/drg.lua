@@ -56,7 +56,7 @@ function get_sets()
 	taeonlegs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}
 	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
 	
-	acrohead={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3%','STR+10',}}
+	acrohead={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3%','DEX+8',}}
 	acrobody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','Crit. hit damage +3% ',}}
 	acrohands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
 	acrolegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
@@ -422,7 +422,7 @@ function get_sets()
 		
 	sets.xhit.medacc=set_combine(sets.xhit.lowacc, {waist="Grunfeld Rope", back="Letalis Mantle"})
 	
-	sets.xhit.highacc={ammo="Ginsen", head={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3','STR+10',}},
+	sets.xhit.highacc={ammo="Ginsen", head={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3','DEX+8',}},
 	body="Pelt. Plackart +1", hands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. hit damage +3%',}},
 	legs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. hit damage +3%',}}, neck="Combatant's Torque",
 	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, waist="Olseni Belt", left_ear="Telos Earring",
@@ -498,7 +498,7 @@ function precast(spell)
 		end
 	end
 	if spell.prefix== '/magic' then
-		if pet.isvalid then
+		if not spell.interrupted then
 			equip(sets.breath.precast)
 		end
 	end
@@ -618,7 +618,7 @@ function pet_precast(spell)
 end
 
 function pet_midcast(spell)
-	if string.find(spell.english, 'Breath') then
+	if string.find(spell.english, 'Breath') and not spell.interrupted then
 		equip(sets.breath.midcast)
 	end
 end

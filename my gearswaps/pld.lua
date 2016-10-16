@@ -78,7 +78,7 @@ function get_sets()
 -- lists for ws and spells
 
 --
-	stphead={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3%','STR+10',}}
+	stphead={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3%','DEX+8',}}
 	stpbody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','Crit. hit damage +3% ',}}
 	stphands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
 	stplegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
@@ -517,7 +517,23 @@ windower.prim.set_visibility('TCOhelp',false)
 	waist="Olseni Belt", left_ear="Cessance Earring", left_ring="Ramuh Ring +1", right_ring="Mars's Ring", back="Letalis Mantle",}
 	
 	sets.maxacc={ammo="Amar Cluster", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1",
-	neck="Combatant's Torque", waist="Tempus Fugit", left_ear="Zwazo Earring", right_ear="Zennaroi Earring", left_ring="Ramuh Ring +1", right_ring="Mars's Ring", back="Ground. Mantle +1",}
+	neck="Combatant's Torque", waist="Tempus Fugit", left_ear="Mache Earring", right_ear="Telos Earring", left_ring="Ramuh Ring +1", right_ring="Mars's Ring", back="Ground. Mantle +1",}
+	
+	sets.composers={hands="Composer's Mitts",}
+	
+	sets.testset={ammo="Paeapua",
+    head={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3','DEX+8',}},
+    body={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','Crit. hit damage +1%',}},
+    hands={ name="Valorous Mitts", augments={'Mag. Acc.+23','STR+6','Quadruple Attack +1','Accuracy+7 Attack+7',}},
+    legs={ name="Valor. Hose", augments={'"Fast Cast"+1','Pet: INT+6','Quadruple Attack +2','Accuracy+6 Attack+6','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
+    feet={ name="Odyssean Greaves", augments={'"Cure" potency +4%','Mag. Acc.+10 "Mag.Atk.Bns."+10','Quadruple Attack +2','Accuracy+20 Attack+20',}},
+    neck="Defiant Collar",
+    waist="Windbuffet Belt +1",
+    left_ear="Cessance Earring",
+    right_ear="Brutal Earring",
+    left_ring="Petrov Ring",
+    right_ring="Hetairoi Ring",
+    back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},}
 	
 	sets.sbmode={ammo="Iron Gobbet", head="Chev. Armet +1", body={ name="Souveran Cuirass", augments={'VIT+10','Attack+20','"Refresh"+2',}}, legs="Chev. Cuisses +1", neck="Combatant's Torque",
 	hands={ name="Souv. Handschuhs", augments={'HP+50','Shield skill +10','Phys. dmg. taken -3',}}, feet={ name="Souveran Schuhs +1", augments={'HP+65','Attack+25','Magic dmg. taken -4',}},
@@ -596,7 +612,7 @@ windower.prim.set_visibility('TCOhelp',false)
 -- aftercast sets
 end
 
-windower.register_event('hpmax change' , function(new_max_hp, old_max_hp) if player.target.name=="Onychophora" then if new_max_hp==2148 then status_change(player.status) end end end)
+windower.register_event('hpmax change' , function(new_max_hp, old_max_hp) if player.target.name=="Onychophora" then if new_max_hp<=2244 then status_change(player.status) end end end)
 
 function precast(spell)
 	if spell.prefix ==  '/jobability' then

@@ -220,15 +220,15 @@ function get_sets()
 	ring1="Epona's ring", ring2="Mars's ring", back="Letalis Mantle", waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
-	sets.ws.damage["Sanguine Blade"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}}, neck="Fotia Gorget", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Count's Garb", hands="Hagondes Cuffs +1",
-	ring1="Archon ring", ring2="Strendu Ring", back="Cornflower Cape",waist="Fotia Belt", 
-	legs="Lengo Pants",feet="Hashi. Basmak +1"}
+	sets.ws.damage["Sanguine Blade"]={ammo="Pemphredo Tathlum", head="Pixie Hairpin +1", body="Jhakri Robe +1",
+	hands="Jhakri Cuffs +1", legs="Jhakri Slops +1", feet="Jhakri Pigaches +1", neck="Fotia Gorget", waist="Fotia Belt",
+	left_ear="Hecate's Earring", right_ear="Friomisi Earring", left_ring="Archon Ring",
+	right_ring="Strendu Ring", back={ name="Cornflower Cape", augments={'MP+19','DEX+1','Accuracy+1','Blue Magic skill +7',}},}
 	
-	sets.ws.accuracy["Sanguine Blade"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}}, neck="Fotia Gorget", 
-	ear1="Hecate's earring", ear2="Friomisi earring", body="Hagondes Coat +1", hands="Hagondes Cuffs +1",
-	ring1="Archon ring", ring2="Strendu Ring", back="Cornflower Cape",waist="Fotia Belt", 
-	legs="Lengo Pants",feet="Hashi. Basmak +1"}
+	sets.ws.accuracy["Sanguine Blade"]={ammo="Pemphredo Tathlum", head="Pixie Hairpin +1", body="Jhakri Robe +1",
+	hands="Jhakri Cuffs +1", legs="Jhakri Slops +1", feet="Jhakri Pigaches +1", neck="Fotia Gorget", waist="Fotia Belt",
+	left_ear="Hecate's Earring", right_ear="Friomisi Earring", left_ring="Archon Ring",
+	right_ring="Strendu Ring", back={ name="Cornflower Cape", augments={'MP+19','DEX+1','Accuracy+1','Blue Magic skill +7',}},}
 	
 	sets.ws.damage["Chant du Cygne"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Abnoba Kaftan", hands="Adhemar Wristbands",
@@ -337,11 +337,9 @@ function get_sets()
 	ear2="Lifestorm earring", body="Assim. Jubbah +1",hands="Iuitl Wristbands +1", ring1="Ifrit Ring", ring2="Rajas ring",
 		              back={ name="Cornflower Cape", augments={'MP+19','DEX+1','Accuracy+1','Blue Magic skill +7',}}, waist="Eschan Stone",legs="Samnuha Tights",feet=heliosboots,}
 						  
-	sets.BlueMagic.INT = {ammo="Pemphredo Tathlum", feet="Amalric Nails", neck="Sanctity Necklace", waist="Eschan Stone", left_ear="Crematio Earring",
-	head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}},
-	body={ name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ear="Friomisi Earring", left_ring="Strendu Ring",
-	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, right_ring="Acumen Ring",
-	legs={ name="Amalric Slops", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+	sets.BlueMagic.INT = {ammo="Pemphredo Tathlum", head="Jhakri Coronal +1", body="Jhakri Robe +1", hands="Jhakri Cuffs +1",
+	legs="Jhakri Slops +1", feet="Jhakri Pigaches +1", neck="Sanctity Necklace", waist="Eschan Stone", left_ear="Crematio Earring",
+	right_ear="Friomisi Earring", left_ring="Strendu Ring", right_ring="Acumen Ring", 
 	back={ name="Cornflower Cape", augments={'MP+19','DEX+1','Accuracy+1','Blue Magic skill +7',}},}
 						  
 	sets.BlueMagic.Cures = {ammo="Mavi Tathlum",
@@ -420,7 +418,7 @@ function get_sets()
 	--tp sets
 	
 	--idle sets
-	sets.idle.refresh={ammo="Vanir Battery", head="Rawhide Mask", body="Hagondes Coat +1", hands="Serpentes Cuffs",
+	sets.idle.refresh={ammo="Vanir Battery", head="Rawhide Mask", body="Jhakri Robe +1", hands="Serpentes Cuffs",
 	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Serpentes Sabots", neck="Loricate Torque +1", waist="Flume Belt", left_ear="Sanare Earring",
     right_ear="Ethereal Earring", left_ring="Shadow Ring", right_ring="Sheltered Ring", back="Shadow Mantle",}
 	

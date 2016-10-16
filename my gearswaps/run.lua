@@ -1,19 +1,20 @@
 function get_sets()
 -- include
-	include('boxes.lua')
+	--include('boxes.lua')
 	include('organizer-lib.lua')
 -- include
 --aliases
 	send_command('alias ddset gs equip sets.tp.lowacc')
 	send_command('alias tankset gs equip sets.hybrid.lowacc')
 	send_command('alias idle gs equip sets.idle.refresh')
+	send_command('alias pf gs c primfix')
 --aliases
 
 --text boxes
-	send_command('text tpvariable text "DD MODE"')
+	--[[send_command('text tpvariable text "DD MODE"')
 	send_command('text idlevariable text "LOW-ACC"')
 	send_command('text pdtvariable text "GS MODE"')
-	send_command('text wsvariable text "REFRESH IDLE"')
+	send_command('text wsvariable text "REFRESH IDLE"')]]
 --text boxes
 
 --keybinds
@@ -39,6 +40,7 @@ function get_sets()
 	send_command('bind @F9 gs c greatsword')
 	send_command('bind @f10 gs c onesword')
 	send_command('bind @f11 gs c twoswords')
+	send_command('bind @f12 gs c togglews')
 	send_command('bind @f8 gs c greataxe')
 	send_command('bind #1 input /item "Echo Drops" <me>')
 	send_command('bind @p input /item "Holy Water" <me>')
@@ -49,14 +51,10 @@ function get_sets()
 	send_command('bind @= input /ja "Liement" <me>')
 	send_command('bind ^- input /ja "Odyllic Subterfuge" <t>')
 	send_command('bind ^= input /ja "Elemental Sforzo" <me>')
-	send_command('bind @1 input /ja "Ignis" <me>')
-	send_command('bind @2 input /ja "Tellus" <me>')
-	send_command('bind @3 input /ja "Tenebrae" <me>')
-	send_command('bind @4 input /ja "Lux" <me>')
-	send_command('bind @5 input /ja "Unda" <me>')
-	send_command('bind @6 input /ja "Flabra" <me>')
-	send_command('bind @7 input /ja "Sulpor" <me>')
-	send_command('bind @8 input /ja "Gelus" <me>')
+	
+	send_command('bind @a gs c burstmode')
+	send_command('bind @3 gs c Use_Rune')
+	send_command('bind @4 gs c Cycle_Runes')	
 --keybinds
 
 --macros setup
@@ -64,7 +62,7 @@ function get_sets()
 --macros setup
 
 --augmented armor
-	taeonhands="Adhemar Wristbands"
+
 --augmented armor
 
 --variables
@@ -73,6 +71,7 @@ function get_sets()
 	TPType="lowacc"
 	IdleType="refresh"
 	WSType="dmg"
+	Burst_Mode="on"
 	
 	sets.WSType= T{}
 	sets.IdleType= T{}
@@ -96,7 +95,52 @@ function get_sets()
 	sets.weaponry={}
 	sets.idle={}
 --base sets
+--runes index
+	sets.runes={}
+	sets.runes.index={'Tenebrae','Gelus','Ignis','Flabra','Tellus','lux','Unda','Sulpor'}
+	runes=1
+--runes index
+windower.prim.create('TP_SET')
+windower.prim.create('ACC_SET')
+windower.prim.create('IDLE_SET')
+windower.prim.create('WS_SET')
+windower.prim.create('ACTIVE_RUNE')
+windower.prim.create('WEAPON_TYPE')
 
+windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/ddmode.png')
+windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/lowacc.png')
+windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/refreshidle.png')
+windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmg.png')
+windower.prim.set_texture('ACTIVE_RUNE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/'..sets.runes.index[runes]..'.png')
+windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/gs.png')
+
+windower.prim.set_size('TP_SET',200,30)
+windower.prim.set_size('ACC_SET',200,30)
+windower.prim.set_size('IDLE_SET',200,30)
+windower.prim.set_size('WS_SET',200,30)
+windower.prim.set_size('ACTIVE_RUNE',200,50)
+windower.prim.set_size('WEAPON_TYPE',200,50)
+
+windower.prim.set_position('TP_SET',0.65*windower.get_windower_settings().x_res,50)
+windower.prim.set_position('ACC_SET',0.65*windower.get_windower_settings().x_res,90)
+windower.prim.set_position('IDLE_SET',0.65*windower.get_windower_settings().x_res,130)
+windower.prim.set_position('WS_SET',0.65*windower.get_windower_settings().x_res,170)
+windower.prim.set_position('ACTIVE_RUNE',0.65*windower.get_windower_settings().x_res,210)
+windower.prim.set_position('WEAPON_TYPE',0.65*windower.get_windower_settings().x_res,260)
+
+windower.prim.set_color('TP_SET', 100, 255, 255, 255)
+windower.prim.set_color('ACC_SET', 100, 255, 255, 255)
+windower.prim.set_color('IDLE_SET', 100, 255, 255, 255)
+windower.prim.set_color('WS_SET', 100, 255, 255, 255)
+windower.prim.set_color('ACTIVE_RUNE', 100, 255, 255, 255)
+windower.prim.set_color('WEAPON_TYPE',100,255,255,255)
+
+windower.prim.set_visibility('TP_SET',true)
+windower.prim.set_visibility('ACC_SET',true)
+windower.prim.set_visibility('IDLE_SET',true)
+windower.prim.set_visibility('WS_SET',true)
+windower.prim.set_visibility('ACTIVE_RUNE',true)
+windower.prim.set_visibility('WEAPON_TYPE',true)
 --weaponry
 	sets.weaponry.greatsword={}
 	sets.weaponry.greatsword.index={"Aettir","Macbain","Montante","Humility"}
@@ -132,7 +176,7 @@ function get_sets()
 
 --precast sets
 	--ja sets
-	sets.enmity={ammo="Iron Gobbet", head="Rabid Visor", hands="Kurys Gloves", feet="Erilaz Greaves +1", legs="Eri. Leg Guards +1",
+	sets.enmity={ammo="Iron Gobbet", head="Rabid Visor", hands="Kurys Gloves", feet="Erilaz Greaves +1", legs="Ahosi Leggings",
 	body="Emet Harness +1",	neck="Warder's Charm +1", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
 	left_ring="Supershear Ring", right_ring="Eihwaz Ring", back="Fravashi Mantle",}
 	
@@ -158,6 +202,8 @@ function get_sets()
 	body="Samnuha Coat", hands="Leyline Gloves", legs={ name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+3','STR+9','Mag. Acc.+9',}}, 
 	feet={ name="Herculean Boots", augments={'Mag. Acc.+7 "Mag.Atk.Bns."+7','INT+2','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}, neck="Sanctity Necklace", waist="Eschan Stone", 
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Acumen Ring", back="Evasionist's Cape",}
+	
+	sets.ja.Lunge.burst=set_combine(sets.ja.Lunge, {left_ring="Mujin Band", right_ring="Locus Ring",})
 	
 	sets.ja["Swipe"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}}, 
 	body="Samnuha Coat", hands="Leyline Gloves", legs={ name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+3','STR+9','Mag. Acc.+9',}}, 
@@ -516,6 +562,11 @@ function precast(spell)
 		equip(sets.precast.fc)
 	elseif spell.prefix=="/jobability" then
 		equip(sets.ja[spell.english])
+		--[[if spell.english=="Lunge" or if spell.english="Swipe" then
+			if Burst_Mode="on" then
+				equip(sets.ja.Lunge.burst)
+			end
+		end]]--
 	elseif spell.prefix=="/weaponskill" then
 		if WSType=="dmg" then
 			equip(sets.ws.dmg[spell.english])
@@ -532,6 +583,7 @@ function precast(spell)
 	elseif WeaponType=="greataxe" then
 		equip(sets.weaponry.greataxe[sets.weaponry.greataxe.index[ga_ind]])
 	end
+	send_command('pf')
 end
 
 function midcast(spell)
@@ -553,15 +605,18 @@ function midcast(spell)
 	elseif WeaponType=="greataxe" then
 		equip(sets.weaponry.greataxe[sets.weaponry.greataxe.index[ga_ind]])
 	end
+	send_command('pf')
 end
 
 function aftercast(spell)
-	if spell.english == "Gambit" then -- Gambit Countdown --
-            send_command ('input /p [Gambit ON] ;wait 42;input /p Gambit [WEARING OFF IN 30 SEC];wait 20;input /p Gambit [WEARING OFF IN 10 SEC];wait 10;input /p Gambit [OFF]')
-    elseif spell.english == "Rayke" then -- Rayke Countdown --
+	if spell.english == "Gambit" and not spell.interrupted then -- Gambit Countdown --
+        send_command ('input /p [Gambit ON] ;wait 42;input /p Gambit [WEARING OFF IN 30 SEC];wait 20;input /p Gambit [WEARING OFF IN 10 SEC];wait 10;input /p Gambit [OFF]')
+	end
+    if spell.english == "Rayke" and not spell.interrupted then -- Rayke Countdown --
             send_command ('input /p [Rayke ON] ;wait 25;input /p Rayke [WEARING OFF IN 25 SEC];wait 15;input /p Rayke [WEARING OFF IN 10 SEC];wait 10;input /p Rayke [OFF]')       
     end
 	status_change(player.status)
+	send_command('pf')
 end
 
 function status_change(new,old)
@@ -593,6 +648,7 @@ function status_change(new,old)
 	elseif WeaponType=="greataxe" then
 		equip(sets.weaponry.greataxe[sets.weaponry.greataxe.index[ga_ind]])
 	end
+	send_command('pf')
 end
 
 function self_command(command)
@@ -600,28 +656,33 @@ function self_command(command)
 	if command=="DD" then
 		TPSet="dd"
 		add_to_chat(206, 'DD MODE')
-		send_command('text tpvariable text "DD MODE"')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/ddmode.png')
 		status_change(player.status)
+		send_command('pf')
 	elseif command=="Hybrid" then
 		TPSet="hybrid"
 		add_to_chat(206, 'HYBRID MODE')
-		send_command('text tpvariable text "HYBRID MODE"')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/hybridmode.png')
 		status_change(player.status)
+		send_command('pf')
 	elseif command=="PDT" then
 		TPSet="pdt"
 		add_to_chat(206, 'PDT MODE')
-		send_command('text tpvariable text "PDT MODE"')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/pdtmode.png')
 		status_change(player.status)
+		send_command('pf')
 	elseif command=="MDT" then
 		TPSet="mdt"
 		add_to_chat(206, 'MDT MODE')
-		send_command('text tpvariable text "MDT MODE"')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mdtmode.png')
 		status_change(player.status)
+		send_command('pf')
 	elseif command=="TANK" then
 		TPSet="tanking"
 		add_to_chat(206, 'TANK MODE')
-		send_command('text tpvariable text "TANK MODE"')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/absorbmode.png')
 		status_change(player.status)
+		send_command('pf')
 	end
 	--tpset commands
 	
@@ -630,92 +691,64 @@ function self_command(command)
 		if TPType=="lowacc" then
 			TPType="medacc"
 			add_to_chat(206, 'Medium Accuracy Mode')
-			send_command('text idlevariable text "MEDIUM-ACC"')
+			windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/medacc.png')
 			send_command('alias ddset gs equip sets.tp.medacc')
 			send_command('alias tankset gs equip sets.hybrid.medacc')
 			status_change(player.status)
 		elseif TPType=="medacc" then
 			TPType="highacc"
 			add_to_chat(206, 'High Accuracy Mode')
-			send_command('text idlevariable text "HIGH-ACC"')
+			windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/highacc.png')
 			send_command('alias ddset gs equip sets.tp.highacc')
 			send_command('alias tankset gs equip sets.hybrid.highacc')
 			status_change(player.status)
 		elseif TPType=="highacc" then
 			TPType="vhighacc"
 			add_to_chat(206, 'Very High Accuracy Mode')
-			send_command('text idlevariable text "V.HIGH-ACC"')
+			windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/maxacc.png')
 			send_command('alias ddset gs equip sets.tp.vhighacc')
 			send_command('alias tankset gs equip sets.hybrid.vhighacc')
 			status_change(player.status)
 		elseif TPType=="vhighacc" then
 			TPType="lowacc"
 			add_to_chat(206, 'Low Accuracy Mode')
-			send_command('text idlevariable text "LOW-ACC"')
+			windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/lowacc.png')
 			send_command('alias ddset gs equip sets.tp.lowacc')
 			send_command('alias tankset gs equip sets.hybrid.lowacc')
 			status_change(player.status)
 		end
+		send_command('pf')
 	end
 	--wsacctoggle
-	if command=="wsacctoggle" then
-		if WSMode=="dmg" then
-			WSMode="acc"
-			add_to_chat(206, 'WSMODE: ACCURACY')
+	if command=="togglews" then
+		if WSType=="dmg" then
+			WSType="acc"
+			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/acc.png')
 		else
-			WSMode="dmg"
-			add_to_chat(206, 'WSMODE: DAMAGE')
+			WSType="dmg"
+			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmg.png')
 		end
+		send_command('pf')
 	end
 	--wsacctoggle
-	if command == 'lowacc' then
-		TPType="lowacc"
-		add_to_chat(206, 'Low Accuracy Mode')
-		send_command('text idlevariable text "LOW-ACC"')
-		send_command('alias ddset gs equip sets.tp.lowacc')
-		send_command('alias tankset gs equip sets.hybrid.lowacc')
-		status_change(player.status)
-	elseif command == 'medacc' then
-		TPType="medacc"
-		add_to_chat(206, 'Medium Accuracy Mode')
-		send_command('text idlevariable text "MEDIUM-ACC"')
-		send_command('alias ddset gs equip sets.tp.medacc')
-		send_command('alias tankset gs equip sets.hybrid.medacc')
-		status_change(player.status)
-	elseif command == 'highacc' then
-		TPType="highacc"
-		add_to_chat(206, 'High Accuracy Mode')
-		send_command('text idlevariable text "HIGH-ACC"')
-		send_command('alias ddset gs equip sets.tp.highacc')
-		send_command('alias tankset gs equip sets.hybrid.highacc')
-		status_change(player.status)
-	elseif command == 'vhighacc' then
-		TPType="vhighacc"
-		add_to_chat(206, 'Very High Accuracy Mode')
-		send_command('text idlevariable text "V.HIGH-ACC"')
-		send_command('alias ddset gs equip sets.tp.vhighacc')
-		send_command('alias tankset gs equip sets.hybrid.vhighacc')
-		status_change(player.status)
-	end
-	--accuracy commands
-	
+		
 	--weapon set commands
 	if command=='greatsword' then
 		WeaponType="greatsword"
 		add_to_chat(206, 'GREATSWORD SELECTED')
-		send_command('text pdtvariable text "GS MODE"')
+		windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/gs.png')
 		status_change(player.status)
 	elseif command=="onesword" then
 		WeaponType="onesword"
-		send_command('text pdtvariable text "1-SWORD MODE"')
+		windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/os.png')
 		status_change(player.status)
 	elseif command=="twoswords" then
 		WeaponType="twoswords"
-		send_command('text pdtvariable text "2-SWORDS MODE"')
+		windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/ts.png')
 		status_change(player.status)
 	elseif command=="greataxe" then
 		WeaponType="greataxe"
-		send_command('text pdtvariable text "GA MODE"')
+		windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/ga.png')
 		status_change(player.status)
 	end	
 	if command=="toggle_gs" then
@@ -725,6 +758,7 @@ function self_command(command)
 		end
 		status_change(player.status)
 		add_to_chat(206, 'WEAPONRY: '..sets.weaponry.greatsword.index[gs_ind])
+		send_command('pf')
 	end
 	if command=="toggle_os" then
 		os_ind = os_ind +1
@@ -733,6 +767,7 @@ function self_command(command)
 		end
 		status_change(player.status)
 		add_to_chat(206, 'WEAPONRY: '..sets.weaponry.onesword.index[os_ind])
+		send_command('pf')
 	end
 	if command=="toggle_ts" then
 		ts_ind = ts_ind +1
@@ -741,6 +776,7 @@ function self_command(command)
 		end
 		status_change(player.status)
 		add_to_chat(206, 'WEAPONRY: '..sets.weaponry.twoswords.index[ts_ind])
+		send_command('pf')
 	end
 	if command=="toggle_ga" then
 		ga_ind = ga_ind +1
@@ -749,6 +785,7 @@ function self_command(command)
 		end
 		status_change(player.status)
 		add_to_chat(206, 'WEAPONRY: '..sets.weaponry.greataxe.index[ga_ind])
+		send_command('pf')
 	end
 	--weapon set commands
 	
@@ -757,24 +794,56 @@ function self_command(command)
 		if IdleType=="refresh" then
 			IdleType='pdt'
 			add_to_chat(206,'PDT IDLE')
-			send_command('text wsvariable text "PDT IDLE"')
+			windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/pdtidle.png')
 			send_command('alias idle gs equip sets.idle.pdt')
 			status_change(player.status)
 		elseif IdleType=="pdt" then
 			IdleType='mdt'
 			add_to_chat(206,'MDT IDLE')
-			send_command('text wsvariable text "MDT IDLE"')
+			windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mdtidle.png')
 			send_command('alias idle gs equip sets.idle.mdt')
 			status_change(player.status)
 		elseif IdleType=="mdt" then
 			IdleType='refresh'
 			add_to_chat(206,'REFRESH IDLE')
-			send_command('text wsvariable text "REFRESH IDLE"')
+			windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/refreshidle.png')
 			send_command('alias idle gs equip sets.idle.refresh')
 			status_change(player.status)		
 		end
+		send_command('pf')
 	end	
 	--idle set commands
+	--rune commands
+	if command=="Cycle_Runes" then
+		runes=runes+1
+		if runes > #sets.runes.index then
+			runes=1
+		end
+		add_to_chat(206,'RUNE>>>>'..sets.runes.index[runes])
+		windower.prim.set_texture('ACTIVE_RUNE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/'..sets.runes.index[runes]..'.png')
+		send_command('pf')
+	end
+	if command=="Use_Rune" then		
+		send_command(''..sets.runes.index[runes])
+	end
+	--rune commands
+	if command=="burstmode" then
+		if Burst_Mode=="on" then
+			Burst_Mode="off"
+			add_to_chat(206,'BURST MODE: OFF')
+		else
+			Burst_Mode="on"
+			add_to_chat(206,'BURST MODE: ON')
+		end
+	end
+	if command=='primfix' then
+		windower.prim.set_size('TP_SET',200,30)
+		windower.prim.set_size('ACC_SET',200,30)
+		windower.prim.set_size('IDLE_SET',200,30)
+		windower.prim.set_size('WS_SET',200,30)
+		windower.prim.set_size('ACTIVE_RUNE',200,50)
+		windower.prim.set_size('WEAPON_TYPE',200,50)
+	end
 end
 
 function file_unload(new_job)

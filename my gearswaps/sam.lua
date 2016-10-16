@@ -64,7 +64,7 @@ function get_sets()
 -- keybinds, aliases, etc.
 
 -- augmented gear
-	stphead={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3%','STR+10',}}
+	stphead={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3%','DEX+8',}}
 	stpbody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','Crit. hit damage +3% ',}}
 	stphands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
 	stplegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
@@ -87,6 +87,7 @@ function get_sets()
 	TPSet="dd"
 	WSMode="damage"
 	Acc="lowacc"
+	oneiros="off"
 	
 	sets.Acc=T{}
 	sets.WSMode=T{}
@@ -117,7 +118,7 @@ function get_sets()
 	
 	sets.precast.ja["Hasso"]={}
 	
-	sets.precast.ja["Meditate"]={head="Wakido Kabuto +1", hands="Sakonji Kote +1", back={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}},}
+	sets.precast.ja["Meditate"]={head="Wakido Kabuto +1", hands="Sakonji Kote +1", back="Smertrios Mantle",}
 	
 	sets.precast.ja["Seigan"]={}
 	
@@ -129,7 +130,7 @@ function get_sets()
 	
 	sets.precast.ja["Sengikori"]={feet="kas. Sune-Ate +1",}
 	
-	sets.precast.ja["Sekkanoki"]={hands="Kasuga Kote",}
+	sets.precast.ja["Sekkanoki"]={hands="Kasuga Kote +1",}
 	
 	sets.precast.ja["Hamanoha"]={}
 	
@@ -139,19 +140,19 @@ function get_sets()
 -- ja sets
 
 -- ws sets
-	sets.strws={main="Tsurumaru", sub="Bloodrain Strap", range="Cibitshavore", ammo="Tulfaire Arrow", head={ name="Despair Helm", augments={'STR+15','Enmity+7','"Store TP"+3',}},
+	sets.strws={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range="Cibitshavore", ammo="Tulfaire Arrow", head="Rao Kabuto",
     body={ name="Despair Mail", augments={'STR+12','VIT+7','Haste+2%',}}, hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','Haste+2%',}}, neck="Fotia Gorget", 
-	legs={ name="Despair Cuisses", augments={'STR+12','VIT+7','Haste+2%',}}, feet={ name="Despair Greaves", augments={'STR+12','VIT+7','Haste+2%',}}, waist="Fotia Belt",
-	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Brutal Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	legs="Hiza. Hizayoroi +1", feet={ name="Despair Greaves", augments={'STR+12','VIT+7','Haste+2%',}}, waist="Fotia Belt",
+	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Brutal Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
 	
 	sets.accws=set_combine(sets.strws,{back=Takaha,})
 	
-	sets.raws={main="Tsurumaru", sub="Bloodrain Strap", range="Cibitshavore", ammo="Tulfaire Arrow", head="Sakonji Kabuto +1",
-	body="Kyujutsugi", hands="Kasuga Kote", legs="Miki. Cuisses", feet="Sak. Sune-Ate +1",
+	sets.raws={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range="Cibitshavore", ammo="Tulfaire Arrow", head="Sakonji Kabuto +1",
+	body="Kyujutsugi", hands="Kasuga Kote +1", legs="Miki. Cuisses", feet="Sak. Sune-Ate +1",
 	neck="Fotia Gorget", waist="Fotia Belt", left_ear="Moonshade Earring", right_ear="Drone Earring", 
 	left_ring="Stormsoul Ring", right_ring="Bellona's Ring", back="Terebellum Mantle",}
 	
-	sets.magicws={main="Tsurumaru", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
+	sets.magicws={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
 	head={ name="Founder's Corona", augments={'DEX+6','Accuracy+10','Magic dmg. taken -3%',}}, body={ name="Found. Breastplate", augments={'Accuracy+7','Mag. Acc.+5','Attack+7',}},
     hands={ name="Founder's Gauntlets", augments={'STR+8','Attack+15','"Mag.Atk.Bns."+13','Phys. dmg. taken -3%',}}, legs={ name="Founder's Hose", augments={'MND+5','Mag. Acc.+13',}},
 	feet={ name="Founder's Greaves", augments={'VIT+9','Accuracy+14','"Mag.Atk.Bns."+13','Mag. Evasion+15',}}, neck="Fotia Gorget", waist="Fotia Belt", left_ear="Crematio Earring",
@@ -235,7 +236,7 @@ function get_sets()
 -- ws day bonus
 
 -- ws sekkanoki bonus
-	sets.sekkanoki={hands="Kasuga Kote",}
+	sets.sekkanoki={hands="Kasuga Kote +1",}
 -- ws sekkanoki bonus
 
 -- ws sengikori bonus
@@ -248,23 +249,28 @@ function get_sets()
 
 -- sub nin stuff
 	sets.precast.nin=set_combine(sets.dt,{neck="Jeweled Collar", left_ear="Loquac. Earring", right_ear="Etiolation Earring", 
-	body="Nuevo Coselete", left_ring="Prolix Ring", hands="Leyline Gloves", feet="Ejekamal Greaves",})
+	body="Nuevo Coselete", left_ring="Prolix Ring", hands="Leyline Gloves", feet="Ejekamal Boots",})
 	
-	sets.midcast.nin={main="Tsurumaru", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head="Loess Barbuta +1",
+	sets.midcast.nin={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head="Loess Barbuta +1",
 	body="Mekira Meikogai", hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs="Osmium Cuisses", right_ear="Sanare Earring",
 	feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt", left_ear="Etiolation Earring",
 	left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
 -- sub nin stuff
 
 -- tp sets
-	sets.aftercast.tp.lowacc={main="Tsurumaru", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
-	head={ name="Otomi Helm", augments={'Haste+2','"Snapshot"+2','STR+8',}}, body="Kasuga Domaru +1", legs="Kasuga Haidate +1", hands=stphands, feet=stpfeet,
-    neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Tripudio Earring", right_ear="Cessance Earring", left_ring="Petrov Ring", right_ring="Rajas Ring",
+	sets.aftercast.tp.lowacc={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
+	head=stphead, body="Kasuga Domaru +1", legs="Kasuga Haidate +1", hands=stphands, feet="ryuo Sune-Ate",
+    neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Brutal Earring", right_ear="Telos Earring", left_ring="Petrov Ring", right_ring="Hetairoi Ring",
     back={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}},}
-
+	
+	--body="Kasuga Domaru +1",
+	
 	sets.aftercast.tp.medacc=set_combine(sets.aftercast.tp.lowacc,{head=stphead, left_ring="Apate Ring",})
 
-	sets.aftercast.tp.highacc=set_combine(sets.aftercast.tp.medacc,{neck="Combatant's Torque", waist="Olseni Belt", left_ear="Zennaroi Earring",})
+	sets.aftercast.tp.highacc={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, left_ring="Ramuh Ring +1",
+	head={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3','DEX+8',}}, body="Rao Togi", hands={ name="Ryuo Tekko", augments={'DEX+10','Accuracy+20','"Dbl.Atk."+3',}}, 
+	feet={ name="Rao Sune-Ate", augments={'STR+10','DEX+10','Attack+15',}}, neck="Combatant's Torque", waist="Kentarch Belt +1", left_ear="Zennaroi Earring", right_ear="Telos Earring",
+    legs="Kasuga Haidate +1",right_ring="Cacoethic Ring +1", back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
 
 	sets.aftercast.o.lowacc=set_combine(sets.aftercast.tp.lowacc,{left_ring="Oneiros Ring",})
 
@@ -278,26 +284,26 @@ function get_sets()
 	
 	sets.hybrid.medacc=set_combine(sets.hybrid.lowacc, {neck="Combatant's Torque", back=Takaha, waist="Olseni Belt"})
 	
-	sets.hybrid.highacc={main="Tsurumaru", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
+	sets.hybrid.highacc={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
 	head={ name="Founder's Corona", augments={'DEX+6','Accuracy+10','Magic dmg. taken -3%',}}, neck="Combatant's Torque", waist="Dynamic Belt +1",
     body={ name="Found. Breastplate", augments={'Accuracy+7','Mag. Acc.+5','Attack+7',}}, left_ear="Zennaroi Earring", right_ear="Cessance Earring",
     hands={ name="Founder's Gauntlets", augments={'STR+8','Attack+15','"Mag.Atk.Bns."+13','Phys. dmg. taken -3%',}}, left_ring="Vocane Ring",
     legs={ name="Founder's Hose", augments={'MND+5','Mag. Acc.+13',}}, right_ring="Defending Ring", back=Takaha,
 	feet={ name="Founder's Greaves", augments={'VIT+9','Accuracy+14','"Mag.Atk.Bns."+13','Mag. Evasion+15',}},}
 	
-	sets.pdt={main="Tsurumaru", sub="Alber Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, left_ear="Genmei Earring", left_ring="Vocane Ring",
+	sets.pdt={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, left_ear="Genmei Earring", left_ring="Vocane Ring",
 	head="Genmei Kabuto", body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}}, right_ear="Telos Earring",
 	hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs={ name="Valor. Hose", augments={'Accuracy+20 Attack+20','Crit.hit rate+4','DEX+6','Accuracy+11',}},
     feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt", right_ring="Defending Ring",
 	back="Agema Cape",}
 	
-	sets.mdt={main="Tsurumaru",
-    sub="Alber Strap",
+	sets.mdt={main="Dojikiri Yasutsuna",
+    sub="Bloodrain Strap",
     range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head={ name="Founder's Corona", augments={'DEX+7','Accuracy+11','Magic dmg. taken -3%',}},
 	body="Kyujutsugi", hands="Kurys Gloves", legs="Osmium Cuisses", feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, waist="Flume Belt",
 	neck="Loricate Torque +1", left_ear="Etiolation Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", right_ring="Defending Ring", back="Engulfer Cape +1",}
 	
-	sets.dt={main="Tsurumaru", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head="Loess Barbuta +1",
+	sets.dt={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head="Loess Barbuta +1",
 	body="Mekira Meikogai", hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs="Osmium Cuisses", right_ear="Sanare Earring",
 	feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt", left_ear="Etiolation Earring",
 	left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
@@ -316,9 +322,9 @@ function get_sets()
 	
 	sets.idle.dtkite=set_combine(sets.idle.dt,{back="Shadow Mantle", feet="Danzo Sune-Ate",})
 	
-	sets.idle.standard={main="Tsurumaru", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
-	head="Twilight Helm", body="Kumarbi's Akar", hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs="Osmium Cuisses",
-	feet="Danzo Sune-Ate", neck="Wiglen Gorget", waist="Flume Belt", left_ear="Infused Earring", right_ear="Sanare Earring", left_ring="Paguroidea Ring",
+	sets.idle.standard={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
+	head="Rao Kabuto", body="Rao Togi", hands="Rao Kote",--[[hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}},]] legs="Osmium Cuisses",
+	feet="Danzo Sune-Ate", neck="Sanctity Necklace", waist="Flume Belt", left_ear="Infused Earring", right_ear="Sanare Earring", left_ring="Paguroidea Ring",
 	right_ring="Sheltered Ring", back="Shadow Mantle",}
 -- other idle sets
 
@@ -393,7 +399,7 @@ end
 function status_change(new,old)
 	if new=="Engaged" then
 		if TPSet=="dd" then
-			if player.mp<99 then
+			if player.mp<99 and oneiros==on then
 				equip(sets.aftercast.tp[Acc])
 			else
 				equip(sets.aftercast.o[Acc])
