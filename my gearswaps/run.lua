@@ -95,11 +95,14 @@ function get_sets()
 	sets.weaponry={}
 	sets.idle={}
 --base sets
+
 --runes index
 	sets.runes={}
 	sets.runes.index={'Tenebrae','Gelus','Ignis','Flabra','Tellus','lux','Unda','Sulpor'}
 	runes=1
 --runes index
+
+--gui setup
 windower.prim.create('TP_SET')
 windower.prim.create('ACC_SET')
 windower.prim.create('IDLE_SET')
@@ -141,6 +144,8 @@ windower.prim.set_visibility('IDLE_SET',true)
 windower.prim.set_visibility('WS_SET',true)
 windower.prim.set_visibility('ACTIVE_RUNE',true)
 windower.prim.set_visibility('WEAPON_TYPE',true)
+--gui setup
+
 --weaponry
 	sets.weaponry.greatsword={}
 	sets.weaponry.greatsword.index={"Aettir","Macbain","Montante","Humility"}

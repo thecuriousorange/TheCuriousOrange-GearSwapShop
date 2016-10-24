@@ -1,6 +1,6 @@
 function get_sets()
 -- includes
-	include('tco-include.lua')
+	include('skillchain-elements.lua')
 	include('organizer-lib.lua')
 -- includes
 
@@ -9,12 +9,12 @@ function get_sets()
 	send_command('alias oset gs equip sets.tp.o.lowacc')
 --aliasing
 
---text boxes	
+--[[text boxes	
 	send_command('text idlevariable text "LOW-ACC"')
 	send_command('text tpvariable text "MULTIHIT MODE"')
 	send_command('text wsvariable text "WSType: DMG"')
 	send_command('text pdtvariable text "Habile Mazrak"')
---text boxes
+--text boxes]]
 
 --binds
 	send_command('bind #2 gs equip sets.pdt')
@@ -32,7 +32,7 @@ function get_sets()
 	send_command('bind #f2 gs c medacc')
 	send_command('bind #f3 gs c highacc')
 	send_command('bind @f6 gs c Quint')
-	send_command('bind @f7 gs c Annealed')
+	send_command('bind @f7 gs c Trishula')
 	send_command('bind @f8 gs c Olyndicus')
 	send_command('bind @f9 gs c Gungnir')
 	send_command('bind @f12 gs c ws_dmg_or_acc')
@@ -48,6 +48,49 @@ function get_sets()
 	jumps= S{'Jump','High Jump','Spirit Jump','Soul Jump',}
 --lists
 
+--gui setup
+windower.prim.create('TP_SET')
+windower.prim.create('ACC_SET')
+windower.prim.create('IDLE_SET')
+windower.prim.create('WS_SET')
+windower.prim.create('WEAPON_TYPE')
+windower.prim.create('JUMP_TYPE')
+
+windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/multi.png')
+windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/lowacc.png')
+windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/standardidle.png')
+windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmg.png')
+windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Trishula.png')
+windower.prim.set_texture('JUMP_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmgjump.png')
+
+windower.prim.set_size('TP_SET',200,30)
+windower.prim.set_size('ACC_SET',200,30)
+windower.prim.set_size('IDLE_SET',200,30)
+windower.prim.set_size('WS_SET',200,30)
+windower.prim.set_size('WEAPON_TYPE',200,50)
+windower.prim.set_size('JUMP_TYPE',200,50)
+
+windower.prim.set_position('TP_SET',0.65*windower.get_windower_settings().x_res,50)
+windower.prim.set_position('ACC_SET',0.65*windower.get_windower_settings().x_res,90)
+windower.prim.set_position('IDLE_SET',0.65*windower.get_windower_settings().x_res,130)
+windower.prim.set_position('WS_SET',0.65*windower.get_windower_settings().x_res,170)
+windower.prim.set_position('WEAPON_TYPE',0.65*windower.get_windower_settings().x_res,210)
+windower.prim.set_position('JUMP_TYPE',0.65*windower.get_windower_settings().x_res,260)
+
+windower.prim.set_color('TP_SET', 100, 255, 255, 255)
+windower.prim.set_color('ACC_SET', 100, 255, 255, 255)
+windower.prim.set_color('IDLE_SET', 100, 255, 255, 255)
+windower.prim.set_color('WS_SET', 100, 255, 255, 255)
+windower.prim.set_color('WEAPON_TYPE',100,255,255,255)
+windower.prim.set_color('JUMP_TYPE',100,255,255,255)
+
+windower.prim.set_visibility('TP_SET',true)
+windower.prim.set_visibility('ACC_SET',true)
+windower.prim.set_visibility('IDLE_SET',true)
+windower.prim.set_visibility('WS_SET',true)
+windower.prim.set_visibility('WEAPON_TYPE',true)
+windower.prim.set_visibility('JUMP_TYPE',true)
+--gui setup
 
 --augmented items
 	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +3%',}}
@@ -72,7 +115,7 @@ function get_sets()
 --augmented items
 	
 --variables
-	weapon="Habile Mazrak"
+	weapon="Trishula"
 	JumpType="damage"
 	TPMode="multi"
 	TPType="lowacc"
@@ -88,6 +131,28 @@ function get_sets()
 	sets.rrlock= T{}
 	sets.JumpType= T{}
 --variables
+
+--indicies
+	sets.polearm={}
+	sets.polearm.index={"Trishula","Habile Mazrak","Gungnir",}
+	polearm=1
+	
+	sets.accuracy={}
+	sets.accuracy.index={"lowacc","medacc","highacc","maxacc"}
+	accuracy=1
+	
+	sets.tpbuild={}
+	sets.tpbuild.index={"multi","xhit","xhit2"}
+	tpbuild=1
+	
+	sets.defense={}	
+	sets.defense.index={"pdt","mdt","xdt"}
+	def=1
+	
+	sets.idle={}
+	sets.idle.index={"standard","pdt","mdt","xdt","pdtkite","mdtkite","xdtkite"}
+	idle=1
+--indicies
 
 --base names(empty sets)
 	sets.weaponry={}
@@ -122,11 +187,9 @@ function get_sets()
 	sets.weaponry["Habile Mazrak"]={main="Habile Mazrak", sub="Alber Strap",}
 	sets.weaponry.Annealed={main="Annealed Lance", sub="Alber Strap",}
 	sets.weaponry.Quint={main="Quint Spear", sub="Alber Strap",}
+	sets.weaponry["Trishula"]={main="Trishula", sub="Alber Strap",}
 --weaponry
-	sets.idle={ammo="Vanir Battery", head="Valorous Mask", body="Jumalik Mail", hands="Sulev. Gauntlets +1", 
-	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Amm Greaves", neck="Loricate Torque +1", waist="Nierenschutz",
-	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", 
-	right_ring="Sheltered Ring", back="Shadow Mantle",}
+	
 --JA sets
 	sets.tpgain["Jump"]={ammo="Ginsen", head=acrohead, legs=acrolegs, body="Vishap Mail +1", hands="Vishap F. G. +1", 
 	feet="Ostro Greaves", neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Tripudio Earring", 
@@ -482,6 +545,24 @@ function get_sets()
 	
 	sets.xdt=sets.pdt
 	--defensive sets
+	--idlesets
+	sets.idle.standard={ammo="Vanir Battery", head="Valorous Mask", body="Jumalik Mail", hands="Sulev. Gauntlets +1", 
+	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Amm Greaves", neck="Loricate Torque +1", waist="Nierenschutz",
+	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", 
+	right_ring="Sheltered Ring", back="Shadow Mantle",}
+	
+	sets.idle.pdt=sets.pdt
+	
+	sets.idle.mdt=sets.mdt
+	
+	sets.idle.xdt=sets.xdt
+	
+	sets.idle.pdtkite=set_combine(sets.pdt, {legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},})
+	
+	sets.idle.mdtkite=set_combine(sets.mdt, {legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},})
+	
+	sets.idle.xdtkite=set_combine(sets.xdt, {legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},})
+	--idlesets
 --aftercast sets
 end
 
@@ -606,9 +687,10 @@ function status_change(new,old)
 			equip(sets.mdt)
 		end
 	else
-		equip(sets.idle)				
+		equip(sets.idle[sets.idle.index[idle]])				
 	end
 	equip(sets.weaponry[weapon])
+	send_command('pf')
 end
 
 function pet_precast(spell)
@@ -635,7 +717,7 @@ function self_command(command)
 		if TPMode=="xhit2" then
 			TPMode="multi"
 			add_to_chat(206, 'MULTIHIT MODE')
-			send_command('text tpvariable text "MULTIHIT MODE"')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/multi.png')
 			if TPType=="lowacc" then
 				send_command('alias ddset gs equip sets.tp.lowacc')
 				send_command('alias oset gs equip sets.tp.o.lowacc')
@@ -649,7 +731,7 @@ function self_command(command)
 		elseif TPMode=="xhit" then
 			TPMode="xhit2"
 			add_to_chat(206, 'XHIT2 MODE')
-			send_command('text tpvariable text "XHIT2 MODE"')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/xhit2.png')
 			if TPType=="lowacc" then
 				send_command('alias ddset gs equip sets.xhit2.lowacc')
 				send_command('alias oset gs equip sets.xhit2o.lowacc')
@@ -660,10 +742,11 @@ function self_command(command)
 				send_command('alias ddset gs equip sets.xhit2.highacc')
 				send_command('alias oset gs equip sets.xhit2o.highacc')
 			end
+			status_change(player.status)
 		elseif TPMode=="multi" then
 			TPMode="xhit"
 			add_to_chat(206, 'XHIT MODE')
-			send_command('text tpvariable text "XHIT MODE"')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/xhit.png')
 			if TPType=="lowacc" then
 				send_command('alias ddset gs equip sets.xhit.lowacc')
 				send_command('alias oset gs equip sets.xhito.lowacc')
@@ -677,7 +760,7 @@ function self_command(command)
 		else
 			TPMode="multi"
 			add_to_chat(206, 'MULTIHIT MODE')
-			send_command('text tpvariable text "MULTIHIT MODE"')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/multi.png')
 			if TPType=="lowacc" then
 				send_command('alias ddset gs equip sets.tp.lowacc')
 				send_command('alias oset gs equip sets.tp.o.lowacc')
@@ -688,6 +771,7 @@ function self_command(command)
 				send_command('alias ddset gs equip sets.tp.highacc')
 				send_command('alias oset gs equip sets.tp.o.highacc')
 			end
+			status_change(player.status)
 		end
 	end
 	if command=="Hybrid" then
@@ -696,8 +780,9 @@ function self_command(command)
 		else
 			TPMode="Hybrid"
 			add_to_chat(206, 'HYBRID MODE')
-			send_command('text tpvariable text "HYBRID MODE"')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/hybridmode.png')
 		end
+		status_change(player.status)
 	end
 	if command=="PDT" then
 		if TPMode=="PDT" then
@@ -705,8 +790,9 @@ function self_command(command)
 		else
 			TPMode="PDT"
 			add_to_chat(206, 'PDT MODE')
-			send_command('text tpvariable text "PDT MODE"')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/pdtmode.png')
 		end
+		status_change(player.status)
 	end
 	if command=="MDT" then
 		if TPMode=="MDT" then
@@ -714,8 +800,9 @@ function self_command(command)
 		else
 			TPMode="MDT"
 			add_to_chat(206, 'MDT MODE')
-			send_command('text tpvariable text "MDT MODE"')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mdtmode.png')
 		end
+		status_change(player.status)
 	end
 --TPMode commands
 
@@ -723,7 +810,7 @@ function self_command(command)
 	if command=="lowacc" then
 		TPType="lowacc"
 		add_to_chat(206, 'TP TYPE: LOWACC')
-		send_command('text idlevariable text "LOW-ACC"')
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/lowacc.png')
 		if TPMode=="multi" then
 			send_command('alias ddset gs equip sets.tp.lowacc')
 			send_command('alias oset gs equip sets.tp.o.lowacc')
@@ -731,11 +818,12 @@ function self_command(command)
 			send_command('alias ddset gs equip sets.xhit.lowacc')
 			send_command('alias oset gs equip sets.xhit.o.lowacc')
 		end
+		status_change(player.status)
 	end
 	if command=="medacc" then
 		TPType="medacc"
 		add_to_chat(206, 'TP TYPE: MEDACC')
-		send_command('text idlevariable text "MED-ACC"')
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/medacc.png')
 		if TPMode=="multi" then
 			send_command('alias ddset gs equip sets.tp.medacc')
 			send_command('alias oset gs equip sets.tp.o.medacc')
@@ -743,11 +831,12 @@ function self_command(command)
 			send_command('alias ddset gs equip sets.xhit.medacc')
 			send_command('alias oset gs equip sets.xhit.o.medacc')
 		end
+		status_change(player.status)
 	end
 	if command=="highacc" then
 		TPType="highacc"
 		add_to_chat(206, 'TP TYPE: HIGHACC')
-		send_command('text idlevariable text "HIGH-ACC"')
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/highacc.png')
 		if TPMode=="multi" then
 			send_command('alias ddset gs equip sets.tp.highacc')
 			send_command('alias oset gs equip sets.tp.o.highacc')
@@ -755,6 +844,7 @@ function self_command(command)
 			send_command('alias ddset gs equip sets.xhit.highacc')
 			send_command('alias oset gs equip sets.xhit.o.highacc')
 		end
+		status_change(player.status)
 	end
 --TPType commands
 	
@@ -766,7 +856,7 @@ function self_command(command)
 		else
 			weapon="Gungnir"			
 			add_to_chat(206, 'Gungnir Mode')
-			send_command('text pdtvariable text "Gungnir"')
+			windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Gungnir.png')
 		end
 	end	
 	if command== "Habile Mazrak" then
@@ -777,10 +867,21 @@ function self_command(command)
 			weapon="Habile Mazrak"
 			add_to_chat(206, 'Olyndicus Mode')
 			status_change(player.status)
-			send_command('text pdtvariable text "Habile Mazrak"')
+			windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Habile Mazrak.png')
 		end
 	end
-	if command=="Annealed" then
+	if command=="Trishula" then
+		if weapon=="Trishula" then
+			add_to_chat(206, 'Trishula already equiped, updating')
+			status_change(player.status)
+		else
+			weapon="Trishula"
+			add_to_chat(206, 'Trishula Mode')
+			status_change(player.status)
+			windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Trishula.png')
+		end
+	end
+	--[[if command=="Annealed" then
 		if weapon=="Annealed" then
 			add_to_chat(206, 'Annealed Lance already equiped, updating')
 			status_change(player.status)
@@ -790,7 +891,7 @@ function self_command(command)
 			status_change(player.status)
 			send_command('text pdtvariable text "Annealed Lance"')
 		end
-	end
+	end]]
 	if command=="Quint" then
 		if weapon=="Quint" then
 			add_to_chat(206, 'Quint Spear already equiped, updating')
@@ -809,11 +910,11 @@ function self_command(command)
 		if WSType=="damage" then
 			WSType="accuracy"
 			add_to_chat(206, 'WSType: ACCURACY')
-			send_command('text wsvariable text "WSType: ACC"')			
+			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/acc.png')
 		else
 			WSType="damage"
 			add_to_chat(206, 'WSType: DAMAGE')
-			send_command('text wsvariable text "WSType: DMG"')
+			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmg.png')
 		end
 	end
 --ws mode toggle
@@ -823,9 +924,11 @@ function self_command(command)
 		if JumpType=="damage" then
 			JumpType="tpgain"
 			add_to_chat(206, 'JUMP TYPE: TP GAIN')
+			windower.prim.set_texture('JUMP_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/stpjump.png')
 		elseif JumpType=="tpgain" then
 			JumpType="damage"
 			add_to_chat(206, 'JUMP TYPE: DAMAGE')
+			windower.prim.set_texture('JUMP_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmgjump.png')
 		end
 	end
 --jump mode
@@ -855,5 +958,32 @@ function self_command(command)
 			add_to_chat(206, 'Oring: OFF')
 			status_change(player.status)
 		end
+	end
+	if command=="kitetoggle" then
+		if idle < 4 then
+			idle=4
+		elseif not idle <4 then
+			idle=idle+1
+			if idle > #sets.idle.index then
+				idle=4
+			end
+		end
+		
+	end
+	if command=="idletoggle" then
+		if idle > 3 then
+			idle=1
+		elseif idle < 3 then
+			idle=idle+1
+		end
+		
+	end
+	if command=='primfix' then
+		windower.prim.set_size('TP_SET',200,30)
+		windower.prim.set_size('ACC_SET',200,30)
+		windower.prim.set_size('IDLE_SET',200,30)
+		windower.prim.set_size('WS_SET',200,30)
+		windower.prim.set_size('WEAPON_TYPE',200,50)
+		windower.prim.set_size('JUMP_TYPE',200,50)
 	end
 end
