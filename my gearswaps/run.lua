@@ -851,6 +851,37 @@ function self_command(command)
 	end
 end
 
+function macro_setup()
+	if player.sub_job=="BLU" then
+	send_command('input /macro book 1;input /macro set 3')
+	
+	elseif player.sub_job=="WHM" then
+	send_command('input /macro book 1;input /macro set 3')
+	
+	elseif player.sub_job=="PLD" then
+	send_command('input /macro book 1;input /macro set 3')
+	
+	elseif player.sub_job=="RDM" then
+	send_command('input /macro book 1;input /macro set 3')
+	
+	elseif player.sub_job=="WAR" then
+	send_command('input /macro book 1;input /macro set 4')
+	
+	elseif player.sub_job=="SAM" then
+	send_command('input /macro book 1;input /macro set 5')
+	
+	elseif player.sub_job=="NIN" then
+	send_command('input /macro book 1;input /macro set 6')
+	
+	elseif player.sub_job=="DNC" then
+	send_command('input /macro book 1;input /macro set 6')
+	
+	elseif player.sub_job=="BLM" then
+	send_command('input /macro book 1;input /macro set 3')
+	
+	end
+end
+
 function file_unload(new_job)
 	windower.send_command('boxesoff')
 end

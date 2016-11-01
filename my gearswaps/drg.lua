@@ -7,6 +7,7 @@ function get_sets()
 --aliasing
 	send_command('alias ddset gs equip sets.tp.lowacc')
 	send_command('alias oset gs equip sets.tp.o.lowacc')
+	send_command('alias idle gs equip sets.idle.standardidle')
 --aliasing
 
 --[[text boxes	
@@ -18,7 +19,7 @@ function get_sets()
 
 --binds
 	send_command('bind #2 gs equip sets.pdt')
-	send_command('bind #4 gs equip sets.idle')
+	send_command('bind #4 idle')
 	send_command('bind #8 gs equip sets.mdt')
 	send_command('bind #h gs equip sets.hybrid')
 	send_command('bind #t ddset')
@@ -28,9 +29,9 @@ function get_sets()
 	send_command('bind @f2 gs c Hybrid')
 	send_command('bind @f3 gs c PDT')
 	send_command('bind @f4 gs c MDT')
-	send_command('bind #f1 gs c lowacc')
-	send_command('bind #f2 gs c medacc')
-	send_command('bind #f3 gs c highacc')
+	send_command('bind #f1 gs c toggleaccuracy')
+	send_command('bind #f3 gs c kitetoggle')
+	send_command('bind #f4 gs c idletoggle')
 	send_command('bind @f6 gs c Quint')
 	send_command('bind @f7 gs c Trishula')
 	send_command('bind @f8 gs c Olyndicus')
@@ -39,6 +40,28 @@ function get_sets()
 	send_command('bind #g gs c jumptoggle')
 	send_command('bind @p gs c oring')
 --binds	
+
+--indicies
+	sets.polearm={}
+	sets.polearm.index={"Trishula","Habile Mazrak","Gungnir",}
+	polearm=1
+	
+	sets.accuracy={}
+	sets.accuracy.index={"lowacc","medacc","highacc","maxacc"}
+	accuracy=1
+	
+	sets.tpbuild={}
+	sets.tpbuild.index={"multi","xhit","xhit2"}
+	tpbuild=1
+	
+	sets.defense={}	
+	sets.defense.index={"pdt","mdt","xdt"}
+	def=1
+	
+	sets.idle={}
+	sets.idle.index={"standardidle","pdtidle","mdtidle","dtidle","pdtkite","mdtkite","dtkite"}
+	idle=1
+--indicies
 
 --default macro set
 	send_command('input /macro book 5;input /macro set 2')
@@ -111,7 +134,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	dafeet={ name="Acro Leggings", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
 	
 	updrafttp={ name="Updraft Mantle", augments={'STR+2','Pet: Breath+3','Pet: Damage taken -1%','Weapon skill damage +1%',}}
-	updraftws={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+	updraftws={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}}
 --augmented items
 	
 --variables
@@ -131,28 +154,6 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.rrlock= T{}
 	sets.JumpType= T{}
 --variables
-
---indicies
-	sets.polearm={}
-	sets.polearm.index={"Trishula","Habile Mazrak","Gungnir",}
-	polearm=1
-	
-	sets.accuracy={}
-	sets.accuracy.index={"lowacc","medacc","highacc","maxacc"}
-	accuracy=1
-	
-	sets.tpbuild={}
-	sets.tpbuild.index={"multi","xhit","xhit2"}
-	tpbuild=1
-	
-	sets.defense={}	
-	sets.defense.index={"pdt","mdt","xdt"}
-	def=1
-	
-	sets.idle={}
-	sets.idle.index={"standard","pdt","mdt","xdt","pdtkite","mdtkite","xdtkite"}
-	idle=1
---indicies
 
 --base names(empty sets)
 	sets.weaponry={}
@@ -183,11 +184,11 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 --rr lock set
 
 --weaponry
-	sets.weaponry.Gungnir={main="Gungnir", sub="Alber Strap",}
-	sets.weaponry["Habile Mazrak"]={main="Habile Mazrak", sub="Alber Strap",}
-	sets.weaponry.Annealed={main="Annealed Lance", sub="Alber Strap",}
-	sets.weaponry.Quint={main="Quint Spear", sub="Alber Strap",}
-	sets.weaponry["Trishula"]={main="Trishula", sub="Alber Strap",}
+	sets.weaponry.Gungnir={main="Gungnir", sub="Bloodrain Strap",}
+	sets.weaponry["Habile Mazrak"]={main="Habile Mazrak", sub="Bloodrain Strap",}
+	sets.weaponry.Annealed={main="Annealed Lance", sub="Bloodrain Strap",}
+	sets.weaponry.Quint={main="Quint Spear", sub="Bloodrain Strap",}
+	sets.weaponry["Trishula"]={main="Trishula", sub="Bloodrain Strap",}
 --weaponry
 	
 --JA sets
@@ -219,13 +220,13 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
 	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, neck="Combatant's Torque", waist="Grunfeld Rope",
 	left_ear="Cessance Earring", right_ear="Telos Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1",
-	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},}
+	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},}
 	
 	sets.damage["Soul Jump"]={ammo="Ginsen", head="Sulevia's Mask +1", hands="Sulev. Gauntlets +1", legs="Pelt. Cuissots +1",
 	body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
 	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, neck="Combatant's Torque", waist="Grunfeld Rope",
 	left_ear="Cessance Earring", right_ear="Telos Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1",
-	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},}
+	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},}
 	
 	sets.ja["Ancient Circle"]={legs="Vishap Brais +1",}
 	
@@ -255,7 +256,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     legs={ name="Acro Breeches", augments={'Pet: Mag. Acc.+22','Pet: Breath+6','MND+8',}},
     feet={ name="Acro Leggings", augments={'Pet: Mag. Acc.+12','Pet: Breath+6','Pet: Damage taken -4%',}},
     neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Ethereal Earring", right_ear="Lancer's Earring",
-    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back="Brigantia's Mantle",}
+    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back={ name="Brigantia's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Accuracy+20 Attack+20',}},}
 	
 	sets.pet["Smiting Breath"]={head={ name="Ptero. Armet +1", augments={'Enhances "Deep Breathing" effect',}},
     body={ name="Acro Surcoat", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: Breath+6','Pet: Damage taken -3%',}},
@@ -263,7 +264,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     legs={ name="Acro Breeches", augments={'Pet: Mag. Acc.+22','Pet: Breath+6','MND+8',}},
     feet={ name="Acro Leggings", augments={'Pet: Mag. Acc.+12','Pet: Breath+6','Pet: Damage taken -4%',}},
     neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Ethereal Earring", right_ear="Lancer's Earring",
-    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back="Brigantia's Mantle",}
+    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back={ name="Brigantia's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Accuracy+20 Attack+20',}},}
 	
 	sets.breath.precast={head="Vishap Armet +1", body="Wyvern Mail", hands="Despair Fin. Gaunt.", legs="Vishap Brais +1",
 	feet={ name="Ptero. Greaves +1", augments={'Enhances "Empathy" effect',}}, neck="Chanoix's Gorget",
@@ -275,7 +276,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.ws.damage["Double Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Double Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
@@ -285,7 +286,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.ws.damage["Thunder Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Thunder Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
@@ -295,7 +296,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.ws.damage["Raiden Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Raiden Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
@@ -325,7 +326,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.ws.damage["Vorpal Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Vorpal Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
@@ -335,7 +336,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.ws.damage["Skewer"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Skewer"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
@@ -345,7 +346,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.ws.damage["Wheeling Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Wheeling Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
@@ -355,7 +356,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.ws.damage["Impulse Drive"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Impulse Drive"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
@@ -374,7 +375,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     right_ear="Brutal Earring",
     left_ring="Ifrit Ring +1",
     right_ring="Rajas Ring",
-    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Drakesbane"]={ammo="Potestas Bomblet",
     head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}},
@@ -391,17 +392,17 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     back=updraftws,}
 	
 	sets.ws.damage["Sonic Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
+	legs="Pelt. Cuissots +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Sonic Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
+	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
 	sets.ws.damage["Camlann's Torment"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Ptero. Brais +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
+	legs="Ptero. Brais +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
 	right_ring="Rajas Ring", back=updraftws,}
 	
@@ -411,9 +412,9 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	right_ring="Rajas Ring", back=updraftws,}
 	
 	sets.ws.damage["Stardiver"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Lustratio Harness", hands="Sulev. Gauntlets +1",
-	legs="Despair Cuisses", feet="Lustratio Leggings", neck="Fotia Gorget", waist="Fotia Belt", 
+	legs="Sulevi. Cuisses +1", feet="Lustratio Leggings", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Shukuyu Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	right_ring="Shukuyu Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Stardiver"]={ammo="Potestas Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
 	body={ name="Lustratio Harness", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, hands="Sulev. Gauntlets +1",
@@ -432,7 +433,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     right_ear="Brutal Earring",
     left_ring="Ramuh Ring +1",
     right_ring="Rajas Ring",
-    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
 	
 	sets.ws.accuracy["Geirskogul"]={ammo="Potestas Bomblet",
     head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
@@ -477,9 +478,14 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	hands="Sulev. Gauntlets +1", left_ear="Telos Earring", right_ear="Zennaroi Earring", left_ring="Cacoethic Ring +1",
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
 	feet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}},
-	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},}
+	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},}
 	
-	sets.xhit.lowacc={ammo="Ginsen", head=acrohead, body="Pelt. Plackart +1", back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},
+	sets.tp.maxacc={ammo="Amar Cluster", head="Flam. Zucchetto +1", body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
+	hands="Sulev. Gauntlets +1", legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}, right_ring="Ramuh Ring +1",
+	feet="Flam. Gambieras +1", neck="Combatant's Torque", waist="Ioskeha Belt", left_ear="Telos Earring", right_ear="Mache Earring", left_ring="Cacoethic Ring +1",
+	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
+	
+	sets.xhit.lowacc={ammo="Ginsen", head=acrohead, body="Pelt. Plackart +1", back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},
 	hands=acrohands, waist="Windbuffet Belt +1", legs=acrolegs, feet=acrofeet, neck="Ganesha's Mala", left_ear="Tripudio Earring", right_ear="Cessance Earring", left_ring="Petrov Ring",
 	right_ring="Rajas Ring",}
 		
@@ -490,7 +496,12 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	legs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. hit damage +3%',}}, neck="Combatant's Torque",
 	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, waist="Olseni Belt", left_ear="Telos Earring",
 	right_ear="Cessance Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1", 
-	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},}
+	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},}
+	
+	sets.xhit.maxacc={ammo="Amar Cluster", head="Flam. Zucchetto +1", body="Flamma Korazin +1", hands="Flam. Manopolas +1", legs="Sulevi. Cuisses +1",
+	feet="Flam. Gambieras +1", neck="Combatant's Torque", waist="Ioskeha Belt", left_ear="Telos Earring", right_ear="Tripudio Earring", left_ring="Cacoethic Ring +1",
+	right_ring="Ramuh Ring +1", back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},
+}
 	
 	sets.xhit2.lowacc=set_combine(sets.xhit.lowacc, {legs=taeonlegs,})
 	
@@ -500,7 +511,13 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
 	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, neck="Combatant's Torque", waist="Tempus Fugit",
 	left_ear="Mache Earring", right_ear="Mache Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1",
-    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},} --set_combine(sets.xhit.highacc, {legs=taeonlegs,})
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},} --set_combine(sets.xhit.highacc, {legs=taeonlegs,})
+	
+	sets.xhit2.maxacc={ammo="Ginsen", head="Flam. Zucchetto +1", hands="Flam. Manopolas +1", legs="Sulevi. Cuisses +1",
+    body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
+	feet="Flam. Gambieras +1", neck="Combatant's Torque", waist="Ioskeha Belt", left_ear="Telos Earring", right_ear="Cessance Earring",
+	left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1", back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},
+}
 	
 	sets.o.lowacc= set_combine(sets.tp.lowacc, {right_ring="Oneiros Ring",})
 	
@@ -546,7 +563,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.xdt=sets.pdt
 	--defensive sets
 	--idlesets
-	sets.idle.standard={ammo="Vanir Battery", head="Valorous Mask", body="Jumalik Mail", hands="Sulev. Gauntlets +1", 
+	sets.idle.standardidle={ammo="Vanir Battery", head="Valorous Mask", body="Jumalik Mail", hands="Sulev. Gauntlets +1", 
 	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Amm Greaves", neck="Loricate Torque +1", waist="Nierenschutz",
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", 
 	right_ring="Sheltered Ring", back="Shadow Mantle",}
@@ -617,66 +634,66 @@ function status_change(new,old)
 			if oring=="on" then
 				if buffactive['Spirit Surge'] then
 					if player.mp<99 then
-						equip(sets.ss[TPType])
+						equip(sets.ss[sets.accuracy.index[accuracy]])
 					else
-						equip(sets.ss.o[TPType])
+						equip(sets.ss.o[sets.accuracy.index[accuracy]])
 					end
 				else
 					if player.mp<99 then
-						equip(sets.xhit[TPType])
+						equip(sets.xhit[sets.accuracy.index[accuracy]])
 					else
-						equip(sets.xhito[TPType])
+						equip(sets.xhito[sets.accuracy.index[accuracy]])
 					end
 				end
 			elseif oring=="off" then
 				if buffactive['Spirit Surge'] then
-					equip(sets.ss[TPType])
+					equip(sets.ss[sets.accuracy.index[accuracy]])
 				else
-					equip(sets.xhit[TPType])
+					equip(sets.xhit[sets.accuracy.index[accuracy]])
 				end
 			end
 		elseif TPMode=="multi" then
 			if oring=="on" then
 				if buffactive['Spirit Surge'] then
 					if player.mp<99 then
-						equip(sets.ss[TPType])
+						equip(sets.ss[sets.accuracy.index[accuracy]])
 					else
-						equip(sets.ss.o[TPType])
+						equip(sets.ss.o[sets.accuracy.index[accuracy]])
 					end
 				else
 					if player.mp<99 then
-						equip(sets.tp[TPType])
+						equip(sets.tp[sets.accuracy.index[accuracy]])
 					else
-						equip(sets.o[TPType])
+						equip(sets.o[sets.accuracy.index[accuracy]])
 					end
 				end
 			elseif oring=="off" then
 				if buffactive['Spirit Surge'] then
-					equip(sets.ss[TPType])
+					equip(sets.ss[sets.accuracy.index[accuracy]])
 				else
-					equip(sets.tp[TPType])
+					equip(sets.tp[sets.accuracy.index[accuracy]])
 				end
 			end
 		elseif TPMode=="xhit2" then
 			if oring=="on" then
 				if buffactive['Spirit Surge'] then
 					if player.mp<99 then
-						equip(sets.ss[TPType])
+						equip(sets.ss[sets.accuracy.index[accuracy]])
 					else
-						equip(sets.ss.o[TPType])
+						equip(sets.ss.o[sets.accuracy.index[accuracy]])
 					end
 				else
 					if player.mp<99 then
-						equip(sets.xhit2[TPType])
+						equip(sets.xhit2[sets.accuracy.index[accuracy]])
 					else
-						equip(sets.xhit2o[TPType])
+						equip(sets.xhit2o[sets.accuracy.index[accuracy]])
 					end
 				end
 			elseif oring=="off" then
 				if buffactive['Spirit Surge'] then
-					equip(sets.ss[TPType])
+					equip(sets.ss[sets.accuracy.index[accuracy]])
 				else
-					equip(sets.xhit2[TPType])
+					equip(sets.xhit2[sets.accuracy.index[accuracy]])
 				end
 			end
 		elseif TPMode=="Hybrid" then
@@ -718,61 +735,28 @@ function self_command(command)
 			TPMode="multi"
 			add_to_chat(206, 'MULTIHIT MODE')
 			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/multi.png')
-			if TPType=="lowacc" then
-				send_command('alias ddset gs equip sets.tp.lowacc')
-				send_command('alias oset gs equip sets.tp.o.lowacc')
-			elseif TPType=="medacc" then
-				send_command('alias ddset gs equip sets.tp.medacc')
-				send_command('alias oset gs equip sets.tp.o.medacc')
-			elseif TPType=="highacc" then
-				send_command('alias ddset gs equip sets.tp.highacc')
-				send_command('alias oset gs equip sets.tp.o.highacc')
-			end
+			send_command('alias ddset gs equip sets.tp.'..sets.accuracy.index[accuracy]..'')
+			send_command('alias oset gs equip sets.tp.o.'..sets.accuracy.index[accuracy]..'')
 		elseif TPMode=="xhit" then
 			TPMode="xhit2"
 			add_to_chat(206, 'XHIT2 MODE')
 			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/xhit2.png')
-			if TPType=="lowacc" then
-				send_command('alias ddset gs equip sets.xhit2.lowacc')
-				send_command('alias oset gs equip sets.xhit2o.lowacc')
-			elseif TPType=="medacc" then
-				send_command('alias ddset gs equip sets.xhit2.medacc')
-				send_command('alias oset gs equip sets.xhit2o.medacc')
-			elseif TPType=="highacc" then
-				send_command('alias ddset gs equip sets.xhit2.highacc')
-				send_command('alias oset gs equip sets.xhit2o.highacc')
-			end
-			status_change(player.status)
+			send_command('alias ddset gs equip sets.xhit2.'..sets.accuracy.index[accuracy]..'')
+			send_command('alias oset gs equip sets.xhit2.o.'..sets.accuracy.index[accuracy]..'')
 		elseif TPMode=="multi" then
 			TPMode="xhit"
 			add_to_chat(206, 'XHIT MODE')
 			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/xhit.png')
-			if TPType=="lowacc" then
-				send_command('alias ddset gs equip sets.xhit.lowacc')
-				send_command('alias oset gs equip sets.xhito.lowacc')
-			elseif TPType=="medacc" then
-				send_command('alias ddset gs equip sets.xhit.medacc')
-				send_command('alias oset gs equip sets.xhito.medacc')
-			elseif TPType=="highacc" then
-				send_command('alias ddset gs equip sets.xhit.highacc')
-				send_command('alias oset gs equip sets.xhito.highacc')
-			end
+			send_command('alias ddset gs equip sets.xhit.'..sets.accuracy.index[accuracy]..'')
+			send_command('alias oset gs equip sets.xhit.o.'..sets.accuracy.index[accuracy]..'')
 		else
 			TPMode="multi"
 			add_to_chat(206, 'MULTIHIT MODE')
 			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/multi.png')
-			if TPType=="lowacc" then
-				send_command('alias ddset gs equip sets.tp.lowacc')
-				send_command('alias oset gs equip sets.tp.o.lowacc')
-			elseif TPType=="medacc" then
-				send_command('alias ddset gs equip sets.tp.medacc')
-				send_command('alias oset gs equip sets.tp.o.medacc')
-			elseif TPType=="highacc" then
-				send_command('alias ddset gs equip sets.tp.highacc')
-				send_command('alias oset gs equip sets.tp.o.highacc')
-			end
-			status_change(player.status)
+			send_command('alias ddset gs equip sets.tp.'..sets.accuracy.index[accuracy]..'')
+			send_command('alias oset gs equip sets.tp.o.'..sets.accuracy.index[accuracy]..'')
 		end
+		status_change(player.status)
 	end
 	if command=="Hybrid" then
 		if TPMode=="Hybrid" then
@@ -805,48 +789,24 @@ function self_command(command)
 		status_change(player.status)
 	end
 --TPMode commands
-
---TPType commands
-	if command=="lowacc" then
-		TPType="lowacc"
-		add_to_chat(206, 'TP TYPE: LOWACC')
-		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/lowacc.png')
+	if command=="toggleaccuracy" then
+		accuracy=accuracy+1
+		if accuracy >#sets.accuracy.index then
+			accuracy=1
+		end
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/'..sets.accuracy.index[accuracy]..'.png')
 		if TPMode=="multi" then
-			send_command('alias ddset gs equip sets.tp.lowacc')
-			send_command('alias oset gs equip sets.tp.o.lowacc')
+			send_command('alias ddset gs equip sets.tp.'..sets.accuracy.index[accuracy]..'')
+			send_command('alias oset gs equip sets.tp.o.'..sets.accuracy.index[accuracy]..'')
 		elseif TPMode=="xhit" then
-			send_command('alias ddset gs equip sets.xhit.lowacc')
-			send_command('alias oset gs equip sets.xhit.o.lowacc')
+			send_command('alias ddset gs equip sets.xhit.'..sets.accuracy.index[accuracy]..'')
+			send_command('alias oset gs equip sets.xhit.o.'..sets.accuracy.index[accuracy]..'')
+		elseif TPMode=="xhit2" then
+			send_command('alias ddset gs equip sets.xhit2.'..sets.accuracy.index[accuracy]..'')
+			send_command('alias oset gs equip sets.xhit2.o.'..sets.accuracy.index[accuracy]..'')
 		end
 		status_change(player.status)
 	end
-	if command=="medacc" then
-		TPType="medacc"
-		add_to_chat(206, 'TP TYPE: MEDACC')
-		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/medacc.png')
-		if TPMode=="multi" then
-			send_command('alias ddset gs equip sets.tp.medacc')
-			send_command('alias oset gs equip sets.tp.o.medacc')
-		elseif TPMode=="xhit" then
-			send_command('alias ddset gs equip sets.xhit.medacc')
-			send_command('alias oset gs equip sets.xhit.o.medacc')
-		end
-		status_change(player.status)
-	end
-	if command=="highacc" then
-		TPType="highacc"
-		add_to_chat(206, 'TP TYPE: HIGHACC')
-		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/highacc.png')
-		if TPMode=="multi" then
-			send_command('alias ddset gs equip sets.tp.highacc')
-			send_command('alias oset gs equip sets.tp.o.highacc')
-		elseif TPMode=="xhit" then
-			send_command('alias ddset gs equip sets.xhit.highacc')
-			send_command('alias oset gs equip sets.xhit.o.highacc')
-		end
-		status_change(player.status)
-	end
---TPType commands
 	
 --weaponry commands	
 	if command== "Gungnir" then
@@ -933,6 +893,8 @@ function self_command(command)
 	end
 --jump mode
 
+
+
 -- reraise lock toggle command rule start
 	if command == 'rr' then
 		if rrlock== "rroff" then
@@ -968,15 +930,15 @@ function self_command(command)
 				idle=4
 			end
 		end
-		
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/'..sets.idle.index[idle]..'.png')
 	end
 	if command=="idletoggle" then
-		if idle > 3 then
+		idle=idle+1
+		if idle > #sets.idle.index then
 			idle=1
-		elseif idle < 3 then
-			idle=idle+1
 		end
-		
+		send_command('alias idle gs equip sets.idle.'..sets.idle.index[idle]..'')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/'..sets.idle.index[idle]..'.png')
 	end
 	if command=='primfix' then
 		windower.prim.set_size('TP_SET',200,30)
