@@ -250,10 +250,17 @@ function get_sets()
 --deathaftercast
 
 --precast sets
-	sets.precast.nuke={head={ammo="Impatiens", name="Merlinic Hood", augments={'Mag. Acc.+7','"Fast Cast"+6','"Mag.Atk.Bns."+3',}},
+	sets.precast.nuke={main={ name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}}, sub="Niobid Strap", ammo="Sapience Orb",
+	head={ name="Merlinic Hood", augments={'Mag. Acc.+7','"Fast Cast"+6','"Mag.Atk.Bns."+3',}}, body="Anhur Robe", neck="Stoicheion Medal",
+	hands={ name="Helios Gloves", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','"Fast Cast"+5','Magic burst mdg.+7%',}}, waist="Channeler's Stone",
+	legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}, left_ear="Barkaro. Earring", right_ear="Loquac. Earring",
+	feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+6',}}, left_ring="Prolix Ring", right_ring="Rahab Ring",
+	back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+}
+	--[[{head={ammo="Impatiens", name="Merlinic Hood", augments={'Mag. Acc.+7','"Fast Cast"+6','"Mag.Atk.Bns."+3',}},
 	body="Anhur Robe", hands="Helios Gloves", feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+6',}},
 	legs="Psycloth Lappas", neck="Stoicheion Medal", waist="Channeler's Stone", right_ear="Loquac. Earring", right_ring="Rahab Ring",
-	left_ear="Barkaro. Earring", left_ring="Veneficium Ring", back="Perimede Cape",}
+	left_ear="Barkaro. Earring", left_ring="Veneficium Ring", back="Perimede Cape",}]]--
 	
 	sets.precast.impact={ammo="Impatiens", body="Twilight Cloak", hands="Helios Gloves", feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+6',}},
 	neck="Stoicheion Medal", waist="Eschan Stone", right_ear="Loquac. Earring", left_ear="Etiolation Earring", legs="Psycloth Lappas", right_ring="Rahab Ring",
@@ -303,20 +310,21 @@ function get_sets()
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Archon Ring",
 	back="Taranus's Cape",}
 	
-	sets.midcast.skillenfeeb={main="Lathi", sub="Mephitis Grip", body="Vanya Robe",
+	sets.midcast.skillenfeeb={main="Lathi", sub="Niobid Grip", body="Vanya Robe",
 	head="Befouled Crown", feet={ name="Medium's Sabots", augments={'MP+15','MND+2','"Cure" potency +2%',}},
-	hands="Lurid Mitts", legs="Psycloth Lappas", neck="Incanter's Torque", waist="Rumination Sash", right_ring="Irrwisch Ring",
-	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Globidonta Ring", back="Taranus's Cape",}
+	hands="Lurid Mitts", legs="Psycloth Lappas", neck="Incanter's Torque", waist="Rumination Sash", right_ring="Stikini Ring",
+	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Stikini Ring", back="Taranus's Cape",}
 	
 	sets.midcast.mndenfeeb={main="Lathi", sub="Mephitis Grip", ammo="Pemphredo Tathlum", body="Shango Robe",
 	hands="Lurid Mitts", legs="Psycloth Lappas", head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace",
-	waist="Rumination Sash", left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Levia. Ring",
+	waist="Rumination Sash", left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Stikini Ring", right_ring="Stikini Ring",
 	back="Taranus's Cape",}
 	
-	sets.midcast.doa={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Pixie Hairpin +1", body="Shango Robe",
-	hands="Hagondes Cuffs +1", legs="Psycloth Lappas", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", 
-	left_ear="Barkaro. Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
-	back="Taranus's Cape",}
+	sets.midcast.doa={ammo="Pemphredo Tathlum", head="Pixie Hairpin +1", body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +8','"Mag.Atk.Bns."+15',}},
+	hands={ name="Merlinic Dastanas", augments={'Attack+14','"Drain" and "Aspir" potency +11','INT+9','Mag. Acc.+14','"Mag.Atk.Bns."+11',}}, left_ear="Barkaro. Earring", right_ear="Hirudinea Earring",
+	legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+6 "Mag.Atk.Bns."+6','"Drain" and "Aspir" potency +11','MND+4','"Mag.Atk.Bns."+15',}}, waist="Fucho-no-Obi", left_ring="Evanescence Ring",
+    feet={ name="Merlinic Crackows", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','"Drain" and "Aspir" potency +10','"Mag.Atk.Bns."+7',}}, neck="Sanctity Necklace", right_ring="Archon Ring",
+	back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}},}
 	
 	sets.midcast.nuke.dmg={}
 	

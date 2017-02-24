@@ -118,7 +118,7 @@ function get_sets()
 	
 	sets.precast.ja["Hasso"]={}
 	
-	sets.precast.ja["Meditate"]={head="Wakido Kabuto +1", hands="Sakonji Kote +1", back="Smertrios Mantle",}
+	sets.precast.ja["Meditate"]={head="Wakido Kabuto +1", hands="Sakonji Kote +1", back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
 	
 	sets.precast.ja["Seigan"]={}
 	
@@ -323,7 +323,7 @@ function get_sets()
 	sets.idle.dtkite=set_combine(sets.idle.dt,{back="Shadow Mantle", feet="Danzo Sune-Ate",})
 	
 	sets.idle.standard={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
-	head="Rao Kabuto", body="Rao Togi", hands="Rao Kote",--[[hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}},]] legs="Osmium Cuisses",
+	head="Rao Kabuto", body="Hiza. Haramaki +1", hands="Rao Kote",--[[hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}},]] legs="Osmium Cuisses",
 	feet="Danzo Sune-Ate", neck="Sanctity Necklace", waist="Flume Belt", left_ear="Infused Earring", right_ear="Sanare Earring", left_ring="Paguroidea Ring",
 	right_ring="Sheltered Ring", back="Shadow Mantle",}
 -- other idle sets

@@ -1,4 +1,5 @@
 function get_sets()
+	include('organizer-lib.lua')
 	windower.send_command('bind @F12 gs c fakes')
 	windower.send_command('bind @F1 gs c dd')
 	windower.send_command('bind @F2 gs c hybrid')
@@ -26,14 +27,13 @@ function get_sets()
 	
 	sets.precast={}
 	
-	sets.precast.fc={main="Legato Dagger", sub="Genbu's Shield", head="Nahtirah Hat",
-	body="Sha'ir Manteel", hands={ name="Gendewitha Gages", augments={'Phys. dmg. taken -1%','Song recast delay -3',}},
-	legs="Orvail Pants +1", feet="Chelona Boots", neck="Aoidos' Matinee", waist="Siegel Sash", left_ear="Loquac. Earring",
-	right_ear="Aoidos' Earring", left_ring="Prolix Ring", 
-	right_ring={ name="Vocane Ring", augments={'Magic dmg. taken -3%','Phys. dmg. taken -4%',}},
-    back="Swith Cape",}
+	sets.precast.fc={head="Nahtirah Hat", body="Inyanga Jubbah +1", legs="Aya. Cosciales +1", feet="Chelona Boots",
+	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
+	neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}}, waist="Siegel Sash",
+	left_ear="Loquac. Earring", right_ear="Etiolation Earring", left_ring="Prolix Ring", right_ring="Rahab Ring",
+	back="Swith Cape",}
 	
-	sets.precast.bardsong= set_combine(sets.precast.fc, {head="Aoidos' Calot +2", legs="Gendewitha Spats", feet="Bihu Slippers",})
+	sets.precast.bardsong= set_combine(sets.precast.fc, {head="Aoidos' Calot +2", neck="Aoidos' Matinee", waist="Aoidos' Belt", legs="Querkening Brais", feet="Telchine Pigaches",})
 	
 	sets.ja={}
 	
@@ -206,15 +206,11 @@ function get_sets()
 	
 	sets.tp={}
 	
-	sets.tp.dd={main="Legato Dagger", 
-	sub={ name="Genbu's Shield", augments={'"Cure" potency +3%','"Cure" spellcasting time -6%',}},
-	head="Espial Cap", body="Espial Gambison", hands="Espial Bracers",
-	legs="Espial Hose", feet="Espial Socks", neck="Asperity Necklace", waist="Windbuffet Belt",
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ulthalam's Ring", 
-	right_ring="Rajas Ring", back="Atheling Mantle",}
+	sets.tp.dd={head="Aya. Zucchetto +1", body="Ayanmo Corazza +1", hands="Aya. Manopolas +1", legs="Querkening Brais",
+	feet="Aya. Gambieras +1", neck="Lissome Necklace", waist="Windbuffet Belt +1", left_ear="Suppanomimi", right_ear="Telos Earring",
+	left_ring="Petrov Ring", right_ring="Hetairoi Ring", back="Letalis Mantle",}
 	
-	sets.tp.hybrid={main="Legato Dagger", sub={ name="Genbu's Shield", augments={'"Cure" potency +3%','"Cure" spellcasting time -6%',}},
-	head={ name="Gende. Caubeen", augments={'Phys. dmg. taken -4%','"Cure" potency +5%',}},
+	sets.tp.hybrid={head={ name="Gende. Caubeen", augments={'Phys. dmg. taken -4%','"Cure" potency +5%',}},
     body={ name="Gendewitha Bliaut", augments={'Phys. dmg. taken -4%','"Cure" potency +5%',}},
     hands={ name="Gendewitha Gages", augments={'Phys. dmg. taken -1%','Song recast delay -3',}},
     legs={ name="Gendewitha Spats", augments={'Phys. dmg. taken -3%','Song recast delay -2',}},

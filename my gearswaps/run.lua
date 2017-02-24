@@ -42,6 +42,7 @@ function get_sets()
 	send_command('bind @f11 gs c twoswords')
 	send_command('bind @f12 gs c togglews')
 	send_command('bind @f8 gs c greataxe')
+	send_command('bind @a gs c burstmode')
 	send_command('bind #1 input /item "Echo Drops" <me>')
 	send_command('bind @p input /item "Holy Water" <me>')
 	send_command('bind #c crusade')
@@ -65,6 +66,10 @@ function get_sets()
 
 --augmented armor
 
+--lists
+	include('physws.lua')
+--lists
+
 --variables
 	WeaponType="greatsword"
 	TPSet="dd"
@@ -78,6 +83,7 @@ function get_sets()
 	sets.WeaponType= T{}
 	sets.TPSet= T{}
 	sets.TPType= T{}
+	sets.Burst_Mode= T{}
 --variables
 
 --base sets
@@ -148,34 +154,36 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 
 --weaponry
 	sets.weaponry.greatsword={}
-	sets.weaponry.greatsword.index={"Aettir","Macbain","Montante","Humility"}
+	sets.weaponry.greatsword.index={"Lionheart","Aettir"}
 	gs_ind=1
 	
+	sets.weaponry.greatsword.Lionheart={main="Lionheart", sub="Alber Strap",}
+	
 	sets.weaponry.greatsword.Aettir={main="Aettir", sub="Alber Strap",}
-	
-	sets.weaponry.greatsword.Macbain={main="Macbain", sub="Alber Strap",}
-	
-	sets.weaponry.greatsword.Montante={main="Montante", sub="Alber Strap",}
-	
-	sets.weaponry.greatsword.Humility={main="Humility", sub="Alber Strap",}
-	
+		
 	sets.weaponry.onesword={}
-	sets.weaponry.onesword.index={"DS","Reikiko"}
+	sets.weaponry.onesword.index={"DS","Reikiko","Firangi"}
 	os_ind=1
 	
 	sets.weaponry.onesword.DS={main="Deacon Sword",}
 	
 	sets.weaponry.onesword.Reikiko={main="Reikiko",}
 	
+	sets.weaponry.onesword.Firangi={main="Firangi",}
+	
 	sets.weaponry.twoswords={}
-	sets.weaponry.twoswords.index={"RD"}
+	sets.weaponry.twoswords.index={"RD","FR","axe"}
 	ts_ind=1
 	
 	sets.weaponry.twoswords.RD={main="Reikiko", sub="Deacon Sword",}
 	
+	sets.weaponry.twoswords.FR={main="Firangi", sub="Reikiko",}
+	
+	sets.weaponry.twoswords.axe={main={ name="Emxgha", augments={'Accuracy+10','DEX+7','DMG:+3',}}, sub="Deacon Sword",}
+	
 	sets.weaponry.greataxe={}
 	sets.weaponry.greataxe.index={"Beheader"}
-	gs_ind=1
+	ga_ind=1
 	
 	sets.weaponry.greataxe.Beheader={main="Beheader", sub="Alber Strap"}
 
@@ -241,17 +249,16 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	--ja sets
 	
 	--ws sets
-	sets.ws.dmg["Resolution"]={ammo="Seething Bomblet", head="Lustratio Cap", neck="Fotia Gorget", waist="Fotia Belt",
-	body="Adhemar Jacket",
-	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},  right_ear="Bladeborn Earring",
-	legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
-	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Steelflash Earring",
-	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back="Buquwik Cape",}
+	sets.ws.dmg["Resolution"]={ammo="Seething Bomblet", head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
+	body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},  neck="Fotia Gorget", waist="Fotia Belt",
+	hands="Meg. Gloves +1",  right_ear="Brutal Earring", legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
+	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Sherida Earring",
+	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.dmg["Dimidiation"]={ammo="Seething Bomblet", head="Lustratio Cap", body="Abnoba Kaftan",
-	hands="Adhemar Wristbands", legs="Lustratio Subligar", feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}}, neck="Fotia Gorget",
-	waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
-	left_ring="Ramuh Ring +1", right_ring="Epona's Ring", back="Buquwik Cape",}
+	sets.ws.dmg["Dimidiation"]={ammo="Seething Bomblet", head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}}, left_ear="Sherida Earring",
+	body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}}, hands="Meg. Gloves +1", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Mache Earring",
+	legs={ name="Lustratio Subligar", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}}, feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}},
+	left_ring="Ilabrat Ring", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.dmg["Hard Slash"]=sets.ws.dmg["Resolution"]
 	
@@ -276,7 +283,7 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	sets.ws.dmg["Requiescat"]={ammo="Hydrocera", head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','"Fast Cast"+3',}},
 	body={ name="Carm. Scale Mail", augments={'Accuracy+10','DEX+10','MND+15',}}, hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
 	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet={ name="Carmine Greaves", augments={'Accuracy+10','DEX+10','MND+15',}},
-	neck="Fotia Gorget", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Brutal Earring",
+	neck="Fotia Gorget", waist="Fotia Belt", left_ear="Sherida Earring", right_ear="Brutal Earring",
 	left_ring="Levia. Ring", right_ring="Levia. Ring", back="Bleating Mantle",}
 	
 	sets.ws.dmg["Sanguine Blade"]=set_combine(sets.ja["Lunge"], {neck="Fotia Gorget", waist="Fotia Belt"})
@@ -307,7 +314,7 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
     hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','Haste+2%',}}, left_ring="Ifrit Ring +1",
     legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
     feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, waist="Fotia Belt",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, back="Buquwik Cape",}
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.dmg["Steel Cyclone"]=sets.ws.dmg["Resolution"]
 	
@@ -324,15 +331,15 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	sets.ws.dmg["Shield Break"]=sets.ws.dmg["Resolution"]
 	
 	sets.ws.acc["Resolution"]={ammo="Seething Bomblet", head="Adhemar Bonnet", neck="Fotia Gorget", waist="Fotia Belt", body="Adhemar Jacket",
-	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}}, right_ear="Bladeborn Earring",
+	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}}, right_ear="Telos Earring",
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
-	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Steelflash Earring",
-	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back="Buquwik Cape",}
+	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Sherida Earring",
+	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.acc["Dimidiation"]={ammo="Seething Bomblet", head="Adhemar Bonnet", body="Adhemar Jacket",
 	hands="Adhemar Wristbands", legs="Lustratio Subligar", feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}}, neck="Fotia Gorget",
-	waist="Fotia Belt", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
-	left_ring="Ramuh Ring +1", right_ring="Epona's Ring", back="Buquwik Cape",}
+	waist="Fotia Belt", left_ear="Sherida Earring", right_ear="Telos Earring", 
+	left_ring="Ramuh Ring +1", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.acc["Hard Slash"]=sets.ws.acc["Resolution"]
 	
@@ -357,7 +364,7 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	sets.ws.acc["Requiescat"]={ammo="Hydrocera", head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','"Fast Cast"+3',}},
 	body={ name="Carm. Scale Mail", augments={'Accuracy+10','DEX+10','MND+15',}}, hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
 	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet={ name="Carmine Greaves", augments={'Accuracy+10','DEX+10','MND+15',}},
-	neck="Fotia Gorget", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Brutal Earring",
+	neck="Fotia Gorget", waist="Fotia Belt", left_ear="Sherida Earring", right_ear="Telos Earring",
 	left_ring="Levia. Ring", right_ring="Levia. Ring", back="Bleating Mantle",}
 	
 	sets.ws.acc["Sanguine Blade"]=set_combine(sets.ja["Lunge"], {neck="Fotia Gorget", waist="Fotia Belt"})
@@ -397,11 +404,34 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	sets.ws.acc["Iron Tempest"]=sets.ws.acc["Resolution"]
 	
 	sets.ws.acc["Shield Break"]=sets.ws.acc["Resolution"]
+	
+	sets.ws.dmg["Ruinator"]={ammo="Seething Bomblet", head="Lustratio Cap", neck="Fotia Gorget", waist="Fotia Belt",
+	body="Adhemar Jacket",
+	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},  right_ear="Bladeborn Earring",
+	legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
+	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Steelflash Earring",
+	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	
+	sets.ws.acc["Ruinator"]={ammo="Seething Bomblet", head="Adhemar Bonnet", neck="Fotia Gorget", waist="Fotia Belt", body="Adhemar Jacket",
+	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}}, right_ear="Bladeborn Earring",
+	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
+	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Steelflash Earring",
+	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	
+	sets.moonshadephysicaldamage={left_ear="Sherida Earring", right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},}
+	
+	sets.moonshadephysicalaccuracy={left_ear="Sherida Earring", right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},}
+	
+	sets.moonshademagic={left_ear="Friomisi Earring", right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},}
 	--ws sets
 	
 	--magic sets
-	sets.precast.fc={head="Carmine Mask", neck="Jeweled Collar", left_ear="Loquac. Earring", body="Samnuha Coat",
-	left_ring="Prolix Ring", hands="Leyline Gloves", legs="Rawhide Trousers", feet="Carmine Greaves",}
+	sets.precast.fc={ammo="Sapience Orb", head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','"Fast Cast"+3',}},
+	body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}}, waist="Flume Belt",
+	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}}, left_ear="Loquac. Earring",
+	legs="Aya. Cosciales +1", right_ear="Etiolation Earring", left_ring="Prolix Ring",
+	feet={ name="Carmine Greaves", augments={'Accuracy+10','DEX+10','MND+15',}}, back={ name="Ogma's cape", augments={'"Fast Cast"+10',}},
+	neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}}, right_ring="Rahab Ring",}
 	
 	sets.precast.enhancing= set_combine(sets.precast.fc, {waist="Siegel Sash", legs="Futhark Trousers +1",})
 	--magic sets
@@ -476,17 +506,20 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	--tp sets
 	sets.tp.lowacc={ammo="Focal Orb", head="Skormoth Mask", neck="Defiant Collar", waist="Chiner's Belt +1",
 	body={ name="Herculean Vest", augments={'Accuracy+13 Attack+13','"Triple Atk."+4','MND+3','Attack+13',}},
-	hands={ name="Herculean Gloves", augments={'Attack+27','"Triple Atk."+3','STR+8','Accuracy+11',}}, left_ear="Cessance Earring",
+	hands={ name="Herculean Gloves", augments={'Attack+27','"Triple Atk."+3','STR+8','Accuracy+11',}}, left_ear="Sherida Earring",
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
 	feet={ name="Herculean Boots", augments={'Accuracy+24','"Triple Atk."+3',}}, right_ear="Brutal Earring",
 	left_ring="Hetairoi Ring", right_ring="Epona's Ring", back="Bleating Mantle",}
 	
-	sets.tp.medacc= set_combine(sets.tp.lowacc, {ammo="Falcon Eye", back="Letalis Mantle",})
+	sets.tp.medacc={ammo="Ginsen", neck="Defiant Collar", waist="Chiner's Belt +1", left_ear="Sherida Earring", right_ear="Telos Earring",
+    head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, right_ring="Epona's Ring",
+    body={ name="Herculean Vest", augments={'Accuracy+13 Attack+13','"Triple Atk."+4','MND+3','Attack+13',}}, left_ring="Hetairoi Ring",
+    hands={ name="Herculean Gloves", augments={'"Triple Atk."+4','Accuracy+13','Attack+5',}}, legs={ name="Herculean Trousers", augments={'"Triple Atk."+3','STR+3','Accuracy+15','Attack+14',}},
+    feet={ name="Herculean Boots", augments={'Accuracy+16','"Triple Atk."+4','AGI+2','Attack+9',}}, back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},}
 	
 	sets.tp.highacc= set_combine(sets.tp.medacc, {neck="Combatant's Torque", right_ring="Ramuh Ring +1",})
 	
-	sets.tp.vhighacc= set_combine(sets.tp.highacc, {head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, 
-	right_ear="Zennaroi Earring", hands="Adhemar Wristbands", back="Ground. Mantle +1", waist="Olseni Belt", left_ring="Mars's Ring",})
+	sets.tp.vhighacc= set_combine(sets.tp.highacc, {hands="Adhemar Wristbands", waist="Olseni Belt", left_ring="Ilabrat Ring",})
 	
 	sets.dw.lowacc={ammo="Vanir Battery",
     head="Skormoth Mask",
@@ -502,7 +535,7 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
     right_ring="Epona's Ring",
     back="Bleating Mantle",}
 	
-	sets.dw.medacc=set_combine(sets.dw.lowacc, {ammo="Falcon Eye", back="Letalis Mantle",})
+	sets.dw.medacc=set_combine(sets.dw.lowacc, {ammo="Falcon Eye", back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},})
 	
 	sets.dw.highacc=set_combine(sets.tp.medacc, {neck="Combatant's Torque", left_ring="Patricius Ring",})
 	
@@ -520,7 +553,7 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Brutal Earring", left_ring="Vocane Ring",
 	right_ring="Defending Ring", back="Mollusca Mantle",}
 	
-	sets.hybrid.medacc= set_combine(sets.hybrid.lowacc, {ammo="Falcon Eye", back="Letalis Mantle",})
+	sets.hybrid.medacc= set_combine(sets.hybrid.lowacc, {ammo="Falcon Eye", back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},})
 	
 	sets.hybrid.highacc= set_combine(sets.hybrid.medacc, {head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Combatant's Torque",})
 	
@@ -567,27 +600,38 @@ function precast(spell)
 		equip(sets.precast.fc)
 	elseif spell.prefix=="/jobability" then
 		equip(sets.ja[spell.english])
-		--[[if spell.english=="Lunge" or if spell.english="Swipe" then
-			if Burst_Mode="on" then
+		if spell.english=="Lunge" or spell.english=="Swipe" then
+			if Burst_Mode=="on" then
 				equip(sets.ja.Lunge.burst)
 			end
-		end]]--
+		end
 	elseif spell.prefix=="/weaponskill" then
 		if WSType=="dmg" then
 			equip(sets.ws.dmg[spell.english])
 		elseif WSType=="acc" then
 			equip(sets.ws.acc[spell.english])
 		end
+		if player.tp>999 and player.tp<3000 then
+			if phys_ws:contains(spell.english) then
+				if WSMode=="dmg" then
+					equip(sets.moonshadephysicaldamage)
+				elseif WSMode=="acc" then
+					equip(sets.moonshadephysicalaccuracy)
+				end
+			else
+				equip(sets.moonshademagic)
+			end
+		end
 	end
 	if WeaponType=="greatsword" then
 		equip(sets.weaponry.greatsword[sets.weaponry.greatsword.index[gs_ind]])
 	elseif WeaponType=="onesword" then
 		equip(sets.weaponry.onesword[sets.weaponry.greatsword.index[os_ind]])
-	elseif WeaponType=="twosword" then
+	elseif WeaponType=="twoswords" then
 		equip(sets.weaponry.twoswords[sets.weaponry.twoswords.index[ts_ind]])
 	elseif WeaponType=="greataxe" then
 		equip(sets.weaponry.greataxe[sets.weaponry.greataxe.index[ga_ind]])
-	end
+	end	
 	send_command('pf')
 end
 
@@ -605,7 +649,7 @@ function midcast(spell)
 		equip(sets.weaponry.greatsword[sets.weaponry.greatsword.index[gs_ind]])
 	elseif WeaponType=="onesword" then
 		equip(sets.weaponry.onesword[sets.weaponry.greatsword.index[os_ind]])
-	elseif WeaponType=="twosword" then
+	elseif WeaponType=="twoswords" then
 		equip(sets.weaponry.twoswords[sets.weaponry.twoswords.index[ts_ind]])
 	elseif WeaponType=="greataxe" then
 		equip(sets.weaponry.greataxe[sets.weaponry.greataxe.index[ga_ind]])
@@ -648,7 +692,7 @@ function status_change(new,old)
 		equip(sets.weaponry.greatsword[sets.weaponry.greatsword.index[gs_ind]])
 	elseif WeaponType=="onesword" then
 		equip(sets.weaponry.onesword[sets.weaponry.onesword.index[os_ind]])
-	elseif WeaponType=="twosword" then
+	elseif WeaponType=="twoswords" then
 		equip(sets.weaponry.twoswords[sets.weaponry.twoswords.index[ts_ind]])
 	elseif WeaponType=="greataxe" then
 		equip(sets.weaponry.greataxe[sets.weaponry.greataxe.index[ga_ind]])
@@ -744,14 +788,17 @@ function self_command(command)
 		windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/gs.png')
 		status_change(player.status)
 	elseif command=="onesword" then
+		add_to_chat(206, 'ONESWORD SELECTED')
 		WeaponType="onesword"
 		windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/os.png')
 		status_change(player.status)
 	elseif command=="twoswords" then
+		add_to_chat(206, 'TWOSWORDS SELECTED')
 		WeaponType="twoswords"
 		windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/ts.png')
 		status_change(player.status)
 	elseif command=="greataxe" then
+		add_to_chat(206, 'GREATAXE SELECTED')
 		WeaponType="greataxe"
 		windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/ga.png')
 		status_change(player.status)

@@ -10,6 +10,10 @@ function get_sets()
 	send_command('alias idle gs equip sets.idle.standardidle')
 --aliasing
 
+--lists
+	include('physws.lua')
+--lists
+
 --[[text boxes	
 	send_command('text idlevariable text "LOW-ACC"')
 	send_command('text tpvariable text "MULTIHIT MODE"')
@@ -193,27 +197,27 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	
 --JA sets
 	sets.tpgain["Jump"]={ammo="Ginsen", head=acrohead, legs=acrolegs, body="Vishap Mail +1", hands="Vishap F. G. +1", 
-	feet="Ostro Greaves", neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Tripudio Earring", 
-	right_ear="Brutal Earring", left_ring="Petrov Ring", right_ring="Rajas Ring", back="Letalis Mantle",}
+	feet="Ostro Greaves", neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Sherida Earring", 
+	right_ear="Brutal Earring", left_ring="Petrov Ring", right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.tpgain["High Jump"]={ammo="Ginsen", head=acrohead, body="Vishap Mail +1", hands="Vishap F. G. +1", feet="Ostro Greaves", 
-	neck="Ganesha's Mala", legs="Vishap Brais +1", waist="Windbuffet Belt +1", left_ear="Tripudio Earring", right_ear="Brutal Earring", 
-	left_ring="Petrov Ring", right_ring="Rajas Ring", back="Letalis Mantle",}
+	neck="Ganesha's Mala", legs="Vishap Brais +1", waist="Windbuffet Belt +1", left_ear="Sherida Earring", right_ear="Brutal Earring", 
+	left_ring="Petrov Ring", right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.tpgain["Spirit Jump"]={ammo="Ginsen", head=acrohead, body=acrobody, hands=acrohands, left_ear="Tripudio Earring",
+	sets.tpgain["Spirit Jump"]={ammo="Ginsen", head=acrohead, body=acrobody, hands=acrohands, left_ear="Sherida Earring",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1",
-	left_ring="Petrov Ring", right_ring="Rajas Ring", back="Letalis Mantle",}
+	left_ring="Petrov Ring", right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.tpgain["Soul Jump"]={ammo="Ginsen", head=acrohead, body=acrobody, right_ring="Rajas Ring",
 	hands=acrohands, legs="Pelt. Cuissots +1", feet=acrofeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Petrov Ring", back="Letalis Mantle",}
+	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Petrov Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.damage["Jump"]={ammo="Potestas Bomblet", body="Vishap Mail +1", hands="Vishap F. G. +1", feet="Vishap Greaves +1",
     head=taeonhead, legs=taeonlegs, neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring",
-	right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring", back="Letalis Mantle",}
+	right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.damage["High Jump"]={ammo="Potestas Bomblet", head=taeonhead, body=taeonbody, hands=taeonhands, legs="Vishap Brais +1", neck="Ganesha's Mala", 
-	waist="Windbuffet Belt +1", back="Letalis Mantle", feet=taeonfeet, right_ring="Oneiros Ring", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", 
+	waist="Windbuffet Belt +1", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}, feet=taeonfeet, right_ring="Oneiros Ring", left_ear="Sherida Earring", right_ear="Brutal Earring", 
 	left_ring="Petrov Ring",}
 	
 	sets.damage["Spirit Jump"]={ammo="Ginsen", head="Sulevia's Mask +1", hands="Sulev. Gauntlets +1", legs="Pelt. Cuissots +1",
@@ -275,93 +279,93 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 --WS sets	
 	sets.ws.damage["Double Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Double Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back=updraftws,}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Thunder Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Thunder Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back=updraftws,}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Raiden Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Raiden Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back=updraftws,}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Leg Sweep"]={ammo="Vanir Battery", head="Lustratio Cap", body="Lustratio Harness", hands=dahands, 
 	legs=taeonlegs, feet=taeonfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1",
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
+	left_ear="Sherida Earring", right_ear="Brutal Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
     back="Bleating Mantle",}
 	
 	sets.ws.accuracy["Leg Sweep"]={ammo="Vanir Battery", head="Lustratio Cap", body="Lustratio Harness", hands=dahands, 
 	legs=taeonlegs, feet=taeonfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1",
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
-    back=updraftws,}
+	left_ear="Sherida Earring", right_ear="Telos Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Penta Thrust"]={ammo="Vanir Battery", head="Lustratio Cap", body="Lustratio Harness", hands=dahands, 
 	legs=taeonlegs, feet=taeonfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1",
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
+	left_ear="Sherida Earring", right_ear="Brutal Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
     back="Bleating Mantle",}
 	
 	sets.ws.accuracy["Penta Thrust"]={ammo="Vanir Battery", head="Lustratio Cap", body="Lustratio Harness", hands=dahands, 
 	legs=taeonlegs, feet=taeonfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1",
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
-    back=updraftws,}
+	left_ear="Sherida Earring", right_ear="Telos Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Vorpal Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Vorpal Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back=updraftws,}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Skewer"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Skewer"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back=updraftws,}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Wheeling Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Wheeling Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back=updraftws,}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Impulse Drive"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Impulse Drive"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back=updraftws,}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Drakesbane"]={ammo="Potestas Bomblet",
     head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}},
@@ -371,11 +375,11 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     feet="Thereoid Greaves",--{ name="Valorous Greaves", augments={'Accuracy+22 Attack+22','Crit.hit rate+3','Accuracy+1','Attack+15',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
-    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+    left_ear="Sherida Earring",
     right_ear="Brutal Earring",
     left_ring="Ifrit Ring +1",
-    right_ring="Rajas Ring",
-    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+    right_ring="Shukuyu Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Drakesbane"]={ammo="Potestas Bomblet",
     head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}},
@@ -385,41 +389,41 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     feet={ name="Valorous Greaves", augments={'Accuracy+27','"Dbl.Atk."+3','DEX+5','Attack+6',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
-    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
-    right_ear="Brutal Earring",
+    left_ear="Sherida Earring",
+    right_ear="Telos Earring",
     left_ring="Ifrit Ring +1",
-    right_ring="Rajas Ring",
-    back=updraftws,}
+    right_ring="Shukuyu Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Sonic Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Pelt. Cuissots +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Sonic Thrust"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back=updraftws,}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Camlann's Torment"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Ptero. Brais +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back=updraftws,}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Camlann's Torment"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
 	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back=updraftws,}
+	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Stardiver"]={ammo="Potestas Bomblet", head="Lustratio Cap", body="Lustratio Harness", hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Lustratio Leggings", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Moonshade Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Shukuyu Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
+	right_ring="Shukuyu Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Stardiver"]={ammo="Potestas Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
 	body={ name="Lustratio Harness", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, hands="Sulev. Gauntlets +1",
 	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1",
-	neck="Fotia Gorget", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Brutal Earring", left_ring="Ifrit Ring +1", right_ring="Rajas Ring", back=updraftws,}
+	neck="Fotia Gorget", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Brutal Earring", left_ring="Ifrit Ring +1", right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Geirskogul"]={ammo="Potestas Bomblet",
     head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
@@ -433,7 +437,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     right_ear="Brutal Earring",
     left_ring="Ramuh Ring +1",
     right_ring="Rajas Ring",
-    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Double Attack +10%','STR+10'}},}
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Geirskogul"]={ammo="Potestas Bomblet",
     head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
@@ -446,7 +450,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
     right_ear="Brutal Earring",
     left_ring="Ramuh Ring +1",
-    right_ring="Rajas Ring", back=updraftws,}
+    right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 --WS sets
 
 --ws day bonus
@@ -460,17 +464,17 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     legs={ name="Acro Breeches", augments={'Pet: Mag. Acc.+22','Pet: Breath+6','MND+8',}},
     feet={ name="Acro Leggings", augments={'Pet: Mag. Acc.+12','Pet: Breath+6','Pet: Damage taken -4%',}},
     neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Ethereal Earring", right_ear="Lancer's Earring",
-    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back=updraftws,}
+    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 --midcast sets
 
 --aftercast sets
 	--offensive sets
-	sets.tp.lowacc={ammo="Ginsen", neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring",
-	head=taeonhead, right_ear="Bladeborn Earring",
-	body=taeonbody, hands=taeonhands, back="Bleating Mantle", legs=taeonlegs, left_ring="Petrov Ring",
-	feet=taeonfeet, right_ring="Rajas Ring",}
+	sets.tp.lowacc={ammo="Ginsen", neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Sherida Earring",
+	head=taeonhead, right_ear="Brutal Earring",
+	body=taeonbody, hands=taeonhands, back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}, legs=taeonlegs, left_ring="Petrov Ring",
+	feet=taeonfeet, right_ring="Hetairoi Ring",}
 	
-	sets.tp.medacc= set_combine(sets.tp.lowacc, {waist="Grunfeld Rope", back="Letalis Mantle",})
+	sets.tp.medacc= set_combine(sets.tp.lowacc, {waist="Ioskeha Belt", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},})
 	
 	sets.tp.highacc= {ammo="Amar Cluster", neck="Combatant's Torque", waist="Olseni Belt", right_ring="Ramuh Ring +1",
 	head={ name="Taeon Chapeau", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +3%',}},

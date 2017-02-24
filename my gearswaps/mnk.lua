@@ -94,7 +94,7 @@ function get_sets()
 -- ja sets
 
 -- ws sets	
-	sets.dex={ammo="Honed Tathlum", left_ear="Bladeborn Earring", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Justiciar's Torque", 
+	sets.dex={ammo="Falcon Eye", left_ear="Bladeborn Earring", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Justiciar's Torque", 
 	left_ring="Ramuh Ring +1", left_ear="Steelflash Earring", hands="Anch. Gloves +1", right_ring="Rajas Ring", 
 	body="Abnoba Kaftan", back="Bleating Mantle", waist="Wanion Belt", legs="Samnuha Tights", 
 	feet="Taeon Boots",}
@@ -104,12 +104,12 @@ function get_sets()
 	back="Buquwik Cape", waist="Caudata Belt", legs="Otronif Brais +1", feet="Adhemar Gamashes", 
 	left_ring="Epona's Ring",}
 	
-	sets.multi={ammo="Honed Tathlum", neck="Asperity Necklace", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, body="Rawhide Vest",
+	sets.multi={ammo="Falcon Eye", neck="Asperity Necklace", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, body="Rawhide Vest",
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", hands="Adhemar Wristbands", left_ring="Epona's Ring",
 	right_ring="Rajas Ring", back="Bleating Mantle", waist="Windbuffet Belt +1", legs="Samnuha Tights",  
 	feet="Taeon Boots",}
 	
-	sets.kicks={ammo="Honed Tathlum", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Fotia Gorget", left_ear="Steelflash Earring",
+	sets.kicks={ammo="Falcon Eye", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Fotia Gorget", left_ear="Steelflash Earring",
 	right_ear="Bladeborn Earring", body="Bhikku Cyclas", hands="Hes. Gloves +1", left_ring="Ifrit Ring +1",
 	right_ring="Rajas Ring", back="Bleating Mantle", waist="Fotia Belt", legs="Samnuha Tights", 
 	feet="Samnuha Tights",}
@@ -185,7 +185,7 @@ function get_sets()
 	
 	sets.aftercast.tp.styleII= set_combine(sets.aftercast.tp.styleI, {body="Rawhide Vest",})
 	
-	sets.aftercast.tp.styleIII= set_combine(sets.aftercast.tp.styleII, {head=taeonhead, ammo="Honed Tathlum", neck="Combatant's Torque", waist="Olseni Belt", back="Anchoret's Mantle", left_ear="Zennaroi Earring", right_ear="Cessance Earring",})
+	sets.aftercast.tp.styleIII= set_combine(sets.aftercast.tp.styleII, {head=taeonhead, ammo="Falcon Eye", neck="Combatant's Torque", waist="Olseni Belt", back="Anchoret's Mantle", left_ear="Zennaroi Earring", right_ear="Cessance Earring",})
 	
 	sets.aftercast.tp.styleIV= set_combine(sets.aftercast.tp.styleIII, {left_ring="Mars's Ring", right_ring="Patricius Ring",})
 	

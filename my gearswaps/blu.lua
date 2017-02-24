@@ -120,12 +120,12 @@ function get_sets()
 	--sword weaponskill sets
 	sets.ws.damage["Fast Blade"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back="Bleating Mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Fast Blade"]={ammo="Falcon Eye", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back="Letalis mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.damage["Burning Blade"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}}, neck="Sanctity Necklace", 
@@ -150,12 +150,12 @@ function get_sets()
 	
 	sets.ws.damage["Flat Blade"]={ammo="Falcon Eye", head="Despair Helm", neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back="Letalis mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Flat Blade"]={ammo="Falcon Eye", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back="Letalis mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.damage["Shining Blade"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}}, neck="Sanctity Necklace", 
@@ -180,12 +180,12 @@ function get_sets()
 	
 	sets.ws.damage["Circle Blade"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back="Bleating Mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Circle Blade"]={ammo="Falcon Eye", head="Despair Helm", neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back="Letalis mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.damage["Spirits Within"]={}
@@ -194,30 +194,30 @@ function get_sets()
 	
 	sets.ws.damage["Vorpal Blade"]={ammo="Falcon Eye", head="Despair Helm", neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back="Letalis mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Vorpal Blade"]={ammo="Falcon Eye", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back="Letalis mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.damage["Savage Blade"]={ammo="Cheruski Needle", head="Despair Helm", neck="Fotia Gorget", ear1="Brutal Earring",
 	ear2="Moonshade earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.", ring1="Epona's ring", ring2="Rufescent Ring",
-	back="Bleating Mantle", waist="Fotia Belt",legs="Samnuha Tights", feet="Despair Greaves"}
+	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Savage Blade"]={ammo="Falcon Eye", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Fotia Gorget", ear1="Bladeborn Earring",
 	ear2="Steelflash earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.", ring1="Mars's ring", ring2="Rufescent Ring",
-	back="Bleating Mantle", waist="Fotia Belt",legs="Samnuha Tights", feet="Despair Greaves"}
+	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.damage["Expiation"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back="Bleating Mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Expiation"]={ammo="Falcon Eye", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Bladeborn Earring", ear2="Steelflash earring", body="Count's Garb", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Mars's ring", back="Letalis Mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Mars's ring", back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.damage["Sanguine Blade"]={ammo="Pemphredo Tathlum", head="Pixie Hairpin +1", body="Jhakri Robe +1",
@@ -232,21 +232,21 @@ function get_sets()
 	
 	sets.ws.damage["Chant du Cygne"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Abnoba Kaftan", hands="Adhemar Wristbands",
-	ring1="Epona's ring", ring2="Ramuh Ring +1", back="Rancorous mantle", waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Ramuh Ring +1", back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Thereoid Greaves"}
 	
 	sets.ws.accuracy["Chant du Cygne"]={ammo="Falcon Eye", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Bladeborn Earring", ear2="Steelflash earring", body="Abnoba Kaftan",hands="Despair Fin. Gaunt.",
-	ring1="Rajas ring", ring2="Ramuh Ring +1", back="Rancorous mantle", waist="Fotia Belt",
+	ring1="Rajas ring", ring2="Ramuh Ring +1", back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Thereoid Greaves"}
 	
 	sets.ws.damage["Requiescat"]={ammo="Cheruski Needle", head="Despair Helm", neck="Fotia Gorget", ear1="Brutal Earring",
 	ear2="Moonshade earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.", ring1="Epona's ring", ring2="Rufescent Ring",
-	back="Bleating Mantle", waist="Fotia Belt",legs="Carmine Cuisses", feet="Despair Greaves"}
+	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Carmine Cuisses", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Requiescat"]={ammo="Falcon Eye", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Fotia Gorget", ear1="Bladeborn Earring",
 	ear2="Steelflash earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.", ring1="Mars's ring", ring2="Rufescent Ring",
-	back="Bleating Mantle", waist="Fotia Belt",legs="Carmine Cuisses", feet="Despair Greaves"}
+	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Carmine Cuisses", feet="Despair Greaves"}
 	
 	--sword weaponskill sets
 	
@@ -401,7 +401,7 @@ function get_sets()
 	
 	sets.tp.buffed.accII= set_combine(sets.tp.buffed.accI, {neck="Combatant's Torque", legs=taeonlegs,})
 	
-	sets.tp.buffed.accIII= set_combine(sets.tp.buffed.accII, {ammo="Falcon Eye", waist="Olseni Belt", right_ear="Zennaroi Earring", back="Letalis Mantle",})
+	sets.tp.buffed.accIII= set_combine(sets.tp.buffed.accII, {ammo="Falcon Eye", waist="Olseni Belt", right_ear="Zennaroi Earring", back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},})
 	
 	sets.tp.buffedrefresh.accI= set_combine(sets.tp.buffed.accI, {head="Rawhide Mask", body="Luhlaza Jubbah +1",})
 	
