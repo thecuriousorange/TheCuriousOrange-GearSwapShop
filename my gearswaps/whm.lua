@@ -25,13 +25,13 @@ function get_sets()
 	hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -1%','Song recast delay -1',}},
 	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet="Chelona Boots",
 	neck="Orison Locket", waist="Fucho-no-Obi", left_ear="Ethereal Earring", right_ear="Loquac. Earring",
-	left_ring="Prolix Ring", right_ring="Rahab Ring", back="Swith Cape",}
+	left_ring="Kishar Ring", right_ring="Rahab Ring", back="Swith Cape",}
 	
 	sets.precast.cure={main="Ababinili",
 	ammo="Incantor Stone", head="Nahtirah Hat", body="Heka's Kalasiris", legs="Orsn. Pantaln. +2",
 	hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -1%','Song recast delay -1',}},
 	feet="Hygieia Clogs", neck="Orison Locket", waist="Fucho-no-Obi", left_ear="Nourish. Earring",
-	right_ear="Nourish. Earring +1", left_ring="Prolix Ring", right_ring="Rahab Ring", back="Pahtli Cape",}
+	right_ear="Nourish. Earring +1", left_ring="Kishar Ring", right_ring="Rahab Ring", back="Pahtli Cape",}
 	
 	sets.precast.enhancing=set_combine(sets.precast.fc, {waist="Siegel Sash",})
 	
@@ -61,7 +61,7 @@ function get_sets()
 	hands={ name="Helios Gloves", augments={'Mag. Evasion+10','"Fast Cast"+5','INT+5 MND+5',}},
 	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet="Chelona Boots",
 	neck="Orison Locket", waist="Ninurta's Sash", left_ear="Etiolation Earring", right_ear="Loquac. Earring",
-	left_ring="Prolix Ring", right_ring="Rahab Ring", back="Swith Cape",}
+	left_ring="Kishar Ring", right_ring="Rahab Ring", back="Swith Cape",}
 	
 	sets.midcast.cursna={main="Beneficus", sub="Genbu's Shield", ammo="Incantor Stone", head="Orison Cap +2",
 	body="Orison Bliaud +2", hands="Hlr. Mitts +1", legs="Cleric's Pantaln.", feet={ name="Gende. Galoshes", augments={'Phys. dmg. taken -1%',}},

@@ -1,6 +1,6 @@
 function get_sets()
 -- include
-	include('boxes.lua')
+	include('organizer-lib.lua')
 -- include
 --aliases
 	send_command('alias ddsetgs gs equip sets.aftercast.gs.multi')
@@ -29,6 +29,7 @@ function get_sets()
 	send_command('bind @f4 gs c mdt')
 	send_command('bind @f9 greatswordmode')
 	send_command('bind @f10 scythemode')
+	send_command('bind @f12 gs c wstoggle')
 	send_command('bind #f1 gs c style1;alias ddsetgs gs equip sets.aftercast.gs.multi;alias ddsetscythe gs equip sets.aftercast.scythe.multi')
 	send_command('bind #f2 gs c style2;alias ddsetgs gs equip sets.aftercast.gs.acc;alias ddsetscythe gs equip sets.aftercast.scythe.acc')
 	send_command('bind #f3 gs c style3;alias ddsetgs gs equip sets.aftercast.gs.xhit;alias ddsetscythe gs equip sets.aftercast.scythe.xhit')
@@ -42,10 +43,13 @@ function get_sets()
 	Weaponry="gs"
 	TPSet="dd"
 	TPType="multi"
+	IdleType="standard"
+	WSMode="dd"
 	
 	sets.Weaponry= T{}
 	sets.TPSet= T{}
 	sets.TPType= T{}
+	sets.IdleType= T{}
 --variables
 
 --basesets
@@ -55,26 +59,46 @@ function get_sets()
 	sets.midcast={}
 	sets.aftercast={}
 	sets.aftercast.gs={}
+	sets.aftercast.gs.idle={}
 	sets.aftercast.scythe={}
+	sets.aftercast.scythe.idle={}
 --basesets
 
 --precast sets
 	--magic
-	sets.precast.ma={head="Cizin Helm +1", body="Nuevo Coselete", legs="Enif Cosciales",}
+	sets.precast.ma={ammo="Sapience Orb",
+    head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','"Fast Cast"+3',}},
+    body={ name="Odyss. Chestplate", augments={'Mag. Acc.+19','"Fast Cast"+6','VIT+1','"Mag.Atk.Bns."+6',}},
+    hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
+    legs={ name="Odyssean Cuisses", augments={'STR+4','"Fast Cast"+7','Accuracy+7 Attack+7',}},
+    feet={ name="Odyssean Greaves", augments={'Mag. Acc.+21','"Fast Cast"+6','MND+4',}},
+    neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}},
+    left_ear="Etiolation Earring",
+    right_ear="Loquac. Earring",
+    left_ring="Rahab Ring",
+    right_ring="Kishar Ring",}
 	--magic
 	
 	--ws basesets
-	sets.strws={ammo="Ginsen", head="Yaoyotl Helm", body="Miki. Breastplate", hands="Miki. Gauntlets",
-	legs="Miki. Cuisses", feet="Mikinaak Greaves", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	sets.wsacc={head="Ynglinga Sallet",}
+	
+	sets.strws={ammo="Knobkierrie",
+    head={ name="Argosy Celata", augments={'DEX+10','Accuracy+15','"Dbl.Atk."+2',}},
+    body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}},
+    hands={ name="Argosy Mufflers", augments={'STR+15','"Dbl.Atk."+2','Haste+2%',}},
+    legs={ name="Argosy Breeches", augments={'STR+10','Attack+20','"Store TP"+5',}},
+    feet="Sulev. Leggings +1",
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear="Zwazo Earring",
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+    left_ring="Ifrit Ring +1",
+    right_ring="Niqmaddu Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
 	
 	sets.strwstb= set_combine(sets.strws, {left_ear="Moonshade Earring", right_ear="Brutal Earring",})
 	
-	sets.atkws={ammo="Ginsen", head="Yaoyotl Helm", body="Miki. Breastplate", hands="Miki. Gauntlets",
-	legs="Miki. Cuisses", feet="Mikinaak Greaves", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring", 
-	right_ring="Rajas Ring", back="Buquwik Cape",}
+	sets.atkws=sets.strws
 	
 	sets.atkwstb= set_combine(sets.atkws, {left_ear="Moonshade Earring", right_ear="Brutal Earring",})
 	
@@ -258,19 +282,49 @@ function get_sets()
 --aftercast sets
 
 	--tp sets
-	sets.aftercast.gs.multi={main="Tunglmyrkvi", sub="Pole Grip", ammo="Ginsen", head="Otomi Helm", body="Enif Corazza", hands="Ares' Gauntlets +1",
-	legs="Ares' Flanchard +1", feet="Ejekamal Boots", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Petrov Ring", 
-	right_ring="Rajas Ring", back="Bleating Mantle",}
+	sets.aftercast.gs.multi={ammo="Ginsen",
+    head="Flam. Zucchetto +1",
+    body="Dagon Breast.",
+    hands={ name="Valorous Mitts", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+2','Accuracy+9',}},
+    legs={ name="Odyssean Cuisses", augments={'Accuracy+23 Attack+23','"Dbl.Atk."+2','Accuracy+8',}},
+    feet={ name="Odyssean Greaves", augments={'"Cure" potency +4%','Mag. Acc.+10 "Mag.Atk.Bns."+10','Quadruple Attack +2','Accuracy+20 Attack+20',}},
+    neck="Ganesha's Mala",
+    waist="Ioskeha Belt",
+    left_ear="Cessance Earring",
+    right_ear="Telos Earring",
+    left_ring="Hetairoi Ring",
+    right_ring="Niqmaddu Ring",
+    back="Ground. Mantle +1",}
 	
-	sets.aftercast.gs.acc= set_combine(sets.aftercast.gs.multi, {head="Yaoyotl Helm",})
+	sets.aftercast.gs.acc= {ammo="Ginsen",
+    head={ name="Argosy Celata", augments={'DEX+10','Accuracy+15','"Dbl.Atk."+2',}},
+    body="Dagon Breast.",
+    hands={ name="Emicho Gauntlets", augments={'HP+50','DEX+10','Accuracy+15',}},
+    legs="Sulev. Cuisses +2",
+    feet="Flam. Gambieras +1",
+    neck="Loricate Torque +1",
+    waist="Ioskeha Belt",
+    left_ear="Mache Earring",
+    right_ear="Telos Earring",
+    left_ring="Ramuh Ring +1",
+    right_ring="Niqmaddu Ring",
+    back="Ground. Mantle +1",}
 	
 	sets.aftercast.gs.xhit= set_combine(sets.aftercast.gs.acc, {head="Xaddi Headgear", body="Xaddi Mail",})
 	
-	sets.aftercast.gs.hybrid={main="Tunglmyrkvi", sub="Pole Grip", ammo="Angha Gem", head="Ighwa Cap", body="Cizin Mail +1", hands="Cizin Mufflers +1", 
-	legs="Cizin Breeches +1", feet="Cizin Greaves +1", neck="Twilight Torque", waist="Dynamic Belt +1",
-	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Patricius Ring", right_ring="Vocane Ring",
-    back="Mollusca Mantle",}
+	sets.aftercast.gs.hybrid={ammo="Ginsen",
+    head="Sulevia's Mask +1",
+    body="Sulevia's Plate. +1",
+    hands="Sulev. Gauntlets +1",
+    legs="Sulev. Cuisses +2",
+    feet="Sulev. Leggings +1",
+    neck="Loricate Torque +1",
+    waist="Tempus Fugit",
+    left_ear="Cessance Earring",
+    right_ear="Telos Earring",
+    left_ring="Vocane Ring",
+    right_ring="Defending Ring",
+    back="Ground. Mantle +1",}
 	
 	sets.aftercast.scythe.multi= set_combine(sets.aftercast.gs.multi, {main="Tajabit",})
 	
@@ -282,20 +336,74 @@ function get_sets()
 	--tp sets
 
 	--dt sets
-	sets.aftercast.gs.pdt= set_combine(sets.aftercast.gs.hybrid, {})
+	sets.aftercast.gs.pdt={ammo="Vanir Battery",
+    head="Sulevia's Mask +1",
+    body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
+    hands="Sulev. Gauntlets +1",
+    legs="Sulev. Cuisses +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Loricate Torque +1",
+    waist="Nierenschutz",
+    left_ear="Ethereal Earring",
+    right_ear="Sanare Earring",
+    left_ring="Vocane Ring",
+    right_ring="Defending Ring",
+    back="Shadow Mantle",}
 	
-	sets.aftercast.gs.mdt= set_combine(sets.aftercast.gs.hybrid, {})
+	sets.aftercast.gs.dt={ammo="Vanir Battery",
+    head="Sulevia's Mask +1",
+    body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
+    hands="Sulev. Gauntlets +1",
+    legs="Sulev. Cuisses +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Loricate Torque +1",
+    waist="Nierenschutz",
+    left_ear="Ethereal Earring",
+    right_ear="Sanare Earring",
+    left_ring="Vocane Ring",
+    right_ring="Defending Ring",
+    back="Shadow Mantle",}
 	
-	sets.aftercast.scythe.pdt= set_combine(sets.aftercast.scythe.hybrid, {})
+	sets.aftercast.gs.mdt={ammo="Vanir Battery",
+    head="Sulevia's Mask +1",
+    body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
+    hands="Sulev. Gauntlets +1",
+    legs="Sulev. Cuisses +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Loricate Torque +1",
+    waist="Nierenschutz",
+    left_ear="Ethereal Earring",
+    right_ear="Sanare Earring",
+    left_ring="Shadow Ring",
+    right_ring="Defending Ring",
+    back="Engulfer Cape +1",}
 	
-	sets.aftercast.scythe.mdt= set_combine(sets.aftercast.scythe.pdt, {})
+	sets.aftercast.scythe.pdt=sets.aftercast.gs.pdt
+	
+	sets.aftercast.scythe.mdt=sets.aftercast.gs.mdt
+	
+	sets.aftercast.scythe.dt=sets.aftercast.gs.dt
 	--dt sets
 	
 	--idle sets
-	sets.aftercast.gs.idle={main="Tunglmyrkvi", sub="Pole Grip", ammo="Vanir Battery", head="Twilight Helm", body="Twilight Mail", hands="Cizin Mufflers +1", 
-	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Cizin Greaves +1", neck="Twilight Torque", waist="Nierenschutz",
-	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", 
-	right_ring="Sheltered Ring", back="Shadow Mantle",}
+	sets.aftercast.gs.idle.standard={ammo="Vanir Battery",head="Baghere Salade",
+    body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
+    hands={ name="Odyssean Gauntlets", augments={'Pet: Crit.hit rate +3','Attack+4','"Refresh"+1',}},
+    legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},
+    feet={ name="Odyssean Greaves", augments={'Pet: STR+5','STR+4','"Refresh"+1',}},
+    neck="Coatl Gorget +1",
+    waist="Nierenschutz",
+    left_ear="Ethereal Earring",
+    right_ear="Infused Earring",
+    left_ring="Paguroidea Ring",
+    right_ring="Sheltered Ring",
+    back="Shadow Mantle",}
+	
+	sets.aftercast.gs.idle.refresh=set_combine(sets.aftercast.gs.idle.standard,{head={ name="Odyssean Helm", augments={'"Mag.Atk.Bns."+8','Potency of "Cure" effect received+3%','"Refresh"+1','Accuracy+5 Attack+5',}},
+    body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
+    hands={ name="Odyssean Gauntlets", augments={'Pet: Crit.hit rate +3','Attack+4','"Refresh"+1',}},
+    legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},
+    feet={ name="Odyssean Greaves", augments={'Pet: STR+5','STR+4','"Refresh"+1',}},})
 	
 	sets.aftercast.scythe.idle= set_combine(sets.aftercast.gs.idle, {main="Tajabit",})
 	--idle sets
@@ -309,6 +417,9 @@ function precast(spell)
 		equip(sets.precast.ja[spell.english])
 	elseif spell.prefix=="/weaponskill" then
 		equip(sets.precast.ws[spell.english])
+		if WSMode=="acc" then
+			equip(sets.wsacc)
+		end
 	end
 end
 
@@ -323,19 +434,7 @@ function midcast(spell)
 end
 
 function aftercast(spell)
-	if player.status=="Engaged" then
-		if Weaponry=="gs" then			
-			equip(sets.aftercast.gs[TPType])
-		elseif Weaponry=="scythe" then
-			equip(sets.aftercast.scythe[TPType])
-		end
-	else
-		if Weaponry=="gs" then
-			equip(sets.aftercast.gs.idle)
-		elseif Weaponry=="scythe" then
-			equip(sets.aftercast.scythe.idle)
-		end
-	end
+	status_change(player.status)
 end
 
 function status_change(new,old)
@@ -347,9 +446,9 @@ function status_change(new,old)
 		end
 	else
 		if Weaponry=="gs" then
-			equip(sets.aftercast.gs.idle)
+			equip(sets.aftercast.gs.idle[IdleType])
 		elseif Weaponry=="scythe" then
-			equip(sets.aftercast.scythe.idle)
+			equip(sets.aftercast.scythe.idle[IdleType])
 		end
 	end
 end
@@ -432,6 +531,15 @@ function self_command(command)
 			TPType="xhit"
 			add_to_chat(206, 'MULTIHIT STYLE 3 SET')
 			send_command('text idlevariable text "STYLE III"')
+		end
+	end
+	if command=="wstoggle" then
+		if WSMode=="dd" then
+			WSMode="acc"
+			add_to_chat(206,'WSMode:ACC')
+		else
+			WSMode="dd"
+			add_to_chat(206,'WSMode:DD')
 		end
 	end
 end

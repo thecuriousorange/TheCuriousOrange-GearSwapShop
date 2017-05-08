@@ -7,35 +7,35 @@ function get_sets()
 windower.prim.create('TP_SET')
 windower.prim.set_size('TP_SET',200,30)
 windower.prim.set_texture('TP_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/ddmode.png')
-windower.prim.set_position('TP_SET',0.65*windower.get_windower_settings().x_res,50)
+windower.prim.set_position('TP_SET',0.65*windower.get_windower_settings().ui_x_res,50)
 windower.prim.set_color('TP_SET', 100, 255, 255, 255)
 windower.prim.set_visibility('TP_SET',true)
 
 windower.prim.create('ACC_SET')
 windower.prim.set_size('ACC_SET',200,30)
 windower.prim.set_texture('ACC_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/lowacc.png')
-windower.prim.set_position('ACC_SET',0.65*windower.get_windower_settings().x_res,90)
+windower.prim.set_position('ACC_SET',0.65*windower.get_windower_settings().ui_x_res,90)
 windower.prim.set_color('ACC_SET', 100, 255, 255, 255)
 windower.prim.set_visibility('ACC_SET',true)
 
 windower.prim.create('IDLE_SET')
 windower.prim.set_size('IDLE_SET',200,30)
 windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/standardidle.png')
-windower.prim.set_position('IDLE_SET',0.65*windower.get_windower_settings().x_res,130)
+windower.prim.set_position('IDLE_SET',0.65*windower.get_windower_settings().ui_x_res,130)
 windower.prim.set_color('IDLE_SET', 100, 255, 255, 255)
 windower.prim.set_visibility('IDLE_SET',true)
 
 windower.prim.create('WS_SET')
 windower.prim.set_size('WS_SET',200,30)
 windower.prim.set_texture('WS_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/dmg.png')
-windower.prim.set_position('WS_SET',0.65*windower.get_windower_settings().x_res,170)
+windower.prim.set_position('WS_SET',0.65*windower.get_windower_settings().ui_x_res,170)
 windower.prim.set_color('WS_SET', 100, 255, 255, 255)
 windower.prim.set_visibility('WS_SET',true)
 
 windower.prim.create('MAGIC_MODE')
 windower.prim.set_texture('MAGIC_MODE','/windower 4/addons/gearswap/data/'..player.name..'/images/magicpotency.png')
 windower.prim.set_size('MAGIC_MODE',200,30)
-windower.prim.set_position('MAGIC_MODE',0.65*windower.get_windower_settings().x_res,210)
+windower.prim.set_position('MAGIC_MODE',0.65*windower.get_windower_settings().ui_x_res,210)
 windower.prim.set_color('MAGIC_MODE', 150, 255, 255, 255)
 windower.prim.set_visibility('MAGIC_MODE',true)
 	--windower.send_command('pause 1;text tpvariable text "DD MODE"')
@@ -135,12 +135,12 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 --premagic sets
 	sets.precast.fc={main="Marin Staff", head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs="Orvail Pants +1",
 	feet="Chelona Boots", neck="Jeweled Collar", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
-	left_ring="Prolix Ring", back="Swith Cape",} --needs adjustments.
+	left_ring="Kishar Ring", back="Swith Cape",} --needs adjustments.
 	
 	sets.precast.impact={body="Twilight Cloak", hands="Helios Gloves", feet="Chelona Boots",
 	neck="Stoicheion Medal", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
 	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
-	left_ring="Prolix Ring", back="Swith Cape",} --needs adjustments.
+	left_ring="Kishar Ring", back="Swith Cape",} --needs adjustments.
 	
 	sets.precast["Ninjutsu"]=set_combine(sets.precast.fc, {neck="Magoraga Beads",})
 	sets.precast["Healing Magic"]=set_combine(sets.precast.fc, {})

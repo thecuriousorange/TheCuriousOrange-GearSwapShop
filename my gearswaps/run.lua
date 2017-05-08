@@ -130,12 +130,12 @@ windower.prim.set_size('WS_SET',200,30)
 windower.prim.set_size('ACTIVE_RUNE',200,50)
 windower.prim.set_size('WEAPON_TYPE',200,50)
 
-windower.prim.set_position('TP_SET',0.65*windower.get_windower_settings().x_res,50)
-windower.prim.set_position('ACC_SET',0.65*windower.get_windower_settings().x_res,90)
-windower.prim.set_position('IDLE_SET',0.65*windower.get_windower_settings().x_res,130)
-windower.prim.set_position('WS_SET',0.65*windower.get_windower_settings().x_res,170)
-windower.prim.set_position('ACTIVE_RUNE',0.65*windower.get_windower_settings().x_res,210)
-windower.prim.set_position('WEAPON_TYPE',0.65*windower.get_windower_settings().x_res,260)
+windower.prim.set_position('TP_SET',0.65*windower.get_windower_settings().ui_x_res,50)
+windower.prim.set_position('ACC_SET',0.65*windower.get_windower_settings().ui_x_res,90)
+windower.prim.set_position('IDLE_SET',0.65*windower.get_windower_settings().ui_x_res,130)
+windower.prim.set_position('WS_SET',0.65*windower.get_windower_settings().ui_x_res,170)
+windower.prim.set_position('ACTIVE_RUNE',0.65*windower.get_windower_settings().ui_x_res,210)
+windower.prim.set_position('WEAPON_TYPE',0.65*windower.get_windower_settings().ui_x_res,260)
 
 windower.prim.set_color('TP_SET', 100, 255, 255, 255)
 windower.prim.set_color('ACC_SET', 100, 255, 255, 255)
@@ -249,13 +249,13 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	--ja sets
 	
 	--ws sets
-	sets.ws.dmg["Resolution"]={ammo="Seething Bomblet", head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
+	sets.ws.dmg["Resolution"]={ammo="Knobkierrie", head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
 	body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},  neck="Fotia Gorget", waist="Fotia Belt",
 	hands="Meg. Gloves +1",  right_ear="Brutal Earring", legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
-	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Sherida Earring",
-	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}}, left_ear="Sherida Earring",
+	left_ring="Niqmaddu Ring", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.dmg["Dimidiation"]={ammo="Seething Bomblet", head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}}, left_ear="Sherida Earring",
+	sets.ws.dmg["Dimidiation"]={ammo="Knobkierrie", head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}}, left_ear="Sherida Earring",
 	body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}}, hands="Meg. Gloves +1", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Mache Earring",
 	legs={ name="Lustratio Subligar", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}}, feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}},
 	left_ring="Ilabrat Ring", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},}
@@ -333,7 +333,7 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	sets.ws.acc["Resolution"]={ammo="Seething Bomblet", head="Adhemar Bonnet", neck="Fotia Gorget", waist="Fotia Belt", body="Adhemar Jacket",
 	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}}, right_ear="Telos Earring",
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
-	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Sherida Earring",
+	feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}}, left_ear="Sherida Earring",
 	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.acc["Dimidiation"]={ammo="Seething Bomblet", head="Adhemar Bonnet", body="Adhemar Jacket",
@@ -409,13 +409,13 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	body="Adhemar Jacket",
 	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}},  right_ear="Bladeborn Earring",
 	legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
-	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Steelflash Earring",
+	feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}}, left_ear="Steelflash Earring",
 	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.acc["Ruinator"]={ammo="Seething Bomblet", head="Adhemar Bonnet", neck="Fotia Gorget", waist="Fotia Belt", body="Adhemar Jacket",
 	hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','System: 2 ID: 119 Val: 1',}}, right_ear="Bladeborn Earring",
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
-	feet={ name="Adhemar Gamashes", augments={'Attack+15','"Mag.Atk.Bns."+15','STR+12',}}, left_ear="Steelflash Earring",
+	feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}}, left_ear="Steelflash Earring",
 	left_ring="Ifrit Ring +1", right_ring="Epona's Ring", back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.moonshadephysicaldamage={left_ear="Sherida Earring", right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},}
@@ -429,7 +429,7 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	sets.precast.fc={ammo="Sapience Orb", head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','"Fast Cast"+3',}},
 	body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}}, waist="Flume Belt",
 	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}}, left_ear="Loquac. Earring",
-	legs="Aya. Cosciales +1", right_ear="Etiolation Earring", left_ring="Prolix Ring",
+	legs="Aya. Cosciales +1", right_ear="Etiolation Earring", left_ring="Kishar Ring",
 	feet={ name="Carmine Greaves", augments={'Accuracy+10','DEX+10','MND+15',}}, back={ name="Ogma's cape", augments={'"Fast Cast"+10',}},
 	neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}}, right_ring="Rahab Ring",}
 	

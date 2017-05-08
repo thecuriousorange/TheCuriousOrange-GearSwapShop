@@ -1,0 +1,11 @@
+Nukes= S{"Fire", "Fire II", "Fire III", "Fire IV", "Fire V", "Fire VI", "Firaga", "Firaga II", "Firaga III", 
+	"Firaja", "Flare", "Flare II", "Pyrohelix", "Pyrohelix II", "Fira", "Fira II", "Fira III", "Blizzard", "Blizzard II", "Blizzard III", 
+	"Blizzard IV", "Blizzard V", "Blizzard VI", "Blizzaga", "Blizzaga II", "Blizzaga III", "Blizzaja", "Cryohelix", "Cryohelix II", "Freeze", 
+	"Freeze II", "Blizzara", "Blizzara II", "Blizzara III", "Water", "Water II", "Water III", "Water IV", "Water V", "Water VI", "Waterga", 
+	"Waterga II", "Waterga III", "Waterja", "Flood", "Flood II", "Hydrohelix", "Hydrohelix II", "Watera", "Watera II", "Watera III", "Thunder", 
+	"Thunder II", "Thunder III", "Thunder IV", "Thunder V", "Thunder VI", "Thundaga", "Thundaga II", "Thundaga III", "Thundaja", 
+	"Burst", "Burst II", "Ionohelix", "Ionohelix II", "Thundara", "Thundara II", "Thundara III", "Stone", "Stone II", "Stone III", "Stone IV", 
+	"Stone V", "Stone VI", "Stonega", "Stonega II", "Stonega III", "Stoneja", "Quake", "Quake II", "Geohelix", "Geohelix II", "Stonera", 
+	"Stonera II", "Stonera III", "Aero", "Aero II", "Aero III", "Aero IV", "Aero V", "Aero VI", "Aeroga", "Aeroga II", "Aeroga III", 
+	"Aeroja", "Tornado", "Tornado II", "Anemohelix", "Anemohelix II", "Aera", "Aera II", "Aera III", "Banish", "Banish II", 
+	"Banishga", "Banishga II", "Banish III", "Holy", "Holy II", "Luminohelix", "Luminohelix II", "Death",}

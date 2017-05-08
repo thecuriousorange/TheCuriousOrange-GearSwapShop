@@ -81,7 +81,19 @@ function get_sets()
 	
 -- ja sets
 	sets.precast.ja['Boost']={hands="Anch. Gloves +1",}
-	sets.precast.ja['Chakra']={head="Genmei Kabuto", body="Anch. Cyclas +1", hands="Hes. Gloves +1", legs="Nahtirah Trousers", feet="Otronif Boots +1", }
+	sets.precast.ja['Chakra']={ammo="Iron Gobbet",
+    head="Genmei Kabuto",
+    body="Anch. Cyclas +1",
+    hands={ name="Hes. Gloves +1", augments={'Enhances "Invigorate" effect',}},
+    legs="Hiza. Hizayoroi +1",
+    feet="Hiza. Sune-Ate +1",
+    neck="Sanctity Necklace",
+    waist="Caudata Belt",
+    left_ear="Soil Pearl",
+    right_ear="Infused Earring",
+    left_ring="Supershear Ring",
+    right_ring="Niqmaddu Ring",
+    back="Agema Cape",}
 	sets.precast.ja['Chi Blast']={}
 	sets.precast.ja['Focus']={head="Anchor. Crown +1",}
 	sets.precast.ja['Dodge']={feet="Anch. Gaiters +1",}
@@ -94,15 +106,33 @@ function get_sets()
 -- ja sets
 
 -- ws sets	
-	sets.dex={ammo="Falcon Eye", left_ear="Bladeborn Earring", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Justiciar's Torque", 
-	left_ring="Ramuh Ring +1", left_ear="Steelflash Earring", hands="Anch. Gloves +1", right_ring="Rajas Ring", 
-	body="Abnoba Kaftan", back="Bleating Mantle", waist="Wanion Belt", legs="Samnuha Tights", 
-	feet="Taeon Boots",}
+	sets.dex={ammo="Jukukik Feather",
+    head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}},
+    body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
+    hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
+    legs="Jokushu Haidate",
+    feet={ name="Rao Sune-Ate", augments={'STR+10','DEX+10','Attack+15',}},
+    neck="Caro Necklace",
+    waist="Moonbow Belt",
+    left_ear="Sherida Earring",
+    right_ear="Mache Earring",
+    left_ring="Ilabrat Ring",
+    right_ring="Niqmaddu Ring",
+    back="Ground. Mantle +1",}
 	
-	sets.crit={right_ring="Ifrit Ring", ammo="Potestas Bomblet", head="Uk'uxkaj Cap", neck="Rancor Collar",
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", body="Anch. Cyclas +1", hands="Anch. Gloves +1",
-	back="Buquwik Cape", waist="Caudata Belt", legs="Otronif Brais +1", feet="Adhemar Gamashes", 
-	left_ring="Epona's Ring",}
+	sets.crit={ammo="Knobkierrie",
+    head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
+    body={ name="Ryuo Domaru", augments={'STR+10','DEX+10','Accuracy+15',}},
+    hands={ name="Ryuo Tekko", augments={'DEX+10','Accuracy+20','"Dbl.Atk."+3',}},
+    legs={ name="Rao Haidate", augments={'STR+10','DEX+10','Attack+15',}},
+    feet={ name="Ryuo Sune-Ate", augments={'STR+10','DEX+10','Accuracy+15',}},
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear="Sherida Earring",
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+    left_ring="Ifrit Ring +1",
+    right_ring="Niqmaddu Ring",
+    back="Rancorous Mantle",}
 	
 	sets.multi={ammo="Falcon Eye", neck="Asperity Necklace", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, body="Rawhide Vest",
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", hands="Adhemar Wristbands", left_ring="Epona's Ring",
@@ -146,7 +176,7 @@ function get_sets()
 -- impetus tp
 	
 -- sub nin stuff
-	sets.precast.nin={main="Denouements", ammo="Vanir Battery", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}},
+	sets.precast.nin={ammo="Sapience orb", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}},
     body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}},
     hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
     legs={ name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1',}},
@@ -173,29 +203,59 @@ function get_sets()
 -- sub nin stuff
 
 -- tp sets	
-	sets.aftercast.tp.styleI={main="Denouements", ammo="Focal Orb",
-	head="Skormoth Mask", body="Thaumas Coat",
-	hands=taeonhands,
-    legs="Samnuha Tights", waist="Windbuffet Belt +1",
-    feet=taeonfeet, neck="Asperity Necklace",
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Epona's Ring", right_ring="Petrov Ring",
-	back="Bleating Mantle",}
+	sets.aftercast.tp.styleI={ammo="Ginsen",
+    head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
+    body={ name="Herculean Vest", augments={'Accuracy+13 Attack+13','"Triple Atk."+4','MND+3','Attack+13',}},
+    hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
+    legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
+    feet={ name="Herculean Boots", augments={'Accuracy+16','"Triple Atk."+4','AGI+2','Attack+9',}},
+    neck="Combatant's Torque",
+    waist="Moonbow Belt",
+    left_ear="Sherida Earring",
+    right_ear="Telos Earring",
+    left_ring="Epona's Ring",
+    right_ring="Niqmaddu Ring",
+    back="Ground. Mantle +1",}
 	
 	
 	
-	sets.aftercast.tp.styleII= set_combine(sets.aftercast.tp.styleI, {body="Rawhide Vest",})
+	sets.aftercast.tp.styleII={ammo="Falcon Eye",
+    head={ name="Rao Kabuto", augments={'STR+10','DEX+10','Attack+15',}},
+    body={ name="Rao Togi", augments={'STR+10','DEX+10','Attack+15',}},
+    hands={ name="Ryuo Tekko", augments={'DEX+10','Accuracy+20','"Dbl.Atk."+3',}},
+    legs={ name="Rao Haidate", augments={'STR+10','DEX+10','Attack+15',}},
+    feet={ name="Rao Sune-Ate", augments={'STR+10','DEX+10','Attack+15',}},
+    neck="Combatant's Torque",
+    waist="Moonbow Belt",
+    left_ear="Sherida Earring",
+    right_ear="Telos Earring",
+    left_ring="Ilabrat Ring",
+    right_ring="Niqmaddu Ring",
+    back="Ground. Mantle +1",}
 	
-	sets.aftercast.tp.styleIII= set_combine(sets.aftercast.tp.styleII, {head=taeonhead, ammo="Falcon Eye", neck="Combatant's Torque", waist="Olseni Belt", back="Anchoret's Mantle", left_ear="Zennaroi Earring", right_ear="Cessance Earring",})
+	sets.aftercast.tp.styleIII= {ammo="Falcon Eye",
+    head="Hizamaru Somen +1",
+    body="Hiza. Haramaki +1",
+    hands={ name="Ryuo Tekko", augments={'DEX+10','Accuracy+20','"Dbl.Atk."+3',}},
+    legs="Hiza. Hizayoroi +1",
+    feet="Hiza. Sune-Ate +1",
+    neck="Combatant's Torque",
+    waist="Moonbow Belt",
+    left_ear="Mache Earring",
+    right_ear="Mache Earring",
+    left_ring="Ilabrat Ring",
+    right_ring="Niqmaddu Ring",
+    back="Ground. Mantle +1",}
 	
-	sets.aftercast.tp.styleIV= set_combine(sets.aftercast.tp.styleIII, {left_ring="Mars's Ring", right_ring="Patricius Ring",})
+	sets.aftercast.tp.styleIV= set_combine(sets.aftercast.tp.styleIII, {})
 	
-	sets.aftercast.tp.styleV= set_combine(sets.aftercast.tp.styleIV, {body="Otro. Harness +1",})
+	sets.aftercast.tp.styleV= set_combine(sets.aftercast.tp.styleIV, {})
 	
-	sets.aftercast.tp.styleVI= set_combine(sets.aftercast.tp.styleV, {feet="Taeon Boots",})
+	sets.aftercast.tp.styleVI= set_combine(sets.aftercast.tp.styleV, {})
 	
-	sets.aftercast.tp.styleVII= set_combine(sets.aftercast.tp.styleVI, {hands="Hes. Gloves +1",})
+	sets.aftercast.tp.styleVII= set_combine(sets.aftercast.tp.styleVI, {})
 	
-	sets.aftercast.tp.styleVIII= set_combine(sets.aftercast.tp.styleVII, {body="Mekosu. Harness", back="Anchoret's Mantle", waist="Grunfeld Rope",})
+	sets.aftercast.tp.styleVIII= set_combine(sets.aftercast.tp.styleVII, {})
 	
 	sets.aftercast.tp.o.styleI= set_combine(sets.aftercast.tp.styleI, {right_ring="Oneiros Ring",})
 	
@@ -213,36 +273,50 @@ function get_sets()
 	
 	sets.aftercast.tp.o.styleVIII= set_combine(sets.aftercast.tp.styleVIII, {right_ring="Oneiros Ring",})
 
-	sets.aftercast.hybridA={head="Otronif Mask +1", body="Otro. Harness +1", hands="Otronif Gloves +1", 
-	waist="Windbuffet Belt +1", legs="Otronif Brais +1", feet="Otronif Boots +1", left_ear="Bladeborn Earring", 
-	right_ear="Steelflash Earring", neck="Asperity Necklace", back="Bleating Mantle", left_ring="Epona's Ring", 
-	right_ring="Rajas Ring",}
+	sets.aftercast.hybridA={ammo="Falcon Eye",
+    head={ name="Ryuo Somen", augments={'STR+10','DEX+10','Accuracy+15',}},
+    body={ name="Ryuo Domaru", augments={'STR+10','DEX+10','Accuracy+15',}},
+    hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
+    legs="Hiza. Hizayoroi +1",
+    feet={ name="Herculean Boots", augments={'Damage taken-3%','STR+6','Attack+8',}},
+    neck="Combatant's Torque",
+    waist="Moonbow Belt",
+    left_ear="Mache Earring",
+    right_ear="Mache Earring",
+    left_ring="Vocane Ring",
+    right_ring="Defending Ring",
+    back="Agema Cape",}
 	
-	sets.aftercast.hybridB= set_combine(sets.aftercast.hybridA, {body="Arhat's Gi +1", 
-	neck="Loricate Torque +1", back="Mollusca Mantle", waist="Black Belt",})
+	sets.aftercast.hybridB= set_combine(sets.aftercast.hybridA, {})
 	
-	sets.aftercast.hybridC= set_combine(sets.aftercast.hybridB, {left_ring="Patricius Ring", 
-	right_ring="Defending Ring",})
+	sets.aftercast.hybridC= set_combine(sets.aftercast.hybridB, {})
 	
-	sets.aftercast.hybridD= set_combine(sets.aftercast.hybridC, {feet="Otronif Boots +1",})
+	sets.aftercast.hybridD= set_combine(sets.aftercast.hybridC, {})
 -- tp sets	
 	
 -- DT sets	
-	sets.aftercast.pdt={head="Genmei Kabuto", body="Onca Suit", neck="Loricate Torque +1", waist="Black Belt",
-	left_ear="Genmei Earring", right_ear="Ethereal Earring", left_ring="Vocane Ring", right_ring="Defending Ring",
-	back="Mollusca Mantle",}
+	sets.aftercast.pdt={ammo="Iron Gobbet",
+    head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
+    body={ name="Ryuo Domaru", augments={'STR+10','DEX+10','Accuracy+15',}},
+    hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
+    legs={ name="Herculean Trousers", augments={'"Triple Atk."+3','STR+3','Accuracy+15','Attack+14',}},
+    feet={ name="Herculean Boots", augments={'Damage taken-3%','STR+6','Attack+8',}},
+    neck="Loricate Torque +1",
+    waist="Moonbow Belt",
+    left_ear="Ethereal Earring",
+    right_ear="Genmei Earring",
+    left_ring="Vocane Ring",
+    right_ring="Defending Ring",
+    back="Agema Cape",}
 	
 	sets.aftercast.mdt= set_combine(sets.aftercast.pdt, {left_ring="Shadow Ring",})
 -- DT sets
 
 -- idle sets	
-	sets.aftercast.idle.pdt={ammo="Vanir Battery", head="Otronif Mask +1", neck="Loricate Torque +1", 
-	left_ear="Ethereal Earring", right_ear="Sanare Earring", body="Arhat's Gi +1", hands="Otronif Gloves +1", 
-	lring="Sheltered Ring", ring="Shadow Ring", back="Shadow Mantle", waist="Black Belt", 
-	legs="Otronif Brais +1", feet="Hermes' Sandals",}
+	sets.aftercast.idle.pdt=set_combine(sets.aftercast.pdt,{feet="Hermes' Sandals",})
 	
-	sets.aftercast.idle.regen= set_combine(sets.aftercast.idle.pdt, {head="Rao Kabuto", right_ear="Infused Earring",
-	neck="Sanctity Necklace", body="Rao Togi", hands="Rao Kote", right_ring="Paguroidea Ring",})
+	sets.aftercast.idle.regen= set_combine(sets.aftercast.idle.pdt, {head="Rao Kabuto", right_ear="Infused Earring", legs="Rao Haidate",
+	neck="Sanctity Necklace", body="Hiza. Haramaki +1", hands="Rao Kote", left_ring="Sheltered Ring", right_ring="Paguroidea Ring",})
 -- idle sets
 end
 
@@ -293,11 +367,11 @@ end
 function status_change(new,old)
 	if new== 'Engaged' then		
 		if TPSet=="DD" then			
-			if player.mp<99 then
+			--if player.mp<99 then
 				equip(sets.aftercast.tp[TPType])
-			else
+			--[[else
 				equip(sets.aftercast.tp.o[TPType])
-			end
+			end]]
 			if buffactive.Impetus then
 				if Impetus_Mode=="1" then
 					equip(sets.impetustp)

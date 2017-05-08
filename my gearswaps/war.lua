@@ -70,62 +70,62 @@ include('organizer-lib.lua')
 	
 	--weaponskill sets
 	sets.ws.damage["Shield Break"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Shield Break"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Iron Tempest"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Iron Tempest"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Sturmwind"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Sturmwind"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Armor Break"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Armor Break"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Keen Edge"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Keen Edge"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Weapon Break"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Weapon Break"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
@@ -140,52 +140,52 @@ include('organizer-lib.lua')
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ring="Rajas Ring", back="Rancorous Mantle",}
 	
 	sets.ws.damage["Full Break"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Full Break"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Steel Cyclone"]={ammo="Seething Bomblet", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
+	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Terrasoul Ring", right_ring="Terrasoul Ring",
 	back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Steel Cyclone"]={ammo="Seething Bomblet", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
+	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Terrasoul Ring", right_ring="Terrasoul Ring",
 	back="Buquwik Cape",}
 	
 	sets.ws.damage["Metatron Torment"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Metatron Torment"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["King's Justice"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["King's Justice"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Fell Cleave"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Fell Cleave"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
@@ -200,34 +200,34 @@ include('organizer-lib.lua')
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Apate Ring", right_ring="Rajas Ring", back="Rancorous Mantle",}
 	
 	sets.ws.damage["Upheaval"]={ammo="Seething Bomblet", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
+	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Terrasoul Ring", right_ring="Terrasoul Ring",
 	back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Upheaval"]={ammo="Seething Bomblet", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
+	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
 	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Terrasoul Ring", right_ring="Terrasoul Ring",
 	back="Buquwik Cape",}
 	--GA WS SETS END
 	
 	--GS WS SETS START
 	sets.ws.damage["Hard Slash"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Hard Slash"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Power Slash"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Power Slash"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
@@ -256,22 +256,22 @@ include('organizer-lib.lua')
     feet={ name="Founder's Greaves", augments={'VIT+9','Accuracy+14','"Mag.Atk.Bns."+13','Mag. Evasion+15',}}, back="Toro Cape",}
 	
 	sets.ws.damage["Crescent Moon"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Crescent Moon"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Ground Strike"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Ground Strike"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
@@ -288,33 +288,33 @@ include('organizer-lib.lua')
     feet={ name="Founder's Greaves", augments={'VIT+9','Accuracy+14','"Mag.Atk.Bns."+13','Mag. Evasion+15',}}, back="Toro Cape",}
 	
 	sets.ws.damage["Resolution"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Resolution"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	--GS WS SETS END
 	--AXE WS SETS
 	sets.ws.damage["Raging Axe"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Raging Axe"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Smash Axe"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Smash Axe"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
@@ -331,62 +331,62 @@ include('organizer-lib.lua')
     feet={ name="Founder's Greaves", augments={'VIT+9','Accuracy+14','"Mag.Atk.Bns."+13','Mag. Evasion+15',}}, back="Toro Cape",}
 	
 	sets.ws.damage["Avalanche Axe"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Avalanche Axe"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Spinning Axe"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Spinning Axe"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Rampage"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Rampage"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Calamity"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Calamity"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Mistral Axe"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Mistral Axe"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.damage["Decimation"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
 	sets.ws.accuracy["Decimation"]={ammo="Seething Bomblet", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1",
+	body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}}, hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
 	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, neck="Fotia Gorget", waist="Fotia Belt", right_ear="Zwazo Earring",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
 	
@@ -467,21 +467,21 @@ include('organizer-lib.lua')
 	
 	--dt sets
 	sets.pdt={ammo="Hasty Pinion +1", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1", 
-	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Loricate Torque +1", waist="Tempus Fugit", left_ear="Cessance Earring",
+	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1", neck="Loricate Torque +1", waist="Tempus Fugit", left_ear="Cessance Earring",
 	right_ear="Telos Earring", left_ring="Vocane Ring", right_ring="Defending Ring", back="Agema Cape",}
 	
 	sets.mdt={ammo="Hasty Pinion +1", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1", 
-	legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1", neck="Loricate Torque +1", waist="Tempus Fugit", left_ear="Cessance Earring",
+	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1", neck="Loricate Torque +1", waist="Tempus Fugit", left_ear="Cessance Earring",
 	right_ear="Telos Earring", left_ring="Vocane Ring", right_ring="Defending Ring", back="Agema Cape",}
 	--dt sets
 	
 	--idle sets
 	sets.idle.regen={ammo="Vanir Battery", head="Baghere Salade", body={ name="Souveran Cuirass", augments={'VIT+10','Attack+20','"Refresh"+2',}},
-	hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1", feet="Hermes' Sandals", neck="Sanctity Necklace", waist="Nierenschutz",
+	hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2", feet="Hermes' Sandals", neck="Sanctity Necklace", waist="Nierenschutz",
 	left_ear="Genmei Earring", right_ear="Infused Earring", left_ring="Paguroidea Ring", right_ring="Sheltered Ring", back="Philidor Mantle",}
 	
 	sets.idle.dt={ammo="Vanir Battery", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1", 
-	legs="Sulevi. Cuisses +1", feet="Hermes' Sandals", neck="Loricate Torque +1", waist="Nierenschutz", left_ear="Cessance Earring",
+	legs="Sulev. Cuisses +2", feet="Hermes' Sandals", neck="Loricate Torque +1", waist="Nierenschutz", left_ear="Cessance Earring",
 	right_ear="Telos Earring", left_ring="Vocane Ring", right_ring="Defending Ring", back="Philidor Mantle",}
 	--idle sets
 --aftercast

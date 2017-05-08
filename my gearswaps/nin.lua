@@ -58,7 +58,7 @@ function get_sets()
 
 --ninjutsu precast sets
 	sets.precast.nin={hands="Thaumas Gloves", neck="Magoraga Beads", left_ear="Loquac. Earring", 
-	right_ring="Prolix Ring", }	
+	right_ring="Kishar Ring", }	
 --ninjutsu precast sets
 
 --ws sets
@@ -126,7 +126,7 @@ function get_sets()
 --ninjutsu midcast sets
 	sets.midcast.nin.utsu={main="Raimitsukane", sub="kaitsuburi", ammo="Qirmiz Tathlum", head="Skormoth Mask",
 	neck="Torero Torque", left_ear="Loquac. Earring", right_ear="Iga Mimikazari", body="Hachi. Chainmail", 
-	hands="Thaumas Gloves", left_ring="Portus Annulet", right_ring="Prolix Ring", back="Fravashi Mantle", 
+	hands="Thaumas Gloves", left_ring="Portus Annulet", right_ring="Kishar Ring", back="Fravashi Mantle", 
 	waist="Pya'ekue Belt", legs="Hachiya Hakama", feet="Iga Kyahan +2",}
 	
 	sets.midcast.nin.buff=sets.midcast.nin.utsu

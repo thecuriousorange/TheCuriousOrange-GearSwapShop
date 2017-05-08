@@ -3,6 +3,7 @@ function get_sets()
 	--include('tco-include.lua')
 	include('skillchain-elements.lua')
 	include('organizer-lib.lua')
+	include('corrolls.lua')
 	macros_setup()
 -- includes
 -- keybinds, aliases and text boxes.
@@ -171,7 +172,7 @@ windower.prim.set_visibility('SHIELD_SET',true)
 
 windower.prim.create('TCOhelp')
 windower.prim.set_texture('TCOhelp',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/help.png')
-windower.prim.set_position('TCOhelp',0.2*windower.get_windower_settings().x_res,0.1*windower.get_windower_settings().y_res)
+windower.prim.set_position('TCOhelp',0.2*windower.get_windower_settings().ui_x_res,0.1*windower.get_windower_settings().y_res)
 windower.prim.set_size('TCOhelp',640,480)
 windower.prim.set_color('TCOhelp',150,255,255,255)
 windower.prim.set_visibility('TCOhelp',false)
@@ -211,7 +212,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	sets.precast.fc= {ammo="Sapience Orb", head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','System: 2 ID: 180 Val: 2',}},  
 	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}}, body=fcbody,
 	legs="Odyssean Cuisses", feet=fcfeet, neck="Jeweled Collar", waist="Siegel Sash", right_ring="Rahab Ring",
-	right_ear="Etiolation Earring", left_ear="Loquac. Earring", left_ring="Prolix Ring", back={ name="Rudianos's Mantle", augments={'"Fast Cast"+10',}},}
+	right_ear="Etiolation Earring", left_ear="Loquac. Earring", left_ring="Kishar Ring", back={ name="Rudianos's Mantle", augments={'"Fast Cast"+10',}},}
 	
 	sets.precast.cure= set_combine(sets.precast.fc, {neck="Diemer Gorget", left_ear="Nourish. Earring +1", right_ear="Mendi. Earring", body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},})
 	
@@ -229,6 +230,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	sets.precast.ja["Invincible"]= set_combine(sets.precast.ja, {legs="Cab. Breeches +1"})
 	sets.precast.ja["Holy Circle"]= set_combine(sets.precast.ja, {feet="Rev. Leggings +2"})
 	sets.precast.ja["Divine Emblem"]= set_combine(sets.precast.ja, {feet="Chev. Sabatons +1"})
+	sets.precast.ja["Cover"]=set_combine(sets.precast.ja,{head="Rev. Coronet +2",body="Cab. Surcoat +1",})
 	
 	sets.precast.ja.cwaltz={ammo="Iron Gobbet", head={ name="Cab. Coronet +1", augments={'Enhances "Iron Will" effect',}},
 	body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}}, hands="Chev. Gauntlets +1", legs={ name="Cab. Breeches +1", augments={'Enhances "Invincible" effect',}},
@@ -254,7 +256,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.precast.ws.Resolution= set_combine(sets.precast.ws.CdC, {left_ring="Ifrit Ring +1"})
 	
-	sets.precast.ws.magicws={ammo="Pemphredo Tathlum", head={ name="Jumalik Helm", augments={'MND+9','"Mag.Atk.Bns."+13','Magic burst mdg.+9%',}},
+	sets.precast.ws.magicws={ammo="Pemphredo Tathlum", head={ name="Jumalik Helm", augments={'MND+9','"Mag.Atk.Bns."+13','Magic burst dmg.+9%',}},
 	body={ name="Carm. Scale Mail", augments={'Accuracy+10','DEX+10','MND+15',}}, left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
 	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}}, right_ear="Friomisi Earring", back="Toro Cape",
 	legs={ name="Founder's Hose", augments={'MND+10','Mag. Acc.+15','Attack+15','Breath dmg. taken -5%',}}, waist="Fotia Belt", left_ring="Acumen Ring",
@@ -310,8 +312,8 @@ windower.prim.set_visibility('TCOhelp',false)
 	sets.ws.acc["Swift Blade"]=set_combine(sets.ws.dmg["Swift Blade"], {legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Savage Blade"]={ammo="Ginsen", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, neck="Fotia Gorget", left_ear="Zwazo Earring", right_ear="Brutal Earring",
-	body={ name="Lustratio Harness", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, waist="Fotia Belt", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring",
-    hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1", feet="Lustratio Leggings", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	body="Dagon Breastplate", waist="Fotia Belt", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring",
+    hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2", feet="Lustratio Leggings", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Savage Blade"]=set_combine(sets.ws.dmg["Savage Blade"], {legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, right_ear="Cessance Earring", right_ring="Mars's Ring",})
 	
@@ -319,7 +321,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.ws.acc["Sanguine Blade"]=set_combine(sets.precast.ws.magicws, {left_ring="Archon Ring",})
 	
-	sets.ws.dmg["Chant du Cygne"]={ammo="Jukukik Feather", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, body="Valorous Mail", feet="Thereoid Greaves",
+	sets.ws.dmg["Chant du Cygne"]={ammo="Jukukik Feather", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}}, body="Dagon Breastplate", feet="Thereoid Greaves",
 	hands="Lustratio Mittens", legs={ name="Lustratio Subligar", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
 	neck="Fotia Gorget", waist="Chiner's Belt +1", left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ramuh Ring +1", right_ring="Hetairoi Ring", back="Bleating Mantle",}
 	
@@ -349,7 +351,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.ws.dmg["Brainshaker"]={ammo="Ginsen", head="Lustratio Cap", body="Phorcys Korazin", neck="Asperity Necklace", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Brainshaker"]=set_combine(sets.ws.dmg["Brainshaker"], {head="Gavialis Helm", neck="Combatant's Torque", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
@@ -363,13 +365,13 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.ws.dmg["Skullbreaker"]={ammo="Ginsen", head="Lustratio Cap", body="Phorcys Korazin", neck="Fotia Gorget", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Skullbreaker"]=set_combine(sets.ws.dmg["Skullbreaker"], {head="Gavialis Helm", body="Valorous Mail", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["True Strike"]={ammo="Ginsen", head="Lustratio Cap", body="Phorcys Korazin", neck="Fotia Gorget", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["True Strike"]=set_combine(sets.ws.dmg["True Strike"], {head="Gavialis Helm", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
@@ -393,13 +395,13 @@ windower.prim.set_visibility('TCOhelp',false)
 	--Great Sword WS
 	sets.ws.dmg["Hard Slash"]={ammo="Ginsen", head="Lustratio Cap", body="Valorous Mail", neck="Asperity Necklace", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Hard Slash"]=set_combine(sets.ws.dmg["Hard Slash"], {head="Valorous Mask", neck="Combatant's Torque", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Power Slash"]={ammo="Ginsen", head="Lustratio Cap", body="Valorous Mail", neck="Fotia Gorget", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Power Slash"]=set_combine(sets.ws.dmg["Power Slash"], {head="Valorous Mask", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
@@ -413,31 +415,31 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.ws.dmg["Shockwave"]={ammo="Ginsen", head="Lustratio Cap", body="Valorous Mail", neck="Asperity Necklace", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Shockwave"]=set_combine(sets.ws.dmg["Shockwave"], {head="Valorous Mask", neck="Combatant's Torque", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Crescent Moon"]={ammo="Ginsen", head="Lustratio Cap", body="Valorous Mail", neck="Asperity Necklace", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Crescent Moon"]=set_combine(sets.ws.dmg["Crescent Moon"], {head="Valorous Mask", neck="Combatant's Torque", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Sickle Moon"]={ammo="Ginsen", head="Lustratio Cap", body="Valorous Mail", neck="Asperity Necklace", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Sickle Moon"]=set_combine(sets.ws.dmg["Sickle Moon"], {head="Valorous Mask", neck="Combatant's Torque", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Spinning Slash"]={ammo="Ginsen", head="Lustratio Cap", body="Valorous Mail", neck="Fotia Gorget", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Spinning Slash"]=set_combine(sets.ws.dmg["Spinning Slash"], {head="Valorous Mask", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Ground Strike"]={ammo="Ginsen", head="Lustratio Cap", body="Valorous Mail", neck="Fotia Gorget", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Ground Strike"]=set_combine(sets.ws.dmg["Ground Strike"], {head="Valorous Mask", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
@@ -447,13 +449,13 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.ws.dmg["Torcleaver"]={ammo="Ginsen", head="Lustratio Cap", body="Valorous Mail", neck="Fotia Gorget", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Terrasoul Ring", right_ring="Terrasoul Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Terrasoul Ring", right_ring="Terrasoul Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Torcleaver"]=set_combine(sets.ws.dmg["Torcleaver"], {head="Valorous Mask", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	
 	sets.ws.dmg["Resolution"]={ammo="Ginsen", head="Lustratio Cap", body="Valorous Mail", neck="Fotia Gorget", waist="Fotia Belt",
 	hands="Chev. Gauntlets +1", legs="Scuff. Cosciales", feet=dafeet,
-	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','STR+10',}},}
 	
 	sets.ws.acc["Resolution"]=set_combine(sets.ws.dmg["Resolution"], {head="Valorous Mask", legs=dalegs, back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Mars's Ring",})
 	--Great Sword WS]]--
@@ -481,7 +483,7 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.midcast.utsu= set_combine(sets.midcast.flash, {back={ name="Rudianos's Mantle", augments={'"Fast Cast"+10',}}, feet="Rev. Leggings +2",})
 	
-	sets.midcast.enlight= {ammo="Sapience Orb", head={ name="Jumalik Helm", augments={'MND+9','"Mag.Atk.Bns."+13','Magic burst mdg.+9%',}}, 
+	sets.midcast.enlight= {ammo="Sapience Orb", head={ name="Jumalik Helm", augments={'MND+9','"Mag.Atk.Bns."+13','Magic burst dmg.+9%',}}, 
 	body="Rev. Surcoat +2", hands="Eschite Gauntlets", legs="Kaiser Diechlings", feet="Templar Sabatons", neck="Incanter's Torque", waist="Asklepian Belt", 
 	left_ear="Beatific Earring", right_ear="Divine Earring", left_ring="Stikini Ring", right_ring="Stikini Ring", back="Altruistic Cape",}
 	
@@ -509,19 +511,19 @@ windower.prim.set_visibility('TCOhelp',false)
 	
 	sets.aftercast.aftermath.highacc=set_combine(sets.aftercast.aftermath.medacc, {right_ear="Zennaroi Earring", waist="Olseni Belt", back="Letalis Mantle"})
 	
-	sets.aftercast.sword.lowacc= {ammo="Ginsen", head=stphead, body=dabody, legs=dalegs, hands=dahands, waist="Windbuffet Belt +1", feet=dafeet, neck="Asperity Necklace", 
+	sets.aftercast.sword.lowacc= {ammo="Ginsen", head=stphead, body="Dagon Breastplate", legs=dalegs, hands=dahands, waist="Windbuffet Belt +1", feet=dafeet, neck="Asperity Necklace", 
 	left_ring="Petrov Ring", left_ear="Cessance Earring", right_ear="Brutal Earring", right_ring="Rajas Ring", back="Bleating Mantle",}
 	
 	sets.aftercast.sword.medacc= {ammo="Ginsen", head=stphead, 
-	legs=dalegs, body=dabody, hands=dahands, feet=dafeet, neck="Combatant's Torque", waist="Windbuffet Belt +1", 
+	legs=dalegs, body="Dagon Breastplate", hands=dahands, feet=dafeet, neck="Combatant's Torque", waist="Windbuffet Belt +1", 
 	left_ear="Steelflash Earring", right_ear="Bladeborn Earring", left_ring="Ramuh Ring +1", right_ring="Rajas Ring", back="Bleating Mantle",}
 		
 	sets.aftercast.sword.highacc= {ammo="Ginsen", head=stphead, 
-	body="Valorous Mail", hands=dahands, legs=dalegs, right_ear="Zennaroi Earring", feet=dafeet, neck="Combatant's Torque",
+	body="Dagon Breastplate", hands=dahands, legs=dalegs, right_ear="Zennaroi Earring", feet=dafeet, neck="Combatant's Torque",
 	waist="Olseni Belt", left_ear="Cessance Earring", left_ring="Ramuh Ring +1", right_ring="Mars's Ring", back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},}
 	
-	sets.maxacc={ammo="Amar Cluster", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1", legs="Sulevi. Cuisses +1", feet="Sulev. Leggings +1",
-	neck="Combatant's Torque", waist="Tempus Fugit", left_ear="Mache Earring", right_ear="Telos Earring", left_ring="Ramuh Ring +1", right_ring="Mars's Ring", back="Ground. Mantle +1",}
+	sets.maxacc={ammo="Hasty Pinion +1", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1",
+	neck="Combatant's Torque", waist="Tempus Fugit", left_ear="Mache Earring", right_ear="Telos Earring", left_ring="Ramuh Ring +1", right_ring="Mars's Ring", back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},}
 	
 	sets.composers={hands="Composer's Mitts",}
 	
@@ -606,7 +608,7 @@ windower.prim.set_visibility('TCOhelp',false)
     left_ear="Ethereal Earring", right_ear="Infused Earring", left_ring="Paguroidea Ring", right_ring="Sheltered Ring",
     back="Shadow Mantle",}
 	
-	sets.aftercast.refresh= set_combine(sets.aftercast.idle, {head="Wivre Hairpin", waist="Fucho-No-Obi",})
+	sets.aftercast.refresh= set_combine(sets.aftercast.idle, {head="Wivre Hairpin", waist="Fucho-No-Obi",feet={ name="Odyssean Greaves", augments={'Pet: STR+5','STR+4','"Refresh"+1',}},})
 	
 	sets.aftercast.pdtkite= set_combine(sets.aftercast.pdt, {back={ name="Weard Mantle", augments={'VIT+3','DEX+1','Enmity+4','Phalanx +5',}},  legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},})
 	

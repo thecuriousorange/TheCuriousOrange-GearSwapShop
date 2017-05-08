@@ -109,7 +109,7 @@ function get_sets()
 	sets.precast.fc={head="Carmine Mask", body="Luhlaza Jubbah +1", hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}}, 
 	legs="Psycloth Lappas", feet="Carmine Greaves", 
 	neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}}, 
-	waist="Siegel Sash", left_ear="Loquac. Earring", right_ear="Etiolation Earring", left_ring="Prolix Ring",
+	waist="Siegel Sash", left_ear="Loquac. Earring", right_ear="Etiolation Earring", left_ring="Kishar Ring",
 	right_ring="Rahab Ring", back="Swith Cape",}
 	
 	sets.precast.blu= set_combine(sets.precast.fc, {body="Hashishin Mintan +1",})
@@ -120,7 +120,7 @@ function get_sets()
 	--sword weaponskill sets
 	sets.ws.damage["Fast Blade"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Fast Blade"]={ammo="Falcon Eye", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Asperity Necklace",
@@ -180,7 +180,7 @@ function get_sets()
 	
 	sets.ws.damage["Circle Blade"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Asperity Necklace",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Circle Blade"]={ammo="Falcon Eye", head="Despair Helm", neck="Asperity Necklace",
@@ -204,15 +204,15 @@ function get_sets()
 	
 	sets.ws.damage["Savage Blade"]={ammo="Cheruski Needle", head="Despair Helm", neck="Fotia Gorget", ear1="Brutal Earring",
 	ear2="Moonshade earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.", ring1="Epona's ring", ring2="Rufescent Ring",
-	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Samnuha Tights", feet="Despair Greaves"}
+	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Savage Blade"]={ammo="Falcon Eye", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Fotia Gorget", ear1="Bladeborn Earring",
 	ear2="Steelflash earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.", ring1="Mars's ring", ring2="Rufescent Ring",
-	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Samnuha Tights", feet="Despair Greaves"}
+	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.damage["Expiation"]={ammo="Cheruski needle", head="Uk'uxkaj cap", neck="Fotia Gorget",
 	ear1="Moonshade earring", ear2="Brutal Earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.",
-	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",
+	ring1="Epona's ring", ring2="Rajas ring", back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",
 	legs="Samnuha Tights", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Expiation"]={ammo="Falcon Eye", head="Uk'uxkaj cap", neck="Fotia Gorget",
@@ -242,11 +242,11 @@ function get_sets()
 	
 	sets.ws.damage["Requiescat"]={ammo="Cheruski Needle", head="Despair Helm", neck="Fotia Gorget", ear1="Brutal Earring",
 	ear2="Moonshade earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.", ring1="Epona's ring", ring2="Rufescent Ring",
-	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Carmine Cuisses", feet="Despair Greaves"}
+	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Carmine Cuisses", feet="Despair Greaves"}
 	
 	sets.ws.accuracy["Requiescat"]={ammo="Falcon Eye", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Fotia Gorget", ear1="Bladeborn Earring",
 	ear2="Steelflash earring", body="Adhemar Jacket", hands="Despair Fin. Gaunt.", ring1="Mars's ring", ring2="Rufescent Ring",
-	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Carmine Cuisses", feet="Despair Greaves"}
+	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}, waist="Fotia Belt",legs="Carmine Cuisses", feet="Despair Greaves"}
 	
 	--sword weaponskill sets
 	
@@ -349,7 +349,7 @@ function get_sets()
 							
 	sets.BlueMagic.Stun = {ammo="Mavi Tathlum",
 			       head="Assim. Keffiyeh +1",neck="Sanctity Necklace",ear1="Loquac. Earring",
-			       body="Assim. Jubbah +1",hands="Hashi. Bazu. +1",ring1="Prolix ring",ring2="Sangoma ring",
+			       body="Assim. Jubbah +1",hands="Hashi. Bazu. +1",ring1="Kishar Ring",ring2="Sangoma ring",
 			       back="Cornflower cape",waist="Hurch'lan Sash",legs="Hashishin Tayt +1",feet=heliosboots,}
 						   
 	sets.BlueMagic.HeavyStrike = {ammo="Falcon Eye",
@@ -374,12 +374,12 @@ function get_sets()
 									 
 	sets.BlueMagic.Skill = {ammo="Mavi Tathlum",
 				head="Luh. Keffiyeh +1",neck="Jeweled collar",ear1="Loquac. Earring",
-				body="Assim. Jubbah +1",hands="Hashi. Bazu. +1",ring1="Prolix ring",
+				body="Assim. Jubbah +1",hands="Hashi. Bazu. +1",ring1="Kishar Ring",
 				back="Cornflower cape",waist="Hurch'lan Sash",legs="Hashishin Tayt +1",feet="Luhlaza Charuqs +1"}
 							
 	sets.BlueMagic.SkillRecast = {ammo="Mavi Tathlum",
 				      head="Luh. Keffiyeh +1",neck="Jeweled collar",ear1="Loquac. Earring",
-				      body="Assim. Jubbah +1",hands="Hashi. Bazu. +1",ring1="Prolix ring",
+				      body="Assim. Jubbah +1",hands="Hashi. Bazu. +1",ring1="Kishar Ring",
 				      back="Swith cape",waist="Hurch'lan Sash",legs="Hashishin Tayt +1",feet="Luhlaza Charuqs +1"}
 	--Blue Magic Sets
 --midcast sets

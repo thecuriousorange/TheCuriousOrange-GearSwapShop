@@ -30,7 +30,7 @@ function get_sets()
 	sets.precast.fc={head="Nahtirah Hat", body="Inyanga Jubbah +1", legs="Aya. Cosciales +1", feet="Chelona Boots",
 	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
 	neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}}, waist="Siegel Sash",
-	left_ear="Loquac. Earring", right_ear="Etiolation Earring", left_ring="Prolix Ring", right_ring="Rahab Ring",
+	left_ear="Loquac. Earring", right_ear="Etiolation Earring", left_ring="Kishar Ring", right_ring="Rahab Ring",
 	back="Swith Cape",}
 	
 	sets.precast.bardsong= set_combine(sets.precast.fc, {head="Aoidos' Calot +2", neck="Aoidos' Matinee", waist="Aoidos' Belt", legs="Querkening Brais", feet="Telchine Pigaches",})
