@@ -10,10 +10,10 @@ function get_sets()
 	windower.prim.create('IDLE_SET')
 	windower.prim.create('WS_SET')
 
-	windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/ddmode.png')
-	windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/lowacc.png')
-	windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/standardidle.png')
-	windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmg.png')
+	windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/ddmode.png')
+	windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/images/lowacc.png')
+	windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/standardidle.png')
+	windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/images/dmg.png')
 
 	windower.prim.set_size('TP_SET',200,30)
 	windower.prim.set_size('ACC_SET',200,30)
@@ -57,7 +57,7 @@ function get_sets()
 	send_command('bind @f11 gs c highacc')
 	send_command('bind @f12 gs c wsacctoggle')
 	
-	send_command('alias tp gs equip sets.aftercast.tp.highacc')
+	send_command('alias tp gs equip sets.aftercast.tp.lowacc')
 	send_command('alias hybrid gs equip sets.hybrid.highacc')
 	send_command('alias idle gs equip sets.idle.standard')
 
@@ -85,10 +85,12 @@ function get_sets()
 -- variables
 	IdleMode="standard"
 	TPSet="dd"
-	WSMode="damage"
+	WSMode="dmg"
 	Acc="lowacc"
 	oneiros="off"
+	call="on"
 	
+	sets.call=T{}
 	sets.Acc=T{}
 	sets.WSMode=T{}
 	sets.TPSet=T{}
@@ -112,13 +114,13 @@ function get_sets()
 -- ja sets
 	sets.precast.ja["Meikyo Shisui"]={feet="Sak. Sune-Ate +1",}
 	
-	sets.precast.ja["Warding Circle"]={head="Wakido Kabuto +1",}
+	sets.precast.ja["Warding Circle"]={head="Wakido Kabuto +2",}
 	
 	sets.precast.ja["Third Eye"]={}
 	
 	sets.precast.ja["Hasso"]={}
 	
-	sets.precast.ja["Meditate"]={head="Wakido Kabuto +1", hands="Sakonji Kote +1", back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
+	sets.precast.ja["Meditate"]={head="Wakido Kabuto +2", hands="Sakonji Kote +1", back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
 	
 	sets.precast.ja["Seigan"]={}
 	
@@ -140,21 +142,23 @@ function get_sets()
 -- ja sets
 
 -- ws sets
-	sets.strws={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range="Cibitshavore", ammo="Tulfaire Arrow", head="Rao Kabuto",
-    body={ name="Despair Mail", augments={'STR+12','VIT+7','Haste+2%',}}, hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','Haste+2%',}}, neck="Fotia Gorget", 
-	legs="Hiza. Hizayoroi +1", feet={ name="Despair Greaves", augments={'STR+12','VIT+7','Haste+2%',}}, waist="Fotia Belt",
-	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Brutal Earring", left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},}
+	sets.strws={main="Dojikiri Yasutsuna", sub="Utu Grip", ammo="Knobkierrie", head={ name="Valorous Mask", augments={'Attack+25','Weapon skill damage +4%','Accuracy+12',}},
+    body="Dagon Breast.", hands={ name="Valorous Mitts", augments={'Accuracy+10','Weapon skill damage +2%','STR+13','Attack+6',}}, neck="Fotia Gorget", 
+	legs="Hiza. Hizayoroi +2", feet={ name="Valorous Greaves", augments={'Accuracy+18','Weapon skill damage +3%','STR+7','Attack+12',}}, waist="Fotia Belt",
+	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Ishvara Earring", left_ring="Niqmaddu Ring", right_ring="Regal Ring", back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},}
 	
 	sets.accws=set_combine(sets.strws,{back=Takaha,})
 	
-	sets.raws={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range="Cibitshavore", ammo="Tulfaire Arrow", head="Sakonji Kabuto +1",
+	sets.msfeet={feet="Sak. Sune-Ate +1",}
+	
+	sets.raws={main="Dojikiri Yasutsuna", sub="Utu Grip", ammo="Knobkierrie", head="Sakonji Kabuto +1",
 	body="Kyujutsugi", hands="Kasuga Kote +1", legs="Miki. Cuisses", feet="Sak. Sune-Ate +1",
 	neck="Fotia Gorget", waist="Fotia Belt", left_ear="Moonshade Earring", right_ear="Drone Earring", 
 	left_ring="Stormsoul Ring", right_ring="Bellona's Ring", back="Terebellum Mantle",}
 	
-	sets.magicws={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
-	head={ name="Founder's Corona", augments={'DEX+6','Accuracy+10','Magic dmg. taken -3%',}}, body={ name="Found. Breastplate", augments={'Accuracy+7','Mag. Acc.+5','Attack+7',}},
-    hands={ name="Founder's Gauntlets", augments={'STR+8','Attack+15','"Mag.Atk.Bns."+13','Phys. dmg. taken -3%',}}, legs={ name="Founder's Hose", augments={'MND+5','Mag. Acc.+13',}},
+	sets.magicws={main="Dojikiri Yasutsuna", sub="Utu Grip", ammo="Knobkierrie",
+	head={ name="Founder's Corona", augments={'DEX+7','Accuracy+11','Magic dmg. taken -3%',}}, body={ name="Found. Breastplate", augments={'Accuracy+7','Mag. Acc.+5','Attack+7',}},
+    hands={ name="Founder's Gauntlets", augments={'STR+8','Attack+15','"Mag.Atk.Bns."+13','Phys. dmg. taken -3%',}}, legs={ name="Founder's Hose", augments={'MND+10','Mag. Acc.+15','Attack+15','Breath dmg. taken -5%',}},
 	feet={ name="Founder's Greaves", augments={'VIT+9','Accuracy+14','"Mag.Atk.Bns."+13','Mag. Evasion+15',}}, neck="Fotia Gorget", waist="Fotia Belt", left_ear="Crematio Earring",
 	right_ear="Hecate's Earring", left_ring="Sangoma Ring", right_ring="Vertigo Ring", back="Toro Cape",}
 	
@@ -251,26 +255,22 @@ function get_sets()
 	sets.precast.nin=set_combine(sets.dt,{neck="Jeweled Collar", left_ear="Loquac. Earring", right_ear="Etiolation Earring", 
 	body="Nuevo Coselete", left_ring="Prolix Ring", hands="Leyline Gloves", feet="Ejekamal Boots",})
 	
-	sets.midcast.nin={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head="Loess Barbuta +1",
-	body="Mekira Meikogai", hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs="Osmium Cuisses", right_ear="Sanare Earring",
+	sets.midcast.nin={main="Dojikiri Yasutsuna", sub="Utu Grip", ammo="Ginsen", head="Loess Barbuta +1",
+	body="Tartarus Platemail", hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs={ name="Valor. Hose", augments={'Mag. Acc.+9','Damage taken-3%','DEX+1','Attack+3',}}, right_ear="Sanare Earring",
 	feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt", left_ear="Etiolation Earring",
-	left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
+	left_ring="Vocane Ring", right_ring="Defending Ring", back="Moonbeam Cape",}
 -- sub nin stuff
 
 -- tp sets
-	sets.aftercast.tp.lowacc={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
-	head=stphead, body="Kasuga Domaru +1", legs="Kasuga Haidate +1", hands=stphands, feet="ryuo Sune-Ate",
-    neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Brutal Earring", right_ear="Telos Earring", left_ring="Petrov Ring", right_ring="Hetairoi Ring",
-    back={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}},}
+	sets.aftercast.tp.lowacc={main="Dojikiri Yasutsuna", sub="Utu Grip", ammo="Ginsen", head="Flam. Zucchetto +2", body="Dagon Breast.", hands="Wakido Kote +2",
+    legs={ name="Ryuo Hakama", augments={'Accuracy+20','"Store TP"+4','Phys. dmg. taken -3',}}, feet="Flam. Gambieras +2", neck="Moonbeam Nodowa", waist="Sailfi Belt +1", left_ear="Mache Earring", right_ear="Telos Earring",
+	left_ring="Niqmaddu Ring", right_ring="Rajas Ring", back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
 	
 	--body="Kasuga Domaru +1",
 	
-	sets.aftercast.tp.medacc=set_combine(sets.aftercast.tp.lowacc,{head=stphead, left_ring="Apate Ring",})
+	sets.aftercast.tp.medacc=set_combine(sets.aftercast.tp.lowacc,{waist="Ioskeha Belt", right_ring="Regal Ring"})
 
-	sets.aftercast.tp.highacc={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, left_ring="Ramuh Ring +1",
-	head={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3','DEX+8',}}, body="Rao Togi", hands={ name="Ryuo Tekko", augments={'DEX+10','Accuracy+20','"Dbl.Atk."+3',}}, 
-	feet={ name="Rao Sune-Ate", augments={'STR+10','DEX+10','Attack+15',}}, neck="Combatant's Torque", waist="Kentarch Belt +1", left_ear="Zennaroi Earring", right_ear="Telos Earring",
-    legs="Kasuga Haidate +1",right_ring="Cacoethic Ring +1", back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
+	sets.aftercast.tp.highacc=set_combine(sets.aftercast.tp.medacc,{})
 
 	sets.aftercast.o.lowacc=set_combine(sets.aftercast.tp.lowacc,{left_ring="Oneiros Ring",})
 
@@ -280,33 +280,27 @@ function get_sets()
 -- tp sets
 
 -- defensive sets
-	sets.hybrid.lowacc=set_combine(sets.aftercast.tp.lowacc, {neck="Loricate Torque +1", back="Mollusca Mantle", left_ring="Vocane Ring", right_ring="Defending Ring",})
+	sets.hybrid.lowacc=set_combine(sets.aftercast.tp.lowacc, {neck="Loricate Torque +1", body="Tartarus Platemail", left_ring="Vocane Ring", right_ring="Defending Ring",})
 	
-	sets.hybrid.medacc=set_combine(sets.hybrid.lowacc, {neck="Combatant's Torque", back=Takaha, waist="Olseni Belt"})
+	sets.hybrid.medacc=set_combine(sets.hybrid.lowacc, {neck="Combatant's Torque",})
 	
-	sets.hybrid.highacc={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
-	head={ name="Founder's Corona", augments={'DEX+6','Accuracy+10','Magic dmg. taken -3%',}}, neck="Combatant's Torque", waist="Dynamic Belt +1",
-    body={ name="Found. Breastplate", augments={'Accuracy+7','Mag. Acc.+5','Attack+7',}}, left_ear="Zennaroi Earring", right_ear="Cessance Earring",
-    hands={ name="Founder's Gauntlets", augments={'STR+8','Attack+15','"Mag.Atk.Bns."+13','Phys. dmg. taken -3%',}}, left_ring="Vocane Ring",
-    legs={ name="Founder's Hose", augments={'MND+5','Mag. Acc.+13',}}, right_ring="Defending Ring", back=Takaha,
-	feet={ name="Founder's Greaves", augments={'VIT+9','Accuracy+14','"Mag.Atk.Bns."+13','Mag. Evasion+15',}},}
+	sets.hybrid.highacc=set_combine(sets.hybrid.medacc, {neck="Moonbeam Nodowa",})
 	
-	sets.pdt={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, left_ear="Genmei Earring", left_ring="Vocane Ring",
-	head="Genmei Kabuto", body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}}, right_ear="Telos Earring",
-	hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs={ name="Valor. Hose", augments={'Accuracy+20 Attack+20','Crit.hit rate+4','DEX+6','Accuracy+11',}},
+	sets.pdt={main="Dojikiri Yasutsuna", sub="Utu Grip", ammo="Staunch Tathlum", left_ear="Genmei Earring", left_ring="Vocane Ring",
+	head="Genmei Kabuto", body="Tartarus Platemail", right_ear="Telos Earring",
+	hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs="Ryuo Hakama",
     feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt", right_ring="Defending Ring",
 	back="Agema Cape",}
 	
-	sets.mdt={main="Dojikiri Yasutsuna",
-    sub="Bloodrain Strap",
-    range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head={ name="Founder's Corona", augments={'DEX+7','Accuracy+11','Magic dmg. taken -3%',}},
-	body="Kyujutsugi", hands="Kurys Gloves", legs="Osmium Cuisses", feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, waist="Flume Belt",
+	sets.mdt={main="Dojikiri Yasutsuna", sub="Utu Grip", ammo="Staunch Tathlum", 
+	head={ name="Founder's Corona", augments={'DEX+7','Accuracy+11','Magic dmg. taken -3%',}},
+	body="Tartarus Platemail", hands="Kurys Gloves", legs={ name="Valor. Hose", augments={'Mag. Acc.+9','Damage taken-3%','DEX+1','Attack+3',}}, feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, waist="Flume Belt",
 	neck="Loricate Torque +1", left_ear="Etiolation Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", right_ring="Defending Ring", back="Engulfer Cape +1",}
 	
-	sets.dt={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}}, head="Loess Barbuta +1",
-	body="Mekira Meikogai", hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}, legs="Osmium Cuisses", right_ear="Sanare Earring",
+	sets.dt={main="Dojikiri Yasutsuna", sub="Utu Grip", ammo="Staunch Tathlum", head="Loess Barbuta +1",
+	body="Tartarus Platemail", hands="Kurys Gloves", legs={ name="Valor. Hose", augments={'Mag. Acc.+9','Damage taken-3%','DEX+1','Attack+3',}}, right_ear="Sanare Earring",
 	feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt", left_ear="Etiolation Earring",
-	left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
+	left_ring="Vocane Ring", right_ring="Defending Ring", back="Moonbeam Cape",}
 -- defensive sets
 
 -- other idle sets
@@ -322,15 +316,14 @@ function get_sets()
 	
 	sets.idle.dtkite=set_combine(sets.idle.dt,{back="Shadow Mantle", feet="Danzo Sune-Ate",})
 	
-	sets.idle.standard={main="Dojikiri Yasutsuna", sub="Bloodrain Strap", range={ name="Cibitshavore", augments={'STR+12','Rng.Acc.+10','"Store TP"+7',}},
-	head="Rao Kabuto", body="Hiza. Haramaki +1", hands="Rao Kote",--[[hands={ name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}},]] legs="Osmium Cuisses",
-	feet="Danzo Sune-Ate", neck="Sanctity Necklace", waist="Flume Belt", left_ear="Infused Earring", right_ear="Sanare Earring", left_ring="Paguroidea Ring",
-	right_ring="Sheltered Ring", back="Shadow Mantle",}
+	sets.idle.standard={main="Dojikiri Yasutsuna", sub="Utu Grip", ammo="Ginsen", head={ name="Rao Kabuto", augments={'STR+10','DEX+10','Attack+15',}}, right_ring="Sheltered Ring",
+	body="Hiza. Haramaki +2", hands={ name="Rao Kote", augments={'STR+10','DEX+10','Attack+15',}}, legs={ name="Rao Haidate", augments={'STR+10','DEX+10','Attack+15',}},
+	feet="Danzo Sune-Ate", neck="Sanctity Necklace", waist="Flume Belt", left_ear="Infused Earring", right_ear="Sanare Earring", left_ring="Paguroidea Ring", back="Shadow Mantle",}
 -- other idle sets
 
 -- seigan/thirdeye sets
-	sets.seigan={head="Kasuga Kabuto", legs=stplegs,}
-	sets.seiganthirdeye={head="Kasuga Kabuto", legs="Sakonji Haidate +1",}
+	sets.seigan={head="Kasuga Kabuto +1", legs=stplegs,}
+	sets.seiganthirdeye={head="Kasuga Kabuto +1", legs="Sakonji Haidate +1",}
 -- seigan/thirdeye sets
 end
 
@@ -355,10 +348,16 @@ function precast(spell)
 	if spell.type=='JobAbility' then
 		equip(sets.precast.ja[spell.english])
 	elseif spell.type=='WeaponSkill' then
-		if WSMode=="damage" then
+		if WSMode=="dmg" then
 			equip(sets.ws.dmg[spell.english])
 		elseif WSMode=="acc" then
 			equip(sets.ws.acc[spell.english])
+		end
+		if call=="on" then
+			send_command('input /p WS:'..spell.english..'<<<<just used it')
+		end
+		if buffactive["Meikyo Shisui"] then
+			equip(sets.msfeet)
 		end
 	end
 	if spell.prefix=='/ranged' then
@@ -399,11 +398,11 @@ end
 function status_change(new,old)
 	if new=="Engaged" then
 		if TPSet=="dd" then
-			if player.mp<99 and oneiros==on then
+			--if player.mp<99 and oneiros=="on" then
 				equip(sets.aftercast.tp[Acc])
-			else
-				equip(sets.aftercast.o[Acc])
-			end
+			--else
+				--equip(sets.aftercast.o[Acc])
+			--end
 			if buffactive["Seigan"] then
 				equip(sets.seigan)
 			end
@@ -422,6 +421,7 @@ function status_change(new,old)
 	else
 		equip(sets.idle[IdleMode])
 	end
+	send_command("gs c primfix")
 end
 
 function self_command(command)
@@ -430,7 +430,7 @@ function self_command(command)
 		Acc="lowacc"
 		add_to_chat(206, 'Low Accuracy Mode')
 		send_command('alias tp gs equip sets.aftercast.tp.lowacc')
-		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/lowacc.png')
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/images/lowacc.png')
 		windower.prim.set_size('ACC_SET',200,30)
 		if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.hybrid.lowacc')
@@ -439,7 +439,7 @@ function self_command(command)
 		Acc="medacc"
 		add_to_chat(206, 'Medium Accuracy Mode')		
 		send_command('alias tp gs equip sets.aftercast.tp.medacc')
-		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/medacc.png')
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/images/medacc.png')
 		windower.prim.set_size('ACC_SET',200,30)
 		if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.hybrid.medacc')
@@ -448,7 +448,7 @@ function self_command(command)
 		Acc="highacc"
 		add_to_chat(206, 'High Accuracy Mode')
 		send_command('alias tp gs equip sets.aftercast.tp.highacc')
-		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/highacc.png')
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/images/highacc.png')
 		windower.prim.set_size('ACC_SET',200,30)
 		if TPSet=="hybrid" then
 			send_command('alias hybrid gs equip sets.hybrid.highacc')
@@ -460,8 +460,8 @@ function self_command(command)
 	if command == 'dd' then
 		TPSet="dd"
 		add_to_chat(206, 'DD Mode')
-		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/ddmode.png')
-		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/ddmode.wav')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/ddmode.png')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/ddmode.wav')
 		windower.prim.set_size('TP_SET',200,30)
 		if Acc=="lowacc" then
 			send_command('alias tp gs equip sets.aftercast.tp.lowacc')
@@ -482,29 +482,29 @@ function self_command(command)
 			elseif Acc=="highacc" then
 				send_command('alias hybrid gs equip sets.hybrid.highacc')
 			end
-			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/hybridmode.png')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/hybridmode.png')
 			windower.prim.set_size('TP_SET',200,30)
 		end
 	end
 	if command == 'pdt' then
 		TPSet="pdt"
 		add_to_chat(206, 'PDT MODE')
-		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/pdtmode.png')
-		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/pdtmode.png')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/dtsets.wav')
 		windower.prim.set_size('TP_SET',200,30)
 	end
 	if command == 'mdt' then
 		TPSet="mdt"
 		add_to_chat(206, 'MDT MODE')
-		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mdtmode.png')
-		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/mdtmode.png')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/dtsets.wav')
 		windower.prim.set_size('TP_SET',200,30)
 	end
 	if command == 'dt' then
 		TPSet="dt"
 		add_to_chat(206, 'DT MODE')
-		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dtmode.png')
-		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/dtmode.png')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/dtsets.wav')
 		windower.prim.set_size('TP_SET',200,30)
 	end
 	-- engage variable commands rule end
@@ -514,14 +514,14 @@ function self_command(command)
 		if WSMode=="dmg" then
 			WSMode="acc"
 			add_to_chat(206, 'WSMODE: ACCURACY')
-			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/acc.png')
-			windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/acc.wav')
+			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/images/acc.png')
+			windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/acc.wav')
 			windower.prim.set_size('WS_SET',200,30)
 		else
 			WSMode="dmg"
 			add_to_chat(206, 'WSMODE: DAMAGE')
-			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmg.png')
-			windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dmg.wav')
+			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/images/dmg.png')
+			windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/dmg.wav')
 			windower.prim.set_size('WS_SET',200,30)
 		end
 	end
@@ -532,7 +532,7 @@ function self_command(command)
 		IdleMode="standard"
 		add_to_chat(206, 'STANDARD IDLE MODE')
 		send_command('alias idle gs equip sets.idle.standard')
-		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/standardidle.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/standardidle.png')
 		windower.prim.set_size('IDLE_SET',200,30)
 		status_change(player.status)
 	end
@@ -540,7 +540,7 @@ function self_command(command)
 		IdleMode="pdtkite"
 		add_to_chat(206, 'PDT KITING MODE')
 		send_command('alias idle gs equip sets.idle.pdtkite')
-		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/pdtkite.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/pdtkite.png')
 		windower.prim.set_size('IDLE_SET',200,30)
 		status_change(player.status)
 	end
@@ -548,7 +548,7 @@ function self_command(command)
 		IdleMode="mdtkite"
 		add_to_chat(206, 'MDT KITING MODE')
 		send_command('alias idle gs equip sets.idle.mdtkite')
-		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mdtkite.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/mdtkite.png')
 		windower.prim.set_size('IDLE_SET',200,30)
 		status_change(player.status)
 	end
@@ -556,33 +556,33 @@ function self_command(command)
 		IdleMode="pdt"
 		add_to_chat(206, 'PDT IDLE MODE')
 		send_command('alias idle gs equip sets.idle.pdt')
-		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/pdtidle.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/pdtidle.png')
 		windower.prim.set_size('IDLE_SET',200,30)
 		status_change(player.status)
-		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/dtsets.wav')
 	end
 	if command == 'mdtidle' then
 		IdleMode="mdt"
 		add_to_chat(206, 'MDT IDLE MODE')
 		send_command('alias idle gs equip sets.idle.mdt')
-		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mdtidle.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/mdtidle.png')
 		windower.prim.set_size('IDLE_SET',200,30)
 		status_change(player.status)
-		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/dtsets.wav')
 	end
 	if command == 'dtidle' then
 		IdleMode="dt"
 		add_to_chat(206, 'DT IDLE MODE')
 		send_command('alias idle gs equip sets.idle.dt')
-		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dtidle.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/dtidle.png')
 		status_change(player.status)
-		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/'..player.name..'/sounds/dtsets.wav')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/dtsets.wav')
 	end
 	if command == 'dtkite' then
 		IdleMode="dtidle"
 		add_to_chat(206, 'DT KITING MODE')
 		send_command('alias idle gs equip sets.idle.dtkite')
-		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dtkite.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/dtkite.png')
 		status_change(player.status)
 	end
 	-- idle variable commands rule end
@@ -603,6 +603,13 @@ function self_command(command)
 	end
 	-- reraise lock toggle command rule end
 	
+	if command=='calltoggle' then
+		if call=="on" then
+			call="off"
+		else
+			call="on"
+		end
+	end
 	if command == 'update' then
 		status_change(player.status)		
 	end

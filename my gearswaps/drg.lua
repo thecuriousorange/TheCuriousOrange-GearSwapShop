@@ -1,6 +1,6 @@
 function get_sets()
 -- includes
-	include('skillchain-elements.lua')
+	include('skillchain-elements.lua')	
 	include('organizer-lib.lua')
 -- includes
 
@@ -9,6 +9,7 @@ function get_sets()
 	send_command('alias oset gs equip sets.tp.o.lowacc')
 	send_command('alias idle gs equip sets.idle.standardidle')
 	send_command('alias pf gs c primfix')
+	send_command('alias sd input /ws "Stardiver" <t>')
 --aliasing
 
 --lists
@@ -23,6 +24,8 @@ function get_sets()
 --text boxes]]
 
 --binds
+	send_command('bind !1 sd')
+	send_command('bind @1 gs c sc1')
 	send_command('bind #2 gs equip sets.pdt')
 	send_command('bind #4 idle')
 	send_command('bind #8 gs equip sets.mdt')
@@ -44,8 +47,8 @@ function get_sets()
 	send_command('bind @f12 gs c ws_dmg_or_acc')
 	send_command('bind #g gs c jumptoggle')
 	send_command('bind @p gs c oring')
-	send_command('bind !- input /ws "Double Thrust" <t>')
-	send_command('bind != input /ws "Penta Thrust" <t>')
+	send_command('bind !- input /ws "Double Thrust" <t>;input /p <<<<<<<<<Transfiction Closing/Compression Opening>>>>>>')
+	send_command('bind != input /ws "Penta Thrust" <t>;input /p <<<<<<<<compression closing/transfiction opening>>>>>>>') 
 	send_command("alias ctgeir Camlann's Torment")
 --binds	
 
@@ -87,12 +90,12 @@ windower.prim.create('WS_SET')
 windower.prim.create('WEAPON_TYPE')
 windower.prim.create('JUMP_TYPE')
 
-windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/multi.png')
-windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/lowacc.png')
-windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/standardidle.png')
-windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmg.png')
-windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Trishula.png')
-windower.prim.set_texture('JUMP_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmgjump.png')
+windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/xhit2.png')
+windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/images/lowacc.png')
+windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/standardidle.png')
+windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/images/dmg.png')
+windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/images/Trishula.png')
+windower.prim.set_texture('JUMP_TYPE',''..windower.windower_path..'addons/gearswap/data/images/dmgjump.png')
 
 windower.prim.set_size('TP_SET',200,30)
 windower.prim.set_size('ACC_SET',200,30)
@@ -148,11 +151,12 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 --variables
 	weapon="Trishula"
 	JumpType="damage"
-	TPMode="multi"
+	TPMode="xhit2"
 	TPType="lowacc"
 	WSType="damage"
 	rrlock="rroff"
 	oring="off"
+	openorclose="off"
 	
 	sets.oring= T{}
 	sets.weapon= T{}
@@ -161,6 +165,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.WSType= T{}
 	sets.rrlock= T{}
 	sets.JumpType= T{}
+	sets.openorclose=T{}
 --variables
 
 --base names(empty sets)
@@ -192,20 +197,20 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 --rr lock set
 
 --weaponry
-	sets.weaponry.Gungnir={main="Gungnir", sub="Bloodrain Strap",}
+	sets.weaponry.Gungnir={main="Gungnir", sub="Utu Grip",}
 	--[[sets.weaponry["Habile Mazrak"]={main="Habile Mazrak", sub="Bloodrain Strap",}]]
 	--[[sets.weaponry.Annealed={main="Annealed Lance", sub="Bloodrain Strap",}]]
-	sets.weaponry.Quint={main="Quint Spear", sub="Bloodrain Strap",}
+	sets.weaponry.Quint={main="Quint Spear", sub="Utu Grip",}
 	sets.weaponry["Trishula"]={main="Trishula", sub="Utu Grip",}
 --weaponry
 	
 --JA sets
-	sets.tpgain["Jump"]={ammo="Ginsen", head=acrohead, legs=acrolegs, body="Vishap Mail +1", hands="Vishap F. G. +1", 
+	sets.tpgain["Jump"]={ammo="Ginsen", head=acrohead, legs=acrolegs, body="Vishap Mail +2", hands="Vis. Fng. Gaunt. +2", 
 	feet="Maenadic Gambieras", neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Sherida Earring", 
 	right_ear="Brutal Earring", left_ring="Petrov Ring", right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.tpgain["High Jump"]={ammo="Ginsen", head=acrohead, body="Vishap Mail +1", hands="Vishap F. G. +1", feet="Maenadic Gambieras", 
-	neck="Ganesha's Mala", legs="Vishap Brais +1", waist="Windbuffet Belt +1", left_ear="Sherida Earring", right_ear="Brutal Earring", 
+	sets.tpgain["High Jump"]={ammo="Ginsen", head=acrohead, body="Vishap Mail +2", hands="Vis. Fng. Gaunt. +2", feet="Maenadic Gambieras", 
+	neck="Ganesha's Mala", legs="Vishap Brais +2", waist="Windbuffet Belt +1", left_ear="Sherida Earring", right_ear="Brutal Earring", 
 	left_ring="Petrov Ring", right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.tpgain["Spirit Jump"]={ammo="Ginsen", head=acrohead, body=acrobody, hands=acrohands, left_ear="Sherida Earring",
@@ -216,48 +221,48 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	hands=acrohands, legs="Pelt. Cuissots +1", feet=acrofeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
 	left_ear="Tripudio Earring", right_ear="Brutal Earring", left_ring="Petrov Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.damage["Jump"]={ammo="Knobkierrie", body="Vishap Mail +1", hands="Vishap F. G. +1", feet="Vishap Greaves +1",
+	sets.damage["Jump"]={ammo="Knobkierrie", body="Vishap Mail +2", hands="Vis. Fng. Gaunt. +2", feet="Vishap Greaves +2",
     head=taeonhead, legs=taeonlegs, neck="Ganesha's Mala", waist="Windbuffet Belt +1", left_ear="Steelflash Earring",
 	right_ear="Bladeborn Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.damage["High Jump"]={ammo="Knobkierrie", head=taeonhead, body=taeonbody, hands=taeonhands, legs="Vishap Brais +1", neck="Ganesha's Mala", 
+	sets.damage["High Jump"]={ammo="Knobkierrie", head=taeonhead, body=taeonbody, hands=taeonhands, legs="Vishap Brais +2", neck="Ganesha's Mala", 
 	waist="Windbuffet Belt +1", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}, feet=taeonfeet, right_ring="Oneiros Ring", left_ear="Sherida Earring", right_ear="Brutal Earring", 
 	left_ring="Petrov Ring",}
 	
-	sets.damage["Spirit Jump"]={ammo="Ginsen", head="Sulevia's Mask +1", hands="Sulev. Gauntlets +1", legs="Pelt. Cuissots +1",
+	sets.damage["Spirit Jump"]={ammo="Ginsen", head="Sulevia's Mask +2", hands="Sulev. Gauntlets +2", legs="Pelt. Cuissots +1",
 	body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
 	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, neck="Combatant's Torque", waist="Grunfeld Rope",
 	left_ear="Cessance Earring", right_ear="Telos Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1",
 	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},}
 	
-	sets.damage["Soul Jump"]={ammo="Ginsen", head="Sulevia's Mask +1", hands="Sulev. Gauntlets +1", legs="Pelt. Cuissots +1",
+	sets.damage["Soul Jump"]={ammo="Ginsen", head="Sulevia's Mask +2", hands="Sulev. Gauntlets +2", legs="Pelt. Cuissots +1",
 	body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
 	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, neck="Combatant's Torque", waist="Grunfeld Rope",
 	left_ear="Cessance Earring", right_ear="Telos Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1",
 	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},}
 	
-	sets.ja["Ancient Circle"]={legs="Vishap Brais +1",}
+	sets.ja["Ancient Circle"]={legs="Vishap Brais +2",}
 	
-	sets.ja["Angon"]={hands="Ptero. Fin. G. +1", ammo="Angon"}
+	sets.ja["Angon"]={right_ear="Dragoon's Earring", hands="Ptero. Fin. G. +1", ammo="Angon"}
 	
 	sets.ja["Call Wyvern"]={body="Ptero. Mail +1",}
 	
-	sets.ja["Spirit Surge"]={body="Ptero. Mail +1", neck="Chanoix's Gorget", right_ear="Lancer's Earring", body="Wyvern Mail", hands="Despair Fin. Gaunt.", 
-	legs="Vishap Brais +1", feet="Ptero. Greaves +1",}
+	sets.ja["Spirit Surge"]={body="Ptero. Mail +1", neck="Chanoix's Gorget", right_ear="Lancer's Earring", body={ name="Emicho Haubert", augments={'Pet: HP+100','Pet: INT+15','Pet: "Regen"+2',}}, hands="Despair Fin. Gaunt.", 
+	legs="Vishap Brais +2", feet="Ptero. Greaves +2",}
 	
 	sets.ja["Deep Breathing"]={head="Ptero. Armet +1",}
 	
-	sets.ja["Steady Wing"]={neck="Chanoix's Gorget", right_ear="Lancer's Earring", body="Wyvern Mail", hands="Despair Fin. Gaunt.", 
-	legs="Vishap Brais +1", feet="Ptero. Greaves +1",}
+	sets.ja["Steady Wing"]={neck="Chanoix's Gorget", right_ear="Lancer's Earring", body={ name="Emicho Haubert", augments={'Pet: HP+100','Pet: INT+15','Pet: "Regen"+2',}}, hands="Despair Fin. Gaunt.", 
+	legs="Vishap Brais +2", feet="Ptero. Greaves +2",}
 	
-	sets.ja["Spirit Link"]={head="Vishap Armet +1", left_ear="Pratik Earring", hands="Pel. Vambraces +1", feet="Ptero. Greaves +1",}
+	sets.ja["Spirit Link"]={head="Vishap Armet +2", left_ear="Pratik Earring", hands="Pel. Vambraces +1", feet="Ptero. Greaves +2",}
 --JA sets
 
 --PETCMD sets
-	sets.pet["Steady Wing"]={neck="Chanoix's Gorget", right_ear="Lancer's Earring", body="Wyvern Mail", hands="Despair Fin. Gaunt.", 
-	legs="Vishap Brais +1", feet="Ptero. Greaves +1",}
+	sets.pet["Steady Wing"]={neck="Chanoix's Gorget", left_ear="Anastasi Earring", right_ear="Lancer's Earring", body={ name="Emicho Haubert", augments={'Pet: HP+100','Pet: INT+15','Pet: "Regen"+2',}}, hands="Despair Fin. Gaunt.", 
+	legs="Vishap Brais +2", feet="Ptero. Greaves +2",}
 	
-	sets.pet["Spirit Link"]={head="Vishap Armet +1", hands="Pel. Vambraces +1", back=updrafttp,}
+	sets.pet["Spirit Link"]={head="Vishap Armet +2", hands="Pel. Vambraces +1", back=updrafttp,}
 	
 	sets.pet["Restoring Breath"]={head={ name="Ptero. Armet +1", augments={'Enhances "Deep Breathing" effect',}},
     body={ name="Acro Surcoat", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: Breath+6','Pet: Damage taken -3%',}},
@@ -272,50 +277,59 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     hands={ name="Acro Gauntlets", augments={'Pet: Mag. Acc.+22','Pet: Breath+7','CHR+8',}},
     legs={ name="Acro Breeches", augments={'Pet: Mag. Acc.+22','Pet: Breath+6','MND+8',}},
     feet={ name="Acro Leggings", augments={'Pet: Mag. Acc.+12','Pet: Breath+6','Pet: Damage taken -4%',}},
-    neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Ethereal Earring", right_ear="Lancer's Earring",
+    neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Enmerkar Earring", right_ear="Dragoon's Earring",
     left_ring="Meridian Ring", right_ring="Eihwaz Ring", back={ name="Brigantia's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Accuracy+20 Attack+20',}},}
 	
-	sets.breath.precast={head="Vishap Armet +1", body="Wyvern Mail", hands="Despair Fin. Gaunt.", legs="Vishap Brais +1",
-	feet={ name="Ptero. Greaves +1", augments={'Enhances "Empathy" effect',}}, neck="Chanoix's Gorget",
-	waist="Glassblower's Belt", left_ear="Ethereal Earring", right_ear="Lancer's Earring", left_ring="Meridian Ring",
-	right_ring="Eihwaz Ring", back="Strendu Mantle",}
+	sets.breath.precast={head="Vishap Armet +2", body={ name="Emicho Haubert", augments={'Pet: HP+100','Pet: INT+15','Pet: "Regen"+2',}}, hands="Despair Fin. Gaunt.", legs="Vishap Brais +2",
+	feet={ name="Ptero. Greaves +2", augments={'Enhances "Empathy" effect',}}, neck="Chanoix's Gorget",
+	waist="Glassblower's Belt", left_ear="Anastasi Earring", right_ear="Lancer's Earring", left_ring="Meridian Ring",
+	right_ring="Eihwaz Ring", back="Moonbeam Cape",}
 --PETCMD sets
 
 --WS sets	
-	sets.ws.damage["Double Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.damage["Double Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Sulev. Cuisses +2", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.accuracy["Double Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.accuracy["Double Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Sulev. Cuisses +2", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.damage["Thunder Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.damage["Thunder Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Sulev. Cuisses +2", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.accuracy["Thunder Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.accuracy["Thunder Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Sulev. Cuisses +2", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.damage["Raiden Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.damage["Raiden Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Sulev. Cuisses +2", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.accuracy["Raiden Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.accuracy["Raiden Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Sulev. Cuisses +2", feet="Pelt. Schyn. +1", neck="Ganesha's Mala", waist="Windbuffet Belt +1", 
-	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.damage["Leg Sweep"]={ammo="Vanir Battery", head="Lustratio Cap", body="Dagon Breast.", hands=dahands, 
-	legs=taeonlegs, feet=taeonfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1",
-	left_ear="Sherida Earring", right_ear="Brutal Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
-    back="Bleating Mantle",}
+	sets.ws.damage["Leg Sweep"]={ammo="Amar Cluster",
+    head="Flam. Zucchetto +2",
+    body="Flamma Korazin +2",
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet="Flam. Gambieras +2",
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear="Sherida Earring",
+    right_ear="Telos Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Regal Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Leg Sweep"]={ammo="Vanir Battery", head="Lustratio Cap", body="Dagon Breast.", hands=dahands, 
 	legs=taeonlegs, feet=taeonfeet, neck="Ganesha's Mala", waist="Windbuffet Belt +1",
@@ -332,49 +346,49 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	left_ear="Sherida Earring", right_ear="Telos Earring", right_ring="Oneiros Ring", left_ring="Petrov Ring",
     back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.damage["Vorpal Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.damage["Vorpal Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.accuracy["Vorpal Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.accuracy["Vorpal Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.damage["Skewer"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.damage["Skewer"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.accuracy["Skewer"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.accuracy["Skewer"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs=taeonlegs, feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.damage["Wheeling Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.damage["Wheeling Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.accuracy["Wheeling Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.accuracy["Wheeling Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Sulev. Cuisses +2", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.damage["Impulse Drive"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.damage["Impulse Drive"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Pelt. Cuissots +1", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.accuracy["Impulse Drive"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
+	sets.ws.accuracy["Impulse Drive"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
 	legs="Sulev. Cuisses +2", feet="Pelt. Schyn. +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Drakesbane"]={ammo="Knobkierrie",
     head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}},
-    body="Sulevia's Plate. +1",
+    body="Sulevia's Plate. +2",
     hands={ name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
     legs="Pelt. Cuissots +1",
     feet="Thereoid Greaves",--{ name="Valorous Greaves", augments={'Accuracy+22 Attack+22','Crit.hit rate+3','Accuracy+1','Attack+15',}},
@@ -382,13 +396,13 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     waist="Fotia Belt",
     left_ear="Sherida Earring",
     right_ear="Brutal Earring",
-    left_ring="Ifrit Ring +1",
-    right_ring="Shukuyu Ring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Regal Ring",
     back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Drakesbane"]={ammo="Knobkierrie",
     head={ name="Valorous Mask", augments={'Accuracy+23 Attack+23','Crit.hit rate+5','INT+9','Accuracy+8','Attack+4',}},
-    body="Sulevia's Plate. +1",
+    body="Sulevia's Plate. +2",
     hands={ name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
     legs="Pelt. Cuissots +1",
     feet={ name="Valorous Greaves", augments={'Accuracy+27','"Dbl.Atk."+3','DEX+5','Attack+6',}},
@@ -396,39 +410,39 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     waist="Fotia Belt",
     left_ear="Sherida Earring",
     right_ear="Telos Earring",
-    left_ring="Ifrit Ring +1",
-    right_ring="Shukuyu Ring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Regal Ring",
     back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.damage["Sonic Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Pelt. Cuissots +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	sets.ws.damage["Sonic Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
+	legs="Pelt. Cuissots +1", feet="Sulev. Leggings +2", neck="Fotia Gorget", waist="Fotia Belt", 
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.accuracy["Sonic Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	sets.ws.accuracy["Sonic Thrust"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
+	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +2", neck="Fotia Gorget", waist="Fotia Belt", 
+	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.damage["Camlann's Torment"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Ptero. Brais +1", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	sets.ws.damage["Camlann's Torment"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
+	legs="Ptero. Brais +1", feet="Sulev. Leggings +2", neck="Fotia Gorget", waist="Fotia Belt", 
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.accuracy["Camlann's Torment"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	sets.ws.accuracy["Camlann's Torment"]={ammo="Knobkierrie", head="Lustratio Cap", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
+	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +2", neck="Fotia Gorget", waist="Fotia Belt", 
+	left_ear="Bladeborn Earring", right_ear="Steelflash Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
-	sets.ws.damage["Stardiver"]={ammo="Knobkierrie", head="Lustratio Cap", body="Dagon Breast.", hands="Sulev. Gauntlets +1",
-	legs="Sulev. Cuisses +2", feet="Lustratio Leggings", neck="Fotia Gorget", waist="Fotia Belt", 
-	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Ifrit Ring +1", 
-	right_ring="Shukuyu Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	sets.ws.damage["Stardiver"]={ammo="Knobkierrie", head="Flam. Zucchetto +2", body="Dagon Breast.", hands="Sulev. Gauntlets +2",
+	legs="Sulev. Cuisses +2", feet="Flam. Gambieras +2", neck="Fotia Gorget", waist="Fotia Belt", 
+	left_ear="Sherida Earring", right_ear="Brutal Earring", left_ring="Niqmaddu Ring", 
+	right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Stardiver"]={ammo="Knobkierrie", head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
-	body="Dagon Breast.", hands="Sulev. Gauntlets +1",
-	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1",
-	neck="Fotia Gorget", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Brutal Earring", left_ring="Ifrit Ring +1", right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	body="Dagon Breast.", hands="Sulev. Gauntlets +2",
+	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +2",
+	neck="Fotia Gorget", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Brutal Earring", left_ring="Niqmaddu Ring", right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.damage["Geirskogul"]={ammo="Knobkierrie",
     head={ name="Lustratio Cap", augments={'Attack+15','STR+5','"Dbl.Atk."+2',}},
@@ -441,7 +455,7 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
     right_ear="Brutal Earring",
     left_ring="Ramuh Ring +1",
-    right_ring="Rajas Ring",
+    right_ring="Regal Ring",
     back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.ws.accuracy["Geirskogul"]={ammo="Knobkierrie",
@@ -455,11 +469,11 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
     right_ear="Brutal Earring",
     left_ring="Ramuh Ring +1",
-    right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+    right_ring="Regal Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 --WS sets
 
 --ws day bonus
-	sets.wsdaybonus={head="Gavialis Helm",}
+	sets.wsdaybonus={head="Gavialis Helm", feet="Sulev. Leggings +2",}
 --ws day bonus
 
 --midcast sets
@@ -468,8 +482,16 @@ windower.prim.set_visibility('JUMP_TYPE',true)
     hands={ name="Acro Gauntlets", augments={'Pet: Mag. Acc.+22','Pet: Breath+7','CHR+8',}},
     legs={ name="Acro Breeches", augments={'Pet: Mag. Acc.+22','Pet: Breath+6','MND+8',}},
     feet={ name="Acro Leggings", augments={'Pet: Mag. Acc.+12','Pet: Breath+6','Pet: Damage taken -4%',}},
-    neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Ethereal Earring", right_ear="Lancer's Earring",
+    neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Anastasi Earring", right_ear="Lancer's Earring",
     left_ring="Meridian Ring", right_ring="Eihwaz Ring", back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
+	
+	sets.breath.elementalbreath={head={ name="Ptero. Armet +1", augments={'Enhances "Deep Breathing" effect',}},
+    body={ name="Acro Surcoat", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: Breath+6','Pet: Damage taken -3%',}},
+    hands={ name="Acro Gauntlets", augments={'Pet: Mag. Acc.+22','Pet: Breath+7','CHR+8',}},
+    legs={ name="Acro Breeches", augments={'Pet: Mag. Acc.+22','Pet: Breath+6','MND+8',}},
+    feet={ name="Acro Leggings", augments={'Pet: Mag. Acc.+12','Pet: Breath+6','Pet: Damage taken -4%',}},
+    neck="Lancer's Torque", waist="Glassblower's Belt", left_ear="Enmerkar Earring", right_ear="Dragoon's Earring",
+    left_ring="Meridian Ring", right_ring="Eihwaz Ring", back={ name="Brigantia's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Accuracy+20 Attack+20',}},}
 --midcast sets
 
 --aftercast sets
@@ -482,51 +504,56 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	
 	sets.tp.highacc= {ammo="Amar Cluster", neck="Combatant's Torque", waist="Olseni Belt", right_ring="Ramuh Ring +1",
 	head={ name="Taeon Chapeau", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +3%',}},
-	body="Dagon Breast.", hands="Sulev. Gauntlets +1", left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring",
+	body="Dagon Breast.", hands="Sulev. Gauntlets +2", left_ear="Sherida Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring",
 	legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}},
 	feet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}},
 	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},}
 	
-	sets.tp.maxacc={ammo="Amar Cluster", head="Flam. Zucchetto +1", body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
-	hands="Sulev. Gauntlets +1", legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}, right_ring="Ramuh Ring +1",
-	feet="Flam. Gambieras +1", neck="Combatant's Torque", waist="Ioskeha Belt", left_ear="Mache Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring",
+	sets.tp.maxacc={ammo="Amar Cluster", head="Flam. Zucchetto +2", body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
+	hands="Sulev. Gauntlets +2", legs={ name="Taeon Tights", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','Crit. hit damage +2%',}}, right_ring="Ramuh Ring +1",
+	feet="Flam. Gambieras +2", neck="Combatant's Torque", waist="Ioskeha Belt", left_ear="Mache Earring", right_ear="Telos Earring", left_ring="Niqmaddu Ring",
 	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
 	
-	sets.xhit.lowacc={ammo="Ginsen", head=acrohead, body="Pelt. Plackart +1", back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},
-	hands=acrohands, waist="Windbuffet Belt +1", legs=acrolegs, feet=acrofeet, neck="Ganesha's Mala", left_ear="Tripudio Earring", right_ear="Cessance Earring", left_ring="Petrov Ring",
-	right_ring="Rajas Ring",}
+	sets.xhit.lowacc={ammo="Ginsen",
+    head="Flam. Zucchetto +2",
+    body={ name="Valorous Mail", augments={'Accuracy+28','"Store TP"+7','DEX+7',}},
+    hands=acrohands,
+	legs={ name="Valor. Hose", augments={'Accuracy+21','"Store TP"+7','Attack+10',}},
+    feet="Flam. Gambieras +2",
+    neck="Anu Torque",
+    waist="Ioskeha Belt",
+    left_ear="Sherida Earring",
+    right_ear="Brutal Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Petrov Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
 		
-	sets.xhit.medacc=set_combine(sets.xhit.lowacc, {waist="Grunfeld Rope", back="Letalis Mantle"})
+	sets.xhit.medacc=set_combine(sets.xhit.lowacc, {legs="Flamma Dirs +2", "Flam. Manopolas +2",right_ring="Flamma Ring",})
 	
-	sets.xhit.highacc={ammo="Ginsen", head={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3','DEX+8',}},
-	body="Pelt. Plackart +1", hands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. hit damage +3%',}},
-	legs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. hit damage +3%',}}, neck="Combatant's Torque",
-	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, waist="Olseni Belt", left_ear="Telos Earring",
-	right_ear="Cessance Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1", 
-	back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},}
+	sets.xhit.highacc=set_combine(sets.xhit.medacc, {neck="Shulmanu Collar",right_ear="Telos Earring",})
 	
-	sets.xhit.maxacc={ammo="Amar Cluster", head="Flam. Zucchetto +1", body="Flamma Korazin +1", hands="Flam. Manopolas +1", legs="Sulev. Cuisses +2",
-	feet="Flam. Gambieras +1", neck="Combatant's Torque", waist="Ioskeha Belt", left_ear="Telos Earring", right_ear="Tripudio Earring", left_ring="Cacoethic Ring +1",
+	sets.xhit.maxacc={ammo="Amar Cluster", head="Flam. Zucchetto +2", body="Flamma Korazin +2", hands="Flam. Manopolas +2", legs="Sulev. Cuisses +2",
+	feet="Flam. Gambieras +2", neck="Combatant's Torque", waist="Ioskeha Belt", left_ear="Telos Earring", right_ear="Tripudio Earring", left_ring="Cacoethic Ring +1",
 	right_ring="Ramuh Ring +1", back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},
 }
 	
-	sets.xhit2.lowacc={ammo="Ginsen", head="Flam. Zucchetto +1", body="Pelt. Plackart +1", waist="Ioskeha Belt",
+	sets.xhit2.lowacc={ammo="Ginsen", head="Flam. Zucchetto +2", body="Pelt. Plackart +1", waist="Ioskeha Belt",
     hands={ name="Emicho Gauntlets", augments={'HP+50','DEX+10','Accuracy+15',}}, legs="Sulev. Cuisses +2",
-	feet="Flam. Gambieras +1", neck="Shulmanu Collar", left_ear="Sherida Earring", right_ear="Telos Earring",
+	feet="Flam. Gambieras +2", neck="Shulmanu Collar", left_ear="Sherida Earring", right_ear="Telos Earring",
 	left_ring="Niqmaddu Ring", right_ring="Rajas Ring", back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},
 }
 	
 	sets.xhit2.medacc=set_combine(sets.xhit2.lowacc, {body="Dagon Breast.",})
 	
-	sets.xhit2.highacc={ammo="Amar Cluster", head="Sulevia's Mask +1", hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
+	sets.xhit2.highacc=set_combine(sets.xhit2.medacc, {right_ring="Regal Ring",})--[[{ammo="Amar Cluster", head="Sulevia's Mask +2", hands="Sulev. Gauntlets +2", legs="Sulev. Cuisses +2",
 	body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
 	feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}}, neck="Combatant's Torque", waist="Tempus Fugit",
 	left_ear="Mache Earring", right_ear="Mache Earring", left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1",
-    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},} --set_combine(sets.xhit.highacc, {legs=taeonlegs,})
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','DEX+10',}},} --set_combine(sets.xhit.highacc, {legs=taeonlegs,})]]
 	
-	sets.xhit2.maxacc={ammo="Ginsen", head="Flam. Zucchetto +1", hands="Flam. Manopolas +1", legs="Sulev. Cuisses +2",
+	sets.xhit2.maxacc={ammo="Ginsen", head="Flam. Zucchetto +2", hands="Flam. Manopolas +2", legs="Sulev. Cuisses +2",
     body={ name="Valorous Mail", augments={'Accuracy+25 Attack+25','Crit. hit damage +2%','DEX+6','Accuracy+10','Attack+8',}},
-	feet="Flam. Gambieras +1", neck="Combatant's Torque", waist="Ioskeha Belt", left_ear="Telos Earring", right_ear="Cessance Earring",
+	feet="Flam. Gambieras +2", neck="Combatant's Torque", waist="Ioskeha Belt", left_ear="Telos Earring", right_ear="Cessance Earring",
 	left_ring="Cacoethic Ring +1", right_ring="Ramuh Ring +1", back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},
 }
 	
@@ -561,12 +588,12 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.ss.o.highacc= set_combine(sets.ss.highacc, {right_ring="Oneiros Ring",})
 	--offensive sets
 	--defensive sets
-	sets.hybrid={ammo="Amar Cluster", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1", legs="Sulev. Cuisses +2",
-	feet="Sulev. Leggings +1", neck="Combatant's Torque", waist="Tempus Fugit", left_ear="Zwazo Earring", right_ear="Zennaroi Earring",
+	sets.hybrid={ammo="Amar Cluster", head="Sulevia's Mask +2", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2", legs="Sulev. Cuisses +2",
+	feet="Sulev. Leggings +2", neck="Combatant's Torque", waist="Tempus Fugit", left_ear="Zwazo Earring +1", right_ear="Zennaroi Earring",
 	left_ring="Cacoethic Ring +1", right_ring="Defending Ring", back="Ground. Mantle +1",}
 	
-	sets.pdt={ammo="Hasty Pinion +1", head="Sulevia's Mask +1", body="Sulevia's Plate. +1", hands="Sulev. Gauntlets +1",
-	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +1", neck="Loricate Torque +1", waist="Tempus Fugit", left_ear="Zwazo Earring",
+	sets.pdt={ammo="Hasty Pinion +1", head="Sulevia's Mask +2", body="Sulevia's Plate. +2", hands="Sulev. Gauntlets +2",
+	legs="Sulev. Cuisses +2", feet="Sulev. Leggings +2", neck="Loricate Torque +1", waist="Tempus Fugit", left_ear="Zwazo Earring +1",
 	right_ear="Zennaroi Earring", left_ring="Vocane Ring", right_ring="Defending Ring", back="Agema Cape",}
 	
 	sets.mdt= set_combine(sets.pdt, {back="Engulfer Cape +1", left_ring="Shadow Ring",})
@@ -574,8 +601,8 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	sets.xdt=sets.pdt
 	--defensive sets
 	--idlesets
-	sets.idle.standardidle={ammo="Vanir Battery", head="Valorous Mask", body="Jumalik Mail", hands="Sulev. Gauntlets +1", 
-	legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}}, feet="Amm Greaves", neck="Loricate Torque +1", waist="Nierenschutz",
+	sets.idle.standardidle={ammo="Vanir Battery", head="Valorous Mask", body="Jumalik Mail", hands="Sulev. Gauntlets +2", 
+	legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}}, feet="Sulev. Leggings +2", neck="Loricate Torque +1", waist="Nierenschutz",
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", 
 	right_ring="Sheltered Ring", back="Shadow Mantle",}
 	
@@ -585,11 +612,11 @@ windower.prim.set_visibility('JUMP_TYPE',true)
 	
 	sets.idle.xdt=sets.xdt
 	
-	sets.idle.pdtkite=set_combine(sets.pdt, {legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},})
+	sets.idle.pdtkite=set_combine(sets.pdt, {legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},})
 	
-	sets.idle.mdtkite=set_combine(sets.mdt, {legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},})
+	sets.idle.mdtkite=set_combine(sets.mdt, {legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},})
 	
-	sets.idle.xdtkite=set_combine(sets.xdt, {legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},})
+	sets.idle.xdtkite=set_combine(sets.xdt, {legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},})
 	--idlesets
 --aftercast sets
 end
@@ -728,8 +755,11 @@ function pet_precast(spell)
 end
 
 function pet_midcast(spell)
-	if string.find(spell.english, 'Breath') and not spell.interrupted then
+	if spell.english:contains('Restoring Breath','Healing Breath') and not spell.interrupted then
 		equip(sets.breath.midcast)
+	end
+	if spell.english:contains('Flame Breath','Gust Breath','Lightning Breath','Frost Breath','Sand Breath') and not spell.interrupted then
+		equip(sets.breath.elemental)
 	end
 end
 
@@ -745,25 +775,25 @@ function self_command(command)
 		if TPMode=="xhit2" then
 			TPMode="multi"
 			add_to_chat(206, 'MULTIHIT MODE')
-			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/multi.png')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/multi.png')
 			send_command('alias ddset gs equip sets.tp.'..sets.accuracy.index[accuracy]..'')
 			send_command('alias oset gs equip sets.tp.o.'..sets.accuracy.index[accuracy]..'')
 		elseif TPMode=="xhit" then
 			TPMode="xhit2"
 			add_to_chat(206, 'XHIT2 MODE')
-			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/xhit2.png')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/xhit2.png')
 			send_command('alias ddset gs equip sets.xhit2.'..sets.accuracy.index[accuracy]..'')
 			send_command('alias oset gs equip sets.xhit2.o.'..sets.accuracy.index[accuracy]..'')
 		elseif TPMode=="multi" then
 			TPMode="xhit"
 			add_to_chat(206, 'XHIT MODE')
-			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/xhit.png')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/xhit.png')
 			send_command('alias ddset gs equip sets.xhit.'..sets.accuracy.index[accuracy]..'')
 			send_command('alias oset gs equip sets.xhit.o.'..sets.accuracy.index[accuracy]..'')
 		else
 			TPMode="multi"
 			add_to_chat(206, 'MULTIHIT MODE')
-			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/multi.png')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/multi.png')
 			send_command('alias ddset gs equip sets.tp.'..sets.accuracy.index[accuracy]..'')
 			send_command('alias oset gs equip sets.tp.o.'..sets.accuracy.index[accuracy]..'')
 		end
@@ -775,7 +805,7 @@ function self_command(command)
 		else
 			TPMode="Hybrid"
 			add_to_chat(206, 'HYBRID MODE')
-			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/hybridmode.png')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/hybridmode.png')
 		end
 		status_change(player.status)
 	end
@@ -785,7 +815,7 @@ function self_command(command)
 		else
 			TPMode="PDT"
 			add_to_chat(206, 'PDT MODE')
-			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/pdtmode.png')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/pdtmode.png')
 		end
 		status_change(player.status)
 	end
@@ -795,7 +825,7 @@ function self_command(command)
 		else
 			TPMode="MDT"
 			add_to_chat(206, 'MDT MODE')
-			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mdtmode.png')
+			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/mdtmode.png')
 		end
 		status_change(player.status)
 	end
@@ -805,7 +835,7 @@ function self_command(command)
 		if accuracy >#sets.accuracy.index then
 			accuracy=1
 		end
-		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/'..sets.accuracy.index[accuracy]..'.png')
+		windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/images/'..sets.accuracy.index[accuracy]..'.png')
 		if TPMode=="multi" then
 			send_command('alias ddset gs equip sets.tp.'..sets.accuracy.index[accuracy]..'')
 			send_command('alias oset gs equip sets.tp.o.'..sets.accuracy.index[accuracy]..'')
@@ -827,7 +857,7 @@ function self_command(command)
 		else
 			weapon="Gungnir"			
 			add_to_chat(206, 'Gungnir Mode')
-			windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Gungnir.png')
+			windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/images/Gungnir.png')
 			send_command("alias ctgeir Geirskogul")
 		end
 	end	
@@ -839,7 +869,7 @@ function self_command(command)
 			weapon="Habile Mazrak"
 			add_to_chat(206, 'Olyndicus Mode')
 			status_change(player.status)
-			windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Habile Mazrak.png')
+			windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/images/Habile Mazrak.png')
 			send_command("alias ctgeir Camlann's Torment")
 		end
 	end]]--
@@ -851,7 +881,7 @@ function self_command(command)
 			weapon="Trishula"
 			add_to_chat(206, 'Trishula Mode')
 			status_change(player.status)
-			windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/Trishula.png')
+			windower.prim.set_texture('WEAPON_TYPE',''..windower.windower_path..'addons/gearswap/data/images/Trishula.png')
 			send_command("alias ctgeir Camlann's Torment")
 		end
 	end
@@ -885,11 +915,11 @@ function self_command(command)
 		if WSType=="damage" then
 			WSType="accuracy"
 			add_to_chat(206, 'WSType: ACCURACY')
-			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/acc.png')
+			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/images/acc.png')
 		else
 			WSType="damage"
 			add_to_chat(206, 'WSType: DAMAGE')
-			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmg.png')
+			windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/images/dmg.png')
 		end
 	end
 --ws mode toggle
@@ -899,11 +929,11 @@ function self_command(command)
 		if JumpType=="damage" then
 			JumpType="tpgain"
 			add_to_chat(206, 'JUMP TYPE: TP GAIN')
-			windower.prim.set_texture('JUMP_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/stpjump.png')
+			windower.prim.set_texture('JUMP_TYPE',''..windower.windower_path..'addons/gearswap/data/images/stpjump.png')
 		elseif JumpType=="tpgain" then
 			JumpType="damage"
 			add_to_chat(206, 'JUMP TYPE: DAMAGE')
-			windower.prim.set_texture('JUMP_TYPE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/dmgjump.png')
+			windower.prim.set_texture('JUMP_TYPE',''..windower.windower_path..'addons/gearswap/data/images/dmgjump.png')
 		end
 	end
 --jump mode
@@ -945,7 +975,7 @@ function self_command(command)
 				idle=4
 			end
 		end
-		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/'..sets.idle.index[idle]..'.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/'..sets.idle.index[idle]..'.png')
 	end
 	if command=="idletoggle" then
 		idle=idle+1
@@ -953,7 +983,7 @@ function self_command(command)
 			idle=1
 		end
 		send_command('alias idle gs equip sets.idle.'..sets.idle.index[idle]..'')
-		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/'..sets.idle.index[idle]..'.png')
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/'..sets.idle.index[idle]..'.png')
 	end
 	if command=='primfix' then
 		windower.prim.set_size('TP_SET',200,30)
@@ -963,4 +993,19 @@ function self_command(command)
 		windower.prim.set_size('WEAPON_TYPE',200,50)
 		windower.prim.set_size('JUMP_TYPE',200,50)
 	end
+	if command=="sc1" then
+		if openorclose=="open" or openorclose=="off" then
+			openorclose="close"
+			send_command('alias sd input /ws "Stardiver" <t>;input /p closing')
+			add_to_chat(206,'closing mode')
+		else
+			openorclose="open"
+			send_command('alias sd input /ws "Stardiver" <t>;input /p opening')
+			add_to_chat(206,'opening mode')
+		end
+	end
+end
+
+function unload()
+	send_command("unbind !1")
 end

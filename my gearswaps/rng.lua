@@ -15,14 +15,14 @@ function get_sets()
 	send_command('text tpvariable text "TP MODE: XHIT"')
 	send_command('text wsvariable text "WSType: DMG"')
 	send_command('text idlevariable text "IDLE MODE: REGEN"')
-	send_command('text pdtvariable text "BOW TYPE: A"')
+	send_command('text pdtvariable text "GUN TYPE: A"')
 	--text box setup
 	
 	--variables
 	WSType="damage"
 	TPType="xhit"
 	IdleType="regen"
-	Weaponry="bow"
+	Weaponry="gun"
 	BowType="typea"
 	GunType="typea"
 	
@@ -55,67 +55,67 @@ function get_sets()
 	
 	sets.bow.typeb={range="Hangaku-No-Yumi", ammo="Achiyal. Arrow",}
 	
-	sets.gun.typea={range="Vanir Gun", ammo="Achiyal. Bullet",}
+	sets.gun.typea={range="Fomalhaut", ammo="Chrono Bullet",}
 	
-	sets.gun.typeb={range="Vanir Gun", ammo="Achiyal. Bullet",}
+	sets.gun.typeb={range="Fomalhaut", ammo="Chrono Bullet",}
 	
 	sets.weaponry.staffgrip={main="Mekki Shakki", sub="Bloodrain Strap",}
 	
 	sets.weaponry.dw={main="Hurlbat", sub="Atoyac",}
+	
+	sets.weaponry.shield={main="Perun", sub="Nusku",}
 	--weaponry
 	
 	--idlesets
-	sets.idle.regen={head="Oce. Headpiece +1", body="Iuitl Vest +1", hands="Umuthi Gloves", legs="Iuitl Tights +1", 
-	feet="Fajin Boots", neck="Wiglen Gorget", waist="Flume Belt", left_ear="Sanare Earring", 
-	right_ear="Ethereal Earring", left_ring="Shadow Ring", right_ring="Sheltered Ring", 
-	back="Shadow Mantle",}
+	sets.idle.regen={head="Oce. Headpiece +1", body="Meg. Cuirie +2", legs="Mummu Kecks +2", feet="Orion Socks +1", back="Shadow Mantle",
+	hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}}, neck="Sanctity Necklace", right_ring="Sheltered Ring",
+	waist="Flume Belt", left_ear="Infused Earring", right_ear="Ethereal Earring", left_ring="Paguroidea Ring",}
 	
-	sets.idle.pdt={head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
-	body="Onca Suit", neck="Loricate Torque +1", waist="Flume Belt", left_ear="Genmei Earring", right_ear="Ethereal Earring",
-	left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
+	sets.idle.pdt={head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}}, legs="Mummu Kecks +2",
+	body="Meg. Cuirie +2", hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}}, feet="Orion Socks +1",
+	neck="Sanctity Necklace", waist="Flume Belt", left_ear="Genmei Earring", right_ear="Ethereal Earring", left_ring="Vocane Ring",
+	right_ring="Defending Ring", back="Solemnity Cape",}
 	
 	sets.engaged.pdt={head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
 	body="Onca Suit", neck="Loricate Torque +1", waist="Flume Belt", left_ear="Genmei Earring", right_ear="Ethereal Earring",
-	left_ring="Vocane Ring", right_ring="Defending Ring", back="Mollusca Mantle",}
+	left_ring="Vocane Ring", right_ring="Defending Ring", back="Moonbeam Cape",}
 	--idlesets
 	
 	--shooting sets
-	sets.preshot={head="Sylvan Gapette +2", body="Arcadian Jerkin", hands="Iuitl Wristbands +1", 
-	legs="Orion Braccae +1", feet="Wurrukatte Boots", neck="Ocachi Gorget", waist="Impulse Belt", 
-	left_ear="Volley Earring", right_ear="Clearview Earring", left_ring="Paqichikaji Ring", 
-	right_ring="Hajduk Ring", back="Lutian Cape",}
+	sets.preshot={head="Amini Gapette +1", body="Amini Caban +1", hands={ name="Carmine Fin. Ga.", augments={'Accuracy+10','DEX+10','MND+15',}},
+	legs={ name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}, feet="Meg. Jam. +1", waist="Impulse Belt", 
+	back={ name="Belenus's Cape", augments={'"Snapshot"+10',}},}
 	
-	sets.midshot.xhit={head="Arcadian Beret", body="Kyujutsugi", hands="Manibozho Gloves", 
-	legs="Nahtirah Trousers", feet="Orion Socks +1", neck="Ocachi Gorget", waist="Elanid Belt",
-	left_ear="Volley Earring", right_ear="Neritic Earring", left_ring="Paqichikaji Ring", 
-	right_ring="Hajduk Ring", back="Lutian Cape",}
+	sets.midshot.xhit={head="Meghanada Visor +2", body="Mummu Jacket +1", hands="Mummu Wrists +1", legs={ name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}},
+	feet="Mummu Gamash. +1", neck="Iskur Gorget", waist="Eschan Stone", left_ear="Enervating Earring", right_ear="Telos Earring", left_ring="Regal Ring",
+	right_ring="Ilabrat Ring", back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}},}
 	
 	sets.midshot.acc={head="Umbani Cap", body="Kyujutsugi", feet="Orion Socks +1",
 	hands="Adhemar Wristbands",
-	legs={ name="Arcadian Braccae", augments={'Enhances "Eagle Eye Shot" effect',}},
+	legs={ name="Arc. Braccae +1", augments={'Enhances "Eagle Eye Shot" effect',}},
 	neck="Combatant's Torque", waist="Elanid Belt", left_ear="Clearview Earring",
 	right_ear="Volley Earring", left_ring="Arewe Ring +1", right_ring="Hajduk Ring",
 	back={ name="Lutian Cape", augments={'STR+3','AGI+1','"Snapshot"+2',}},}
 	
 	sets.barrage={hands="Orion Bracers +1",}
 	
-	sets.stealthshot={feet="Arcadian Socks",}
+	sets.stealthshot={feet="Arcadian Socks +1",}
 	
-	sets.flashyshot={hands="Arcadian Bracers",}
+	sets.flashyshot={hands="Arc. Bracers +1",}
 	
-	sets.doubleshot={body="Arcadian Jerkin",}
+	sets.doubleshot={body="Arc. Jerkin +1",}
 	
 	sets.bountyshot={hands="Syl. Glvltte. +2",}
 	--shooting sets
 	
 	--job abilities
-	sets.ja["Eagle Eye Shot"]=set_combine(sets.strws, {neck="Ocachi Gorget", waist="Elanid Belt", legs="Arcadian Braccae",})
+	sets.ja["Eagle Eye Shot"]=set_combine(sets.strws, {neck="Ocachi Gorget", waist="Elanid Belt", legs="Arc. Braccae +1",})
 	
 	sets.ja["Scavenge"]={feet="Orion Socks +1",}
 	
 	sets.ja["Shadowbind"]=set_combine(sets.midshot.acc, {hands="Orion Bracers +1",})
 	
-	sets.ja["Camouflage"]={body="Orion Jerkin",}
+	sets.ja["Camouflage"]={body="Orion Jerkin +1",}
 	
 	sets.ja["Sharpshot"]={legs="Orion Braccae +1",}
 	
@@ -123,13 +123,13 @@ function get_sets()
 	
 	sets.ja["Unlimited Shot"]={feet="Sylvan Bottln. +2",}
 	
-	sets.ja["Stealth Shot"]=set_combine(sets.midshot.acc, {feet="Arcadian Socks",})
+	sets.ja["Stealth Shot"]=set_combine(sets.midshot.acc, {feet="Arcadian Socks +1",})
 	
-	sets.ja["Flashy Shot"]=set_combine(sets.midshot.acc, {hands="Arcadian Bracers",})
+	sets.ja["Flashy Shot"]=set_combine(sets.midshot.acc, {hands="Arc. Bracers +1",})
 	
 	sets.ja["Velocity Shot"]={body="Sylvan Caban +2",}
 	
-	sets.ja["Double Shot"]=set_combine(sets.midshot.xhit, {body="Arcadian Jerkin",})
+	sets.ja["Double Shot"]=set_combine(sets.midshot.xhit, {body="Arc. Jerkin +1",})
 	
 	sets.ja["Bounty Shot"]=set_combine(sets.midshot.acc, {hands="Syl. Glvltte. +2",})
 	--job abilities
@@ -141,29 +141,63 @@ function get_sets()
 	--magic and ninjutsu
 	
 	--ws base sets
-	sets.agiws={head="Orion Beret +1", body="Kyujutsugi", hands="Orion Bracers +1", legs="Nahtirah Trousers",
-	feet="Orion Socks +1", neck="Fotia Gorget", waist="Fotia Belt", left_ear="Neritic Earring",
-	right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, left_ring="Ifrit Ring +1",
-	right_ring="Ifrit Ring", back="Buquwik Cape",}
+	sets.agiws={head="Meghanada Visor +2",
+    body="Meg. Cuirie +2",
+    hands="Meg. Gloves +1",
+    legs={ name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}},
+    feet="Meg. Jam. +1",
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+    right_ear="Telos Earring",
+    left_ring="Regal Ring",
+    right_ring="Dingir Ring",
+    back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}},}
 	
-	sets.strws={head="Orion Beret +1", body="Kyujutsugi", legs="Nahtirah Trousers",
-	hands="Adhemar Wristbands",
-	feet="Orion Socks +1", neck="Fotia Gorget", waist="Fotia Belt", left_ear="Neritic Earring",
-	right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, 
-	left_ring="Ifrit Ring +1", right_ring="Ifrit Ring", back="Buquwik Cape",}
+	sets.strws={head="Meghanada Visor +2",
+    body="Meg. Cuirie +2",
+    hands="Meg. Gloves +1",
+    legs={ name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}},
+    feet="Meg. Jam. +1",
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+    right_ear="Telos Earring",
+    left_ring="Regal Ring",
+    right_ring="Dingir Ring",
+    back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}},}
 	
-	sets.dexws={head={ name="Uk'uxkaj Cap", augments={'Haste+2','"Snapshot"+2','DEX+8',}},
-	body="Kyujutsugi", legs="Nahtirah Trousers", feet="Orion Socks +1", back="Kayapa Cape",
-	hands="Adhemar Wristbands",
-	neck="Fotia Gorget", waist="Fotia Belt", left_ear="Neritic Earring", left_ring="Ramuh Ring +1",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
-	right_ring="Rajas Ring",}
+	sets.dexws={head="Meghanada Visor +2",
+    body="Meg. Cuirie +2",
+    hands="Meg. Gloves +1",
+    legs="Jokushu Haidate",
+    feet={ name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}},
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+    right_ear="Telos Earring",
+    left_ring="Regal Ring",
+    right_ring="Ilabrat Ring",
+    back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}},}
+	
+	sets.magicws={head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}},
+    body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}},
+    hands="Meg. Gloves +1",
+    legs={ name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+3','STR+9','Mag. Acc.+9',}},
+    feet={ name="Herculean Boots", augments={'Mag. Acc.+7 "Mag.Atk.Bns."+7','INT+2','Mag. Acc.+15','"Mag.Atk.Bns."+14',}},
+    neck="Sanctity Necklace",
+    waist="Eschan Stone",
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+    right_ear="Friomisi Earring",
+    left_ring="Regal Ring",
+    right_ring="Dingir Ring",
+    back="Toro Cape",}
 	--ws base sets
 	
 	--archery ws
-	sets.bowws.dmg["Flaming Arrow"]=sets.strws
+	sets.bowws.dmg["Flaming Arrow"]=sets.magicws
 	
-	sets.bowws.acc["Flaming Arrow"]=sets.strws
+	sets.bowws.acc["Flaming Arrow"]=sets.magicws
 	
 	sets.bowws.dmg["Piercing Arrow"]=sets.strws
 	
@@ -207,9 +241,9 @@ function get_sets()
 	--archery ws
 	
 	--gun ws
-	sets.gunws.dmg["Hot Shot"]=sets.strws
+	sets.gunws.dmg["Hot Shot"]=sets.magicws
 	
-	sets.gunws.acc["Hot Shot"]=sets.strws
+	sets.gunws.acc["Hot Shot"]=sets.magicws
 	
 	sets.gunws.dmg["Split Shot"]=sets.strws
 	
@@ -239,17 +273,17 @@ function get_sets()
 	
 	sets.gunws.acc["Coronach"]=sets.strws
 	
-	sets.gunws.dmg["Trueflight"]=sets.strws
+	sets.gunws.dmg["Trueflight"]=sets.magicws
 	
-	sets.gunws.acc["Trueflight"]=sets.strws
+	sets.gunws.acc["Trueflight"]=sets.magicws
 	
 	sets.gunws.dmg["Numbing Shot"]=sets.strws
 	
 	sets.gunws.acc["Numbing Shot"]=sets.strws
 	
-	sets.gunws.dmg["Wildfire"]=sets.agiws
+	sets.gunws.dmg["Wildfire"]=sets.magicws
 	
-	sets.gunws.acc["Wildfire"]=sets.agiws
+	sets.gunws.acc["Wildfire"]=sets.magicws
 	
 	sets.gunws.dmg["Last Stand"]=sets.strws
 	

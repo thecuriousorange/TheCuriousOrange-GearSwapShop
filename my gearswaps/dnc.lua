@@ -36,7 +36,7 @@ function get_sets()
 	
 	sets.tp.lowhaste={main="Izhiikoh", sub={ name="Atoyac", augments={'Occ. atk. twice+8','Weapon skill damage +2%',}},
 	ammo="Ginsen", head=taeonhead, body=taeonbody, hands=taeonhands, legs=taeonlegs, feet=taeonfeet, neck="Asperity Necklace",
-	waist="Shetal Stone", left_ear="Dudgeon Earring", right_ear="Heartseeker Earring", left_ring="Epona's Ring", right_ring="Rajas Ring",
+	waist="Shetal Stone", left_ear="Suppanomimi", right_ear="Eabani Earring", left_ring="Epona's Ring", right_ring="Rajas Ring",
 	back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+2','"Rev. Flourish"+24','Weapon skill damage +4%',}},}
 	
 	sets.tp.medhaste= set_combine(sets.tp.lowhaste, {left_ear="Suppanomimi", right_ear="Brutal Earring", waist="Windbuffet Belt",})

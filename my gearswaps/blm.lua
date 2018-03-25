@@ -23,34 +23,34 @@ function get_sets()
 
 --boxes
 	windower.prim.create('NUKE_ELEMENT')
-	windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/icenukes.png')
+	windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/images/icenukes.png')
 	windower.prim.set_size('NUKE_ELEMENT',200,30)
-	windower.prim.set_position('NUKE_ELEMENT',750,50)
+	windower.prim.set_position('NUKE_ELEMENT',0.65*windower.get_windower_settings().ui_x_res,50)
 	windower.prim.set_color('NUKE_ELEMENT', 150, 255, 255, 255)
 	windower.prim.set_visibility('NUKE_ELEMENT',true)
 	--send_command('text tpvariable text "ICE NUKES";text tpvariable color 0 255 255;')
 	
 	windower.prim.create('MP_EFFICIENCY')
-	windower.prim.set_texture('MP_EFFICIENCY',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mpeoff.png')
+	windower.prim.set_texture('MP_EFFICIENCY',''..windower.windower_path..'addons/gearswap/data/images/mpeoff.png')
 	windower.prim.set_size('MP_EFFICIENCY',200,30)	
-	windower.prim.set_position('MP_EFFICIENCY',750,90)
+	windower.prim.set_position('MP_EFFICIENCY',0.65*windower.get_windower_settings().ui_x_res,90)
 	windower.prim.set_color('MP_EFFICIENCY', 150, 255, 255, 255)
 	windower.prim.set_visibility('MP_EFFICIENCY',true)
 	--send_command('text idlevariable text "MPE-OFF"')
 	
 	--send_command('text wsvariable text "MM-OFF"')
 	windower.prim.create('MAGIC_MODE')
-	windower.prim.set_texture('MAGIC_MODE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/magicpotency.png')
+	windower.prim.set_texture('MAGIC_MODE',''..windower.windower_path..'addons/gearswap/data/images/magicpotency.png')
 	windower.prim.set_size('MAGIC_MODE',200,30)
-	windower.prim.set_position('MAGIC_MODE',750,130)
+	windower.prim.set_position('MAGIC_MODE',0.65*windower.get_windower_settings().ui_x_res,130)
 	windower.prim.set_color('MAGIC_MODE', 150, 255, 255, 255)
 	windower.prim.set_visibility('MAGIC_MODE',true)
 	--send_command('text pdtvariable text "MAGIC-POTENCY"')
 	
 	windower.prim.create('BURST_MODE')
-	windower.prim.set_texture('BURST_MODE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/burstmodeoff.png')
+	windower.prim.set_texture('BURST_MODE',''..windower.windower_path..'addons/gearswap/data/images/burstmodeoff.png')
 	windower.prim.set_size('BURST_MODE',200,30)
-	windower.prim.set_position('BURST_MODE',750,170)
+	windower.prim.set_position('BURST_MODE',0.65*windower.get_windower_settings().ui_x_res,170)
 	windower.prim.set_color('BURST_MODE', 150, 255, 255, 255)
 	windower.prim.set_visibility('BURST_MODE',true)
 --boxes
@@ -58,6 +58,8 @@ function get_sets()
 --keybinds
 	send_command('bind #2 gs equip sets.aftercast.pdt')
 	send_command('bind #4 gs equip sets.aftercast.idle')
+	send_command('bind #8 gs equip sets.aftercast.mdt')
+	send_command('bind #x gs equip sets.aftercast.dt')
 	send_command('bind #f1 gs c ice')
 	send_command('bind #f2 gs c water')
 	send_command('bind #f3 gs c earth')
@@ -284,12 +286,12 @@ function get_sets()
 --ws sets
 
 --midcast sets
-	sets.mpeset={body="Spae. Coat +1",}
+	sets.mpeset={body="Spaekona's Coat +2",right_ear="Regal Earring",}
 	
 	sets.magicburst={ammo="Pemphredo Tathlum",
-    head={ name="Merlinic Hood", augments={'Magic burst dmg.+11%','INT+10','Mag. Acc.+3','"Mag.Atk.Bns."+14',}},
+    head="Ea Hat",
     body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +8','"Mag.Atk.Bns."+15',}},
-    hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+    hands="Ea Cuffs",
     legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+28','Magic burst dmg.+11%','"Mag.Atk.Bns."+7',}},
     feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+25','Magic burst dmg.+11%','Mag. Acc.+14',}},
     neck="Sanctity Necklace",
@@ -344,7 +346,7 @@ function get_sets()
 	right_ring="Strendu Ring", back="Taranus's Cape",
 	left_ring="Sangoma Ring", hands={ name="Amalric Gages", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},}
 	
-	sets.midcast.nuke.dmg.hightier={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Jhakri Coronal +1", body="Merlinic Jubbah",
+	sets.midcast.nuke.dmg.hightier={main="Lathi", sub="Niobid Strap", ammo="Pemphredo Tathlum", head="Jhakri Coronal +2", body="Merlinic Jubbah",
 	hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}, legs="Merlinic Shalwar", feet="Amalric Nails", neck="Sanctity Necklace", waist="Eschan Stone", 
 	left_ear="Barkaro. Earring", right_ear="Friomisi Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
     back="Taranus's Cape",}
@@ -391,11 +393,68 @@ function get_sets()
 --midcast sets
 
 --aftercast sets
-	sets.aftercast.idle={main="Lathi", sub="Niobid Strap", head="Befouled Crown", body="Jhakri Robe +1", hands={ name="Merlinic Dastanas", augments={'Accuracy+4','Pet: "Store TP"+2','"Refresh"+2','Accuracy+5 Attack+5','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},
+	sets.aftercast.idle={main="Lathi", sub="Niobid Strap", head="Befouled Crown", body="Jhakri Robe +2", hands={ name="Merlinic Dastanas", augments={'Accuracy+4','Pet: "Store TP"+2','"Refresh"+2','Accuracy+5 Attack+5','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},
 	legs="Assid. Pants +1", feet={ name="Merlinic Crackows", augments={'Enmity-5','Attack+1','"Refresh"+1','Accuracy+14 Attack+14',}}, neck="Loricate Torque +1", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
 	left_ring="Defending Ring", right_ring="Shadow Ring", back="Shadow Mantle",}
 	
-	sets.aftercast.pdt= set_combine(sets.aftercast.idle, {hands="Hagondes Cuffs +1", legs="Hagondes Pants +1", feet="Hag. Sabots +1",})
+	sets.aftercast.pdt= {ammo="Staunch Tathlum",
+    head={ name="Hagondes Hat +1", augments={'Phys. dmg. taken -4%','Pet: Mag. Acc.+24',}},
+    body="Mallquis Saio +2",
+    hands={ name="Hagondes Cuffs +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','"Mag.Atk.Bns."+24',}},
+    legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
+    feet="Mallquis Clogs +1",
+    neck="Loricate Torque +1",
+    waist="Fucho-no-Obi",
+    left_ear="Genmei Earring",
+    right_ear="Ethereal Earring",
+    left_ring="Defending Ring",
+    right_ring="Vocane Ring",
+    back="Moonbeam Cape",
+}
+
+	sets.aftercast.mdt={ammo="Staunch Tathlum",
+    head={ name="Hagondes Hat +1", augments={'Phys. dmg. taken -4%','Pet: Mag. Acc.+24',}},
+    body="Mallquis Saio +2",
+    hands={ name="Hagondes Cuffs +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','"Mag.Atk.Bns."+24',}},
+    legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
+    feet="Mallquis Clogs +1",
+    neck="Loricate Torque +1",
+    waist="Fucho-no-Obi",
+    left_ear="Odnowa Earring +1",
+    right_ear="Ethereal Earring",
+    left_ring="Defending Ring",
+    right_ring="Vocane Ring",
+    back="Moonbeam Cape",
+}
+
+	sets.aftercast.dt={ammo="Staunch Tathlum",
+    head={ name="Hagondes Hat +1", augments={'Phys. dmg. taken -4%','Pet: Mag. Acc.+24',}},
+    body="Mallquis Saio +2",
+    hands={ name="Hagondes Cuffs +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','"Mag.Atk.Bns."+24',}},
+    legs={ name="Hagondes Pants +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','"Mag.Atk.Bns."+20',}},
+    feet="Mallquis Clogs +1",
+    neck="Loricate Torque +1",
+    waist="Fucho-no-Obi",
+    left_ear="Genmei Earring",
+    right_ear="Ethereal Earring",
+    left_ring="Defending Ring",
+    right_ring="Vocane Ring",
+    back="Moonbeam Cape",}
+	
+	sets.aftercast.tp={
+    main={ name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}},
+    sub="Niobid Strap",
+    ammo="Amar Cluster",
+    head="Jhakri Coronal +2",
+    body="Onca Suit",
+    neck="Combatant's Torque",
+    waist="Ninurta's Sash",
+    left_ear="Telos Earring",
+    right_ear="Mache Earring",
+    left_ring="Ramuh Ring +1",
+    right_ring="Rajas Ring",
+    back="Shadow Mantle",
+}
 --aftercast sets
 end
 
@@ -589,8 +648,8 @@ function status_change(new,old)
 			equip(sets.deathaftercast.idle)
 		end
 	elseif death_mode=="off" then
-		if new=="Idle" then
-			equip(sets.aftercast.idle)
+		if new=="Engaged" then
+			equip(sets.aftercast.tp)
 		else
 			equip(sets.aftercast.idle)
 		end
@@ -613,7 +672,7 @@ function self_command(command)
 		send_command('alias aga input /ma "Blizzaga" <t>')
 		send_command('alias AM input /ma "Freeze" <t>')
 		send_command('alias AM2 input /ma "Freeze II" <t>')
-		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/icenukes.png')
+		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/images/icenukes.png')
 		--send_command('text tpvariable text "ICE NUKES";text tpvariable color 0 255 255')
 		add_to_chat(206, 'ICE NUKES')
 		send_command('pf')
@@ -632,7 +691,7 @@ function self_command(command)
 		send_command('alias aga input /ma "Firaga" <t>')
 		send_command('alias AM input /ma "Flare" <t>')
 		send_command('alias AM2 input /ma "Flare II" <t>')
-		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/firenukes.png')
+		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/images/firenukes.png')
 		--send_command('text tpvariable text "FIRE NUKES";text tpvariable color 255 0 0')
 		add_to_chat(206, 'FIRE NUKES')
 		send_command('pf')
@@ -651,7 +710,7 @@ function self_command(command)
 		send_command('alias aga input /ma "Stonega" <t>')
 		send_command('alias AM input /ma "Quake" <t>')
 		send_command('alias AM2 input /ma "Quake II" <t>')
-		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/earthnukes.png')
+		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/images/earthnukes.png')
 		--send_command('text tpvariable text "EARTH NUKES";text tpvariable color 140 100 0')
 		add_to_chat(206, 'EARTH NUKES')
 		send_command('pf')
@@ -670,7 +729,7 @@ function self_command(command)
 		send_command('alias aga input /ma "Aeroga" <t>')
 		send_command('alias AM input /ma "Tornado" <t>')
 		send_command('alias AM2 input /ma "Tornado II" <t>')
-		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/windnukes.png')
+		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/images/windnukes.png')
 		--send_command('text tpvariable text "WIND NUKES";text tpvariable color 0 255 0')
 		add_to_chat(206, 'WIND NUKES')
 		send_command('pf')
@@ -689,7 +748,7 @@ function self_command(command)
 		send_command('alias aga input /ma "Waterga" <t>')
 		send_command('alias AM input /ma "Flood" <t>')
 		send_command('alias AM2 input /ma "Flood II" <t>')
-		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/waternukes.png')
+		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/images/waternukes.png')
 		--send_command('text tpvariable text "WATER NUKES";text tpvariable color 0 0 200')
 		add_to_chat(206, 'WATER NUKES')
 		send_command('pf')
@@ -709,7 +768,7 @@ function self_command(command)
 		send_command('alias AM input /ma "Burst" <t>')
 		send_command('alias AM2 input /ma "Burst II" <t>')
 		--send_command('text tpvariable text "THUNDER NUKES";text tpvariable color 255 255 0')
-		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/thundernukes.png')
+		windower.prim.set_texture('NUKE_ELEMENT',''..windower.windower_path..'addons/gearswap/data/images/thundernukes.png')
 		add_to_chat(206, 'THUNDER NUKES')
 		send_command('pf')
 	end	
@@ -717,12 +776,12 @@ function self_command(command)
 		if MB=="on" then
 			MB="off"
 			add_to_chat(206,'MAGIC BURST MODE OFF')
-			windower.prim.set_texture('BURST_MODE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/burstmodeoff.png')
+			windower.prim.set_texture('BURST_MODE',''..windower.windower_path..'addons/gearswap/data/images/burstmodeoff.png')
 			send_command('pf')
 		else
 			MB="on"
 			add_to_chat(206,'MAGIC BURST MODE ON')
-			windower.prim.set_texture('BURST_MODE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/burstmodeon.png')
+			windower.prim.set_texture('BURST_MODE',''..windower.windower_path..'addons/gearswap/data/images/burstmodeon.png')
 			send_command('pf')
 		end
 		send_command('pf')
@@ -732,13 +791,13 @@ function self_command(command)
 			mpe="on"
 			add_to_chat(206, 'MP ECONOMY ON')
 			--send_command('text idlevariable text "MPE-ON"')
-			windower.prim.set_texture('MP_EFFICIENCY',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mpeon.png')
+			windower.prim.set_texture('MP_EFFICIENCY',''..windower.windower_path..'addons/gearswap/data/images/mpeon.png')
 			send_command('pf')
 		else
 			mpe="off"
 			add_to_chat(206, 'MP ECONOMY OFF')
 			--send_command('text idlevariable text "MPE-OFF"')
-			windower.prim.set_texture('MP_EFFICIENCY',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mpeoff.png')
+			windower.prim.set_texture('MP_EFFICIENCY',''..windower.windower_path..'addons/gearswap/data/images/mpeoff.png')
 			send_command('pf')
 		end
 		send_command('pf')
@@ -753,12 +812,12 @@ function self_command(command)
 		if death_mode=="on" then
 			death_mode="off"
 			add_to_chat(206,"DEATH MODE: OFF")
-			windower.prim.set_texture('MP_EFFICIENCY',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/mpe'..mpe..'.png')
+			windower.prim.set_texture('MP_EFFICIENCY',''..windower.windower_path..'addons/gearswap/data/images/mpe'..mpe..'.png')
 			send_command('pf')
 		else
 			death_mode="on"
 			add_to_chat(206,"DEATH MODE: ON")
-			windower.prim.set_texture('MP_EFFICIENCY',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/deathmode.png')
+			windower.prim.set_texture('MP_EFFICIENCY',''..windower.windower_path..'addons/gearswap/data/images/deathmode.png')
 			send_command('pf')
 		end
 		send_command('pf')
@@ -779,11 +838,11 @@ function self_command(command)
 			magic_mode="acc"
 			add_to_chat(206, 'MAGIC MODE: ACC')
 			send_command('text pdtvariable text "MAGIC-ACC"')
-			windower.prim.set_texture('MAGIC_MODE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/magicaccuracy.png')
+			windower.prim.set_texture('MAGIC_MODE',''..windower.windower_path..'addons/gearswap/data/images/magicaccuracy.png')
 		else
 			magic_mode="dmg"
 			add_to_chat(206, 'MAGIC MODE: POTENCY')
-			windower.prim.set_texture('MAGIC_MODE',''..windower.windower_path..'addons/gearswap/data/'..player.name..'/images/magicpotency.png')
+			windower.prim.set_texture('MAGIC_MODE',''..windower.windower_path..'addons/gearswap/data/images/magicpotency.png')
 			--send_command('text pdtvariable text "MAGIC-POTENCY"')
 		end
 		send_command('pf')

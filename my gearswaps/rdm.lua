@@ -102,7 +102,10 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	StunType="recast"
 	MagicType="potency"	
 	WSType="damage"
+	hastetype="none"
 	
+	sets.hastetype= T{}
+	sets.hastetype= T{}
 	sets.TPMode= T{}
 	sets.TPType= T{}
 	sets.IdleType= T{}
@@ -367,6 +370,51 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 --Idle Sets
 end
 
+packets = require('packets')
+
+player = windower.ffxi.get_player()
+
+windower.raw_register_event('incoming chunk', function(id,original,modified,injected,blocked)
+    if id == 0x28 then
+        local action = packets.parse('incoming', original)
+        if action['Category'] == 4 then -- Category 4 is spell finish
+			
+            if player.id == action['Target 1 ID'] then 
+				print(action['Param'])
+                if action['Param'] == 57 then --haste
+                    hastetype="Haste"
+					add_to_chat(206,"hastetype:"..hastetype.."")
+                elseif action['Param'] == 511 --[[haste II]] or action['Param'] == 710 --[[erratic flutter]]then
+                    hastetype="Haste II"
+					add_to_chat(206,"hastetype:"..hastetype.."")
+				elseif action['Param'] == 845 --[[flurry]] then
+					hastetype="Flurry"
+					add_to_chat(206,"hastetype:"..hastetype.."")
+				elseif action['Param'] == 846 --[[flurry II]] then
+					hastetype="Flurry II"
+					add_to_chat(206,"hastetype:"..hastetype.."")
+                end				
+            end    
+        elseif action['Category'] == 13 then -- Category 13 is Avatar TP finish
+            for i,v in pairs(action) do
+                if string.match(i, 'Target %d+ ID') then
+                    if player.id == v then
+                        print(action['Param'])
+                        if action['Param'] == 595 then -- Change 100 for whatever gets printed, then erase the print line when you get what you want
+                            hastetype="Hastega"
+							add_to_chat(206,"hastetype:"..hastetype.."")
+						elseif action['Param'] == 602 then
+							hastetype="Hastega II"
+							add_to_chat(206,"hastetype:"..hastetype.."")
+                        end
+                    end
+                end
+            end
+		end
+    end
+end)
+
+
 function precast(spell)
 	if spell.prefix=="/magic" or spell.prefix=="/ninjutsu" then
 		equip(sets.precast[spell.skill])
@@ -464,6 +512,13 @@ function status_change(new,old)
 		end
 	else
 		equip(sets.idle[IdleType])
+	end
+end
+
+function buff_change(buff,gain)
+	buff=string.lower
+	if buff=="haste" and gain then
+		checkhaste()
 	end
 end
 
@@ -604,4 +659,7 @@ function self_command(command)
 		end
 	end
 	-- ws toggle
+	if command== "checkhaste" then
+		checkhaste()
+	end
 end

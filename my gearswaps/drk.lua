@@ -67,7 +67,7 @@ function get_sets()
 --precast sets
 	--magic
 	sets.precast.ma={ammo="Sapience Orb",
-    head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','"Fast Cast"+3',}},
+    head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
     body={ name="Odyss. Chestplate", augments={'Mag. Acc.+19','"Fast Cast"+6','VIT+1','"Mag.Atk.Bns."+6',}},
     hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
     legs={ name="Odyssean Cuisses", augments={'STR+4','"Fast Cast"+7','Accuracy+7 Attack+7',}},
@@ -84,17 +84,17 @@ function get_sets()
 	
 	sets.strws={ammo="Knobkierrie",
     head={ name="Argosy Celata", augments={'DEX+10','Accuracy+15','"Dbl.Atk."+2',}},
-    body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}},
+    body="Dagon Breastplate",
     hands={ name="Argosy Mufflers", augments={'STR+15','"Dbl.Atk."+2','Haste+2%',}},
-    legs={ name="Argosy Breeches", augments={'STR+10','Attack+20','"Store TP"+5',}},
-    feet="Sulev. Leggings +1",
+    legs="Sulev. Cuisses +2",
+    feet="Sulev. Leggings +2",
     neck="Fotia Gorget",
     waist="Fotia Belt",
-    left_ear="Zwazo Earring",
+    left_ear="Zwazo Earring +1",
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
-    left_ring="Ifrit Ring +1",
+    left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
-    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},}
 	
 	sets.strwstb= set_combine(sets.strws, {left_ear="Moonshade Earring", right_ear="Brutal Earring",})
 	
@@ -111,7 +111,7 @@ function get_sets()
 	
 	sets.critwstb= set_combine(sets.critws, {left_ear="Moonshade Earring", right_ear="Brutal Earring",})
 	
-	sets.vitws= set_combine(sets.strws, {left_ring="Terrasoul Ring", right_ring="Terrasoul Ring",})
+	sets.vitws= set_combine(sets.strws, {})
 	
 	sets.vitwstb= set_combine(sets.vitws, {left_ear="Moonshade Earring", right_ear="Brutal Earring",})
 	--ws basesets
@@ -224,24 +224,272 @@ function get_sets()
 	--magic base-sets
 	
 	--Dark Magic
-	sets.midcast['Absorb-ACC']={}
-	sets.midcast['Absorb-AGI']={}
-	sets.midcast['Absorb-Attri']={}
-	sets.midcast['Absorb-CHR']={}
-	sets.midcast['Absorb-DEX']={}
-	sets.midcast['Absorb-INT']={}
-	sets.midcast['Absorb-MND']={}
-	sets.midcast['Absorb-STR']={}
-	sets.midcast['Absorb-TP']={}
-	sets.midcast['Absorb-VIT']={}
-	sets.midcast['Aspir']={}
-	sets.midcast['Aspir II']={}
-	sets.midcast['Bio']={}
-	sets.midcast['Bio II']={}
-	sets.midcast['Drain']={}
-	sets.midcast['Drain II']={}
-	sets.midcast['Dread Spikes']={}
-	sets.midcast['Endark']={}
+	sets.midcast['Absorb-ACC']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Absorb-AGI']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Absorb-Attri']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Absorb-CHR']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Absorb-DEX']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Absorb-INT']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Absorb-MND']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Absorb-STR']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Absorb-TP']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Absorb-VIT']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+		
+	sets.midcast['Aspir']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Aspir II']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Bio']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Bio II']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Drain']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Drain II']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Drain III']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
+	sets.midcast['Dread Spikes']={ammo="Egoist's Tathlum",
+    head="Gavialis Helm",
+    body="Heathen's Cuirass",
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Dualism Collar +1",
+    waist="Oneiros Belt",
+    left_ear="Odnowa Earring",
+    right_ear="Odnowa Earring +1",
+    left_ring="Moonbeam Ring",
+    right_ring="Moonbeam Ring",
+    back="Moonbeam Cape",}
+	
+	sets.midcast['Endark']={ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
+    neck="Erra Pendant",
+    waist="Eschan Stone",
+    left_ear="Hermetic Earring",
+    right_ear="Digni. Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},}
+	
 	sets.midcast['Stun']={}
 	--Dark Magic
 	
@@ -283,7 +531,7 @@ function get_sets()
 
 	--tp sets
 	sets.aftercast.gs.multi={ammo="Ginsen",
-    head="Flam. Zucchetto +1",
+    head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands={ name="Valorous Mitts", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+2','Accuracy+9',}},
     legs={ name="Odyssean Cuisses", augments={'Accuracy+23 Attack+23','"Dbl.Atk."+2','Accuracy+8',}},
@@ -294,37 +542,48 @@ function get_sets()
     right_ear="Telos Earring",
     left_ring="Hetairoi Ring",
     right_ring="Niqmaddu Ring",
-    back="Ground. Mantle +1",}
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},}
 	
 	sets.aftercast.gs.acc= {ammo="Ginsen",
     head={ name="Argosy Celata", augments={'DEX+10','Accuracy+15','"Dbl.Atk."+2',}},
     body="Dagon Breast.",
     hands={ name="Emicho Gauntlets", augments={'HP+50','DEX+10','Accuracy+15',}},
     legs="Sulev. Cuisses +2",
-    feet="Flam. Gambieras +1",
+    feet="Flam. Gambieras +2",
     neck="Loricate Torque +1",
     waist="Ioskeha Belt",
     left_ear="Mache Earring",
     right_ear="Telos Earring",
     left_ring="Ramuh Ring +1",
     right_ring="Niqmaddu Ring",
-    back="Ground. Mantle +1",}
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},}
 	
-	sets.aftercast.gs.xhit= set_combine(sets.aftercast.gs.acc, {head="Xaddi Headgear", body="Xaddi Mail",})
-	
+	sets.aftercast.gs.xhit= {ammo="Ginsen",
+    head="Flam. Zucchetto +2",
+    body={ name="Valorous Mail", augments={'Accuracy+28','"Store TP"+7','DEX+7',}},
+    hands={ name="Emicho Gauntlets", augments={'HP+50','DEX+10','Accuracy+15',}},
+    legs={ name="Odyssean Cuisses", augments={'Accuracy+23 Attack+23','"Store TP"+6','DEX+4','Accuracy+10',}},
+    feet={ name="Valorous Greaves", augments={'Accuracy+29','"Store TP"+8','Attack+2',}},
+    neck="Coatl Gorget +1",
+    waist="Ioskeha Belt",
+    left_ear="Cessance Earring",
+    right_ear="Brutal Earring",
+    left_ring="Rajas Ring",
+    right_ring="Petrov Ring",
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},}
 	sets.aftercast.gs.hybrid={ammo="Ginsen",
-    head="Sulevia's Mask +1",
-    body="Sulevia's Plate. +1",
-    hands="Sulev. Gauntlets +1",
+    head="Sulevia's Mask +2",
+    body="Sulevia's Plate. +2",
+    hands="Sulev. Gauntlets +2",
     legs="Sulev. Cuisses +2",
-    feet="Sulev. Leggings +1",
+    feet="Sulev. Leggings +2",
     neck="Loricate Torque +1",
     waist="Tempus Fugit",
     left_ear="Cessance Earring",
     right_ear="Telos Earring",
     left_ring="Vocane Ring",
     right_ring="Defending Ring",
-    back="Ground. Mantle +1",}
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},}
 	
 	sets.aftercast.scythe.multi= set_combine(sets.aftercast.gs.multi, {main="Tajabit",})
 	
@@ -337,9 +596,9 @@ function get_sets()
 
 	--dt sets
 	sets.aftercast.gs.pdt={ammo="Vanir Battery",
-    head="Sulevia's Mask +1",
+    head="Sulevia's Mask +2",
     body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
-    hands="Sulev. Gauntlets +1",
+    hands="Sulev. Gauntlets +2",
     legs="Sulev. Cuisses +2",
     feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
     neck="Loricate Torque +1",
@@ -351,9 +610,9 @@ function get_sets()
     back="Shadow Mantle",}
 	
 	sets.aftercast.gs.dt={ammo="Vanir Battery",
-    head="Sulevia's Mask +1",
+    head="Sulevia's Mask +2",
     body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
-    hands="Sulev. Gauntlets +1",
+    hands="Sulev. Gauntlets +2",
     legs="Sulev. Cuisses +2",
     feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
     neck="Loricate Torque +1",
@@ -365,9 +624,9 @@ function get_sets()
     back="Shadow Mantle",}
 	
 	sets.aftercast.gs.mdt={ammo="Vanir Battery",
-    head="Sulevia's Mask +1",
+    head="Sulevia's Mask +2",
     body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
-    hands="Sulev. Gauntlets +1",
+    hands="Sulev. Gauntlets +2",
     legs="Sulev. Cuisses +2",
     feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
     neck="Loricate Torque +1",
@@ -389,7 +648,7 @@ function get_sets()
 	sets.aftercast.gs.idle.standard={ammo="Vanir Battery",head="Baghere Salade",
     body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
     hands={ name="Odyssean Gauntlets", augments={'Pet: Crit.hit rate +3','Attack+4','"Refresh"+1',}},
-    legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},
     feet={ name="Odyssean Greaves", augments={'Pet: STR+5','STR+4','"Refresh"+1',}},
     neck="Coatl Gorget +1",
     waist="Nierenschutz",
@@ -402,7 +661,7 @@ function get_sets()
 	sets.aftercast.gs.idle.refresh=set_combine(sets.aftercast.gs.idle.standard,{head={ name="Odyssean Helm", augments={'"Mag.Atk.Bns."+8','Potency of "Cure" effect received+3%','"Refresh"+1','Accuracy+5 Attack+5',}},
     body={ name="Jumalik Mail", augments={'HP+45','Attack+14','Enmity+8','"Refresh"+1',}},
     hands={ name="Odyssean Gauntlets", augments={'Pet: Crit.hit rate +3','Attack+4','"Refresh"+1',}},
-    legs={ name="Carmine Cuisses", augments={'Accuracy+10','DEX+10','MND+15',}},
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},
     feet={ name="Odyssean Greaves", augments={'Pet: STR+5','STR+4','"Refresh"+1',}},})
 	
 	sets.aftercast.scythe.idle= set_combine(sets.aftercast.gs.idle, {main="Tajabit",})

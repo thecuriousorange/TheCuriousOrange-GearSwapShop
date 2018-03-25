@@ -89,8 +89,8 @@ function get_sets()
     feet="Hiza. Sune-Ate +1",
     neck="Sanctity Necklace",
     waist="Caudata Belt",
-    left_ear="Soil Pearl",
-    right_ear="Infused Earring",
+    left_ear="Odnowa Earring",
+    right_ear="Odnowa Earring +1",
     left_ring="Supershear Ring",
     right_ring="Niqmaddu Ring",
     back="Agema Cape",}
@@ -186,7 +186,7 @@ function get_sets()
     right_ear="Etiolation Earring",
     left_ring="Prolix Ring",
     right_ring="Rahab Ring",
-    back="Mollusca Mantle",}
+    back="Moonbeam Cape",}
 	
 	sets.midcast.nin={head="Haruspex Hat",
     body="Samnuha Coat",
@@ -235,7 +235,7 @@ function get_sets()
 	
 	sets.aftercast.tp.styleIII= {ammo="Falcon Eye",
     head="Hizamaru Somen +1",
-    body="Hiza. Haramaki +1",
+    body="Hiza. Haramaki +2",
     hands={ name="Ryuo Tekko", augments={'DEX+10','Accuracy+20','"Dbl.Atk."+3',}},
     legs="Hiza. Hizayoroi +1",
     feet="Hiza. Sune-Ate +1",
@@ -316,7 +316,7 @@ function get_sets()
 	sets.aftercast.idle.pdt=set_combine(sets.aftercast.pdt,{feet="Hermes' Sandals",})
 	
 	sets.aftercast.idle.regen= set_combine(sets.aftercast.idle.pdt, {head="Rao Kabuto", right_ear="Infused Earring", legs="Rao Haidate",
-	neck="Sanctity Necklace", body="Hiza. Haramaki +1", hands="Rao Kote", left_ring="Sheltered Ring", right_ring="Paguroidea Ring",})
+	neck="Sanctity Necklace", body="Hiza. Haramaki +2", hands="Rao Kote", left_ring="Sheltered Ring", right_ring="Paguroidea Ring",})
 -- idle sets
 end
 
