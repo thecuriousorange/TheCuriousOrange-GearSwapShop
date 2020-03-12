@@ -19,11 +19,18 @@ function get_sets()
 	sets.midcast={}
 	sets.tp={}
 	--baseset names
+	sets.elemental={}
+	sets.elemental.index={"fira","blizzara","stonra","aera","thundra","watera"}
+	elemental_ind=1
+	
+	sets.status={}
+	sets.status.index={"[petra","blizzara","stonra","aera","thundra","watera"}
+	status_ind=1
 	
 	--precast sets
 	sets.precast.fc={main="Marin Staff", ammo="Incantor Stone", head="Nahtirah Hat", body="Anhur Robe",
 	hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -1%','Song recast delay -1',}},
-	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet="Chelona Boots",
+	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet="Regal Pumps +1",
 	neck="Orison Locket", waist="Fucho-no-Obi", left_ear="Ethereal Earring", right_ear="Loquac. Earring",
 	left_ring="Kishar Ring", right_ring="Rahab Ring", back="Swith Cape",}
 	
@@ -59,7 +66,7 @@ function get_sets()
 	
 	sets.midcast.na={main="Marin Staff", ammo="Incantor Stone", head="Orison Cap +2", body="Anhur Robe",
 	hands={ name="Helios Gloves", augments={'Mag. Evasion+10','"Fast Cast"+5','INT+5 MND+5',}},
-	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet="Chelona Boots",
+	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet="Regal Pumps +1",
 	neck="Orison Locket", waist="Ninurta's Sash", left_ear="Etiolation Earring", right_ear="Loquac. Earring",
 	left_ring="Kishar Ring", right_ring="Rahab Ring", back="Swith Cape",}
 	
@@ -194,7 +201,17 @@ function status_change(new,old)
 	end
 end
 
-function self_command(command)
+function self_command(cmd)
+	if command=="cycle_elements" then
+		elemental_ind=elemental_ind+1
+		add_to_chat(206, "barspell set to: bar"..sets.elemental.index[elemental_ind]..)
+		send_command('alias barelera bar'..sets.elemental.index[elemental_ind]..)
+	end
+	if command=="cycle_barstatus" then
+		status_ind=status_ind+1
+		add_to_chat(206, "barspell set to: bar"..sets.status.index[status_ind]..)
+		send_command('alias barelera bar'..sets.elemental.index[elemental_ind]..)
+	end
 	if command=="club" then
 		Weaponry="club"
 	elseif command=="staff" then

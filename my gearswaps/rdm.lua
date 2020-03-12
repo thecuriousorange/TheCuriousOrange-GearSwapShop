@@ -137,10 +137,10 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	
 --premagic sets
 	sets.precast.fc={main="Marin Staff", head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs="Orvail Pants +1",
-	feet="Chelona Boots", neck="Jeweled Collar", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
+	feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}}, neck="Voltsurge Torque", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
 	left_ring="Kishar Ring", back="Swith Cape",} --needs adjustments.
 	
-	sets.precast.impact={body="Twilight Cloak", hands="Helios Gloves", feet="Chelona Boots",
+	sets.precast.impact={body="Twilight Cloak", hands="Helios Gloves", feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
 	neck="Stoicheion Medal", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
 	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	left_ring="Kishar Ring", back="Swith Cape",} --needs adjustments.
@@ -168,13 +168,13 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	sets.stun.recast={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Shango Robe",
 	hands="Hagondes Cuffs +1", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", waist="Ninurta's Sash",
-	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
+	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Shiva Ring +1",
 	back="Bane Cape",} --needs adjustments
 	
 	sets.stun.accuracy={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Shango Robe",
 	hands="Hagondes Cuffs +1", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", waist="Ninurta's Sash",
-	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Strendu Ring",
+	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Shiva Ring +1",
 	back="Bane Cape",} --needs adjustments
 	
 	sets.midcast["Dark Magic"]={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Shango Robe",
@@ -194,7 +194,7 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	
 	sets.healing.cure={main="Tamaxchi", sub="Sors Shield", head="Nahtirah Hat", body="Heka's Kalasiris", hands="Serpentes Cuffs",
 	legs="Nares Trews", feet="Serpentes Sabots", neck="Loricate Torque +1", waist="Cascade Belt", left_ear="Sanare Earring",
-	right_ear="Ethereal Earring", left_ring="Vocane Ring", right_ring="Shadow Ring", back="Swith Cape",} --needs adjustment
+	right_ear="Ethereal Earring", left_ring="Vocane Ring +1", right_ring="Shadow Ring", back="Swith Cape",} --needs adjustment
 	
 	sets.healing.regen={}
 	
@@ -207,11 +207,11 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	sets.elemental.dot={main="Marin Staff", sub="Elementa Grip", ammo="Pemphredo Tathlum", head="Wicce Petasos +1", 
 	body="Shango Robe", hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	neck="Sanctity Necklace", waist="Eschan Stone", left_ear="Strophadic Earring", right_ear="Gwati Earring",
-	left_ring="Sangoma Ring", right_ring="Strendu Ring", back="Bane Cape",}
+	left_ring="Sangoma Ring", right_ring="Shiva Ring +1", back="Bane Cape",}
 	
 	sets.elemental.impact={main=nukestaff, sub="Elementa Grip", ammo="Pemphredo Tathlum", body="Twilight Cloak",
 	hands="Yaoyotl Gloves", legs="Hagondes Pants +1", feet="Umbani Boots", neck="Sanctity Necklace", waist="Othila Sash", 
-	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Archon Ring", right_ring="Strendu Ring",
+	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Archon Ring", right_ring="Shiva Ring +1",
     back="Toro Cape",} --needs adjustments
 	
 	sets.divine.enfeeble={}
@@ -227,7 +227,7 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	sets.enhancing["Phalanx II"]={}
 	
 	sets.enhancing.buff={main="Marin Staff", sub="Fulcio Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Anhur Robe",
-	hands="Lurid Mitts", legs="Portent Pants", feet="Chelona Boots", neck="Incanter's Torque", waist="Cascade Belt",
+	hands="Lurid Mitts", legs="Portent Pants", feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}}, neck="Incanter's Torque", waist="Cascade Belt",
 	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Levia. Ring", right_ring="Levia. Ring",
 	back="Swith Cape",} --needs adjustments
 	

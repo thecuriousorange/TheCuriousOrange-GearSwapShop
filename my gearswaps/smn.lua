@@ -3,17 +3,18 @@ function get_sets()
 	
 	sets.precast={}
 	sets.ja={}
+	sets.midcast={}
 	
 	sets.precast.fc={
     main={ name="Grioavolr", augments={'Blood Pact Dmg.+7','Pet: Mag. Acc.+25','Pet: "Mag.Atk.Bns."+20','DMG:+3',}},
-    sub="Elan Strap",
+    sub="Elan Strap +1",
     ammo="Sapience Orb",
     head={ name="Merlinic Hood", augments={'Mag. Acc.+7','"Fast Cast"+6','"Mag.Atk.Bns."+3',}},
     body="Inyanga Jubbah +2",
     hands={ name="Helios Gloves", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','"Fast Cast"+5','Magic burst dmg.+7%',}},
     legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}},
     feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+6',}},
-    neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}},
+    neck="Voltsurge Torque",
     waist="Channeler's Stone",
     left_ear="Loquac. Earring",
     right_ear="Etiolation Earring",
@@ -45,8 +46,8 @@ function get_sets()
 	
 	sets.idle={
     main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}},
-    sub="Elan Strap",
-    ammo="Sancus Sachet",
+    sub="Elan Strap +1",
+    ammo="Sancus Sachet +1",
     head="Con. Horn +1",
     body={ name="Apogee Dalmatica", augments={'Summoning magic skill +15','Enmity-5','Pet: Damage taken -3%',}},
     hands={ name="Glyphic Bracers +1", augments={'Inc. Sp. "Blood Pact" magic burst dmg.',}},
@@ -57,7 +58,7 @@ function get_sets()
     left_ear="Gifted Earring",
     right_ear="Smn. Earring",
     left_ring="Evoker's Ring",
-    right_ring="Varar Ring",
+    right_ring="Varar Ring +1",
     back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10',}},
 	}
 	
@@ -65,8 +66,8 @@ function get_sets()
 	
 	sets.bpdelay={
     main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}},
-    sub="Elan Strap",
-    ammo="Sancus Sachet",
+    sub="Elan Strap +1",
+    ammo="Sancus Sachet +1",
     head="Con. Horn +1",
     body={ name="Glyphic Doublet +1", augments={'Reduces Sp. "Blood Pact" MP cost',}},
     hands={ name="Glyphic Bracers +1", augments={'Inc. Sp. "Blood Pact" magic burst dmg.',}},
@@ -83,26 +84,26 @@ function get_sets()
 	
 	sets.bpphysical={
     main={ name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15',}},
-    sub="Elan Strap",
-    ammo="Sancus Sachet",
-    head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-    body="Con. Doublet +2",
-    hands={ name="Merlinic Dastanas", augments={'Pet: Accuracy+18 Pet: Rng. Acc.+18','Blood Pact Dmg.+9','Pet: STR+5','Pet: Mag. Acc.+7',}},
-    legs={ name="Apogee Slacks", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-    feet={ name="Apogee Pumps", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
+    sub="Elan Strap +1",
+    ammo="Sancus Sachet +1",
+    head={ name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
+    body="Con. Doublet +3",
+    hands="Convo. Bracers +3",
+    legs={ name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}},
+    feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
     neck="Shulmanu Collar",
     waist="Incarnation Sash",
     left_ear="Lugalbanda Earring",
-    right_ear="Enmerkar Earring",
-    left_ring="Varar Ring",
-    right_ring="Varar Ring",
+    right_ear="Kyrene's Earring",
+    left_ring="Varar Ring +1",
+    right_ring="Varar Ring +1",
     back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10',}},
 	}
 	
 	sets.bphybrid={
     main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
-    sub="Elan Strap",
-    ammo="Sancus Sachet",
+    sub="Elan Strap +1",
+    ammo="Sancus Sachet +1",
     head={ name="Glyphic Horn +1", augments={'Enhances "Astral Flow" effect',}},
     body="Beck. Doublet +1",
     hands={ name="Glyphic Bracers +1", augments={'Inc. Sp. "Blood Pact" magic burst dmg.',}},
@@ -112,32 +113,32 @@ function get_sets()
     waist="Incarnation Sash",
     left_ear="Lugalbanda Earring",
     right_ear="Enmerkar Earring",
-    left_ring="Varar Ring",
+    left_ring="Varar Ring +1",
     right_ring="Speaker's Ring",
     back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10',}},
 }
 	
 	sets.bpmagic={
     main={ name="Grioavolr", augments={'Blood Pact Dmg.+7','Pet: Mag. Acc.+25','Pet: "Mag.Atk.Bns."+20','DMG:+3',}},
-    sub="Elan Strap",
-    ammo="Sancus Sachet",
+    sub="Elan Strap +1",
+    ammo="Sancus Sachet +1",
     head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-    body={ name="Apogee Dalmatica", augments={'MP+60','Pet: "Mag.Atk.Bns."+30','Blood Pact Dmg.+7',}},
+    body="Con. Doublet +3",
     hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+13 Pet: "Mag.Atk.Bns."+13','Blood Pact Dmg.+7','Pet: DEX+3','Pet: "Mag.Atk.Bns."+11',}},
     legs={ name="Apogee Slacks", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
     feet={ name="Apogee Pumps", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
     neck="Adad Amulet",
     waist="Regal Belt",
     left_ear="Lugalbanda Earring",
-    right_ear="Enmerkar Earring",
-    left_ring="Varar Ring",
-    right_ring="Varar Ring",
+    right_ear="Kyrene's Earring",
+    left_ring="Varar Ring +1",
+    right_ring="Varar Ring +1",
     back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','"Fast Cast"+10',}},
 }
 	
 	sets.bpbuff={main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
     sub="Vox Grip",
-    ammo="Sancus Sachet",
+    ammo="Sancus Sachet +1",
     head="Beckoner's Horn +1",
     body="Beck. Doublet +1",
     hands="Lamassu Mitts +1",
@@ -154,12 +155,12 @@ function get_sets()
 	
 	sets.bpenfeeb={main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
     sub="Vox Grip",
-    ammo="Sancus Sachet",
-    head="Tali'ah Turban +1",
-    body="Tali'ah Manteel +1",
-    hands="Tali'ah Gages +1",
-    legs="Tali'ah Sera. +1",
-    feet="Tali'ah Crackows +1",
+    ammo="Sancus Sachet +1",
+    head="Tali'ah Turban +2",
+    body="Tali'ah Manteel +2",
+    hands="Tali'ah Gages +2",
+    legs="Tali'ah Sera. +2",
+    feet="Tali'ah Crackows +2",
     neck="Incanter's Torque",
     waist="Lucidity Sash",
     left_ear="Andoaa Earring",
@@ -170,8 +171,8 @@ function get_sets()
 	
 	sets.ja["Elemental Siphon"]={
     main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
-    sub="Elan Strap",
-    ammo="Sancus Sachet",
+    sub="Elan Strap +1",
+    ammo="Sancus Sachet +1",
     head="Beckoner's Horn +1",
     body={ name="Apogee Dalmatica", augments={'Summoning magic skill +15','Enmity-5','Pet: Damage taken -3%',}},
     hands="Lamassu Mitts +1",
@@ -185,7 +186,14 @@ function get_sets()
     right_ring="Stikini Ring",
     back={ name="Conveyance Cape", augments={'Summoning magic skill +1','Blood Pact Dmg.+3',}},
 }
-	
+
+	sets.midcast.cure={ammo="Impatiens",
+    head={ name="Telchine Cap", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +9',}}, right_ear="Beatific Earring",
+    body="Heka's Kalasiris", neck="Incanter's Torque", waist="Gishdubar Sash", left_ear="Mendi. Earring",
+    hands={ name="Telchine Gloves", augments={'"Cure" potency +4%','Enh. Mag. eff. dur. +10',}}, left_ring="Levia. Ring",
+    legs={ name="Telchine Braconi", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}, right_ring="Levia. Ring",
+    feet={ name="Telchine Pigaches", augments={'"Cure" potency +6%','Enh. Mag. eff. dur. +6',}}, back="Swith Cape",}
+
 end
 
 function precast(spell)
@@ -215,6 +223,9 @@ end
 function midcast(spell)
 	if spell.skill=="Summoning Magic" then
 		equip(sets.idle)
+	end
+	if spell.english:find("Cure") or spell.english:find("Cura") then
+		equip(sets.midcast.cure)
 	end
 end
 

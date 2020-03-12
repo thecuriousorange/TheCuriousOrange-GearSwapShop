@@ -1,16 +1,21 @@
 function get_sets()
 	include('organizer-lib.lua')
+	include('corrolls.lua')
 --variables
 	TPSet="DD"
 	TPType="lowacc"
 	IdleType="regen"
 	ShotType="damage"
-	
+
 	sets.TPSet= T{}
 	sets.TPType= T{}
 	sets.IdleType= T{}
 	sets.ShotType= T{}
 --variables
+
+	--windower.send_command('text ammoname create;text ammoname pos 890 50;pause 1.5;text ammoname text "'..player.equipment.ammo..': "')
+	--windower.send_command('text ammo create;text ammo pos 1000 50;pause 1.5;text ammo text "'..player.inventory[player.equipment.ammo].count..'"')
+
 
 --basesets
 	sets.precast={}
@@ -22,6 +27,19 @@ function get_sets()
 	sets.idle={}
 	sets.midshot={}
 --basesets
+
+sets.dt={head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
+	body="Meg. Cuirie +2",
+	hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
+	legs="Mummu Kecks +2",
+	feet={ name="Herculean Boots", augments={'Damage taken-3%','STR+6','Attack+8',}},
+	neck="Loricate Torque +1",
+	waist="Flume Belt",
+	left_ear="Etiolation Earring",
+	right_ear="Odnowa Earring +1",
+	left_ring="Defending Ring",
+	right_ring="Vocane Ring +1",
+	back="Moonbeam Cape",}
 
 --precast sets
 	sets.preshot={head="Chass. Tricorne",
@@ -36,164 +54,115 @@ function get_sets()
     left_ring="Dingir Ring",
     right_ring="Ilabrat Ring",
     back={ name="Gunslinger's Cape", augments={'Enmity-2','"Mag.Atk.Bns."+2','"Phantom Roll" ability delay -5',}},}
-	
+
 	sets.precast.magic={head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
     body={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Crit. hit damage +3%',}},
     hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
     legs={ name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1',}},
     feet={ name="Carmine Greaves", augments={'Accuracy+10','DEX+10','MND+15',}},
-    neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}},
+    neck="Voltsurge Torque",
     waist="Flume Belt",
     left_ear="Etiolation Earring",
     right_ear="Loquac. Earring",
     left_ring="Rahab Ring",
     right_ring="Kishar Ring",
     back="Moonbeam Cape",}
-	
+
 	sets.precast.ninjutsu=set_combine(sets.precast.magic, {neck="Magoraga Beads",})
 --precast sets
 
 --ja sets
-	sets.rolls={head={ name="Lanun Tricorne", augments={'Enhances "Winning Streak" effect',}},
-    body="Meg. Cuirie +2",
-    hands="Chasseur's Gants",
-    legs="Mummu Kecks +2 +2",
-    feet={ name="Herculean Boots", augments={'Damage taken-3%','STR+6','Attack+8',}},
-    neck="Regal Necklace",
-    waist="Flume Belt",
-    left_ear="Etiolation Earring",
-    right_ear="Genmei Earring",
-    left_ring="Defending Ring",
-    right_ring="Luzaf's Ring",
-    back="Camulus's Mantle",}
-	
+	sets.rolls=set_combine(sets.dt,
+	{
+		head={ name="Lanun Tricorne", augments={'Enhances "Winning Streak" effect',}},
+		hands="Chasseur's Gants",
+		neck="Regal Necklace",
+		back="Camulus's Mantle",
+	})
+
 	sets.shots={}
-	
-	sets.ja["Corsair's Roll"]=sets.rolls
-	
-	sets.ja["Ninja's Roll"]=sets.rolls
-	
-	sets.ja["Hunter's Roll"]=sets.rolls
-	
-	sets.ja["Chaos Roll"]=sets.rolls
-	
-	sets.ja["Magus's Roll"]=sets.rolls
-	
-	sets.ja["Healer's Roll"]=sets.rolls
-	
-	sets.ja["Drachen Roll"]=sets.rolls
-	
-	sets.ja["Choral Roll"]=sets.rolls
-	
-	sets.ja["Monk's Roll"]=sets.rolls
-	
-	sets.ja["Beast Roll"]=sets.rolls
-	
-	sets.ja["Beast Roll"]=sets.rolls
-	
-	sets.ja["Samurai Roll"]=sets.rolls
-	
-	sets.ja["Evoker's Roll"]=sets.rolls
-	
-	sets.ja["Rogue's Roll"]=sets.rolls
-	
-	sets.ja["Warlock's Roll"]=sets.rolls
-	
-	sets.ja["Fighter's Roll"]=sets.rolls
-	
-	sets.ja["Puppet Roll"]=sets.rolls
-	
-	sets.ja["Gallant's Roll"]=sets.rolls
-	
-	sets.ja["Wizard's Roll"]=sets.rolls
-	
-	sets.ja["Dancer's Roll"]=sets.rolls
-	
-	sets.ja["Scholar's Roll"]=sets.rolls
-	
-	sets.ja["Bolter's Roll"]=sets.rolls
-	
-	sets.ja["Caster's Roll"]=sets.rolls
-	
-	sets.ja["Courser's Roll"]=sets.rolls
-	
-	sets.ja["Blitzer's Roll"]=sets.rolls
-	
-	sets.ja["Tactician's Roll"]=sets.rolls
-	
-	sets.ja["Allies' Roll"]=sets.rolls
-	
-	sets.ja["Miser's Roll"]=sets.rolls
-	
-	sets.ja["Companion's Roll"]=sets.rolls
-	
-	sets.ja["Avenger's Roll"]=sets.rolls
-	
-	sets.ja["Wild Card"]={head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
-    body="Meg. Cuirie +2",
-    hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
-    legs="Mummu Kecks +2",
-    feet={ name="Lanun Bottes", augments={'Enhances "Wild Card" effect',}},
-    neck="Loricate Torque +1",
-    waist="Flume Belt",
-    left_ear="Etiolation Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Defending Ring",
-    right_ring="Vocane Ring",
-    back="Moonbeam Cape",}
-	
+
+	sets.ja["Corsair's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Ninja's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Hunter's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Chaos Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Magus's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Healer's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Drachen Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Choral Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Monk's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Beast Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Beast Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Samurai Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Evoker's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Rogue's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Warlock's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Fighter's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Puppet Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Gallant's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Wizard's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Dancer's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Scholar's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Bolter's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Caster's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Courser's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Blitzer's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Tactician's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Allies' Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Miser's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Companion's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Avenger's Roll"]=set_combine(set.rolls,{})
+
+	sets.ja["Wild Card"]=set_combine({feet={ name="Lanun Bottes", augments={'Enhances "Wild Card" effect',}},})
+
 	sets.ja["Double-Up"]={}
-	
-	sets.ja["Random Deal"]={head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
-    body={ name="Lanun Frac", augments={'Enhances "Loaded Deck" effect',}},
-    hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
-    legs="Mummu Kecks +2",
-    feet={ name="Herculean Boots", augments={'Damage taken-3%','STR+6','Attack+8',}},
-    neck="Loricate Torque +1",
-    waist="Flume Belt",
-    left_ear="Etiolation Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Defending Ring",
-    right_ring="Vocane Ring",
-    back="Moonbeam Cape",}
-	
-	sets.ja["Snake Eye"]={head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
-    body="Meg. Cuirie +2",
-    hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
-    legs={ name="Lanun Culottes", augments={'Enhances "Snake Eye" effect',}},
-    feet={ name="Herculean Boots", augments={'Damage taken-3%','STR+6','Attack+8',}},
-    neck="Loricate Torque +1",
-    waist="Flume Belt",
-    left_ear="Etiolation Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Defending Ring",
-    right_ring="Vocane Ring",
-    back="Moonbeam Cape",}
-	
-	sets.ja["Fold"]={head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
-    body="Meg. Cuirie +2",
-    hands={ name="Lanun Gants", augments={'Enhances "Fold" effect',}},
-    legs="Mummu Kecks +2",
-    feet={ name="Herculean Boots", augments={'Damage taken-3%','STR+6','Attack+8',}},
-    neck="Loricate Torque +1",
-    waist="Flume Belt",
-    left_ear="Etiolation Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Defending Ring",
-    right_ring="Vocane Ring",
-    back="Moonbeam Cape",}
-	
-	sets.ja["Triple Shot"]={}
-	
-	sets.ja["Cutting Cards"]={}
-	
+
+	sets.ja["Random Deal"]=set_combine(sets.dt, {body={ name="Lanun Frac", augments={'Enhances "Loaded Deck" effect',}},})
+
+	sets.ja["Snake Eye"]=set_combine(sets.dt, {legs={ name="Lanun Trews", augments={'Enhances "Snake Eye" effect',}},})
+
+	sets.ja["Fold"]=set_combine(sets.dt, {hands={ name="Lanun Gants", augments={'Enhances "Fold" effect',}},})
+
+	sets.ja["Triple Shot"]=set_combine(sets.dt,{})
+
+	sets.ja["Cutting Cards"]=set_combine(sets.dt,{})
+
 	sets.qd={}
-	
-	sets.qd.acc={head="Mummu Bonnet +1",
+
+	sets.qd.acc={head="Mummu Bonnet +2",
     body="Mummu Jacket +2",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +2",
-    feet="Mummu Gamash. +1",
+    feet="Mummu Gamash. +2",
     neck="Sanctity Necklace",
     waist="Eschan Stone",
     left_ear="Digni. Earring",
@@ -201,12 +170,12 @@ function get_sets()
     left_ring="Dingir Ring",
     right_ring="Mummu Ring",
     back={ name="Gunslinger's Cape", augments={'Enmity-2','"Mag.Atk.Bns."+2','"Phantom Roll" ability delay -5',}},}
-	
+
 	sets.qd.damage={head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}},
     body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}},
     hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
     legs={ name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+3','STR+9','Mag. Acc.+9',}},
-    feet="Mummu Gamash. +1",
+    feet="Mummu Gamash. +2",
     neck="Sanctity Necklace",
     waist="Eschan Stone",
     left_ear="Friomisi Earring",
@@ -214,16 +183,16 @@ function get_sets()
     left_ring="Dingir Ring",
     right_ring="Acumen Ring",
     back={ name="Gunslinger's Cape", augments={'Enmity-2','"Mag.Atk.Bns."+2','"Phantom Roll" ability delay -5',}},}
-	
+
 	sets.qd.stp={}
 --ja sets
 
 --ra sets
 	sets.midshot.damage={head="Meghanada Visor +2",
     body="Mummu Jacket +2",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs={ name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}},
-    feet="Mummu Gamash. +1",
+    feet="Mummu Gamash. +2",
     neck="Iskur Gorget",
     waist="Elanid Belt",
     left_ear="Enervating Earring",
@@ -231,114 +200,114 @@ function get_sets()
     left_ring="Dingir Ring",
     right_ring="Ilabrat Ring",
     back={ name="Gunslinger's Cape", augments={'Enmity-2','"Mag.Atk.Bns."+2','"Phantom Roll" ability delay -5',}},}
-	
+
 	sets.midshot.accuracy={}
 --ra sets
 
 --ws sets
 	--ranged ws
 	sets.wsdmg["Hot Shot"]={}
-	
+
 	sets.wsacc["Hot Shot"]={}
-	
+
 	sets.wsdmg["Split Shot"]={}
-	
+
 	sets.wsacc["Split Shot"]={}
-	
+
 	sets.wsdmg["Sniper Shot"]={}
-	
+
 	sets.wsacc["Sniper Shot"]={}
-	
+
 	sets.wsdmg["Slug Shot"]={}
-	
+
 	sets.wsacc["Slug Shot"]={}
-	
+
 	sets.wsdmg["Detonator"]={}
-	
+
 	sets.wsacc["Detonator"]={}
-	
+
 	sets.wsdmg["Leaden Salute"]={}
-	
+
 	sets.wsacc["Leaden Salute"]={}
-	
+
 	sets.wsdmg["Numbing Shot"]={}
-	
+
 	sets.wsacc["Numbing Shot"]={}
-	
+
 	sets.wsdmg["Wildfire"]={}
-	
+
 	sets.wsacc["Wildfire"]={}
-	
+
 	sets.wsdmg["Last Stand"]={}
-	
+
 	sets.wsacc["Last Stand"]={}
 	--ranged ws
-	
+
 	--sword ws
 	sets.wsdmg["Fast Blade"]={}
-	
+
 	sets.wsacc["Fast Blade"]={}
-	
+
 	sets.wsdmg["Burning Blade"]={}
-	
+
 	sets.wsacc["Burning Blade"]={}
-	
+
 	sets.wsdmg["Flat Blade"]={}
-	
+
 	sets.wsacc["Flat Blade"]={}
-	
+
 	sets.wsdmg["Shining Blade"]={}
-	
+
 	sets.wsacc["Shining Blade"]={}
-	
+
 	sets.wsdmg["Circle Blade"]={}
-	
+
 	sets.wsacc["Circle Blade"]={}
-	
+
 	sets.wsdmg["Savage Blade"]={}
-	
+
 	sets.wsacc["Savage Blade"]={}
-	
+
 	sets.wsdmg["Requiescat"]={}
-	
+
 	sets.wsacc["Requiescat"]={}
 	--sword ws
-	
+
 	--dagger ws
 	sets.wsdmg["Wasp Sting"]={}
-	
+
 	sets.wsacc["Wasp Sting"]={}
-	
+
 	sets.wsdmg["Gust Slash"]={}
-	
+
 	sets.wsacc["Gust Slash"]={}
-	
+
 	sets.wsdmg["Shadow Stitch"]={}
-	
+
 	sets.wsacc["Shadow Stitch"]={}
-	
+
 	sets.wsdmg["Energy Steal"]={}
-	
+
 	sets.wsacc["Energy Steal"]={}
-	
+
 	sets.wsdmg["Evisceration"]={}
-	
+
 	sets.wsacc["Evisceration"]={}
-	
+
 	sets.wsdmg["Aeolian Edge"]={}
-	
+
 	sets.wsacc["Aeolian Edge"]={}
-	
+
 	sets.wsdmg["Exenterator"]={}
-	
+
 	sets.wsacc["Exenterator"]={}
 	--dagger ws
 --ws sets
 
 --engaged sets
-	sets.tp.lowacc={head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
-    body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
-    hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
+	sets.tp.lowacc={head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+    body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+        hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
     legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
     feet={ name="Herculean Boots", augments={'Accuracy+16','"Triple Atk."+4','AGI+2','Attack+9',}},
     neck="Iskur Gorget",
@@ -348,15 +317,15 @@ function get_sets()
     left_ring="Petrov Ring",
     right_ring="Epona's Ring",
     back="Ground. Mantle +1",}
-	
+
 	sets.tp.medacc=set_combine(sets.tp.lowacc, {})
-	
+
 	sets.tp.highacc=set_combine(sets.tp.medacc, {})
-	
+
 	sets.hybrid.lowacc={}
-	
+
 	sets.hybrid.medacc={}
-	
+
 	sets.hybrid.highacc={}
 --engaged sets
 
@@ -373,7 +342,7 @@ function get_sets()
     left_ring="Sheltered Ring",
     right_ring="Paguroidea Ring",
     back="Moonbeam Cape",}
-	
+
 	sets.idle.refresh={head={ name="Rawhide Mask", augments={'HP+50','Accuracy+15','Evasion+20',}},
     body="Mekosu. Harness",
     hands={ name="Herculean Gloves", augments={'Blood Pact Dmg.+3','Attack+15','"Refresh"+1','Accuracy+8 Attack+8','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
@@ -384,9 +353,9 @@ function get_sets()
     left_ear="Etiolation Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Defending Ring",
-    right_ring="Vocane Ring",
+    right_ring="Vocane Ring +1",
     back="Moonbeam Cape",}
-	
+
 	sets.idle.dt={head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
     body="Meg. Cuirie +2",
     hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
@@ -397,31 +366,34 @@ function get_sets()
     left_ear="Etiolation Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Defending Ring",
-    right_ring="Vocane Ring",
+    right_ring="Vocane Ring +1",
     back="Moonbeam Cape",}
-			
+
 	sets.idle.regenmove=set_combine(sets.idle.regen,{legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},})
-	
+
 	sets.idle.refreshmove=set_combine(sets.idle.refresh,{legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},})
-	
+
 	sets.idle.dtmove=set_combine(sets.idle.dt,{legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},})
 --idle sets
 end
 
+	--windower.send_command('text ammoname text "'..player.equipment.ammo..': "')
+	--windower.send_command('text ammo text "'..player.inventory[player.equipment.ammo].count..'"')
+
 function precast(spell)
-	if command.prefix=="/range" then
+	if spell.prefix=="/range" then
 		equip(sets.preshot)
 	end
-	if command.prefix=="/magic" then
+	if spell.prefix=="/magic" then
 		equip(sets.precast.magic)
 	end
-	if command.prefix=="/ninjutsu" then
+	if spell.prefix=="/ninjutsu" then
 		equip(sets.precast.ninjutsu)
 	end
-	if command.prefix=="/jobability" then
+	if spell.prefix=="/jobability" then
 		equip(sets.ja[spell.english])
 	end
-	if command.prefix=="/weaponskill" then
+	if spell.prefix=="/weaponskill" then
 		if WSMode=="damage" then
 			equip(sets.wsdmg[spell.english])
 		elseif WSMode=="accuracy" then
@@ -431,13 +403,13 @@ function precast(spell)
 end
 
 function midcast(spell)
-	if command.prefix=="/range" then
+	if spell.prefix=="/range" then
 		equip(sets.midshot[ShotType])
 	end
-	if command.prefix=="/magic" then
+	if spell.prefix=="/magic" then
 		equip(sets.midcast.magic[spell.english])
 	end
-	if command.prefix=="/ninjutsu" then
+	if spell.prefix=="/ninjutsu" then
 		equip(sets.midcast.ninjutsu)
 	end
 end
@@ -456,6 +428,9 @@ function aftercast(spell)
 	else
 		equip(sets.idle[IdleType])
 	end
+	if spell.prefix=="/range" then
+		send_command("gs c ammo")
+	end
 end
 
 function status_change(new,old)
@@ -472,4 +447,16 @@ function status_change(new,old)
 	else
 		equip(sets.idle[IdleType])
 	end
+	send_command("gs c ammo")
+end
+
+function self_command(command)
+	if command=="ammo" then
+		windower.send_command('text ammoname text "'..player.equipment.ammo..': "')
+		windower.send_command('text ammo text "'..player.inventory[player.equipment.ammo].count+player.wardrobe[player.equipment.ammo].count..'"')
+	end
+end
+
+function file_unload(new_job)
+	windower.send_command('text ammo delete;text ammoname delete')
 end

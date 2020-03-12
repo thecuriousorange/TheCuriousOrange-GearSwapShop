@@ -73,12 +73,12 @@ function get_sets()
 	
 	sets.idle.pdt={head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}}, legs="Mummu Kecks +2",
 	body="Meg. Cuirie +2", hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}}, feet="Orion Socks +1",
-	neck="Sanctity Necklace", waist="Flume Belt", left_ear="Genmei Earring", right_ear="Ethereal Earring", left_ring="Vocane Ring",
+	neck="Sanctity Necklace", waist="Flume Belt", left_ear="Genmei Earring", right_ear="Ethereal Earring", left_ring="Vocane Ring +1",
 	right_ring="Defending Ring", back="Solemnity Cape",}
 	
 	sets.engaged.pdt={head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
 	body="Onca Suit", neck="Loricate Torque +1", waist="Flume Belt", left_ear="Genmei Earring", right_ear="Ethereal Earring",
-	left_ring="Vocane Ring", right_ring="Defending Ring", back="Moonbeam Cape",}
+	left_ring="Vocane Ring +1", right_ring="Defending Ring", back="Moonbeam Cape",}
 	--idlesets
 	
 	--shooting sets
@@ -91,7 +91,7 @@ function get_sets()
 	right_ring="Ilabrat Ring", back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}},}
 	
 	sets.midshot.acc={head="Umbani Cap", body="Kyujutsugi", feet="Orion Socks +1",
-	hands="Adhemar Wristbands",
+	hands="adhemar Wrist. +1",
 	legs={ name="Arc. Braccae +1", augments={'Enhances "Eagle Eye Shot" effect',}},
 	neck="Combatant's Torque", waist="Elanid Belt", left_ear="Clearview Earring",
 	right_ear="Volley Earring", left_ring="Arewe Ring +1", right_ring="Hajduk Ring",

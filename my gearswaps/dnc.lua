@@ -98,6 +98,17 @@ function get_sets()
 	--damage mitigation sets
 end
 
+packets = require('packets')
+cf=0
+windower.raw_register_event('incoming chunk', function(id,original,modified,injected,blocked)
+	if id == 0x28 then
+		local action = packets.parse('incoming', original)
+			if action['Category'] == 4 then
+			print(action['param'])
+			end
+	end
+end
+
 function precast(spell)
 	if spell.prefix=="/weaponskill" then
 		equip(sets.ws[spell.english])

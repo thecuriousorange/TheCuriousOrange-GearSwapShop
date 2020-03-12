@@ -67,7 +67,7 @@ function get_sets()
     hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
     legs="Arjuna Breeches",
     feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
-    neck={ name="Jeweled Collar", augments={'"Fast Cast"+2','MND+2','MP recovered while healing +2',}},
+    neck="Voltsurge Torque",
     waist="Flume Belt",
     left_ear="Etiolation Earring",
     right_ear="Loquac. Earring",
@@ -131,9 +131,9 @@ function get_sets()
 	sets.precast.ws["Blade: Kamu"]={main={ name="Kanaria", augments={'Crit. hit damage +3%','DEX+7','Accuracy+19','Attack+18','DMG:+13',}},
     sub={ name="Ochu", augments={'STR+10','DEX+10','Ninjutsu skill +10','DMG:+15',}},
     ammo="Seeth. Bomblet +1",
-    head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
-    body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
-    hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
+    head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+    body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+        hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
     legs="Hiza. Hizayoroi +2",
     feet="Mummu Gamash. +1",
     neck="Fotia Gorget",
@@ -147,8 +147,8 @@ function get_sets()
 	sets.precast.ws["Blade: Hi"]={main={ name="Kanaria", augments={'Crit. hit damage +3%','DEX+7','Accuracy+19','Attack+18','DMG:+13',}},
     sub={ name="Ochu", augments={'STR+10','DEX+10','Ninjutsu skill +10','DMG:+15',}},
     ammo="Yetshila",
-    head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
-    body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
+    head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+    body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
     hands="Mummu Wrists +1",
     legs="Hiza. Hizayoroi +2",
     feet="Mummu Gamash. +1",
@@ -175,9 +175,9 @@ function get_sets()
 	sets.tp.lowacc={main={ name="Kanaria", augments={'Crit. hit damage +3%','DEX+7','Accuracy+19','Attack+18','DMG:+13',}},
     sub={ name="Ochu", augments={'STR+10','DEX+10','Ninjutsu skill +10','DMG:+15',}},
     ammo="Ginsen",
-    head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
-    body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
-    hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
+    head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+    body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+        hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
     legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
     feet={ name="Herculean Boots", augments={'Accuracy+24','"Triple Atk."+3',}},
     neck="Moonbeam Nodowa",
@@ -238,12 +238,12 @@ function get_sets()
 	sets.aftercast.pdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head="Otronif Mask +1",
 	body="Arhat's Gi +1", hands="Otronif Gloves +1", legs="Otronif Brais +1", feet="Otronif Boots +1", 
 	neck="Loricate Torque +1", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Iga Mimikazari",
-	left_ring="Patricius Ring", right_ring="Vocane Ring", back="Moonbeam Cape",}
+	left_ring="Patricius Ring", right_ring="Vocane Ring +1", back="Moonbeam Cape",}
 	
 	sets.aftercast.mdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}},
 	body="Abnoba Kaftan", hands="Otronif Gloves +1", legs="Nahtirah Trousers", feet="Otronif Boots +1",
 	neck="Loricate Torque +1", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring",
-	left_ring="Shadow Ring", right_ring="Vocane Ring", back="Moonbeam Cape",}
+	left_ring="Shadow Ring", right_ring="Vocane Ring +1", back="Moonbeam Cape",}
 --dt sets
 
 --idle sets
