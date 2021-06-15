@@ -87,13 +87,13 @@ windower.prim.set_visibility('WEAPON_SET',true)
 --GUI setup
 
 	sets.tp={
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. hit damage +3%',}},
     legs="Ig. Flanchard +3",
     feet="Flam. Gambieras +2",
-    neck="Lissome Necklace",
+    neck="Abyssal Beads +2",
     waist="Ioskeha Belt +1",
     left_ear="Cessance Earring",
     right_ear="Telos Earring",
@@ -104,56 +104,56 @@ windower.prim.set_visibility('WEAPON_SET',true)
 
 	sets.tp.Caladbolg={main="Caladbolg", sub="Utu Grip",}
 	sets.tp.Caladbolg.lowacc=set_combine(sets.tp.Caladbolg,{
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands={ name="Emi. Gauntlets +1", augments={'HP+65','DEX+12','Accuracy+20',}},
     legs="Ig. Flanchard +3",
     feet="Flam. Gambieras +2",
-    neck="Lissome Necklace",
+    neck="Abyssal Beads +2",
     waist="Ioskeha Belt +1",
     left_ear="Cessance Earring",
     right_ear="Brutal Earring",
     left_ring="Hetairoi Ring",
     right_ring="Niqmaddu Ring",
     back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},})
-	sets.tp.Caladbolg.medacc=set_combine(sets.tp.Caladbolg.lowacc, {neck="Combatant's Torque",body={ name="Emicho Haubert +1", augments={'HP+65','DEX+12','Accuracy+20',}}, right_ear="Telos Earring",})
+	sets.tp.Caladbolg.medacc=set_combine(sets.tp.Caladbolg.lowacc, {body={ name="Emicho Haubert +1", augments={'HP+65','DEX+12','Accuracy+20',}}, right_ear="Telos Earring",})
 	sets.tp.Caladbolg.highacc=set_combine(sets.tp.Caladbolg.medacc, {left_ring="Regal Ring",})
 
 	sets.tp.Naegling={main="Naegling", sub="Blurred Shield +1",}
 	sets.tp.Naegling.lowacc=set_combine(sets.tp.Naegling,{
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands={ name="Emi. Gauntlets +1", augments={'HP+65','DEX+12','Accuracy+20',}},
     legs="Ig. Flanchard +3",
     feet="Flam. Gambieras +2",
-    neck="Lissome Necklace",
+    neck="Abyssal Beads +2",
     waist="Ioskeha Belt +1",
     left_ear="Cessance Earring",
     right_ear="Brutal Earring",
     left_ring="Hetairoi Ring",
     right_ring="Niqmaddu Ring",
     back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},})
-	sets.tp.Naegling.medacc=set_combine(sets.tp.Naegling.lowacc, {neck="Combatant's Torque",body={ name="Emicho Haubert +1", augments={'HP+65','DEX+12','Accuracy+20',}}, right_ear="Telos Earring",})
+	sets.tp.Naegling.medacc=set_combine(sets.tp.Naegling.lowacc, {body={ name="Emicho Haubert +1", augments={'HP+65','DEX+12','Accuracy+20',}}, right_ear="Telos Earring",})
 	sets.tp.Naegling.highacc=set_combine(sets.tp.Naegling.medacc, {left_ring="Regal Ring",})
 
 	sets.tp.Dolichenus={main="Dolichenus", sub="Blurred Shield +1",}
 	sets.tp.Dolichenus.lowacc=set_combine(sets.tp.Dolichenus,{
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands={ name="Emi. Gauntlets +1", augments={'HP+65','DEX+12','Accuracy+20',}},
     legs="Ig. Flanchard +3",
     feet="Flam. Gambieras +2",
-    neck="Lissome Necklace",
+    neck="Abyssal Beads +2",
     waist="Ioskeha Belt +1",
     left_ear="Cessance Earring",
     right_ear="Brutal Earring",
     left_ring="Hetairoi Ring",
     right_ring="Niqmaddu Ring",
     back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},})
-	sets.tp.Dolichenus.medacc=set_combine(sets.tp.Dolichenus.lowacc, {neck="Combatant's Torque",body={ name="Emicho Haubert +1", augments={'HP+65','DEX+12','Accuracy+20',}}, right_ear="Telos Earring",})
+	sets.tp.Dolichenus.medacc=set_combine(sets.tp.Dolichenus.lowacc, {body={ name="Emicho Haubert +1", augments={'HP+65','DEX+12','Accuracy+20',}}, right_ear="Telos Earring",})
 	sets.tp.Dolichenus.highacc=set_combine(sets.tp.Dolichenus.medacc, {left_ring="Regal Ring",})
 
 	sets.tp.Apocalypse={}
@@ -176,220 +176,220 @@ windower.prim.set_visibility('WEAPON_SET',true)
 
 	sets.tp.Ragnarok={main="Ragnarok", sub="Utu Grip",}
 	sets.tp.Ragnarok.lowacc=set_combine(sets.tp.Ragnarok, {
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands={ name="Emi. Gauntlets +1", augments={'HP+65','DEX+12','Accuracy+20',}},
     legs="Ig. Flanchard +3",
     feet="Flam. Gambieras +2",
-    neck="Lissome Necklace",
+    neck="Abyssal Beads +2",
     waist="Ioskeha Belt +1",
     left_ear="Cessance Earring",
     right_ear="Brutal Earring",
     left_ring="Hetairoi Ring",
     right_ring="Niqmaddu Ring",
     back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},})
-	sets.tp.Ragnarok.medacc=set_combine(sets.tp.Ragnarok.lowacc, {neck="Combatant's Torque",body={ name="Emicho Haubert +1", augments={'HP+65','DEX+12','Accuracy+20',}}, right_ear="Telos Earring",})
+	sets.tp.Ragnarok.medacc=set_combine(sets.tp.Ragnarok.lowacc, {body={ name="Emicho Haubert +1", augments={'HP+65','DEX+12','Accuracy+20',}}, right_ear="Telos Earring",})
 	sets.tp.Ragnarok.highacc=set_combine(sets.tp.Ragnarok.medacc, {left_ring="Regal Ring",})
 
 	sets.hybrid.Ragnarok={}
 	sets.hybrid.Ragnarok.lowacc=set_combine(sets.tp.Ragnarok.lowacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Ragnarok.medacc=set_combine(sets.tp.Ragnarok.medacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Ragnarok.highacc=set_combine(sets.tp.Ragnarok.highacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Apocalypse={}
 	sets.hybrid.Apocalypse.lowacc=set_combine(sets.tp.Apocalypse.lowacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Apocalypse.medacc=set_combine(sets.tp.Apocalypse.medacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Apocalypse.highacc=set_combine(sets.tp.Apocalypse.highacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Naegling={}
 	sets.hybrid.Naegling.lowacc=set_combine(sets.tp.Naegling.lowacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Naegling.medacc=set_combine(sets.tp.Naegling.medacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Naegling.highacc=set_combine(sets.tp.Naegling.highacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Dolichenus={}
 	sets.hybrid.Dolichenus.lowacc=set_combine(sets.tp.Dolichenus.lowacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Dolichenus.medacc=set_combine(sets.tp.Dolichenus.medacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Dolichenus.highacc=set_combine(sets.tp.Dolichenus.highacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Caladbolg={}
 	sets.hybrid.Caladbolg.lowacc=set_combine(sets.tp.Caladbolg.lowacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Caladbolg.medacc=set_combine(sets.tp.Caladbolg.medacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Caladbolg.highacc=set_combine(sets.tp.Caladbolg.highacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Lycurgos={}
 	sets.hybrid.Lycurgos.lowacc=set_combine(sets.tp.Lycurgos.lowacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Lycurgos.medacc=set_combine(sets.tp.Lycurgos.medacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Lycurgos.highacc=set_combine(sets.tp.Lycurgos.highacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Anguta={}
 	sets.hybrid.Anguta.lowacc=set_combine(sets.tp.Anguta.lowacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Anguta.medacc=set_combine(sets.tp.Anguta.medacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.hybrid.Anguta.highacc=set_combine(sets.tp.Anguta.highacc,{
-		head="Hjarrandi Helm",
-		body="Volte Haubert",
-		hands="Volte Moufles",
-		legs="Volte Brayettes",
-		feet={ name="Valorous Greaves", augments={'"Dbl.Atk."+5','DEX+6','Accuracy+10','Attack+5',}},
-		left_ring="Defending Ring",
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		waist="Sailfi Belt +1",
 	})
 
 	sets.idle={
-    ammo="Vanir Battery",
+    ammo="Staunch Tathlum +1",
     head={ name="Valorous Mask", augments={'Attack+16','Weapon skill damage +4%','STR+8','Accuracy+14',}},
     body="Chozoron Coselete",
     hands={ name="Odyssean Gauntlets", augments={'Pet: Crit.hit rate +3','Attack+4','"Refresh"+1',}},
@@ -399,7 +399,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
     waist="Nierenschutz",
     left_ear="Ethereal Earring",
     right_ear="Infused Earring",
-    left_ring="Paguroidea Ring",
+    left_ring="Chirich Ring +1",
     right_ring="Sheltered Ring",
     back="Shadow Mantle",
 }
@@ -435,19 +435,36 @@ windower.prim.set_visibility('WEAPON_SET',true)
     back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},}
 
 	sets.dt={
-    ammo="Seeth. Bomblet +1",
-    head="Sulevia's Mask +2",
-    body="Sulevia's Plate. +2",
-    hands="Sulev. Gauntlets +2",
-    legs="Sulev. Cuisses +2",
-    feet="Sulev. Leggings +2",
-    neck="Loricate Torque +1",
-    waist="Tempus Fugit",
+		ammo="Aurgelmir Orb +1",
+    head="Sakpata's Helm",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Sakpata's Leggings",
+    neck={ name="Abyssal Beads +2", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Cessance Earring",
-    right_ear="Telos Earring",
-    left_ring="Defending Ring",
+    right_ear="Schere Earring",
+    left_ring="Moonlight Ring",
     right_ring="Moonlight Ring",
-    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},}
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+	}
+
+	sets.dt.idle={
+		ammo="Staunch Tathlum +1",
+    head="Sakpata's Helm",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Sakpata's Leggings",
+    neck={ name="Unmoving Collar +1", augments={'Path: A',}},
+    waist="Flume Belt +1",
+    left_ear="Ethereal Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ring="Moonlight Ring",
+    right_ring="Shadow Ring",
+    back="Shadow Mantle",
+	}
 
 	sets.dt.Apocalypse=set_combine(sets.dt, {main="Apocalypse", sub="Utu Grip",})
 
@@ -459,9 +476,9 @@ windower.prim.set_visibility('WEAPON_SET',true)
 
 	sets.dt.Lycurgos=set_combine(sets.dt, {main="Lycurgos", sub="Utu Grip",})
 
-	sets.dt.Naegling={main="Naegling", sub="Blurred Shield +1",}
+	sets.dt.Naegling=set_combine(sets.dt,{main="Naegling", sub="Blurred Shield +1",})
 
-	sets.dt.Dolichenus={main="Dolichenus", sub="Blurred Shield +1",}
+	sets.dt.Dolichenus=set_combine(sets.dt,{main="Dolichenus", sub="Blurred Shield +1",})
 
 	sets.refresh={}
 
@@ -473,7 +490,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.idle.Apocalypse.Refresh=set_combine(sets.idle.Apocalypse, {})
 	sets.idle.Apocalypse.PDT=set_combine(sets.pdt, {main="Apocalypse", sub="Utu Grip",})
 	sets.idle.Apocalypse.MDT=set_combine(sets.mdt, {main="Apocalypse", sub="Utu Grip",})
-	sets.idle.Apocalypse.DT=set_combine(sets.dt, {main="Apocalypse", sub="Utu Grip",})
+	sets.idle.Apocalypse.DT=set_combine(sets.dt.idle, {main="Apocalypse", sub="Utu Grip",})
 
 	sets.idle.Naegling=set_combine(sets.idle, {main="Naegling", sub="Blurred Shield +1",})
 	sets.idle.Naegling.standard=sets.idle.Naegling
@@ -481,7 +498,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.idle.Naegling.Refresh=set_combine(sets.idle.Naegling, {})
 	sets.idle.Naegling.PDT=set_combine(sets.idle.Naegling, {})
 	sets.idle.Naegling.MDT=set_combine(sets.idle.Naegling, {})
-	sets.idle.Naegling.DT=set_combine(sets.dt, {main="Naegling", sub="Blurred Shield +1",})
+	sets.idle.Naegling.DT=set_combine(sets.dt.idle, {main="Naegling", sub="Blurred Shield +1",})
 
 	sets.idle.Dolichenus=set_combine(sets.idle, {main="Dolichenus", sub="Blurred Shield +1",})
 	sets.idle.Dolichenus.standard=sets.idle.Dolichenus
@@ -489,7 +506,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.idle.Dolichenus.Refresh=set_combine(sets.idle.Dolichenus, {})
 	sets.idle.Dolichenus.PDT=set_combine(sets.idle.Dolichenus, {})
 	sets.idle.Dolichenus.MDT=set_combine(sets.idle.Dolichenus, {})
-	sets.idle.Dolichenus.DT=set_combine(sets.dt, {main="Dolichenus", sub="Blurred Shield +1",})
+	sets.idle.Dolichenus.DT=set_combine(sets.dt.idle, {main="Dolichenus", sub="Blurred Shield +1",})
 
 	sets.idle.Anguta=set_combine(sets.idle, {main="Anguta",sub="Utu Grip",})
 	sets.idle.Anguta.standard=sets.idle.Anguta
@@ -497,7 +514,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.idle.Anguta.Refresh=set_combine(sets.idle.Anguta, {})
 	sets.idle.Anguta.PDT=set_combine(sets.idle.Anguta, {})
 	sets.idle.Anguta.MDT=set_combine(sets.idle.Anguta, {})
-	sets.idle.Anguta.DT=set_combine(sets.dt, {main="Anguta",sub="Utu Grip",})
+	sets.idle.Anguta.DT=set_combine(sets.dt.idle, {main="Anguta",sub="Utu Grip",})
 
 	sets.idle.Ragnarok=set_combine(sets.idle, {main="Ragnarok",sub="Utu Grip",})
 	sets.idle.Ragnarok.standard=sets.idle.Ragnarok
@@ -505,7 +522,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.idle.Ragnarok.Refresh=set_combine(sets.idle.Ragnarok, {})
 	sets.idle.Ragnarok.PDT=set_combine(sets.idle.Ragnarok, {})
 	sets.idle.Ragnarok.MDT=set_combine(sets.idle.Ragnarok, {})
-	sets.idle.Ragnarok.DT=set_combine(sets.dt, {main="Ragnarok",sub="Utu Grip",})
+	sets.idle.Ragnarok.DT=set_combine(sets.dt.idle, {main="Ragnarok",sub="Utu Grip",})
 
 	sets.idle.Caladbolg=set_combine(sets.idle, {main="Caladbolg",sub="Utu Grip",})
 	sets.idle.Caladbolg.standard=sets.idle.Caladbolg
@@ -513,15 +530,15 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.idle.Caladbolg.Refresh=set_combine(sets.idle.Caladbolg, {})
 	sets.idle.Caladbolg.PDT=set_combine(sets.idle.Caladbolg, {})
 	sets.idle.Caladbolg.MDT=set_combine(sets.idle.Caladbolg, {})
-	sets.idle.Caladbolg.DT=set_combine(sets.dt, {main="Caladbolg",sub="Utu Grip",})
+	sets.idle.Caladbolg.DT=set_combine(sets.dt.idle, {main="Caladbolg",sub="Utu Grip",})
 
-	sets.idle.Caladbolg=set_combine(sets.idle, {main="Caladbolg",sub="Utu Grip",})
-	sets.idle.Caladbolg.standard=sets.idle.Caladbolg
-	sets.idle.Caladbolg.Regen=set_combine(sets.idle.Caladbolg, {})
-	sets.idle.Caladbolg.Refresh=set_combine(sets.idle.Caladbolg, {})
-	sets.idle.Caladbolg.PDT=set_combine(sets.idle.Caladbolg, {})
-	sets.idle.Caladbolg.MDT=set_combine(sets.idle.Caladbolg, {})
-	sets.idle.Caladbolg.DT=set_combine(sets.dt, {main="Caladbolg",sub="Utu Grip",})
+	sets.idle.Lycurgos=set_combine(sets.idle, {main="Lycurgos",sub="Utu Grip",})
+	sets.idle.Lycurgos.standard=sets.idle.Lycurgos
+	sets.idle.Lycurgos.Regen=set_combine(sets.idle.Lycurgos, {})
+	sets.idle.Lycurgos.Refresh=set_combine(sets.idle.Lycurgos, {})
+	sets.idle.Lycurgos.PDT=set_combine(sets.idle.Lycurgos, {})
+	sets.idle.Lycurgos.MDT=set_combine(sets.idle.Lycurgos, {})
+	sets.idle.Lycurgos.DT=set_combine(sets.dt.idle, {main="Lycurgos",sub="Utu Grip",})
 
 	sets.strws={
 		ammo="Seeth. Bomblet +1",
@@ -536,23 +553,27 @@ windower.prim.set_visibility('WEAPON_SET',true)
     right_ear="Telos Earring",
     left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
-    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
+    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 
 	sets.wsd={
 		ammo="Knobkierrie",
-    head="Ratri Sallet +1",
+    head="Sakpata's Helm",
     body="Ignominy Cuirass +3",
-    hands="Rat. Gadlings +1",
+    hands="Sakpata's Gauntlets",
     legs={ name="Fall. Flanchard +3", augments={'Enhances "Muted Soul" effect',}},
-    feet="Rat. Sollerets +1",
+    feet="Sulev. Leggings +2",
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    right_ear="Ishvara Earring",
+    right_ear="Thrud Earring",
     left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
-    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+    back={ name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+	}
+
+	sets.hybrid.wsd={
+
 	}
 
 	sets.magicws=set_combine(sets.wsd, {left_ring="Shiva Ring +1", right_ring="Shiva Ring +1",})
@@ -581,15 +602,15 @@ windower.prim.set_visibility('WEAPON_SET',true)
 
 	sets.ws.dmg["Torcleaver"]={
     ammo="Knobkierrie",
-    head="Ratri Sallet +1",
+    head="Sakpata's Helm",
     body="Ignominy Cuirass +3",
-    hands="Rat. Gadlings +1",
+    hands="Sakpata's Gauntlets",
     legs={ name="Fall. Flanchard +3", augments={'Enhances "Muted Soul" effect',}},
     feet="Rat. Sollerets +1",
-    neck="Fotia Gorget",
+    neck="Abyssal Beads +2",
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    right_ear="Ishvara Earring",
+    right_ear="Thrud Earring",
     left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
     back={ name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}},
@@ -601,14 +622,14 @@ windower.prim.set_visibility('WEAPON_SET',true)
     body={ name="Argosy Hauberk +1", augments={'STR+12','DEX+12','Attack+20',}},
     hands={ name="Argosy Mufflers +1", augments={'STR+20','"Dbl.Atk."+3','Haste+3%',}},
     legs="Ig. Flanchard +3",
-    feet={ name="Argosy Sollerets +1", augments={'STR+12','DEX+12','Attack+20',}},
+    feet="Sakpata's Leggings",
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
     right_ear="Telos Earring",
     left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
-    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
+    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 
 	sets.ws.dmg["Slice"]=set_combine(sets.wsd,{})
@@ -638,7 +659,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
     right_ear="Telos Earring",
     left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
-    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
+    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 
 	sets.ws.dmg["Spiral Hell"]=set_combine(sets.wsd,{})
@@ -695,9 +716,9 @@ windower.prim.set_visibility('WEAPON_SET',true)
 
 	sets.ws.acc["Circle Blade"]=set_combine(sets.ws.dmg["Circle Blade"], {neck="Combatant's Torque", back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, right_ring="Regal Ring", })
 
-	sets.ws.dmg["Spirits Within"]=set_combine(sets.wsd,{body="Phorcys Korazin", waist="Fotia Belt", legs=stplegs,})
+	sets.ws.dmg["Spirits Within"]=set_combine(sets.wsd,{waist="Fotia Belt",})
 
-	sets.ws.acc["Spirits Within"]=set_combine(sets.wsd, {body="Phorcys Korazin", waist="Fotia Belt", legs=stplegs,})
+	sets.ws.acc["Spirits Within"]=set_combine(sets.wsd, {waist="Fotia Belt",})
 
 	sets.ws.dmg["Vorpal Blade"]=set_combine(sets.strws, {waist="Fotia Belt", left_ring="Ifrit Ring +1",})
 
@@ -711,12 +732,14 @@ windower.prim.set_visibility('WEAPON_SET',true)
 
 	sets.ws.acc["Sanguine Blade"]=set_combine(sets.magicws, {head="Pixie Hairpin +1", left_ring="Archon Ring",})
 
-	sets.ws.dmg["Requiescat"]={ammo="Ginsen", head="Carmine Mask +1", body="Carm. Scale Mail",
+	sets.ws.dmg["Requiescat"]={ammo="Aurgelmir Orb +1", head="Carmine Mask +1", body="Carm. Scale Mail",
     hands="Carmine Fin. Ga.", legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-	feet="Carmine Greaves", neck="Fotia Gorget", waist="Fotia Belt", left_ear="Steelflash Earring",
-	right_ear="Bladeborn Earring", left_ring="Levia. Ring", right_ring="Rufescent Ring", back="Bleating Mantle",}
+	feet="Carmine Greaves +1", neck="Fotia Gorget", waist="Fotia Belt", left_ear="Steelflash Earring",
+	right_ear="Bladeborn Earring", left_ring="Levia. Ring", right_ring="Rufescent Ring",
+	back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+	}
 
-	sets.ws.acc["Requiescat"]=set_combine(sets.ws.dmg["Requiescat"], {head="Gavialis Helm", back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, left_ear="Zennaroi Earring", right_ear="Brutal Earring", right_ring="Regal Ring",})
+	sets.ws.acc["Requiescat"]=set_combine(sets.ws.dmg["Requiescat"], {head="Gavialis Helm", back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}, left_ear="Mache Earring +1", right_ear="Brutal Earring", right_ring="Regal Ring",})
 
 	--[[sets.ws=
 	{
@@ -734,7 +757,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
     right_ear="Telos Earring",
     left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
-    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
+    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	} old set: delete]]
 
 	sets.precast.fc={ammo="Sapience Orb",
@@ -754,23 +777,23 @@ windower.prim.set_visibility('WEAPON_SET',true)
 
 	sets.midcast["Dread Spikes"]={
     ammo="Egoist's Tathlum",
-    head="Ganesha's Mask",
+    head="Ratri Sallet +1",
     body="Heath. Cuirass +1",
-    hands={ name="Despair Fin. Gaunt.", augments={'STR+12','VIT+7','Haste+2%',}},
+    hands="Rat. Gadlings +1",
     legs="Gor. Brayettes +1",
-    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
-    neck="Dualism Collar +1",
+    feet="Rat. Sollerets +1",
+    neck="Unmoving Collar +1",
     waist="Oneiros Belt",
-    left_ear="Odnowa Earring",
+    left_ear="Tuisto Earring",
     right_ear="Odnowa Earring +1",
-    left_ring="Moonlight Ring",
+    left_ring="Gelatinous Ring +1",
     right_ring="Moonlight Ring",
-    back="Moonbeam Cape",
+    back="Moonlight Cape",
 	}
 
 	sets.midcast.dmbase={
 		ammo="Pemphredo Tathlum",
-    head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
+    head="Pixie Hairpin +1",
     body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
     hands={ name="Fall. Fin. Gaunt. +3", augments={'Enhances "Diabolic Eye" effect',}},
     legs="Heath. Flanchard +1",
@@ -781,7 +804,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
     right_ear="Hermetic Earring",
     left_ring="Evanescence Ring",
     right_ring="Archon Ring",
-    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +5','"Drain" and "Aspir" potency +21','Weapon skill damage +4%',}},
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +9','"Drain" and "Aspir" potency +25',}},
 	}
 
 	sets.ja = {}
@@ -790,9 +813,23 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.ja["Nether Void"] = {legs="Heath. Flanchard +1"}
 	sets.ja["Arcane Circle"] = {feet="Ig. Sollerets +2"}
 	sets.ja["Last Resort"] = {back="Ankou's Mantle", feet="Fall. Sollerets +3"}
-	sets.ja["Weapon Bash"] = {hands="Ignominy Gauntlets +2",}
+	sets.ja["Weapon Bash"] = {hands="Ig. Gauntlets +2",}
 
-	sets.midcast.doa=set_combine(sets.midcast.dmbase, {})
+	sets.midcast.doa={
+		ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Carm. Sc. Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}},
+    hands={ name="Fall. Fin. Gaunt. +3", augments={'Enhances "Diabolic Eye" effect',}},
+    legs="Heath. Flanchard +1",
+    feet="Rat. Sollerets +1",
+    neck="Erra Pendant",
+    waist="Austerity Belt +1",
+    left_ear="Digni. Earring",
+    right_ear="Hirudinea Earring",
+    left_ring="Evanescence Ring",
+    right_ring="Archon Ring",
+    back={ name="Niht Mantle", augments={'Attack+14','Dark magic skill +9','"Drain" and "Aspir" potency +25',}},
+	}
 
 	sets.midcast["Drain II"]=set_combine(sets.midcast.dmbase, {feet="Rat. Sollerets +1",})
 

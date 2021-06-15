@@ -5,6 +5,7 @@ function get_sets()
 	include('itchygeogkeys.lua')
 -- include
 --keybinds
+	send_command('alias pf gs c primfix')
 	send_command('bind #f1 gs c toggleoffensivemodes')
 	send_command('bind #f2 gs c togglehybridmodes')
 	send_command('bind #f3 gs c toggledefensivemodes')
@@ -28,12 +29,21 @@ function get_sets()
 	sets.precast.ws.accuracy={}
 	sets.precast.pet={}
 
-	sets.dexws={ammo="Yetshila +1",
-	head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}}, body="Abnoba Kaftan", neck="Fotia Gorget",
-	hands="Meg. Gloves +2", waist="Chiner's Belt +1",
-	legs={ name="Lustratio Subligar", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}}, left_ear="Sherida Earring",
-	feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}}, right_ear="Mache Earring +1", right_ring="Regal Ring",
-	left_ring="Ilabrat Ring", back="Rancorous Mantle",}
+	sets.dexws={
+		ammo="Yetshila +1",
+    head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+    body="Abnoba Kaftan",
+    hands="Meg. Gloves +2",
+    legs={ name="Lustratio Subligar", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%',}},
+    feet={ name="Lustratio Leggings", augments={'HP+50','STR+10','DEX+10',}},
+    neck="Fotia Gorget",
+    waist="Chiner's Belt +1",
+    left_ear="Sherida Earring",
+    right_ear="Mache Earring +1",
+    left_ring="Ilabrat Ring",
+    right_ring="Regal Ring",
+    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
+	}
 
 	sets.precast.ws.damage["Wasp Sting"]=set_combine(sets.dexws,{})
 	sets.precast.ws.accuracy["Wasp Sting"]=set_combine(sets.dexws,{})
@@ -56,12 +66,36 @@ function get_sets()
 	sets.precast.ws.damage["Mandalic Stab"]=set_combine(sets.dexws,{})
 	sets.precast.ws.accuracy["Mandalic Stab"]=set_combine(sets.dexws,{})
 
-	sets.precast.ws.damage["Rudra's Storm"]=set_combine(sets.dexws,{})
-	sets.precast.ws.accuracy["Rudra's Storm"]=set_combine(sets.dexws,{})
+	sets.precast.ws.damage["Rudra's Storm"]=set_combine(sets.dexws,{feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+28','Pet: STR+4','Weapon skill damage +10%','Mag. Acc.+13 "Mag.Atk.Bns."+13',}},})
+	sets.precast.ws.accuracy["Rudra's Storm"]=set_combine(sets.dexws,{feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+28','Pet: STR+4','Weapon skill damage +10%','Mag. Acc.+13 "Mag.Atk.Bns."+13',}},})
+
+	sets.precast.ws.damage["Savage Blade"]=set_combine(sets.dexws,{feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+28','Pet: STR+4','Weapon skill damage +10%','Mag. Acc.+13 "Mag.Atk.Bns."+13',}},})
+	sets.precast.ws.accuracy["Savage Blade"]=set_combine(sets.dexws,{feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+28','Pet: STR+4','Weapon skill damage +10%','Mag. Acc.+13 "Mag.Atk.Bns."+13',}},})
+
+	sets.precast.fc={
+		ammo="Sapience Orb",
+    head={ name="Herculean Helm", augments={'Accuracy+30','"Triple Atk."+4','Attack+8',}},
+    body={ name="Adhemar Jacket", augments={'HP+80','"Fast Cast"+7','Magic dmg. taken -3',}},
+    hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
+    legs={ name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1',}},
+    feet="Nyame Sollerets",
+    neck="Voltsurge Torque",
+    waist="Ninurta's Sash",
+    left_ear="Loquac. Earring",
+    right_ear="Enchntr. Earring +1",
+    left_ring="Rahab Ring",
+    right_ring="Prolix Ring",
+    back="Moonlight Cape",
+	}
+
+	sets.precast.nin=set_combine(sets.precast.fc, {
+		neck="Magoraga Beads",
+	})
 
 	sets.midcast={}
 	sets.midcast.ma={}
 	sets.midcast.pet={}
+
 
 	sets.aftercast={}
 
@@ -84,20 +118,20 @@ function get_sets()
     right_ear="Raider's Earring",
     left_ring="Hetairoi Ring",
     right_ring="Gere Ring",
-    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},
+    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
 	}
 
 	sets.aftercast.offense.medacc= set_combine(sets.aftercast.offense.lowacc, {neck="Combatant's Torque",})
 
-	sets.aftercast.offense.highacc= set_combine(sets.aftercast.offense.medacc, {left_ear="Zennaroi Earring", right_ear="Telos Earring", left_ring="Ilabrat Ring", right_ring="Regal Ring", back="Ground. Mantle +1",})
+	sets.aftercast.offense.highacc= set_combine(sets.aftercast.offense.medacc, {left_ear="Mache Earring +1", right_ear="Telos Earring", left_ring="Ilabrat Ring", right_ring="Regal Ring", back="Ground. Mantle +1",})
 
 	sets.aftercast.th=set_combine(sets.aftercast.offense.lowacc,{
-		hands="Plun. Armlets +1",
+		hands="Plun. Armlets +3",
 		waist="Chaac Belt",
 	})
 	sets.aftercast.maxth=set_combine(sets.aftercast.offense.lowacc,{
 		sub="Sandung",
-		hands="Plun. Armlets +1",
+		hands="Plun. Armlets +3",
 		waist="Chaac Belt",
 		feet="Skulk. Poulaines +1",
 	})
@@ -117,43 +151,73 @@ function get_sets()
 
 	sets.aftercast.defense.pdt={
 		ammo="Staunch Tathlum +1",
-		head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
-		body="Meg. Cuirie +2",
-		hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
-		legs="Mummu Kecks +2",
-		feet={ name="Herculean Boots", augments={'Damage taken-3%','STR+6','Attack+8',}},
-		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Ethereal Earring",
-		right_ear="Sanare Earring",
-		left_ring="Vocane Ring +1",
-		right_ring="Defending Ring",
-		back="Moonbeam Cape",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Lissome Necklace",
+		waist="Sailfi Belt +1",
+		left_ear="Suppanomimi",
+		right_ear="Sherida Earring",
+		left_ring="Moonlight Ring",
+		right_ring="Moonlight Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
 	}
 
 	sets.aftercast.defense.mdt=set_combine(sets.aftercast.defense.pdt, {left_ring="Shadow Ring",})
 
 	sets.aftercast.defense.xdt={
 		ammo="Staunch Tathlum +1",
-		head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
-		body="Meg. Cuirie +2",
-		hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
-		legs="Mummu Kecks +2",
-		feet={ name="Herculean Boots", augments={'Damage taken-3%','STR+6','Attack+8',}},
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
+		waist="Flume Belt +1",
 		left_ear="Ethereal Earring",
 		right_ear="Sanare Earring",
 		left_ring="Vocane Ring +1",
 		right_ring="Defending Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	}
 
 	sets.aftercast.idle={}
-	sets.aftercast.idle.index={'regen','standard'}
+	sets.aftercast.idle.index={'regain','standard','refresh','regen'}
 	idle_ind=1
 
-	sets.aftercast.idle.standard= set_combine(sets.aftercast.defense.xdt, {feet="Jute Boots +1",})
+	sets.aftercast.idle.standard={
+		ammo="Staunch Tathlum +1",
+    head="Nyame Helm",
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Jute Boots +1",
+    neck="Loricate Torque +1",
+    waist="Carrier's Sash",
+    left_ear="Ethereal Earring",
+    right_ear="Hearty Earring",
+    left_ring="Defending Ring",
+    right_ring="Shadow Ring",
+    back="Shadow Mantle",
+	}
+
+	sets.aftercast.idle.regain={
+		ammo="Staunch Tathlum +1",
+    head="Turms Cap +1",
+    body="Gleti's Cuirass",
+    hands="Gleti's Gauntlets",
+    legs="Gleti's Breeches",
+    feet="Jute Boots +1",
+    neck="Loricate Torque +1",
+    waist="Flume Belt +1",
+    left_ear="Suppanomimi",
+    right_ear="Sanare Earring",
+    left_ring="Defending Ring",
+    right_ring="Vocane Ring +1",
+    back="Moonlight Cape",
+	}
 
 	sets.aftercast.idle.regen={
 		ammo="Yamarang",
@@ -163,13 +227,36 @@ function get_sets()
     legs="Meg. Chausses +2",
     feet="Jute Boots +1",
     neck="Sanctity Necklace",
-    waist="Flume Belt",
+    waist="Flume Belt +1",
     left_ear="Ethereal Earring",
     right_ear="Infused Earring",
     left_ring="Sheltered Ring",
-    right_ring="Paguroidea Ring",
+    right_ring="Chirich Ring +1",
     back="Shadow Mantle",
 	}
+
+	sets.aftercast.idle.refresh={
+		main={ name="Aeneas", augments={'Path: A',}},
+    sub={ name="Taming Sari", augments={'STR+5','DEX+6','DMG:+10',}},
+    ammo="Yamarang",
+    head={ name="Rawhide Mask", augments={'HP+50','Accuracy+15','Evasion+20',}},
+    body="Mekosu. Harness",
+    hands={ name="Herculean Gloves", augments={'Blood Pact Dmg.+3','Attack+15','"Refresh"+1','Accuracy+8 Attack+8','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
+    legs={ name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1',}},
+    feet="Jute Boots +1",
+    neck="Loricate Torque +1",
+    waist="Flume Belt +1",
+    left_ear="Ethereal Earring",
+    right_ear="Infused Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
+    back="Shadow Mantle",
+	}
+
+	sets.midcast.th=set_combine(sets.aftercast.offense.lowacc,{
+		hands="Plun. Armlets +3",
+		waist="Chaac Belt",
+	})
 
 	sets.TP_Array={}
 	sets.TP_Array.index={'dd','th','hybrid','defense'}
@@ -218,7 +305,11 @@ function precast(spell)
 		equip(sets.precast.ja[spell.english])
 	end
 	if spell.prefix=="/magic" or spell.prefix=="/ninjutsu" or spell.prefix=="/song" then
-		equip(sets.precast.ma[spell.skill])
+		if not spell.english:contains('Utsusemi') then
+			equip(sets.precast.fc)
+		else
+			equip(sets.precast.nin)
+		end
 	end
 	if spell.prefix=="/weaponskill" then
 		if WS_Array==1 then
@@ -229,7 +320,22 @@ function precast(spell)
 	end
 end
 
+function midcast(spell)
+	if spell.prefix=="/magic" or spell.prefix=="/ninjutsu" or spell.prefix=="/song" then
+		if not spell.english:contains('Utsusemi') then
+			equip(sets.midcast.th)
+		else
+			equip(sets.midcast.nin)
+		end
+	end
+end
+
 function aftercast(spell)
+	if not spell.interrupted then
+		if spell.english=="sleepga" or spell.english=="poisonga" then
+			windower.send_command("input /p TH has been cast upon the target")
+		end
+	end
 	status_change(player.status)
 end
 
@@ -245,14 +351,22 @@ function status_change(new,old)
 	else
 		equip(sets.aftercast.idle[sets.aftercast.idle.index[idle_ind]])
 	end
+	send_command('pf')
 end
 
 function self_command(command)
+	if command=='primfix' then
+		windower.prim.set_size('TP_SET',200,30)
+		windower.prim.set_size('ACC_SET',200,30)
+		windower.prim.set_size('IDLE_SET',200,30)
+		windower.prim.set_size('WS_SET',200,30)
+	end
 	if command=="toggleoffensivemodes" then
 		offense_ind = offense_ind +1
 		if offense_ind > #sets.aftercast.offense.index then
 			offense_ind = 1
 		end
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/'..sets.TP_Array.index[TP_Array]..'mode.png')
 		status_change(player.status)
 		add_to_chat(206, 'Offensive Mode: '..sets.aftercast.offense.index[offense_ind])
 	end
@@ -277,6 +391,7 @@ function self_command(command)
 		if idle_ind > #sets.aftercast.idle.index then
 			idle_ind = 1
 		end
+		windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/'..sets.aftercast.idle.index[idle_ind]..'idle.png')
 		status_change(player.status)
 		add_to_chat(206, 'Idle Mode: '..sets.aftercast.idle.index[idle_ind])
 	end
@@ -285,6 +400,7 @@ function self_command(command)
 		if TP_Array > #sets.TP_Array.index then
 			TP_Array=1
 		end
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/'..sets.TP_Array.index[TP_Array]..'mode.png')
 		status_change(player.status)
 		add_to_chat(206, 'TP Mode: '..sets.TP_Array.index[TP_Array])
 	end

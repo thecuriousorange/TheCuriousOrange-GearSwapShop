@@ -4,16 +4,16 @@ function get_sets()
 	sets.TPSet_Aray={}
 	sets.TPSet_Aray.index={'DD','ACC','EVA','HYBRID','pdt','mdt'}
 	TPSet_Array=1
-	
+
 	sets.TPType_Aray={}
 	sets.TPType_Aray.index={'lowhaste','medhaste','highhaste'}
 	TPType_Aray=1
-	
+
 	sets.IdleType_Aray={}
 	sets.IdleType_Aray.index={'regen','pdt'}
-	IdleType_Aray=1	
+	IdleType_Aray=1
 	--indecies
-	
+
 	--basesets
 	sets.idle={}
 	sets.tp={}
@@ -25,76 +25,72 @@ function get_sets()
 	sets.precast={}
 	sets.midcast={}
 	--basesets
-	
+
 	--augmented gear
-	taeonhead={ name="Taeon Chapeau", augments={'Accuracy+23','"Triple Atk."+2','VIT+10',}}
-	taeonbody={ name="Taeon Tabard", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','Weapon skill damage +2%',}}
-	taeonhands={ name="Taeon Gloves", augments={'Accuracy+16 Attack+16','"Triple Atk."+2','Crit. hit damage +3%',}}
-	taeonlegs={ name="Taeon Tights", augments={'Accuracy+23','"Triple Atk."+2',}}
-	taeonfeet={ name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','Crit. hit damage +2%',}}
+
 	--augmented gear
-	
+
 	sets.tp.lowhaste={main="Izhiikoh", sub={ name="Atoyac", augments={'Occ. atk. twice+8','Weapon skill damage +2%',}},
-	ammo="Ginsen", head=taeonhead, body=taeonbody, hands=taeonhands, legs=taeonlegs, feet=taeonfeet, neck="Asperity Necklace",
+	ammo="Aurgelmir Orb +1", head=taeonhead, body=taeonbody, hands=taeonhands, legs=taeonlegs, feet=taeonfeet, neck="Asperity Necklace",
 	waist="Shetal Stone", left_ear="Suppanomimi", right_ear="Eabani Earring", left_ring="Epona's Ring", right_ring="Rajas Ring",
 	back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+2','"Rev. Flourish"+24','Weapon skill damage +4%',}},}
-	
+
 	sets.tp.medhaste= set_combine(sets.tp.lowhaste, {left_ear="Suppanomimi", right_ear="Brutal Earring", waist="Windbuffet Belt",})
-	
+
 	sets.tp.highhaste= set_combine(sets.tp.medhaste, {left_ear="Suppanomimi", right_ear="Brutal Earring", waist="Windbuffet Belt",})
-	
+
 	--ws sets
-	sets.ws["Dancing Edge"]={ammo="Ginsen", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+	sets.ws["Dancing Edge"]={ammo="Aurgelmir Orb +1", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
 	right_ear="Brutal Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring +1", neck="Fotia Gorget", head=taeonhead, body=taeonbody,
     back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+2','"Rev. Flourish"+24','Weapon skill damage +4%',}},
 	hands=taeonhands, legs=taeonlegs, feet=taeonfeet,}
-	
-	sets.ws["Evisceration"]={ammo="Ginsen", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+
+	sets.ws["Evisceration"]={ammo="Aurgelmir Orb +1", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
 	right_ear="Brutal Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring +1", neck="Fotia Gorget", head=taeonhead, body=taeonbody,
     back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+2','"Rev. Flourish"+24','Weapon skill damage +4%',}},
 	hands=taeonhands, legs=taeonlegs, feet=taeonfeet,}
-	
-	sets.ws["Rudras Storm"]={ammo="Ginsen", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+
+	sets.ws["Rudras Storm"]={ammo="Aurgelmir Orb +1", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
 	right_ear="Brutal Earring", left_ring="Epona's Ring", right_ring="Ramuh Ring +1", neck="Fotia Gorget", head=taeonhead, body=taeonbody,
     back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+2','"Rev. Flourish"+24','Weapon skill damage +4%',}},
 	hands=taeonhands, legs=taeonlegs, feet=taeonfeet,}
-	
-	sets.ws["Pyrrhic Kleos"]={ammo="Ginsen", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+
+	sets.ws["Pyrrhic Kleos"]={ammo="Aurgelmir Orb +1", waist="Fotia Belt", left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
 	right_ear="Brutal Earring", left_ring="Epona's Ring", right_ring="Ifrit Ring", neck="Fotia Gorget", head=taeonhead, body=taeonbody,
     back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+2','"Rev. Flourish"+24','Weapon skill damage +4%',}},
 	hands=taeonhands, legs=taeonlegs, feet=taeonfeet,}
 	--ws sets
-	
+
 	--ja sets
-	
+
 	--ja sets
-	
+
 	--idle sets
 	sets.idle.regen={}
-	
+
 	sets.idle.pdt={}
 	--idle sets
-	
+
 	--hybrid sets
 	sets.hybrid.lowhaste={}
-	
+
 	sets.hybrid.medhaste={}
-	
+
 	sets.hybrid.highhaste={}
 	--hybrid sets
-	
+
 	--magic/ninjutsu sets
 	sets.precast.magic={}
-	
+
 	sets.precast.nin={}
-	
+
 	sets.midcast.magic={}
-	
+
 	sets.midcast.nin={}
 	--magic/ninjutsu sets
-	
+
 	--damage mitigation sets
-	
+
 	--damage mitigation sets
 end
 
@@ -107,7 +103,7 @@ windower.raw_register_event('incoming chunk', function(id,original,modified,inje
 			print(action['param'])
 			end
 	end
-end
+end)
 
 function precast(spell)
 	if spell.prefix=="/weaponskill" then
@@ -154,5 +150,5 @@ function status_change(new,old)
 end
 
 function self_command(command)
-	
+
 end

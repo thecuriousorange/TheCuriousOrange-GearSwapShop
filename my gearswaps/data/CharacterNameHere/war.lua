@@ -2,7 +2,7 @@ function get_sets()
 
 	include("organizer-lib.lua")
 
-	windower.send_command('bind @f1 gs c dd')
+	windower.send_command('bind @f1 gs c tp')
 	windower.send_command('bind @f2 gs c hybrid')
 	windower.send_command('bind @f3 gs c dt')
 	windower.send_command('bind @f5 gs c Chango')
@@ -84,7 +84,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.Ragnarok.hybrid=set_combine(sets.Ragnarok,{})
 
 	sets.Ragnarok.tp.lowacc=set_combine(sets.Ragnarok, {
-	ammo="Ginsen",
+	ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands="Sulev. Gauntlets +2",
@@ -119,12 +119,12 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet="Hermes' Sandals",
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Chango={main="Chango", sub="Utu Grip",}
@@ -133,7 +133,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.Chango.hybrid={}
 
 	sets.Chango.tp.lowacc=set_combine(sets.Chango,{
-	ammo="Ginsen",
+	ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands="Sulev. Gauntlets +2",
@@ -189,12 +189,12 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet={ name="Souveran Schuhs +1", augments={'HP+65','Attack+25','Magic dmg. taken -4',}},
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Chango.idle={}
@@ -223,27 +223,27 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet="Hermes' Sandals",
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Chango.idle.regen=set_combine(sets.Chango,{
 		ammo="Staunch Tathlum +1",
     head="Baghere Salade",
-    body="Volte Haubert",
-    hands="Volte Moufles",
-    legs="Volte Brayettes",
+    body="Sakpata's Breastplate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
     feet="Hermes' Sandals",
     neck="Sanctity Necklace",
     waist="Nierenschutz",
     left_ear="Ethereal Earring",
     right_ear="Infused Earring",
     left_ring="Sheltered Ring",
-    right_ring="Paguroidea Ring",
+    right_ring="Chirich Ring +1",
     back="Shadow Mantle",
 	})
 
@@ -292,27 +292,27 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet="Hermes' Sandals",
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Ragnarok.idle.regen=set_combine(sets.Ragnarok,{
 		ammo="Staunch Tathlum +1",
     head="Baghere Salade",
-    body="Volte Haubert",
-    hands="Volte Moufles",
-    legs="Volte Brayettes",
+    body="Sakpata's Breastplate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
     feet="Hermes' Sandals",
     neck="Sanctity Necklace",
     waist="Nierenschutz",
     left_ear="Ethereal Earring",
     right_ear="Infused Earring",
     left_ring="Sheltered Ring",
-    right_ring="Paguroidea Ring",
+    right_ring="Chirich Ring +1",
     back="Shadow Mantle",
 	})
 
@@ -322,7 +322,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.Dolichenus.hybrid={}
 
 	sets.Dolichenus.tp.lowacc=set_combine(sets.Dolichenus,{
-		ammo="Ginsen",
+		ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands="Sulev. Gauntlets +2",
@@ -372,12 +372,12 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet={ name="Souveran Schuhs +1", augments={'HP+65','Attack+25','Magic dmg. taken -4',}},
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Dolichenus.idle={}
@@ -406,27 +406,27 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet="Hermes' Sandals",
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Dolichenus.idle.regen=set_combine(sets.Dolichenus,{
 		ammo="Staunch Tathlum +1",
     head="Baghere Salade",
-    body="Volte Haubert",
-    hands="Volte Moufles",
-    legs="Volte Brayettes",
+    body="Sakpata's Breastplate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
     feet="Hermes' Sandals",
     neck="Sanctity Necklace",
     waist="Nierenschutz",
     left_ear="Ethereal Earring",
     right_ear="Infused Earring",
     left_ring="Sheltered Ring",
-    right_ring="Paguroidea Ring",
+    right_ring="Chirich Ring +1",
     back="Shadow Mantle",
 	})
 
@@ -464,8 +464,11 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	})
 
 	sets.Naegling.hybrid.lowacc=set_combine(sets.Naegling.tp.lowacc,{
-	neck="Loricate Torque +1",
-	left_ring="Defending Ring",
+	head="Sakpata's Helm",
+	body="Sakpata's Plate",
+	hands="Sakpata's Gauntlets",
+	legs="Sakpata's Cuisses",
+	feet="Sakpata's Leggings",
 	})
 
 	sets.Naegling.hybrid.medacc=set_combine(sets.Naegling.tp.medacc,{
@@ -486,12 +489,12 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet={ name="Souveran Schuhs +1", augments={'HP+65','Attack+25','Magic dmg. taken -4',}},
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Naegling.idle={}
@@ -520,27 +523,27 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet="Hermes' Sandals",
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Naegling.idle.regen=set_combine(sets.Naegling,{
 		ammo="Staunch Tathlum +1",
     head="Baghere Salade",
-    body="Volte Haubert",
-    hands="Volte Moufles",
-    legs="Volte Brayettes",
+    body="Sakpata's Breastplate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
     feet="Hermes' Sandals",
     neck="Sanctity Necklace",
     waist="Nierenschutz",
     left_ear="Ethereal Earring",
     right_ear="Infused Earring",
     left_ring="Sheltered Ring",
-    right_ring="Paguroidea Ring",
+    right_ring="Chirich Ring +1",
     back="Shadow Mantle",
 	})
 
@@ -550,7 +553,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.Naeglingdw.hybrid={}
 
 	sets.Naeglingdw.tp.lowacc=set_combine(sets.Naeglingdw,{
-		ammo="Ginsen",
+		ammo="Aurgelmir Orb +1",
     head="Hjarrandi Helm",
     body={ name="Agoge Lorica +3", augments={'Enhances "Aggressive Aim" effect',}},
     hands="Sulev. Gauntlets +2",
@@ -599,12 +602,12 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet={ name="Souveran Schuhs +1", augments={'HP+65','Attack+25','Magic dmg. taken -4',}},
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Naeglingdw.idle={}
@@ -633,27 +636,27 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet="Hermes' Sandals",
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Naeglingdw.idle.regen=set_combine(sets.Naeglingdw,{
 		ammo="Staunch Tathlum +1",
     head="Baghere Salade",
-    body="Volte Haubert",
-    hands="Volte Moufles",
-    legs="Volte Brayettes",
+    body="Sakpata's Breastplate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
     feet="Hermes' Sandals",
     neck="Sanctity Necklace",
     waist="Nierenschutz",
     left_ear="Ethereal Earring",
     right_ear="Infused Earring",
     left_ring="Sheltered Ring",
-    right_ring="Paguroidea Ring",
+    right_ring="Chirich Ring +1",
     back="Shadow Mantle",
 	})
 
@@ -663,7 +666,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.Dolichenusdw.hybrid={}
 
 	sets.Dolichenusdw.tp.lowacc=set_combine(sets.Dolichenusdw,{
-		ammo="Ginsen",
+		ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands="Sulev. Gauntlets +2",
@@ -713,12 +716,12 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet={ name="Souveran Schuhs +1", augments={'HP+65','Attack+25','Magic dmg. taken -4',}},
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Dolichenusdw.idle={}
@@ -747,27 +750,27 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet="Hermes' Sandals",
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.Dolichenusdw.idle.regen=set_combine(sets.Dolichenusdw,{
 		ammo="Staunch Tathlum +1",
     head="Baghere Salade",
-    body="Volte Haubert",
-    hands="Volte Moufles",
-    legs="Volte Brayettes",
+    body="Sakpata's Breastplate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
     feet="Hermes' Sandals",
     neck="Sanctity Necklace",
     waist="Nierenschutz",
     left_ear="Ethereal Earring",
     right_ear="Infused Earring",
     left_ring="Sheltered Ring",
-    right_ring="Paguroidea Ring",
+    right_ring="Chirich Ring +1",
     back="Shadow Mantle",
 	})
 
@@ -777,7 +780,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
 	sets.ShiningOne.hybrid={}
 
 	sets.ShiningOne.tp.lowacc=set_combine(sets.ShiningOne,{
-	ammo="Ginsen",
+	ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Dagon Breast.",
     hands="Sulev. Gauntlets +2",
@@ -827,12 +830,12 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet={ name="Souveran Schuhs +1", augments={'HP+65','Attack+25','Magic dmg. taken -4',}},
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.ShiningOne.idle={}
@@ -861,27 +864,27 @@ windower.prim.set_visibility('WEAPON_SET',true)
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		feet="Hermes' Sandals",
 		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Odnowa Earring",
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Moonlight Ring",
 		right_ring="Moonlight Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	})
 
 	sets.ShiningOne.idle.regen=set_combine(sets.ShiningOne,{
 		ammo="Staunch Tathlum +1",
     head="Baghere Salade",
-    body="Volte Haubert",
-    hands="Volte Moufles",
-    legs="Volte Brayettes",
+    body="Sakpata's Breastplate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
     feet="Hermes' Sandals",
     neck="Sanctity Necklace",
     waist="Nierenschutz",
     left_ear="Ethereal Earring",
     right_ear="Infused Earring",
     left_ring="Sheltered Ring",
-    right_ring="Paguroidea Ring",
+    right_ring="Chirich Ring +1",
     back="Shadow Mantle",
 	})
 
@@ -936,7 +939,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
     waist="Fotia Belt",
     left_ear="Gwati Earring",
     right_ear="Digni. Earring",
-    left_ring="Stikini Ring",
+    left_ring="Stikini Ring +1",
     right_ring="Sangoma Ring",
     back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
 	}
@@ -956,7 +959,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
     waist="Fotia Belt",
     left_ear="Gwati Earring",
     right_ear="Digni. Earring",
-    left_ring="Stikini Ring",
+    left_ring="Stikini Ring +1",
     right_ring="Sangoma Ring",
     back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
 	}
@@ -976,7 +979,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
     waist="Fotia Belt",
     left_ear="Gwati Earring",
     right_ear="Digni. Earring",
-    left_ring="Stikini Ring",
+    left_ring="Stikini Ring +1",
     right_ring="Sangoma Ring",
     back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
 	}
@@ -996,7 +999,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
     waist="Fotia Belt",
     left_ear="Gwati Earring",
     right_ear="Digni. Earring",
-    left_ring="Stikini Ring",
+    left_ring="Stikini Ring +1",
     right_ring="Sangoma Ring",
     back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
 	}
@@ -1200,7 +1203,7 @@ windower.prim.set_visibility('WEAPON_SET',true)
     waist="Fotia Belt",
     left_ear="Gwati Earring",
     right_ear="Digni. Earring",
-    left_ring="Stikini Ring",
+    left_ring="Stikini Ring +1",
     right_ring="Sangoma Ring",
     back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
 	}
@@ -1391,6 +1394,22 @@ function status_change(new,old)
 			elseif TPType=="dt" then
 				equip(sets.Naegling.dt)
 			end
+		elseif weaponry=="Dolichenusdw" then
+			if TPType=="dd" then
+				equip(sets.Dolichenus.tp[tpacc])
+			elseif TPType=="hybrid" then
+				equip(sets.Dolichenus.hybrid[tpacc])
+			elseif TPType=="dt" then
+				equip(sets.Dolichenus.dt)
+			end
+		elseif weaponry=="Naeglingdw" then
+			if TPType=="dd" then
+				equip(sets.Naegling.tp[tpacc])
+			elseif TPType=="hybrid" then
+				equip(sets.Naegling.hybrid[tpacc])
+			elseif TPType=="dt" then
+				equip(sets.Naegling.dt)
+			end
 		end
 	elseif new=="Idle" then
 		if weaponry=="Chango" then
@@ -1403,6 +1422,10 @@ function status_change(new,old)
 			equip(sets.Dolichenus.idle[idletype])
 		elseif weaponry=="Naegling" then
 			equip(sets.Naegling.idle[idletype])
+		elseif weaponry=="Dolichenusdw" then
+			equip(sets.Dolichenusdw.idle[idletype])
+		elseif weaponry=="Naeglingdw" then
+			equip(sets.Naeglingdw.idle[idletype])
 		end
 	end
 windower.prim.set_size('TP_SET',200,30)
@@ -1445,6 +1468,18 @@ function self_command(command)
 	end
 	if command=="Naegling" then
 		weaponry="Naegling"
+		windower.prim.set_texture('WEAPON_SET',''..windower.windower_path..'addons/gearswap/data/images/'..weaponry..'.png')
+		add_to_chat(206,"Naegling Equipped")
+		status_change(player.status)
+	end
+	if command=="Dolichenusdw" then
+		weaponry="Dolichenusdw"
+		windower.prim.set_texture('WEAPON_SET',''..windower.windower_path..'addons/gearswap/data/images/'..weaponry..'.png')
+		add_to_chat(206,"Dolichenus Equipped")
+		status_change(player.status)
+	end
+	if command=="Naeglingdw" then
+		weaponry="Naeglingdw"
 		windower.prim.set_texture('WEAPON_SET',''..windower.windower_path..'addons/gearswap/data/images/'..weaponry..'.png')
 		add_to_chat(206,"Naegling Equipped")
 		status_change(player.status)

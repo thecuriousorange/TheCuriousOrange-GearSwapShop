@@ -3,14 +3,14 @@ function get_sets()
 		include('boxes.lua')
 		include('organizer-lib.lua')
 	-- include
-	
+
 	-- macro selection
 	send_command('input /macro book 12;input /macro set 1')
 	-- macro selection
-	
+
 	--variables
 	Weaponry="club"
-	
+
 	sets.Weaponry= T{}
 	--variables
 
@@ -22,106 +22,117 @@ function get_sets()
 	sets.elemental={}
 	sets.elemental.index={"fira","blizzara","stonra","aera","thundra","watera"}
 	elemental_ind=1
-	
+
 	sets.status={}
-	sets.status.index={"[petra","blizzara","stonra","aera","thundra","watera"}
+	sets.status.index={"petra","blizzara","stonra","aera","thundra","watera"}
 	status_ind=1
-	
+
 	--precast sets
-	sets.precast.fc={main="Marin Staff", ammo="Incantor Stone", head="Nahtirah Hat", body="Anhur Robe",
-	hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -1%','Song recast delay -1',}},
-	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet="Regal Pumps +1",
-	neck="Orison Locket", waist="Fucho-no-Obi", left_ear="Ethereal Earring", right_ear="Loquac. Earring",
-	left_ring="Kishar Ring", right_ring="Rahab Ring", back="Swith Cape",}
-	
+	sets.precast.fc={
+		main="Oranyan",
+    ammo="Sapience Orb",
+    head="Nahtirah Hat",
+    body="Inyanga Jubbah +2",
+    hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -1%','Song recast delay -1',}},
+    legs="Volte Brais",
+    feet="Regal Pumps +1",
+    neck="Voltsurge Torque",
+    waist="Channeler's Stone",
+    left_ear="Enchntr. Earring +1",
+    right_ear="Loquac. Earring",
+    left_ring="Rahab Ring",
+    right_ring="Kishar Ring",
+    back="Fi Follet Cape +1",
+	}
+
 	sets.precast.cure={main="Ababinili",
 	ammo="Incantor Stone", head="Nahtirah Hat", body="Heka's Kalasiris", legs="Orsn. Pantaln. +2",
 	hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -1%','Song recast delay -1',}},
 	feet="Hygieia Clogs", neck="Orison Locket", waist="Fucho-no-Obi", left_ear="Nourish. Earring",
 	right_ear="Nourish. Earring +1", left_ring="Kishar Ring", right_ring="Rahab Ring", back="Pahtli Cape",}
-	
+
 	sets.precast.enhancing=set_combine(sets.precast.fc, {waist="Siegel Sash",})
-	
-	sets.precast.stoneskin=set_combine(sets.precast.enhancing, {head="Umuthi Hat",})
+
+	sets.precast.stoneskin=set_combine(sets.precast.enhancing, {head="Nahtirah Hat",})
 	--precast sets
-	
+
 	--midcast sets
 	sets.midcast.curesolace={main="Ababinili",
 	ammo="Incantor Stone", head={ name="Gende. Caubeen +1", augments={'Phys. dmg. taken -1%',}},
 	body="Orison Bliaud +2", hands="Bokwus Gloves", legs="Orsn. Pantaln. +2", feet="Hygieia Clogs",
-	neck="Incanter's Torque", waist="Cascade Belt", left_ear="Lifestorm Earring", right_ear="Loquac. Earring",
-	back={ name="Mending Cape", augments={'Healing magic skill +7','Enha.mag. skill +9','Mag. Acc.+9',}}, 
+	neck="Incanter's Torque", waist="Luminary Sash", left_ear="Digni. Earring", right_ear="Loquac. Earring",
+	back={ name="Mending Cape", augments={'Healing magic skill +7','Enha.mag. skill +9','Mag. Acc.+9',}},
 	left_ring="Ephedra Ring", right_ring="Sirona's Ring",}
-	
+
 	sets.midcast.curemisery=set_combine(sets.midcast.curesolace, {body="Anhur Robe",})
-	
-	sets.midcast.enhancing={main="Beneficus", sub="Genbu's Shield", ammo="Incantor Stone", head="Umuthi Hat", body="Anhur Robe", hands="Dynasty Mitts",
-	legs="Portent Pants", feet="Orsn. Duckbills +2", neck="Incanter's Torque", waist="Olympus Sash", 
+
+	sets.midcast.enhancing={main="Beneficus", sub="Genbu's Shield", ammo="Incantor Stone", head="Nahtirah Hat", body="Anhur Robe", hands="Dynasty Mitts",
+	legs="Portent Pants", feet="Orsn. Duckbills +2", neck="Incanter's Torque", waist="Olympus Sash",
 	left_ear="Andoaa Earring", right_ear="Nourish. Earring +1", left_ring="Levia. Ring", right_ring="Levia. Ring",
 	back={ name="Mending Cape", augments={'Healing magic skill +7','Enha.mag. skill +9','Mag. Acc.+9',}},}
-	
+
 	sets.midcast.bar=set_combine(sets.midcast.enhancing, {head="Orison Cap +2", body="Orison Bliaud +2", hands="Orison Mitts +2", legs="Cleric's Pantaln.", feet="Orsn. Duckbills +2",})
-	
+
 	sets.midcast.stoneskin=set_combine(sets.midcast.enhancing, {waist="Siegel Sash"})
-	
+
 	sets.midcast.na={main="Marin Staff", ammo="Incantor Stone", head="Orison Cap +2", body="Anhur Robe",
 	hands={ name="Helios Gloves", augments={'Mag. Evasion+10','"Fast Cast"+5','INT+5 MND+5',}},
 	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, feet="Regal Pumps +1",
 	neck="Orison Locket", waist="Ninurta's Sash", left_ear="Etiolation Earring", right_ear="Loquac. Earring",
 	left_ring="Kishar Ring", right_ring="Rahab Ring", back="Swith Cape",}
-	
+
 	sets.midcast.cursna={main="Beneficus", sub="Genbu's Shield", ammo="Incantor Stone", head="Orison Cap +2",
 	body="Orison Bliaud +2", hands="Hlr. Mitts +1", legs="Cleric's Pantaln.", feet={ name="Gende. Galoshes", augments={'Phys. dmg. taken -1%',}},
 	neck="Incanter's Torque", waist="Bishop's Sash", left_ear="Beatific Earring", right_ear="Loquac. Earring",
 	left_ring="Ephedra Ring", right_ring="Sirona's Ring",
     back={ name="Mending Cape", augments={'Healing magic skill +7','Enha.mag. skill +9','Mag. Acc.+9',}},}
-	
+
 	sets.midcast.nuke={
 	}
-	
+
 	sets.midcast.intenfeeb={main={ name="Twebuliij", augments={'MP+60','Mag. Acc.+15','MND+12',}}, sub="Mephitis Grip",
 	ammo="Incantor Stone", head="Befouled Crown", body="Hlr. Briault +1",
 	hands="Lurid Mitts", legs="Portent Pants", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
-    neck="Incanter's Torque", waist="Rumination Sash", left_ear="Lifestorm Earring", right_ear="Psystorm Earring", 
+    neck="Incanter's Torque", waist="Rumination Sash", left_ear="Digni. Earring", right_ear="Gwati Earring",
 	left_ring="Globidonta Ring", right_ring="Sangoma Ring", back="Altruistic Cape",}
-	
+
 	sets.midcast.mndenfeeb={main={ name="Twebuliij", augments={'MP+60','Mag. Acc.+15','MND+12',}}, sub="Mephitis Grip",
 	ammo="Incantor Stone", head="Befouled Crown", body="Shango Robe",
-	hands="Lurid Mitts", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, waist="Rumination Sash", 
+	hands="Lurid Mitts", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}}, waist="Rumination Sash",
 	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Incanter's Torque",
-	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Globidonta Ring", right_ring="Sangoma Ring",
+	left_ear="Digni. Earring", right_ear="Gwati Earring", left_ring="Globidonta Ring", right_ring="Sangoma Ring",
     back={ name="Mending Cape", augments={'Healing magic skill +7','Enha.mag. skill +9','Mag. Acc.+9',}},}
-	
-	sets.midcast.repose={main={ name="Twebuliij", augments={'MP+60','Mag. Acc.+15','MND+12',}}, sub="Mephitis Grip", 
+
+	sets.midcast.repose={main={ name="Twebuliij", augments={'MP+60','Mag. Acc.+15','MND+12',}}, sub="Mephitis Grip",
 	ammo="Incantor Stone", head="Befouled Crown", body="Shango Robe",
 	hands="Lurid Mitts", legs="Hlr. Pantaln. +1", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	neck="Incanter's Torque", waist="Bishop's Sash", left_ear="Beatific Earring", right_ear="Divine Earring",
 	left_ring="Globidonta Ring", right_ring="Sangoma Ring", back="Altruistic Cape",}
-	
-	sets.midcast.divine={main={ name="Twebuliij", augments={'MP+60','Mag. Acc.+15','MND+12',}}, sub="Mephitis Grip", 
+
+	sets.midcast.divine={main={ name="Twebuliij", augments={'MP+60','Mag. Acc.+15','MND+12',}}, sub="Mephitis Grip",
 	ammo="Incantor Stone", head="Befouled Crown", body="Shango Robe",
 	hands="Lurid Mitts", legs="Hlr. Pantaln. +1", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	neck="Incanter's Torque", waist="Bishop's Sash", left_ear="Beatific Earring", right_ear="Divine Earring",
 	left_ring="Globidonta Ring", right_ring="Sangoma Ring", back="Altruistic Cape",}
 	--midcast sets
-	
+
 	--aftercast sets
 	sets.idle={main="Bolelabunga", sub="Genbu's Shield", ammo="Vanir Battery", head="Befouled Crown", body="Witching Robe",
 	hands="Serpentes Cuffs", legs="Assid. Pants +1", feet="Serpentes Sabots", neck="Loricate Torque +1",
 	waist="Fucho-no-Obi", left_ear="Ethereal Earring", right_ear="Sanare Earring", left_ring="Shadow Ring",
 	right_ring="Sheltered Ring", back="Shadow Mantle",}
-	
+
 	sets.tp.club={
 	}
-	
+
 	sets.tp.staff={
 	}
 	--aftercast sets
-	
+
 	--dt sets
 	sets.pdt={
 	}
-	
+
 	sets.mdt={
 	}
 	--dt sets
@@ -139,7 +150,7 @@ function precast(spell)
 			equip(sets.precast.fc)
 		end
 	end
-	
+
 end
 
 function midcast(spell)
@@ -155,7 +166,8 @@ function midcast(spell)
 		end
 		if spell.english:contains("na") or spell.english:contains("Erase") or spell.english:contains("Sacrifice") or spell.english:contains("Esuna") and spell.english~="Cursna" then
 			equip(sets.midcast.na)
-		elseif spell.english=="Cursna" then
+		end
+		if spell.english=="Cursna" then
 			equip(sets.midcast.cursna)
 		end
 		if spell.english:contains("Cure") or spell.english:contains("Cura") then
@@ -181,7 +193,7 @@ function midcast(spell)
 		end
 		if spell.type=="Elemental Magic" then
 			equip(sets.midcast.nuke)
-		end		
+		end
 	end
 end
 
@@ -201,16 +213,16 @@ function status_change(new,old)
 	end
 end
 
-function self_command(cmd)
+function self_command(command)
 	if command=="cycle_elements" then
 		elemental_ind=elemental_ind+1
-		add_to_chat(206, "barspell set to: bar"..sets.elemental.index[elemental_ind]..)
-		send_command('alias barelera bar'..sets.elemental.index[elemental_ind]..)
+		add_to_chat(206, "barspell set to: bar"..sets.elemental.index[elemental_ind])
+		send_command('alias barelera bar'..sets.elemental.index[elemental_ind])
 	end
 	if command=="cycle_barstatus" then
 		status_ind=status_ind+1
-		add_to_chat(206, "barspell set to: bar"..sets.status.index[status_ind]..)
-		send_command('alias barelera bar'..sets.elemental.index[elemental_ind]..)
+		add_to_chat(206, "barspell set to: bar"..sets.status.index[status_ind])
+		send_command('alias barelera bar'..sets.elemental.index[elemental_ind])
 	end
 	if command=="club" then
 		Weaponry="club"

@@ -62,13 +62,13 @@ function get_sets()
 	sets.precast.fc={main={ name="Kanaria", augments={'Crit. hit damage +3%','DEX+7','Accuracy+19','Attack+18','DMG:+13',}},
     sub={ name="Ochu", augments={'STR+10','DEX+10','Ninjutsu skill +10','DMG:+15',}},
     ammo="Sapience Orb",
-    head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
+    head="Nyame Helm",
     body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}},
     hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
     legs="Arjuna Breeches",
     feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}},
     neck="Voltsurge Torque",
-    waist="Flume Belt",
+    waist="Flume Belt +1",
     left_ear="Etiolation Earring",
     right_ear="Loquac. Earring",
     left_ring="Prolix Ring",
@@ -88,22 +88,22 @@ function get_sets()
 	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Rajas Ring", back="Bleating Mantle", 
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Teki"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
+	sets.precast.ws["Blade: Teki"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Aurgelmir Orb +1", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: To"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
+	sets.precast.ws["Blade: To"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Aurgelmir Orb +1", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Chi"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
+	sets.precast.ws["Blade: Chi"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Aurgelmir Orb +1", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Ei"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
+	sets.precast.ws["Blade: Ei"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Aurgelmir Orb +1", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
@@ -113,17 +113,17 @@ function get_sets()
 	hands="Hachiya Tekko", left_ring="Epona's Ring", right_ring="Rajas Ring", back="Rancorous Mantle", 
 	waist="Fotia Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Ten"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
+	sets.precast.ws["Blade: Ten"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Aurgelmir Orb +1", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Ku"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
+	sets.precast.ws["Blade: Ku"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Aurgelmir Orb +1", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
 	
-	sets.precast.ws["Blade: Yu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Ginsen", head="Skormoth Mask",
+	sets.precast.ws["Blade: Yu"]={main="Raimitsukane", sub="Kaitsuburi", ammo="Aurgelmir Orb +1", head="Skormoth Mask",
 	neck="Fotia Gorget", right_ear="Brutal Earring", left_ear="Trux Earring", body="Hachi. Chainmail", 
 	hands="Otronif Gloves +1", left_ring="Epona's Ring", right_ring="Ifrit Ring", back="Bleating Mantle",
 	waist="Wanion Belt", legs="Hachiya Hakama", feet="Otronif Boots +1",}
@@ -174,7 +174,7 @@ function get_sets()
 --tp sets
 	sets.tp.lowacc={main={ name="Kanaria", augments={'Crit. hit damage +3%','DEX+7','Accuracy+19','Attack+18','DMG:+13',}},
     sub={ name="Ochu", augments={'STR+10','DEX+10','Ninjutsu skill +10','DMG:+15',}},
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb +1",
     head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
     body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
         hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
@@ -209,7 +209,7 @@ function get_sets()
 	sets.aftercast.tp.vlhaste= set_combine(sets.aftercast.tp.lhaste, {left_ear="Suppanomimi", 
 	right_ear="Eabani Earring",})
 	
-	sets.aftercast.acc={ammo="Jukukik Feather", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, left_ring="Beeline Ring", 
+	sets.aftercast.acc={ammo="Jukukik Feather", head={ name="Herculean Helm", augments={'Accuracy+30','"Triple Atk."+4','Attack+8',}}, left_ring="Beeline Ring", 
 	right_ring="Portus Annulet", waist="Hurch'lan Sash", body="Abnoba Kaftan", back="Yokaze Mantle",}
 	
 	sets.aftercast.acc.vhhaste= set_combine(sets.aftercast.tp.vhhaste, sets.aftercast.acc)
@@ -229,7 +229,7 @@ function get_sets()
 
 --Evasion sets
 	sets.aftercast.evasion={main="Raimitsukane", sub="Kaitsuburi", ammo="Qirmiz Tathlum", 
-	head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Combatant's Torque", left_ear="Ethereal Earring", right_ear="Iga Mimikazari",
+	head={ name="Herculean Helm", augments={'Accuracy+30','"Triple Atk."+4','Attack+8',}}, neck="Combatant's Torque", left_ear="Ethereal Earring", right_ear="Iga Mimikazari",
 	body="Otro. Harness +1", hands="Hachiya Tekko", left_ring="Portus Annulet", right_ring="Beeline Ring",
 	back="Fravashi Mantle", waist="Sveltesse Gouriz", legs="Otronif Brais +1", feet="Otronif Boots +1",}
 --Evasion sets
@@ -237,13 +237,13 @@ function get_sets()
 --dt sets
 	sets.aftercast.pdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head="Otronif Mask +1",
 	body="Arhat's Gi +1", hands="Otronif Gloves +1", legs="Otronif Brais +1", feet="Otronif Boots +1", 
-	neck="Loricate Torque +1", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Iga Mimikazari",
-	left_ring="Patricius Ring", right_ring="Vocane Ring +1", back="Moonbeam Cape",}
+	neck="Loricate Torque +1", waist="Flume Belt +1", left_ear="Ethereal Earring", right_ear="Iga Mimikazari",
+	left_ring="Patricius Ring", right_ring="Vocane Ring +1", back="Moonlight Cape",}
 	
-	sets.aftercast.mdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}},
+	sets.aftercast.mdt={main="Raimitsukane", sub="Kaitsuburi", ammo="Vanir Battery", head={ name="Herculean Helm", augments={'Accuracy+30','"Triple Atk."+4','Attack+8',}},
 	body="Abnoba Kaftan", hands="Otronif Gloves +1", legs="Nahtirah Trousers", feet="Otronif Boots +1",
-	neck="Loricate Torque +1", waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Sanare Earring",
-	left_ring="Shadow Ring", right_ring="Vocane Ring +1", back="Moonbeam Cape",}
+	neck="Loricate Torque +1", waist="Flume Belt +1", left_ear="Ethereal Earring", right_ear="Sanare Earring",
+	left_ring="Shadow Ring", right_ring="Vocane Ring +1", back="Moonlight Cape",}
 --dt sets
 
 --idle sets
@@ -253,11 +253,11 @@ function get_sets()
     ammo="Vanir Battery",
     head="Oce. Headpiece +1",
     body="Hiza. Haramaki +2",
-    hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
+    hands="Nyame Gauntlets",
     legs="Arjuna Breeches",
     feet="Danzo Sune-Ate",
     neck="Sanctity Necklace",
-    waist="Flume Belt",
+    waist="Flume Belt +1",
     left_ear="Ethereal Earring",
     right_ear="Sanare Earring",
     left_ring="Shadow Ring",

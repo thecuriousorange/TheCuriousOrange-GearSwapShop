@@ -1,9 +1,26 @@
 function get_sets()
 	include('organizer-lib.lua')
+	include('lelubrdgkeys.lua')
+	include('itchygeogkeys.lua')
+
+	weapon="Xiucoatl"
+	TPMode="masterdd"
+	IdleType="maxhppup"
+	Acc="lowacc"
+
+	sets.weapon=T{}
+	sets.TPMode=T{}
+	sets.IdleType=T{}
+	sets.Acc=T{}
+
+	send_command("bind @f1 gs c masterdd")
+	send_command("bind @f2 gs c bothdd")
+
 	sets.pet={}
 	sets.ja={}
 	sets.tp={}
 	sets.tp.masterdd={}
+	sets.tp.bothdd={}
 	sets.tp.meleepetdd={}
 	sets.tp.magepetdd={}
 	sets.tp.rngpetdd={}
@@ -15,15 +32,15 @@ function get_sets()
     range="Animator P +1",
     ammo="Automat. Oil +3",
     head="Hiza. Somen　+2",
-    body="Abnoba Kaftan",
+    body="He. Harness +1",
     hands="Hizamaru Kote +2",
     legs="Hiza. Hizayoroi +2",
     feet={ name="Herculean Boots", augments={'Accuracy+16','"Triple Atk."+4','AGI+2','Attack+9',}},
-    neck="Rancor Collar",
-    waist="Moonbow Belt",
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
     right_ear="Brutal Earring",
-    left_ring="Regal Ring",
+    left_ring="Gere Ring",
     right_ring="Niqmaddu Ring",
     back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
@@ -62,7 +79,24 @@ function get_sets()
     right_ear="Telos Earring",
     left_ring="Gere Ring",
     right_ring="Niqmaddu Ring",
-    back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
+    back={ name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
+	}
+
+	sets.tp.bothdd.lowacc={
+		main={ name="Godhands", augments={'Path: A',}},
+    range="Animator P +1",
+    head="Tali'ah Turban +2",
+    body="Tali'ah Manteel +2",
+    hands={ name="Herculean Gloves", augments={'"Triple Atk."+4','Accuracy+13','Attack+5',}},
+    legs="Heyoka Subligar",
+    feet={ name="Herculean Boots", augments={'Accuracy+16','"Triple Atk."+4','AGI+2','Attack+9',}},
+    neck="Shulmanu Collar",
+    waist="Klouskap Sash +1",
+    left_ear="Enmerkar Earring",
+    right_ear="Telos Earring",
+    left_ring="Gere Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
 	}
 
 	sets.tp.masterdd.medacc={}
@@ -95,6 +129,7 @@ function get_sets()
 	sets.hpdown={}
 	sets.hpup={}
 	sets.petenmity={}
+	sets.petcmd={}
 
 	sets.ja.Activate={
 		neck="Bfn. Collar +1",
@@ -108,49 +143,58 @@ function get_sets()
 		back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 
-	sets.ja["Water Maneuver"]={
+	sets.ja.Overdrive={
+		body="Pitre Tobe +3",
+	}
+
+	sets.ja.Repair={
+		lear="Pratik Earring",
+		feet="Foire Babouches +3",
+	}
+
+	sets.petcmd["Water Maneuver"]={
 		neck="Bfn. Collar +1",
 		body="Kara. Farsetto +1",
 		back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 
-	sets.ja["Earth Maneuver"]={
+	sets.petcmd["Earth Maneuver"]={
 		neck="Bfn. Collar +1",
 		body="Kara. Farsetto +1",
 		back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 
-	sets.ja["Fire Maneuver"]={
+	sets.petcmd["Fire Maneuver"]={
 		neck="Bfn. Collar +1",
 		body="Kara. Farsetto +1",
 		back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 
-	sets.ja["Ice Maneuver"]={
+	sets.petcmd["Ice Maneuver"]={
 		neck="Bfn. Collar +1",
 		body="Kara. Farsetto +1",
 		back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 
-	sets.ja["Light Maneuver"]={
+	sets.petcmd["Light Maneuver"]={
 		neck="Bfn. Collar +1",
 		body="Kara. Farsetto +1",
 		back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 
-	sets.ja["Dark Maneuver"]={
+	sets.petcmd["Dark Maneuver"]={
 		neck="Bfn. Collar +1",
 		body="Kara. Farsetto +1",
 		back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 
-	sets.ja["Thunder Maneuver"]={
+	sets.petcmd["Thunder Maneuver"]={
 		neck="Bfn. Collar +1",
 		body="Kara. Farsetto +1",
 		back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 
-	sets.ja["Wind Maneuver"]={
+	sets.petcmd["Wind Maneuver"]={
 		neck="Bfn. Collar +1",
 		body="Kara. Farsetto +1",
 		back={ name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
@@ -192,7 +236,44 @@ function get_sets()
 		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
 	}
 
-	sets.ambuscade={
+	sets.idle.maxhppup={
+		range="Animator P +1",
+    ammo="Automat. Oil +3",
+    head={ name="Anwig Salade", augments={'Attack+3','Pet: Damage taken -10%','Attack+3','Pet: "Regen"+1',}},
+    body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},
+    hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},
+    legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},
+    feet={ name="Rao Sune-Ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},
+    neck="Shulmanu Collar",
+    waist="Isa Belt",
+    left_ear="Enmerkar Earring",
+    right_ear="Domes. Earring",
+    left_ring="Varar Ring +1",
+    right_ring="Overbearing Ring",
+		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
+	}
+
+	sets.idle.mevapup={
+		range="Animator P +1",
+    ammo="Automat. Oil +3",
+    head={ name="Anwig Salade", augments={'Attack+3','Pet: Damage taken -10%','Attack+3','Pet: "Regen"+1',}},
+    body={ name="Taeon Tabard", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+    hands={ name="Taeon Gloves", augments={'Pet: Accuracy+20 Pet: Rng. Acc.+20','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+    legs={ name="Taeon Tights", augments={'Pet: Accuracy+22 Pet: Rng. Acc.+22','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+    feet={ name="Taeon Boots", augments={'Pet: Accuracy+22 Pet: Rng. Acc.+22','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+    neck="Shulmanu Collar",
+    waist="Klouskap Sash +1",
+    left_ear="Enmerkar Earring",
+    right_ear="Domes. Earring",
+    left_ring="Varar Ring +1",
+    right_ring="Varar Ring +1",
+    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
+	}
+	sets.idle.pupdd={
+
+	}
+
+	sets.idle.ambuscade={
 		main={ name="Ohtas", augments={'Accuracy+70','Pet: Accuracy+70','Pet: Haste+10%',}},
     range="Animator P +1",
     ammo="Automat. Oil +3",
@@ -231,9 +312,13 @@ end
 
 function status_change(new,old)
 	if new=="Engaged" then
-		equip(sets.tp.masterdd.lowacc)
+		if TPMode=="masterdd" then
+			equip(sets.tp.masterdd[Acc])
+		elseif TPMode=="bothdd" then
+			equip(sets.tp.bothdd[Acc])
+		end
 	else
-		equip(sets.currentidle)
+		equip(sets.idle[IdleType])
 	end
 end
 
@@ -241,6 +326,31 @@ function pet_midcast(spell)
 
 end
 
-function self_commands(command)
-
+function self_command(command)
+	if command=="masterdd" then
+		TPMode="masterdd"
+		add_to_chat(209,'master focused dd mode')
+		status_change(player.status)
+	end
+	if command=="bothdd" then
+		TPMode="bothdd"
+		add_to_chat(209,'combined dd mode')
+		status_change(player.status)
+	end
+	if command=="maxhppup" then
+		IdleType="maxhppup"
+		add_to_chat(209,'Idle-'..IdleType..'')
+	end
+	if command=="mevapup" then
+		IdleType="mevapup"
+		add_to_chat(209,'Idle-'..IdleType..'')
+	end
+	if command=="ambuscade" then
+		IdleType="ambuscade"
+		add_to_chat(209,'Idle-'..IdleType..'')
+	end
+	if command=="pupdd" then
+		IdleType="pupdd"
+		add_to_chat(209,'Idle-'..IdleType..'')
+	end
 end

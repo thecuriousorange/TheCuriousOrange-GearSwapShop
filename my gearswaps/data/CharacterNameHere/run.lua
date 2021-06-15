@@ -1,8 +1,10 @@
 function get_sets()
+	macro_setup()
 -- include
 	--include('boxes.lua')
 	include('organizer-lib.lua')
 	include('lelubrdgkeys.lua')
+	include('itchygeogkeys.lua')
 -- include
 --aliases
 	send_command('alias ddset gs equip sets.tp.lowacc')
@@ -47,10 +49,6 @@ function get_sets()
 	send_command('bind #1 input /item "Echo Drops" <me>')
 	send_command('bind @p input /item "Holy Water" <me>')
 	send_command('bind #c crusade')
-	send_command('bind !- input /ja "Gambit" <t>')
-	send_command('bind != input /ja "Rayke" <t>')
-	send_command('bind @- input /ja "Embolden" <me>')
-	send_command('bind @= input /ja "Liement" <me>')
 	send_command('bind ^- input /ja "Odyllic Subterfuge" <t>')
 	send_command('bind ^= input /ja "Elemental Sforzo" <me>')
 
@@ -74,7 +72,7 @@ function get_sets()
 --variables
 	WeaponType="greatsword"
 	weaponry="Epeolatry"
-	TPSet="dd"
+	TPSet="meva"
 	Acc="lowacc"
 	IdleType="refresh"
 	WSType="dmg"
@@ -119,7 +117,7 @@ windower.prim.create('WS_SET')
 windower.prim.create('ACTIVE_RUNE')
 windower.prim.create('WEAPON_TYPE')
 
-windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/ddmode.png')
+windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/'..TPSet..'.png')
 windower.prim.set_texture('ACC_SET',''..windower.windower_path..'addons/gearswap/data/images/lowacc.png')
 windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/refreshidle.png')
 windower.prim.set_texture('WS_SET',''..windower.windower_path..'addons/gearswap/data/images/dmg.png')
@@ -171,15 +169,25 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	body="Emet Harness +1",	neck="Moonlight Necklace", waist="Goading Belt", left_ear="Cryptic Earring", right_ear="Trux Earring",
 	left_ring="Supershear Ring", right_ring="Eihwaz Ring", back="Fravashi Mantle",}
 
-	sets.ja["Vivacious Pulse"]=set_combine(sets.enmity, {head="Erilaz Galea +1",})
+	sets.ja["Vivacious Pulse"]=set_combine(sets.enmity, {
+    head="Erilaz Galea +1",
+    neck="Incanter's Torque",
+    ear1="Saxnot Earring",
+    ear2="Beatific Earring",
+    ring1="Stikini Ring +1",
+    ring2="Stikini Ring +1",
+    back="Altruistic Cape",
+    waist="Bishop's Sash",
+    legs="Rune. Trousers +3"
+	})
 
 	sets.ja["Valiance"]=set_combine(sets.enmity, {body="Runeist's Coat +3", back="Ogma's Cape",})
 
 	sets.ja["Vallation"]=set_combine(sets.enmity, {body="Runeist's Coat +3", back="Ogma's Cape",})
 
-	sets.ja["Gambit"]=set_combine(sets.enmity, {hands="Runeist's Mitons +2",})
+	sets.ja["Gambit"]=set_combine(sets.enmity, {hands="Runeist's Mitons +3",})
 
-	sets.ja["Pflug"]=set_combine(sets.enmity, {feet="Runeist's Boots +2",})
+	sets.ja["Pflug"]=set_combine(sets.enmity, {feet="Runeist's Boots +3",})
 
 	sets.ja["Battuta"]=set_combine(sets.enmity, {head="Fu. Bandeau +3"})
 
@@ -189,17 +197,57 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 
 	sets.ja["Swordplay"]=set_combine(sets.enmity, {hands="Futhark Mitons +3",})
 
-	sets.ja["Lunge"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}},
-	body="Samnuha Coat", hands="Leyline Gloves", legs={ name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+3','STR+9','Mag. Acc.+9',}},
-	feet={ name="Herculean Boots", augments={'Mag. Acc.+7 "Mag.Atk.Bns."+7','INT+2','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}, neck="Sanctity Necklace", waist="Eschan Stone",
-	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Shiva Ring +1", back="Evasionist's Cape",}
+	sets.ja["One For All"]= {
+    ammo="Staunch Tathlum +1",
+    head="Rune. Bandeau +3",
+    neck="Unmoving Collar +1",
+    ear1="Odnowa Earring +1",
+    ear2="Tuisto Earring",
+    body="Runeist's Coat +3",
+    hands="Regal Gauntlets",
+    ring1="Gelatinous Ring +1",
+    ring2="Moonlight Ring",
+    back="Moonlight Cape",
+    waist="Oneiros Belt",
+    legs="Futhark Trousers +3",
+    feet="Turms Leggings +1"
+}
+
+	sets.ja.Lunge={
+		ammo="Pemphredo Tathlum",
+    head="Nyame Helm",
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck="Sanctity Necklace",
+    waist="Eschan Stone",
+    left_ear="Crematio Earring",
+    right_ear="Friomisi Earring",
+    left_ring="Shiva Ring +1",
+    right_ring="Shiva Ring +1",
+    back={ name="Evasionist's Cape", augments={'Enmity+5','"Embolden"+9','"Dbl.Atk."+1',}},
+	}
 
 	sets.ja.Lunge.burst=set_combine(sets.ja.Lunge, {left_ring="Mujin Band", right_ring="Locus Ring",})
 
-	sets.ja["Swipe"]={ammo="Pemphredo Tathlum", head={ name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Crit. hit damage +1%','STR+5','Mag. Acc.+9','"Mag.Atk.Bns."+10',}},
-	body="Samnuha Coat", hands="Leyline Gloves", legs={ name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+3','STR+9','Mag. Acc.+9',}},
-	feet={ name="Herculean Boots", augments={'Mag. Acc.+7 "Mag.Atk.Bns."+7','INT+2','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}, neck="Sanctity Necklace", waist="Eschan Stone",
-	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Moepapa Annulet", right_ring="Shiva Ring +1", back="Evasionist's Cape",}
+	sets.ja.Swipe={
+		ammo="Pemphredo Tathlum",
+    head="Nyame Helm",
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck="Sanctity Necklace",
+    waist="Eschan Stone",
+    left_ear="Crematio Earring",
+    right_ear="Friomisi Earring",
+    left_ring="Shiva Ring +1",
+    right_ring="Shiva Ring +1",
+    back={ name="Evasionist's Cape", augments={'Enmity+5','"Embolden"+9','"Dbl.Atk."+1',}},
+	}
+
+	sets.ja.Swipe.burst=set_combine(sets.ja.Lunge, {left_ring="Mujin Band", right_ring="Locus Ring",})
 
 	sets.ja["Provoke"]=set_combine(sets.enmity,{})
 
@@ -260,7 +308,7 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 
 	sets.ws.dmg["Requiescat"]={ammo="Hydrocera", head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
 	body={ name="Carm. Scale Mail", augments={'Accuracy+10','DEX+10','MND+15',}},     hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-	legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}}, feet={ name="Carmine Greaves", augments={'Accuracy+10','DEX+10','MND+15',}},
+	legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}}, feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
 	neck="Fotia Gorget", waist="Fotia Belt", left_ear="Sherida Earring", right_ear="Brutal Earring",
 	left_ring="Levia. Ring", right_ring="Levia. Ring", back="Bleating Mantle",}
 
@@ -341,7 +389,7 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 
 	sets.ws.acc["Requiescat"]={ammo="Hydrocera", head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
 	body={ name="Carm. Scale Mail", augments={'Accuracy+10','DEX+10','MND+15',}},     hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-	legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}}, feet={ name="Carmine Greaves", augments={'Accuracy+10','DEX+10','MND+15',}},
+	legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}}, feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
 	neck="Fotia Gorget", waist="Fotia Belt", left_ear="Sherida Earring", right_ear="Telos Earring",
 	left_ring="Levia. Ring", right_ring="Levia. Ring", back="Bleating Mantle",}
 
@@ -404,12 +452,20 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	--ws sets
 
 	--magic sets
-	sets.precast.fc={ammo="Sapience Orb", head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
-	body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}}, waist="Flume Belt",
-	hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}}, left_ear="Loquac. Earring",
-	legs="Aya. Cosciales +2", right_ear="Etiolation Earring", left_ring="Kishar Ring",
-	feet={ name="Carmine Greaves", augments={'Accuracy+10','DEX+10','MND+15',}}, back={ name="Ogma's cape", augments={'"Fast Cast"+10',}},
-	neck="Voltsurge Torque", right_ring="Rahab Ring",}
+	sets.precast.fc={
+		ammo="Sapience Orb",
+		head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
+		body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}},
+		waist="Flume Belt +1",
+		hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
+		left_ear="Loquac. Earring",
+		legs="Aya. Cosciales +2",
+		right_ear="Enchntr. Earring +1", left_ring="Kishar Ring",
+		feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
+		back={ name="Ogma's cape", augments={'"Fast Cast"+10',}},
+		neck="Voltsurge Torque",
+		right_ring="Rahab Ring",
+  }
 
 	sets.precast.enhancing= set_combine(sets.precast.fc, {waist="Siegel Sash", legs="Futhark Trousers +3",})
 	--magic sets
@@ -420,21 +476,21 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 		ammo="Staunch Tathlum +1",
     head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    hands="Runeist's Mitons +2",
+    hands="Runeist's Mitons +3",
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},
     feet="Turms Leggings +1",
     neck="Incanter's Torque",
     waist="Olympus Sash",
     left_ear="Andoaa Earring",
-    right_ear="Augment. Earring",
-    left_ring="Stikini Ring",
-    right_ring="Stikini Ring",
+    right_ear="Mimir Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
     back="Merciful Cape",
 	}
 
 	sets.midcast.regens= {
 		ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +2",
+    head="Rune. Bandeau +3",
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
     hands="Regal Gauntlets",
     legs={ name="Futhark Trousers +3", augments={'Enhances "Inspire" effect',}},
@@ -442,9 +498,9 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
     neck="Incanter's Torque",
     waist="Siegel Sash",
     left_ear="Andoaa Earring",
-    right_ear="Augment. Earring",
-    left_ring="Stikini Ring",
-    right_ring="Stikini Ring",
+    right_ear="Mimir Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
     back="Merciful Cape",
 	}
 
@@ -452,15 +508,15 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 		ammo="Staunch Tathlum +1",
     head="Erilaz Galea +1",
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    hands="Runeist's Mitons +2",
+    hands="Runeist's Mitons +3",
     legs={ name="Futhark Trousers +3", augments={'Enhances "Inspire" effect',}},
     feet="Turms Leggings +1",
     neck="Incanter's Torque",
     waist="Olympus Sash",
     left_ear="Andoaa Earring",
-    right_ear="Augment. Earring",
-    left_ring="Stikini Ring",
-    right_ring="Stikini Ring",
+    right_ear="Mimir Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
     back="Merciful Cape",
 	}
 
@@ -474,9 +530,9 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
     neck="Incanter's Torque",
     waist="Olympus Sash",
     left_ear="Andoaa Earring",
-    right_ear="Augment. Earring",
-    left_ring="Stikini Ring",
-    right_ring="Stikini Ring",
+    right_ear="Mimir Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
     back="Merciful Cape",
 	}
 
@@ -484,15 +540,15 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 		ammo="Staunch Tathlum +1",
     head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    hands="Runeist's Mitons +2",
+    hands="Runeist's Mitons +3",
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},
     feet="Turms Leggings +1",
     neck="Incanter's Torque",
     waist="Olympus Sash",
     left_ear="Andoaa Earring",
-    right_ear="Augment. Earring",
-    left_ring="Stikini Ring",
-    right_ring="Stikini Ring",
+    right_ear="Mimir Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
     back="Merciful Cape",
 	}
 
@@ -569,25 +625,36 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 	sets.tp.Lycurgos={}
 	sets.tp.Dolichenus={}
 
-	sets.tp.lowacc={ammo="Ginsen",
+	sets.tp.lowacc={
+		ammo="Aurgelmir Orb +1",
     head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
     body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
     hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
     legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
-    feet={ name="Herculean Boots", augments={'Accuracy+24','"Triple Atk."+3',}},
+    feet={ name="Herculean Boots", augments={'Accuracy+16','"Triple Atk."+4','AGI+2','Attack+9',}},
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
     left_ear="Sherida Earring",
     right_ear="Brutal Earring",
     left_ring="Niqmaddu Ring",
     right_ring="Epona's Ring",
-    back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
+    back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},
+	}
 
-	sets.tp.medacc={ammo="Ginsen", neck="Defiant Collar", waist="Chiner's Belt +1", left_ear="Sherida Earring", right_ear="Telos Earring",
-    head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, right_ring="Epona's Ring",
-    body={ name="Herculean Vest", augments={'Accuracy+13 Attack+13','"Triple Atk."+4','MND+3','Attack+13',}}, left_ring="Hetairoi Ring",
-    hands={ name="Herculean Gloves", augments={'"Triple Atk."+4','Accuracy+13','Attack+5',}}, legs="Meg. Chausses +2",
-    feet={ name="Herculean Boots", augments={'Accuracy+16','"Triple Atk."+4','AGI+2','Attack+9',}}, back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},}
+	sets.tp.medacc={
+		ammo="Aurgelmir Orb +1",
+		neck="Defiant Collar",
+		waist="Chiner's Belt +1",
+		left_ear="Sherida Earring",
+		right_ear="Telos Earring",
+		head={ name="Herculean Helm", augments={'Accuracy+30','"Triple Atk."+4','Attack+8',}},
+		right_ring="Epona's Ring",
+		body={ name="Herculean Vest", augments={'Accuracy+13 Attack+13','"Triple Atk."+4','MND+3','Attack+13',}},
+		left_ring="Hetairoi Ring",
+		hands={ name="Herculean Gloves", augments={'"Triple Atk."+4','Accuracy+13','Attack+5',}},
+		legs="Meg. Chausses +2",
+		feet={ name="Herculean Boots", augments={'Accuracy+16','"Triple Atk."+4','AGI+2','Attack+9',}}, back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},
+	}
 
 	sets.tp.highacc= set_combine(sets.tp.medacc, {neck="Combatant's Torque", right_ring="Ramuh Ring +1",})
 
@@ -611,49 +678,49 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 
 	sets.dw.highacc=set_combine(sets.tp.medacc, {neck="Combatant's Torque", left_ring="Patricius Ring",})
 
-	sets.dw.vhighacc={ammo="Falcon Eye", waist="Olseni Belt", left_ear="Telos Earring", right_ear="Zennaroi Earring",
-	head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}},
+	sets.dw.vhighacc={ammo="Falcon Eye", waist="Olseni Belt", left_ear="Telos Earring", right_ear="Mache Earring +1",
+	head={ name="Herculean Helm", augments={'Accuracy+30','"Triple Atk."+4','Attack+8',}},
 	body="Adhemar Jacket +1", right_ring="Ramuh Ring +1",
 	hands={ name="Herculean Gloves", augments={'Attack+27','"Triple Atk."+3','STR+8','Accuracy+11',}}, left_ring="Regal Ring",
 	legs="Samnuha Tights",
-	feet={ name="Herculean Boots", augments={'Accuracy+24','"Triple Atk."+3',}}, neck="Combatant's Torque", back="Ground. Mantle +1",}
+	feet={ name="Herculean Boots", augments={'Accuracy+16','"Triple Atk."+4','AGI+2','Attack+9',}}, neck="Combatant's Torque", back="Ground. Mantle +1",}
 	--tp sets
 
 	--hybrid sets
 	sets.hybrid.lowacc={ammo="Vanir Battery", head="Fu. Bandeau +3", body="Futhark Coat +3",
-	hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
-	legs="Rune. Trousers +3", feet="Futhark Boots +3", neck="Loricate Torque +1",
-	waist="Flume Belt", left_ear="Ethereal Earring", right_ear="Brutal Earring", left_ring="Vocane Ring +1",
-	right_ring="Defending Ring", back="Moonbeam Cape",}
+	hands="Nyame Gauntlets",
+	legs="Rune. Trousers +3", feet="Futhark Boots +3", neck="Futhark Torque +2",
+	waist="Flume Belt +1", left_ear="Ethereal Earring", right_ear="Brutal Earring", left_ring="Vocane Ring +1",
+	right_ring="Defending Ring", back="Moonlight Cape",}
 
 	sets.hybrid.medacc= set_combine(sets.hybrid.lowacc, {ammo="Falcon Eye", back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}},})
 
-	sets.hybrid.highacc= set_combine(sets.hybrid.medacc, {head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+7','Accuracy+12','Attack+13',}}, neck="Combatant's Torque",})
+	sets.hybrid.highacc= set_combine(sets.hybrid.medacc, {head={ name="Herculean Helm", augments={'Accuracy+30','"Triple Atk."+4','Attack+8',}}, neck="Combatant's Torque",})
 
 	sets.hybrid.vhighacc= set_combine(sets.hybrid.highacc, {waist="Olseni Belt", legs="Samnuha Tights",})
 	--hybrid sets
 
 	--dt sets
 	sets.pdt={ammo="Vanir Battery", head="Fu. Bandeau +3", body="Futhark Coat +3",
-	hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}}, legs="Eri. Leg Guards +1", feet="Erilaz Greaves +1", neck="Loricate Torque +1", waist="Flume Belt",
+	hands="Nyame Gauntlets", legs="Eri. Leg Guards +1", feet="Erilaz Greaves +1", neck="Futhark Torque +2", waist="Flume Belt +1",
 	left_ear="Ethereal Earring", right_ear="Sanare Earring", right_ring="Defending Ring", left_ring="Vocane Ring +1",
-	back="Moonbeam Cape",}
+	back="Moonlight Cape",}
 
 	sets.mdt= set_combine(sets.pdt, {left_ring="Shadow Ring",})
 
 	sets.dt={ammo="Staunch Tathlum +1",
-    head={ name="Herculean Helm", augments={'Accuracy+2','Damage taken-4%','STR+6','Attack+13',}},
+    head="Nyame Helm",
     body={ name="Futhark Coat +3", augments={'Enhances "Elemental Sforzo" effect',}},
-    hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
+    hands="Nyame Gauntlets",
     legs="Aya. Cosciales +2",
-    feet={ name="Herculean Boots", augments={'Damage taken-3%','STR+6','Attack+8',}},
-    neck="Loricate Torque +1",
-    waist="Flume Belt",
+    feet="Nyame Sollerets",
+    neck="Futhark Torque +2",
+    waist="Flume Belt +1",
     left_ear="Ethereal Earring",
     right_ear="Sanare Earring",
     left_ring="Vocane Ring +1",
     right_ring="Defending Ring",
-    back="Moonbeam Cape",}
+    back="Moonlight Cape",}
 	--dt sets
 
 	--tank set
@@ -664,29 +731,76 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 		hands="Turms Mittens +1",
 		legs="Eri. Leg Guards +1",
 		feet="Turms Leggings +1",
-		neck="Loricate Torque +1",
-		waist="Flume Belt",
+		neck="Futhark Torque +2",
+		waist="Flume Belt +1",
 		left_ear="Genmei Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Vocane Ring +1",
 		right_ring="Defending Ring",
 		back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
 	}
+	sets.aftercast.parry={
+		ammo="Staunch Tathlum +1",
+    head={ name="Fu. Bandeau +3", augments={'Enhances "Battuta" effect',}},
+    body={ name="Futhark Coat +3", augments={'Enhances "Elemental Sforzo" effect',}},
+    hands="Turms Mittens +1",
+    legs="Eri. Leg Guards +1",
+    feet="Turms Leggings +1",
+    neck={ name="Futhark Torque +2", augments={'Path: A',}},
+    waist="Flume Belt +1",
+    left_ear="Tuisto Earring",
+    right_ear="Etiolation Earring",
+    left_ring="Moonlight Ring",
+    right_ring="Defending Ring",
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+	}
+
+	sets.aftercast.resist={
+		ammo="Yamarang",
+		head="Turms Cap +1",
+		body="Runeist's Coat +3",
+		hands="Turms Mittens +1",
+		legs="Eri. Leg Guards +1",
+		feet="Turms Leggings +1",
+		neck={ name="Futhark Torque +2", augments={'Path: A',}},
+		waist="Flume Belt +1",
+		left_ear="Tuisto Earring",
+		right_ear="Eabani Earring",
+		left_ring="Moonlight Ring",
+		right_ring="Defending Ring",
+		back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+	}
 
 	sets.aftercast.meva={
 		ammo="Staunch Tathlum +1",
-    head="Turms Cap +1",
-    body="Runeist's Coat +3",
+    head="Nyame Helm",
+    body={ name="Nyame Mail", augments={'Path: B',}},
     hands="Turms Mittens +1",
-    legs="Rune. Trousers +3",
+    legs="Nyame Flanchard",
     feet="Turms Leggings +1",
-    neck="Moonlight Necklace", --futhark torque +2 asap
-    waist="Flume Belt", --engraved belt asap
+    neck={ name="Futhark Torque +2", augments={'Path: A',}},
+    waist="Carrier's Sash",
     left_ear="Eabani Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Purity Ring",
-    right_ring="Defending Ring",
-    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+    right_ring="Moonlight Ring",
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+	}
+
+	sets.aftercast.maxhp={
+		ammo="Staunch Tathlum +1",
+    head={ name="Fu. Bandeau +3", augments={'Enhances "Battuta" effect',}},
+    body="Erilaz Surcoat +1",
+    hands="Nyame Gauntlets",
+    legs="Eri. Leg Guards +1",
+    feet="Erilaz Greaves +1",
+    neck={ name="Futhark Torque +2", augments={'Path: A',}},
+    waist="Oneiros Belt",
+    left_ear="Tuisto Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ring="Moonlight Ring",
+    right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+    back="Moonlight Cape",
 	}
 	--tank set
 
@@ -697,17 +811,19 @@ windower.prim.set_visibility('WEAPON_TYPE',true)
 		body="Runeist's Coat +3",
 		legs={ name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}},
 		feet="Erilaz Greaves +1",
-		neck="Loricate Torque +1",
-		waist="Flume Belt",
+		neck="Futhark Torque +2",
+		waist="Flume Belt +1",
 		left_ear="Ethereal Earring",
 		right_ear="Sanare Earring",
-		hands={ name="Herculean Gloves", augments={'Attack+30','Damage taken-3%','AGI+8',}},
+		hands="Nyame Gauntlets",
 		right_ring="Shadow Ring", left_ring="Sheltered Ring", back="Shadow Mantle",
 	}
 
-	sets.idle.pdt=sets.pdt
+	sets.idle.pdt=set_combine(sets.pdt,{})
 
-	sets.idle.mdt=sets.mdt
+	sets.idle.mdt=set_combine(sets.mdt,{})
+
+	sets.idle.maxhp=set_combine(sets.aftercast.maxhp,{})
 
 	--idle sets
 --aftercast sets
@@ -788,12 +904,15 @@ function status_change(new,old)
 			equip(sets.mdt)
 		elseif TPSet=="tanking" then
 			equip(sets.aftercast.tanking)
+		elseif TPSet=="meva" then
+			equip(sets.aftercast.meva)
 		end
 	else
 		equip(sets.idle[IdleType])
 	end
 	equip(sets.weaponry[weaponry])
 	send_command('pf')
+	macro_setup()
 end
 
 function self_command(command)
@@ -826,6 +945,12 @@ function self_command(command)
 		TPSet="tanking"
 		add_to_chat(206, 'TANK MODE')
 		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/absorbmode.png')
+		status_change(player.status)
+		send_command('pf')
+	elseif command=="meva" then
+		TPSet="meva"
+		add_to_chat(206, 'MEVA MODE')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/meva.png')
 		status_change(player.status)
 		send_command('pf')
 	end
@@ -930,7 +1055,7 @@ function self_command(command)
 
 	--idle set commands
 	if command=='toggleidle' then
-		if IdleType=="refresh" then
+		if IdleType=="maxhp" then
 			IdleType='pdt'
 			add_to_chat(206,'PDT IDLE')
 			windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/pdtidle.png')
@@ -947,6 +1072,12 @@ function self_command(command)
 			add_to_chat(206,'REFRESH IDLE')
 			windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/refreshidle.png')
 			send_command('alias idle gs equip sets.idle.refresh')
+			status_change(player.status)
+		elseif IdleType=="refresh" then
+			IdleType='maxhp'
+			add_to_chat(206,'REFRESH IDLE')
+			windower.prim.set_texture('IDLE_SET',''..windower.windower_path..'addons/gearswap/data/images/maxhpidle.png')
+			send_command('alias idle gs equip sets.idle.maxhp')
 			status_change(player.status)
 		end
 		send_command('pf')
@@ -988,12 +1119,30 @@ end
 function macro_setup()
 	if player.sub_job=="BLU" then
 	send_command('input /macro book 1;input /macro set 3')
+	send_command('bind !- input /ma "Jettatura" <t>')
+	send_command('bind != input /ma "Geist Wall" <t>')
+	send_command('bind @- input /ma "Soporific" <t>')
+	send_command('bind @= input /ma "Sheep Song" <t>')
+	send_command('bind !backspace input /ma "Blank Gaze" <t>')
+	send_command('bind @/ Cursed Sphere')
 
 	elseif player.sub_job=="WHM" then
 	send_command('input /macro book 1;input /macro set 3')
+	send_command('bind !- stna')
+	send_command('bind != erase me')
+	send_command('bind @- c4 me')
+	send_command('bind @= curaga2')
+	send_command('bind !backspace cure <st>')
+	send_command('bind @backspace curaga <st>')
 
 	elseif player.sub_job=="PLD" then
 	send_command('input /macro book 1;input /macro set 3')
+	send_command('bind !- sentinel')
+	send_command('bind != cover <stpt>')
+	send_command('bind @- c3 me')
+	send_command('bind @= Banishga')
+	send_command('bind !backspace cure <st>')
+	send_command('bind @backspace input /echo blankmacro')
 
 	elseif player.sub_job=="RDM" then
 	send_command('input /macro book 1;input /macro set 3')
@@ -1014,8 +1163,4 @@ function macro_setup()
 	send_command('input /macro book 1;input /macro set 3')
 
 	end
-end
-
-function file_unload(new_job)
-	windower.send_command('boxesoff')
 end

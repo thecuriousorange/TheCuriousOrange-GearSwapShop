@@ -57,7 +57,7 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	send_command('bind @f12 gs c wsacctoggle')
 	send_command('bind #f1 gs c idle')
 	send_command('bind #f2 gs c kitemdt')
-	send_command('bind #f3 gs c kitepdt') 
+	send_command('bind #f3 gs c kitepdt')
 	send_command('bind #f4 gs c pdtidle')
 	send_command('bind #f5 gs c mdtidle')
 	send_command('bind #f6 gs c dtidle')
@@ -66,32 +66,32 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 --alias and text box set up
 
 --spell lists
-	Nukes= S{"Fire", "Fire II", "Fire III", "Fire IV", "Fire V", "Firaga", "Firaga II", "Firaga III", 
-	"Firaja", "Flare", "Flare II", "Pyrohelix", "Fira", "Fira II", "Blizzard", "Blizzard II", "Blizzard III", 
-	"Blizzard IV", "Blizzard V", "Blizzaga", "Blizzaga II", "Blizzaga III", "Blizzaja", "Cryohelix", "Freeze", 
-	"Freeze II", "Blizzara", "Blizzara II", "Water", "Water II", "Water III", "Water IV", "Water V", "Waterga", 
-	"Waterga II", "Waterga III", "Waterja", "Flood", "Flood II", "Hydrohelix", "Watera", "Watera II", "Thunder", 
-	"Thunder II", "Thunder III", "Thunder IV", "Thunder V", "Thundaga", "Thundaga II", "Thundaga III", "Thundaja", 
-	"Burst", "Burst II", "Ionohelix", "Thundara", "Thundara II", "Stone", "Stone II", "Stone III", "Stone IV", 
-	"Stone V", "Stonega", "Stonega II", "Stonega III", "Stoneja", "Quake", "Quake II", "Geohelix", "Stonera", 
-	"Stonera II", "Aero", "Aero II", "Aero III", "Aero IV", "Aero V", "Aeroga", "Aeroga II", "Aeroga III", 
-	"Aeroja", "Tornado", "Tornado II", "Anemohelix", "Aera", "Aera II", "Banish", "Banish II", 
+	Nukes= S{"Fire", "Fire II", "Fire III", "Fire IV", "Fire V", "Firaga", "Firaga II", "Firaga III",
+	"Firaja", "Flare", "Flare II", "Pyrohelix", "Fira", "Fira II", "Blizzard", "Blizzard II", "Blizzard III",
+	"Blizzard IV", "Blizzard V", "Blizzaga", "Blizzaga II", "Blizzaga III", "Blizzaja", "Cryohelix", "Freeze",
+	"Freeze II", "Blizzara", "Blizzara II", "Water", "Water II", "Water III", "Water IV", "Water V", "Waterga",
+	"Waterga II", "Waterga III", "Waterja", "Flood", "Flood II", "Hydrohelix", "Watera", "Watera II", "Thunder",
+	"Thunder II", "Thunder III", "Thunder IV", "Thunder V", "Thundaga", "Thundaga II", "Thundaga III", "Thundaja",
+	"Burst", "Burst II", "Ionohelix", "Thundara", "Thundara II", "Stone", "Stone II", "Stone III", "Stone IV",
+	"Stone V", "Stonega", "Stonega II", "Stonega III", "Stoneja", "Quake", "Quake II", "Geohelix", "Stonera",
+	"Stonera II", "Aero", "Aero II", "Aero III", "Aero IV", "Aero V", "Aeroga", "Aeroga II", "Aeroga III",
+	"Aeroja", "Tornado", "Tornado II", "Anemohelix", "Aera", "Aera II", "Banish", "Banish II",
 	"Banishga", "Banishga II", "Banish III", "Holy", "Holy II", "Luminohelix",}
-	
+
 	Dark_Nukes= S{"Comet", "Noctohelix",}
-	
+
 	Elemental_DoT= S{"Shock", "Choke", "Burn", "Rasp", "Frost", "Drown",}
-	
+
 	DarkMagic_DoT= S{"Bio", "Bio II", "Bio III",}
-	
+
 	DarkMagic_Drain_Aspir= S{"Drain", "Drain II", "Aspir", "Aspir II",}
-	
-	EnfeeblingMagic_skillmod= S{"Sleep", "Sleep II", "Sleepga", "Sleepga II", "Poison", "Poison II", "Poisonga", 
+
+	EnfeeblingMagic_skillmod= S{"Sleep", "Sleep II", "Sleepga", "Sleepga II", "Poison", "Poison II", "Poisonga",
 	"Poisonga II", "Dispel", "Gravity", "Bind", "Break", "Breakga", "Blind", "Blind II", "Gravity", "Gravity II", "Distract", "Distract II","Distract III","Frazzle", "Frazzle II", "Frazzle III"}
-	
-	EnfeeblingMagic_mndmod= S{"Paralyze", "Paralyze II", "Dia", "Dia II", "Dia III", "Diaga", "Diaga II", 
+
+	EnfeeblingMagic_mndmod= S{"Paralyze", "Paralyze II", "Dia", "Dia II", "Dia III", "Diaga", "Diaga II",
 	"Slow", "Slow II", "Addle", "Addle II"}
-	
+
 	Buffs= S{"Stoneskin", "Phalanx", "Phalanx II", "Aquaveil",}
 --spell lists
 
@@ -100,10 +100,10 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	TPType="lowacc"
 	IdleType="refresh"
 	StunType="recast"
-	MagicType="potency"	
+	MagicType="potency"
 	WSType="damage"
 	hastetype="none"
-	
+
 	sets.hastetype= T{}
 	sets.hastetype= T{}
 	sets.TPMode= T{}
@@ -113,7 +113,7 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	sets.MagicType= T{}
 	sets.WSType= T{}
 --variables
-	
+
 --base sets
 	sets.precast={}
 	sets.ja={}
@@ -134,17 +134,29 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	sets.hybrid={}
 	sets.idle={}
 --base sets
-	
+
 --premagic sets
-	sets.precast.fc={main="Marin Staff", head="Nahtirah Hat", body="Anhur Robe", hands="Helios Gloves", legs="Orvail Pants +1",
-	feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}}, neck="Voltsurge Torque", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
-	left_ring="Kishar Ring", back="Swith Cape",} --needs adjustments.
-	
+	sets.precast.fc={
+		ammo="Staunch Tathlum +1",
+    head="Volte Beret",
+    body="Zendik Robe",
+    hands={ name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}},
+    legs="Volte Brais",
+    feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+    neck="Voltsurge Torque",
+    waist="Channeler's Stone",
+    left_ear="Loquac. Earring",
+    right_ear="Enchntr. Earring +1",
+    left_ring="Vocane Ring +1",
+    right_ring="Defending Ring",
+    back="Fi Follet Cape +1",
+	} --needs adjustments.
+
 	sets.precast.impact={body="Twilight Cloak", hands="Helios Gloves", feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
 	neck="Stoicheion Medal", waist="Othila Sash", left_ear="Loquac. Earring", right_ear="Ethereal Earring",
 	legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
-	left_ring="Kishar Ring", back="Swith Cape",} --needs adjustments.
-	
+	left_ring="Kishar Ring", back="Fi Follet Cape +1",} --needs adjustments.
+
 	sets.precast["Ninjutsu"]=set_combine(sets.precast.fc, {neck="Magoraga Beads",})
 	sets.precast["Healing Magic"]=set_combine(sets.precast.fc, {})
 	sets.precast["Enhancing Magic"]=set_combine(sets.precast.fc, {waist="Siegel Sash",})
@@ -153,219 +165,219 @@ windower.prim.set_visibility('MAGIC_MODE',true)
 	sets.precast["Divine Magic"]=set_combine(sets.precast.fc, {})
 	sets.precast["Elemental Magic"]=set_combine(sets.precast.fc, {neck="Stoicheion Medal",})
 --premagic sets
-	
+
 --midmagic sets
 	sets.aspirdrain.potency={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Appetence Crown", body="Shango Robe",
-	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", 
-	left_ear="Gwati Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
+	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace",
+	left_ear="Regal Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
 	back="Bane Cape",} --needs adjustments
-	
+
 	sets.aspirdrain.accuracy={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Appetence Crown", body="Shango Robe",
-	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", 
+	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace",
 	left_ear="Gwati Earring", right_ear="Hirudinea Earring", left_ring="Sangoma Ring", right_ring="Archon Ring", waist="Fucho-no-Obi",
 	back="Bane Cape",} --needs adjustments
-	
+
 	sets.stun.recast={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Shango Robe",
 	hands="Hagondes Cuffs +1", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", waist="Ninurta's Sash",
-	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Shiva Ring +1",
+	left_ear="Digni. Earring", right_ear="Gwati Earring", left_ring="Sangoma Ring", right_ring="Shiva Ring +1",
 	back="Bane Cape",} --needs adjustments
-	
+
 	sets.stun.accuracy={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Shango Robe",
 	hands="Hagondes Cuffs +1", legs={ name="Artsieq Hose", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", waist="Ninurta's Sash",
-	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Shiva Ring +1",
+	left_ear="Digni. Earring", right_ear="Gwati Earring", left_ring="Sangoma Ring", right_ring="Shiva Ring +1",
 	back="Bane Cape",} --needs adjustments
-	
+
 	sets.midcast["Dark Magic"]={main="Marin Staff", sub="Caecus Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Shango Robe",
 	hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace", waist="Eschan Stone",
-	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Archon Ring",
+	left_ear="Digni. Earring", right_ear="Gwati Earring", left_ring="Sangoma Ring", right_ring="Archon Ring",
 	back="Bane Cape",}
-	
+
 	sets.enfeeble["White Magic"]={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", ammo="Pemphredo Tathlum", body="Shango Robe",
 	hands="Lurid Mitts", legs="Artsieq Hose", head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}}, neck="Sanctity Necklace",
-	waist="Rumination Sash", left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Sangoma Ring", right_ring="Levia. Ring",
+	waist="Rumination Sash", left_ear="Digni. Earring", right_ear="Gwati Earring", left_ring="Sangoma Ring", right_ring="Levia. Ring",
 	back="Bane Cape",} --needs rdm jse inserting
-	
+
 	sets.enfeeble["Black Magic"]={main={name="Twebuliij", augments={'MP+60','"Mag. Acc.+15"','MND+12',}}, sub="Mephitis Grip", --rdm only body here,
 	head="Befouled Crown", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	hands="Lurid Mitts", legs="Portent Pants", neck="Incanter's Torque", waist="Rumination Sash", right_ring="Sangoma Ring",
-	left_ear="Psystorm Earring", right_ear="Lifestorm Earring", left_ring="Globidonta Ring", back="Bane Cape",} --needs rdm jse inserting
-	
+	left_ear="Digni. Earring", right_ear="Gwati Earring", left_ring="Globidonta Ring", back="Bane Cape",} --needs rdm jse inserting
+
 	sets.healing.cure={main="Tamaxchi", sub="Sors Shield", head="Nahtirah Hat", body="Heka's Kalasiris", hands="Serpentes Cuffs",
-	legs="Nares Trews", feet="Serpentes Sabots", neck="Loricate Torque +1", waist="Cascade Belt", left_ear="Sanare Earring",
+	legs="Nares Trews", feet="Serpentes Sabots", neck="Loricate Torque +1", waist="Luminary Sash", left_ear="Sanare Earring",
 	right_ear="Ethereal Earring", left_ring="Vocane Ring +1", right_ring="Shadow Ring", back="Swith Cape",} --needs adjustment
-	
+
 	sets.healing.regen={}
-	
+
 	sets.healing.recast={}
-	
+
 	sets.elemental.nuke.potency={}
-	
+
 	sets.elemental.nuke.accuracy={}
-	
-	sets.elemental.dot={main="Marin Staff", sub="Elementa Grip", ammo="Pemphredo Tathlum", head="Wicce Petasos +1", 
+
+	sets.elemental.dot={main="Marin Staff", sub="Elementa Grip", ammo="Pemphredo Tathlum", head="Wicce Petasos +1",
 	body="Shango Robe", hands="Hagondes Cuffs +1", legs="Artsieq Hose", feet={ name="Artsieq Boots", augments={'MP+30','Mag. Acc.+20','MND+7',}},
 	neck="Sanctity Necklace", waist="Eschan Stone", left_ear="Strophadic Earring", right_ear="Gwati Earring",
 	left_ring="Sangoma Ring", right_ring="Shiva Ring +1", back="Bane Cape",}
-	
+
 	sets.elemental.impact={main=nukestaff, sub="Elementa Grip", ammo="Pemphredo Tathlum", body="Twilight Cloak",
-	hands="Yaoyotl Gloves", legs="Hagondes Pants +1", feet="Umbani Boots", neck="Sanctity Necklace", waist="Othila Sash", 
+	hands="Yaoyotl Gloves", legs="Hagondes Pants +1", feet="Umbani Boots", neck="Sanctity Necklace", waist="Othila Sash",
 	left_ear="Crematio Earring", right_ear="Friomisi Earring", left_ring="Archon Ring", right_ring="Shiva Ring +1",
     back="Toro Cape",} --needs adjustments
-	
+
 	sets.divine.enfeeble={}
-	
+
 	sets.divine.nuke={}
-	
+
 	sets.enhancing["Stoneskin"]={}
-	
+
 	sets.enhancing["Aquaveil"]={}
-	
+
 	sets.enhancing["Phalanx"]={}
-	
+
 	sets.enhancing["Phalanx II"]={}
-	
+
 	sets.enhancing.buff={main="Marin Staff", sub="Fulcio Grip", ammo="Pemphredo Tathlum", head="Nahtirah Hat", body="Anhur Robe",
-	hands="Lurid Mitts", legs="Portent Pants", feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}}, neck="Incanter's Torque", waist="Cascade Belt",
-	left_ear="Lifestorm Earring", right_ear="Psystorm Earring", left_ring="Levia. Ring", right_ring="Levia. Ring",
+	hands="Lurid Mitts", legs="Portent Pants", feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}}, neck="Incanter's Torque", waist="Olympus Sash",
+	left_ear="Digni. Earring", right_ear="Gwati Earring", left_ring="Levia. Ring", right_ring="Levia. Ring",
 	back="Swith Cape",} --needs adjustments
-	
+
 	sets.ninjutsu.accuracy={}
-	
+
 	sets.ninjutsu.recast={}
 --midmagic sets
-	
+
 --WS Sets
 	--Sword WS
 	sets.ws.dmg["Fast Blade"]={}
-	
+
 	sets.ws.acc["Fast Blade"]={}
-	
-	sets.ws.dmg["Burning Blade"]=sets.magicws
-	
-	sets.ws.acc["Burning Blade"]=sets.magicws
-	
-	sets.ws.dmg["Red Lotus Blade"]=sets.magicws
-	
-	sets.ws.acc["Red Lotus Blade"]=sets.magicws
-	
+
+	sets.ws.dmg["Burning Blade"]=set_combine(sets.magicws,{})
+
+	sets.ws.acc["Burning Blade"]=set_combine(sets.magicws,{})
+
+	sets.ws.dmg["Red Lotus Blade"]=set_combine(sets.magicws,{})
+
+	sets.ws.acc["Red Lotus Blade"]=set_combine(sets.magicws,{})
+
 	sets.ws.dmg["Flat Blade"]={}
-	
+
 	sets.ws.acc["Flat Blade"]={}
-	
-	sets.ws.dmg["Shining Blade"]=sets.magicws
-	
-	sets.ws.acc["Shining Blade"]=sets.magicws
-	
-	sets.ws.dmg["Seraph Blade"]=sets.magicws
-	
-	sets.ws.acc["Seraph Blade"]=sets.magicws
-	
+
+	sets.ws.dmg["Shining Blade"]=set_combine(sets.magicws,{})
+
+	sets.ws.acc["Shining Blade"]=set_combine(sets.magicws,{})
+
+	sets.ws.dmg["Seraph Blade"]=set_combine(sets.magicws,{})
+
+	sets.ws.acc["Seraph Blade"]=set_combine(sets.magicws,{})
+
 	sets.ws.dmg["Circle Blade"]={}
-	
+
 	sets.ws.acc["Circle Blade"]={}
-	
+
 	sets.ws.dmg["Spirits Within"]={}
-	
+
 	sets.ws.acc["Spirits Within"]={}
-	
+
 	sets.ws.dmg["Vorpal Blade"]={}
-	
+
 	sets.ws.acc["Vorpal Blade"]={}
-	
+
 	sets.ws.dmg["Savage Blade"]={}
-	
+
 	sets.ws.acc["Savage Blade"]={}
-	
-	sets.ws.dmg["Sanguine Blade"]=sets.magicws
-	
-	sets.ws.acc["Sanguine Blade"]=sets.magicws
-	
+
+	sets.ws.dmg["Sanguine Blade"]=set_combine(sets.magicws,{})
+
+	sets.ws.acc["Sanguine Blade"]=set_combine(sets.magicws,{})
+
 	sets.ws.dmg["Chant du Cygne"]={}
-	
+
 	sets.ws.acc["Chant du Cygne"]={}
-	
+
 	sets.ws.dmg["Death Blossom"]={}
-	
+
 	sets.ws.acc["Death Blossom"]={}
-	
+
 	sets.ws.dmg["Requiescat"]={}
-	
+
 	sets.ws.acc["Requiescat"]={}
 	--Sword WS
 	--Dagger WS
 	sets.ws.dmg["Wasp Sting"]={}
-	
+
 	sets.ws.acc["Wasp Sting"]={}
-	
+
 	sets.ws.dmg["Viper Bite"]={}
-	
+
 	sets.ws.acc["Viper Bite"]={}
-	
+
 	sets.ws.dmg["Shadowstitch"]={}
-	
+
 	sets.ws.acc["Shadowstitch"]={}
-	
-	sets.ws.dmg["Gust Slash"]=sets.magicws
-	
-	sets.ws.acc["Gust Slash"]=sets.magicws
-	
-	sets.ws.dmg["Cyclone"]=sets.magicws
-	
-	sets.ws.acc["Cyclone"]=sets.magicws
-	
-	sets.ws.dmg["Energy Steal"]=sets.magicws
-	
-	sets.ws.acc["Energy Steal"]=sets.magicws
-	
-	sets.ws.dmg["Energy Drain"]=sets.magicws
-	
-	sets.ws.acc["Energy Drain"]=sets.magicws
-	
+
+	sets.ws.dmg["Gust Slash"]=set_combine(sets.magicws,{})
+
+	sets.ws.acc["Gust Slash"]=set_combine(sets.magicws,{})
+
+	sets.ws.dmg["Cyclone"]=set_combine(sets.magicws,{})
+
+	sets.ws.acc["Cyclone"]=set_combine(sets.magicws,{})
+
+	sets.ws.dmg["Energy Steal"]=set_combine(sets.magicws,{})
+
+	sets.ws.acc["Energy Steal"]=set_combine(sets.magicws,{})
+
+	sets.ws.dmg["Energy Drain"]=set_combine(sets.magicws,{})
+
+	sets.ws.acc["Energy Drain"]=set_combine(sets.magicws,{})
+
 	sets.ws.dmg["Evisceration"]={}
-	
+
 	sets.ws.acc["Evisceration"]={}
-	
-	sets.ws.dmg["Aeolian Edge"]=sets.magicws
-	
-	sets.ws.acc["Aeolian Edge"]=sets.magicws
+
+	sets.ws.dmg["Aeolian Edge"]=set_combine(sets.magicws,{})
+
+	sets.ws.acc["Aeolian Edge"]=set_combine(sets.magicws,{})
 	--Dagger WS
 --WS Sets
-	
+
 --JA Sets
 	sets.ja[""]={}
 --JA Sets
-	
+
 --TP Sets
 	sets.tp.lowacc={}
-	
+
 	sets.tp.medacc={}
-	
+
 	sets.tp.highacc={}
-	
+
 	sets.hybrid.lowacc={}
-	
+
 	sets.hybrid.medacc={}
-	
+
 	sets.hybrid.highacc={}
 --TP Sets
-	
+
 --Idle Sets
 	sets.idle.refresh={main="Bolelabunga", sub="Genbu's Shield", head="Befouled Crown", body="Hagondes Coat +1", hands="Serpentes Cuffs",
 	legs="Assid. Pants +1", feet="Serpentes Sabots", neck="Loricate Torque +1", waist="Fucho-no-Obi", left_ear="Sanare Earring", right_ear="Ethereal Earring",
 	left_ring="Defending Ring", right_ring="Shadow Ring", back="Shadow Mantle",} -- needs rdm jse and minor adjustments.
-	
+
 	sets.idle.pdt={}
-	
+
 	sets.idle.mdt={}
-	
+
 	sets.idle.dt={}
-	
+
 	sets.idle.pdtkite={}
-	
+
 	sets.idle.mdtkite={}
-	
+
 	sets.idle.dtkite={}
 --Idle Sets
 end
@@ -378,8 +390,8 @@ windower.raw_register_event('incoming chunk', function(id,original,modified,inje
     if id == 0x28 then
         local action = packets.parse('incoming', original)
         if action['Category'] == 4 then -- Category 4 is spell finish
-			
-            if player.id == action['Target 1 ID'] then 
+
+            if player.id == action['Target 1 ID'] then
 				print(action['Param'])
                 if action['Param'] == 57 then --haste
                     hastetype="Haste"
@@ -393,8 +405,8 @@ windower.raw_register_event('incoming chunk', function(id,original,modified,inje
 				elseif action['Param'] == 846 --[[flurry II]] then
 					hastetype="Flurry II"
 					add_to_chat(206,"hastetype:"..hastetype.."")
-                end				
-            end    
+                end
+            end
         elseif action['Category'] == 13 then -- Category 13 is Avatar TP finish
             for i,v in pairs(action) do
                 if string.match(i, 'Target %d+ ID') then
@@ -610,7 +622,7 @@ function self_command(command)
 		--send_command('text wsvariable text "MDT IDLE"')
 		windower.prim.set_texture('IDLE_SET','/windower 4/addons/gearswap/data/'..player.name..'/images/mdtidle.png')
 		send_command('alias idle gs equip sets.idle.mdt')
-		status_change(player.status)		
+		status_change(player.status)
 	end
 	if command == 'dtidle' then
 		IdleMode="dt"
@@ -643,7 +655,7 @@ function self_command(command)
 		end
 	end
 	-- magic toggles
-	
+
 	-- ws toggle
 	if command=="wsacctoggle" then
 		if WSType=="damage" then

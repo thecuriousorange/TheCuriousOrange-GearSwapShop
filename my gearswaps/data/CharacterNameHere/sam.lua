@@ -5,6 +5,7 @@ function get_sets()
 	include('corrolls.lua')
 	include('haste-include.lua')
 	include('lelubrdgkeys.lua')
+	include('itchygeogkeys.lua')
 -- includes
 
 -- keybinds, aliases, etc.
@@ -46,18 +47,7 @@ function get_sets()
 -- keybinds, aliases, etc.
 
 -- augmented gear
-	stphead={ name="Acro Helm", augments={'Accuracy+19 Attack+19','Haste+3%','DEX+8',}}
-	stpbody={ name="Acro Surcoat", augments={'Accuracy+18 Attack+18','"Store TP"+6','Crit. hit damage +3% ',}}
-	stphands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
-	stplegs={ name="Acro Breeches", augments={'Accuracy+19 Attack+19','"Store TP"+6','Crit. Hit Damage +3%',}}
-	stpfeet={ name="Acro Leggings", augments={'Accuracy+20 Attack+20','"Store TP"+6','Crit. Hit Damage +3%',}}
 
-	dabody={ name="Acro Surcoat", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+3','Crit. Hit Damage +1%',}}
-	dahands={ name="Acro Gauntlets", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
-	dalegs={ name="Acro Breeches", augments={'Accuracy+18 Attack+18','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
-	dafeet={ name="Acro Leggings", augments={'Accuracy+19 Attack+19','"Dbl.Atk."+3','Crit. Hit Damage +2%',}}
-
-	takaha={ name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+1','Meditate eff. dur. +5',}}
 -- augmented gear
 
 --macro selection
@@ -130,18 +120,18 @@ function get_sets()
 	sets.hybrid={}
 	sets.idle={}
 	sets.crits={
-		head="Ken. Jinpachi",
+		head="Ken. Jinpachi +1",
     body="Dagon Breast.",
-    hands="Ken. Tekko",
-    legs="Ken. Hakama",
-    feet="Ken. Sune-Ate",
+    hands="Ken. Tekko +1",
+    legs="Ken. Hakama +1",
+    feet="Ken. Sune-Ate +1",
     neck="Sam. Nodowa +1",
     waist="Ioskeha Belt +1",
     left_ear="Cessance Earring",
     right_ear="Telos Earring",
     left_ring="Niqmaddu Ring",
     right_ring="Flamma Ring",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 -- base names
 
@@ -154,7 +144,7 @@ function get_sets()
 
 	sets.precast.ja["Hasso"]={}
 
-	sets.precast.ja["Meditate"]={head="Wakido Kabuto +3", hands="Sakonji Kote +3", back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},}
+	sets.precast.ja["Meditate"]={head="Wakido Kabuto +3", hands="Sakonji Kote +3", back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},}
 
 	sets.precast.ja["Seigan"]={}
 
@@ -179,9 +169,9 @@ function get_sets()
 	sets.strws={sub="Utu Grip", ammo="Knobkierrie", head={ name="Valorous Mask", augments={'Attack+16','Weapon skill damage +4%','STR+8','Accuracy+14',}},
     body="Sakonji Domaru +3", hands={ name="Valorous Mitts", augments={'Accuracy+10','Weapon skill damage +2%','STR+13','Attack+6',}}, neck="Fotia Gorget",
 	legs="Wakido Haidate +3", feet={ name="Valorous Greaves", augments={'Accuracy+18','Weapon skill damage +3%','STR+7','Attack+12',}}, waist="Fotia Belt",
-	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Ishvara Earring", left_ring="Niqmaddu Ring", right_ring="Regal Ring", back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},}
+	left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}, right_ear="Thrud Earring", left_ring="Niqmaddu Ring", right_ring="Regal Ring", back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},}
 
-	sets.accws=set_combine(sets.strws,{back=Takaha,})
+	sets.accws=set_combine(sets.strws,{})
 
 	sets.msfeet={feet="Sak. Sune-Ate +3",}
 
@@ -196,109 +186,109 @@ function get_sets()
 	feet={ name="Founder's Greaves", augments={'VIT+9','Accuracy+14','"Mag.Atk.Bns."+13','Mag. Evasion+15',}}, neck="Fotia Gorget", waist="Fotia Belt", left_ear="Crematio Earring",
 	right_ear="Hecate's Earring", left_ring="Sangoma Ring", right_ring="Vertigo Ring", back="Toro Cape",}
 
-	sets.ws.dmg["Tachi: Enpi"]=sets.strws
+	sets.ws.dmg["Tachi: Enpi"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Tachi: Enpi"]=sets.accws
+	sets.ws.acc["Tachi: Enpi"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Tachi: Hobaku"]=sets.strws
+	sets.ws.dmg["Tachi: Hobaku"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Tachi: Hobaku"]=sets.accws
+	sets.ws.acc["Tachi: Hobaku"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Tachi: Goten"]=sets.magicws
+	sets.ws.dmg["Tachi: Goten"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Tachi: Goten"]=sets.magicws
+	sets.ws.acc["Tachi: Goten"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Tachi: Kagero"]=sets.magicws
+	sets.ws.dmg["Tachi: Kagero"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Tachi: Kagero"]=sets.magicws
+	sets.ws.acc["Tachi: Kagero"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Tachi: Jinpu"]=sets.magicws
+	sets.ws.dmg["Tachi: Jinpu"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Tachi: Jinpu"]=sets.magicws
+	sets.ws.acc["Tachi: Jinpu"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Tachi: Koki"]=sets.magicws
+	sets.ws.dmg["Tachi: Koki"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Tachi: Koki"]=sets.magicws
+	sets.ws.acc["Tachi: Koki"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Tachi: Yukikaze"]=sets.strws
+	sets.ws.dmg["Tachi: Yukikaze"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Tachi: Yukikaze"]=sets.accws
+	sets.ws.acc["Tachi: Yukikaze"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Tachi: Gekko"]=sets.strws
+	sets.ws.dmg["Tachi: Gekko"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Tachi: Gekko"]=sets.accws
+	sets.ws.acc["Tachi: Gekko"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Tachi: Kasha"]=sets.strws
+	sets.ws.dmg["Tachi: Kasha"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Tachi: Kasha"]=sets.accws
+	sets.ws.acc["Tachi: Kasha"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Tachi: Rana"]=sets.strws
+	sets.ws.dmg["Tachi: Rana"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Tachi: Rana"]=sets.accws
+	sets.ws.acc["Tachi: Rana"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Tachi: Fudo"]=sets.strws
+	sets.ws.dmg["Tachi: Fudo"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Tachi: Fudo"]=sets.accws
+	sets.ws.acc["Tachi: Fudo"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Tachi: Shoha"]=sets.strws
+	sets.ws.dmg["Tachi: Shoha"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Tachi: Shoha"]=sets.accws
+	sets.ws.acc["Tachi: Shoha"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Tachi: Ageha"]=sets.strws
+	sets.ws.dmg["Tachi: Ageha"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Tachi: Ageha"]=sets.accws
+	sets.ws.acc["Tachi: Ageha"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Flaming Arrow"]=sets.raws
+	sets.ws.dmg["Flaming Arrow"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Flaming Arrow"]=sets.raws
+	sets.ws.acc["Flaming Arrow"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Piercing Arrow"]=sets.raws
+	sets.ws.dmg["Piercing Arrow"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Piercing Arrow"]=sets.raws
+	sets.ws.acc["Piercing Arrow"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Dulling Arrow"]=sets.raws
+	sets.ws.dmg["Dulling Arrow"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Dulling Arrow"]=sets.raws
+	sets.ws.acc["Dulling Arrow"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Sidewinder"]=sets.raws
+	sets.ws.dmg["Sidewinder"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Sidewinder"]=sets.raws
+	sets.ws.acc["Sidewinder"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Apex Arrow"]=sets.raws
+	sets.ws.dmg["Apex Arrow"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Apex Arrow"]=sets.raws
+	sets.ws.acc["Apex Arrow"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Double Thrust"]=sets.strws
+	sets.ws.dmg["Double Thrust"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Double Thrust"]=sets.accws
+	sets.ws.acc["Double Thrust"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Thunder Thrust"]=sets.magicws
+	sets.ws.dmg["Thunder Thrust"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Thunder Thrust"]=sets.magicws
+	sets.ws.acc["Thunder Thrust"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Raiden Thrust"]=sets.magicws
+	sets.ws.dmg["Raiden Thrust"]=set_combine(sets.magicws,{})
 
-	sets.ws.acc["Raiden Thrust"]=sets.magicws
+	sets.ws.acc["Raiden Thrust"]=set_combine(sets.magicws,{})
 
-	sets.ws.dmg["Leg Sweep"]=sets.strws
+	sets.ws.dmg["Leg Sweep"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Leg Sweep"]=sets.accws
+	sets.ws.acc["Leg Sweep"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Penta Thrust"]=sets.strws
+	sets.ws.dmg["Penta Thrust"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Penta Thrust"]=sets.accws
+	sets.ws.acc["Penta Thrust"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Impulse Drive"]=sets.strws
+	sets.ws.dmg["Impulse Drive"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Impulse Drive"]=sets.accws
+	sets.ws.acc["Impulse Drive"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Sonic Thrust"]=sets.strws
+	sets.ws.dmg["Sonic Thrust"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Sonic Thrust"]=sets.accws
+	sets.ws.acc["Sonic Thrust"]=set_combine(sets.accws,{})
 
-	sets.ws.dmg["Stardiver"]=sets.strws
+	sets.ws.dmg["Stardiver"]=set_combine(sets.strws,{})
 
-	sets.ws.acc["Stardiver"]=sets.accws
+	sets.ws.acc["Stardiver"]=set_combine(sets.accws,{})
 -- ws sets
 
 -- ws day bonus
@@ -321,15 +311,15 @@ function get_sets()
 	sets.precast.nin=set_combine(sets.dt,{neck="Voltsurge Torque", left_ear="Loquac. Earring", right_ear="Etiolation Earring",
 	body="Nuevo Coselete", left_ring="Prolix Ring", hands="Leyline Gloves", feet="Ejekamal Boots",})
 
-	sets.midcast.nin={ sub="Utu Grip", ammo="Ginsen", head="Loess Barbuta +1",
-	body="Tartarus Platemail", hands={ name="Sakonji Kote +3", augments={'Enhances "Blade Bash" effect',}}, legs={ name="Valor. Hose", augments={'Mag. Acc.+9','Damage taken-3%','DEX+1','Attack+3',}}, right_ear="Sanare Earring",
-	feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt", left_ear="Etiolation Earring",
-	left_ring="Vocane Ring +1", right_ring="Defending Ring", back="Moonbeam Cape",}
+	sets.midcast.nin={ sub="Utu Grip", ammo="Aurgelmir Orb +1", head="Loess Barbuta +1",
+	body="Tartarus Platemail", hands={ name="Sakonji Kote +3", augments={'Enhances "Blade Bash" effect',}}, legs={ name="Valorous Hose", augments={'Mag. Acc.+9','Damage taken-3%','DEX+1','Attack+3',}}, right_ear="Sanare Earring",
+	feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt +1", left_ear="Etiolation Earring",
+	left_ring="Vocane Ring +1", right_ring="Defending Ring", back="Moonlight Cape",}
 -- sub nin stuff
 
 -- tp sets
 	sets.aftercast.tp.lowacc={
-	ammo="Ginsen",
+	ammo="Aurgelmir Orb +1",
     head="Flam. Zucchetto +2",
     body="Kasuga Domaru +1",
     hands="Wakido Kote +3",
@@ -341,12 +331,20 @@ function get_sets()
     right_ear="Telos Earring",
     left_ring="Niqmaddu Ring",
     right_ring="Flamma Ring",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
 
-	sets.aftercast.tp.medacc=set_combine(sets.aftercast.tp.lowacc,{left_ear="Cessance Earring",})
+	sets.aftercast.tp.medacc=set_combine(sets.aftercast.tp.lowacc,{
+		left_ear="Cessance Earring",
+		right_ear="Brutal Earring",
+		body="Ken. Samue +1",
+		legs="Ken. Hakama +1",
+	})
 
-	sets.aftercast.tp.highacc=set_combine(sets.aftercast.tp.medacc,{})
+	sets.aftercast.tp.highacc=set_combine(sets.aftercast.tp.medacc,{
+		left_ear="Digni. Earring",
+		right_ear="Telos Earring",
+	})
 
 	sets.aftercast.o.lowacc=set_combine(sets.aftercast.tp.lowacc,{left_ring="Oneiros Ring",})
 
@@ -356,62 +354,91 @@ function get_sets()
 -- tp sets
 
 -- defensive sets
-	sets.hybrid.lowacc=set_combine(sets.aftercast.tp.lowacc, {neck="Loricate Torque +1", body="Tartarus Platemail", left_ring="Vocane Ring +1", right_ring="Defending Ring",})
+	sets.hybrid.lowacc={
+		ammo="Staunch Tathlum +1",
+    head="Ken. Jinpachi +1",
+    body="Wakido Domaru +3",
+    hands="Wakido Kote +3",
+    legs="Ken. Hakama +1",
+    feet="Ken. Sune-Ate +1",
+    neck="Loricate Torque +1",
+    waist="Flume Belt +1",
+    left_ear="Genmei Earring",
+    right_ear="Etiolation Earring",
+    left_ring="Vocane Ring +1",
+    right_ring="Defending Ring",
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+	}
+	sets.hybrid.medacc=set_combine(sets.hybrid.lowacc, {})
 
-	sets.hybrid.medacc=set_combine(sets.hybrid.lowacc, {neck="Combatant's Torque",})
-
-	sets.hybrid.highacc=set_combine(sets.hybrid.medacc, {neck="Sam. Nodowa +1",})
+	sets.hybrid.highacc=set_combine(sets.hybrid.medacc, {})
 
 	sets.pdt={ sub="Utu Grip", ammo="Staunch Tathlum +1", left_ear="Genmei Earring", left_ring="Vocane Ring +1",
 	head="Genmei Kabuto", body="Tartarus Platemail", right_ear="Telos Earring",
 	hands={ name="Sakonji Kote +3", augments={'Enhances "Blade Bash" effect',}}, legs="Ryuo Hakama +1",
-    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt", right_ring="Defending Ring",
+    feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt +1", right_ring="Defending Ring",
 	back="Agema Cape",}
+
+	sets.meva={
+		ammo="Aurgelmir Orb +1",
+    head="Ken. Jinpachi +1",
+    body="Ken. Samue +1",
+    hands="Wakido Kote +3",
+    legs="Ken. Hakama +1",
+    feet="Ken. Sune-Ate +1",
+    neck={ name="Sam. Nodowa +1", augments={'Path: A',}},
+    waist="Windbuffet Belt +1",
+    left_ear="Dedition Earring",
+    right_ear="Telos Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Defending Ring",
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+	}
 
 	sets.mdt={ sub="Utu Grip", ammo="Staunch Tathlum +1",
 	head={ name="Founder's Corona", augments={'DEX+7','Accuracy+11','Magic dmg. taken -3%',}},
-	body="Tartarus Platemail", hands="Kurys Gloves", legs={ name="Valor. Hose", augments={'Mag. Acc.+9','Damage taken-3%','DEX+1','Attack+3',}}, feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, waist="Flume Belt",
+	body="Tartarus Platemail", hands="Kurys Gloves", legs={ name="Valorous Hose", augments={'Mag. Acc.+9','Damage taken-3%','DEX+1','Attack+3',}}, feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, waist="Flume Belt +1",
 	neck="Loricate Torque +1", left_ear="Etiolation Earring", right_ear="Sanare Earring", left_ring="Shadow Ring", right_ring="Defending Ring", back="Engulfer Cape +1",}
 
 	sets.dt={ sub="Utu Grip", ammo="Staunch Tathlum +1", head="Loess Barbuta +1",
-	body="Tartarus Platemail", hands="Kurys Gloves", legs={ name="Valor. Hose", augments={'Mag. Acc.+9','Damage taken-3%','DEX+1','Attack+3',}}, right_ear="Sanare Earring",
-	feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt", left_ear="Etiolation Earring",
-	left_ring="Vocane Ring +1", right_ring="Defending Ring", back="Moonbeam Cape",}
+	body="Tartarus Platemail", hands="Kurys Gloves", legs={ name="Valorous Hose", augments={'Mag. Acc.+9','Damage taken-3%','DEX+1','Attack+3',}}, right_ear="Sanare Earring",
+	feet={ name="Amm Greaves", augments={'HP+50','VIT+9','Accuracy+14','Damage taken-1%',}}, neck="Loricate Torque +1", waist="Flume Belt +1", left_ear="Etiolation Earring",
+	left_ring="Vocane Ring +1", right_ring="Defending Ring", back="Moonlight Cape",}
 -- defensive sets
 
 -- other idle sets
-	sets.idle.pdt=sets.pdt
+	sets.idle.pdt=set_combine(sets.pdt, {})
 
 	sets.idle.pdtkite=set_combine(sets.idle.pdt,{back="Shadow Mantle", feet="Danzo Sune-Ate",})
 
-	sets.idle.mdt=sets.mdt
+	sets.idle.mdt=set_combine(sets.mdt, {})
 
 	sets.idle.mdtkite=set_combine(sets.idle.mdt,{feet="Danzo Sune-Ate"})
 
-	sets.idle.dt=sets.dt
+	sets.idle.dt=set_combine(sets.dt, {})
 
 	sets.idle.dtkite=set_combine(sets.idle.dt,{back="Shadow Mantle", feet="Danzo Sune-Ate",})
 
 	sets.idle.standard={
 	sub="Utu Grip",
-    ammo="Ginsen",
-    head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},
+    ammo="Aurgelmir Orb +1",
+    head={ name="Valorous Mask", augments={'Attack+16','Weapon skill damage +4%','STR+8','Accuracy+14',}},
     body="Hiza. Haramaki +2",
     hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},
     legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},
     feet="Danzo Sune-Ate",
     neck="Sanctity Necklace",
-    waist="Flume Belt",
+    waist="Flume Belt +1",
     left_ear="Infused Earring",
     right_ear="Sanare Earring",
-    left_ring="Paguroidea Ring",
+    left_ring="Chirich Ring +1",
     right_ring="Sheltered Ring",
     back="Shadow Mantle",
 	}
 -- other idle sets
 
 -- seigan/thirdeye sets
-	sets.seigan={head="Kasuga Kabuto +1", legs=stplegs,}
+	sets.seigan={head="Kasuga Kabuto +1",}
 	sets.seiganthirdeye={head="Kasuga Kabuto +1", legs="Sakonji Haidate +1",}
 -- seigan/thirdeye sets
 end
@@ -498,14 +525,16 @@ function status_change(new,old)
 			if buffactive["Seigan"] and buffactive["Third Eye"] then
 				equip(sets.seiganthirdeye)
 			end
-		elseif TPMode=="hybrid" then
+		elseif TPSet=="hybrid" then
 			equip(sets.hybrid[Acc])
-		elseif TPMode=="pdt" then
+		elseif TPSet=="pdt" then
 			equip(sets.pdt)
-		elseif TPMode=="mdt" then
+		elseif TPSet=="mdt" then
 			equip(sets.mdt)
-		elseif TPMode=="dt" then
+		elseif TPSet=="dt" then
 			equip(sets.dt)
+		elseif TPSet=="meva" then
+			equip(sets.meva)
 		end
 	else
 		equip(sets.idle[IdleMode])
@@ -573,6 +602,7 @@ function self_command(command)
 		elseif Acc=="highacc" then
 			send_command('alias tp gs equip sets.aftercast.tp.medacc')
 		end
+		status_change(player.status)
 	end
 	if command == 'hybrid' then
 		if TPSet~= "hybrid" then
@@ -588,6 +618,7 @@ function self_command(command)
 			windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/hybridmode.png')
 			windower.prim.set_size('TP_SET',200,30)
 		end
+		status_change(player.status)
 	end
 	if command == 'pdt' then
 		TPSet="pdt"
@@ -595,6 +626,7 @@ function self_command(command)
 		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/pdtmode.png')
 		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/dtsets.wav')
 		windower.prim.set_size('TP_SET',200,30)
+		status_change(player.status)
 	end
 	if command == 'mdt' then
 		TPSet="mdt"
@@ -602,6 +634,7 @@ function self_command(command)
 		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/mdtmode.png')
 		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/dtsets.wav')
 		windower.prim.set_size('TP_SET',200,30)
+		status_change(player.status)
 	end
 	if command == 'dt' then
 		TPSet="dt"
@@ -609,7 +642,17 @@ function self_command(command)
 		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/dtmode.png')
 		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/dtsets.wav')
 		windower.prim.set_size('TP_SET',200,30)
+		status_change(player.status)
 	end
+	if command == 'meva' then
+		TPSet="meva"
+		add_to_chat(206, 'MAGIC EVASION MODE')
+		windower.prim.set_texture('TP_SET',''..windower.windower_path..'addons/gearswap/data/images/mevamode.png')
+		windower.play_sound(''..windower.windower_path..'addons/gearswap/data/sounds/mevasets.wav')
+		windower.prim.set_size('TP_SET',200,30)
+		status_change(player.status)
+	end
+
 	-- engage variable commands rule end
 
 	-- ws variable rule
